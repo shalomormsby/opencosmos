@@ -3,8 +3,8 @@
 > Project management doc for the transition from "Sage" to "OpenCosmos" across all repos, packages, and infrastructure.
 
 **Created:** 2026-03-08
-**Last updated:** 2026-03-08
-**Status:** Phase 1a complete. Phase 1b in progress.
+**Last updated:** 2026-03-09
+**Status:** Phase 1a complete. Phase 1b complete. Phase 1c in progress.
 
 ---
 
@@ -79,13 +79,15 @@ Update the primary monorepo. No npm publishing yet — internal docs and config 
 - [x] Update turbo.json if needed (no changes needed)
 - [x] Update pnpm-workspace.yaml if needed (no changes needed — uses `apps/*` glob)
 - [x] Verify all apps build successfully (3/3 passing)
+- [x] Regenerate pnpm-lock.yaml — `apps/stocks/` (renamed from `apps/sage-stocks/`) had 18 dependencies not reflected in the lockfile after the directory rename. `pnpm install` regenerated it.
+- [x] Remove stale CI steps — `.github/workflows/ci.yml` had 4 steps running `pnpm --filter @thesage/ui lint/typecheck/test/size:check`. `@thesage/ui` lives in the separate `opencosmos-ui` repo and does not exist in this monorepo. All 4 steps removed.
 
 ### 1c: GitHub & Infrastructure (Partially Complete)
 - [x] Rename GitHub repo: ecosystem → opencosmos
 - [x] Update git remote to new repo URL
 - [ ] Update repo description on GitHub
-- [ ] Verify Vercel project connections (portfolio, creative-powerup, stocks)
-- [ ] Update Vercel root directory for stocks project (`apps/sage-stocks` → `apps/stocks`)
+- [ ] Verify Vercel project connections (portfolio, creative-powerup)
+- [x] Pause Vercel deployment for stocks — see decision log. Vercel project "sage-stocks" left disconnected; delete or archive when ready.
 
 ---
 
@@ -181,6 +183,7 @@ Publish new packages under @opencosmos scope. Handle transition gracefully.
 | 2026-03-08 | WELCOME.md as founding doc | Not a spec, not a manifesto. An invitation. |
 | 2026-03-08 | System prompt in packages/ai/ | Lives where it's consumed. WELCOME stays at root as front door. |
 | 2026-03-08 | Chronicle over changelog | Technical changes go in CHANGELOG. The story goes in CHRONICLE. |
+| 2026-03-09 | Pause stocks Vercel deployment | `apps/stocks` is paused — not publishing or deploying via Vercel. The old "sage-stocks" Vercel project is disconnected. Stocks remains in the monorepo as dormant code; resume when there's a clear publishing plan. |
 
 ---
 
