@@ -1,60 +1,61 @@
-# Shalom's Creative Ecosystem
+# OpenCosmos
 
-> **How might we make products lovable by design?**
+> **How might we create technology that helps people feel at home in the universe?**
 
-The purpose of this open source monorepo isn't just to answer this question; it's to provide a functional human-centered design philosophy that helps you build the answer for yourself.
+OpenCosmos is a creative platform built on a simple recognition: we are not separate from the universe we inhabit. Not observers of it. Not masters of it. Participants in it. Dance partners with it.
 
 **Status:** Active Development
 **License:** MIT
-**Philosophy:** [Read DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) — The North Star
+**Philosophy:** [Read WELCOME.md](WELCOME.md) — The front door
+**Design Principles:** [Read DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) — The North Star
 
 ---
 
 ## What This Is
 
-This ecosystem expresses one unified vision through multiple products:
+This platform expresses one unified vision through multiple products:
 
-- **[Portfolio](https://www.shalomormsby.com/)** — My design philosophy in action. Built entirely with Sage Design Engine components.
+- **[Portfolio](https://www.shalomormsby.com/)** — Design philosophy in action. Built entirely with OpenCosmos/UI components.
 - **[Creative Powerup](https://ecosystem-creative-powerup.vercel.app/)** — Community platform and experiment gallery for purpose-driven innovators *(in development)*
-- **[Sage Stocks](https://stocks.shalomormsby.com/)** — AI-powered investment intelligence that respects user agency
-- **SageOS** — Personal operating system for creative work *(concept)*
+- **[Stocks](https://stocks.shalomormsby.com/)** — AI-powered investment intelligence that respects user agency
+- **cosmOS** — Personal operating system for creative work *(concept)*
 
-**The unifying element:** All apps consume the [Sage Design Engine](https://thesage.dev/) (`@thesage/*` packages) from NPM, which embodies human-centered principles into every component, token, and interaction.
+**The unifying element:** All apps consume [OpenCosmos/UI](https://github.com/shalomormsby/opencosmos-ui) (`@opencosmos/*` packages) from npm, which embodies human-centered principles into every component, token, and interaction.
 
 ---
 
 ## Architecture
 
-This repo is a **consumer** of the Sage Design Engine. The design system packages (`@thesage/ui`, `@thesage/tokens`, etc.) are installed from NPM, not developed here.
+This repo is a **consumer** of OpenCosmos/UI. The design system packages (`@opencosmos/ui`, `@opencosmos/tokens`, etc.) are installed from npm, not developed here.
 
 ```
-ecosystem/
+opencosmos/
 ├── apps/
 │   ├── portfolio/             # Production portfolio site
-│   ├── creative-powerup/      # Experiment gallery (in development)
-│   ├── sage-stocks/           # AI investment intelligence
-│   └── sageos/                # Future
+│   ├── creative-powerup/      # Community platform (in development)
+│   ├── stocks/                # AI investment intelligence
+│   └── cosmos/                # cosmOS (future)
 ├── packages/
-│   └── sage-ai/               # @thesage/ai — Sovereign AI layer (WIP)
+│   └── ai/                    # @opencosmos/ai — Sovereign AI layer (WIP)
 ```
 
 ### Design System
 
-The Sage Design Engine is maintained in a [separate repository](https://github.com/shalomormsby/sage-design-engine) and consumed via NPM:
+OpenCosmos/UI is maintained in a [separate repository](https://github.com/shalomormsby/opencosmos-ui) and consumed via npm:
 
 ```bash
-pnpm add @thesage/ui
+pnpm add @opencosmos/ui
 ```
 
 Available packages:
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| `@thesage/ui` | ^1.1.1 | Components, hooks, providers, utils |
-| `@thesage/tokens` | ^0.0.3 | Design tokens (colors, typography, motion) |
-| `@thesage/mcp` | ^0.8.2 | MCP server for AI assistants |
+| `@opencosmos/ui` | ^1.1.1 | Components, hooks, providers, utils |
+| `@opencosmos/tokens` | ^0.0.3 | Design tokens (colors, typography, motion) |
+| `@opencosmos/mcp` | ^0.8.2 | MCP server for AI assistants |
 
-Interactive documentation: [thesage.dev](https://thesage.dev/)
+Interactive documentation: [opencosmos.ai](https://opencosmos.ai/)
 
 ---
 
@@ -62,8 +63,8 @@ Interactive documentation: [thesage.dev](https://thesage.dev/)
 
 ```bash
 # Clone and install
-git clone https://github.com/shalomormsby/ecosystem.git
-cd ecosystem
+git clone https://github.com/shalomormsby/opencosmos.git
+cd opencosmos
 pnpm install
 
 # Start portfolio
@@ -75,7 +76,7 @@ pnpm dev --filter portfolio
 
 ## Core Philosophy
 
-This ecosystem is built on four principles:
+This platform is built on four principles:
 
 1. **Emotionally Resonant** — Touch hearts, not just solve problems. Design should delight.
 2. **User Control & Freedom** — Users customize their experience. Motion intensity, themes, everything.
@@ -110,29 +111,27 @@ pnpm lint                   # Lint all
 
 ### Updating Design System
 
-When a new version of `@thesage/ui` is published:
+When a new version of `@opencosmos/ui` is published:
 
 ```bash
-pnpm update @thesage/ui
+pnpm update @opencosmos/ui
 pnpm build
 ```
 
 ### Local Development with Design System
 
-When testing SDE changes against consumer apps before publishing:
+When testing design system changes before publishing:
 
 ```bash
-# In the sage-design-engine repo
+# In the opencosmos-ui repo
 cd packages/ui && pnpm link --global
 
 # In this repo
-cd apps/portfolio && pnpm link --global @thesage/ui
+cd apps/portfolio && pnpm link --global @opencosmos/ui
 
 # Don't forget to unlink when done
-pnpm unlink @thesage/ui && pnpm install
+pnpm unlink @opencosmos/ui && pnpm install
 ```
-
-Alternatively, use [yalc](https://github.com/wclr/yalc) for a more robust local linking workflow.
 
 ---
 
@@ -142,10 +141,10 @@ Alternatively, use [yalc](https://github.com/wclr/yalc) for a more robust local 
 |-------|------------|
 | Framework | Next.js 16 (App Router) |
 | Language | TypeScript 5 (strict) |
-| Styling | Tailwind CSS 3 |
+| Styling | Tailwind CSS |
 | Animation | Framer Motion 12 |
 | State | Zustand 5 + localStorage |
-| Design System | Sage Design Engine (`@thesage/*`) |
+| Design System | OpenCosmos/UI (`@opencosmos/*`) |
 | Monorepo | Turborepo + pnpm workspaces |
 | Deployment | Vercel |
 
@@ -157,4 +156,4 @@ MIT © Shalom Ormsby
 
 ---
 
-**Remember:** The best documentation is working code that makes people feel seen, capable, and empowered.
+**Our work is our love made visible.**

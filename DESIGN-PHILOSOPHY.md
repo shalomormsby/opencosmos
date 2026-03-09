@@ -32,7 +32,7 @@ Each principle is a pathway to lovability. They work together, and when they ten
 ### 2. User Control & Freedom
 **The user is the controller of their own experience.** Not just a consumer. Not just a viewer. The person in full control, able to tune the experience to their personal preferences.
 
-**Why:** Human-centered design means supporting human *agency*. From portfolio Customizers to Sage Stocks' transparent analysis, users should always understand *why* and have *choice*.
+**Why:** Human-centered design means supporting human *agency*. From portfolio Customizers to Stocks' transparent analysis, users should always understand *why* and have *choice*.
 
 **In practice:** Motion controls. Theme preferences. Typography options. Transparent analysis reasoning. Nothing forced. Everything explained. Accessibility isn't accommodation; it's first-class design.
 
@@ -114,7 +114,7 @@ The proof of philosophy. An interactive experience that embodies human-centered 
 **Creative Powerup** (`apps/creative-powerup/`)
 Community platform and experiment gallery for purpose-driven creators.
 
-**SageOS** (`apps/sageos/`)
+**cosmOS** (`apps/cosmos/`)
 Personal operating system. Future home for the productivity philosophy and tools that power everything else.
 
 ### The Shared Foundation
@@ -154,25 +154,25 @@ What would delight the human, create joy, or expand their degrees of freedom?
 
 The ecosystem is split across two repositories:
 
-**[sage-design-engine](https://github.com/shalomormsby/sage-design-engine)** — Source of truth for the design system:
+**[opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui)** — Source of truth for the design system:
 ```
-sage-design-engine/
+opencosmos-ui/
 ├── packages/
-│   ├── ui/                   ← @thesage/ui - Component library (100 components)
-│   ├── tokens/               ← @thesage/tokens - Design tokens
-│   └── mcp/                  ← @thesage/mcp - AI assistant tools
-└── apps/web/                 ← Sage Studio (thesage.dev)
+│   ├── ui/                   ← @opencosmos/ui - Component library (100 components)
+│   ├── tokens/               ← @opencosmos/tokens - Design tokens
+│   └── mcp/                  ← @opencosmos/mcp - AI assistant tools
+└── apps/web/                 ← OpenCosmos Studio (opencosmos.ai)
 ```
 
-**ecosystem** (this repo) — Consumer applications:
+**opencosmos** (this repo) — Consumer applications:
 ```
-ecosystem/
-├── apps/                     ← Portfolio, Sage Stocks, Creative Powerup, SageOS
+opencosmos/
+├── apps/                     ← Portfolio, Stocks, Creative Powerup, cosmOS
 ├── packages/
-│   └── sage-ai/              ← @thesage/ai - Sovereign AI layer (WIP)
+│   └── ai/                   ← @opencosmos/ai - Sovereign AI layer (WIP)
 ```
 
-Apps consume `@thesage/ui` from npm. The design philosophy flows from tokens → components → products.
+Apps consume `@opencosmos/ui` from npm. The design philosophy flows from tokens → components → products.
 
 **Why functional organization?**
 - **Developer clarity** — Components organized by what they *do*, not abstract hierarchy
@@ -208,11 +208,13 @@ This ecosystem demonstrates that:
 
 ## Related Files
 
-- `README.md` — Ecosystem overview and getting started
+- `WELCOME.md` — The front door to OpenCosmos
+- `README.md` — Platform overview and getting started
 - `AGENTS.md` — Technical guide for AI agents (read this second)
-- `packages/sage-ai/INCEPTION.md` — Sage AI founding blueprint
+- `packages/ai/COSMO_SYSTEM_PROMPT.md` — Cosmo's voice and values
+- `packages/ai/INCEPTION.md` — Historical AI founding blueprint
 - `apps/[app-name]/README.md` — App-specific setup instructions
-- [Sage Design Engine](https://github.com/shalomormsby/sage-design-engine) — Design system source repo
+- [OpenCosmos/UI](https://github.com/shalomormsby/opencosmos-ui) — Design system source repo
 
 ---
 

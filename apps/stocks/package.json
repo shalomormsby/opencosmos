@@ -1,8 +1,8 @@
 {
-  "name": "@ecosystem/sage-stocks",
+  "name": "@opencosmos/stocks",
   "version": "0.1.0",
   "private": true,
-  "description": "Sage Stocks v1.0 - Vercel Serverless + Notion Integration",
+  "description": "OpenCosmos Stocks — AI-powered investment intelligence",
   "main": "index.js",
   "scripts": {
     "dev": "vercel dev",

@@ -1,8 +1,8 @@
-# Sage AI
+# Sage AI (Historical)
 
-> **📌 Inception Document** — This page is the founding record of Sage AI. It serves as both the product vision and technical blueprint, designed to be consumed by human collaborators, AI coding agents (e.g., Claude Code), and the public record.
+> **📌 Historical Document** — This was the founding record of "Sage AI," the original name for what is now **OpenCosmos / Cosmo**. Preserved as a historical artifact. The vision has evolved — see [WELCOME.md](../../WELCOME.md) for the current philosophy and [COSMO_SYSTEM_PROMPT.md](COSMO_SYSTEM_PROMPT.md) for Cosmo's voice.
 >
-> *Initiated: March 1, 2026 · Author: Shalom Ormsby · Status: Work in Progress*
+> *Initiated: March 1, 2026 · Author: Shalom Ormsby · Superseded: March 8, 2026*
 
 **Current Phase:** 1a (hardware) + 1b (package) | **Last Updated:** 2026-03-04 | **License:** [RAIL](https://www.licenses.ai/) (Responsible AI License)
 
