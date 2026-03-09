@@ -1,6 +1,10 @@
-# Sage Stocks
+# stocks (formerly Sage Stocks)
 
-_Last updated: December 6, 2025_
+_Last updated: 2026-03-09_
+
+> **Status: Paused.** This app is not currently deployed or published via Vercel. The old "sage-stocks" Vercel project is disconnected. See [OPENCOSMOS_MIGRATION.md](../../OPENCOSMOS_MIGRATION.md) for context.
+
+---
 
 **Invest with calm confidence, powered by intelligence you can trust.**
 
