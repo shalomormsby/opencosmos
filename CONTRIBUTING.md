@@ -1,16 +1,16 @@
-# Contributing to Shalom's Creative Ecosystem
+# Contributing to OpenCosmos
 
 Thank you for your interest in contributing! This project is built on the belief that human-centered design can be proven through architecture, not just claimed — and contributions that share that vision are welcome.
 
 ## Getting Started
 
-1. **Read the philosophy first:** [DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) outlines the four principles that guide every decision.
+1. **Read the philosophy first:** [WELCOME.md](WELCOME.md) is the front door. [DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) outlines the four principles that guide every decision.
 2. **Understand the architecture:** [AGENTS.md](AGENTS.md) covers coding standards, file organization, and workflows.
 3. **Set up your environment:**
 
 ```bash
-git clone https://github.com/shalomormsby/sage-design-engine.git
-cd sage-design-engine
+git clone https://github.com/shalomormsby/opencosmos.git
+cd opencosmos
 pnpm install
 pnpm build
 ```
@@ -24,7 +24,7 @@ pnpm build
 
 ### Reporting Bugs
 
-- Open an issue on [GitHub Issues](https://github.com/shalomormsby/sage-design-engine/issues)
+- Open an issue on [GitHub Issues](https://github.com/shalomormsby/opencosmos/issues)
 - Include: steps to reproduce, expected vs actual behavior, browser/OS, and screenshots if applicable
 - Check existing issues first to avoid duplicates
 
@@ -47,7 +47,7 @@ pnpm build
 
 ### Adding Components
 
-If you're adding a new component to `@thesage/ui`, follow the [register-new-component workflow](.agent/workflows/register-new-component.md) exactly. Incomplete registration means the component won't be discoverable.
+If you're adding a new component to `@opencosmos/ui`, that work happens in the [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui) repository, not here.
 
 ## Code Standards
 

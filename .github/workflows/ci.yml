@@ -33,15 +33,3 @@ jobs:
 
       - name: Build All Apps
         run: pnpm build
-
-      - name: Lint
-        run: pnpm --filter @thesage/ui lint
-
-      - name: Typecheck
-        run: pnpm --filter @thesage/ui typecheck
-
-      - name: Run Tests
-        run: pnpm --filter @thesage/ui test
-
-      - name: Check Bundle Sizes
-        run: pnpm --filter @thesage/ui size:check

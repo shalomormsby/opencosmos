@@ -1,24 +1,25 @@
 # AGENTS.md
 
-> **For AI coding agents working on this ecosystem. Read [DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) first — it's the North Star. This file tells you how to build in alignment with it.**
+> **For AI coding agents working on this platform. Read [DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md) first — it's the North Star. This file tells you how to build in alignment with it.**
 
-Last updated: 2026-03-07
+Last updated: 2026-03-08
 
 ---
 
 ## Quick Orientation
 
-This is a **consumer monorepo** — the product applications that use the [Sage Design Engine](https://thesage.dev/). Apps here install `@thesage/ui` from npm. The design system packages are developed and published from a [separate repository](https://github.com/shalomormsby/sage-design-engine).
+This is a **consumer monorepo** — the product applications that use [OpenCosmos/UI](https://opencosmos.ai/). Apps here install `@opencosmos/ui` from npm. The design system packages are developed and published from a [separate repository](https://github.com/shalomormsby/opencosmos-ui).
 
 ```
-ecosystem/
+opencosmos/
 ├── apps/
 │   ├── portfolio/           # Next.js — Production portfolio (shalomormsby.com)
 │   ├── creative-powerup/    # Next.js — Community platform (in development)
-│   ├── sage-stocks/         # Next.js — AI-powered investment intelligence
-│   └── sageos/              # Future — Personal operating system concept
+│   ├── stocks/              # Next.js — AI-powered investment intelligence
+│   └── cosmos/              # Future — cosmOS personal operating system
 ├── packages/
-│   └── sage-ai/             # @thesage/ai — Sovereign AI intelligence layer (WIP)
+│   └── ai/                  # @opencosmos/ai — Sovereign AI intelligence layer (WIP)
+├── WELCOME.md               # The front door — OpenCosmos vision and philosophy
 ├── DESIGN-PHILOSOPHY.md     # The North Star — four principles
 ├── CHANGELOG.md             # Work history
 └── README.md                # Overview
@@ -28,14 +29,14 @@ ecosystem/
 
 | What | Where | Why |
 |------|-------|-----|
-| `@thesage/ui` (components) | [sage-design-engine](https://github.com/shalomormsby/sage-design-engine) | Published to npm |
-| `@thesage/tokens` (design tokens) | sage-design-engine | Published to npm |
-| `@thesage/mcp` (MCP server) | sage-design-engine | Published to npm |
-| Sage Studio (docs site) | sage-design-engine (`apps/web`) | Lives with packages it documents |
-| Portfolio, Creative Powerup, Sage Stocks | **This repo** (`apps/`) | Consumer applications |
-| Sage AI (`@thesage/ai`) | **This repo** (`packages/sage-ai/`) | Ecosystem intelligence layer |
+| `@opencosmos/ui` (components) | [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui) | Published to npm |
+| `@opencosmos/tokens` (design tokens) | opencosmos-ui | Published to npm |
+| `@opencosmos/mcp` (MCP server) | opencosmos-ui | Published to npm |
+| OpenCosmos Studio (docs site) | opencosmos-ui (`apps/web`) | Lives with packages it documents |
+| Portfolio, Creative Powerup, Stocks | **This repo** (`apps/`) | Consumer applications |
+| Cosmo AI (`@opencosmos/ai`) | **This repo** (`packages/ai/`) | Platform intelligence layer |
 
-**Key rule:** To modify a component, hook, or utility from `@thesage/ui` — work in [sage-design-engine](https://github.com/shalomormsby/sage-design-engine), not here. This repo consumes published packages.
+**Key rule:** To modify a component, hook, or utility from `@opencosmos/ui` — work in [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui), not here. This repo consumes published packages.
 
 ---
 
@@ -57,7 +58,7 @@ ecosystem/
    git log -5 --oneline
    ```
 
-4. **If working on Sage AI:** Read [packages/sage-ai/INCEPTION.md](packages/sage-ai/INCEPTION.md) first.
+4. **If working on Cosmo AI:** Read [packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) for the voice and values, and [packages/ai/INCEPTION.md](packages/ai/INCEPTION.md) for historical technical context.
 
 ---
 
@@ -66,27 +67,27 @@ ecosystem/
 ### Portfolio (`apps/portfolio/`)
 - **URL:** [shalomormsby.com](https://www.shalomormsby.com/)
 - **Purpose:** Proof of the design philosophy. Showcases the Customizer.
-- **Deps:** `@thesage/ui: ^1.1.1` (npm)
+- **Deps:** `@opencosmos/ui` (npm)
 
 ### Creative Powerup (`apps/creative-powerup/`)
 - **URL:** [ecosystem-creative-powerup.vercel.app](https://ecosystem-creative-powerup.vercel.app/)
 - **Purpose:** Community platform and experiment gallery
 - **Status:** In development
-- **Deps:** `@thesage/ui: ^1.1.1` (npm)
+- **Deps:** `@opencosmos/ui` (npm)
 
-### Sage Stocks (`apps/sage-stocks/`)
+### Stocks (`apps/stocks/`)
 - **Purpose:** AI-powered investment intelligence
 - **Status:** Active
 
-### SageOS (`apps/sageos/`)
-- **Purpose:** Personal operating system concept
+### cosmOS (`apps/cosmos/`)
+- **Purpose:** Personal operating system
 - **Status:** Future
 
 ---
 
-## Sage AI (`packages/sage-ai/`)
+## Cosmo AI (`packages/ai/`)
 
-The shared intelligence layer for the ecosystem. **Read [INCEPTION.md](packages/sage-ai/INCEPTION.md) before working on this package.**
+The shared intelligence layer for the platform. **Read [COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) for the voice and values.**
 
 - **License:** RAIL (Responsible AI License) — not MIT like everything else
 - **Status:** Phase 1a (hardware setup) + Phase 1b (package foundation) in parallel
@@ -108,10 +109,10 @@ The shared intelligence layer for the ecosystem. **Read [INCEPTION.md](packages/
 | App-specific hook | `apps/<app>/hooks/` |
 | App-specific utility | `apps/<app>/lib/` |
 | App-specific state store | `apps/<app>/store/` |
-| AI capabilities (shared) | `packages/sage-ai/src/` |
+| AI capabilities (shared) | `packages/ai/src/` |
 | Documentation | `docs/` |
 
-**Do NOT create `packages/ui/`, `packages/tokens/`, or `packages/mcp/` in this repo.** Those packages live in [sage-design-engine](https://github.com/shalomormsby/sage-design-engine).
+**Do NOT create `packages/ui/`, `packages/tokens/`, or `packages/mcp/` in this repo.** Those packages live in [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui).
 
 ---
 
@@ -120,40 +121,40 @@ The shared intelligence layer for the ecosystem. **Read [INCEPTION.md](packages/
 ### Importing Components
 
 ```typescript
-import { Button, Card, Dialog } from '@thesage/ui'
-import { useMotionPreference, useTheme } from '@thesage/ui/hooks'
-import { ThemeProvider } from '@thesage/ui/providers'
-import { cn } from '@thesage/ui/utils'
-import '@thesage/ui/globals.css'
+import { Button, Card, Dialog } from '@opencosmos/ui'
+import { useMotionPreference, useTheme } from '@opencosmos/ui/hooks'
+import { ThemeProvider } from '@opencosmos/ui/providers'
+import { cn } from '@opencosmos/ui/utils'
+import '@opencosmos/ui/globals.css'
 ```
 
 ### Updating
 
 ```bash
-pnpm update @thesage/ui
+pnpm update @opencosmos/ui
 pnpm build
 ```
 
-### Local Development with SDE
+### Local Development with Design System
 
 When testing design system changes before publishing:
 
 ```bash
-# In sage-design-engine
+# In opencosmos-ui
 cd packages/ui && pnpm link --global
 
 # In this repo
-cd apps/portfolio && pnpm link --global @thesage/ui
+cd apps/portfolio && pnpm link --global @opencosmos/ui
 
 # Unlink when done
-pnpm unlink @thesage/ui && pnpm install
+pnpm unlink @opencosmos/ui && pnpm install
 ```
 
 ### Rules
 
 - **Motion:** Always check `useMotionPreference()` before animating. Intensity 0 must work perfectly.
 - **Colors:** Use CSS variables (`bg-background`, `text-foreground`), never hardcoded.
-- **Components:** Use `@thesage/ui` first. Don't recreate what exists.
+- **Components:** Use `@opencosmos/ui` first. Don't recreate what exists.
 - **Accessibility:** WCAG AA contrast, keyboard navigation, screen reader support. Non-negotiable.
 
 ---
@@ -181,7 +182,7 @@ export const useNavigation = create<NavigationState>((set) => ({
 }))
 ```
 
-Design system stores (`useTheme`, `useMotionPreference`) come from `@thesage/ui/hooks`.
+Design system stores (`useTheme`, `useMotionPreference`) come from `@opencosmos/ui/hooks`.
 
 ---
 
@@ -223,10 +224,10 @@ rm -rf .turbo apps/*/.next && pnpm build
 | Framework | Next.js 16 (App Router) | React Server Components |
 | React | React 19.2.1 | |
 | Language | TypeScript 5 | Strict mode |
-| Styling | Tailwind CSS | Via CSS variables from @thesage/ui |
+| Styling | Tailwind CSS | Via CSS variables from @opencosmos/ui |
 | Animation | Framer Motion 12 | Respects motion preferences |
 | State | Zustand 5 | localStorage persistence |
-| Design System | `@thesage/ui` (npm) | 100 components, 3 themes |
+| Design System | `@opencosmos/ui` (npm) | 100 components, 3 themes |
 | Monorepo | Turborepo + pnpm | |
 | Deployment | Vercel | Auto-deploys main |
 
@@ -240,7 +241,7 @@ type(scope): description
 
 **Types:** `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
 
-**Scopes:** `portfolio`, `creative-powerup`, `sage-stocks`, `sage-ai`
+**Scopes:** `portfolio`, `creative-powerup`, `stocks`, `ai`, `cosmos`
 
 **Branch naming:** `type/brief-description`
 
@@ -261,7 +262,7 @@ Non-negotiable. Every UI must:
 
 ## Changelog
 
-Log significant changes in [CHANGELOG.md](CHANGELOG.md) with ISO timestamps.
+Log significant changes in [CHANGELOG.md](CHANGELOG.md) with ISO timestamps. For the story behind the decisions, see [CHRONICLE.md](CHRONICLE.md).
 
 **Format:**
 ```markdown
@@ -276,7 +277,7 @@ Log significant changes in [CHANGELOG.md](CHANGELOG.md) with ISO timestamps.
 ## What NOT to Do
 
 - Make major architectural decisions without discussing with Shalom
-- Create design system packages in this repo (use sage-design-engine)
+- Create design system packages in this repo (use opencosmos-ui)
 - Skip accessibility requirements
 - Hardcode colors instead of CSS variables
 - Animate without checking motion preferences
@@ -301,8 +302,11 @@ When in doubt, ask Shalom.
 
 ## Related Documentation
 
+- **[WELCOME.md](WELCOME.md)** — The front door to OpenCosmos
 - **[DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md)** — The North Star
-- **[packages/sage-ai/INCEPTION.md](packages/sage-ai/INCEPTION.md)** — Sage AI founding blueprint
+- **[packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice and values
+- **[packages/ai/INCEPTION.md](packages/ai/INCEPTION.md)** — Historical AI founding blueprint
+- **[CHRONICLE.md](CHRONICLE.md)** — The story behind the decisions
 - **[CHANGELOG.md](CHANGELOG.md)** — Work history
-- **[Sage Design Engine repo](https://github.com/shalomormsby/sage-design-engine)** — Where the design system lives
-- **[thesage.dev](https://thesage.dev/)** — Interactive component documentation
+- **[OpenCosmos/UI repo](https://github.com/shalomormsby/opencosmos-ui)** — Where the design system lives
+- **[opencosmos.ai](https://opencosmos.ai/)** — Interactive component documentation

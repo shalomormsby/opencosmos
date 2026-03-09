@@ -2,7 +2,51 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-03-01
+**Last updated:** 2026-03-08
+
+> For the story behind the decisions, see [CHRONICLE.md](CHRONICLE.md).
+
+---
+
+## 2026-03-08 — OpenCosmos: The Homecoming
+
+The ecosystem is transitioning from "Sage" to "OpenCosmos" — returning to the original Cosmo identity (March 2025) with deeper philosophical grounding. This entry marks the founding of OpenCosmos as a platform identity and the creation of its core documents.
+
+### Added
+- `WELCOME.md` — Founding document for OpenCosmos. The front door to the platform: vision, cosmology, values, and invitation. Co-written by Shalom and Claude.
+- `packages/ai/COSMO_SYSTEM_PROMPT.md` — System prompt defining Cosmo's voice, values, sacred rhythm (attune → inquire → respond), cosmology, ethics, and boundaries.
+- `CHRONICLE.md` — Living narrative record of OpenCosmos decisions and conversations. Complements this changelog with the *why* behind the *what*.
+- `OPENCOSMOS_MIGRATION.md` — Project plan for the full Sage → OpenCosmos rename across repos, packages, npm, docs, and infrastructure. Four phases mapped with task tracking.
+
+### Renamed
+- `packages/sage-ai/` → `packages/ai/`
+- `apps/sageos/` → `apps/cosmos/` (cosmOS)
+- `apps/sage-stocks/` → `apps/stocks/`
+- Root package.json: `ecosystem-monorepo` → `opencosmos`
+- Stocks package.json: `@ecosystem/sage-stocks` → `@opencosmos/stocks`
+- GitHub repo: `ecosystem` → `opencosmos`
+- GitHub repo: `sage-design-engine` → `opencosmos-ui`
+
+### Updated (all Sage → OpenCosmos references)
+- `DESIGN-PHILOSOPHY.md` — repo names, package names, app names, directory paths
+- `AGENTS.md` — full rewrite with OpenCosmos naming, updated scopes and links
+- `.claude/CLAUDE.md` — full rewrite with OpenCosmos naming and new essential files list
+- `README.md` — full rewrite as OpenCosmos platform overview
+- `CONTRIBUTING.md` — updated repo URLs and references
+- `packages/ai/INCEPTION.md` — timestamped as historical, marked superseded
+- `apps/cosmos/README.md` — SageOS → cosmOS
+- Git remote updated to `shalomormsby/opencosmos`
+
+### Decisions Made
+- Platform name: **OpenCosmos**. AI companion: **Cosmo**.
+- `sageos` → **cosmOS**
+- `sage-stocks` → **stocks** (simple, context is implicit inside the opencosmos repo)
+- **Creative Powerup** name unchanged
+- npm scope: `@thesage/*` → `@opencosmos/*` (@opencosmos already registered)
+- Domain: `thesage.dev` → `opencosmos.ai` (domain registered 2026-03-08)
+
+### Status
+Phase 0 (Foundation) and Phase 1a (Core documentation & renames) complete. All 3 apps build successfully. Phase 1b (app-level code scan) next.
 
 ---
 
