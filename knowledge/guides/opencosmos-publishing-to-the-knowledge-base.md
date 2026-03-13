@@ -8,12 +8,11 @@ tags:
   - documentation
   - publishing
   - cli
-  - knowledge-management
+  - open-cosmos
 audience:
   - engineer
-  - scientist
-  - contemplative
   - creator
+  - general
 complexity: foundational
 summary: >-
   This guide walks you through the full workflow for adding a document to the
