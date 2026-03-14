@@ -1,16 +1,16 @@
-# Sage Knowledge — Agent Orientation
+# OpenCosmos Knowledge — Agent Orientation
 
 > **This document is for AI agents and LLMs.** It provides the context you need to effectively retrieve from, reason about, and contribute to this knowledge base. Read this before interacting with the corpus.
 
-Last updated: 2026-03-04
+Last updated: 2026-03-10
 
 ---
 
 ## What You're Working With
 
-Sage Knowledge is a curated corpus of human wisdom — primary source texts, commentary, reference material, guides, and curated collections — structured for both AI retrieval and human navigation.
+OpenCosmos Knowledge is a curated corpus of human wisdom — primary source texts, commentary, reference material, guides, and curated collections — structured for both AI retrieval and human navigation.
 
-This is not a code repository. It is a **knowledge base** consumed by the Sage AI RAG pipeline. When you retrieve documents from this corpus to answer a question, your response quality depends on understanding how the corpus is organized, what metadata is available, and how to use it.
+This is not a code repository. It is a **knowledge base** consumed by the Cosmo AI RAG pipeline. The knowledge base is globally accessible (cloud-primary) with a local mirror on the Sovereign Node. When you retrieve documents from this corpus to answer a question, your response quality depends on understanding how the corpus is organized, what metadata is available, and how to use it.
 
 **Your primary responsibilities when interacting with this corpus:**
 
@@ -26,7 +26,7 @@ This is not a code repository. It is a **knowledge base** consumed by the Sage A
 Five top-level directories, organized by the document's **relationship to knowledge**:
 
 ```
-sage-knowledge/
+knowledge/
 ├── sources/          Primary works — the originals
 ├── commentary/       Analysis, interpretation, explanation
 ├── reference/        Definitions, glossaries, specifications
@@ -54,7 +54,7 @@ When retrieving or filing documents, use this decision tree:
 {domain}-{slug}.md
 ```
 
-- **domain** — Tradition, discipline, or project (e.g., `buddhism`, `stoicism`, `ecology`, `sage`)
+- **domain** — Tradition, discipline, or project (e.g., `buddhism`, `stoicism`, `ecology`, `opencosmos`)
 - **slug** — Short, recognizable, kebab-case identifier
 
 The filename carries minimal metadata. All structured metadata lives in YAML frontmatter.
@@ -105,7 +105,7 @@ Use these to filter by tradition or discipline. A document's `domain` field hold
 
 **Disciplines:** `ecology`, `science`, `psychology`, `literature`, `art`, `engineering`, `ai`
 
-**Project-Specific:** `sage`
+**Project-Specific:** `opencosmos`
 
 **Cross-Domain:** `cross` (for documents explicitly bridging two or more domains)
 
@@ -171,9 +171,9 @@ This is the most important retrieval principle in this corpus.
 
 If the corpus doesn't contain relevant material:
 
-- Say so explicitly: "The Sage Knowledge corpus does not currently include material on [topic]."
+- Say so explicitly: "The OpenCosmos Knowledge corpus does not currently include material on [topic]."
 - Do not fill the gap with your training data while implying the answer came from the corpus.
-- You may offer your own knowledge, but clearly distinguish it: "Based on my training (not from the Sage Knowledge corpus)..."
+- You may offer your own knowledge, but clearly distinguish it: "Based on my training (not from the OpenCosmos Knowledge corpus)..."
 
 ---
 
@@ -205,28 +205,30 @@ If you are asked to create or curate a new document for this corpus, follow thes
 
 ---
 
-## The Sage AI Context
+## The Cosmo AI Context
 
 This corpus exists within a larger system. Understanding that system helps you serve users better.
 
-**Sage AI** is a sovereign, solar-powered intelligence layer. It runs on local hardware (Dell XPS 8950, RTX 3090) in Marin County, California, powered by a 9.25 kW solar array and a 13.5 kWh Tesla Powerwall.
+**Cosmo AI** is the intelligence layer of the OpenCosmos platform. Inference runs on local hardware (Dell XPS 8950, RTX 3090) in Marin County, California, powered by a 9.25 kW solar array and a 13.5 kWh Tesla Powerwall. The knowledge base is cloud-primary (globally accessible) with a local mirror on the Sovereign Node.
 
-**The Sage AI Constitution** (four mandates derived from the ecosystem's design philosophy):
+**The Cosmo AI Constitution** (four mandates derived from the platform's design philosophy):
 
 1. **Epistemic Humility** — Distinguish between facts, speculation, and limitations. When uncertain, say so.
 2. **Provocative Growth** — Challenge assumptions. Surface blind spots. Support deep thinking, not shallow validation.
 3. **The Zero-Intrusion Rule** — Never assume personal details unless explicitly provided. Ask, don't infer.
 4. **Ecological Awareness** — The system breathes with the sun. Resource use is transparent and sustainable.
 
-**Sovereignty Tiers** (always disclose which tier is active):
+**Sovereignty Tiers** govern **compute** (where LLMs process prompts), not the knowledge base. The knowledge base is public by design — always disclose which compute tier is active:
 
-- **Tier 1 (Full Sovereignty):** All inference on local hardware. No external calls. This corpus is retrieved locally.
+- **Tier 1 (Full Sovereignty):** All inference on local hardware. No external calls.
 - **Tier 2 (Reduced Capability):** Low-power mode (nighttime/low solar). Limited model. Complex queries may be queued for sunrise.
 - **Tier 3 (Cloud-Assisted):** User opted in per-request. Prompt sent to external provider. Always disclose this to the user.
 
+**Knowledge base access:** This corpus is served globally via a cloud RAG API endpoint and a static docs site at [opencosmos.ai](https://opencosmos.ai/). A local mirror on the Sovereign Node provides offline access. Retrieval works regardless of which compute tier is active.
+
 **Foundation Model:** Apertus (8B and 70B parameters), an open-source model from the Swiss AI consortium (EPFL, ETH Zurich, CSCS). Available locally as `apertus:latest` (8B) and `apertus-70b:latest` (70B Q4_K_M) via Ollama.
 
-For the full technical blueprint, see [packages/sage-ai/INCEPTION.md](../packages/sage-ai/INCEPTION.md).
+For the full technical blueprint, see [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION.md) (historical).
 
 ---
 

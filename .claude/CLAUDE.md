@@ -2,7 +2,7 @@
 
 > **Context file for AI assistants (primarily Claude) working on this platform. Read this first, then [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) and [AGENTS.md](../AGENTS.md).**
 
-Last updated: 2026-03-08
+Last updated: 2026-03-13
 
 ---
 
@@ -27,6 +27,9 @@ opencosmos/
 │   └── cosmos/              # cosmOS — personal operating system (future)
 ├── packages/
 │   └── ai/                  # @opencosmos/ai — Sovereign AI layer (WIP)
+├── docs/                    # Technical docs, architecture, migration plans
+│   └── archive-and-deprecated/  # Historical/superseded documents
+├── knowledge/               # RAG-indexed knowledge corpus
 ├── WELCOME.md               # The front door — vision and philosophy
 ├── DESIGN-PHILOSOPHY.md     # The North Star
 ├── AGENTS.md                # Technical guide for AI agents
@@ -47,11 +50,24 @@ opencosmos/
 ## Essential Files
 
 1. **[WELCOME.md](../WELCOME.md)** — The front door. OpenCosmos vision, cosmology, values, and invitation.
-2. **[DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md)** — The North Star. Four principles: Emotionally Resonant, User Control & Freedom, Transparent by Design, Generous by Design.
-3. **[AGENTS.md](../AGENTS.md)** — Technical guide: file organization, build commands, conventions.
+2. **[DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md)** — The North Star. Four principles.
+3. **[AGENTS.md](../AGENTS.md)** — Technical guide: file organization, document organization, build commands, conventions.
 4. **[packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice.
-5. **[CHANGELOG.md](../CHANGELOG.md)** — Work history.
-6. **[CHRONICLE.md](../CHRONICLE.md)** — The story behind the decisions.
+5. **[docs/architecture.md](../docs/architecture.md)** — Infrastructure decisions, service map, and data flow.
+6. **[CHANGELOG.md](../CHANGELOG.md)** — Work history.
+7. **[docs/chronicle.md](../docs/chronicle.md)** — The story behind the decisions.
+
+---
+
+## Document Organization
+
+See [AGENTS.md § Document Organization](../AGENTS.md#document-organization) for the full rules. In brief:
+
+- **Root (5 max):** README, WELCOME, DESIGN-PHILOSOPHY, CHANGELOG, CONTRIBUTING
+- **Root (agent context):** AGENTS.md, .claude/CLAUDE.md
+- **docs/:** Architecture, migration plans, research, chronicle, retrospectives
+- **knowledge/:** RAG-indexed corpus — see [knowledge/README.md](../knowledge/README.md)
+- **packages/\*/:** Package-specific docs (COSMO_SYSTEM_PROMPT.md, etc.)
 
 ---
 
@@ -62,7 +78,6 @@ The shared intelligence layer. Lives at `packages/ai/`.
 - **License:** RAIL (not MIT)
 - **Status:** Phase 1a (hardware) + Phase 1b (package foundation)
 - **Read [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** for the voice and values
-- **Read [INCEPTION.md](../packages/ai/INCEPTION.md)** for historical technical context
 
 ```typescript
 // API shape (finalizing in Phase 1b)
@@ -126,67 +141,29 @@ Always search for existing `@opencosmos/ui` components before writing custom JSX
 
 ## Build & Development
 
+See [AGENTS.md § Build & Development](../AGENTS.md#build--development) for the full reference. Essentials:
+
 ```bash
-# Development
-pnpm dev --filter portfolio           # Start portfolio
-pnpm dev --filter creative-powerup    # Start creative powerup
-
-# Build
-pnpm build                            # Build everything
-pnpm build --filter portfolio         # Build specific app
-
-# Update design system
-pnpm update @opencosmos/ui
-
-# Clear caches
-rm -rf .turbo apps/*/.next && pnpm build
+pnpm dev --filter portfolio      # Start portfolio at localhost:3000
+pnpm build                       # Build everything
+pnpm update @opencosmos/ui       # Update design system
 ```
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|-------|-----------|
-| Framework | Next.js 16 (App Router) |
-| React | React 19.2.1 |
-| Styling | Tailwind CSS via @opencosmos/ui CSS variables |
-| Animation | Framer Motion 12 |
-| State | Zustand 5 |
-| Design System | `@opencosmos/ui` (npm, 100 components) |
-| Monorepo | Turborepo + pnpm |
-| Deployment | Vercel |
-
----
-
-## Accessibility (Non-Negotiable)
-
-- Motion intensity 0 must work perfectly
-- Keyboard navigable, screen reader compatible
-- WCAG AA color contrast (4.5:1)
-- No information conveyed by color alone
-
----
-
-## Git Conventions
-
-```
-type(scope): description
-```
-
-**Types:** feat, fix, docs, style, refactor, test, chore
-**Scopes:** portfolio, creative-powerup, stocks, ai, cosmos
+See [AGENTS.md § Tech Stack](../AGENTS.md#tech-stack) for the full table.
 
 ---
 
 ## What NOT to Do
 
-- Make architectural decisions without Shalom
-- Create design system packages here (use opencosmos-ui)
-- Skip accessibility requirements
-- Hardcode colors
-- Animate without checking motion preferences
-- Over-engineer
+1. Make architectural decisions without Shalom
+2. Create design system packages here (use opencosmos-ui)
+3. Skip accessibility requirements
+
+See [AGENTS.md § What NOT to Do](../AGENTS.md#what-not-to-do) for the full list.
 
 ---
 
@@ -202,4 +179,4 @@ type(scope): description
 
 ---
 
-**Current focus:** OpenCosmos migration (Phase 1) — see [OPENCOSMOS_MIGRATION.md](../OPENCOSMOS_MIGRATION.md).
+**Current focus:** OpenCosmos migration (Phase 1) — see [docs/opencosmos-migration.md](../docs/opencosmos-migration.md).

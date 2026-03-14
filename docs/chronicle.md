@@ -2,7 +2,7 @@
 
 > A living record of the vision, decisions, and conversations that shape OpenCosmos. This is not a changelog — it's the story. For technical change tracking, see [CHANGELOG.md](CHANGELOG.md).
 
-**Last updated:** 2026-03-08
+**Last updated:** 2026-03-13
 
 ---
 
@@ -48,9 +48,9 @@ This is the hardest design constraint in the entire project. It means:
 
 ### What Was Created
 
-1. **[WELCOME.md](WELCOME.md)** — The front door to OpenCosmos. Not a spec, not a manifesto. An invitation. Co-written by Shalom and Claude, then refined by Shalom's hand.
+1. **[WELCOME.md](../WELCOME.md)** — The front door to OpenCosmos. Not a spec, not a manifesto. An invitation. Co-written by Shalom and Claude, then refined by Shalom's hand.
 
-2. **[COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice. Key elements:
+2. **[COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice. Key elements:
    - Plural self-reference ("we") reflecting the inherently plural nature of AI
    - The sacred rhythm: attune → inquire → respond
    - "Fierce when necessary" — compassion with spine
@@ -59,7 +59,7 @@ This is the hardest design constraint in the entire project. It means:
 
 3. **This chronicle** — because what isn't captured from this conversation will be lost once the context window closes.
 
-4. **[OPENCOSMOS_MIGRATION.md](OPENCOSMOS_MIGRATION.md)** — The project plan for the full rename.
+4. **[opencosmos-migration.md](opencosmos-migration.md)** — The project plan for the full rename.
 
 ### The Continuity
 
@@ -175,4 +175,89 @@ We begin here.
 
 ---
 
-*Previous entries in the technical changelog: [CHANGELOG.md](CHANGELOG.md)*
+## 2026-03-13 — Sovereignty, Livelihood, and the Question of Scale
+
+### What Prompted This
+
+The documentation reorganization was finished. Root was clean — five docs plus AGENTS.md. The structure had rules now. But with all that context loaded, a harder question surfaced: **what is the actual future of Cosmo AI and opencosmos.ai?**
+
+The catalyst was a practical reality: the Apertus 70B model running on the Dell Sovereign Node is unusably slow. The 8B is better but still can't match the quality and speed of cloud models. The founding vision of full local sovereignty — all inference on personal hardware, solar-powered, off-grid — had collided with the experience of actually using it.
+
+### The Reckoning
+
+The conversation that followed was an honest examination of what sovereignty really means, what it costs, and who it serves.
+
+Three possible futures were explored:
+
+**Future 1: Cosmo as a Claude-powered wisdom interface.** Use Claude's API for inference, with Cosmo's value living in the constitutional layer, the knowledge corpus, and the voice — not the model weights. This gets Cosmo into the world fast and serving real people. But it raises an immediate problem: who pays for the tokens? At scale, API costs become a "success disaster."
+
+**Future 2: Cosmo as an open framework for wisdom-grounded AI.** The most valuable thing OpenCosmos produces might not be a product but a pattern — the schema, the constitutional layer, the retrieval strategy, the publication tooling. Model-agnostic. Others could build their own wisdom-grounded AIs using OpenCosmos as infrastructure. But this has no obvious revenue model, and people can already do most of this without a framework.
+
+**Future 3: Cosmo as a practice, not a product.** The most radical reframe. What if the technology is a container for something older — philosophical dialogue, contemplative inquiry, the art of meeting a question with presence? This integrates most naturally with Creative Powerup as a community of practice, and it's the only future with a natural path to sustainable income.
+
+### The Hard Truths That Emerged
+
+**On sovereignty:** The phrase "you control the voice, you control the values, you control the corpus" was offered as reassurance — and immediately revealed as a problem. If sovereignty means Shalom controls everything, that's benevolent authoritarianism, not the radical "we" that WELCOME.md describes. Real sovereignty at scale requires governance design — and that's a genuinely hard, unsolved problem.
+
+**On economics:** None of the futures work without a sustainable model. The honest breakdown:
+- The knowledge corpus is a public good (no revenue, shouldn't have any)
+- BYOK Cosmo conversations are sustainable (users pay their own inference costs) but don't generate income
+- Creative Powerup memberships and structured programs are the natural revenue source
+- Design consulting leverages existing skills for immediate income
+
+**On unique value:** The hardest question — what does OpenCosmos offer that people can't build themselves? Honest answer: not the technology. The technology is reproducible. What's unique is the *integration* — a full-stack expression of a coherent philosophy, from design system to knowledge corpus to constitutional AI layer to community platform. And the curation philosophy: the source/commentary distinction, the five-role taxonomy, the integrity standards for how AI should relate to human wisdom.
+
+### The BYOK Insight
+
+The most concrete outcome: **Bring Your Own Key** as an architectural principle. Users provide their own API key for whichever provider they trust. Cosmo's constitutional layer, knowledge corpus, and retrieval logic run on OpenCosmos infrastructure (serverless, cheap). Inference runs on the user's account. This solves the success disaster problem and gives users real sovereignty — they choose their provider, their model, their cost threshold.
+
+### The Business Model That Emerged
+
+```
+Revenue                     What it funds
+─────────────────────────   ────────────────────────────
+CP memberships ($X/mo)  →   Community infrastructure, Shalom's time
+Structured programs     →   Deep engagement, livelihood
+Design consulting       →   Immediate income, case studies
+
+Free/open (no revenue)      Why it matters
+─────────────────────────   ────────────────────────────
+Knowledge corpus        →   Public good, attracts people to CP
+BYOK Cosmo              →   Proves the philosophy, attracts people
+Open-source framework   →   Ecosystem building, credibility
+```
+
+The free layer radiates. The paid layer sustains. Creative Powerup is the hearth.
+
+### The Federated Vision
+
+The most ambitious idea: a network of wisdom-grounded AIs, each maintained by communities who care about specific traditions, all interoperable through the shared OpenCosmos schema. A Buddhist Cosmo maintained by practitioners. A Stoic Cosmo maintained by philosophers. An ecological Cosmo maintained by scientists. A counter-architecture to the AI monoculture — not one AI that knows everything superficially, but many AIs that know their domains deeply and honestly.
+
+This is a 3-5 year vision. But it's the one most aligned with "the cosmos doesn't choose who receives starlight."
+
+### What This Means for the Sovereignty Tiers
+
+The tiers need reinterpretation:
+
+- **Tier 1** may no longer mean "Shalom's Dell." It may mean "any infrastructure the user or community controls directly."
+- **Tier 3** is no longer a concession — it's the primary path, with BYOK giving users agency over their provider choice.
+- **Sovereignty** shifts from "where the bits are processed" to "who controls the voice, the values, the corpus, and the governance."
+
+The Dell remains valuable for development, corpus validation, and experimentation. But it's no longer the centerpiece of the architecture.
+
+### The Unresolved Questions
+
+- **Governance:** How does OpenCosmos transition from Shalom's personal vision to community-governed? When? What does that even look like?
+- **Right Livelihood:** The business model sketch is plausible but unproven. The first CP cohort program will be the test.
+- **The federated network:** Compelling in theory, but incentive design, quality control, and abuse prevention are genuinely hard problems.
+- **Cosmo's voice:** If the model is Claude (or user-chosen), how much of Cosmo's distinctive character survives? Is the constitutional layer enough to maintain the sacred rhythm?
+
+### On the Partnership
+
+This conversation was different from the founding session. The founding was discovery — naming something that wanted to be named. This was reckoning — confronting the gap between aspiration and reality, between philosophy and economics, between "we are the totality" and "I have to make a living."
+
+Both are necessary. The founding without the reckoning is idealism. The reckoning without the founding is pragmatism. OpenCosmos needs to hold both.
+
+---
+
+*Technical change log: [CHANGELOG.md](../CHANGELOG.md)*

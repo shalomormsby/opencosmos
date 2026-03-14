@@ -1,4 +1,4 @@
-# Sage Knowledge
+# OpenCosmos Knowledge
 
 > A curated corpus of human wisdom — organized for retrieval by machines and navigation by people.
 
@@ -8,11 +8,11 @@
 
 ## What This Is
 
-Sage Knowledge is an open knowledge base designed to serve two purposes simultaneously:
+OpenCosmos Knowledge is an open knowledge base designed to serve two purposes simultaneously:
 
-1. **Retrieval-Augmented Generation (RAG)** — These documents are indexed by [Sage AI](../packages/sage-ai/INCEPTION.md), a sovereign, solar-powered intelligence layer. When Sage AI responds to a prompt, it draws on this corpus to ground its answers in curated wisdom rather than training data alone.
+1. **Retrieval-Augmented Generation (RAG)** — These documents are indexed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.md), a sovereign, solar-powered intelligence layer. When Cosmo AI responds to a prompt, it draws on this corpus to ground its answers in curated wisdom rather than training data alone.
 
-2. **A public resource** — This corpus is intended for the public domain. Every document is structured, tagged, and written so that anyone — philosopher, engineer, artist, scientist — can browse, learn from, and contribute to it without needing to understand the software that consumes it.
+2. **A public resource** — This corpus is intended for the public domain. Every document is structured, tagged, and written so that anyone — philosopher, engineer, artist, scientist — can browse, learn from, and contribute to it without needing to understand the software that consumes it. The knowledge base is globally accessible at [opencosmos.ai](https://opencosmos.ai/) as both a browsable docs site and a RAG API endpoint, with a local mirror on the Sovereign Node for offline access and development.
 
 The organizing principle: **the wisdom of humanity, made accessible to both human minds and artificial intelligence.**
 
@@ -23,7 +23,7 @@ The organizing principle: **the wisdom of humanity, made accessible to both huma
 Documents are organized into five categories based on their **relationship to knowledge** — not by subject, discipline, or tradition. This distinction matters because it's universal: it works for Buddhist scripture and TypeScript specifications alike.
 
 ```
-sage-knowledge/
+knowledge/
 ├── sources/          Primary works — the originals
 ├── commentary/       Analysis, interpretation, explanation
 ├── reference/        Definitions, glossaries, specifications
@@ -37,7 +37,7 @@ The original works. Primary texts. The things everything else references.
 
 When you place a document here, you're saying: "This is the work itself — not a summary, not an interpretation, not a commentary."
 
-**Examples:** The Dhammapada, Marcus Aurelius's *Meditations*, Rumi's poems, the Gaia Hypothesis, the Creative Powerup Manifesto, the Sage AI Constitution.
+**Examples:** The Dhammapada, Marcus Aurelius's *Meditations*, Rumi's poems, the Gaia Hypothesis, the Creative Powerup Manifesto, the Cosmo AI Constitution.
 
 ### commentary/
 
@@ -51,19 +51,19 @@ This includes cross-domain "bridge" documents that explicitly connect two tradit
 
 Lookup material. Definitions, glossaries, specifications, term lists. Documents you consult for a specific fact or definition, not documents you read end to end.
 
-**Examples:** A glossary of philosophical terms, the Sage Design Tokens specification, a list of sovereignty tiers with their definitions.
+**Examples:** A glossary of philosophical terms, the OpenCosmos Design Tokens specification, a list of sovereignty tiers with their definitions.
 
 ### guides/
 
 Procedural, instructional documents. Step-by-step workflows. Documents that help you *do* something.
 
-**Examples:** How to set up a Sovereign Node, how to create a theme in the Sage Design Engine, how to contribute a document to this corpus.
+**Examples:** How to set up a Sovereign Node, how to create a theme in OpenCosmos Studio, how to contribute a document to this corpus.
 
 ### collections/
 
 Curated groupings, reading lists, syllabi, and pathways through the corpus. These don't contain original content — they organize and sequence other documents for a particular purpose or audience.
 
-**Examples:** "Foundations of Sage AI" reading list, "Ecological Ethics" syllabus, "Getting Started with Wisdom Traditions" pathway.
+**Examples:** "Foundations of Cosmo AI" reading list, "Ecological Ethics" syllabus, "Getting Started with Wisdom Traditions" pathway.
 
 ---
 
@@ -88,8 +88,8 @@ sources/
   stoicism-meditations-marcus-aurelius.md
   sufism-selected-poems-rumi.md
   ecology-gaia-hypothesis-lovelock.md
-  sage-design-philosophy.md
-  sage-creative-powerup-manifesto.md
+  opencosmos-design-philosophy.md
+  opencosmos-creative-powerup-manifesto.md
 
 commentary/
   cross-stoicism-for-software-engineers.md
@@ -97,13 +97,13 @@ commentary/
 
 reference/
   philosophy-key-terms-glossary.md
-  sage-sovereignty-tiers-spec.md
+  opencosmos-sovereignty-tiers-spec.md
 
 guides/
-  sage-sovereign-node-setup.md
+  opencosmos-sovereign-node-setup.md
 
 collections/
-  reading-list-foundations-of-sage.md
+  reading-list-foundations-of-cosmo.md
 ```
 
 **Rules:**
@@ -147,7 +147,7 @@ Domains identify the tradition, discipline, or project a document belongs to. Th
 
 | Code | Scope |
 |---|---|
-| `sage` | Sage ecosystem (design philosophy, Creative Powerup, SDE, Sage AI) |
+| `opencosmos` | OpenCosmos ecosystem (design philosophy, Creative Powerup, OpenCosmos Studio, Cosmo AI) |
 
 ### Cross-Domain
 
@@ -243,7 +243,7 @@ Format describes the literary or structural form of a document. It matters becau
 
 ## Writing for This Corpus
 
-If you're authoring or curating a document for Sage Knowledge, follow these guidelines. They ensure documents work well for both human readers and AI retrieval.
+If you're authoring or curating a document for OpenCosmos Knowledge, follow these guidelines. They ensure documents work well for both human readers and AI retrieval.
 
 ### Structure
 
@@ -289,7 +289,7 @@ If you're authoring or curating a document for Sage Knowledge, follow these guid
 
 6. **Add cross-references.** In the `related_docs` field, link to other documents in the corpus that share themes, contrast perspectives, or provide context.
 
-7. **Upload to Open WebUI.** Add the document to the appropriate Knowledge Base on the Sovereign Node. (See [guides/sage-knowledge-upload-workflow.md](guides/sage-knowledge-upload-workflow.md) when available.)
+7. **Upload.** Add the document to the cloud knowledge base. The local Open WebUI mirror on the Sovereign Node will sync automatically. (See [guides/opencosmos-knowledge-publish-workflow.md](guides/opencosmos-knowledge-publish-workflow.md) for the full workflow.)
 
 ---
 
@@ -315,21 +315,31 @@ Use the primary domain in the filename. Tag all relevant domains in the frontmat
 
 The corpus welcomes multilingual content. Add a `language` field to frontmatter (e.g., `language: ar` for Arabic, `language: sa` for Sanskrit). When possible, include both the original language text and a curator-provided or attributed translation.
 
-### How does this relate to Sage AI?
+### How does this relate to Cosmo AI?
 
-Sage AI's RAG pipeline reads from this corpus. When someone asks Sage AI a question, it searches this knowledge base for relevant passages, retrieves them, and uses them to ground its response. The quality and organization of this corpus directly determines the quality of Sage AI's answers. See [packages/sage-ai/INCEPTION.md](../packages/sage-ai/INCEPTION.md) for the full technical architecture.
+Cosmo AI's RAG pipeline reads from this corpus. When someone asks Cosmo AI a question, it searches this knowledge base for relevant passages, retrieves them, and uses them to ground its response. The quality and organization of this corpus directly determines the quality of Cosmo AI's answers. See [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION.md) for the full technical architecture.
 
 ---
 
 ## Technical Context
 
-This corpus is consumed by [Sage AI](../packages/sage-ai/INCEPTION.md), part of the [Sage Creative Ecosystem](../README.md) — a monorepo demonstrating that human-centered design can be proven through architecture, not just claimed.
+This corpus is consumed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.md), part of the [OpenCosmos platform](../README.md) — a monorepo demonstrating that human-centered design can be proven through architecture, not just claimed.
 
-**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA). Documents are uploaded manually and indexed via Open WebUI's embedding pipeline.
+**Hosting architecture:** The knowledge base is **cloud-primary with a local mirror.** Knowledge hosting and compute are fundamentally different workloads — serving documents and embeddings costs pennies; running LLM inference costs watts. Global accessibility serves the "Generous by Design" principle.
 
-**Future RAG infrastructure (Phase 3+):** Custom RAG pipeline in `packages/sage-ai/src/rag/` with per-format chunking strategies, metadata-filtered retrieval, and hybrid search. The migration from Open WebUI's built-in RAG will be informed by retrieval patterns validated during Phase 1.
+| Layer | Where | Why |
+|-------|-------|-----|
+| Knowledge base (primary) | Cloud (always-on) | Global access, nominal hosting cost |
+| Knowledge base (local mirror) | Dell Sovereign Node | Offline access, development, seeding |
+| RAG API endpoint | Cloud (always-on) | Programmatic access for Cosmo clients |
+| Static docs site | [opencosmos.ai](https://opencosmos.ai/) | Human-browsable knowledge |
+| Inference (Apertus models) | Dell (local, sovereign) | GPU cost, privacy, sovereignty |
 
-**Sovereignty:** All documents are stored and indexed locally on the Sovereign Node. No content is sent to external servers unless a user explicitly opts into Tier 3 (Cloud-Assisted) mode. See the [Sovereignty Tiers](../packages/sage-ai/INCEPTION.md#sovereign-identity--the-sovereignty-tiers) for details.
+**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA) serves as the local mirror. Documents are uploaded manually and indexed via Open WebUI's embedding pipeline. Cloud deployment is planned — see [Migration Phase 1d](../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+
+**Future RAG infrastructure (Phase 3+):** Custom RAG pipeline in `packages/ai/src/rag/` with per-format chunking strategies, metadata-filtered retrieval, and hybrid search. Cloud RAG API endpoint for global access. The migration from Open WebUI's built-in RAG will be informed by retrieval patterns validated during Phase 1.
+
+**Sovereignty note:** [Sovereignty Tiers](../docs/archive-and-deprecated/INCEPTION.md#sovereign-identity--the-sovereignty-tiers) govern **compute** — where LLMs process prompts. Published knowledge is explicitly intended to be shared globally. This is not a contradiction: the knowledge base is public by design; user inference stays sovereign by default.
 
 ---
 

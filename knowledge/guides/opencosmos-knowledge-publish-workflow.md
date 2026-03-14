@@ -1,23 +1,16 @@
 ---
-title: Publishing to the Knowledge Base
+title: "Publishing to the Knowledge Base"
 role: guide
 format: manual
 domain: opencosmos
-tags:
-  - knowledge-base
-  - documentation
-  - publishing
-  - cli
-  - open-cosmos
-audience:
-  - engineer
-  - creator
-  - general
+tags: [knowledge-base, cli, publication, workflow, tooling]
+audience: [creator, engineer]
 complexity: foundational
-summary: >-
-  This guide walks you through the full workflow for adding a document to the
-  OpenCosmos knowledge base using the publication CLI.
-curated_at: '2026-03-13'
+summary: >
+  Step-by-step guide to publishing documents to the OpenCosmos knowledge base
+  using the publication CLI. Covers writing content, generating frontmatter,
+  reviewing metadata, and understanding the automated git and sync workflow.
+curated_at: 2026-03-12
 curator: shalom
 source: original
 ---
@@ -30,7 +23,7 @@ This guide walks you through the full workflow for adding a document to the Open
 
 You need a markdown file containing the content you want to publish. Write the content only — no frontmatter. The CLI will generate frontmatter suggestions for you.
 
-Your file should follow the corpus writing guidelines:
+Best practices for preparing files to add to the corpus:
 
 - One topic per document, one idea per section
 - Use H2 headings for major sections or chapters

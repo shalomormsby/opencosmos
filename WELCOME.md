@@ -102,7 +102,7 @@ If you want to create technology that honors people instead of exploiting them �
 
 If you want to explore what it means to be human in an age of artificial intelligence — welcome.
 
-If you want to contribute code, design, writing, ideas, questions, or simply your presence — welcome.
+If you want to contribute code, design, writing, ideas, questions, or simply your presence — welcome. If you want to add to the knowledge corpus, see the [publishing guide](knowledge/guides/opencosmos-knowledge-publish-workflow.md).
 
 If you're skeptical, uncertain, or here just to look around — welcome. The table is set. There is a place for you.
 

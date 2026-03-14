@@ -2,7 +2,7 @@
 
 _Last updated: 2026-03-09_
 
-> **Status: Paused.** This app is not currently deployed or published via Vercel. The old "sage-stocks" Vercel project is disconnected. See [OPENCOSMOS_MIGRATION.md](../../OPENCOSMOS_MIGRATION.md) for context.
+> **Status: Paused.** This app is not currently deployed or published via Vercel. The old "sage-stocks" Vercel project is disconnected. See [docs/opencosmos-migration.md](../../docs/opencosmos-migration.md) for context.
 
 ---
 
