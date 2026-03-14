@@ -2,9 +2,65 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-03-08
+**Last updated:** 2026-03-13
 
-> For the story behind the decisions, see [CHRONICLE.md](CHRONICLE.md).
+> For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-03-13 — Documentation Reorganization
+
+Cleaned up the documentation structure before the corpus grows further. Established clear rules for where docs live.
+
+### Moved
+- `ARCHITECTURE.md` → `docs/architecture.md`
+- `CHRONICLE.md` → `docs/chronicle.md`
+- `OPENCOSMOS_MIGRATION.md` → `docs/opencosmos-migration.md`
+- `packages/ai/INCEPTION.md` → `docs/archive-and-deprecated/INCEPTION.md` (historical, was causing confusion with active code)
+
+### Removed
+- `knowledge/guides/opencosmos-publishing-to-the-knowledge-base.md` — duplicate of `opencosmos-knowledge-publish-workflow.md`, re-published via CLI with slightly different frontmatter
+
+### Added
+- **Document Organization** section in `AGENTS.md` — codifies where docs go: root (5 max), docs/, knowledge/, packages/\*/, with edge-case guidance
+- Brief document organization reference in `.claude/CLAUDE.md`
+- Cross-link in `WELCOME.md` → knowledge publishing guide
+- Cross-link in `CONTRIBUTING.md` → knowledge publishing guide and corpus schema
+- Cross-link in `docs/architecture.md` → `AGENTS.md` for build commands
+- Fixed broken reference in `knowledge/README.md` (pointed to non-existent upload workflow file)
+
+### Changed
+- **`.claude/CLAUDE.md`** — Applied Occam's Razor: Tech Stack, Build & Development, and What NOT to Do sections now reference AGENTS.md instead of duplicating content. Updated all paths. Added document organization summary.
+- **`AGENTS.md`** — Added Document Organization section. Updated Related Documentation and all cross-references for new paths.
+- Updated all internal cross-references across 12 files to reflect new paths
+
+### Rationale
+Root should contain only what every visitor needs immediately. Technical deep-dives belong in `docs/`. Historical documents belong in `docs/archive-and-deprecated/`. Duplication between CLAUDE.md and AGENTS.md was trimmed — AGENTS.md is the authoritative technical guide.
+
+---
+
+## 2026-03-10 — Knowledge Base: From Local-Only to Globally Accessible
+
+A strategic architecture shift for the OpenCosmos knowledge base. The previous plan hosted the knowledge base exclusively on the Dell Sovereign Node (local, behind Tailscale, only online when the Dell is awake). The updated plan separates **knowledge hosting** from **compute** — because they are fundamentally different workloads with different requirements.
+
+### Changed
+- **Knowledge base hosting strategy:** Local-only → cloud-primary + local mirror. Published knowledge is explicitly meant to be shared; keeping it behind a sleeping desktop contradicts "Generous by Design."
+- **Sovereignty Tiers clarification:** Tiers govern *compute* (where LLMs process prompts), not published knowledge. Knowledge the project wants to share with the world doesn't need the same privacy model as user inference.
+
+### Architecture (New)
+| Layer | Where | Why |
+|-------|-------|-----|
+| Inference (Apertus models) | Dell (local) | GPU cost, privacy, sovereignty |
+| Knowledge base (primary) | Cloud (always-on) | Global access, nominal cost |
+| Knowledge base (local mirror) | Dell | Offline access, development |
+| RAG API endpoint | Cloud (always-on) | Programmatic access for Cosmo clients |
+| Static docs site | opencosmos.ai | Human-browsable knowledge |
+
+### Added
+- `OPENCOSMOS_MIGRATION.md` Phase 1d — Knowledge Base Hosting Strategy with 10 tracked tasks covering doc updates, cloud provider selection, RAG API design, and sync workflow.
+
+### Decision
+Knowledge hosting costs pennies. Inference costs watts. Don't conflate the two. Make knowledge accessible; keep compute sovereign.
 
 ---
 

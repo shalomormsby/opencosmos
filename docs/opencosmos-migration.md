@@ -3,8 +3,8 @@
 > Project management doc for the transition from "Sage" to "OpenCosmos" across all repos, packages, and infrastructure.
 
 **Created:** 2026-03-08
-**Last updated:** 2026-03-09
-**Status:** Phase 1a complete. Phase 1b complete. Phase 1c in progress.
+**Last updated:** 2026-03-10
+**Status:** Phase 1a complete. Phase 1b complete. Phase 1c in progress. Phase 1d design complete.
 
 ---
 
@@ -45,9 +45,9 @@ Establish the philosophical and strategic foundation before touching any code.
 - [x] Identify the naming problem ("Sage" puts AI on a pedestal)
 - [x] Arrive at "OpenCosmos" / "Cosmo" as the new identity
 - [x] Validate continuity with original Cosmo AI (March 2025)
-- [x] Write [WELCOME.md](WELCOME.md) — the front door
-- [x] Write [COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) — Cosmo's voice
-- [x] Write [CHRONICLE.md](CHRONICLE.md) — the story
+- [x] Write [WELCOME.md](../WELCOME.md) — the front door
+- [x] Write [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Cosmo's voice
+- [x] Write [chronicle.md](chronicle.md) — the story
 - [x] Map the full rename scope across both repos
 - [x] Register @opencosmos on npm
 - [x] Create this migration plan
@@ -83,11 +83,43 @@ Update the primary monorepo. No npm publishing yet — internal docs and config 
 - [x] Remove stale CI steps — `.github/workflows/ci.yml` had 4 steps running `pnpm --filter @thesage/ui lint/typecheck/test/size:check`. `@thesage/ui` lives in the separate `opencosmos-ui` repo and does not exist in this monorepo. All 4 steps removed.
 
 ### 1c: GitHub & Infrastructure (Partially Complete)
+
 - [x] Rename GitHub repo: ecosystem → opencosmos
 - [x] Update git remote to new repo URL
 - [ ] Update repo description on GitHub
 - [ ] Verify Vercel project connections (portfolio, creative-powerup)
 - [x] Pause Vercel deployment for stocks — see decision log. Vercel project "sage-stocks" left disconnected; delete or archive when ready.
+
+### 1d: Knowledge Base Hosting Strategy (Design Complete)
+
+**Strategic shift:** The OpenCosmos knowledge base moves from local-only to a **globally accessible cloud primary + local mirror** architecture. Compute (inference) stays local on the Dell. Knowledge hosting is a fundamentally different workload — nominal energy cost, and global accessibility serves the "Generous by Design" principle.
+
+**Architecture:**
+
+| Layer | Where | Why |
+|-------|-------|-----|
+| Inference (Apertus models) | Dell (local, sovereign) | GPU cost, privacy, sovereignty |
+| Knowledge base (primary) | Cloud (always-on) | Global access, nominal hosting cost |
+| Knowledge base (local mirror) | Dell | Offline access, development, seeding |
+| RAG API endpoint | Cloud (always-on) | Programmatic access for Cosmo clients |
+| Static docs site | opencosmos.ai (Vercel) | Human-browsable knowledge |
+
+**What this means for Sovereignty Tiers:**
+- Sovereignty Tiers still govern **compute** (where prompts are processed by LLMs)
+- Published knowledge is explicitly **intended to be shared** — different from user data or inference privacy
+- The local mirror ensures the knowledge base works offline when the Dell is running
+
+**Tasks:**
+- [x] Rename `sage-knowledge/` → `knowledge/` + update `README.md` — all Sage→OpenCosmos naming, hosting strategy updated to cloud-primary + local mirror
+- [x] Update `knowledge/AGENTS.md` — all Sage→OpenCosmos/Cosmo naming, infrastructure section rewritten for cloud-primary KB + sovereignty tiers clarified
+- [x] Update `packages/ai/INCEPTION.md` — Section 7 rewritten with cloud-primary architecture table; Appendix B vector store updated with cloud + local mirror options
+- [x] Rename + update `packages/ai/sage-ai-todo.md` → `packages/ai/opencosmos-todo.md` — all Sage→OpenCosmos naming, Phase 3 updated for cloud-primary KB
+- [x] Update `AGENTS.md` — Sovereignty Tiers section rewritten to clarify tiers govern compute, not knowledge; cross-reference to Phase 1d
+- [x] Update `packages/ai/sustainable-power-system-design.md` — Sage→Cosmo naming, sovereignty tier mapping section clarified as compute-only, cross-reference to Phase 1d
+- [x] Choose cloud vector DB provider: **Upstash Vector** — free tier (10K vectors, 10K queries/day), pay-per-query, Vercel-native, serverless. Decision recorded in [architecture.md](architecture.md)
+- [x] Design RAG API endpoint — `apps/web/app/api/knowledge/route.ts` on opencosmos.ai. Public read, `@upstash/ratelimit` for rate limiting. Recorded in [architecture.md](architecture.md)
+- [x] Plan static docs site structure — `/knowledge/` section of opencosmos.ai, built from `knowledge/**/*.md` at deploy time. Part of `apps/web`. Recorded in [architecture.md](architecture.md)
+- [x] Design knowledge base sync workflow — GitHub Action on push to main, incremental chunking by H2, upsert to Upstash Vector with metadata. Recorded in [architecture.md](architecture.md)
 
 ---
 
@@ -184,6 +216,11 @@ Publish new packages under @opencosmos scope. Handle transition gracefully.
 | 2026-03-08 | System prompt in packages/ai/ | Lives where it's consumed. WELCOME stays at root as front door. |
 | 2026-03-08 | Chronicle over changelog | Technical changes go in CHANGELOG. The story goes in CHRONICLE. |
 | 2026-03-09 | Pause stocks Vercel deployment | `apps/stocks` is paused — not publishing or deploying via Vercel. The old "sage-stocks" Vercel project is disconnected. Stocks remains in the monorepo as dormant code; resume when there's a clear publishing plan. |
+| 2026-03-10 | Knowledge base: cloud-primary + local mirror | Knowledge hosting ≠ compute. Serving documents and embeddings is nominal energy; inference is the expensive part. Global accessibility serves "Generous by Design." Sovereignty Tiers still govern compute (where LLMs process prompts), but published knowledge is explicitly meant to be shared. Cloud primary (always-on docs site + RAG API), Dell mirror for offline/dev. |
+| 2026-03-10 | Upstash Vector for cloud KB | Free tier (10K vectors, 10K queries/day) covers curated corpus. Pay-per-query scales with self-funded project. Serverless, zero cold starts, Vercel-native. Documents live in git; only need a vector index. See [architecture.md](architecture.md). |
+| 2026-03-10 | Create architecture.md | Platform-level infrastructure decisions need a permanent home. The migration doc is temporary; AGENTS.md is for dev workflow. `docs/architecture.md` is where service choices, data flow, and infrastructure rationale live. |
+| 2026-03-10 | RAG API in `apps/web` on opencosmos.ai | Both the knowledge docs site and RAG API live in this repo's `apps/web`, deployed to opencosmos.ai. Public read, rate-limited with `@upstash/ratelimit`. |
+| 2026-03-10 | Sync workflow: GitHub Action → Upstash | Incremental sync on push to main. Chunks by H2 sections, upserts to Upstash Vector with frontmatter metadata. Git is the source of truth. |
 
 ---
 
@@ -197,7 +234,7 @@ Publish new packages under @opencosmos scope. Handle transition gracefully.
 ---
 
 **Related:**
-- [WELCOME.md](WELCOME.md) — The front door
-- [packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) — Cosmo's voice
-- [CHRONICLE.md](CHRONICLE.md) — The story
-- [CHANGELOG.md](CHANGELOG.md) — Technical change history
+- [WELCOME.md](../WELCOME.md) — The front door
+- [packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Cosmo's voice
+- [chronicle.md](chronicle.md) — The story
+- [CHANGELOG.md](../CHANGELOG.md) — Technical change history

@@ -5,9 +5,12 @@
     "scripts": {
         "dev": "turbo run dev --concurrency 20",
         "build": "turbo run build",
-        "lint": "turbo run lint"
+        "lint": "turbo run lint",
+        "knowledge:publish": "tsx scripts/publish-knowledge.ts"
     },
     "devDependencies": {
+        "@inquirer/prompts": "^8.3.0",
+        "tsx": "^4.21.0",
         "turbo": "latest"
     },
     "packageManager": "pnpm@10.26.1",

@@ -1,8 +1,8 @@
 # Sustainable Power System Design
 
-> **The Solar Nervous System** — A smart energy management layer that lets Sage AI breathe with the sun: waking when solar energy is abundant, sleeping when it's not, and always telling the truth about where its power comes from.
+> **The Solar Nervous System** — A smart energy management layer that lets Cosmo AI breathe with the sun: waking when solar energy is abundant, sleeping when it's not, and always telling the truth about where its power comes from.
 
-**Last updated:** 2026-03-04 | **Phase:** 2 (see [sage-ai-todo.md](./sage-ai-todo.md)) | **Status:** Planning
+**Last updated:** 2026-03-10 | **Phase:** 2 (see [opencosmos-todo.md](./opencosmos-todo.md)) | **Status:** Planning
 
 ---
 
@@ -479,14 +479,16 @@ Beyond the built-in Energy Dashboard, create a dedicated "Sovereign Node" dashbo
 
 ---
 
-## Sovereignty Tier Mapping
+## Sovereignty Tier Mapping (Compute Only)
 
-This power system implements the Sovereignty Tiers defined in [INCEPTION.md](./INCEPTION.md):
+This power system manages **compute** — where LLMs process prompts. The OpenCosmos knowledge base is hosted separately in the cloud (always-on, globally accessible) and is unaffected by these power tiers. See [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started) for the knowledge base hosting strategy.
+
+This power system implements the Sovereignty Tiers defined in [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md):
 
 | State | Tier | Power Draw | AI Capability | User Experience |
 |---|---|---|---|---|
 | **Sun-Grace** (Dell awake) | Tier 1 — Full Sovereignty | ~80-500W (Dell) + ~5W (Pi) | Full Apertus 8B + 70B | Complete AI access, fast responses |
-| **Lunar** (Dell sleeping) | Tier 2 — Reduced Capability | ~3W (Dell S3) + ~5W (Pi) | Queries queued for sunrise | "Sage is in low-power mode. Your request will be answered at sunrise." |
+| **Lunar** (Dell sleeping) | Tier 2 — Reduced Capability | ~3W (Dell S3) + ~5W (Pi) | Queries queued for sunrise | "Cosmo is in low-power mode. Your request will be answered at sunrise." |
 | **Cloud-Assisted** (user opt-in) | Tier 3 — Sovereignty Suspended | N/A (external) | External API (Anthropic, etc.) | Per-request consent required. Prompt leaves local network. |
 
 Tier 3 is **never triggered by this power system**. It is always a user-initiated, per-request decision. The power system only manages the transition between Tier 1 and Tier 2.
@@ -535,13 +537,13 @@ Once the Energy Dashboard is running with both solar and Dell consumption data, 
 - **Solar offset percentage:** What fraction of AI energy came from solar vs. grid
 - **Daily/monthly AI energy budget:** Track whether AI usage stays within solar surplus
 
-This data is not just operational — it's part of the Sage AI story. The Ecological Awareness constitutional mandate requires the system to report its own energy footprint honestly.
+This data is not just operational — it's part of the Cosmo AI story. The Ecological Awareness constitutional mandate requires the system to report its own energy footprint honestly.
 
 ---
 
 ## Implementation Checklist
 
-> Detailed task tracking is in [sage-ai-todo.md](./sage-ai-todo.md) under Phase 2.
+> Detailed task tracking is in [opencosmos-todo.md](./opencosmos-todo.md) under Phase 2.
 
 1. Order hardware (Pi 5 8GB, case, PSU, NVMe HAT + SSD, Shelly Plug US Gen4)
 2. Find your Powerwall Gateway IP and verify `/api/meters/aggregates` returns solar data

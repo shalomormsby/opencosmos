@@ -1,6 +1,66 @@
-# Sage AI — Tech Research
+# Cosmo AI — Tech Research
 
-> Running log of hardware, infrastructure, and architectural research questions relevant to Sage AI development.
+> Running log of hardware, infrastructure, and architectural research questions relevant to Cosmo AI / OpenCosmos development.
+
+**Last updated:** 2026-03-13
+
+---
+
+## 2026-03-13
+
+### Mac Studio M5 Ultra — The North Star for OpenCosmos Compute
+
+> **Status: Projected.** The M5 Ultra has not been announced by Apple. All specifications below are projections based on the confirmed M5 Max (released March 2026) and Apple's established pattern of doubling the Max die to create the Ultra. Expected announcement: mid-2026 (WWDC timeframe).
+
+The Mac Studio with the M5 Ultra is the definitive North Star for the OpenCosmos compute solution. Based on the architectural leap established by the M5 Max and Apple's Fusion Architecture with "super cores," here is the technical specification and performance projection.
+
+---
+
+#### Technical Specification: Mac Studio M5 Ultra (Projected)
+
+| Component | Specification (Projected) | Impact on OpenCosmos |
+|---|---|---|
+| Processor | 36-Core CPU (12 Super Cores / 24 Performance Cores) | Near-instantaneous pre-processing and system management |
+| Graphics | 80-Core GPU with integrated Neural Accelerators | High-intensity parallel compute for Apertus 70B and future vision models |
+| Memory | 256GB Unified Memory | The "Unconstrained" Tier: Runs the full Apertus 70B at FP16 or 8-bit precision with zero quality loss |
+| Bandwidth | ~1,228 GB/s (2x M5 Max 614 GB/s) | Directly doubles the M5 Max's bandwidth, enabling ~25–30 tokens/sec on 70B models |
+| Storage | TBD (current Mac Studio: ~7.5 GB/s sequential reads) | Fast model loading, but specific M5 Ultra SSD specs unconfirmed |
+| Connectivity | 6x Thunderbolt 5 Ports (based on M4 Ultra Mac Studio) | Full-speed data ingest for community shared datasets |
+
+**Derivation:** CPU cores = 2x M5 Max 18-core (confirmed: 6 super + 12 performance per die). GPU cores = 2x M5 Max 40-core. Memory = 2x M5 Max 128GB max. Bandwidth = 2x M5 Max 614 GB/s. These follow Apple's consistent Ultra = 2x Max pattern across M1, M2, M3, and M4 generations.
+
+---
+
+#### Performance Analysis: The 70B "Capability Wall" Solved
+
+The M5 Ultra isn't just a faster version of the Max — it represents a fundamental change in the OpenCosmos user experience:
+
+**Elimination of Quantization Decay:** While the M5 Max is the minimum viable hardware for a 4-bit (Q4) 70B model, the 256GB M5 Ultra allows hosting the "Gold Standard" 8-bit or even full-precision 16-bit Apertus weights. This ensures the AI's reasoning, nuance, and ethical alignment are exactly as intended by the Swiss AI researchers, with no mathematical degradation.
+
+**The Context Revolution:** A significant challenge for the Dell setup was the "KV Cache" (the AI's short-term memory). As conversations get longer, memory usage balloons. The M5 Ultra's massive memory pool allows for a 128k+ token context window, enabling Cosmo to "remember" hours of transcripts or weeks of design research during a single session.
+
+**Real-Time Collaborative Brainstorming:** At ~25+ tokens per second, the AI generates text faster than a human can read (~4 words/sec average reading speed vs. ~19 words/sec at 25 tokens/sec). This transforms the interaction from "question and answer" to a live, fluid flow — essential for creative amplification.
+
+---
+
+#### Ecological Alignment (Solar Integration)
+
+The M5 Ultra provides sovereign intelligence that respects its physical environment:
+
+**Inference Efficiency:** Even when fully saturated by an 80-core workload, the M5 Ultra is projected to draw ~100W–190W (sources vary; 190W is the projected peak, with inference workloads likely in the 100–150W range).
+
+**The Powerwall Impact:** Compared to the Dell's 450W+ draw, the raw power reduction is significant (~1/3 to 1/4). But the *per-token* efficiency gain is dramatic: at 450W and ~3 t/s, the Dell costs ~150 watt-seconds per token. At 150W and ~27 t/s, the M5 Ultra costs ~5.6 watt-seconds per token — roughly **25x more energy-efficient per token**. In the context of the 13.5 kWh Powerwall, this means OpenCosmos can operate at peak performance through a full winter day in Marin with negligible impact on the home's energy reserves.
+
+---
+
+#### Sources
+
+- [Apple M5 Pro and M5 Max announcement — Apple Newsroom](https://www.apple.com/newsroom/2026/03/apple-debuts-m5-pro-and-m5-max-to-supercharge-the-most-demanding-pro-workflows/)
+- [Apple M5 Fusion Architecture with super cores — 9to5Mac](https://9to5mac.com/2026/03/03/apple-touts-fusion-architecture-for-m5-pro-and-m5-max-chips-with-super-cores/)
+- [M5 Ultra 80 GPU cores projection — TechRadar](https://www.techradar.com/pro/i-asked-gemini-to-predict-what-the-apple-m5-ultra-will-look-like-and-the-answer-blew-my-mind-away)
+- [Mac Studio M5 Ultra mid-2026 timeline — AppleInsider](https://appleinsider.com/articles/26/03/08/mac-studio-set-to-get-its-m5-update-next-this-summer)
+- [M5 Ultra Mac Studio rumors — MacRumors](https://www.macrumors.com/2025/11/04/mac-studio-m5-ultra-2026/)
+- [Mac Studio M5 specs and pricing — Macworld](https://www.macworld.com/article/2973459/2026-mac-studio-m5-release-date-specs-price-rumors.html)
 
 ---
 
@@ -14,7 +74,7 @@ How well could the new MacBook Pro with the M5 chip (released the week of March 
 
 ### Context
 
-The M5 Pro and M5 Max MacBook Pros were announced March 3, 2026, and are available starting March 11. This question evaluates whether switching the Sage AI inference server from the Dell XPS 8950 workstation (RTX 3090, 64GB DDR5) to an M5 Pro MacBook Pro (64GB Unified Memory) would be a meaningful upgrade for the 70B Apertus model specifically.
+The M5 Pro and M5 Max MacBook Pros were announced March 3, 2026, and are available starting March 11. This question evaluates whether switching the Cosmo AI inference server from the Dell XPS 8950 workstation (RTX 3090, 64GB DDR5) to an M5 Pro MacBook Pro (64GB Unified Memory) would be a meaningful upgrade for the 70B Apertus model specifically.
 
 ---
 
@@ -83,9 +143,9 @@ The M5 Pro is not a universal upgrade. The Dell maintains clear advantages in:
 
 ---
 
-#### The Real Question for Sage AI Architecture
+#### The Real Question for Cosmo AI Architecture
 
-The choice isn't simply "which is faster." The 70B Apertus model is Sage AI's most capable tier — used for deep, reasoning-heavy tasks. The 8B model handles lighter, high-frequency queries.
+The choice isn't simply "which is faster." The 70B Apertus model is Cosmo AI's most capable tier — used for deep, reasoning-heavy tasks. The 8B model handles lighter, high-frequency queries.
 
 A possible two-tier architecture worth considering:
 - **Dell XPS 8950 + RTX 3090** → handles 8B model requests (fast, VRAM-native)
@@ -115,7 +175,7 @@ Alternatively, adding a **second RTX 3090** to the Dell (~$800–1,000 used) wou
 > - The Dell: Drawing 450W–500W during inference.
 > - The MacBook: Drawing roughly 30W–60W during the same task.
 >
-> In terms of your Powerwall capacity, the Mac could serve the Sage AI for a full 24-hour cycle while consuming less than 10% of the battery, whereas the Dell consumes about 14% just sitting at idle.
+> In terms of your Powerwall capacity, the Mac could serve the Cosmo AI for a full 24-hour cycle while consuming less than 10% of the battery, whereas the Dell consumes about 14% just sitting at idle.
 >
 > **The Hard Trade-off**
 >
@@ -133,7 +193,7 @@ Gemini's framing is accurate and the bandwidth math checks out. The M5 Pro's adv
 
 The deeper question is whether **sovereignty** requires Linux/CUDA specifically, or whether it means **local, privately-owned, non-cloud inference** regardless of OS. The M5 Pro MacBook is still a local machine — it's not sending data to Apple servers for inference. It's just a sealed one that you can't repair yourself or expand.
 
-If Sage AI's sovereignty principle is primarily about *data privacy and independence from cloud providers*, the Mac satisfies it. If it's also about *hardware openness and long-term self-sufficiency*, the Dell is the more philosophically aligned choice — especially with a second GPU as the upgrade path.
+If Cosmo AI's sovereignty principle is primarily about *data privacy and independence from cloud providers*, the Mac satisfies it. If it's also about *hardware openness and long-term self-sufficiency*, the Dell is the more philosophically aligned choice — especially with a second GPU as the upgrade path.
 
 **Recommendation:** Before purchasing a Mac, test the second-RTX-3090 upgrade path on the Dell first. Two 3090s would run the 70B model at ~40–47 t/s (faster than the M5 Pro's ~10–20 t/s), keep everything on Linux/CUDA, and cost significantly less than a new MacBook Pro. The power draw (~700W) is higher, but if the solar system can handle it, the sovereignty cost is zero.
 
@@ -221,7 +281,7 @@ Gemini's conclusion ("for interactive conversation the 32-core is fine") was bui
 
 For Apertus 70B specifically: the 32-core M5 Max isn't just slower — it **can't run the model at full quality**. It's not a speed tradeoff, it's a capability ceiling. The 40-core M5 Max at 64GB is the minimum viable M5 Max configuration for the 70B model.
 
-The $400 premium for the upper-tier M5 Max isn't about speed alone. It's about whether the machine can actually run the model you need, at the quality level Sage AI's purpose demands.
+The $400 premium for the upper-tier M5 Max isn't about speed alone. It's about whether the machine can actually run the model you need, at the quality level Cosmo AI's purpose demands.
 
 ---
 

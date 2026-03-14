@@ -301,9 +301,19 @@ This is AI that breathes with the sun.
 
 # 7. RAG Architecture
 
-Phase 1 uses **Open WebUI's built-in RAG** — upload documents, get retrieval, done. No custom pipeline. This is intentional: it validates the knowledge base content and retrieval patterns before investing in infrastructure.
+**Hosting architecture:** The knowledge base is **cloud-primary with a local mirror.** Knowledge hosting and compute are fundamentally different workloads — serving documents and embeddings is nominal energy; running LLM inference is the expensive part. Global accessibility serves the "Generous by Design" principle. See [Migration Phase 1d](../opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started) for the full strategy.
 
-Starting in **Phase 3**, Sage AI migrates to a custom RAG pipeline in `packages/sage-ai/src/rag/`. Six key decisions must be made before that migration: document ingestion & parsing, chunking strategy, embedding model selection, vector store, retrieval logic & re-ranking, and context window management. Each involves tradeoffs between simplicity and quality, and all are constrained by the sovereignty requirement (everything must run locally).
+| Layer | Where | Why |
+|-------|-------|-----|
+| Knowledge base (primary) | Cloud (always-on) | Global access, nominal hosting cost |
+| Knowledge base (local mirror) | Dell Sovereign Node | Offline access, development, seeding |
+| RAG API endpoint | Cloud (always-on) | Programmatic access for Cosmo clients |
+| Static docs site | opencosmos.ai | Human-browsable knowledge |
+| Inference (Apertus models) | Dell (local, sovereign) | GPU cost, privacy, sovereignty |
+
+Phase 1 uses **Open WebUI's built-in RAG** on the local mirror — upload documents, get retrieval, done. No custom pipeline. This is intentional: it validates the knowledge base content and retrieval patterns before investing in infrastructure.
+
+Starting in **Phase 3**, Cosmo AI migrates to a custom RAG pipeline in `packages/ai/src/rag/` with a cloud RAG API endpoint for global access. Six key decisions must be made before that migration: document ingestion & parsing, chunking strategy, embedding model selection, vector store, retrieval logic & re-ranking, and context window management. Each involves tradeoffs between simplicity and quality. The cloud vector store must support global access; the local mirror maintains sovereignty for offline/development use.
 
 > **📎 Full RAG decision matrix** — options tables, tradeoff analysis, and preliminary recommendations for all six areas — is documented in **Appendix B: RAG Architecture Decisions** below.
 
@@ -449,7 +459,7 @@ The AI should feel like **sunlight** — abundant when it's here, gracefully red
 
 # Appendix B: RAG Architecture Decisions
 
-Detailed options and tradeoffs for the six RAG pipeline decisions referenced in Section 7. All decisions are deferred to Phase 3. Phase 1 uses Open WebUI's built-in RAG.
+Detailed options and tradeoffs for the six RAG pipeline decisions referenced in Section 7. All decisions are deferred to Phase 3. Phase 1 uses Open WebUI's built-in RAG on the local mirror. The cloud-primary knowledge base strategy (see [Migration Phase 1d](../opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started)) affects the vector store and retrieval decisions — the primary store must be cloud-hosted for global access.
 
 ### B.1 Document Ingestion & Parsing
 
@@ -487,7 +497,18 @@ The model that converts text chunks into vector representations for similarity s
 
 ### B.4 Vector Store
 
-Where embeddings are stored and queried. Must be local (sovereignty constraint).
+Where embeddings are stored and queried. The primary store must be **cloud-hosted** for global access (knowledge base is cloud-primary). A local mirror on the Sovereign Node supports offline/development use.
+
+**Cloud-hosted options (primary):**
+
+| **Option** | **Type** | **Pros** | **Cons** |
+| --- | --- | --- | --- |
+| **Supabase pgvector** | Managed Postgres | SQL-native, generous free tier, Vercel-friendly, full Postgres ecosystem | Heavier than purpose-built vector DBs |
+| **Upstash Vector** | Serverless vector DB | Pay-per-query, REST API, zero cold starts, built for edge | Smaller ecosystem, newer |
+| **Pinecone** | Managed vector DB | Purpose-built, strong retrieval quality, mature | Vendor lock-in, can get expensive at scale |
+| **Turso** | Distributed SQLite | Edge-native, low latency, familiar SQL | Vector search via extensions, less mature |
+
+**Local mirror options (Sovereign Node):**
 
 | **Option** | **Type** | **Pros** | **Cons** |
 | --- | --- | --- | --- |
@@ -495,7 +516,7 @@ Where embeddings are stored and queried. Must be local (sovereignty constraint).
 | **LanceDB** | Embedded columnar | Zero-copy, serverless, fast, Rust-based | Newer, smaller ecosystem |
 | **SQLite-VSS** | SQLite extension | Single-file DB, familiar SQL, lightweight | Less mature vector search, limited scaling |
 
-*Recommendation: Evaluate ChromaDB vs. LanceDB based on integration complexity and query performance before migration.*
+*Recommendation: Choose a cloud provider that aligns with the existing Vercel/Supabase stack. Evaluate ChromaDB vs. LanceDB for the local mirror. Design a sync workflow between cloud primary and local mirror.*
 
 ### B.5 Retrieval Logic & Re-ranking
 

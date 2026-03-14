@@ -32,8 +32,10 @@ opencosmos/
 | `@opencosmos/ui` (components) | [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui) | Published to npm |
 | `@opencosmos/tokens` (design tokens) | opencosmos-ui | Published to npm |
 | `@opencosmos/mcp` (MCP server) | opencosmos-ui | Published to npm |
-| OpenCosmos Studio (docs site) | opencosmos-ui (`apps/web`) | Lives with packages it documents |
+| OpenCosmos Studio (component docs) | opencosmos-ui (`apps/web`) | Lives with packages it documents |
+| opencosmos.ai (platform shell) | **This repo** (`apps/web/`) | The home of the entire project |
 | Portfolio, Creative Powerup, Stocks | **This repo** (`apps/`) | Consumer applications |
+| Knowledge base + RAG API | **This repo** (`apps/web/` + `knowledge/`) | Deployed to opencosmos.ai |
 | Cosmo AI (`@opencosmos/ai`) | **This repo** (`packages/ai/`) | Platform intelligence layer |
 
 **Key rule:** To modify a component, hook, or utility from `@opencosmos/ui` — work in [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui), not here. This repo consumes published packages.
@@ -58,7 +60,7 @@ opencosmos/
    git log -5 --oneline
    ```
 
-4. **If working on Cosmo AI:** Read [packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) for the voice and values, and [packages/ai/INCEPTION.md](packages/ai/INCEPTION.md) for historical technical context.
+4. **If working on Cosmo AI:** Read [packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md) for the voice and values, and [INCEPTION.md](docs/archive-and-deprecated/INCEPTION.md) for historical technical context.
 
 ---
 
@@ -94,10 +96,13 @@ The shared intelligence layer for the platform. **Read [COSMO_SYSTEM_PROMPT.md](
 - **Hardware:** Dell XPS 8950, RTX 3090, 64GB RAM, solar-powered in Marin County
 - **Models:** Apertus 8B/70B via Ollama, with cloud fallback tiers
 
-### Sovereignty Tiers
-- **Full:** Local inference on sovereign hardware
-- **Reduced:** Cloud fallback with explicit per-request consent
-- **Cloud-Assisted:** Metadata only (no inference)
+### Sovereignty Tiers (Compute)
+
+Sovereignty Tiers govern **compute** — where LLMs process prompts. The knowledge base is separate: it's cloud-primary (globally accessible) with a local mirror. See [Migration Phase 1d](docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+
+- **Tier 1 (Full Sovereignty):** All inference on local hardware. No external calls.
+- **Tier 2 (Reduced Capability):** Low-power mode (nighttime/low solar). Queries may be queued for sunrise.
+- **Tier 3 (Cloud-Assisted):** User opted in per-request. Prompt sent to external provider.
 
 ---
 
@@ -110,9 +115,34 @@ The shared intelligence layer for the platform. **Read [COSMO_SYSTEM_PROMPT.md](
 | App-specific utility | `apps/<app>/lib/` |
 | App-specific state store | `apps/<app>/store/` |
 | AI capabilities (shared) | `packages/ai/src/` |
-| Documentation | `docs/` |
+| Documentation | See "Document Organization" below |
 
 **Do NOT create `packages/ui/`, `packages/tokens/`, or `packages/mcp/` in this repo.** Those packages live in [opencosmos-ui](https://github.com/shalomormsby/opencosmos-ui).
+
+---
+
+## Document Organization
+
+Root should contain only the files every visitor or contributor needs immediately. Technical deep-dives, narratives, and transitional plans belong in `docs/`.
+
+### Where docs live
+
+| Location | What goes here | Max files |
+|----------|---------------|-----------|
+| **Root** | README, WELCOME, DESIGN-PHILOSOPHY, CHANGELOG, CONTRIBUTING | 5 |
+| **Root (agent context)** | AGENTS.md, .claude/CLAUDE.md | 2 |
+| **docs/** | Architecture, infrastructure decisions, migration plans, research, narrative history (chronicle), retrospectives | No limit |
+| **docs/archive-and-deprecated/** | Historical documents superseded by current work | No limit |
+| **knowledge/** | Anything that should be RAG-indexed — organized by role. See [knowledge/README.md](knowledge/README.md) for schema | No limit |
+| **packages/\*/** | Package-specific docs that live with their code (COSMO_SYSTEM_PROMPT.md, etc.) | As needed |
+
+### Edge cases
+
+- **New design pattern doc?** → `docs/` if it's about how we build; `knowledge/reference/` if it should be RAG-retrievable.
+- **Project retrospective?** → `docs/` — it's internal reflection, not corpus material.
+- **Philosophical essay?** → `knowledge/sources/` if it's original work; `knowledge/commentary/` if it's analysis of another work.
+- **Technical report (e.g., Apertus)?** → `knowledge/sources/` — it's a primary source document.
+- **Historical/superseded doc?** → `docs/archive-and-deprecated/` with a note at the top pointing to the current version.
 
 ---
 
@@ -262,7 +292,7 @@ Non-negotiable. Every UI must:
 
 ## Changelog
 
-Log significant changes in [CHANGELOG.md](CHANGELOG.md) with ISO timestamps. For the story behind the decisions, see [CHRONICLE.md](CHRONICLE.md).
+Log significant changes in [CHANGELOG.md](CHANGELOG.md) with ISO timestamps. For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 **Format:**
 ```markdown
@@ -305,8 +335,9 @@ When in doubt, ask Shalom.
 - **[WELCOME.md](WELCOME.md)** — The front door to OpenCosmos
 - **[DESIGN-PHILOSOPHY.md](DESIGN-PHILOSOPHY.md)** — The North Star
 - **[packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice and values
-- **[packages/ai/INCEPTION.md](packages/ai/INCEPTION.md)** — Historical AI founding blueprint
-- **[CHRONICLE.md](CHRONICLE.md)** — The story behind the decisions
+- **[docs/architecture.md](docs/architecture.md)** — Infrastructure decisions and service map
+- **[docs/chronicle.md](docs/chronicle.md)** — The story behind the decisions
+- **[docs/opencosmos-migration.md](docs/opencosmos-migration.md)** — Active migration plan
 - **[CHANGELOG.md](CHANGELOG.md)** — Work history
 - **[OpenCosmos/UI repo](https://github.com/shalomormsby/opencosmos-ui)** — Where the design system lives
 - **[opencosmos.ai](https://opencosmos.ai/)** — Interactive component documentation

@@ -1,4 +1,6 @@
 {
+    "buildCommand": "pnpm turbo run build --filter=creative-powerup",
+    "installCommand": "pnpm install",
     "git": {
         "ignoreCommand": "bash ignore-build.sh"
     }

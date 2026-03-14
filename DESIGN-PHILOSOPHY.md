@@ -212,7 +212,7 @@ This ecosystem demonstrates that:
 - `README.md` — Platform overview and getting started
 - `AGENTS.md` — Technical guide for AI agents (read this second)
 - `packages/ai/COSMO_SYSTEM_PROMPT.md` — Cosmo's voice and values
-- `packages/ai/INCEPTION.md` — Historical AI founding blueprint
+- `docs/archive-and-deprecated/INCEPTION.md` — Historical AI founding blueprint
 - `apps/[app-name]/README.md` — App-specific setup instructions
 - [OpenCosmos/UI](https://github.com/shalomormsby/opencosmos-ui) — Design system source repo
 
