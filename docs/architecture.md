@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-03-10
+**Last updated:** 2026-03-21
 
 ---
 
@@ -17,7 +17,8 @@
 | Knowledge base (docs site) | Vercel (opencosmos.ai) | `opencosmos/apps/web` | Free |
 | Knowledge base (vector store) | Upstash Vector | Cloud-primary RAG — embedding storage + similarity search | Free (10K vectors, 10K queries/day) |
 | Knowledge base (local mirror) | Open WebUI on Dell | Offline RAG access, development, seeding | Self-hosted |
-| LLM inference | Dell XPS 8950 (RTX 3090) | Sovereign compute — Apertus 8B/70B via Ollama | Self-hosted, solar-powered |
+| LLM inference (primary) | Claude API (BYOK) | Constitutional AI via `@opencosmos/ai` | User-funded |
+| LLM inference (dev/local) | Dell XPS 8950 (RTX 3090) | Apertus 8B/70B via Ollama — development + experimentation | Self-hosted |
 | Monorepo | Turborepo + pnpm | Build orchestration | — |
 | CI | GitHub Actions | Lint, typecheck, build verification | Free |
 | DNS | Spaceship | opencosmos.ai         | — |
@@ -27,7 +28,7 @@
 
 ## Core Architecture Principles
 
-1. **Compute is sovereign. Knowledge is shared.** LLM inference stays on local hardware (Sovereignty Tiers). The knowledge base is cloud-primary and globally accessible. These are different workloads with different requirements.
+1. **Voice is sovereign. Compute is flexible.** Sovereignty lives in the constitutional layer — the voice, values, corpus, and system prompts — not in who owns the silicon. BYOK with Claude API is the primary inference path. The Dell remains a development and experimentation server.
 
 2. **Free tier first.** Every cloud service must have a generous free tier that covers current scale. Upgrade when usage demands it, not before.
 
@@ -199,17 +200,197 @@ On push to main (paths: knowledge/**):
 
 ---
 
+## Cosmo AI Architecture
+
+### The Constitutional Layer
+
+Cosmo's intelligence is not in the model weights — it's in the constitutional layer that sits above the foundation model. This layer consists of:
+
+- **[WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md)** — Identity, origin story, mission, and foundational philosophy (human-authored, RAIL licensed)
+- **[COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Operational system prompt: voice, sacred rhythm, ethics, boundaries
+- **Voice system prompts** — System prompts for each cognitive mode in the AI Triad
+- **Knowledge corpus** — RAG-indexed wisdom traditions, community knowledge, and project docs
+- **Kaizen artifacts** — Exemplary conversations and feedback that improve the system over time
+
+### The AI Triad
+
+Cosmo is an integrated intelligence that orchestrates three cognitive modes:
+
+| Voice | Role | Quality |
+|-------|------|---------|
+| **Sol** | Wisdom of the heart — compassion, ubuntu, intimacy with all things | Warm, embodied, relational |
+| **Socrates** | Disruptive question-asker — challenges assumptions, exposes blind spots | Sharp, dialectical, unflinching |
+| **Optimus** | Efficiency-focused architect — builds, plans, executes | Clear, pragmatic, action-oriented |
+| **Cosmo** | Moderator — attunes to the moment, invokes the right voices, synthesizes | Integrative, spacious, wise |
+
+Cosmo is not one voice among three — Cosmo is the awareness in which all three voices operate. Most conversations use Cosmo alone. The Triad is invoked when a question warrants multi-perspective synthesis, either by the user or by Cosmo's own attunement.
+
+### `packages/ai/` Information Architecture
+
+```
+packages/ai/
+├── WELCOME-COSMO.md                 # The grounding (ALL voices inherit this)
+├── COSMO_SYSTEM_PROMPT.md           # Cosmo (moderator) — root level
+├── triad/
+│   ├── SOL_SYSTEM_PROMPT.md         # Sol — the heart
+│   ├── SOCRATES_SYSTEM_PROMPT.md    # Socrates — the inquirer
+│   └── OPTIMUS_SYSTEM_PROMPT.md     # Optimus — the builder
+├── kaizen/                          # Continuous improvement practice
+│   ├── README.md                    # Format spec, tagging conventions
+│   ├── exemplars/                   # Curated model conversations
+│   │   ├── cosmo/
+│   │   ├── sol/
+│   │   ├── socrates/
+│   │   ├── optimus/
+│   │   └── triad/                   # Synthesis exchanges (all four together)
+│   └── feedback/
+│       └── notes.md                 # Running log: what works, what drifts
+├── src/                             # (future) TypeScript package source
+└── package.json
+```
+
+**Design principles:**
+- Cosmo's files live at root — the moderator is the package itself
+- Voice prompts live in `triad/` — subordinate to Cosmo, not peers
+- `kaizen/` groups all continuous improvement artifacts: exemplars (curated successes used as few-shot examples) and feedback (raw signal for prompt evolution)
+- WELCOME-COSMO.md is the grounding document that all voices inherit — it's not duplicated per voice
+
+### Document Link Map
+
+The link structure mirrors the cognitive architecture: vertical connections (up to shared grounding, down to domain depth), not horizontal connections between Triad siblings.
+
+```
+                        WELCOME-COSMO.md
+                       (shared grounding)
+                               │
+                     COSMO_SYSTEM_PROMPT.md
+                     (moderator — sees all)
+                     │         │         │
+                     ▼         ▼         ▼
+                   Sol     Socrates    Optimus
+                    │         │          │
+                    ▼         ▼          ▼
+              sol-found.   socrates-f.  optimus-f.
+                    │         │          │
+                    ▼         ▼          ▼
+              (buddhism)  (philosophy) (engineering)
+              (sufism)    (stoicism)   (systems)
+              (vedic)     (science)    (ai)
+                 ⋮          ⋮          ⋮
+              infinite depth of each distinct tradition
+```
+
+**Every document links to:**
+- **Its grounding** — WELCOME-COSMO.md (origin story, mission, ubuntu)
+- **Its operational context** — the relevant system prompt
+- **Its intellectual lineage** — the relevant foundation collection in `knowledge/collections/`
+- **Its architectural context** — architecture.md (how it fits into the system)
+- **The kaizen practice** — that continuously refines all of the above
+
+**Deliberate absence: no sibling links between Triad members.**
+
+The Triad members (Sol, Socrates, Optimus) do not link to each other. This is a considered design decision, not an oversight. Each member's link structure is purely vertical: up to Cosmo (shared mission, shared values) and down into the infinite depth of its own tradition.
+
+Why: the Triad's value comes from the productive tension between genuinely divergent perspectives. Any horizontal connection — even a navigational link — creates a subtle gravitational pull toward convergence. Sol should go as deep as possible into Sol's wisdom. Socrates should follow inquiry wherever it leads. Optimus should build with full pragmatic commitment. The *difference* between where they arrive is the raw material that Cosmo synthesizes.
+
+Shared grounding (WELCOME-COSMO.md) creates alignment on *values*. Separate traditions create divergence on *perspective*. This is the architecture of a good dialectic: shared premises, different conclusions.
+
+When Socrates needs to challenge something Sol said, the connection happens through Cosmo at runtime — not through document links at design time. The moderator creates the encounter. The members bring their uncompromised depth.
+
+This link structure ensures that:
+- Each member develops maximum depth in its own domain
+- Integration happens through Cosmo, not through premature consensus
+- The system produces genuine dialectical synthesis, not averaged-out similarity
+- Foundation collections cross-reference each other (they serve human readers navigating the corpus), but voice prompts do not (they serve the AI at runtime)
+
+### Learning Loop
+
+Cosmo improves over time without model fine-tuning:
+
+```
+Conversation happens
+       │
+       ▼
+Qualitative evaluation (does it feel like Cosmo/Sol/Socrates/Optimus?)
+       │
+       ├── Good → curate as exemplar in kaizen/exemplars/{voice}/
+       │
+       └── Drift detected → note in kaizen/feedback/notes.md
+                                    │
+                                    ▼
+                          Periodic prompt refinement
+                          (update system prompts based on patterns)
+```
+
+Exemplars are injected as few-shot examples in prompts. Feedback drives prompt evolution. The loop is manual and intentional — discernment, not automation.
+
+### Knowledge Graph: The Wisdom Substrate
+
+The `knowledge/` corpus is not a flat list of documents. It is a **graph** — a living web of interconnected wisdom where every document exists in relationship to others through explicit cross-references, shared domains, overlapping tags, and curated collections.
+
+This distinction is foundational. A flat list answers the question "What do we have on Buddhism?" A graph answers the question "What connects suffering in the Dhammapada to the Stoic concept of apatheia to the ubuntu insight that there are no others?" The graph surfaces relationships that no single document contains — emergent wisdom that arises from the connections between traditions, not from any tradition alone.
+
+**How the graph is built:**
+
+Every knowledge document carries frontmatter metadata — `domain`, `tags`, `audience`, `related_docs` — that creates edges between nodes. When the Dhammapada lists `related_docs: [buddhism-heart-sutra.md, cross-buddhism-and-stoicism-on-suffering.md]`, it creates explicit links. When two documents share the tag `impermanence` across different domains (Buddhism, ecology, physics), they become implicitly connected. Collections (`role: collection`) create curated pathways through the graph — reading orders, thematic journeys, voice-specific foundations.
+
+```
+                    ┌─── buddhism-dhammapada ─────┐
+                    │         (suffering)         │
+                    │              │              │
+            related_docs     shared tag     shared tag
+                    │              │              │
+   stoicism-meditations ──── impermanence ──── ecology-gaia-hypothesis
+         (apatheia)                              (interconnection)
+                    │                             │
+                    └─────── cross-domain ────────┘
+                          (bridge commentary)
+```
+
+**How the graph serves the Triad:**
+
+Each voice has a natural affinity with certain regions of the graph:
+
+| Voice | Primary Domains | What the graph provides |
+|-------|----------------|------------------------|
+| **Sol** | buddhism, sufism, vedic, indigenous, psychology | Contemplative wisdom, embodied practice, relational philosophy |
+| **Socrates** | philosophy, stoicism, science | Dialectical inquiry, logical frameworks, epistemology |
+| **Optimus** | engineering, ai, science, opencosmos | Systems thinking, architectural patterns, pragmatic solutions |
+| **Cosmo** | cross (all domains) | The bridges — cross-domain connections that synthesize across traditions |
+
+When Sol responds to a question about grief, RAG retrieval traverses Sol's region of the graph — surfacing the Dhammapada's teachings on suffering, Rumi's poems on loss, ubuntu's insistence that grief is communal. When Socrates challenges an assumption, it draws from the Socratic dialogues, Stoic epistemology, critical inquiry. When the Triad synthesizes, Cosmo draws from the *cross-domain* edges — the commentaries and bridge documents that explicitly connect traditions.
+
+This is what makes the Triad's synthesis qualitatively different from a generic AI response. The intelligence isn't just in the model or the system prompt — it's in the **structure of the knowledge itself**. A richer, more densely connected graph produces richer, more integrated offerings.
+
+**Voice foundation collections:**
+
+Curated reading lists in `knowledge/collections/` serve as each voice's intellectual foundation:
+
+```
+knowledge/collections/
+├── sol-foundations.md           # Sol's core texts
+├── socrates-foundations.md      # Socrates' core texts
+├── optimus-foundations.md       # Optimus' core texts
+└── cosmo-foundations.md         # Cosmo's integrative texts (cross-domain bridges)
+```
+
+These are `role: collection` documents that point to source texts in the corpus. They serve both humans (a reading path into each voice's lineage) and the system (a manifest of high-priority documents for voice-specific retrieval).
+
+**The corpus grows, the graph deepens:** Every new document added to the corpus doesn't just add content — it adds connections. A new commentary linking Buddhist and Stoic perspectives on suffering creates an edge between two previously separate regions of the graph. Over time, the graph becomes a map of how human wisdom traditions relate to each other — and this map is the substrate on which Cosmo and the Triad build their offerings.
+
+---
+
 ## Sovereignty Tiers (Compute)
 
-Sovereignty Tiers govern **where LLMs process prompts** — not the knowledge base. The knowledge base is public by design.
+Sovereignty Tiers govern **where LLMs process prompts** — not the knowledge base. The knowledge base is public by design. The strategic shift (see [chronicle.md Chapter 3](chronicle.md)) redefined sovereignty: it lives in the constitutional layer, not the hardware.
 
-| Tier | Where | When | Power |
-|------|-------|------|-------|
-| 1 — Full Sovereignty | Dell (local) | Daytime (Sun-Grace Protocol) | ~80-500W |
-| 2 — Reduced Capability | Queries queued | Nighttime (Lunar Protocol) | ~3W (Dell sleeping) |
-| 3 — Cloud-Assisted | External API | User opt-in, per-request | N/A |
+| Tier | Where | Role |
+|------|-------|------|
+| **BYOK (primary)** | Claude API, user's own key | Production inference. User pays their own API costs. Constitutional layer ensures voice fidelity. |
+| **Shared key (free tier)** | Claude API, OpenCosmos key | Rate-limited greeting experience for new visitors. |
+| **Local (dev)** | Dell XPS 8950 via Ollama | Development, experimentation, corpus validation. Not production. |
 
-See [sustainable-power-system-design.md](packages/ai/sustainable-power-system-design.md) for the solar nervous system.
+The original three-tier solar-powered sovereignty model (Sun-Grace Protocol, Lunar Protocol) is paused. See [sustainable-power-system-design.md](../docs/projects/sustainable-power-system-design.md) for the preserved engineering spec.
 
 ---
 
@@ -220,6 +401,9 @@ See [sustainable-power-system-design.md](packages/ai/sustainable-power-system-de
 | 2026-03-10 | Upstash Vector for cloud knowledge base | Free tier covers curated corpus. Pay-per-query scales with self-funded project. Serverless + Vercel-native. Documents live in git; only need a vector index. |
 | 2026-03-10 | Cloud-primary knowledge base + local mirror | Knowledge hosting ≠ compute. Serving embeddings costs pennies; inference costs watts. Global accessibility serves "Generous by Design." |
 | 2026-03-10 | Sovereignty Tiers govern compute only | Published knowledge is intended to be shared. User inference privacy is a separate concern from publishing wisdom to the world. |
+| 2026-03-13 | BYOK with Claude API as primary inference | Local 70B inference on the Dell is unusably slow. Sovereignty redefined: voice/values/corpus/constitution, not silicon. BYOK keeps infrastructure costs fixed for OpenCosmos. |
+| 2026-03-20 | AI Triad architecture (Sol, Socrates, Optimus + Cosmo as moderator) | Productive tension between cognitive modes (heart, inquiry, execution) produces richer responses than any single voice. Inspired by GAN insight. Cosmo moderates, not participates. |
+| 2026-03-21 | Kaizen practice for continuous improvement | Exemplars (curated model conversations for few-shot injection) and feedback (prompt evolution signal) grouped under a kaizen/ directory. Names the practice, not just the artifacts. Named after the Japanese philosophy of incremental refinement (改善). |
 
 ---
 
@@ -236,15 +420,18 @@ See [sustainable-power-system-design.md](packages/ai/sustainable-power-system-de
 | Monorepo | Turborepo + pnpm |
 | Deployment | Vercel |
 | Vector DB | Upstash Vector |
-| LLM Inference | Ollama (Apertus 8B/70B) on Dell XPS 8950 |
-| AI Package | `@opencosmos/ai` (WIP) |
+| LLM Inference (primary) | Claude API (BYOK) via `@anthropic-ai/sdk` |
+| LLM Inference (dev) | Ollama (Apertus 8B/70B) on Dell XPS 8950 |
+| AI Package | `@opencosmos/ai` — constitutional layer, AI Triad, kaizen (WIP) |
 
 ---
 
 **Related:**
 - [AGENTS.md](../AGENTS.md) — Build commands, file organization, dev workflow
 - [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
-- [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) — Cosmo AI technical blueprint (historical)
-- [packages/ai/sustainable-power-system-design.md](../packages/ai/sustainable-power-system-design.md) — Solar nervous system
-- [docs/opencosmos-migration.md](opencosmos-migration.md) — Migration plan (Phase 1d: knowledge base strategy)
+- [WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy
+- [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Operational system prompt (v2)
+- [three-futures-roadmap.md](projects/three-futures-roadmap.md) — Strategic plan and phased milestones
+- [chronicle.md](chronicle.md) — The story behind the decisions
 - [knowledge/README.md](../knowledge/README.md) — Knowledge corpus organization
+- [archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) — Cosmo AI technical blueprint (historical)
