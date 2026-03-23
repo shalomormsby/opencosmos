@@ -277,6 +277,34 @@ If you're authoring or curating a document for OpenCosmos Knowledge, follow thes
 
 ## How to Add a Document
 
+The recommended workflow uses the **publication CLI**, which handles frontmatter generation, cross-referencing, curation logging, collection linking, and safe git operations automatically:
+
+```bash
+# 1. Drop your text into the staging area
+pbpaste > knowledge/incoming/my-document.md
+
+# 2. Run the CLI (Claude generates all metadata)
+pnpm knowledge:publish knowledge/incoming/my-document.md --role source --domain buddhism
+
+# 3. Review the generated frontmatter, accept or edit, done.
+```
+
+The CLI will:
+- Generate enriched frontmatter via Claude API (title, role, format, domain, tags, audience, complexity, summary, author, era, tradition)
+- Suggest cross-references based on tag/domain overlap with existing corpus
+- Write to the correct location (`knowledge/{role}s/{domain}-{slug}.md`)
+- Append to `CURATION_LOG.md` with gaps served and graph impact
+- Auto-link foundation collection placeholders
+- Create a safe git branch, commit, and push
+
+Use `--accept` to skip interactive review. Use `--pr` to auto-create a GitHub PR. Use `--dry-run` to preview without writing. See [guides/opencosmos-knowledge-publish-workflow.md](guides/opencosmos-knowledge-publish-workflow.md) for the full workflow.
+
+**To check corpus health:** `pnpm knowledge:health` shows domain coverage, role gaps, foundation progress, cross-reference integrity, islands, and import priorities.
+
+### Manual Process
+
+If you prefer to add documents manually:
+
 1. **Determine the role.** Is this a primary source, commentary, reference, guide, or collection? Place it in the corresponding folder.
 
 2. **Choose the domain.** What tradition or discipline does it primarily belong to? Use existing domain codes if possible. If none fit, propose a new one.
@@ -288,8 +316,6 @@ If you're authoring or curating a document for OpenCosmos Knowledge, follow thes
 5. **Structure the content.** Follow the writing guidelines above. Heading hierarchy, summary sentences, inline definitions, 200-800 token sections.
 
 6. **Add cross-references.** In the `related_docs` field, link to other documents in the corpus that share themes, contrast perspectives, or provide context.
-
-7. **Upload.** Add the document to the cloud knowledge base. The local Open WebUI mirror on the Sovereign Node will sync automatically. (See [guides/opencosmos-knowledge-publish-workflow.md](guides/opencosmos-knowledge-publish-workflow.md) for the full workflow.)
 
 ---
 

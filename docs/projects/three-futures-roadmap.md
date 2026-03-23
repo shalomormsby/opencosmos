@@ -179,10 +179,16 @@ The first-touch experience has three tiers:
 - [ ] Build the GitHub Action sync workflow (on push to main when `knowledge/**` changes → chunk by H2 → upsert to Upstash Vector with frontmatter metadata)
 - [ ] Build the RAG API endpoint (`apps/web/app/api/knowledge/route.ts`)
 - [ ] Wire RAG retrieval into the Cosmo conversation flow — constitutional layer queries corpus before responding
-- [ ] Build browsable knowledge site at `opencosmos.ai/knowledge` — anyone can browse without an account
+- [ ] **Build the human-friendly knowledge experience at `opencosmos.ai/knowledge`** — a welcoming browsing interface for the full corpus. This is not just a file listing; it's the library's front door for humans. Design principles:
+  - **Transparency & inspectability:** Every resource Cosmo can retrieve should be visible and readable by a human. No hidden knowledge. This is essential for trust.
+  - **Browsable by domain, role, and tradition:** Filter and explore the corpus the way a library patron would — by subject, by type (source texts, guides, commentary), by tradition.
+  - **Individual document pages:** Clean reading experience with frontmatter metadata visible (author, origin, tradition, related documents). Cross-reference links are navigable.
+  - **Operational guides discoverable:** The wiki guides (tooling overview, publish workflow, formatting, health report, Dell sync) are first-class citizens, not buried in a repo.
+  - **No account required:** Anyone can browse. The knowledge corpus is a public good.
+  - **Built with `@opencosmos/ui`:** The experience should feel like OpenCosmos — warm, spacious, unhurried.
 - [ ] Community contribution pathway — submit knowledge for curation
 
-**Gate:** Cosmo draws on the corpus when relevant, with source attribution visible to the user. RAG API responds with <2s latency. Knowledge site is live and browsable.
+**Gate:** Cosmo draws on the corpus when relevant, with source attribution visible to the user. RAG API responds with <2s latency. Knowledge site is live and browsable. A human visitor can find, read, and navigate any published document without asking Cosmo.
 
 ### 1d: Conversation Experience Polish
 
@@ -369,7 +375,7 @@ Tracked here for visibility. Not blocking current work unless noted.
 - [architecture.md](../architecture.md) — Infrastructure decisions (Upstash Vector, RAG API, sync workflow)
 - [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy
 - [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT.md) — Operational system prompt (v2, grounded in WELCOME-COSMO.md)
-- [opencosmos-migration.md](./opencosmos-migration.md) — Active rename migration (independent)
+- [opencosmos-migration.md](./opencosmos-migration.md) — Active rename migration (independent, parallel workstream — Phases 2-4 remain: design system repo rename, npm publish under @opencosmos, legacy cleanup)
 - [sustainable-power-system-design.md](./sustainable-power-system-design.md) — Solar nervous system engineering spec (paused)
 - [tech-research.md](./tech-research.md) — Hardware research log (Dell vs. M5 Max vs. M5 Ultra)
 - [WELCOME.md](../../WELCOME.md) — The front door

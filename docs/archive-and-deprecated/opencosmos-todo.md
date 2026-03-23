@@ -1,10 +1,10 @@
-# Cosmo AI — Task Tracker
+# Cosmo AI — Task Tracker (Archived)
 
-> **Superseded by [three-futures-roadmap.md](./three-futures-roadmap.md).** This document reflects the original Dell-as-centerpiece vision. The Three Futures Roadmap absorbs uncompleted items within the updated strategic framework. This file is preserved for historical reference.
+> **This file is superseded by [The Three Futures Roadmap](../../docs/projects/three-futures-roadmap.md)** — the authoritative, phased project plan for OpenCosmos. All active planning, sequencing, and tracking lives there. This file is preserved for historical reference only.
+>
+> For vision, architecture, and design rationale, see [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md) (historical). For the knowledge base hosting strategy, see [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
 
-> ~~Active task management for Cosmo AI development.~~ For vision, architecture, and design rationale, see [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md) (historical). For the knowledge base hosting strategy, see [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
-
-**Last updated:** 2026-03-13
+**Last updated:** 2026-03-13 · **Superseded:** 2026-03-14
 
 ---
 
