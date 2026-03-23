@@ -35,6 +35,9 @@ pnpm-debug.log*
 coverage/
 .nyc_output/
 
+# Knowledge staging (raw files before curation)
+knowledge/incoming/
+
 # Misc
 *.tsbuildinfo
 .cache/
