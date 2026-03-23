@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-03-21
+**Last updated:** 2026-03-22
 
 ---
 
@@ -43,14 +43,17 @@
 The knowledge base serves two audiences through two interfaces, backed by one source of truth.
 
 ```
-Author writes .md content
+Author writes .md content → knowledge/incoming/ (staging)
        │
        ▼
 Publication CLI (pnpm knowledge:publish)
-  ├─ LLM generates frontmatter (Apertus local → Claude API → manual)
-  ├─ Author reviews + confirms
-  ├─ Git commit + push
-  └─ Upload to Open WebUI (Dell, if reachable)
+  ├─ 1. Claude API generates enriched frontmatter (author, era, tradition…)
+  ├─ 2. Author reviews (accept / edit in $EDITOR / cancel)
+  ├─ 3. Cross-reference suggestions (auto-populates related_docs)
+  ├─ 4. Writes to knowledge/{role}s/{domain}-{slug}.md
+  ├─ 5. Appends to CURATION_LOG.md + auto-links collection placeholders
+  ├─ 6. Safe git: branch → commit → push → optional PR
+  └─ 7. Cleans up source from incoming/
        │
        ▼
 knowledge/ (git, source of truth — this repo)
@@ -59,7 +62,9 @@ knowledge/ (git, source of truth — this repo)
        │                            ↑
        │                 RAG API (apps/web/app/api/knowledge/)
        │
-       └──→ Vercel build ──→ opencosmos.ai/knowledge (apps/web)
+       ├──→ Vercel build ──→ opencosmos.ai/knowledge (apps/web)
+       │
+       └──→ pnpm knowledge:sync-dell (on-demand) ──→ Open WebUI on Dell
 ```
 
 Both the RAG API and the knowledge docs site live in this repo's `apps/web`, deployed to opencosmos.ai.
@@ -99,49 +104,76 @@ Full schema and domain codes: [knowledge/README.md](../knowledge/README.md). Age
 
 ### Publication CLI (`scripts/publish-knowledge.ts`)
 
-A lightweight CLI tool that automates the full knowledge publication workflow. The author's job is to write the content; the CLI handles metadata, git, cloud sync, and local mirror.
+A CLI tool that automates the full knowledge publication workflow — from raw text to graph-connected, git-committed, curation-logged document. The author's job is to write the content; the CLI handles metadata, cross-references, curation logging, collection linking, and safe git operations.
+
+**Modular architecture:** The CLI is composed from focused modules in `scripts/knowledge/`:
+- `shared.ts` — Types, constants, corpus scanning, slugify
+- `frontmatter.ts` — Claude API generation, review UI, cross-reference suggestions
+- `git.ts` — Safe git operations (never pushes to main, never uses destructive ops)
 
 **Workflow:**
 
 ```
-Author writes content (no frontmatter)
+Author copies text → knowledge/incoming/{name}.md (staging, gitignored)
          │
          ▼
-pnpm knowledge:publish <file-or-directory> [--role source] [--domain buddhism]
+pnpm knowledge:publish knowledge/incoming/*.md [--role source] [--domain buddhism]
          │
-         ├─ 1. Read the .md content
-         ├─ 2. LLM generates frontmatter suggestions (title, role, format,
-         │     domain, tags, audience, complexity, summary)
-         ├─ 3. Write draft with frontmatter → open for author review
-         ├─ 4. Author confirms or edits
-         │
-         ▼  On confirmation:
-         ├─ 5. Write final file to knowledge/{role}s/{domain}-{slug}.md
-         ├─ 6. Git add + commit + push → triggers GitHub Action (Upstash sync + Vercel rebuild)
-         └─ 7. Upload to Open WebUI on Dell (if reachable via Tailscale)
+         ├─ 1. Safety check (blocks if uncommitted tracked changes exist)
+         ├─ 2. Claude API generates enriched frontmatter:
+         │     core: title, role, format, domain, tags, audience, complexity, summary, source
+         │     enriched: author, origin_date, era, tradition
+         │     curation: gaps_served, graph_impact (for curation log, not stored in frontmatter)
+         ├─ 3. Author reviews (accept all / edit in $EDITOR / cancel)
+         ├─ 4. Cross-reference suggestions:
+         │     scores existing corpus by tag overlap (2x), domain match (1x),
+         │     audience overlap (0.5x), tradition (1x), era (0.5x)
+         │     → auto-populates related_docs, reports bidirectional suggestions,
+         │       warns if document would be an island (zero connections)
+         ├─ 5. Writes to knowledge/{role}s/{domain}-{slug}.md
+         ├─ 6. Appends entry to knowledge/CURATION_LOG.md
+         ├─ 7. Auto-links foundation collection placeholders:
+         │     "- [ ] The Dhammapada" → "- [x] [The Dhammapada](../sources/…)"
+         ├─ 8. Safe git: branch → commit → push → optional PR
+         └─ 9. Cleans up source files from incoming/
 ```
 
-**Metadata generation (LLM-assisted):**
-- Sends document content + the frontmatter schema + domain/format/role taxonomies to an LLM
-- LLM returns structured suggestions for all frontmatter fields
-- Author reviews and can override any field before confirmation
-- Falls back to manual entry if LLM is unavailable
-
-**LLM provider options (in priority order):**
-1. **Local Apertus** (via Ollama on Dell) — sovereign, free, no data leaves. Used when Dell is reachable on Tailscale.
-2. **Claude API** — higher quality suggestions. Used when Dell is offline or for complex documents. Requires `ANTHROPIC_API_KEY`.
-3. **Manual** — author fills in frontmatter by hand. Always available as fallback.
+**Graph-weaving:** The CLI transforms publication from filing a document to weaving it into the knowledge graph. Every publish adds not just content but connections — explicit `related_docs` cross-references, curation log entries with "gaps served" and "graph impact," and auto-linked collection placeholders.
 
 **CLI flags:**
-- `--role <role>` — pre-set the role (skips LLM suggestion for this field)
+- `--role <role>` — pre-set the role
 - `--domain <domain>` — pre-set the domain
-- `--dry-run` — generate frontmatter and show the result without writing, committing, or uploading
-- `--no-push` — write and commit locally but don't push (for batching multiple documents)
-- `--no-webui` — skip the Open WebUI upload step
+- `--accept` — accept Claude's frontmatter suggestions without interactive review
+- `--branch <name>` — custom git branch name (default: `knowledge/{date}-{slug}`)
+- `--pr` — create a GitHub PR after pushing
+- `--dry-run` — preview without writing, committing, or pushing
+- `--no-push` — commit locally but don't push
+- `--no-clean` — keep source files in `knowledge/incoming/` after publish
 
 **Location:** `scripts/publish-knowledge.ts`, registered as `pnpm knowledge:publish` in root `package.json`.
 
-**Dependencies:** `gray-matter` (frontmatter parsing), `@anthropic-ai/sdk` (Claude API, optional), `inquirer` (interactive review prompts).
+**Dependencies:** `gray-matter` (frontmatter parsing), `@anthropic-ai/sdk` (Claude API), `@inquirer/prompts` (interactive review).
+
+### Corpus Health Report (`scripts/knowledge-health.ts`)
+
+A diagnostic tool that provides the overhead map of the corpus — which shelves are full, which are empty, where pathways exist and where they don't.
+
+```bash
+pnpm knowledge:health
+```
+
+**Output sections:**
+- **Overview** — document count, domain coverage, graph density
+- **Domain coverage** — visual bar chart of documents per domain, empty domains flagged
+- **Role coverage** — sources vs commentary vs reference vs guides vs collections
+- **Foundation collection progress** — how many placeholder entries have been imported (scans `- [ ]` vs `- [x]` in collection files)
+- **Cross-reference integrity** — validates all `related_docs` point to existing files, flags broken refs
+- **Islands** — documents with zero incoming references (no other doc's `related_docs` points to them)
+- **Import priority** — top texts to import next, scored by collection placeholder count and domain coverage
+
+### Curation Log (`knowledge/CURATION_LOG.md`)
+
+A living record of what was added, when, why it matters, and what it connects. Auto-appended by the publication CLI on each publish. Each entry includes metadata, related docs, gaps served, and graph impact. Not an audit trail — a curatorial narrative.
 
 **Why Upstash Vector:**
 - Free tier (10K vectors, 10K queries/day) covers a curated corpus indefinitely
@@ -155,7 +187,7 @@ pnpm knowledge:publish <file-or-directory> [--role source] [--domain buddhism]
 - User data or accounts (not needed yet)
 - Full-text search (the docs site handles human browsing)
 
-**Local mirror:** Open WebUI's built-in RAG on the Dell Sovereign Node. Syncs from the same `knowledge/` source. Used for offline access, development, and validating retrieval patterns before cloud deployment.
+**Dell sync (separate command):** Open WebUI's built-in RAG on the Dell Sovereign Node. Decoupled from the publish flow — sync on-demand with `pnpm knowledge:sync-dell` when the Dell is powered on and reachable via Tailscale. Used for offline access, development, and validating retrieval patterns.
 
 ### RAG API Endpoint
 
@@ -404,6 +436,7 @@ The original three-tier solar-powered sovereignty model (Sun-Grace Protocol, Lun
 | 2026-03-13 | BYOK with Claude API as primary inference | Local 70B inference on the Dell is unusably slow. Sovereignty redefined: voice/values/corpus/constitution, not silicon. BYOK keeps infrastructure costs fixed for OpenCosmos. |
 | 2026-03-20 | AI Triad architecture (Sol, Socrates, Optimus + Cosmo as moderator) | Productive tension between cognitive modes (heart, inquiry, execution) produces richer responses than any single voice. Inspired by GAN insight. Cosmo moderates, not participates. |
 | 2026-03-21 | Kaizen practice for continuous improvement | Exemplars (curated model conversations for few-shot injection) and feedback (prompt evolution signal) grouped under a kaizen/ directory. Names the practice, not just the artifacts. Named after the Japanese philosophy of incremental refinement (改善). |
+| 2026-03-22 | Knowledge CLI v2: graph-weaving publication | Publication transforms from filing to graph-weaving. Enriched frontmatter (author, era, tradition), auto cross-references, curation log, collection auto-linking, corpus health report. Every publish adds connections, not just content. Dell sync decoupled to on-demand `pnpm knowledge:sync-dell`. |
 
 ---
 

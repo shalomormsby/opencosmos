@@ -7,7 +7,8 @@
         "build": "turbo run build",
         "lint": "turbo run lint",
         "knowledge:publish": "tsx scripts/publish-knowledge.ts",
-        "knowledge:sync-dell": "tsx scripts/sync-dell.ts"
+        "knowledge:sync-dell": "tsx scripts/sync-dell.ts",
+        "knowledge:health": "tsx scripts/knowledge-health.ts"
     },
     "devDependencies": {
         "@inquirer/prompts": "^8.3.0",

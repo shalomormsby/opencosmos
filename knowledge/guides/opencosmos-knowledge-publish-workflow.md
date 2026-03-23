@@ -13,6 +13,11 @@ summary: >
 curated_at: 2026-03-22
 curator: shalom
 source: original
+related_docs:
+  - guides/opencosmos-knowledge-tooling-overview.md
+  - guides/opencosmos-knowledge-formatting-guide.md
+  - guides/opencosmos-knowledge-health-report.md
+  - guides/opencosmos-knowledge-dell-sync.md
 ---
 
 # Publishing to the Knowledge Base
@@ -48,6 +53,14 @@ This guide walks you through the full workflow for adding a document to the Open
    pnpm knowledge:publish knowledge/incoming/dhammapada.md --accept
    ```
 
+   Or auto-import everything in the inbox at once:
+
+   ```bash
+   pnpm knowledge:publish --accept
+   ```
+
+   When no files are specified, the CLI automatically discovers all `.md` files in `knowledge/incoming/` and processes them.
+
 4. **Review and merge.** The CLI creates a branch and pushes it. Add `--pr` to auto-create a GitHub PR, or create one manually.
 
 That's it. The CLI generates frontmatter via Claude, writes the file to the correct location in `knowledge/`, creates a safe git branch, commits, and pushes.
@@ -69,8 +82,10 @@ See the full guidelines in the [knowledge README](../README.md).
 From the repository root:
 
 ```bash
-pnpm knowledge:publish <file...>
+pnpm knowledge:publish [file...]
 ```
+
+If no files are specified, the CLI auto-imports all `.md` files from `knowledge/incoming/`.
 
 ### Options
 
@@ -85,6 +100,12 @@ pnpm knowledge:publish <file...>
 | `--no-push` | Commit locally but skip pushing to remote |
 
 ### Examples
+
+Auto-import everything in the inbox:
+
+```bash
+pnpm knowledge:publish --accept
+```
 
 Publish a Buddhist source text:
 
@@ -120,7 +141,12 @@ Before doing anything, the CLI checks for uncommitted changes to tracked files. 
 
 ### Step 2: Generate frontmatter
 
-The CLI sends your content to Claude API to generate metadata suggestions (title, role, format, domain, tags, audience, complexity, summary, source). Requires `ANTHROPIC_API_KEY` in your `.env`. If no API key is available, you fill in fields manually.
+The CLI sends your content to Claude API to generate metadata suggestions including:
+- Core fields: title, role, format, domain, tags, audience, complexity, summary, source
+- Enriched fields: author, origin_date, era, tradition (generated automatically when applicable)
+- Curation metadata: gaps_served, graph_impact (used in the curation log, not stored in frontmatter)
+
+Requires `ANTHROPIC_API_KEY` in your `.env`. If no API key is available, you fill in fields manually.
 
 ### Step 3: Review
 
@@ -132,7 +158,11 @@ You see all the suggested frontmatter at once and choose:
 
 Or use `--accept` to skip this step entirely and trust Claude's output.
 
-### Step 4: Write the file
+### Step 4: Cross-reference suggestions
+
+The CLI scans all existing corpus documents and suggests `related_docs` based on tag overlap, domain match, audience overlap, tradition, and era. It also reports which existing documents should add the new document to their `related_docs` (bidirectional suggestion). If the document has zero connections, it warns that it would be an "island."
+
+### Step 5: Write the file
 
 The CLI writes the final document (frontmatter + content) to:
 
@@ -146,12 +176,20 @@ For example, a Buddhist source text titled "The Dhammapada" becomes:
 knowledge/sources/buddhism-the-dhammapada.md
 ```
 
-### Step 5: Safe git workflow
+### Step 6: Curation log + Collection auto-linking
+
+The CLI appends an entry to `knowledge/CURATION_LOG.md` with the document's metadata, gaps served, and graph impact.
+
+If the document's title matches an unchecked placeholder in a foundation collection (e.g., `- [ ] The Dhammapada` in sol-foundations.md), the CLI updates the checkbox to a link: `- [x] [The Dhammapada](../sources/buddhism-the-dhammapada.md)`.
+
+Both changes are included in the same commit.
+
+### Step 7: Safe git workflow
 
 The CLI creates a **new branch** (never pushes to main), commits the file(s), and pushes:
 
 1. Creates branch `knowledge/{date}-{slug}` (or custom name with `--branch`)
-2. Stages only the published files (never `git add .`)
+2. Stages only the published files, curation log, and updated collections (never `git add .`)
 3. Commits with message: `docs(knowledge): add {domain} {role} — {title}`
 4. Pushes to remote
 5. Optionally creates a PR (with `--pr`)
@@ -163,6 +201,16 @@ After pushing, the branch triggers:
 
 - **GitHub Action** — syncs the document to Upstash Vector (embeddings for RAG retrieval)
 - **Vercel rebuild** — updates the knowledge section at opencosmos.ai (once the PR is merged)
+
+## Corpus Health Report
+
+Run `pnpm knowledge:health` to see the overhead map of the corpus:
+
+```bash
+pnpm knowledge:health
+```
+
+Shows: document count, domain/role coverage, foundation collection progress, cross-reference integrity, island detection, and import priority suggestions (top texts to add next based on collection placeholders and domain gaps).
 
 ## Dell Sync (Separate Command)
 
