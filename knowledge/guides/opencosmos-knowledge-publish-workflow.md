@@ -9,8 +9,8 @@ complexity: foundational
 summary: >
   Step-by-step guide to publishing documents to the OpenCosmos knowledge base
   using the publication CLI. Covers writing content, generating frontmatter,
-  reviewing metadata, and understanding the automated git and sync workflow.
-curated_at: 2026-03-12
+  reviewing metadata, and the safe branch-based git workflow.
+curated_at: 2026-03-22
 curator: shalom
 source: original
 ---
@@ -19,11 +19,42 @@ source: original
 
 This guide walks you through the full workflow for adding a document to the OpenCosmos knowledge base using the publication CLI.
 
-## Before You Start
+## Quick Start
 
-You need a markdown file containing the content you want to publish. Write the content only — no frontmatter. The CLI will generate frontmatter suggestions for you.
+1. **Copy your text.** Find the source text you want to add (a webpage, PDF, book excerpt, etc.) and copy the content to your clipboard.
 
-Best practices for preparing files to add to the corpus:
+2. **Create a markdown file.** Save it anywhere — a good default is the `knowledge/incoming/` directory at the repo root:
+
+   ```bash
+   # Create the staging directory if it doesn't exist
+   mkdir -p knowledge/incoming
+
+   # Create your file and paste the content
+   # (or use your editor — VS Code, vim, etc.)
+   pbpaste > knowledge/incoming/dhammapada.md
+   ```
+
+   The file should contain only the text content — no frontmatter, no metadata. Just the words. The CLI will handle the rest.
+
+3. **Run the CLI.** From the repository root:
+
+   ```bash
+   pnpm knowledge:publish knowledge/incoming/dhammapada.md --role source --domain buddhism
+   ```
+
+   Or let Claude figure out the metadata for you:
+
+   ```bash
+   pnpm knowledge:publish knowledge/incoming/dhammapada.md --accept
+   ```
+
+4. **Review and merge.** The CLI creates a branch and pushes it. Add `--pr` to auto-create a GitHub PR, or create one manually.
+
+That's it. The CLI generates frontmatter via Claude, writes the file to the correct location in `knowledge/`, creates a safe git branch, commits, and pushes.
+
+## Preparing Content
+
+The CLI needs a `.md` file with content only — no frontmatter needed. A few guidelines:
 
 - One topic per document, one idea per section
 - Use H2 headings for major sections or chapters
@@ -38,7 +69,7 @@ See the full guidelines in the [knowledge README](../README.md).
 From the repository root:
 
 ```bash
-pnpm knowledge:publish <path-to-your-file.md>
+pnpm knowledge:publish <file...>
 ```
 
 ### Options
@@ -47,9 +78,11 @@ pnpm knowledge:publish <path-to-your-file.md>
 |------|-------------|
 | `--role <role>` | Pre-set the document role (source, commentary, reference, guide, collection) |
 | `--domain <domain>` | Pre-set the domain (buddhism, stoicism, ecology, opencosmos, etc.) |
+| `--accept` | Accept Claude's frontmatter suggestions without interactive review |
+| `--branch <name>` | Custom git branch name (default: `knowledge/{date}-{slug}`) |
+| `--pr` | Create a GitHub PR after pushing |
 | `--dry-run` | Show the generated frontmatter and final document without writing anything |
-| `--no-push` | Commit locally but skip pushing to remote (useful when batching multiple documents) |
-| `--no-webui` | Skip the Open WebUI upload step |
+| `--no-push` | Commit locally but skip pushing to remote |
 
 ### Examples
 
@@ -65,35 +98,39 @@ Preview what the CLI would generate without writing anything:
 pnpm knowledge:publish ~/drafts/essay.md --dry-run
 ```
 
-Batch multiple documents (commit each, push once at the end):
+Publish multiple documents at once (one branch, one commit, one PR):
 
 ```bash
-pnpm knowledge:publish ~/drafts/doc1.md --no-push
-pnpm knowledge:publish ~/drafts/doc2.md --no-push
-pnpm knowledge:publish ~/drafts/doc3.md
+pnpm knowledge:publish ~/drafts/*.md --accept --pr
+```
+
+Trust Claude's suggestions and publish without review:
+
+```bash
+pnpm knowledge:publish ~/drafts/rumi-poems.md --role source --domain sufism --accept
 ```
 
 ## What Happens When You Run It
 
-The CLI follows a six-step workflow.
+The CLI follows a streamlined workflow.
 
-### Step 1: Read the content
+### Step 1: Safety check
 
-The CLI reads your markdown file and strips any existing frontmatter. It uses the raw content only.
+Before doing anything, the CLI checks for uncommitted changes to tracked files. If any exist, it asks you to commit or stash them first. This prevents accidental data loss.
 
-### Step 2: Generate frontmatter suggestions
+### Step 2: Generate frontmatter
 
-The CLI sends your content to an LLM to generate metadata suggestions. It tries providers in this order:
+The CLI sends your content to Claude API to generate metadata suggestions (title, role, format, domain, tags, audience, complexity, summary, source). Requires `ANTHROPIC_API_KEY` in your `.env`. If no API key is available, you fill in fields manually.
 
-1. **Local Apertus** — Ollama on the Dell Sovereign Node via Tailscale. Free, sovereign, no data leaves your network.
-2. **Claude API** — Used when the Dell is offline. Requires `ANTHROPIC_API_KEY` in your environment.
-3. **Manual** — If no LLM is available, you fill in every field by hand.
+### Step 3: Review
 
-The LLM suggests values for: title, role, format, domain, tags, audience, complexity, summary, and source.
+You see all the suggested frontmatter at once and choose:
 
-### Step 3: Interactive review
+- **Accept all** — use the suggestions as-is
+- **Edit in $EDITOR** — opens the full frontmatter as YAML in your editor (vim, nano, VS Code, etc.) for fine-tuning
+- **Cancel** — abort without writing
 
-You review each suggested field and can accept or edit it. The CLI walks through every field one at a time. Nothing is written until you confirm.
+Or use `--accept` to skip this step entirely and trust Claude's output.
 
 ### Step 4: Write the file
 
@@ -109,25 +146,46 @@ For example, a Buddhist source text titled "The Dhammapada" becomes:
 knowledge/sources/buddhism-the-dhammapada.md
 ```
 
-### Step 5: Git commit and push
+### Step 5: Safe git workflow
 
-The CLI stages the new file, commits with a descriptive message, and pushes to the remote. This triggers:
+The CLI creates a **new branch** (never pushes to main), commits the file(s), and pushes:
+
+1. Creates branch `knowledge/{date}-{slug}` (or custom name with `--branch`)
+2. Stages only the published files (never `git add .`)
+3. Commits with message: `docs(knowledge): add {domain} {role} — {title}`
+4. Pushes to remote
+5. Optionally creates a PR (with `--pr`)
+6. Returns to your original branch
+
+Use `--no-push` to commit locally without pushing.
+
+After pushing, the branch triggers:
 
 - **GitHub Action** — syncs the document to Upstash Vector (embeddings for RAG retrieval)
-- **Vercel rebuild** — updates the knowledge section at opencosmos.ai
+- **Vercel rebuild** — updates the knowledge section at opencosmos.ai (once the PR is merged)
 
-Use `--no-push` to commit without pushing (useful when adding several documents in a batch).
+## Dell Sync (Separate Command)
 
-### Step 6: Upload to Open WebUI
+The Dell Sovereign Node sync is decoupled from the publication flow. When you want to sync knowledge documents to Open WebUI on the Dell:
 
-If the Dell Sovereign Node is reachable on Tailscale and `OPEN_WEBUI_API_KEY` is set, the CLI uploads the document to Open WebUI's local RAG. If the Dell is offline, this step is skipped gracefully.
+```bash
+pnpm knowledge:sync-dell
+```
+
+This uploads all knowledge documents to the Dell's Open WebUI RAG mirror. Run it whenever the Dell is powered on and you want to catch up.
+
+```bash
+pnpm knowledge:sync-dell --dry-run   # Preview what would be synced
+```
+
+Requires: Dell on and reachable via Tailscale, `OPEN_WEBUI_API_KEY` in `.env`.
 
 ## Environment Variables
 
 | Variable | Required | Purpose |
 |----------|----------|---------|
-| `ANTHROPIC_API_KEY` | No | Enables Claude API as fallback LLM for frontmatter generation |
-| `OPEN_WEBUI_API_KEY` | No | Enables upload to the Open WebUI local mirror on the Dell |
+| `ANTHROPIC_API_KEY` | Recommended | Enables Claude API for frontmatter generation |
+| `OPEN_WEBUI_API_KEY` | No | Enables Dell sync (`pnpm knowledge:sync-dell`) |
 
 ## Choosing the Right Role
 
@@ -149,8 +207,8 @@ Full domain list: buddhism, stoicism, sufism, taoism, vedic, indigenous, philoso
 
 **"tsx: command not found"** — Run `pnpm install` from the repository root.
 
-**LLM suggestions are empty or wrong** — Use `--dry-run` to preview, then run again without it. You can override every field during the interactive review.
+**LLM suggestions are empty or wrong** — Use `--dry-run` to preview, then run again without it. Choose "Edit in $EDITOR" during review to correct any field.
 
 **Git push fails** — Use `--no-push` to write and commit locally, then push manually when ready.
 
-**Open WebUI upload skipped** — This is normal when the Dell is offline or sleeping. The document is still committed to git and will sync to cloud services via GitHub Actions.
+**Uncommitted changes warning** — The CLI won't run if you have uncommitted tracked changes. Commit or stash them first. This is a safety feature to prevent data loss.

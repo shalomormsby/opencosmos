@@ -6,7 +6,8 @@
         "dev": "turbo run dev --concurrency 20",
         "build": "turbo run build",
         "lint": "turbo run lint",
-        "knowledge:publish": "tsx scripts/publish-knowledge.ts"
+        "knowledge:publish": "tsx scripts/publish-knowledge.ts",
+        "knowledge:sync-dell": "tsx scripts/sync-dell.ts"
     },
     "devDependencies": {
         "@inquirer/prompts": "^8.3.0",
@@ -26,5 +27,8 @@
             "sharp",
             "unrs-resolver"
         ]
+    },
+    "dependencies": {
+        "@anthropic-ai/sdk": "^0.68.0"
     }
 }
