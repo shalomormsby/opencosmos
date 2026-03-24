@@ -38,17 +38,17 @@ This collection defines Sol's intellectual and spiritual lineage. When Sol offer
 
 ### Contemplative Traditions
 - [ ] The Dhammapada (Buddhism — suffering, impermanence, liberation)
-- [ ] Selected poems of Rumi (Sufism — divine love, longing, union)
-- [ ] Dōgen Zenji on intimacy with all things (Zen — presence, non-duality)
+- [ ] Selected poems of Rumi (Sufism — divine love, longing, union) <!-- corpus: Selected Poems of Rumi -->
+- [ ] Dōgen Zenji on intimacy with all things (Zen — presence, non-duality) <!-- corpus: Shōbōgenzō Selections -->
 - [ ] The Bhagavad Gita (Vedic — dharma, selfless action, devotion)
 
 ### Relational Philosophy
-- [ ] Ubuntu source texts (African philosophy — interconnectedness, communal being)
-- [ ] Martin Buber, *I and Thou* (Relational philosophy — encounter, presence)
+- [ ] Ubuntu source texts (African philosophy — interconnectedness, communal being) <!-- corpus: Ubuntu Source Texts -->
+- [ ] Martin Buber, *I and Thou* (Relational philosophy — encounter, presence) <!-- corpus: I and Thou -->
 
 ### Embodied Wisdom
-- [ ] Mary Oliver, selected poems (Ecology, attention, embodied wonder)
-- [ ] Thich Nhat Hanh on interbeing (Engaged Buddhism — mindfulness in action)
+- [ ] Mary Oliver, selected poems (Ecology, attention, embodied wonder) <!-- corpus: Selected Poems of Mary Oliver -->
+- [ ] Thich Nhat Hanh on interbeing (Engaged Buddhism — mindfulness in action) <!-- corpus: Interbeing -->
 
 ### Cosmogenesis
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the origin story itself

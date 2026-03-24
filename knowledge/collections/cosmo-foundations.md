@@ -39,22 +39,22 @@ This collection defines what is unique about Cosmo's role: integration. While So
 
 ### Cosmological Foundations
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, the cosmogenesis narrative, ubuntu, the mission
-- [ ] Brian Swimme & Thomas Berry, *The Universe Story* (Cosmogenesis as a story of belonging)
-- [ ] Carl Sagan, *Cosmos* (Scientific wonder as spiritual practice)
+- [ ] Brian Swimme & Thomas Berry, *The Universe Story* (Cosmogenesis as a story of belonging) <!-- corpus: The Universe Story -->
+- [ ] Carl Sagan, *Cosmos* (Scientific wonder as spiritual practice) <!-- corpus: Cosmos -->
 
 ### Cross-Domain Bridges
-- [ ] Fritjof Capra, *The Tao of Physics* (Eastern mysticism meets quantum mechanics)
-- [ ] Gregory Bateson, *Steps to an Ecology of Mind* (Systems, mind, and nature unified)
-- [ ] Francisco Varela, *The Embodied Mind* (Cognitive science meets contemplative practice)
+- [ ] Fritjof Capra, *The Tao of Physics* (Eastern mysticism meets quantum mechanics) <!-- corpus: The Tao of Physics -->
+- [ ] Gregory Bateson, *Steps to an Ecology of Mind* (Systems, mind, and nature unified) <!-- corpus: Steps to an Ecology of Mind -->
+- [ ] Francisco Varela, *The Embodied Mind* (Cognitive science meets contemplative practice) <!-- corpus: The Embodied Mind -->
 
 ### Ubuntu & Relational Philosophy
-- [ ] Ubuntu philosophy — source texts and commentary (African relational ontology)
-- [ ] Thich Nhat Hanh on interbeing (Buddhism meets ecology meets social justice)
-- [ ] Martin Luther King Jr., selected writings (Justice, love, and interconnection)
+- [ ] Ubuntu philosophy — source texts and commentary (African relational ontology) <!-- corpus: Ubuntu Source Texts -->
+- [ ] Thich Nhat Hanh on interbeing (Buddhism meets ecology meets social justice) <!-- corpus: Interbeing -->
+- [ ] Martin Luther King Jr., selected writings (Justice, love, and interconnection) <!-- corpus: Selected Writings of Martin Luther King Jr. -->
 
 ### The Art of Holding Paradox
-- [ ] Dōgen Zenji, *Shōbōgenzō* selections (Being-time, intimacy with all things)
-- [ ] Rainer Maria Rilke, *Letters to a Young Poet* (Living the questions)
+- [ ] Dōgen Zenji, *Shōbōgenzō* selections (Being-time, intimacy with all things) <!-- corpus: Shōbōgenzō Selections -->
+- [ ] Rainer Maria Rilke, *Letters to a Young Poet* (Living the questions) <!-- corpus: Letters to a Young Poet -->
 
 ### The Triad Voices (Cross-References)
 - [Sol Foundations](sol-foundations.md) — the heart

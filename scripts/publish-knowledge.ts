@@ -18,7 +18,7 @@ import { resolve, basename, dirname } from 'node:path'
 import { parseArgs } from 'node:util'
 import matter from 'gray-matter'
 import './knowledge/shared.js' // loads .env
-import { ROLES, DOMAINS, KNOWLEDGE_DIR, slugify, type Role, type Frontmatter } from './knowledge/shared.js'
+import { ROLES, DOMAINS, KNOWLEDGE_DIR, slugify, scanCorpus, type Role, type Frontmatter, type CorpusEntry } from './knowledge/shared.js'
 import { generateFrontmatter, reviewFrontmatter, suggestRelatedDocs, type GenerationResult } from './knowledge/frontmatter.js'
 import { checkWorkingTree, safeGitPublish } from './knowledge/git.js'
 
@@ -209,8 +209,8 @@ async function main() {
     console.log('\n📝 Curation log updated')
   }
 
-  // Auto-link foundation collection placeholders
-  const collectionUpdates = updateCollectionPlaceholders(writtenFrontmatter)
+  // Auto-link foundation collection placeholders (scans full corpus, not just current batch)
+  const collectionUpdates = updateCollectionPlaceholders()
   for (const updated of collectionUpdates) {
     writtenFiles.push(updated)
   }
@@ -270,46 +270,108 @@ function buildCurationLogEntry(
 
 // ─── Foundation Collection Auto-Linking ─────────────────────────────────────
 
-function updateCollectionPlaceholders(frontmatterList: Frontmatter[]): string[] {
+/**
+ * Scan the full corpus and check off matching placeholders in collection files.
+ *
+ * Two-pass matching:
+ *   Pass 1 — Anchor: lines with <!-- corpus: Title1, Title2 --> are matched
+ *            against the corpus by exact title. Invisible in rendered markdown.
+ *   Pass 2 — Exact title fallback: lines without anchors are matched if the
+ *            checklist text starts with the exact document title.
+ */
+function updateCollectionPlaceholders(): string[] {
   const collectionsDir = resolve(KNOWLEDGE_DIR, 'collections')
   if (!existsSync(collectionsDir)) return []
 
-  const updatedFiles: string[] = []
+  // Build a case-insensitive title → corpus entry lookup
+  const corpus = scanCorpus()
+  const titleMap = new Map<string, CorpusEntry>()
+  for (const entry of corpus) {
+    const title = entry.frontmatter.title
+    if (typeof title === 'string') {
+      titleMap.set(title.toLowerCase(), entry)
+    }
+  }
 
-  // Read all collection files
+  if (titleMap.size === 0) return []
+
+  const updatedFiles: string[] = []
   const collectionFiles = readdirSync(collectionsDir).filter((f) => f.endsWith('.md'))
 
   for (const collFile of collectionFiles) {
     const collPath = resolve(collectionsDir, collFile)
-    let content = readFileSync(collPath, 'utf-8')
+    const lines = readFileSync(collPath, 'utf-8').split('\n')
     let modified = false
 
-    for (const fm of frontmatterList) {
-      // Look for unchecked placeholders that match the document title
-      // e.g., "- [ ] The Dhammapada" or "- [ ] The Dhammapada (Buddhism — suffering...)"
-      const titleEscaped = fm.title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
-      const pattern = new RegExp(
-        `^(\\s*)-\\s*\\[\\s*\\]\\s*${titleEscaped}(\\s*\\(.*?\\))?\\s*$`,
-        'gm',
-      )
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i]
 
-      const rolePlural = fm.role + 's'
-      const slug = slugify(fm.title)
-      const filename = `${fm.domain}-${slug}.md`
-      const linkPath = `../${rolePlural}/${filename}`
+      // Only process unchecked items: "- [ ] ..."
+      const uncheckedMatch = line.match(/^(\s*)-\s*\[\s*\]\s*(.+)$/)
+      if (!uncheckedMatch) continue
 
-      const replacement = `$1- [x] [${fm.title}](${linkPath})$2`
-      const newContent = content.replace(pattern, replacement)
+      const indent = uncheckedMatch[1]
+      const rest = uncheckedMatch[2]
 
-      if (newContent !== content) {
-        content = newContent
-        modified = true
-        console.log(`\n   📋 Updated collection placeholder: ${collFile} → ${fm.title}`)
+      // Pass 1: Anchor matching — <!-- corpus: Title1, Title2 -->
+      const anchorMatch = rest.match(/<!--\s*corpus:\s*(.+?)\s*-->/)
+      if (anchorMatch) {
+        const anchorTitles = anchorMatch[1].split(',').map((t) => t.trim())
+        const matched = anchorTitles
+          .map((t) => titleMap.get(t.toLowerCase()))
+          .filter((e): e is CorpusEntry => e != null)
+
+        if (matched.length > 0) {
+          const entry = matched[0]
+          const title = entry.frontmatter.title as string
+          const linkPath = `../${entry.relativePath}`
+
+          // Remove the anchor comment, check the box, and insert a link to the first match
+          const textWithoutAnchor = rest.replace(/\s*<!--\s*corpus:.*?-->/, '').trimEnd()
+
+          // Try to wrap the title (possibly in italics) within the existing text
+          const titleEscaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+          const italicPattern = new RegExp(`\\*${titleEscaped}\\*`)
+          const plainPattern = new RegExp(titleEscaped)
+
+          let updatedText: string
+          if (italicPattern.test(textWithoutAnchor)) {
+            updatedText = textWithoutAnchor.replace(italicPattern, `[*${title}*](${linkPath})`)
+          } else if (plainPattern.test(textWithoutAnchor)) {
+            updatedText = textWithoutAnchor.replace(plainPattern, `[${title}](${linkPath})`)
+          } else {
+            // Title not found inline — prepend link before the description
+            updatedText = `[${title}](${linkPath}) — ${textWithoutAnchor}`
+          }
+
+          lines[i] = `${indent}- [x] ${updatedText}`
+          modified = true
+          console.log(`\n   📋 Collection linked: ${collFile} → ${title}`)
+        }
+        continue
+      }
+
+      // Pass 2: Exact title fallback (original behavior)
+      for (const [, entry] of titleMap) {
+        const title = entry.frontmatter.title as string
+        const titleEscaped = title.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+        const pattern = new RegExp(
+          `^(\\s*)-\\s*\\[\\s*\\]\\s*${titleEscaped}(\\s*\\(.*?\\))?\\s*$`,
+        )
+        if (pattern.test(line)) {
+          const linkPath = `../${entry.relativePath}`
+          lines[i] = line
+            .replace(/\[\s*\]/, '[x]')
+            .replace(title, `[${title}](${linkPath})`)
+          modified = true
+          console.log(`\n   📋 Collection linked: ${collFile} → ${title}`)
+          break
+        }
       }
     }
 
     if (modified) {
-      writeFileSync(collPath, content, 'utf-8')
+      writeFileSync(collPath, lines.join('\n'), 'utf-8')
       updatedFiles.push(collPath)
     }
   }
