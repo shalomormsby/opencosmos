@@ -43,19 +43,19 @@ This guide walks you through the full workflow for adding a document to the Open
 
 3. **Run the CLI.** From the repository root:
 
-   ```bash
+   ```
    pnpm knowledge:publish knowledge/incoming/dhammapada.md --role source --domain buddhism
    ```
 
    Or let Claude figure out the metadata for you:
 
-   ```bash
+   ```
    pnpm knowledge:publish knowledge/incoming/dhammapada.md --accept
    ```
 
    Or auto-import everything in the inbox at once:
 
-   ```bash
+   ```
    pnpm knowledge:publish --accept
    ```
 

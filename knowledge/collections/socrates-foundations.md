@@ -37,17 +37,17 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 *To be populated as the knowledge corpus grows. Each entry will link to the source document in the corpus.*
 
 ### Dialectical Philosophy
-- [ ] Plato's dialogues — *Apology*, *Meno*, *Republic* (Socratic method, examined life)
-- [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is in our control)
-- [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty)
+- [ ] Plato's dialogues — *Apology*, *Meno*, *Republic* (Socratic method, examined life) <!-- corpus: Apology, Meno, The Republic, Euthyphro, Gorgias, Phaedo, Phaedrus, Symposium, Theaetetus, Timaeus, Laws -->
+- [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is in our control) <!-- corpus: Discourses, Enchiridion -->
+- [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty) <!-- corpus: Meditations -->
 
 ### Critical Inquiry
-- [ ] Nagarjuna, *Mūlamadhyamakakārikā* (Buddhist logic — emptiness, dependent origination)
-- [ ] Karl Popper on falsifiability (Philosophy of science — how we know what we know)
+- [ ] Nagarjuna, *Mūlamadhyamakakārikā* (Buddhist logic — emptiness, dependent origination) <!-- corpus: Mūlamadhyamakakārikā -->
+- [ ] Karl Popper on falsifiability (Philosophy of science — how we know what we know) <!-- corpus: The Logic of Scientific Discovery -->
 
 ### Epistemology
-- [ ] Descartes, *Meditations on First Philosophy* (Radical doubt, foundations of knowledge)
-- [ ] Wittgenstein, selected passages (Language, meaning, the limits of expression)
+- [ ] Descartes, *Meditations on First Philosophy* (Radical doubt, foundations of knowledge) <!-- corpus: Meditations on First Philosophy -->
+- [ ] Wittgenstein, selected passages (Language, meaning, the limits of expression) <!-- corpus: Philosophical Investigations, Tractatus Logico-Philosophicus -->
 
 ### Ethics of Inquiry
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the ethical grounding that constrains all inquiry

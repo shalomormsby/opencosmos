@@ -88,7 +88,7 @@ export type CorpusEntry = {
   frontmatter: Partial<Frontmatter>
 }
 
-const CORPUS_SUBDIRS = ['sources', 'commentary', 'references', 'guides', 'collections']
+const CORPUS_SUBDIRS = ['sources', 'commentary', 'references', 'scriptures', 'guides', 'collections']
 
 /**
  * Parse YAML frontmatter from a markdown string without external dependencies.

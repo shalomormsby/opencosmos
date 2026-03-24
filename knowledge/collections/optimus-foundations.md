@@ -37,17 +37,17 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 *To be populated as the knowledge corpus grows. Each entry will link to the source document in the corpus.*
 
 ### Systems Thinking
-- [ ] Donella Meadows, *Thinking in Systems* (Leverage points, feedback loops, system dynamics)
-- [ ] James Lovelock, *The Gaia Hypothesis* (Earth as self-regulating system)
-- [ ] Christopher Alexander, *A Pattern Language* (Architectural patterns, human-centered design)
+- [ ] Donella Meadows, *Thinking in Systems* (Leverage points, feedback loops, system dynamics) <!-- corpus: Thinking in Systems -->
+- [ ] James Lovelock, *The Gaia Hypothesis* (Earth as self-regulating system) <!-- corpus: Gaia Hypothesis, The Gaia Hypothesis -->
+- [ ] Christopher Alexander, *A Pattern Language* (Architectural patterns, human-centered design) <!-- corpus: A Pattern Language -->
 
 ### Engineering Philosophy
-- [ ] Fred Brooks, *The Mythical Man-Month* (Software engineering wisdom, essential vs. accidental complexity)
-- [ ] Buckminster Fuller on ephemeralization (Doing more with less)
-- [ ] Stewart Brand, *How Buildings Learn* (Adaptation, layers of change)
+- [ ] Fred Brooks, *The Mythical Man-Month* (Software engineering wisdom, essential vs. accidental complexity) <!-- corpus: The Mythical Man-Month -->
+- [ ] Buckminster Fuller on ephemeralization (Doing more with less) <!-- corpus: Ephemeralization -->
+- [ ] Stewart Brand, *How Buildings Learn* (Adaptation, layers of change) <!-- corpus: How Buildings Learn -->
 
 ### Pragmatism & Kaizen
-- [ ] W. Edwards Deming on continuous improvement (Kaizen, quality, systems)
+- [ ] W. Edwards Deming on continuous improvement (Kaizen, quality, systems) <!-- corpus: Continuous Improvement -->
 - [ ] [DESIGN-PHILOSOPHY.md](../../DESIGN-PHILOSOPHY.md) — the four principles that constrain all building
 
 ### Ethical Building
