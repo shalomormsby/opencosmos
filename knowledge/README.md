@@ -173,6 +173,7 @@ title: "The Dhammapada: Sayings of the Buddha"
 role: source
 format: scripture
 domain: buddhism
+corpus_tier: source
 tags: [impermanence, suffering, liberation, mindfulness, ethics]
 audience: [contemplative, philosopher, general]
 complexity: foundational
@@ -200,6 +201,7 @@ source: public-domain
 | `summary` | 1-3 sentence abstract | Free text, used for retrieval and preview |
 | `curated_at` | Date this document entered the corpus | ISO 8601 (YYYY-MM-DD) |
 | `curator` | Who prepared/curated it | Name or handle |
+| `corpus_tier` | Ethical inclusion tier | `source` (full text, public domain only), `commentary` (fair-use overview), `reference` (pointer only). See [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation.md) |
 | `source` | Provenance | `original`, `public-domain`, URL, or citation |
 
 ### Optional Fields
@@ -266,6 +268,8 @@ If you're authoring or curating a document for OpenCosmos Knowledge, follow thes
 - **Write for the unfamiliar reader.** Assume the reader is intelligent but may not share your domain expertise. A philosopher should be able to follow an engineering document's key ideas; an engineer should be able to engage with a philosophical text's core arguments.
 
 ### Integrity
+
+- **Respect authorship rights.** Every document must declare a `corpus_tier` — `source` (full text, public domain only), `commentary` (fair-use overview of copyrighted works), or `reference` (pointer only). Copyrighted works must never enter the corpus as full-text sources. See the [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation.md) for the full framework.
 
 - **Represent source texts faithfully.** When curating a primary source, preserve its voice and structure. Add curator notes in clearly marked sections (e.g., "Curator's Note" under a separate H2), never inline with the source text.
 
@@ -361,7 +365,7 @@ This corpus is consumed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.m
 | Static docs site | [opencosmos.ai](https://opencosmos.ai/) | Human-browsable knowledge |
 | Inference (Apertus models) | Dell (local, sovereign) | GPU cost, privacy, sovereignty |
 
-**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA) serves as the local mirror. Documents are uploaded manually and indexed via Open WebUI's embedding pipeline. Cloud deployment is planned — see [Migration Phase 1d](../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA) serves as the local mirror. Documents are uploaded manually and indexed via Open WebUI's embedding pipeline. Cloud deployment is planned — see [Migration Phase 1d](../docs/projects/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
 
 **Future RAG infrastructure (Phase 3+):** Custom RAG pipeline in `packages/ai/src/rag/` with per-format chunking strategies, metadata-filtered retrieval, and hybrid search. Cloud RAG API endpoint for global access. The migration from Open WebUI's built-in RAG will be informed by retrieval patterns validated during Phase 1.
 

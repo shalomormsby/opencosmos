@@ -98,7 +98,7 @@ The shared intelligence layer for the platform. **Read [COSMO_SYSTEM_PROMPT.md](
 
 ### Sovereignty Tiers (Compute)
 
-Sovereignty Tiers govern **compute** — where LLMs process prompts. The knowledge base is separate: it's cloud-primary (globally accessible) with a local mirror. See [Migration Phase 1d](docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+Sovereignty Tiers govern **compute** — where LLMs process prompts. The knowledge base is separate: it's cloud-primary (globally accessible) with a local mirror. See [Migration Phase 1d](docs/projects/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
 
 - **Tier 1 (Full Sovereignty):** All inference on local hardware. No external calls.
 - **Tier 2 (Reduced Capability):** Low-power mode (nighttime/low solar). Queries may be queued for sunrise.
@@ -337,7 +337,7 @@ When in doubt, ask Shalom.
 - **[packages/ai/COSMO_SYSTEM_PROMPT.md](packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice and values
 - **[docs/architecture.md](docs/architecture.md)** — Infrastructure decisions and service map
 - **[docs/chronicle.md](docs/chronicle.md)** — The story behind the decisions
-- **[docs/opencosmos-migration.md](docs/opencosmos-migration.md)** — Active migration plan
+- **[docs/projects/opencosmos-migration.md](docs/projects/opencosmos-migration.md)** — Active migration plan
 - **[CHANGELOG.md](CHANGELOG.md)** — Work history
 - **[OpenCosmos/UI repo](https://github.com/shalomormsby/opencosmos-ui)** — Where the design system lives
 - **[opencosmos.ai](https://opencosmos.ai/)** — Interactive component documentation

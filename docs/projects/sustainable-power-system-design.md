@@ -481,7 +481,7 @@ Beyond the built-in Energy Dashboard, create a dedicated "Sovereign Node" dashbo
 
 ## Sovereignty Tier Mapping (Compute Only)
 
-This power system manages **compute** — where LLMs process prompts. The OpenCosmos knowledge base is hosted separately in the cloud (always-on, globally accessible) and is unaffected by these power tiers. See [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started) for the knowledge base hosting strategy.
+This power system manages **compute** — where LLMs process prompts. The OpenCosmos knowledge base is hosted separately in the cloud (always-on, globally accessible) and is unaffected by these power tiers. See [Migration Phase 1d](opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started) for the knowledge base hosting strategy.
 
 This power system implements the Sovereignty Tiers defined in [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md):
 

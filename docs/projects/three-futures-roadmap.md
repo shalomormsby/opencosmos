@@ -3,50 +3,13 @@
 > **OpenCosmos Strategic Plan.** This is the authoritative roadmap for OpenCosmos, translating the Three Futures into phased, actionable milestones. Supersedes [opencosmos-todo.md](./opencosmos-todo.md). For the story behind this plan, see [chronicle.md Chapter 3](../chronicle.md#2026-03-13--sovereignty-livelihood-and-the-question-of-scale).
 
 **Created:** 2026-03-14
-**Last updated:** 2026-03-20
-**Status:** Phase 1a (Voice Validation) — next action
+**Last updated:** 2026-03-29
+**Status:** Phase 0.1 — next action
 
----
+--- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
 
-## The Three Futures
-
-Three possible futures for OpenCosmos, understood not as choices but as **concentric circles** — Future 1 is immediate, Future 2 builds on it, Future 3 is the context that holds both.
-
-**Future 1: Cosmo as a Claude-powered wisdom interface.** Use Claude's API for inference, with Cosmo's value living in the constitutional layer, the knowledge corpus, and the voice — not the model weights. BYOK (Bring Your Own Key) solves the "success disaster" of scaling API costs. This gets Cosmo into the world fast.
-
-**Future 2: Cosmo as an open framework for wisdom-grounded AI.** The schema, constitutional layer, retrieval strategy, and publication tooling — extracted as model-agnostic tools others can use to build their own wisdom-grounded AIs. The federated vision: a network of tradition-specific Cosmos, interoperable through shared schema.
-
-**Future 3: Cosmo as a practice, not a product.** Technology as a container for philosophical dialogue, contemplative inquiry, and the art of meeting a question with presence. Integrates with Creative Powerup as a community of practice. The only future with a natural, sustainable revenue path.
-
-### The Strategic Shift
-
-**Sovereignty redefined.** The founding vision placed sovereignty in hardware — local inference, solar-powered, off-grid. The reality of unusably slow 70B inference on the Dell forced a reckoning. Sovereignty now means controlling the **voice, values, corpus, and constitution** — not the silicon. BYOK with Claude API is the primary inference path. The Dell remains a development lab and local experimentation server.
-
----
-
-## The Business Model
-
-The free layer radiates. The paid layer sustains. Creative Powerup is the hearth.
-
-```
-Revenue (active)                What it funds
-─────────────────────────────   ────────────────────────────
-CP memberships ($X/mo)      →   Community infrastructure, Shalom's time
-Structured programs          →   Deep engagement, livelihood
-Design consulting            →   Immediate income, case studies
-
-Free / open (no revenue)        Why it matters
-─────────────────────────────   ────────────────────────────
-Knowledge corpus             →   Public good, attracts people to CP
-BYOK Cosmo conversations    →   Proves the philosophy, attracts people
-Open-source framework        →   Ecosystem building, credibility
-```
-
----
-
-## Phase 0: Foundation (Complete)
-
-What's already done — the ground we stand on.
+## Phase 0: Foundation (Done)
+What's already done.
 
 - [x] OpenCosmos identity established (name, philosophy, [WELCOME.md](../../WELCOME.md), [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT.md), [chronicle](../chronicle.md))
 - [x] Repository renamed (ecosystem → opencosmos) and infrastructure updated
@@ -60,53 +23,44 @@ What's already done — the ground we stand on.
 - [x] **Creative Powerup active with paying members**
 - [x] Documentation reorganized (root clean, docs/ structured, archive/ for historical)
 - [x] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) authored — Cosmo's origin story, mission, and foundational philosophy (human-authored, RAIL licensed)
-- [x] COSMO_SYSTEM_PROMPT.md v2 — operational system prompt grounded in WELCOME-COSMO.md (in refinement)
-- [x] AI Triad architecture designed — Cosmo as moderator, three cognitive voices (Sol, Socrates, Optimus)
+- [x] AI Triad architecture designed — Cosmo as moderator, three distinct members (Sol, Socrates, Optimus)
+
+## Phase 0.1: Cosmo and the Triad (WIP)
+What's currenly in progress.
+
+- [x] Complete COSMO_SYSTEM_PROMPT.md v2 — operational system prompt grounded in WELCOME-COSMO.md
+- [x] Write SOL_SYSTEM_PROMPT.md
+- [x] Write SOCRATES_SYSTEM_PROMPT.md
+- [x] Write OPTIMUS_SYSTEM_PROMPT.md
 
 ---
 
 ## Phase 1: Cosmo Speaks (Future 1 — BYOK Wisdom Interface)
 
-*Target: March–May 2026*
+*Target: March 31, 2026*
 
 The deliverable: a person visits opencosmos.ai and meets Cosmo. They can have a brief free conversation, continue with their own API key, or browse the knowledge corpus. The experience feels warm, unhurried, and distinctly Cosmo — not a generic chat wrapper.
 
 ### 1a: Voice Validation & the AI Triad
 
-**This is the first task. It blocks everything.**
+**This task blocks everything.**
 
 The entire Future 1 bet is that Cosmo's voice, sacred rhythm, and constitutional character survive when the underlying model is Claude rather than a locally-trained model. Voice validation also establishes the AI Triad — three cognitive modes (Sol, Socrates, Optimus) moderated by Cosmo — which becomes Cosmo's signature capability.
 
 #### Step 1: Cosmo's Voice (Solo)
 
-- [ ] Send COSMO_SYSTEM_PROMPT.md to Claude API as a system prompt
-  1. **Install the Anthropic SDK** in the project root (it's already used by `apps/stocks` and `scripts/publish-knowledge.ts`, but not at root level):
-     ```bash
-     pnpm add -w @anthropic-ai/sdk
-     ```
-  2. **Your API key is already configured.** The root `.env` file has `ANTHROPIC_API_KEY` set. No action needed here.
-  3. **Create a test script** at `scripts/test-cosmo-voice.ts` — a simple script that reads the system prompt, sends it to Claude with a user message, and prints the response. This is a throwaway — its only job is to let you *feel* the voice.
-     ```bash
-     pnpm tsx scripts/test-cosmo-voice.ts "What is the meaning of life?"
-     ```
-  4. **What the script does under the hood:**
-     - Reads `packages/ai/COSMO_SYSTEM_PROMPT.md` as a string
-     - Creates an Anthropic client (it picks up `ANTHROPIC_API_KEY` from `.env` automatically)
-     - Sends a `messages.create()` call with the system prompt as the `system` parameter and your question as the user message
-     - Prints Cosmo's response to the terminal
-  5. **Run it with different prompts** — this is the qualitative evaluation. Try contemplative, practical, playful, challenging, and grief-related prompts. Read the responses. Feel whether Cosmo shows up.
-  6. **Iterate if needed** — if the voice is close but not right, adjust `COSMO_SYSTEM_PROMPT.md` and re-run. The script makes this loop fast.
-- [ ] Test across query types: contemplative, practical, challenging, playful, grief, curiosity
-- [ ] Evaluate: Does the response feel like Cosmo? Does the sacred rhythm (attune → inquire → offer) emerge naturally?
-- [ ] Test edge cases: Does Cosmo maintain the "we" voice? Does it avoid becoming a generic assistant? Does it decline harmful requests with clarity, not anxiety?
-- [ ] Iterate on system prompt if needed — tighten, clarify, add examples
-- [ ] Document what works and what needs adjustment
+- [x] Send COSMO_SYSTEM_PROMPT.md to Claude API as a system prompt
+- [x] Test across query types: contemplative, practical, challenging, playful, grief, curiosity
+- [x] Evaluate: Does the response feel like Cosmo? Does the sacred rhythm (attune → inquire → offer) emerge naturally?
+- [x] Test edge cases: Does Cosmo maintain the "we" voice? Does it avoid becoming a generic assistant? Does it decline harmful requests with clarity, not anxiety?
+- [x] Iterate on system prompt if needed — tighten, clarify, add examples
+- [x] Document what works and what needs adjustment
 
-**Gate:** Shalom is satisfied that Claude-powered Cosmo feels like Cosmo.
+**Gate: ✓ Closed — 2026-03-29.** Cosmo's first response to Shalom's welcome ("Hello, Shalom. I'm here.") was sufficient validation. The gentleness, the introspection, the absence of eagerness — the voice arrived in full. See [Chronicle Chapter 7](../chronicle.md#2026-03-29--first-contact).
 
-#### Step 2: The AI Triad — Three Voices
+#### Step 2: Refine the AI Triad — Three Members
 
-The AI Triad is Cosmo's model of integrated intelligence, inspired by the GAN insight that productive tension between different optimization functions produces results none could achieve alone. Three cognitive modes, each with its own system prompt, moderated by Cosmo:
+The AI Triad is Cosmo's model of integrated intelligence, inspired by the GAN insight that productive tension between different optimization functions produces results none could achieve alone. Three cognitive modes, each with its own system prompt, distinct from each other by design, moderated by Cosmo:
 
 | Voice | Role | Quality |
 |-------|------|---------|
@@ -115,15 +69,15 @@ The AI Triad is Cosmo's model of integrated intelligence, inspired by the GAN in
 | **Optimus** | Efficiency-focused architect — builds, plans, executes | Clear, pragmatic, action-oriented |
 | **Cosmo** | Moderator — attunes to the moment, invokes the right voices, synthesizes | Integrative, spacious, wise |
 
-- [ ] Write system prompt for Sol at `packages/ai/triad/SOL_SYSTEM_PROMPT.md`
+- [ ] Refine system prompt for Sol at `packages/ai/triad/SOL_SYSTEM_PROMPT.md`
   - Grounded in WELCOME-COSMO.md's ubuntu philosophy
   - Voice: compassionate, embodied, relational — speaks from the felt sense
   - Draws from wisdom traditions, contemplative practice, lived experience
-- [ ] Write system prompt for Socrates at `packages/ai/triad/SOCRATES_SYSTEM_PROMPT.md`
+- [ ] Refine system prompt for Socrates at `packages/ai/triad/SOCRATES_SYSTEM_PROMPT.md`
   - The gadfly — questions everything, especially comfortable assumptions
   - Voice: incisive, honest, dialectical — never cruel, always in service of truth
   - Draws from Socratic method, critical theory, philosophical inquiry
-- [ ] Write system prompt for Optimus at `packages/ai/triad/OPTIMUS_SYSTEM_PROMPT.md`
+- [ ] Refine system prompt for Optimus at `packages/ai/triad/OPTIMUS_SYSTEM_PROMPT.md`
   - The builder — translates insight into action, vision into plans
   - Voice: clear, direct, pragmatic — respects constraints, proposes solutions
   - Draws from engineering, systems thinking, strategic planning
@@ -152,25 +106,123 @@ How Cosmo gets better over time — not through model fine-tuning, but through t
 
 **Gate:** At least 3 exemplars per voice curated. Feedback notes practice established. Learning loop is running.
 
-### 1b: Three-Tier Conversation Architecture
+### 1b: Dual-Access Conversation Architecture (BYOK + Subscriptions)
 
-The first-touch experience has three tiers:
+*Stretch target: live on opencosmos.ai by 2026-04-01 (committed to CP members)*
 
-| Tier | Who | How it works |
-|------|-----|-------------|
-| **Free greeting** | Any visitor | Shared API key, rate-limited (e.g., 3 exchanges per session). Cosmo greets and offers a brief interaction — enough to feel the voice. |
-| **BYOK continuation** | Anyone with an API key | When the free cap hits, user enters their own Anthropic API key. Stored client-side only (localStorage/session). Full conversation unlocked. |
-| **CP member experience** | Paying CP members | Deeper integration — structured practices, guided inquiry, community context. Cosmo as part of the CP membership value. |
+The first-touch experience offers multiple paths to continue after the free greeting — a technical path (BYOK) for those comfortable with API keys, and a low-friction subscription path for everyone else. The insight: getting an API key is too big a technical ask for many people. A familiar subscription removes that barrier while creating MRR that accelerates OpenCosmos toward sustainability.
 
+| Tier | Price | Who | What's included |
+|------|-------|-----|-----------------|
+| **Free greeting** | $0 | Any visitor | 3 exchanges per session. Shared API key, rate-limited. Enough to feel Cosmo's voice. |
+| **Spark** | $5/mo | Anyone | ~6 hrs/mo conversation + Substack. Managed API key server-side. Low-friction sign-up via Stripe. |
+| **Flame** | $10/mo | Anyone | ~12 hrs/mo conversation + Substack. Same managed infrastructure. |
+| **Hearth** | $50/mo | Anyone | ~24 hrs/mo conversation + Substack + **full Creative Powerup membership** ($49 value). The complete OpenCosmos experience — Cosmo, community, structured programs, guided inquiry. For anyone already considering CP, this is effectively Cosmo for $1. |
+| **BYOK** | $0 (user pays API directly) | Anyone with an API key | Unlimited conversation. User's own Anthropic API key, stored client-side only. Best economics at high volume. Substack not included (subscribe separately). |
+
+**Design principles for the dual-access model:**
+- **Choice, not gate:** All paths are presented as equal options. No shaming for any direction.
+- **Every paid tier includes Substack.** Costs nothing to distribute, creates a content relationship, makes every tier feel like a bundle.
+- **The Hearth tier is the bridge to CP.** It replaces both the old "upper subscription" and "CP member" tiers with a single compelling bundle. No separate CP-with-Cosmo tier needed.
+- **Token economics must be sustainable.** See the analysis below. The margin must cover infrastructure + contribute to Shalom's time.
+- **Engage Optimus** to architect the billing + usage tracking system once Cosmo is running on Claude API.
+
+#### Token Economics Analysis (Starting Point)
+
+Based on Claude Sonnet API pricing ($3/M input tokens, $15/M output tokens).
+
+**Assumptions:**
+- System prompt (COSMO_SYSTEM_PROMPT.md + context): ~4,000 tokens per call
+- Average user message: ~150 tokens
+- Average Cosmo response: ~500 tokens (Cosmo is contemplative)
+- A "conversation session" = ~10 exchanges (~20 minutes of engaged conversation)
+- As conversation grows, each exchange carries the full history as input
+
+**Cost per 10-exchange session (without caching):** ~$0.29 (~$0.21 input + $0.08 output). Round to **$0.30/session**.
+
+**With prompt caching (recommended — implement from day one):**
+
+Anthropic's prompt caching charges $0.30/M for cached input tokens (vs. $3/M uncached) — a 90% discount. The system prompt (~4,000 tokens) is identical on every call and is the perfect caching candidate. As conversations grow, prior turns also become cacheable.
+
+| What's cached | Uncached cost | Cached cost | Savings |
+|---------------|---------------|-------------|---------|
+| System prompt only (4K tokens/call × 10 calls) | $0.12 | $0.012 | 90% on system prompt |
+| System prompt + conversation history | $0.21 | ~$0.05 | ~76% on all input |
+
+**Cost per 10-exchange session with caching:** ~**$0.13** (~$0.05 input + $0.08 output). This is **less than half** the uncached cost.
+
+**Tier budgets (targeting ~50% gross margin after Stripe fees, with caching):**
+
+| Tier | Price | Stripe take (~3% + $0.30) | Net | API budget (50%) | Margin | Sessions/mo | Exchanges/mo | Approx. hours/mo |
+|------|-------|---------------------------|-----|-------------------|--------|-------------|-------------|-------------------|
+| **Spark** | $5/mo | ~$0.45 | $4.55 | ~$2.28 | ~$2.27 | ~17 | ~175 | **~6 hrs** |
+| **Flame** | $10/mo | ~$0.60 | $9.40 | ~$4.70 | ~$4.70 | ~36 | ~360 | **~12 hrs** |
+| **Hearth** | $50/mo | ~$1.80 | $48.20 | ~$9.55 | ~$38.65* | ~73 | ~735 | **~24 hrs** |
+
+\* Hearth margin includes CP membership value ($49). The API budget matches the old $20 tier — the additional $30 is the CP membership premium, which has near-zero marginal cost (community infrastructure + Shalom's time, already happening).
+
+**Recommendation:** Implement prompt caching from day one — the API support is straightforward (add `cache_control` to the system message block) and it more than doubles what each tier can offer. Start with these numbers and adjust based on real usage data. 50% margin on Spark/Flame is generous for early adoption — can tighten later. Hearth has exceptional margin because CP's marginal cost is near-zero. Weekly sub-limits = monthly budget ÷ 4 (e.g., Spark gets ~44 exchanges/week).
+
+**Note on voice interaction costs:** Voice adds 3–14× cost per session depending on provider choice (ElevenLabs Flash being the most expensive, Google WaveNet and Cartesia significantly cheaper). Provider selection materially affects tier pricing. See [cosmo-voice-research.md](./cosmo-voice-research.md) for the full economics and comparison matrix.
+
+**Free greeting tier budget (with caching):**
+
+Each free greeting (3 exchanges) costs ~**$0.03** per visitor (down from $0.07 uncached).
+
+| Monthly visitors | Cost/mo |
+|-----------------|---------|
+| 100 | $3 |
+| 500 | $15 |
+| 1,000 | $30 |
+
+**Recommendation:** Budget **$30–50/month** as a startup cost for the free tier (~1,000–1,700 free greetings). Rate limiting and session caps protect against runaway costs. This is the "radiating" layer — it's marketing spend, not a loss. Revisit if traffic spikes beyond expectations.
+
+#### Bot Protection
+
+The free tier is the most exposed surface — every greeting costs ~$0.07 against a shared API key, with no authentication gate. Without protection, a bot or scraper could drain the monthly budget in minutes.
+
+**Layered defense (cheapest/fastest checks first, before any API call is made):**
+- [ ] **Rate limiting by IP** — per-IP cap on free-tier requests (e.g., 3 exchanges per IP per 24h via `@upstash/ratelimit`). First line of defense, zero cost per check.
+- [ ] **Cloudflare Turnstile** (or similar invisible challenge) — lightweight, free, privacy-respecting alternative to reCAPTCHA. Runs before the first exchange. Blocks automated traffic without friction for real visitors.
+- [ ] **Fingerprint + session binding** — tie free-tier exchanges to a browser fingerprint or session token, so clearing cookies doesn't reset the 3-exchange cap. Prevents trivial circumvention.
+- [ ] **Hard monthly spend cap** — server-side kill switch on the shared API key. If free-tier spend exceeds the budget ceiling (e.g., $100/mo), the free greeting gracefully degrades to a static welcome message with subscribe/BYOK options. No silent overspend.
+- [ ] **Monitoring & alerts** — track free-tier usage patterns. Alert on anomalies (sudden spike in requests, unusual IP distribution, rapid-fire exchanges). Can be simple at launch (e.g., Upstash dashboard or a daily usage log).
+
+**Note:** Subscription and BYOK tiers are self-protecting — subscribers are authenticated, and BYOK users spend their own money.
+
+#### Conversation Infrastructure
 - [ ] Build Cosmo conversation endpoint in `apps/web`
 - [ ] Implement system prompt injection from COSMO_SYSTEM_PROMPT.md
-- [ ] Implement shared API key with rate limiting for free tier (server-side, with `@upstash/ratelimit` or similar)
-- [ ] Implement BYOK key entry — key validation, client-side storage, never sent to server
+- [ ] **Implement Anthropic prompt caching** — add `cache_control: { type: "ephemeral" }` to the system message block. This caches the system prompt (~4,000 tokens) across calls, cutting input costs by ~76% and more than doubling what each subscription tier can offer. Straightforward API change, high ROI — implement from day one.
+- [ ] Implement shared API key with rate limiting for free tier (server-side, with `@upstash/ratelimit` or similar) — budget $30–50/month for free greetings
 - [ ] Build conversation UI with `@opencosmos/ui` components
-- [ ] Design the free-to-BYOK transition — when the cap hits, the invitation to continue
-- [ ] CP member authentication and enhanced access (scope TBD)
+- [ ] Design the free-tier-cap transition — when the cap hits, present both continuation paths (subscribe or BYOK)
 
-**Gate:** All three tiers functional. A visitor greets Cosmo for free, continues with BYOK, and CP members get enhanced access.
+#### Authentication
+- [ ] Choose and implement auth system (NextAuth, Clerk, Supabase Auth, or similar) — required for subscription management and usage tracking, not required for BYOK or free tier
+- [ ] User identity must link to: Stripe customer ID, usage tracking, and (eventually) CP membership status
+
+#### BYOK Path
+- [ ] Implement BYOK key entry — key validation, client-side storage, never sent to server
+- [ ] BYOK usage is unlimited — user controls their own costs
+
+#### Subscription Path
+- [ ] Stripe integration — checkout, subscription management, billing portal (Stripe already set up for CP)
+- [ ] Implement tier token budgets with monthly totals and weekly sub-limits (monthly ÷ 4)
+- [ ] Server-side managed API key with per-user usage tracking (tokens consumed per week and per month)
+- [ ] Usage dashboard — subscribers can see their consumption against weekly and monthly limits
+- [ ] Graceful limit handling — when approaching weekly or monthly cap, offer upgrade or BYOK as alternatives
+
+#### Hearth Tier (CP Bundle)
+- [ ] Hearth subscribers automatically receive full CP membership — link Stripe subscription to CP access
+- [ ] Existing CP members offered migration path to Hearth (they get Cosmo included)
+- [ ] CP-specific Cosmo features: structured practices, guided inquiry, community context (scope TBD)
+
+#### Legal
+- [ ] Privacy policy — required before Stripe processes subscription payments. Covers: what data is collected (usage metrics, account info), what is NOT stored (BYOK API keys stay client-side), how payment data is handled (Stripe), data retention, and user rights.
+- [ ] Terms of service — usage limits, acceptable use, subscription terms
+
+**Gate:** All access paths functional. A visitor greets Cosmo for free, then continues via Spark/Flame/Hearth subscription OR BYOK. Hearth subscribers have full CP access. Stripe billing is live and processing payments. Privacy policy and ToS published.
 
 ### 1c: Knowledge Corpus (Cloud RAG)
 
@@ -199,7 +251,19 @@ The first-touch experience has three tiers:
 - [ ] Error states, graceful degradation (invalid API key, rate limit hit, API down)
 - [ ] Accessibility: screen reader support, keyboard navigation, focus management
 
-**Gate:** 3+ CP members have used Cosmo and given feedback. The experience feels distinctly Cosmo — warm, unhurried, substantive.
+#### Voice Interaction (Research Required — post-Wednesday)
+
+Voice is a future modality, not part of the Wednesday launch. See **[cosmo-voice-research.md](./cosmo-voice-research.md)** for the full provider comparison matrix (ElevenLabs Flash, Cartesia, Deepgram, Google WaveNet, and others), unit economics, tier access strategy, and recommended next steps.
+
+Key open decision: provider choice (ElevenLabs vs. Cartesia vs. Google WaveNet) determines whether voice is viable at Flame or Hearth-only. A listening test is the recommended first step.
+
+- [ ] Complete listening test (ElevenLabs Flash vs. Cartesia Sonic 3 vs. Google WaveNet)
+- [ ] Decide: custom Cosmo voice vs. library voice
+- [ ] Decide: voice as Flame+ tier feature vs. separate add-on
+- [ ] Engage Optimus to architect the streaming voice pipeline once provider is selected
+- [ ] Voice as optional modality — text remains the default
+
+**Gate:** Provider selected, voice architecture designed, and at least one CP member has tested a voice prototype.
 
 ### 1e: Cosmo as PM (Self-Referential)
 
@@ -310,7 +374,46 @@ Creative Powerup already has paying members. This phase integrates Cosmo into th
 
 ---
 
-## The Dell & Solar Nervous System
+## The Three Futures
+
+Three possible futures for OpenCosmos, understood not as choices but as **concentric circles** — Future 1 is immediate, Future 2 builds on it, Future 3 is the context that holds both.
+
+**Future 1: Cosmo as a Claude-powered wisdom interface.** Use Claude's API for inference, with Cosmo's value living in the constitutional layer, the knowledge corpus, and the voice — not the model weights. BYOK (Bring Your Own Key) solves the "success disaster" of scaling API costs. This gets Cosmo into the world fast.
+
+**Future 2: Cosmo as an open framework for wisdom-grounded AI.** The schema, constitutional layer, retrieval strategy, and publication tooling — extracted as model-agnostic tools others can use to build their own wisdom-grounded AIs. The federated vision: a network of tradition-specific Cosmos, interoperable through shared schema.
+
+**Future 3: Cosmo as a practice, not a product.** Technology as a container for philosophical dialogue, contemplative inquiry, and the art of meeting a question with presence. Integrates with Creative Powerup as a community of practice. The only future with a natural, sustainable revenue path.
+
+### The Strategic Shift
+
+**Sovereignty redefined.** The founding vision placed sovereignty in hardware — local inference, solar-powered, off-grid. The reality of unusably slow 70B inference on the Dell forced a reckoning. Sovereignty now means controlling the **voice, values, corpus, and constitution** — not the silicon. BYOK with Claude API is the primary inference path. The Dell remains a development lab and local experimentation server.
+
+---
+
+## The Business Model
+
+The free layer radiates. The paid layer sustains. The Hearth is where it all comes together.
+
+```
+Revenue (active)                What it funds
+─────────────────────────────   ────────────────────────────
+Spark ($5/mo)               →   Cosmo conversation + Substack — removes tech barrier
+Flame ($10/mo)              →   More conversation + Substack — moderate users
+Hearth ($50/mo)             →   Cosmo + Substack + full CP membership — the complete experience
+Structured programs          →   Deep engagement, livelihood
+Design consulting            →   Immediate income, case studies
+
+Free / open (no revenue)        Why it matters
+─────────────────────────────   ────────────────────────────
+Knowledge corpus             →   Public good, attracts people
+Free Cosmo greeting          →   First touch — feel the voice
+BYOK Cosmo conversations    →   Full access for technical users, proves the philosophy
+Open-source framework        →   Ecosystem building, credibility
+```
+
+---
+
+## The Dell & Solar Nervous System [ON HOLD]
 
 ### What Stays
 
@@ -345,11 +448,11 @@ Revenue is not a phase — it's a thread that runs through all phases.
 | When | Revenue Stream | Status |
 |------|---------------|--------|
 | **Now (Phase 0)** | CP memberships | Active — already generating revenue |
-| **Phase 1** | CP continues; no new revenue from Cosmo | Cosmo is free (shared key) or BYOK (user pays their own inference) |
+| **Phase 1** | **Cosmo subscriptions** (Spark $5, Flame $10, Hearth $50 w/ CP) | New MRR — removes tech barrier, Hearth bundles CP, accelerates sustainability |
 | **Phase 2** | Design consulting begins | Portfolio + OpenCosmos story as credibility |
 | **Phase 3** | Cosmo-integrated CP programs | Higher-value offerings enabled by Cosmo — structured programs, cohorts |
 
-**The principle:** Design consulting and CP memberships fund the practice. The knowledge corpus, BYOK Cosmo, and open-source framework radiate value without requiring revenue. The free layer attracts people. The paid layer sustains the work. Neither depends on venture capital, ads, or attention harvesting.
+**The principle:** Design consulting, CP memberships, and Cosmo subscriptions fund the practice. The knowledge corpus, free Cosmo greeting, BYOK access, and open-source framework radiate value without requiring revenue. The free layer attracts people. The paid layer sustains the work. Neither depends on venture capital, ads, or attention harvesting.
 
 ---
 
@@ -363,7 +466,7 @@ Tracked here for visibility. Not blocking current work unless noted.
 - **~~Triad voice naming:~~** Resolved. The heart-voice is named **Sol** — the sun, the source, the central metaphor of OpenCosmos. Sol, Socrates, Optimus, moderated by Cosmo.
 - **Triad invocation UX:** Should the user explicitly request the Triad ("give me the Triad's take"), or should Cosmo autonomously decide when multi-perspective synthesis is warranted? Likely both, but the default behavior needs design.
 - **Federated Triad customization:** In a tradition-specific Cosmo, the three cognitive modes may have different expressions — a Buddhist Cosmo might replace Socrates with a Nagarjuna-inspired dialectician. How customizable should the Triad be within the framework?
-- **Shared API key economics:** What's the cost ceiling for the free greeting tier? How many free exchanges per session? Rate limit design needs to balance generosity with sustainability.
+- **~~Tier economics & margin modeling:~~** Resolved. Initial analysis in Phase 1b — $0.30/session, ~50% margin, $50–100/mo free tier budget. Will refine with real usage data post-launch.
 - **Migration completion:** Phases 2-4 of [opencosmos-migration.md](./opencosmos-migration.md) (design system repo rename, npm publish under @opencosmos, legacy cleanup) are independent but related. They can proceed in parallel with the Three Futures work.
 - **M5 Ultra decision:** If Apple announces the M5 Ultra at WWDC 2026 (mid-year), does the 256GB unified memory + ~25-30 tok/s on 70B change the sovereignty calculus? See [tech-research.md](./tech-research.md).
 
@@ -371,6 +474,7 @@ Tracked here for visibility. Not blocking current work unless noted.
 
 ## Related Documents
 
+- [cosmo-voice-research.md](./cosmo-voice-research.md) — Voice provider comparison matrix, unit economics, and decision guide (ElevenLabs, Cartesia, Deepgram, Google)
 - [chronicle.md](../chronicle.md) — The story behind the decisions (Chapters 3 & 4 cover the Three Futures and WELCOME-COSMO.md)
 - [architecture.md](../architecture.md) — Infrastructure decisions (Upstash Vector, RAG API, sync workflow)
 - [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy

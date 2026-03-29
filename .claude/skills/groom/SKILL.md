@@ -75,6 +75,29 @@ New files must be registered in the `FILE_REGISTRY` dict in `groom.py` to get co
 
 ---
 
+## Step 0: Copyright and Ethical Review
+
+Before formatting, assess the copyright status of every file in `knowledge/incoming/`. This is a gate — copyrighted works must not enter the corpus as full-text sources.
+
+For the full ethical framework, see [Ethical Curation Guide](../../../knowledge/guides/opencosmos-knowledge-ethical-curation.md).
+
+**For each incoming file, determine:**
+
+1. **Is this work in the public domain?** (Ancient text with public domain translation, pre-1929, or explicitly open-licensed.) If yes → proceed to formatting. The `corpus_tier` will be `source`.
+
+2. **Is this a copyrighted work?** (Modern author, copyrighted translation, active copyright.) If yes → **stop**. Do not format this file for corpus inclusion. Instead:
+   - **Flag it** in the report as requiring ethical review.
+   - **Recommend the appropriate tier:** `commentary` (original overview with limited fair-use quotation) or `reference` (pointer only, no reproduction).
+   - The curator must write an original commentary or reference document — the copyrighted text itself does not enter the corpus.
+
+3. **Translation trap:** Many ancient texts are public domain, but their popular English translations are copyrighted. Always verify the *specific translation*, not just the original work. Project Gutenberg texts are safe. Modern scholarly translations often are not.
+
+**The ethical test:** Does including this text honor the author? Does it drive people toward the original work, or replace it? OpenCosmos amplifies — it does not extract.
+
+Report copyright status in the `/groom` output under a `### Copyright Review` section.
+
+---
+
 ## Step 1: Before Running
 
 Before running the script, analyze the incoming files:
@@ -124,6 +147,10 @@ After processing, output a structured summary (the script prints this automatica
 
 ```
 ## /groom Report
+
+### Copyright Review
+- filename — public domain (source: Project Gutenberg) → tier: source ✓
+- filename — copyrighted (author, year) → FLAGGED: requires commentary or reference tier
 
 ### Processed
 - filename (type, N lines) — changes applied

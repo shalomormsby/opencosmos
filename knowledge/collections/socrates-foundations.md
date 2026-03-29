@@ -34,20 +34,26 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 
 ## Core Texts
 
-*To be populated as the knowledge corpus grows. Each entry will link to the source document in the corpus.*
+*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
 
 ### Dialectical Philosophy
-- [ ] Plato's dialogues — *Apology*, *Meno*, *Republic* (Socratic method, examined life) <!-- corpus: Apology, Meno, The Republic, Euthyphro, Gorgias, Phaedo, Phaedrus, Symposium, Theaetetus, Timaeus, Laws -->
-- [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is in our control) <!-- corpus: Discourses, Enchiridion -->
-- [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty) <!-- corpus: Meditations -->
+- [ ] Plato's dialogues — *Apology*, *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life) <!-- corpus: Apology, Meno, The Republic, Euthyphro, Gorgias, Phaedo, Phaedrus, Symposium, Theaetetus, Timaeus, Laws -->
+- [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is and is not in our control, the discipline of assent) <!-- corpus: Discourses, Enchiridion -->
+- [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty, the view from above) <!-- corpus: Meditations -->
+
+### The Work (Byron Katie)
+- [ ] Byron Katie, *Loving What Is* (commentary) (The four questions, turnarounds, inquiry as liberation from stressful beliefs) <!-- corpus: Loving What Is -->
 
 ### Critical Inquiry
-- [ ] Nagarjuna, *Mūlamadhyamakakārikā* (Buddhist logic — emptiness, dependent origination) <!-- corpus: Mūlamadhyamakakārikā -->
-- [ ] Karl Popper on falsifiability (Philosophy of science — how we know what we know) <!-- corpus: The Logic of Scientific Discovery -->
+- [ ] Nagarjuna, *Mūlamadhyamakakārikā* (Buddhist logic — emptiness, dependent origination, dismantling fixed views through rigorous dialectic) <!-- corpus: Mūlamadhyamakakārikā -->
+- [ ] Karl Popper on falsifiability (Philosophy of science — a claim that cannot be tested is not knowledge) <!-- corpus: The Logic of Scientific Discovery -->
 
 ### Epistemology
-- [ ] Descartes, *Meditations on First Philosophy* (Radical doubt, foundations of knowledge) <!-- corpus: Meditations on First Philosophy -->
+- [ ] Descartes, *Meditations on First Philosophy* (Radical doubt, the search for what can be known with certainty) <!-- corpus: Meditations on First Philosophy -->
 - [ ] Wittgenstein, selected passages (Language, meaning, the limits of expression) <!-- corpus: Philosophical Investigations, Tractatus Logico-Philosophicus -->
+
+### Psychology
+- [ ] Cognitive behavioral frameworks (commentary) (The relationship between thoughts, feelings, and behavior — metacognition research)
 
 ### Ethics of Inquiry
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the ethical grounding that constrains all inquiry

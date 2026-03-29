@@ -179,4 +179,4 @@ See [AGENTS.md § What NOT to Do](../AGENTS.md#what-not-to-do) for the full list
 
 ---
 
-**Current focus:** OpenCosmos migration (Phase 1) — see [docs/opencosmos-migration.md](../docs/opencosmos-migration.md).
+**Current focus:** OpenCosmos migration (Phase 1) — see [docs/projects/opencosmos-migration.md](../docs/projects/opencosmos-migration.md).
