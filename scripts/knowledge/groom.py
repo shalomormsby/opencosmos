@@ -610,6 +610,7 @@ def process_generic(text: str) -> str:
 FILE_REGISTRY: Dict[str, tuple] = {
     # Plato/Jowett dialogues
     'apology-plato':         ('dialogue', 'Apology'),
+    'philosophy-crito':      ('dialogue', 'Crito'),
     'euthyphro-plato':       ('dialogue', 'Euthyphro'),
     'gorgias-plato':         ('dialogue', 'Gorgias'),
     'meno-plato':            ('dialogue_meno', 'Meno'),

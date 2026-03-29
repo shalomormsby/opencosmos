@@ -34,21 +34,30 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 
 ## Core Texts
 
-*To be populated as the knowledge corpus grows. Each entry will link to the source document in the corpus.*
+*Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
 
 ### Systems Thinking
-- [ ] Donella Meadows, *Thinking in Systems* (Leverage points, feedback loops, system dynamics) <!-- corpus: Thinking in Systems -->
-- [ ] James Lovelock, *The Gaia Hypothesis* (Earth as self-regulating system) <!-- corpus: Gaia Hypothesis, The Gaia Hypothesis -->
-- [ ] Christopher Alexander, *A Pattern Language* (Architectural patterns, human-centered design) <!-- corpus: A Pattern Language -->
+- [ ] Donella Meadows, *Thinking in Systems* (commentary) (Leverage points, feedback loops, system dynamics) <!-- corpus: Thinking in Systems -->
+- [ ] James Lovelock, *The Gaia Hypothesis* (commentary) (Earth as self-regulating system) <!-- corpus: Gaia Hypothesis, The Gaia Hypothesis -->
+- [ ] Christopher Alexander, *A Pattern Language* (commentary) (Architectural patterns, human-centered design) <!-- corpus: A Pattern Language -->
 
 ### Engineering Philosophy
-- [ ] Fred Brooks, *The Mythical Man-Month* (Software engineering wisdom, essential vs. accidental complexity) <!-- corpus: The Mythical Man-Month -->
-- [ ] Buckminster Fuller on ephemeralization (Doing more with less) <!-- corpus: Ephemeralization -->
-- [ ] Stewart Brand, *How Buildings Learn* (Adaptation, layers of change) <!-- corpus: How Buildings Learn -->
+- [ ] Fred Brooks, *The Mythical Man-Month* (commentary) (Essential vs. accidental complexity, software engineering wisdom) <!-- corpus: The Mythical Man-Month -->
+- [ ] Buckminster Fuller on ephemeralization (commentary) (Doing more with less — "build a new model that makes the existing model obsolete") <!-- corpus: Ephemeralization -->
+- [ ] Stewart Brand, *How Buildings Learn* (commentary) (Adaptation, layers of change) <!-- corpus: How Buildings Learn -->
+
+### Renaissance and Visionary Builders
+- [ ] Leonardo da Vinci, notebooks and selected writings (The unity of art and engineering, the relentless study of how things work) <!-- corpus: Leonardo da Vinci Notebooks -->
+- [ ] Michelangelo, letters and poetry (Mastery through devotion to craft) <!-- corpus: Michelangelo Selected Writings -->
+- [ ] Frank Lloyd Wright (commentary) (Architecture that serves life, organic design)
+- [ ] Zaha Hadid (reference) (Visionary architecture, parametric design, form as movement)
 
 ### Pragmatism & Kaizen
-- [ ] W. Edwards Deming on continuous improvement (Kaizen, quality, systems) <!-- corpus: Continuous Improvement -->
+- [ ] W. Edwards Deming on continuous improvement (commentary) (Kaizen, quality, the elimination of waste through understanding) <!-- corpus: Continuous Improvement -->
 - [ ] [DESIGN-PHILOSOPHY.md](../../DESIGN-PHILOSOPHY.md) — the four principles that constrain all building
+
+### Ecology & Regenerative Design
+- [ ] Janine Benyus, *Biomimicry* (commentary) (Nature as model, measure, and mentor — building systems that give back more than they take) <!-- corpus: Biomimicry -->
 
 ### Ethical Building
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the mission that all building serves

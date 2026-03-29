@@ -2,7 +2,7 @@
 
 > **This file is superseded by [The Three Futures Roadmap](../../docs/projects/three-futures-roadmap.md)** — the authoritative, phased project plan for OpenCosmos. All active planning, sequencing, and tracking lives there. This file is preserved for historical reference only.
 >
-> For vision, architecture, and design rationale, see [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md) (historical). For the knowledge base hosting strategy, see [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+> For vision, architecture, and design rationale, see [INCEPTION.md](../../docs/archive-and-deprecated/INCEPTION.md) (historical). For the knowledge base hosting strategy, see [Migration Phase 1d](../projects/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
 
 **Last updated:** 2026-03-13 · **Superseded:** 2026-03-14
 
@@ -125,7 +125,7 @@ This completes Phase 1a (local) and lays the foundation for Phase 1d (cloud know
 
 - [ ] Integrate with OpenCosmos Studio (theme generation from intent)
 - [ ] Implement client router with Sovereignty Tiers (Ollama local → queue-for-sunrise → explicit-opt-in cloud)
-- [ ] Deploy cloud-primary knowledge base (always-on RAG API + static docs site on opencosmos.ai) — see [Migration Phase 1d](../../docs/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started)
+- [ ] Deploy cloud-primary knowledge base (always-on RAG API + static docs site on opencosmos.ai) — see [Migration Phase 1d](../projects/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started)
 - [ ] Set up knowledge base sync workflow (local Open WebUI ↔ cloud vector DB)
 - [ ] Migrate from Open WebUI's built-in RAG to custom RAG pipeline in `packages/ai/src/rag/`
 - [ ] Evaluate stocks migration: audit existing direct SDK imports, determine which calls can route through `@opencosmos/ai`

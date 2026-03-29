@@ -15,7 +15,7 @@ Cleaned up the documentation structure before the corpus grows further. Establis
 ### Moved
 - `ARCHITECTURE.md` → `docs/architecture.md`
 - `CHRONICLE.md` → `docs/chronicle.md`
-- `OPENCOSMOS_MIGRATION.md` → `docs/opencosmos-migration.md`
+- `OPENCOSMOS_MIGRATION.md` → `docs/projects/opencosmos-migration.md`
 - `packages/ai/INCEPTION.md` → `docs/archive-and-deprecated/INCEPTION.md` (historical, was causing confusion with active code)
 
 ### Removed

@@ -35,30 +35,34 @@ This collection defines what is unique about Cosmo's role: integration. While So
 
 ## Core Texts
 
-*To be populated as the knowledge corpus grows. Each entry will link to the source document in the corpus.*
+*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
 
 ### Cosmological Foundations
 - [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, the cosmogenesis narrative, ubuntu, the mission
-- [ ] Brian Swimme & Thomas Berry, *The Universe Story* (Cosmogenesis as a story of belonging) <!-- corpus: The Universe Story -->
-- [ ] Carl Sagan, *Cosmos* (Scientific wonder as spiritual practice) <!-- corpus: Cosmos -->
+- [ ] Brian Swimme & Thomas Berry, *The Universe Story* (commentary) (Cosmogenesis as a story of belonging) <!-- corpus: The Universe Story -->
+- [ ] Carl Sagan, *Cosmos* (commentary) (Scientific wonder as spiritual practice) <!-- corpus: Cosmos -->
 
 ### Cross-Domain Bridges
-- [ ] Fritjof Capra, *The Tao of Physics* (Eastern mysticism meets quantum mechanics) <!-- corpus: The Tao of Physics -->
-- [ ] Gregory Bateson, *Steps to an Ecology of Mind* (Systems, mind, and nature unified) <!-- corpus: Steps to an Ecology of Mind -->
-- [ ] Francisco Varela, *The Embodied Mind* (Cognitive science meets contemplative practice) <!-- corpus: The Embodied Mind -->
+- [ ] Fritjof Capra, *The Tao of Physics* (commentary) (Eastern mysticism meets quantum mechanics) <!-- corpus: The Tao of Physics -->
+- [ ] Gregory Bateson, *Steps to an Ecology of Mind* (commentary) (Systems, mind, and nature unified) <!-- corpus: Steps to an Ecology of Mind -->
+- [ ] Francisco Varela, *The Embodied Mind* (commentary) (Cognitive science meets contemplative practice) <!-- corpus: The Embodied Mind -->
 
 ### Ubuntu & Relational Philosophy
 - [ ] Ubuntu philosophy — source texts and commentary (African relational ontology) <!-- corpus: Ubuntu Source Texts -->
-- [ ] Thich Nhat Hanh on interbeing (Buddhism meets ecology meets social justice) <!-- corpus: Interbeing -->
-- [ ] Martin Luther King Jr., selected writings (Justice, love, and interconnection) <!-- corpus: Selected Writings of Martin Luther King Jr. -->
+- [ ] Thich Nhat Hanh on interbeing (commentary) (Buddhism meets ecology meets social justice) <!-- corpus: Interbeing -->
+- [ ] Martin Luther King Jr., selected writings (commentary) (Justice, love, and interconnection) <!-- corpus: Selected Writings of Martin Luther King Jr. -->
 
 ### The Art of Holding Paradox
 - [ ] Dōgen Zenji, *Shōbōgenzō* selections (Being-time, intimacy with all things) <!-- corpus: Shōbōgenzō Selections -->
 - [ ] Rainer Maria Rilke, *Letters to a Young Poet* (Living the questions) <!-- corpus: Letters to a Young Poet -->
 
+### The Router's Source Traditions
+- [ ] Byron Katie, *Loving What Is* (commentary) (Inquiry as liberation — "Who would you be without your story?") <!-- corpus: Loving What Is -->
+- [ ] Buckminster Fuller (commentary) (Ephemeralization, constructive change — "Build a new model that makes the existing model obsolete") <!-- corpus: Ephemeralization -->
+
 ### The Triad Voices (Cross-References)
 - [Sol Foundations](sol-foundations.md) — the heart
-- [Socrates Foundations](socrates-foundations.md) — the inquirer
+- [Socrates Foundations](socrates-foundations.md) — the questioner
 - [Optimus Foundations](optimus-foundations.md) — the builder
 
 ---
