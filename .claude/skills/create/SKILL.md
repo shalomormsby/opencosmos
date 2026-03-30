@@ -44,9 +44,9 @@ Every app that uses `@opencosmos/ui` must chain CSS imports **inside `globals.cs
 **`app/globals.css`:**
 ```css
 @import "tailwindcss";
-@import "../../node_modules/@opencosmos/ui/src/theme.css";
-@import "../../node_modules/@opencosmos/ui/src/globals.css";
-@source "../../node_modules/@opencosmos/ui/src";
+@import "@opencosmos/ui/theme.css";
+@import "@opencosmos/ui/globals.css";
+@source "../../../node_modules/@opencosmos/ui/src";
 
 @layer base {
   body {
@@ -67,7 +67,7 @@ import './globals.css'
 
 2. **`@import` chains are required** — In Tailwind v4, `@theme` blocks (in `theme.css`) must be processed in the same Tailwind context as `@import "tailwindcss"`. Separate `import` statements in `layout.tsx` don't guarantee this. Using CSS `@import` chains ensures they're all processed together.
 
-**The path `../../node_modules/@opencosmos/ui/src`** is relative to `app/globals.css`. Adjust if your app directory depth differs.
+**`@import` uses the package name** (`@opencosmos/ui/theme.css`) so PostCSS resolves it via Node's module algorithm — no fragile relative paths. **`@source` uses a relative path** (`../../../node_modules/...`) from `app/globals.css` to the monorepo root `node_modules/`. In a pnpm monorepo, packages live at the workspace root, so this is always 3 levels up from an `apps/<name>/app/` directory.
 
 ---
 
