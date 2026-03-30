@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { getAllNodes, getNodeById, getConnectedNodes } from '@/lib/content/parser';
-import { Card, Breadcrumbs, Badge } from '@thesage/ui';
+import { Card, Breadcrumbs, Badge } from '@opencosmos/ui';
 import type { Metadata } from 'next';
 
 /**

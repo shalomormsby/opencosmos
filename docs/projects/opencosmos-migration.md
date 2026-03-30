@@ -3,8 +3,8 @@
 > Project management doc for the transition from "Sage" to "OpenCosmos" across all repos, packages, and infrastructure.
 
 **Created:** 2026-03-08
-**Last updated:** 2026-03-10
-**Status:** Phase 1a complete. Phase 1b complete. Phase 1c in progress. Phase 1d design complete.
+**Last updated:** 2026-03-29
+**Status:** Phase 1 complete. Phase 2a–2c complete. Phase 3a–3b complete. Phase 2d and 3c pending.
 
 ---
 
@@ -16,18 +16,18 @@ A full rebrand from "Sage" to "OpenCosmos" across two active repositories, four 
 
 | Before | After | Status |
 |--------|-------|--------|
-| Sage Design Engine | OpenCosmos/UI | Planned |
-| @thesage/ui | @opencosmos/ui | Planned (@opencosmos registered on npm) |
-| @thesage/tokens | @opencosmos/tokens | Planned |
-| @thesage/mcp | @opencosmos/mcp | Planned |
+| Sage Design Engine | OpenCosmos UI | **Done** (Phase 2c) |
+| @thesage/ui | @opencosmos/ui | **Done** — published v1.3.1 (Phase 3a) |
+| @thesage/tokens | @opencosmos/tokens | **Done** — published v1.0.1 (Phase 3a) |
+| @thesage/mcp | @opencosmos/mcp | **Done** — published v0.8.3 (Phase 3a) |
 | Sage AI / @thesage/ai | @opencosmos/ai | **Done** (Phase 1a) |
-| thesage.dev | opencosmos.ai | Domain registered |
-| Sage Studio | OpenCosmos Studio | Planned |
+| thesage.dev | opencosmos.ai/studio | Domain registered; redirects pending (Phase 2d) |
+| Sage Studio | OpenCosmos Studio | **Done** (Phase 2c) |
 | ecosystem (repo) | opencosmos (repo) | **Done** (GitHub renamed) |
-| sage-design-engine (repo) | opencosmos-ui (repo) | Planned |
+| sage-design-engine (repo) | opencosmos-ui (repo) | **Done** (GitHub renamed 2026-03-29) |
 | sageos | cosmOS | **Done** (Phase 1a) |
 | sage-stocks | stocks | **Done** (Phase 1a) |
-| Sage (general references) | OpenCosmos | **Done** in this repo |
+| Sage (general references) | OpenCosmos | **Done** in both repos |
 
 ### What Does NOT Change
 
@@ -129,31 +129,31 @@ Update sage-design-engine. This is the more complex migration because it affects
 
 ### 2a: Repository & Package Names
 - [x] Rename GitHub repo: sage-design-engine → opencosmos-ui
-- [ ] Update root package.json name
-- [ ] Update @thesage/ui → @opencosmos/ui (package.json)
-- [ ] Update @thesage/tokens → @opencosmos/tokens
-- [ ] Update @thesage/mcp → @opencosmos/mcp
-- [ ] Update all internal workspace references
-- [ ] Update CLI binary name (`thesage-ui` → `opencosmos-ui` or `cosmo-ui`)
+- [x] Update root package.json name (`sage-design-engine` → `opencosmos-ui`)
+- [x] Update @thesage/ui → @opencosmos/ui (package.json)
+- [x] Update @thesage/tokens → @opencosmos/tokens
+- [x] Update @thesage/mcp → @opencosmos/mcp
+- [x] Update all internal workspace references (cli.ts, registry.ts, index.ts, apps/web deps)
+- [x] Update CLI binary names (`thesage-ui` → `opencosmos-ui`, `sds-mcp` → `opencosmos-mcp`)
 
 ### 2b: Documentation & AI Surfaces
-- [ ] Update .claude/CLAUDE.md
-- [ ] Update packages/ui/.claude/CLAUDE.md
-- [ ] Update AGENTS.md
-- [ ] Update DESIGN-PHILOSOPHY.md
-- [ ] Update README.md
-- [ ] Update CONTRIBUTING.md
-- [ ] Update CHANGELOG.md
-- [ ] Update apps/web/public/llms.txt
-- [ ] Update apps/web/public/llms-full.txt
-- [ ] Update apps/web/public/.well-known/ai-plugin.json
-- [ ] Update apps/web/public/.well-known/mcp-server.json
+- [x] Update .claude/CLAUDE.md
+- [x] Update packages/ui/.claude/CLAUDE.md
+- [x] Update AGENTS.md
+- [x] Update DESIGN-PHILOSOPHY.md
+- [x] Update README.md
+- [x] Update CONTRIBUTING.md
+- [ ] Update CHANGELOG.md (historical entries intentionally preserved)
+- [x] Update apps/web/public/llms.txt
+- [x] Update apps/web/public/llms-full.txt
+- [x] Update apps/web/public/.well-known/ai-plugin.json
+- [x] Update apps/web/public/.well-known/mcp-server.json
 
 ### 2c: Sage Studio → OpenCosmos Studio
-- [ ] Update apps/web/package.json description
-- [ ] Update site branding (title, meta, footer, etc.)
-- [ ] Update any "Sage Studio" or "Sage Design Engine" strings in UI
-- [ ] Update docs/ strategy files
+- [x] Update apps/web/package.json description
+- [x] Update site branding (title, meta, footer, etc.) — 162 files updated
+- [x] Update all "Sage Studio" / "Sage Design Engine" / "@thesage/*" strings in UI
+- [x] Update docs/ strategy files
 
 ### 2d: Vercel & Infrastructure
 - [ ] Update Vercel project name
@@ -168,19 +168,19 @@ Update sage-design-engine. This is the more complex migration because it affects
 Publish new packages under @opencosmos scope. Handle transition gracefully.
 
 ### 3a: Publish New Packages
-- [ ] Publish @opencosmos/ui (starting at version that matches current @thesage/ui)
-- [ ] Publish @opencosmos/tokens
-- [ ] Publish @opencosmos/mcp
-- [ ] Verify all packages install and work correctly
+- [x] Publish @opencosmos/ui@1.3.1 (matches @thesage/ui version)
+- [x] Publish @opencosmos/tokens@1.0.1
+- [x] Publish @opencosmos/mcp@0.8.3
+- [x] Verify all packages install and work correctly (`pnpm install` resolves from npm)
 
 ### 3b: Update Consumers
-- [ ] Update apps/portfolio imports: @thesage/ui → @opencosmos/ui
-- [ ] Update apps/creative-powerup imports
-- [ ] Update apps/stocks imports
-- [ ] Update all CSS import paths
-- [ ] Update all hook imports
-- [ ] Update all provider imports
-- [ ] Verify all apps build and deploy successfully
+- [x] Update apps/portfolio imports: @thesage/ui → @opencosmos/ui
+- [x] Update apps/creative-powerup imports
+- [x] Update apps/web imports (CosmoChat, layout, next.config)
+- [x] Update all CSS import paths
+- [x] Update all hook and provider imports
+- [x] Verify all apps build successfully (portfolio ✓, web ✓, creative-powerup ✓)
+- [ ] Verify deploy to Vercel (pending PR merge: shalomormsby/opencosmos#47)
 
 ### 3c: Deprecation
 - [ ] Publish final @thesage/ui version with deprecation notice pointing to @opencosmos/ui

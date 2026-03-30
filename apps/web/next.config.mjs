@@ -6,7 +6,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  transpilePackages: ['@thesage/ui'],
+  transpilePackages: ['@opencosmos/ui'],
   env: {
     COSMO_SYSTEM_PROMPT: readFileSync(
       join(__dirname, '../../packages/ai/COSMO_SYSTEM_PROMPT.md'),

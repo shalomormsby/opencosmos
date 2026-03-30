@@ -1,4 +1,4 @@
-import type { HeaderNavLink } from '@thesage/ui';
+import type { HeaderNavLink } from '@opencosmos/ui';
 
 export const ecosystemNavigation: HeaderNavLink[] = [
   {

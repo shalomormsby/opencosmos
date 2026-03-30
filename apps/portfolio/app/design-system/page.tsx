@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Card, Button, Breadcrumbs } from '@thesage/ui';
+import { Card, Button, Breadcrumbs } from '@opencosmos/ui';
 
 export default function DesignSystemPage() {
   return (

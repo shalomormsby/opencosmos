@@ -1,7 +1,7 @@
 'use client';
 
 import NextLink from 'next/link';
-import { Card, Link, Header, Footer } from '@thesage/ui';
+import { Card, Link, Header, Footer } from '@opencosmos/ui';
 import { ecosystemNavigation } from '../lib/navigation';
 
 export default function Home() {

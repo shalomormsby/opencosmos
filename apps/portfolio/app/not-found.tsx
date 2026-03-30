@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button } from '@thesage/ui';
+import { Button } from '@opencosmos/ui';
 
 export default function NotFound() {
     return (
