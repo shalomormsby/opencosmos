@@ -156,10 +156,11 @@ Update sage-design-engine. This is the more complex migration because it affects
 - [x] Update docs/ strategy files
 
 ### 2d: Vercel & Infrastructure
-- [ ] Update Vercel project name
-- [ ] Configure opencosmos.ai domain
-- [ ] Set up redirects from thesage.dev → opencosmos.ai
-- [ ] Update .vercel/project.json
+- [x] Rename Vercel project: `thesage` → `opencosmos-studio`
+- [x] Configure `studio.opencosmos.ai` as custom domain on the Studio project
+- [x] thesage.dev → 301 → `studio.opencosmos.ai` (Next.js config redirects)
+- [x] `opencosmos.ai/studio/:path*` → 302 → `studio.opencosmos.ai/:path*` (vercel.json)
+- [x] `.vercel/project.json` — N/A: gitignored, managed by Vercel CLI locally
 
 ---
 
