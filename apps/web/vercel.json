@@ -1,10 +1,11 @@
 {
     "buildCommand": "pnpm turbo run build --filter=web",
     "installCommand": "pnpm install",
-    "rewrites": [
+    "redirects": [
         {
             "source": "/studio/:path*",
-            "destination": "https://thesage-4by86ii1d-shalom-ormsbys-projects.vercel.app/studio/:path*"
+            "destination": "https://studio.opencosmos.ai/:path*",
+            "permanent": false
         }
     ]
 }
