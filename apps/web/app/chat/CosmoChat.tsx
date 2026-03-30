@@ -5,9 +5,48 @@ import { Button, Input, ScrollArea, cn } from '@opencosmos/ui'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
+type Conversation = {
+  id: string
+  title: string
+  messages: Message[]
+  createdAt: number
+  updatedAt: number
+}
+
 const FREE_LIMIT = 3
 const KEY_FREE_COUNT = 'cosmo_free_count'
 const KEY_API_KEY = 'cosmo_api_key'
+const KEY_CONVERSATIONS = 'cosmo_conversations'
+const KEY_CURRENT_ID = 'cosmo_current_id'
+
+function loadAll(): Record<string, Conversation> {
+  try {
+    return JSON.parse(localStorage.getItem(KEY_CONVERSATIONS) || '{}')
+  } catch {
+    return {}
+  }
+}
+
+function persist(conv: Conversation) {
+  const all = loadAll()
+  all[conv.id] = conv
+  localStorage.setItem(KEY_CONVERSATIONS, JSON.stringify(all))
+}
+
+function toTitle(messages: Message[]): string {
+  const first = messages.find((m) => m.role === 'user')
+  if (!first) return 'New conversation'
+  return first.content.length > 50 ? first.content.slice(0, 50) + '…' : first.content
+}
+
+function timeAgo(ts: number): string {
+  const mins = Math.floor((Date.now() - ts) / 60000)
+  if (mins < 1) return 'just now'
+  if (mins < 60) return `${mins}m ago`
+  const hrs = Math.floor(mins / 60)
+  if (hrs < 24) return `${hrs}h ago`
+  return `${Math.floor(hrs / 24)}d ago`
+}
 
 export function CosmoChat() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -17,12 +56,30 @@ export function CosmoChat() {
   const [apiKeyDraft, setApiKeyDraft] = useState('')
   const [freeCount, setFreeCount] = useState(0)
   const [mounted, setMounted] = useState(false)
+  const [currentId, setCurrentId] = useState('')
+  const [conversations, setConversations] = useState<Conversation[]>([])
+  const [showHistory, setShowHistory] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   useEffect(() => {
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
     setFreeCount(Number(localStorage.getItem(KEY_FREE_COUNT) || '0'))
+
+    const savedId = localStorage.getItem(KEY_CURRENT_ID)
+    const all = loadAll()
+
+    let id: string
+    if (savedId && all[savedId]) {
+      id = savedId
+      setMessages(all[savedId].messages)
+    } else {
+      id = crypto.randomUUID()
+      localStorage.setItem(KEY_CURRENT_ID, id)
+    }
+
+    setCurrentId(id)
+    setConversations(Object.values(all).sort((a, b) => b.updatedAt - a.updatedAt))
     setMounted(true)
   }, [])
 
@@ -30,13 +87,16 @@ export function CosmoChat() {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [messages])
 
-  // Auto-resize textarea
   useEffect(() => {
     const el = textareaRef.current
     if (!el) return
     el.style.height = 'auto'
     el.style.height = `${Math.min(el.scrollHeight, 160)}px`
   }, [input])
+
+  const refreshConversations = useCallback(() => {
+    setConversations(Object.values(loadAll()).sort((a, b) => b.updatedAt - a.updatedAt))
+  }, [])
 
   const isLimited = mounted && !apiKey && freeCount >= FREE_LIMIT
 
@@ -60,21 +120,20 @@ export function CosmoChat() {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: newMessages,
-          apiKey: apiKey || undefined,
-        }),
+        body: JSON.stringify({ messages: newMessages, apiKey: apiKey || undefined }),
       })
 
       if (!res.ok || !res.body) throw new Error('API error')
 
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
+      let assistantContent = ''
 
       while (true) {
         const { done, value } = await reader.read()
         if (done) break
         const chunk = decoder.decode(value, { stream: true })
+        assistantContent += chunk
         setMessages((prev) => {
           const updated = [...prev]
           updated[updated.length - 1] = {
@@ -84,6 +143,21 @@ export function CosmoChat() {
           return updated
         })
       }
+
+      const finalMessages: Message[] = [
+        ...newMessages,
+        { role: 'assistant', content: assistantContent },
+      ]
+      const all = loadAll()
+      const existing = all[currentId]
+      persist({
+        id: currentId,
+        title: toTitle(finalMessages),
+        messages: finalMessages,
+        createdAt: existing?.createdAt ?? Date.now(),
+        updatedAt: Date.now(),
+      })
+      refreshConversations()
     } catch {
       setMessages((prev) => {
         const updated = [...prev]
@@ -97,7 +171,7 @@ export function CosmoChat() {
       setIsStreaming(false)
       textareaRef.current?.focus()
     }
-  }, [input, isStreaming, isLimited, messages, apiKey, freeCount])
+  }, [input, isStreaming, isLimited, messages, apiKey, freeCount, currentId, refreshConversations])
 
   const saveKey = () => {
     const key = apiKeyDraft.trim()
@@ -107,21 +181,105 @@ export function CosmoChat() {
     setApiKeyDraft('')
   }
 
+  const startNew = () => {
+    const id = crypto.randomUUID()
+    localStorage.setItem(KEY_CURRENT_ID, id)
+    setCurrentId(id)
+    setMessages([])
+    setShowHistory(false)
+  }
+
+  const openConversation = (conv: Conversation) => {
+    localStorage.setItem(KEY_CURRENT_ID, conv.id)
+    setCurrentId(conv.id)
+    setMessages(conv.messages)
+    setShowHistory(false)
+  }
+
   const remainingFree = Math.max(0, FREE_LIMIT - freeCount)
 
   return (
     <div className="flex flex-col h-screen bg-background">
+      {/* History backdrop */}
+      {showHistory && (
+        <div
+          className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm"
+          onClick={() => setShowHistory(false)}
+        />
+      )}
+
+      {/* History panel */}
+      <aside
+        className={cn(
+          'fixed inset-y-0 left-0 z-50 w-72 bg-background border-r border-foreground/10 flex flex-col',
+          'transition-transform duration-200 ease-in-out',
+          showHistory ? 'translate-x-0' : '-translate-x-full'
+        )}
+      >
+        <div className="flex items-center justify-between px-4 py-4 border-b border-foreground/10 shrink-0">
+          <span className="text-sm text-foreground/60">Conversations</span>
+          <button
+            onClick={() => setShowHistory(false)}
+            className="text-foreground/30 hover:text-foreground/60 transition-colors text-lg leading-none"
+            aria-label="Close"
+          >
+            ✕
+          </button>
+        </div>
+        <div className="px-3 py-3 border-b border-foreground/10 shrink-0">
+          <Button variant="outline" size="sm" className="w-full" onClick={startNew}>
+            New conversation
+          </Button>
+        </div>
+        <ScrollArea className="flex-1">
+          {conversations.length === 0 ? (
+            <p className="text-xs text-foreground/30 text-center py-10 px-4">
+              No previous conversations.
+            </p>
+          ) : (
+            <div className="py-2">
+              {conversations.map((conv) => (
+                <button
+                  key={conv.id}
+                  onClick={() => openConversation(conv)}
+                  className={cn(
+                    'w-full text-left px-4 py-3 hover:bg-foreground/5 transition-colors',
+                    conv.id === currentId && 'bg-foreground/5'
+                  )}
+                >
+                  <p className="text-sm text-foreground/75 truncate">{conv.title}</p>
+                  <p className="text-xs text-foreground/30 mt-0.5">{timeAgo(conv.updatedAt)}</p>
+                </button>
+              ))}
+            </div>
+          )}
+        </ScrollArea>
+      </aside>
+
       {/* Header */}
       <header className="flex items-center justify-between px-6 py-4 border-b border-foreground/10 shrink-0">
-        <a
-          href="/"
-          className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors"
-        >
-          ← OpenCosmos
-        </a>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => setShowHistory(!showHistory)}
+            className="text-foreground/35 hover:text-foreground/65 transition-colors"
+            aria-label="Conversation history"
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          <a
+            href="/"
+            className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors"
+          >
+            ← OpenCosmos
+          </a>
+        </div>
         {mounted && (
           <span className="text-xs text-foreground/30">
-            {apiKey ? 'Your key · Unlimited' : `${remainingFree} free ${remainingFree === 1 ? 'message' : 'messages'} remaining`}
+            {apiKey
+              ? 'Your key · Unlimited'
+              : `${remainingFree} free ${remainingFree === 1 ? 'message' : 'messages'} remaining`}
           </span>
         )}
       </header>
@@ -155,9 +313,12 @@ export function CosmoChat() {
                 )}
               >
                 {msg.content}
-                {isStreaming && i === messages.length - 1 && msg.role === 'assistant' && !msg.content && (
-                  <span className="inline-block w-1.5 h-3.5 bg-foreground/30 animate-pulse align-middle" />
-                )}
+                {isStreaming &&
+                  i === messages.length - 1 &&
+                  msg.role === 'assistant' &&
+                  !msg.content && (
+                    <span className="inline-block w-1.5 h-3.5 bg-foreground/30 animate-pulse align-middle" />
+                  )}
               </div>
             </div>
           ))}
@@ -166,7 +327,7 @@ export function CosmoChat() {
         </div>
       </ScrollArea>
 
-      {/* BYOK entry — shown when free limit is reached */}
+      {/* BYOK entry */}
       {isLimited && (
         <div className="border-t border-foreground/10 px-6 py-5 shrink-0">
           <div className="max-w-2xl mx-auto space-y-3">
@@ -201,7 +362,8 @@ export function CosmoChat() {
               </Button>
             </div>
             <p className="text-xs text-foreground/25">
-              Your key is stored only in your browser and never sent to OpenCosmos servers beyond forwarding to Anthropic.
+              Your key is stored only in your browser and never sent to OpenCosmos servers beyond
+              forwarding to Anthropic.
             </p>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@opencosmos/ui'
 import { Analytics } from '@vercel/analytics/next'
+import '@opencosmos/ui/globals.css'
+import '@opencosmos/ui/theme.css'
 import './globals.css'
 
 export const metadata: Metadata = {
