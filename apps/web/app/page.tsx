@@ -12,7 +12,7 @@ export default function Home() {
         }
         navAlignment="right"
         navLinks={[
-          { label: 'Chat', href: '/chat' },
+          { label: 'Dialog', href: '/chat' },
           { label: 'Studio', href: 'https://studio.opencosmos.ai' },
         ]}
         actions={

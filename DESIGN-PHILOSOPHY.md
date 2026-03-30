@@ -104,7 +104,33 @@ This ecosystem is built *with* AI, including Claude Code, Gemini, Goose, and Not
 
 ## Systems Thinking: "One Mind, Many Expressions"
 
-This isn't a collection of separate projects. It's an **ecosystem** expressing a unified vision through different lenses:
+This isn't a collection of separate projects. It's an **ecosystem** expressing a unified vision through different lenses.
+
+### Build Once, Ripple Everywhere
+
+**The most important operational principle in this ecosystem.**
+
+When something needs to change — a color, a spacing value, a button shape, a motion curve, a component behavior — change it in the design system, not in the consuming app. That change then ripples to every product that uses it, automatically and coherently.
+
+**Why this matters:**
+- One change propagates everywhere. Consistency is structural, not disciplined.
+- No chasing down disconnected elements across apps.
+- No drift between products that were once consistent but diverged through one-off patches.
+- The system gets better for everyone when one product needs something better.
+
+**In practice:**
+- **Before writing custom CSS or bespoke JSX**, ask: does a component in `@opencosmos/ui` already cover this? If yes, use it.
+- **If no component exists**, don't build it inline. Surface it: declare what's missing and why, then add it to the component library. Every product that later needs the same thing benefits.
+- **When a component almost works but needs a variation**, add a prop or variant to the component — don't wrap it with overriding styles.
+- **One-off customizations are a last resort**, reserved for genuinely unique product needs that cannot and should not be generalized.
+
+**The test:** If you fixed this in one place, would all products that need it be fixed? If not, you're patching an instance instead of evolving the system.
+
+This is how a design system earns its name. It's not a UI kit — it's a living system where improvements compound.
+
+For AI agents working in this repo: the [`/create` skill](.claude/skills/create/SKILL.md) encodes this principle operationally — component reference, token rules, and the missing-component protocol in one place.
+
+---
 
 ### The Expressions (Current)
 

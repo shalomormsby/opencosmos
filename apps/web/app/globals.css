@@ -1,16 +1,9 @@
 @import "tailwindcss";
+@import "@opencosmos/ui/theme.css";
+@import "@opencosmos/ui/globals.css";
+@source "../../../node_modules/@opencosmos/ui/src";
 
 @layer base {
-  :root {
-    --color-background: #ffffff;
-    --color-foreground: #0a0a0a;
-  }
-
-  .dark {
-    --color-background: #000000;
-    --color-foreground: #fafafa;
-  }
-
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
