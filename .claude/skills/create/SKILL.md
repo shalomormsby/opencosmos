@@ -46,7 +46,7 @@ Every app that uses `@opencosmos/ui` must chain CSS imports **inside `globals.cs
 @import "tailwindcss";
 @import "@opencosmos/ui/theme.css";
 @import "@opencosmos/ui/globals.css";
-@source "../../../node_modules/@opencosmos/ui/src";
+@source "../../../node_modules/.pnpm/@opencosmos+ui@*/node_modules/@opencosmos/ui/dist";
 
 @layer base {
   body {
@@ -61,13 +61,15 @@ Every app that uses `@opencosmos/ui` must chain CSS imports **inside `globals.cs
 import './globals.css'
 ```
 
-**Why this matters (two separate failure modes):**
+**Why this matters:**
 
 1. **`@source` is required** — Tailwind v4 excludes `node_modules` from scanning by default. Without `@source`, responsive classes used inside `@opencosmos/ui` components (`lg:hidden`, `lg:flex`, `-translate-x-full`, etc.) are never generated. The result: mobile and desktop layouts both render simultaneously, producing a broken, overlapping UI.
 
 2. **`@import` chains are required** — In Tailwind v4, `@theme` blocks (in `theme.css`) must be processed in the same Tailwind context as `@import "tailwindcss"`. Separate `import` statements in `layout.tsx` don't guarantee this. Using CSS `@import` chains ensures they're all processed together.
 
-**`@import` uses the package name** (`@opencosmos/ui/theme.css`) so PostCSS resolves it via Node's module algorithm — no fragile relative paths. **`@source` uses a relative path** (`../../../node_modules/...`) from `app/globals.css` to the monorepo root `node_modules/`. In a pnpm monorepo, packages live at the workspace root, so this is always 3 levels up from an `apps/<name>/app/` directory.
+3. **Why the pnpm `.pnpm` store path, not `node_modules/@opencosmos/ui`** — In pnpm workspaces, `node_modules/@opencosmos/ui` is a **symlink** to the content-addressed store at `node_modules/.pnpm/@opencosmos+ui@{hash}/node_modules/@opencosmos/ui`. Tailwind v4 does not follow pnpm symlinks. The `@source` glob targets the real files directly, bypassing the symlink. The `@*` wildcard absorbs the version hash so this doesn't break on upgrades.
+
+**`@import` uses the package name** so PostCSS resolves it via Node's module algorithm. **`@source` targets `dist/`** (the compiled JS/MJS files) rather than `src/` — Tailwind scans these for class name strings, and `dist` is guaranteed present after npm install.
 
 ---
 
