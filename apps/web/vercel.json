@@ -1,4 +1,10 @@
 {
     "buildCommand": "pnpm turbo run build --filter=web",
-    "installCommand": "pnpm install"
+    "installCommand": "pnpm install",
+    "rewrites": [
+        {
+            "source": "/studio/:path*",
+            "destination": "https://thesage-4by86ii1d-shalom-ormsbys-projects.vercel.app/studio/:path*"
+        }
+    ]
 }
