@@ -7,7 +7,7 @@ import { Inter, Manrope, Instrument_Sans, Lora, JetBrains_Mono, Space_Grotesk, F
 
 /**
  * Studio Theme Fonts
- * Variable names from @thesage/ui
+ * Variable names from @opencosmos/ui
  */
 export const studioHeading = Inter({
   subsets: ['latin'],

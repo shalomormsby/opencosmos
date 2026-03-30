@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { ThemeProvider } from '@thesage/ui'
+import { ThemeProvider } from '@opencosmos/ui'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 

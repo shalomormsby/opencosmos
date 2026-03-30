@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Button, Input, ScrollArea, cn } from '@thesage/ui'
+import { Button, Input, ScrollArea, cn } from '@opencosmos/ui'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 

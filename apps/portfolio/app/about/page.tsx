@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Button, Breadcrumbs } from '@thesage/ui';
+import { Button, Breadcrumbs } from '@opencosmos/ui';
 
 export default function About() {
     return (

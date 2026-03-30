@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@thesage/ui": "^1.1.1",
+    "@opencosmos/ui": "^1.1.1",
     "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.23.26",
     "next": "^16.1.6",

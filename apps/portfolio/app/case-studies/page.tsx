@@ -1,7 +1,7 @@
 'use client';
 
 import NextLink from 'next/link';
-import { Header, Footer, Card, Link, Breadcrumbs } from '@thesage/ui';
+import { Header, Footer, Card, Link, Breadcrumbs } from '@opencosmos/ui';
 import { ecosystemNavigation } from '@/lib/navigation';
 
 export default function CaseStudiesPage() {

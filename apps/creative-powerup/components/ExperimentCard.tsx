@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import type { Experiment } from '@/lib/types';
-import { Card } from '@thesage/ui';
+import { Card } from '@opencosmos/ui';
 
 interface ExperimentCardProps {
   experiment: Experiment;
