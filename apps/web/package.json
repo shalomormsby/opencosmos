@@ -12,6 +12,8 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.68.0",
     "@opencosmos/ui": "^1.1.1",
+    "@upstash/ratelimit": "^2.0.8",
+    "@upstash/redis": "^1.37.0",
     "@vercel/analytics": "^1.6.1",
     "gray-matter": "^4.0.3",
     "next": "^16.0.10",

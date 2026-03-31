@@ -1,12 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server'
 import Anthropic from '@anthropic-ai/sdk'
 import { randomUUID } from 'crypto'
+import { Ratelimit } from '@upstash/ratelimit'
+import { Redis } from '@upstash/redis'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const FREE_LIMIT = 3
 const SESSION_TTL = 604800 // 7 days
+
+// Hard monthly spend cap: if free-tier request count exceeds this, the shared
+// key is effectively offline for the month. Each request ~$0.03 → 2000 = ~$60.
+// Adjust via COSMO_FREE_MONTHLY_CAP env var.
+const MONTHLY_CAP = parseInt(process.env.COSMO_FREE_MONTHLY_CAP ?? '2000', 10)
 
 const SYSTEM_CONTENT = [
   {
@@ -19,8 +26,22 @@ const SYSTEM_CONTENT = [
 // Default client uses server-side ANTHROPIC_API_KEY (shared free-tier key)
 const defaultClient = new Anthropic()
 
+// IP rate limiter: 3 free-tier requests per IP per 24 hours.
+// Uses sliding window so burst attempts don't reset the window.
+const ipRatelimit = new Ratelimit({
+  redis: new Redis({ url: REDIS_URL, token: REDIS_TOKEN }),
+  limiter: Ratelimit.slidingWindow(3, '24 h'),
+  prefix: 'cosmo_ip:v1',
+  analytics: false,
+})
+
 function redisKey(sessionId: string) {
   return `cosmo_free:v1:${sessionId}`
+}
+
+function monthlyCapKey(): string {
+  const now = new Date()
+  return `cosmo_monthly:v1:${now.getUTCFullYear()}-${now.getUTCMonth() + 1}`
 }
 
 async function checkAndIncrement(
@@ -46,8 +67,37 @@ async function checkAndIncrement(
   }
 }
 
+// Increment the monthly counter and check against the hard cap.
+// Fails open so a Redis outage doesn't take down the free tier.
+async function checkMonthlyCap(): Promise<boolean> {
+  try {
+    const key = monthlyCapKey()
+    const res = await fetch(`${REDIS_URL}/pipeline`, {
+      method: 'POST',
+      headers: {
+        Authorization: `Bearer ${REDIS_TOKEN}`,
+        'Content-Type': 'application/json',
+      },
+      // TTL: 35 days — safely covers the full month + rollover
+      body: JSON.stringify([['INCR', key], ['EXPIRE', key, 3024000]]),
+    })
+    const [incrResult] = (await res.json()) as [{ result: number }]
+    return incrResult.result <= MONTHLY_CAP
+  } catch {
+    return true // fail open
+  }
+}
+
 function sessionCookie(sessionId: string) {
   return `cosmo_session=${sessionId}; HttpOnly; SameSite=Strict; Secure; Max-Age=${SESSION_TTL}; Path=/`
+}
+
+function getClientIp(req: NextRequest): string {
+  return (
+    req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
+    req.headers.get('x-real-ip') ??
+    'unknown'
+  )
 }
 
 export async function POST(req: NextRequest) {
@@ -58,10 +108,30 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
-    // Session tracking for free-tier gate (skipped for BYOK)
+    // Session tracking + bot protection for free-tier (skipped for BYOK)
     let newSessionCookie: string | null = null
 
     if (!apiKey) {
+      // 1. Hard monthly spend cap — cheapest check, no Ratelimit SDK overhead
+      const underCap = await checkMonthlyCap()
+      if (!underCap) {
+        return NextResponse.json(
+          { error: 'free_tier_unavailable', message: 'Free tier is temporarily unavailable. Please use your own API key or subscribe.' },
+          { status: 503 }
+        )
+      }
+
+      // 2. IP rate limit — 3 requests per IP per 24h
+      const ip = getClientIp(req)
+      const { success: ipAllowed } = await ipRatelimit.limit(ip)
+      if (!ipAllowed) {
+        return NextResponse.json(
+          { error: 'rate_limited', message: 'Too many requests from this IP. Please try again later or use your own API key.' },
+          { status: 429 }
+        )
+      }
+
+      // 3. Session-based counter (localStorage bypass protection)
       const existingSession = req.cookies.get('cosmo_session')?.value
       const sessionId = existingSession ?? randomUUID()
       const { allowed } = await checkAndIncrement(sessionId)
