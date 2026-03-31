@@ -150,6 +150,28 @@ What's currenly in progress.
 
 ---
 
+## Site Architecture: opencosmos.ai
+
+*Declared structure — spans all phases.*
+
+```
+opencosmos.ai/
+├── /              → Cosmic welcome (home — four-pillars introduction)
+├── /chat          → Conversation with Cosmo
+├── /knowledge     → Browse the knowledge corpus (Phase 1c)
+├── /studio        → OpenCosmos Studio design system docs (from thesage.dev)
+└── /community     → Creative Powerup (redirect for now, deep integration Phase 3)
+```
+
+**Key decisions:**
+
+- **`/` home page must graduate.** The current minimal placeholder gives way to a page that introduces all four pillars — Cosmo, Knowledge, Studio, Community — warmly and without haste. No hurry. The feeling should match the voice.
+- **`/studio` via Vercel rewrites, not repo merge.** `thesage.dev` (Sage Studio = OpenCosmos Studio) maps to `opencosmos.ai/studio`. The Studio deployment (published from the `opencosmos-ui` repo's `apps/web`) is proxied via rewrites in `apps/web/vercel.json` — users see a unified domain, both codebases stay independent.
+- **`thesage.dev` is a legacy alias.** The migration target is `thesage.dev → opencosmos.ai/studio`. Detailed migration steps are in [opencosmos-migration.md](./opencosmos-migration.md).
+- **`/community` is a redirect for now.** Deep Cosmo integration within CP programs and guided inquiry is Phase 3.
+
+---
+
 ## Phase 1: Cosmo Speaks (Future 1 — BYOK Wisdom Interface)
 
 *Target: March 31, 2026*
