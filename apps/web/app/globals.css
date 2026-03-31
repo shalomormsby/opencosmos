@@ -1,7 +1,6 @@
 @import "tailwindcss";
 @import "@opencosmos/ui/theme.css";
 @import "@opencosmos/ui/globals.css";
-@source "../../../node_modules/.pnpm/@opencosmos+ui@*/node_modules/@opencosmos/ui/dist";
 
 @layer base {
   body {
@@ -9,3 +8,4 @@
     color: var(--color-foreground);
   }
 }
+
