@@ -3,10 +3,125 @@
 > **OpenCosmos Strategic Plan.** This is the authoritative roadmap for OpenCosmos, translating the Three Futures into phased, actionable milestones. Supersedes [opencosmos-todo.md](./opencosmos-todo.md). For the story behind this plan, see [chronicle.md Chapter 3](../chronicle.md#2026-03-13--sovereignty-livelihood-and-the-question-of-scale).
 
 **Created:** 2026-03-14
-**Last updated:** 2026-03-29
-**Status:** Phase 0.1 — next action
+**Last updated:** 2026-03-30
+**Status:** Phase 1b — next sprint: server-side sessions
 
 --- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
+
+---
+
+## Next Up: Server-Side Session Metering (Phase 1b Gate)
+
+*Before subscriptions can go live, the free tier needs server-side enforcement.*
+
+### Why This Is Next
+
+The current free-tier counter lives entirely in `localStorage` (`KEY_FREE_COUNT` in `apps/web/app/chat/CosmoChat.tsx`). Any visitor can reset their counter in 5 seconds by clearing browser storage. This is acceptable for a demo but not for a live product — the same bypass that defeats the free counter will defeat the subscription gate.
+
+**Prompt caching is already live.** The `cache_control: { type: 'ephemeral' }` block at `apps/web/app/api/chat/route.ts:6–12` already caches the system prompt on every call — that's the 76% input cost reduction described in Phase 1b. Not a TODO.
+
+**What remains:** Move the free-exchange counter server-side so it can't be bypassed.
+
+### Technical Approach
+
+The pattern is proven in `apps/stocks/lib/core/rate-limiter.ts`. Upstash Redis REST API — direct `fetch` calls, no SDK needed. The Cosmo version is simpler than stocks because there's no user auth yet — gate by session token instead of user ID.
+
+**Step 1: Session endpoint — `POST /api/session`**
+
+Creates an anonymous session token (UUID), stores it in an HTTP-only cookie, and initializes a Redis counter.
+
+```
+Redis key: cosmo_free:v1:{sessionId}
+TTL: 7 days
+Value: integer, 0–3
+```
+
+```
+Cookie: cosmo_session=<uuid>; HttpOnly; SameSite=Strict; Secure; Max-Age=604800
+```
+
+**Step 2: Gate `/api/chat`**
+
+Before the Anthropic stream starts, the chat route:
+1. Reads `cosmo_session` cookie
+2. If no cookie → create one, initialize Redis counter to 0
+3. If BYOK (`apiKey` present in body) → skip counter, proceed
+4. Otherwise: `INCR cosmo_free:v1:{sessionId}` — if result > 3 → return 429
+5. If allowed: proceed with Anthropic stream
+
+**Step 3: Remove localStorage counter from `CosmoChat.tsx`**
+
+Replace the `freeCount` + `KEY_FREE_COUNT` localStorage pattern with a server-authoritative check. The client UI continues to show "X free messages remaining" — fetched from `GET /api/session` (returns `{ remaining: number }`) rather than read from localStorage.
+
+### Files
+
+| File | Action | Notes |
+|------|--------|-------|
+| `apps/web/app/api/session/route.ts` | **Create** | GET (fetch remaining) + POST (create session) |
+| `apps/web/app/api/chat/route.ts` | **Modify** | Add Redis gate before Anthropic stream call |
+| `apps/web/app/chat/CosmoChat.tsx` | **Modify** | Replace localStorage free count with server fetch |
+| `apps/web/.env.local` | **Add** | `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` |
+
+### Reference Pattern
+
+`apps/stocks/lib/core/rate-limiter.ts` is the authoritative reference for the Upstash REST call pattern. Key points:
+
+- Uses direct `fetch` to `${UPSTASH_REDIS_REST_URL}/pipeline` — no npm package needed
+- Atomically increments + sets TTL in one pipeline: `[['INCR', key], ['EXPIRE', key, ttl]]`
+- Fails open on Redis error (allows the request, logs the error) — apply the same policy to Cosmo
+- Env vars: `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN` — same names, can reuse the same Upstash instance with a different key namespace (`cosmo_free:v1:*` vs `rate_limit:v2:*`)
+
+```typescript
+// Minimal Cosmo Redis pattern (reference — not copy-paste ready)
+const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
+const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
+
+async function checkAndIncrement(sessionId: string): Promise<{ allowed: boolean; remaining: number }> {
+  const key = `cosmo_free:v1:${sessionId}`
+  const FREE_LIMIT = 3
+
+  try {
+    const res = await fetch(`${REDIS_URL}/pipeline`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${REDIS_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify([['INCR', key], ['EXPIRE', key, 604800]]), // 7-day TTL
+    })
+    const [incrResult] = await res.json() as [{ result: number }]
+    const count = incrResult.result
+    return { allowed: count <= FREE_LIMIT, remaining: Math.max(0, FREE_LIMIT - count) }
+  } catch {
+    return { allowed: true, remaining: FREE_LIMIT } // fail open
+  }
+}
+```
+
+### Dependencies
+
+- **Upstash account:** Either extend the existing stocks Upstash instance (different key prefix = safe) or create a new `cosmo-prod` database. New database is cleaner operationally.
+- **Env vars:** `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` added to Vercel project settings for `apps/web`.
+- **No auth required yet:** This uses anonymous session tokens. Full auth (NextAuth/Clerk/etc.) comes with paid subscriptions. Session metering is the prerequisite, not the whole thing.
+
+### Gate
+
+Free-tier exchanges are counted server-side. Clearing `localStorage` does not reset the counter. A new browser session without a cookie gets a fresh 3-exchange allowance (intentional — still an anonymous system). BYOK and future subscription tiers bypass the Redis counter entirely.
+
+**Verification steps:**
+```bash
+# 1. Start dev server
+pnpm dev --filter web
+
+# 2. Have 3 exchanges in the browser — confirm limit triggers
+
+# 3. Clear localStorage manually (DevTools → Application → Clear site data)
+#    Reload and try to send → should STILL be blocked (server counter persists)
+
+# 4. Open incognito tab → should get 3 fresh exchanges (new session = new cookie)
+
+# 5. In browser DevTools → Application → Cookies, confirm cosmo_session cookie
+#    is HttpOnly (not visible to JS)
+```
+
+---
 
 ## Phase 0: Foundation (Done)
 What's already done.
