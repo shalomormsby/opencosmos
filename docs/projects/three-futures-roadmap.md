@@ -4,41 +4,24 @@
 
 **Created:** 2026-03-14
 **Last updated:** 2026-03-31
-**Status:** Phase 1b — next sprint: bot protection + subscriptions
+**Status:** Phase 1b — next sprint: subscriptions
 
 --- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
 
 ---
 
-## ✅ Completed: Server-Side Session Metering (Phase 1b Gate)
+## ⚠️ Action Required
 
-*Merged 2026-03-31 — [PR #57](https://github.com/shalomormsby/opencosmos/pull/57)*
+> These are Vercel environment variable changes that must be made manually before the corresponding PRs go live.
 
-Free-tier exchange counter moved from `localStorage` to Upstash Redis. Clearing browser storage no longer resets the limit. Implementation:
-
-- `POST /api/session` — creates anonymous session (UUID), sets HttpOnly cookie, initializes Redis counter (`cosmo_free:v1:{sessionId}`, 7-day TTL)
-- `GET /api/session` — returns `{ remaining: number }` for current session
-- `/api/chat` — gates free-tier requests via Redis `INCR` before streaming; returns 429 on limit; BYOK bypasses entirely; fails open on Redis error
-- `CosmoChat.tsx` — replaced `localStorage` free count with server fetch on mount and after each exchange
+- [ ] **Add `ADMIN_API_KEY` to Vercel — opencosmos-ui (studio project).** Required by [opencosmos-ui PR #19](https://github.com/shalomormsby/opencosmos-ui/pull/19). Any strong random string works. Without it the `/api/edge-config` endpoint returns 401 for all requests (safe, but unusable).
+- [ ] **Add `COSMO_FREE_MONTHLY_CAP` to Vercel — opencosmos project.** Required by [PR #60](https://github.com/shalomormsby/opencosmos/pull/60). Default is `2000` requests (~$60/mo). Set it explicitly so you can tune it without a redeploy.
 
 ---
 
-## Next Up: Bot Protection + Subscriptions (Phase 1b continues)
+## Next Up: Subscriptions (Phase 1b continues)
 
 *Stretch target: live on opencosmos.ai by 2026-04-01*
-
-Session metering is live. The next two workstreams can proceed in parallel.
-
-### Workstream A: Bot Protection (unblocks subscription launch)
-
-The free tier is the most exposed surface. Each greeting costs ~$0.03 and the session cookie is trivially bypassable by rotating sessions. Layered defense, cheapest checks first:
-
-- [ ] **IP-based rate limiting** — per-IP cap on `/api/chat` for free-tier requests (e.g., 3 per IP per 24h). Use `@upstash/ratelimit` — same Upstash instance, different key namespace. First line of defense, zero latency overhead.
-- [ ] **Hard monthly spend cap** — server-side kill switch on the shared `ANTHROPIC_API_KEY`. If free-tier usage exceeds a ceiling (e.g., $50/mo), `/api/chat` returns a static welcome + subscribe/BYOK prompt. No silent overspend.
-- [ ] **Cloudflare Turnstile** (or Vercel WAF) — invisible challenge before first exchange. Blocks automated traffic without friction.
-- [ ] **Monitoring** — track free-tier usage patterns. Alert on anomalies (spike in requests, rapid-fire exchanges). Upstash dashboard is sufficient at launch.
-
-### Workstream B: Subscription Path (Stripe + Auth)
 
 - [ ] Choose and implement auth (NextAuth or Clerk) — required for subscription management; not required for BYOK or free tier
 - [ ] Stripe integration — checkout, subscription management, billing portal (Stripe already active for CP)
@@ -47,6 +30,41 @@ The free tier is the most exposed surface. Each greeting costs ~$0.03 and the se
 - [ ] Graceful limit handling — when approaching cap, offer upgrade or BYOK
 - [ ] Hearth tier: link Stripe subscription to full CP membership automatically
 - [ ] Privacy policy + Terms of service — required before Stripe processes subscription payments
+
+---
+
+## Completed
+
+### ✅ Bot Protection — IP Rate Limiting + Monthly Spend Cap
+
+*Merged 2026-03-31 — [PR #60](https://github.com/shalomormsby/opencosmos/pull/60)*
+
+Two layered defenses on `/api/chat` for free-tier requests (BYOK bypasses all). Cheapest checks run first, before any Anthropic API call:
+
+- **Monthly spend cap** — Redis counter per calendar month (`cosmo_monthly:v1:{YYYY-M}`, 35-day TTL). Exceeding `COSMO_FREE_MONTHLY_CAP` (default 2000, ~$60/mo) returns 503 with a subscribe/BYOK prompt.
+- **IP rate limiting** — `@upstash/ratelimit` sliding window: 3 requests per IP per 24h (`cosmo_ip:v1` prefix). Returns 429 on breach.
+- Both fail open on Redis error. Gate order: monthly cap → IP limit → session counter.
+
+### ✅ Security Hardening — Headers, CSP, API Auth
+
+*2026-03-31 — [opencosmos PR #59](https://github.com/shalomormsby/opencosmos/pull/59), [opencosmos-ui PR #19](https://github.com/shalomormsby/opencosmos-ui/pull/19)*
+
+- `/api/edge-config` (opencosmos-ui): `Authorization: Bearer ADMIN_API_KEY` required on all GET and POST — previously open to anyone
+- `/api/eject/[component]` (opencosmos-ui): component name validated against `/^[a-zA-Z0-9-]+$/` — prevents path traversal
+- CSP (opencosmos-ui): replaced incomplete policy with full `default-src`, `img-src`, `font-src`, `connect-src`, `frame-ancestors 'none'`
+- Security headers added to both apps: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`
+- `robots.txt` created for opencosmos.ai — allows crawlers, disallows `/api/`
+
+### ✅ Server-Side Session Metering (Phase 1b Gate)
+
+*Merged 2026-03-31 — [PR #57](https://github.com/shalomormsby/opencosmos/pull/57)*
+
+Free-tier exchange counter moved from `localStorage` to Upstash Redis. Clearing browser storage no longer resets the limit.
+
+- `POST /api/session` — creates anonymous session (UUID), sets HttpOnly cookie, initializes Redis counter (`cosmo_free:v1:{sessionId}`, 7-day TTL)
+- `GET /api/session` — returns `{ remaining: number }` for current session
+- `/api/chat` — gates free-tier requests via Redis `INCR` before streaming; returns 429 on limit; BYOK bypasses entirely; fails open on Redis error
+- `CosmoChat.tsx` — replaced `localStorage` free count with server fetch on mount and after each exchange
 
 ---
 
