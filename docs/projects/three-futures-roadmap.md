@@ -368,7 +368,7 @@ The free tier is the most exposed surface — every greeting costs ~$0.07 agains
 - [ ] Build the GitHub Action sync workflow (on push to main when `knowledge/**` changes → chunk by H2 → upsert to Upstash Vector with frontmatter metadata)
 - [ ] Build the RAG API endpoint (`apps/web/app/api/knowledge/route.ts`)
 - [ ] Wire RAG retrieval into the Cosmo conversation flow — constitutional layer queries corpus before responding
-- [ ] **Build the human-friendly knowledge experience at `opencosmos.ai/knowledge`** — a welcoming browsing interface for the full corpus. This is not just a file listing; it's the library's front door for humans. Design principles:
+- [x] **Build the human-friendly knowledge experience at `opencosmos.ai/knowledge`** — a welcoming browsing interface for the full corpus. This is not just a file listing; it's the library's front door for humans. Design principles:
   - **Transparency & inspectability:** Every resource Cosmo can retrieve should be visible and readable by a human. No hidden knowledge. This is essential for trust.
   - **Browsable by domain, role, and tradition:** Filter and explore the corpus the way a library patron would — by subject, by type (source texts, guides, commentary), by tradition.
   - **Individual document pages:** Clean reading experience with frontmatter metadata visible (author, origin, tradition, related documents). Cross-reference links are navigable.

@@ -14,7 +14,6 @@ type Conversation = {
 }
 
 const FREE_LIMIT = 3
-const KEY_FREE_COUNT = 'cosmo_free_count'
 const KEY_API_KEY = 'cosmo_api_key'
 const KEY_CONVERSATIONS = 'cosmo_conversations'
 const KEY_CURRENT_ID = 'cosmo_current_id'
@@ -54,7 +53,7 @@ export function CosmoChat() {
   const [isStreaming, setIsStreaming] = useState(false)
   const [apiKey, setApiKey] = useState('')
   const [apiKeyDraft, setApiKeyDraft] = useState('')
-  const [freeCount, setFreeCount] = useState(0)
+  const [remaining, setRemaining] = useState(FREE_LIMIT)
   const [mounted, setMounted] = useState(false)
   const [currentId, setCurrentId] = useState('')
   const [conversations, setConversations] = useState<Conversation[]>([])
@@ -64,7 +63,6 @@ export function CosmoChat() {
 
   useEffect(() => {
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
-    setFreeCount(Number(localStorage.getItem(KEY_FREE_COUNT) || '0'))
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
     const all = loadAll()
@@ -80,6 +78,13 @@ export function CosmoChat() {
 
     setCurrentId(id)
     setConversations(Object.values(all).sort((a, b) => b.updatedAt - a.updatedAt))
+
+    // Fetch server-authoritative remaining count
+    fetch('/api/session')
+      .then((r) => r.json())
+      .then((data: { remaining: number }) => setRemaining(data.remaining))
+      .catch(() => {}) // fail silently — UI defaults to FREE_LIMIT
+
     setMounted(true)
   }, [])
 
@@ -98,7 +103,7 @@ export function CosmoChat() {
     setConversations(Object.values(loadAll()).sort((a, b) => b.updatedAt - a.updatedAt))
   }, [])
 
-  const isLimited = mounted && !apiKey && freeCount >= FREE_LIMIT
+  const isLimited = mounted && !apiKey && remaining <= 0
 
   const send = useCallback(async () => {
     if (!input.trim() || isStreaming || isLimited) return
@@ -110,18 +115,20 @@ export function CosmoChat() {
     setMessages([...newMessages, { role: 'assistant', content: '' }])
     setIsStreaming(true)
 
-    if (!apiKey) {
-      const next = freeCount + 1
-      setFreeCount(next)
-      localStorage.setItem(KEY_FREE_COUNT, String(next))
-    }
-
     try {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ messages: newMessages, apiKey: apiKey || undefined }),
       })
+
+      if (res.status === 429) {
+        setRemaining(0)
+        setMessages((prev) => prev.slice(0, -1)) // remove the empty assistant placeholder
+        setIsStreaming(false)
+        textareaRef.current?.focus()
+        return
+      }
 
       if (!res.ok || !res.body) throw new Error('API error')
 
@@ -142,6 +149,14 @@ export function CosmoChat() {
           }
           return updated
         })
+      }
+
+      // Refresh server-authoritative remaining count after each free exchange
+      if (!apiKey) {
+        fetch('/api/session')
+          .then((r) => r.json())
+          .then((data: { remaining: number }) => setRemaining(data.remaining))
+          .catch(() => {})
       }
 
       const finalMessages: Message[] = [
@@ -171,7 +186,7 @@ export function CosmoChat() {
       setIsStreaming(false)
       textareaRef.current?.focus()
     }
-  }, [input, isStreaming, isLimited, messages, apiKey, freeCount, currentId, refreshConversations])
+  }, [input, isStreaming, isLimited, messages, apiKey, currentId, refreshConversations])
 
   const saveKey = () => {
     const key = apiKeyDraft.trim()
@@ -195,8 +210,6 @@ export function CosmoChat() {
     setMessages(conv.messages)
     setShowHistory(false)
   }
-
-  const remainingFree = Math.max(0, FREE_LIMIT - freeCount)
 
   return (
     <div className="flex flex-col h-screen bg-background">
@@ -279,7 +292,7 @@ export function CosmoChat() {
           <span className="text-xs text-foreground/30">
             {apiKey
               ? 'Your key · Unlimited'
-              : `${remainingFree} free ${remainingFree === 1 ? 'message' : 'messages'} remaining`}
+              : `${remaining} free ${remaining === 1 ? 'message' : 'messages'} remaining`}
           </span>
         )}
       </header>
