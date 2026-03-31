@@ -1,4 +1,4 @@
-import { Header, Button, GitHubIcon } from '@opencosmos/ui'
+import { Header, Button, GitHubIcon, OrbBackground } from '@opencosmos/ui'
 import Link from 'next/link'
 
 export default function Home() {
@@ -6,13 +6,14 @@ export default function Home() {
     <main className="min-h-screen bg-background">
       <Header
         logo={
-          <span className="text-xl font-bold tracking-tight text-foreground">
+          <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
             OpenCosmos
-          </span>
+          </Link>
         }
         navAlignment="right"
         navLinks={[
           { label: 'Dialog', href: '/chat' },
+          { label: 'Knowledge', href: '/knowledge' },
           { label: 'Studio', href: 'https://studio.opencosmos.ai' },
         ]}
         actions={
@@ -29,23 +30,26 @@ export default function Home() {
         }
       />
 
-      <div className="flex flex-col items-center justify-center min-h-screen px-6">
-        <div className="max-w-lg text-center space-y-8">
+      <div className="relative flex flex-col items-center justify-center min-h-screen px-6 overflow-hidden">
+        {/* Animated sphere background */}
+        <div className="absolute inset-0 pointer-events-none">
+          <OrbBackground hoverIntensity={0.3} rotateOnHover={true} />
+        </div>
+
+        {/* Hero content */}
+        <div className="max-w-lg text-center space-y-8 relative z-10">
           <div className="space-y-3">
             <h1 className="text-4xl font-light tracking-wide text-foreground">
               OpenCosmos
             </h1>
             <p className="text-foreground/50 leading-relaxed">
-              A place to think, to wonder, to be met.
+              At home in the universe.
             </p>
           </div>
 
-          <Link
-            href="/chat"
-            className="inline-block px-8 py-3 rounded-full border border-foreground/20 text-foreground/70 hover:text-foreground hover:border-foreground/40 transition-colors text-sm tracking-wide"
-          >
-            Meet Cosmo →
-          </Link>
+          <Button variant="secondary" size="lg" asChild>
+            <Link href="/chat">Meet Cosmo →</Link>
+          </Button>
         </div>
       </div>
     </main>

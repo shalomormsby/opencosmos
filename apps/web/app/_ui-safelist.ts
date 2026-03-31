@@ -5,7 +5,7 @@
  * scan @opencosmos/ui. This file lists every Tailwind class used by the
  * components imported in this app so Tailwind includes them in the CSS bundle.
  *
- * Components covered: Header, NavLink, Button, GitHubIcon (no Tailwind)
+ * Components covered: Header, NavLink, Button, GitHubIcon (no Tailwind), Card, Badge, Input, Separator, ScrollArea, Breadcrumbs, OrbBackground
  *
  * To regenerate after upgrading @opencosmos/ui, run the extraction script
  * documented in .claude/skills/create/SKILL.md § "Required CSS Setup".
@@ -95,6 +95,7 @@ export const _safelist = [
   'bg-primary text-primary-foreground hover:bg-primary/90',
   'bg-destructive text-destructive-foreground hover:bg-destructive/90',
   'border border-input bg-transparent shadow-xs hover:bg-primary hover:text-primary-foreground hover:border-primary',
+  'bg-black/5 dark:bg-white/10 backdrop-blur-md border-black/5 dark:border-white/10 text-secondary-foreground hover:bg-primary hover:text-primary-foreground dark:hover:bg-primary dark:hover:text-primary-foreground',
   'bg-[var(--color-surface)] border border-[var(--color-border)] hover:bg-[var(--color-surface)]',
   'hover:bg-[var(--color-surface)] hover:text-[var(--color-text-primary)]',
   'hover:underline text-[var(--color-text-secondary)]',
@@ -110,6 +111,65 @@ export const _safelist = [
   'fixed inset-y-0 left-0 z-50 w-72 border-r',
   '-translate-x-full translate-x-0',
   'transition-transform duration-200 ease-in-out',
+
+  // ── Card ────────────────────────────────────────────────────────────────────
+  'rounded-2xl border bg-surface text-foreground',
+  'bg-surface border-border',
+  'bg-glass border-glass-border backdrop-blur-md',
+  'transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-primary',
+  'flex flex-col space-y-1.5 p-6',
+  'text-2xl font-semibold leading-none tracking-tight',
+  'text-foreground-secondary',
+  'p-6 pt-0',
+  'flex items-center p-6 pt-0',
+
+  // ── Badge ───────────────────────────────────────────────────────────────────
+  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold',
+  'transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
+  'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
+  'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
+  // Badge sizes
+  'px-2 py-0.5 px-2.5 py-1 px-3 py-1.5 text-base',
+  // Badge dot
+  'mr-1.5 rounded-full bg-current animate-pulse w-1.5 h-1.5 w-2 h-2 w-2.5 h-2.5',
+
+  // ── Input ───────────────────────────────────────────────────────────────────
+  'flex h-9 w-full rounded-md border border-input bg-transparent px-3 py-1 text-sm',
+  'file:border-0 file:bg-transparent file:text-sm file:font-medium',
+  'placeholder:text-muted-foreground',
+  'focus-visible:ring-1 focus-visible:ring-ring',
+  'disabled:cursor-not-allowed disabled:opacity-50',
+
+  // ── Separator ───────────────────────────────────────────────────────────────
+  'shrink-0 bg-border h-[1px] w-full h-full w-[1px]',
+
+  // ── ScrollArea ──────────────────────────────────────────────────────────────
+  'relative overflow-hidden h-full w-full rounded-[inherit]',
+  'relative flex-1 rounded-full bg-border',
+
+  // ── Breadcrumbs ─────────────────────────────────────────────────────────────
+  // Nav container
+  'flex flex-wrap items-center flex-nowrap list-none m-0 p-0 overflow-x-auto scrollbar-hide',
+  'flex items-center flex-shrink-0 inline-flex mr-1.5',
+  // Link variants
+  'text-[var(--color-text-muted)] text-[var(--color-text-secondary)] text-[var(--color-text-primary)] text-[var(--color-primary)]',
+  'hover:text-[var(--color-text-primary)] hover:text-[var(--color-background)] hover:text-[var(--color-primary)]',
+  'hover:bg-[var(--color-hover)] hover:bg-[var(--color-text-primary)]',
+  // Current page
+  'font-semibold',
+  // Padding / spacing
+  'px-1.5 py-1.5 -mx-1.5 -my-1.5',
+  // Separator
+  'mx-2 select-none',
+  // Underline variant
+  'underline-offset-2 decoration-1 hover:decoration-2',
+  'decoration-[var(--color-primary)]/40 hover:decoration-[var(--color-primary)]',
+  // Focus / interaction
+  'focus-visible:ring-offset-2 active:scale-95',
+
+  // ── OrbBackground ───────────────────────────────────────────────────────────
+  'pointer-events-auto',
 
   // ── Misc shared ────────────────────────────────────────────────────────────
   'gap-1 gap-2 gap-3 gap-4 gap-8',

@@ -13,9 +13,12 @@
     "@anthropic-ai/sdk": "^0.68.0",
     "@opencosmos/ui": "^1.1.1",
     "@vercel/analytics": "^1.6.1",
+    "gray-matter": "^4.0.3",
     "next": "^16.0.10",
     "react": "^19.2.1",
-    "react-dom": "^19.2.1"
+    "react-dom": "^19.2.1",
+    "react-markdown": "^10.1.0",
+    "remark-gfm": "^4.0.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.0",
