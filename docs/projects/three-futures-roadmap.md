@@ -10,15 +10,6 @@
 
 ---
 
-## ⚠️ Action Required
-
-> These are Vercel environment variable changes that must be made manually before the corresponding PRs go live.
-
-- [ ] **Add `ADMIN_API_KEY` to Vercel — opencosmos-ui (studio project).** Required by [opencosmos-ui PR #19](https://github.com/shalomormsby/opencosmos-ui/pull/19). Any strong random string works. Without it the `/api/edge-config` endpoint returns 401 for all requests (safe, but unusable).
-- [ ] **Add `COSMO_FREE_MONTHLY_CAP` to Vercel — opencosmos project.** Required by [PR #60](https://github.com/shalomormsby/opencosmos/pull/60). Default is `2000` requests (~$60/mo). Set it explicitly so you can tune it without a redeploy.
-
----
-
 ## Next Up: Subscriptions (Phase 1b continues)
 
 *Stretch target: live on opencosmos.ai by 2026-04-01*
@@ -44,6 +35,13 @@ Two layered defenses on `/api/chat` for free-tier requests (BYOK bypasses all). 
 - **Monthly spend cap** — Redis counter per calendar month (`cosmo_monthly:v1:{YYYY-M}`, 35-day TTL). Exceeding `COSMO_FREE_MONTHLY_CAP` (default 2000, ~$60/mo) returns 503 with a subscribe/BYOK prompt.
 - **IP rate limiting** — `@upstash/ratelimit` sliding window: 3 requests per IP per 24h (`cosmo_ip:v1` prefix). Returns 429 on breach.
 - Both fail open on Redis error. Gate order: monthly cap → IP limit → session counter.
+
+### ✅ Vercel Env Vars — ADMIN_API_KEY + COSMO_FREE_MONTHLY_CAP
+
+*Completed 2026-03-31*
+
+- `ADMIN_API_KEY` added to Vercel opencosmos-ui (studio project) — secures `/api/edge-config`
+- `COSMO_FREE_MONTHLY_CAP` added to Vercel opencosmos project — hard spend cap set explicitly for tuning without redeployment
 
 ### ✅ Security Hardening — Headers, CSP, API Auth
 
@@ -86,7 +84,6 @@ What's already done.
 - [x] AI Triad architecture designed — Cosmo as moderator, three distinct members (Sol, Socrates, Optimus)
 
 ## Phase 0.1: Cosmo and the Triad (WIP)
-What's currenly in progress.
 
 - [x] Complete COSMO_SYSTEM_PROMPT.md v2 — operational system prompt grounded in WELCOME-COSMO.md
 - [x] Write SOL_SYSTEM_PROMPT.md
