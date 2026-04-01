@@ -157,10 +157,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
-    // Session tracking + bot protection for free-tier (skipped for BYOK)
+    // Session tracking + bot protection for free-tier (skipped for BYOK and admin)
+    const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
     let newSessionCookie: string | null = null
 
-    if (!apiKey) {
+    if (!apiKey && !isAdmin) {
       // 1. Hard monthly spend cap — cheapest check, no Ratelimit SDK overhead
       const underCap = await checkMonthlyCap()
       if (!underCap) {
@@ -202,7 +203,6 @@ export async function POST(req: NextRequest) {
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
 
     // Shalom mode: inject private PM context when cosmo_admin cookie is present.
-    const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
     const systemContent = [...SYSTEM_CONTENT]
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
