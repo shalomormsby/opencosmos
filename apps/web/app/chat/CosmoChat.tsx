@@ -1,7 +1,9 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Button, Input, ScrollArea, cn } from '@opencosmos/ui'
+import { Header, Button, Input, ScrollArea, cn } from '@opencosmos/ui'
+import Link from 'next/link'
+import { AuthButton } from '../AuthButton'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
@@ -301,8 +303,24 @@ export function CosmoChat() {
         </ScrollArea>
       </aside>
 
-      {/* Header */}
-      <header className="flex items-center justify-between px-6 py-4 border-b border-foreground/10 shrink-0">
+      {/* Main header */}
+      <Header
+        logo={
+          <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
+            OpenCosmos
+          </Link>
+        }
+        navAlignment="right"
+        navLinks={[
+          { label: 'Dialog', href: '/chat' },
+          { label: 'Knowledge', href: '/knowledge' },
+          { label: 'Studio', href: 'https://studio.opencosmos.ai' },
+        ]}
+        actions={<AuthButton />}
+      />
+
+      {/* Chat sub-bar */}
+      <div className="flex items-center justify-between px-6 py-2 border-b border-foreground/10 shrink-0">
         <div className="flex items-center gap-3">
           <button
             onClick={() => setShowHistory(!showHistory)}
@@ -313,12 +331,6 @@ export function CosmoChat() {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           </button>
-          <a
-            href="/"
-            className="text-sm text-foreground/40 hover:text-foreground/70 transition-colors"
-          >
-            ← OpenCosmos
-          </a>
         </div>
         <div className="flex items-center gap-3">
           {mounted && (
@@ -346,7 +358,7 @@ export function CosmoChat() {
             </svg>
           </button>
         </div>
-      </header>
+      </div>
 
       {/* PM unlock input */}
       {showPmInput && !pmMode && (
