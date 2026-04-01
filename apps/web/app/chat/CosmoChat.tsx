@@ -113,7 +113,7 @@ export function CosmoChat() {
     setConversations(Object.values(loadAll()).sort((a, b) => b.updatedAt - a.updatedAt))
   }, [])
 
-  const isLimited = mounted && !apiKey && remaining <= 0
+  const isLimited = mounted && !apiKey && !pmMode && remaining <= 0
 
   const send = useCallback(async () => {
     if (!input.trim() || isStreaming || isLimited) return
