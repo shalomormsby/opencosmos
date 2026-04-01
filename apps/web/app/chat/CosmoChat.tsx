@@ -250,7 +250,7 @@ export function CosmoChat() {
       {/* History backdrop */}
       {showHistory && (
         <div
-          className="fixed inset-0 z-40 bg-background/60 backdrop-blur-sm"
+          className="fixed top-16 lg:top-20 inset-x-0 bottom-0 z-40 bg-background/60 backdrop-blur-sm"
           onClick={() => setShowHistory(false)}
         />
       )}
@@ -303,8 +303,9 @@ export function CosmoChat() {
         </ScrollArea>
       </aside>
 
-      {/* Main header */}
+      {/* Main header — not sticky so it participates in flex column layout */}
       <Header
+        sticky={false}
         logo={
           <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
             OpenCosmos
