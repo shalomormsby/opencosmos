@@ -333,7 +333,7 @@ export function CosmoChat({ user }: { user?: AuthUser }) {
           {user ? (
             <a
               href="/api/auth/signout"
-              className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors"
+              className="text-xs text-foreground/55 hover:text-foreground/80 transition-colors"
               title="Sign out"
             >
               {user.firstName ?? user.email}
@@ -341,7 +341,7 @@ export function CosmoChat({ user }: { user?: AuthUser }) {
           ) : (
             <a
               href="/api/auth/signin"
-              className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors"
+              className="text-xs text-foreground/55 hover:text-foreground/80 transition-colors"
             >
               Sign in
             </a>
