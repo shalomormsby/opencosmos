@@ -255,10 +255,10 @@ export function CosmoChat() {
         />
       )}
 
-      {/* History panel */}
+      {/* History panel — slides in below the header */}
       <aside
         className={cn(
-          'fixed inset-y-0 left-0 z-50 w-72 bg-background border-r border-foreground/10 flex flex-col',
+          'fixed top-16 lg:top-20 bottom-0 left-0 z-50 w-72 bg-background border-r border-foreground/10 flex flex-col',
           'transition-transform duration-200 ease-in-out',
           showHistory ? 'translate-x-0' : '-translate-x-full'
         )}
