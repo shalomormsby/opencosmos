@@ -5,6 +5,8 @@ import { Button, Input, ScrollArea, cn } from '@opencosmos/ui'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
+type AuthUser = { firstName: string | null; email: string }
+
 type Conversation = {
   id: string
   title: string
@@ -47,7 +49,7 @@ function timeAgo(ts: number): string {
   return `${Math.floor(hrs / 24)}d ago`
 }
 
-export function CosmoChat() {
+export function CosmoChat({ user }: { user?: AuthUser }) {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
   const [isStreaming, setIsStreaming] = useState(false)
@@ -327,6 +329,22 @@ export function CosmoChat() {
                 ? 'Your key · Unlimited'
                 : `${remaining} free ${remaining === 1 ? 'message' : 'messages'} remaining`}
             </span>
+          )}
+          {user ? (
+            <a
+              href="/api/auth/signout"
+              className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors"
+              title="Sign out"
+            >
+              {user.firstName ?? user.email}
+            </a>
+          ) : (
+            <a
+              href="/api/auth/signin"
+              className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors"
+            >
+              Sign in
+            </a>
           )}
           <button
             onClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}

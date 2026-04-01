@@ -4,15 +4,15 @@
 
 **Created:** 2026-03-14
 **Last updated:** 2026-03-31
-**Status:** Phase 1b — next sprint: Shalom-mode PM, then subscriptions
+**Status:** Phase 1b — Auth shipped (WorkOS AuthKit). Next: Stripe integration → subscription tiers
 
 --- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
 
 ---
 
-## Next Up: Shalom-Mode PM
+## ~~Next Up:~~ Shalom-Mode PM ✅
 
-*Builds first. Subscriptions follow (see Phase 1b).*
+*Built. Subscriptions follow (see Phase 1b).*
 
 **What this is:** Shalom can ask Cosmo about his own projects and get grounded answers from private PM docs. No other visitor sees this context. This is step 1 of a broader multi-user PM feature — establish the pattern cheaply before full auth infrastructure exists.
 
@@ -23,21 +23,21 @@
 - Public visitors are unaffected. BYOK users are unaffected. This check is a no-op for everyone without the cookie.
 
 **Before coding — set up:**
-- [ ] Create private GitHub repo `cosmo-context` (or similar)
-- [ ] Generate fine-grained GitHub PAT: Settings → Developer settings → Fine-grained tokens → Repository access: `cosmo-context` only → Contents: Read-only
-- [ ] Add to Vercel env vars (opencosmos project): `COSMO_ADMIN_SECRET`, `GITHUB_PM_REPO` (e.g. `shalomormsby/cosmo-context`), `GITHUB_PM_PAT`
+- [x] Create private GitHub repo `cosmo-context` (or similar)
+- [x] Generate fine-grained GitHub PAT: Settings → Developer settings → Fine-grained tokens → Repository access: `cosmo-context` only → Contents: Read-only
+- [x] Add to Vercel env vars (opencosmos project): `COSMO_ADMIN_SECRET`, `GITHUB_PM_REPO` (e.g. `shalomormsby/cosmo-context`), `GITHUB_PM_PAT`
 
 **What to build:**
-- [ ] `apps/web/app/api/admin/auth/route.ts` — new file
+- [x] `apps/web/app/api/admin/auth/route.ts` — new file
   - `POST { secret }`: validates against `COSMO_ADMIN_SECRET`, sets `cosmo_admin` cookie (HttpOnly, SameSite=Strict, Secure, 7-day expiry). Returns 401 on mismatch.
   - `DELETE`: clears the cookie (logout / deactivate PM mode)
-- [ ] `apps/web/app/api/chat/route.ts` — add Shalom-mode context injection
+- [x] `apps/web/app/api/chat/route.ts` — add Shalom-mode context injection
   - After reading cookies, check for `cosmo_admin`
   - If present: try Redis key `cosmo_pm_context:v1`
   - On miss: `GET /repos/{GITHUB_PM_REPO}/contents/` → fetch each `.md` file's base64 content → decode + concatenate with `## {filename}` headers → store in Redis, TTL 3600s
   - Inject result as an additional block in the `system` array, after the existing `SYSTEM_CONTENT` block, with `cache_control: { type: 'ephemeral' }`
   - Fail open: if GitHub fetch fails, proceed without PM context (don't break chat)
-- [ ] `apps/web/components/CosmoChat.tsx` — unlock affordance
+- [x] `apps/web/app/chat/CosmoChat.tsx` — unlock affordance
   - Small lock/unlock icon in the chat header (not prominent — just enough to find it)
   - On click: password dialog → `POST /api/admin/auth` → on success, show "PM" badge active; on failure, show error
 
@@ -49,7 +49,7 @@
 **Migration path to multi-user PM:**
 When subscriptions + auth ship, replace the cookie check + GitHub fetch with `user_id` from session + Upstash Vector namespace query (`filter: { user_id }`). The injection pattern (additional context blocks in system message) stays identical. The private GitHub repo becomes the first user's document storage, then each user gets their own namespace.
 
-**Gate:** Ask Cosmo "What's the status of [project]?" and get an accurate, grounded answer from private PM docs. No other visitor sees this context.
+**Gate: ✓ Closed — 2026-03-31.** Ask Cosmo "What's the status of [project]?" and get an accurate, grounded answer from private PM docs. No other visitor sees this context. PM badge ships in `apps/web/app/chat/CosmoChat.tsx`; admin cookie auth at `/api/admin/auth`; cosmo-context repo wired up with 1-hour Redis cache.
 
 ---
 
@@ -148,19 +148,25 @@ How Cosmo gets better over time — not through model fine-tuning, but through t
 - [ ] **Monitoring & alerts** — track free-tier usage patterns; alert on anomalies (request spikes, unusual IP distribution, rapid-fire exchanges)
 
 #### Conversation Infrastructure
-- [ ] Build Cosmo conversation endpoint in `apps/web`
-- [ ] Implement system prompt injection from COSMO_SYSTEM_PROMPT.md
-- [ ] Implement shared API key with rate limiting for free tier (server-side) — budget $30–50/month for free greetings
-- [ ] Build conversation UI with `@opencosmos/ui` components
-- [ ] Design the free-tier-cap transition — when the cap hits, present both continuation paths (subscribe or BYOK)
+- [x] Build Cosmo conversation endpoint in `apps/web`
+- [x] Implement system prompt injection from COSMO_SYSTEM_PROMPT.md
+- [x] Implement shared API key with rate limiting for free tier (server-side) — budget $30–50/month for free greetings
+- [x] Build conversation UI with `@opencosmos/ui` components
+- [x] Design the free-tier-cap transition — when the cap hits, present both continuation paths (subscribe or BYOK)
 
 #### Authentication
-- [ ] Choose and implement auth system (NextAuth, Clerk, Supabase Auth, or similar) — required for subscription management and usage tracking, not required for BYOK or free tier
-- [ ] User identity must link to: Stripe customer ID, usage tracking, and (eventually) CP membership status
+- [x] Choose and implement auth system — **WorkOS AuthKit** (`@workos-inc/authkit-nextjs` v3)
+  - [x] `apps/web/middleware.ts` — session refresh on every request
+  - [x] `apps/web/app/callback/route.ts` — OAuth code exchange
+  - [x] `apps/web/app/api/auth/signin/route.ts` — redirects to WorkOS hosted sign-in
+  - [x] `apps/web/app/api/auth/signout/route.ts` — clears session, redirects home
+  - [x] `apps/web/app/chat/page.tsx` — server component, passes `user` to CosmoChat
+  - [x] Sign in / sign out affordance in CosmoChat header
+- [ ] User identity must link to: Stripe customer ID, usage tracking, and (eventually) CP membership status — **next up**
 
 #### BYOK Path
-- [ ] Implement BYOK key entry — key validation, client-side storage, never sent to server
-- [ ] BYOK usage is unlimited — user controls their own costs
+- [x] Implement BYOK key entry — key is used server-side per-request only, never stored
+- [x] BYOK usage is unlimited — user controls their own costs
 
 #### Subscription Path
 - [ ] Stripe integration — checkout, subscription management, billing portal (Stripe already set up for CP)
@@ -483,7 +489,7 @@ Based on Claude Sonnet API pricing ($3/M input tokens, $15/M output tokens). Pro
 The free tier is the most exposed surface — shared API key, no auth gate. Without layered protection a bot could drain the monthly budget in minutes. Defense order (cheapest first, before any API call):
 
 1. **Monthly spend cap** ✅ — Redis counter kills the free tier if `COSMO_FREE_MONTHLY_CAP` is exceeded
-2. **IP rate limiting** ✅ — `@upstash/ratelimit` sliding window, 3 req/IP/24h
+2. **IP rate limiting** ✅ — `@upstash/ratelimit` sliding window, 30 req/IP/24h
 3. **Session binding** ✅ — server-side Redis counter; clearing cookies doesn't reset the cap
 4. **Cloudflare Turnstile** ⬜ — invisible challenge blocks automated traffic before the first exchange
 5. **Monitoring & alerts** ⬜ — anomaly detection on usage patterns
