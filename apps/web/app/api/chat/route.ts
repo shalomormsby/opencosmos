@@ -75,12 +75,13 @@ async function fetchPmContext(): Promise<string | null> {
   }
 }
 
-// IP rate limiter: 3 free-tier requests per IP per 24 hours.
-// Uses sliding window so burst attempts don't reset the window.
+// IP rate limiter: 30 free-tier requests per IP per 24 hours.
+// Catches bot/scraper abuse without blocking households sharing a single IP.
+// The session counter (3 per session, 7-day TTL) is the real per-user limit.
 const ipRatelimit = new Ratelimit({
   redis: new Redis({ url: REDIS_URL, token: REDIS_TOKEN }),
-  limiter: Ratelimit.slidingWindow(3, '24 h'),
-  prefix: 'cosmo_ip:v1',
+  limiter: Ratelimit.slidingWindow(30, '24 h'),
+  prefix: 'cosmo_ip:v2',
   analytics: false,
 })
 
