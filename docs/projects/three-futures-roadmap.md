@@ -4,113 +4,52 @@
 
 **Created:** 2026-03-14
 **Last updated:** 2026-03-31
-**Status:** Phase 1b — next sprint: subscriptions
+**Status:** Phase 1b — next sprint: Shalom-mode PM, then subscriptions
 
 --- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
 
 ---
 
-## Next Up: Subscriptions (Phase 1b continues)
+## Next Up: Shalom-Mode PM
 
-*Stretch target: live on opencosmos.ai by 2026-04-01*
+*Builds first. Subscriptions follow (see Phase 1b).*
 
-- [ ] Choose and implement auth (NextAuth or Clerk) — required for subscription management; not required for BYOK or free tier
-- [ ] Stripe integration — checkout, subscription management, billing portal (Stripe already active for CP)
-- [ ] Implement tier token budgets (Spark $5/Flame $10/Hearth $50) with monthly totals and weekly sub-limits
-- [ ] Server-side managed API key with per-user usage tracking
-- [ ] Graceful limit handling — when approaching cap, offer upgrade or BYOK
-- [ ] Hearth tier: link Stripe subscription to full CP membership automatically
-- [ ] Privacy policy + Terms of service — required before Stripe processes subscription payments
+**What this is:** Shalom can ask Cosmo about his own projects and get grounded answers from private PM docs. No other visitor sees this context. This is step 1 of a broader multi-user PM feature — establish the pattern cheaply before full auth infrastructure exists.
 
----
+**Architecture:**
+- Private GitHub repo (`shalomormsby/cosmo-context` suggested) holds PM docs as markdown files. Private = zero exposure.
+- "Shalom mode" is a `cosmo_admin` HttpOnly cookie, set by authenticating with a secret. No NextAuth, no Clerk — just a password.
+- When Shalom mode is active, `/api/chat` fetches markdown from GitHub API, caches in Redis (1hr TTL, already available), and injects as additional `{ type: 'text', cache_control: { type: 'ephemeral' } }` blocks in the system message alongside `SYSTEM_CONTENT`. PM docs get prompt caching just like the system prompt.
+- Public visitors are unaffected. BYOK users are unaffected. This check is a no-op for everyone without the cookie.
 
-## Completed
+**Before coding — set up:**
+- [ ] Create private GitHub repo `cosmo-context` (or similar)
+- [ ] Generate fine-grained GitHub PAT: Settings → Developer settings → Fine-grained tokens → Repository access: `cosmo-context` only → Contents: Read-only
+- [ ] Add to Vercel env vars (opencosmos project): `COSMO_ADMIN_SECRET`, `GITHUB_PM_REPO` (e.g. `shalomormsby/cosmo-context`), `GITHUB_PM_PAT`
 
-### ✅ Bot Protection — IP Rate Limiting + Monthly Spend Cap
+**What to build:**
+- [ ] `apps/web/app/api/admin/auth/route.ts` — new file
+  - `POST { secret }`: validates against `COSMO_ADMIN_SECRET`, sets `cosmo_admin` cookie (HttpOnly, SameSite=Strict, Secure, 7-day expiry). Returns 401 on mismatch.
+  - `DELETE`: clears the cookie (logout / deactivate PM mode)
+- [ ] `apps/web/app/api/chat/route.ts` — add Shalom-mode context injection
+  - After reading cookies, check for `cosmo_admin`
+  - If present: try Redis key `cosmo_pm_context:v1`
+  - On miss: `GET /repos/{GITHUB_PM_REPO}/contents/` → fetch each `.md` file's base64 content → decode + concatenate with `## {filename}` headers → store in Redis, TTL 3600s
+  - Inject result as an additional block in the `system` array, after the existing `SYSTEM_CONTENT` block, with `cache_control: { type: 'ephemeral' }`
+  - Fail open: if GitHub fetch fails, proceed without PM context (don't break chat)
+- [ ] `apps/web/components/CosmoChat.tsx` — unlock affordance
+  - Small lock/unlock icon in the chat header (not prominent — just enough to find it)
+  - On click: password dialog → `POST /api/admin/auth` → on success, show "PM" badge active; on failure, show error
 
-*Merged 2026-03-31 — [PR #60](https://github.com/shalomormsby/opencosmos/pull/60)*
+**Key files:**
+- `apps/web/app/api/chat/route.ts` — main change (~30 lines)
+- `apps/web/app/api/admin/auth/route.ts` — new (~25 lines)
+- `apps/web/components/CosmoChat.tsx` — UI addition
 
-Two layered defenses on `/api/chat` for free-tier requests (BYOK bypasses all). Cheapest checks run first, before any Anthropic API call:
+**Migration path to multi-user PM:**
+When subscriptions + auth ship, replace the cookie check + GitHub fetch with `user_id` from session + Upstash Vector namespace query (`filter: { user_id }`). The injection pattern (additional context blocks in system message) stays identical. The private GitHub repo becomes the first user's document storage, then each user gets their own namespace.
 
-- **Monthly spend cap** — Redis counter per calendar month (`cosmo_monthly:v1:{YYYY-M}`, 35-day TTL). Exceeding `COSMO_FREE_MONTHLY_CAP` (default 2000, ~$60/mo) returns 503 with a subscribe/BYOK prompt.
-- **IP rate limiting** — `@upstash/ratelimit` sliding window: 3 requests per IP per 24h (`cosmo_ip:v1` prefix). Returns 429 on breach.
-- Both fail open on Redis error. Gate order: monthly cap → IP limit → session counter.
-
-### ✅ Vercel Env Vars — ADMIN_API_KEY + COSMO_FREE_MONTHLY_CAP
-
-*Completed 2026-03-31*
-
-- `ADMIN_API_KEY` added to Vercel opencosmos-ui (studio project) — secures `/api/edge-config`
-- `COSMO_FREE_MONTHLY_CAP` added to Vercel opencosmos project — hard spend cap set explicitly for tuning without redeployment
-
-### ✅ Security Hardening — Headers, CSP, API Auth
-
-*2026-03-31 — [opencosmos PR #59](https://github.com/shalomormsby/opencosmos/pull/59), [opencosmos-ui PR #19](https://github.com/shalomormsby/opencosmos-ui/pull/19)*
-
-- `/api/edge-config` (opencosmos-ui): `Authorization: Bearer ADMIN_API_KEY` required on all GET and POST — previously open to anyone
-- `/api/eject/[component]` (opencosmos-ui): component name validated against `/^[a-zA-Z0-9-]+$/` — prevents path traversal
-- CSP (opencosmos-ui): replaced incomplete policy with full `default-src`, `img-src`, `font-src`, `connect-src`, `frame-ancestors 'none'`
-- Security headers added to both apps: `X-Content-Type-Options`, `X-Frame-Options`, `Referrer-Policy`, `Permissions-Policy`
-- `robots.txt` created for opencosmos.ai — allows crawlers, disallows `/api/`
-
-### ✅ Server-Side Session Metering (Phase 1b Gate)
-
-*Merged 2026-03-31 — [PR #57](https://github.com/shalomormsby/opencosmos/pull/57)*
-
-Free-tier exchange counter moved from `localStorage` to Upstash Redis. Clearing browser storage no longer resets the limit.
-
-- `POST /api/session` — creates anonymous session (UUID), sets HttpOnly cookie, initializes Redis counter (`cosmo_free:v1:{sessionId}`, 7-day TTL)
-- `GET /api/session` — returns `{ remaining: number }` for current session
-- `/api/chat` — gates free-tier requests via Redis `INCR` before streaming; returns 429 on limit; BYOK bypasses entirely; fails open on Redis error
-- `CosmoChat.tsx` — replaced `localStorage` free count with server fetch on mount and after each exchange
-
----
-
-## Phase 0: Foundation (Done)
-What's already done.
-
-- [x] OpenCosmos identity established (name, philosophy, [WELCOME.md](../../WELCOME.md), [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT.md), [chronicle](../chronicle.md))
-- [x] Repository renamed (ecosystem → opencosmos) and infrastructure updated
-- [x] Dell Sovereign Node operational (Ubuntu 24.04, Ollama, Open WebUI, Tailscale, RTX 3090)
-- [x] Apertus models deployed (8B + 70B Q4_K_M)
-- [x] Knowledge publication CLI built and working (local half — `pnpm knowledge:publish`)
-- [x] Knowledge corpus schema designed ([knowledge/README.md](../../knowledge/README.md))
-- [x] Upstash Vector chosen for cloud RAG; RAG API endpoint designed
-- [x] `apps/web` created as opencosmos.ai shell
-- [x] `@opencosmos/ui` design system active in separate repo, published to npm
-- [x] **Creative Powerup active with paying members**
-- [x] Documentation reorganized (root clean, docs/ structured, archive/ for historical)
-- [x] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) authored — Cosmo's origin story, mission, and foundational philosophy (human-authored, RAIL licensed)
-- [x] AI Triad architecture designed — Cosmo as moderator, three distinct members (Sol, Socrates, Optimus)
-
-## Phase 0.1: Cosmo and the Triad (WIP)
-
-- [x] Complete COSMO_SYSTEM_PROMPT.md v2 — operational system prompt grounded in WELCOME-COSMO.md
-- [x] Write SOL_SYSTEM_PROMPT.md
-- [x] Write SOCRATES_SYSTEM_PROMPT.md
-- [x] Write OPTIMUS_SYSTEM_PROMPT.md
-
----
-
-## Site Architecture: opencosmos.ai
-
-*Declared structure — spans all phases.*
-
-```
-opencosmos.ai/
-├── /              → Cosmic welcome (home — four-pillars introduction)
-├── /chat          → Conversation with Cosmo
-├── /knowledge     → Browse the knowledge corpus (Phase 1c)
-├── /studio        → OpenCosmos Studio design system docs (from thesage.dev)
-└── /community     → Creative Powerup (redirect for now, deep integration Phase 3)
-```
-
-**Key decisions:**
-
-- **`/` home page must graduate.** The current minimal placeholder gives way to a page that introduces all four pillars — Cosmo, Knowledge, Studio, Community — warmly and without haste. No hurry. The feeling should match the voice.
-- **`/studio` via Vercel rewrites, not repo merge.** `thesage.dev` (Sage Studio = OpenCosmos Studio) maps to `opencosmos.ai/studio`. The Studio deployment (published from the `opencosmos-ui` repo's `apps/web`) is proxied via rewrites in `apps/web/vercel.json` — users see a unified domain, both codebases stay independent.
-- **`thesage.dev` is a legacy alias.** The migration target is `thesage.dev → opencosmos.ai/studio`. Detailed migration steps are in [opencosmos-migration.md](./opencosmos-migration.md).
-- **`/community` is a redirect for now.** Deep Cosmo integration within CP programs and guided inquiry is Phase 3.
+**Gate:** Ask Cosmo "What's the status of [project]?" and get an accurate, grounded answer from private PM docs. No other visitor sees this context.
 
 ---
 
@@ -189,8 +128,6 @@ How Cosmo gets better over time — not through model fine-tuning, but through t
 
 *Stretch target: live on opencosmos.ai by 2026-04-01 (committed to CP members)*
 
-The first-touch experience offers multiple paths to continue after the free greeting — a technical path (BYOK) for those comfortable with API keys, and a low-friction subscription path for everyone else. The insight: getting an API key is too big a technical ask for many people. A familiar subscription removes that barrier while creating MRR that accelerates OpenCosmos toward sustainability.
-
 | Tier | Price | Who | What's included |
 |------|-------|-----|-----------------|
 | **Free greeting** | $0 | Any visitor | 3 exchanges per session. Shared API key, rate-limited. Enough to feel Cosmo's voice. |
@@ -203,77 +140,17 @@ The first-touch experience offers multiple paths to continue after the free gree
 - **Choice, not gate:** All paths are presented as equal options. No shaming for any direction.
 - **Every paid tier includes Substack.** Costs nothing to distribute, creates a content relationship, makes every tier feel like a bundle.
 - **The Hearth tier is the bridge to CP.** It replaces both the old "upper subscription" and "CP member" tiers with a single compelling bundle. No separate CP-with-Cosmo tier needed.
-- **Token economics must be sustainable.** See the analysis below. The margin must cover infrastructure + contribute to Shalom's time.
+- **Token economics must be sustainable.** See [Token Economics in Context](#token-economics-phase-1b-baseline). The margin must cover infrastructure + contribute to Shalom's time.
 - **Engage Optimus** to architect the billing + usage tracking system once Cosmo is running on Claude API.
 
-#### Token Economics Analysis (Starting Point)
-
-Based on Claude Sonnet API pricing ($3/M input tokens, $15/M output tokens).
-
-**Assumptions:**
-- System prompt (COSMO_SYSTEM_PROMPT.md + context): ~4,000 tokens per call
-- Average user message: ~150 tokens
-- Average Cosmo response: ~500 tokens (Cosmo is contemplative)
-- A "conversation session" = ~10 exchanges (~20 minutes of engaged conversation)
-- As conversation grows, each exchange carries the full history as input
-
-**Cost per 10-exchange session (without caching):** ~$0.29 (~$0.21 input + $0.08 output). Round to **$0.30/session**.
-
-**With prompt caching (recommended — implement from day one):**
-
-Anthropic's prompt caching charges $0.30/M for cached input tokens (vs. $3/M uncached) — a 90% discount. The system prompt (~4,000 tokens) is identical on every call and is the perfect caching candidate. As conversations grow, prior turns also become cacheable.
-
-| What's cached | Uncached cost | Cached cost | Savings |
-|---------------|---------------|-------------|---------|
-| System prompt only (4K tokens/call × 10 calls) | $0.12 | $0.012 | 90% on system prompt |
-| System prompt + conversation history | $0.21 | ~$0.05 | ~76% on all input |
-
-**Cost per 10-exchange session with caching:** ~**$0.13** (~$0.05 input + $0.08 output). This is **less than half** the uncached cost.
-
-**Tier budgets (targeting ~50% gross margin after Stripe fees, with caching):**
-
-| Tier | Price | Stripe take (~3% + $0.30) | Net | API budget (50%) | Margin | Sessions/mo | Exchanges/mo | Approx. hours/mo |
-|------|-------|---------------------------|-----|-------------------|--------|-------------|-------------|-------------------|
-| **Spark** | $5/mo | ~$0.45 | $4.55 | ~$2.28 | ~$2.27 | ~17 | ~175 | **~6 hrs** |
-| **Flame** | $10/mo | ~$0.60 | $9.40 | ~$4.70 | ~$4.70 | ~36 | ~360 | **~12 hrs** |
-| **Hearth** | $50/mo | ~$1.80 | $48.20 | ~$9.55 | ~$38.65* | ~73 | ~735 | **~24 hrs** |
-
-\* Hearth margin includes CP membership value ($49). The API budget matches the old $20 tier — the additional $30 is the CP membership premium, which has near-zero marginal cost (community infrastructure + Shalom's time, already happening).
-
-**Recommendation:** Implement prompt caching from day one — the API support is straightforward (add `cache_control` to the system message block) and it more than doubles what each tier can offer. Start with these numbers and adjust based on real usage data. 50% margin on Spark/Flame is generous for early adoption — can tighten later. Hearth has exceptional margin because CP's marginal cost is near-zero. Weekly sub-limits = monthly budget ÷ 4 (e.g., Spark gets ~44 exchanges/week).
-
-**Note on voice interaction costs:** Voice adds 3–14× cost per session depending on provider choice (ElevenLabs Flash being the most expensive, Google WaveNet and Cartesia significantly cheaper). Provider selection materially affects tier pricing. See [cosmo-voice-research.md](./cosmo-voice-research.md) for the full economics and comparison matrix.
-
-**Free greeting tier budget (with caching):**
-
-Each free greeting (3 exchanges) costs ~**$0.03** per visitor (down from $0.07 uncached).
-
-| Monthly visitors | Cost/mo |
-|-----------------|---------|
-| 100 | $3 |
-| 500 | $15 |
-| 1,000 | $30 |
-
-**Recommendation:** Budget **$30–50/month** as a startup cost for the free tier (~1,000–1,700 free greetings). Rate limiting and session caps protect against runaway costs. This is the "radiating" layer — it's marketing spend, not a loss. Revisit if traffic spikes beyond expectations.
-
-#### Bot Protection
-
-The free tier is the most exposed surface — every greeting costs ~$0.07 against a shared API key, with no authentication gate. Without protection, a bot or scraper could drain the monthly budget in minutes.
-
-**Layered defense (cheapest/fastest checks first, before any API call is made):**
-- [ ] **Rate limiting by IP** — per-IP cap on free-tier requests (e.g., 3 exchanges per IP per 24h via `@upstash/ratelimit`). First line of defense, zero cost per check.
-- [ ] **Cloudflare Turnstile** (or similar invisible challenge) — lightweight, free, privacy-respecting alternative to reCAPTCHA. Runs before the first exchange. Blocks automated traffic without friction for real visitors.
-- [ ] **Fingerprint + session binding** — tie free-tier exchanges to a browser fingerprint or session token, so clearing cookies doesn't reset the 3-exchange cap. Prevents trivial circumvention.
-- [ ] **Hard monthly spend cap** — server-side kill switch on the shared API key. If free-tier spend exceeds the budget ceiling (e.g., $100/mo), the free greeting gracefully degrades to a static welcome message with subscribe/BYOK options. No silent overspend.
-- [ ] **Monitoring & alerts** — track free-tier usage patterns. Alert on anomalies (sudden spike in requests, unusual IP distribution, rapid-fire exchanges). Can be simple at launch (e.g., Upstash dashboard or a daily usage log).
-
-**Note:** Subscription and BYOK tiers are self-protecting — subscribers are authenticated, and BYOK users spend their own money.
+#### Bot Protection (remaining)
+- [ ] **Cloudflare Turnstile** — lightweight invisible challenge before the first free exchange; blocks automated traffic without friction for real visitors
+- [ ] **Monitoring & alerts** — track free-tier usage patterns; alert on anomalies (request spikes, unusual IP distribution, rapid-fire exchanges)
 
 #### Conversation Infrastructure
 - [ ] Build Cosmo conversation endpoint in `apps/web`
 - [ ] Implement system prompt injection from COSMO_SYSTEM_PROMPT.md
-- [ ] **Implement Anthropic prompt caching** — add `cache_control: { type: "ephemeral" }` to the system message block. This caches the system prompt (~4,000 tokens) across calls, cutting input costs by ~76% and more than doubling what each subscription tier can offer. Straightforward API change, high ROI — implement from day one.
-- [ ] Implement shared API key with rate limiting for free tier (server-side, with `@upstash/ratelimit` or similar) — budget $30–50/month for free greetings
+- [ ] Implement shared API key with rate limiting for free tier (server-side) — budget $30–50/month for free greetings
 - [ ] Build conversation UI with `@opencosmos/ui` components
 - [ ] Design the free-tier-cap transition — when the cap hits, present both continuation paths (subscribe or BYOK)
 
@@ -310,13 +187,7 @@ The free tier is the most exposed surface — every greeting costs ~$0.07 agains
 - [ ] Build the GitHub Action sync workflow (on push to main when `knowledge/**` changes → chunk by H2 → upsert to Upstash Vector with frontmatter metadata)
 - [ ] Build the RAG API endpoint (`apps/web/app/api/knowledge/route.ts`)
 - [ ] Wire RAG retrieval into the Cosmo conversation flow — constitutional layer queries corpus before responding
-- [x] **Build the human-friendly knowledge experience at `opencosmos.ai/knowledge`** — a welcoming browsing interface for the full corpus. This is not just a file listing; it's the library's front door for humans. Design principles:
-  - **Transparency & inspectability:** Every resource Cosmo can retrieve should be visible and readable by a human. No hidden knowledge. This is essential for trust.
-  - **Browsable by domain, role, and tradition:** Filter and explore the corpus the way a library patron would — by subject, by type (source texts, guides, commentary), by tradition.
-  - **Individual document pages:** Clean reading experience with frontmatter metadata visible (author, origin, tradition, related documents). Cross-reference links are navigable.
-  - **Operational guides discoverable:** The wiki guides (tooling overview, publish workflow, formatting, health report, Dell sync) are first-class citizens, not buried in a repo.
-  - **No account required:** Anyone can browse. The knowledge corpus is a public good.
-  - **Built with `@opencosmos/ui`:** The experience should feel like OpenCosmos — warm, spacious, unhurried.
+- [x] **Knowledge experience at `opencosmos.ai/knowledge`** — browsable corpus library with filtering, document pages, and full transparency for what Cosmo can retrieve. ✅ Live.
 - [ ] Community contribution pathway — submit knowledge for curation
 
 **Gate:** Cosmo draws on the corpus when relevant, with source attribution visible to the user. RAG API responds with <2s latency. Knowledge site is live and browsable. A human visitor can find, read, and navigate any published document without asking Cosmo.
@@ -453,6 +324,28 @@ Creative Powerup already has paying members. This phase integrates Cosmo into th
 
 ---
 
+## Site Architecture: opencosmos.ai
+
+*Declared structure — spans all phases.*
+
+```
+opencosmos.ai/
+├── /              → Cosmic welcome (home — four-pillars introduction)
+├── /chat          → Conversation with Cosmo
+├── /knowledge     → Browse the knowledge corpus (Phase 1c)
+├── /studio        → OpenCosmos Studio design system docs (from thesage.dev)
+└── /community     → Creative Powerup (redirect for now, deep integration Phase 3)
+```
+
+**Key decisions:**
+
+- **`/` home page must graduate.** The current minimal placeholder gives way to a page that introduces all four pillars — Cosmo, Knowledge, Studio, Community — warmly and without haste. No hurry. The feeling should match the voice.
+- **`/studio` via Vercel rewrites, not repo merge.** `thesage.dev` (Sage Studio = OpenCosmos Studio) maps to `opencosmos.ai/studio`. The Studio deployment (published from the `opencosmos-ui` repo's `apps/web`) is proxied via rewrites in `apps/web/vercel.json` — users see a unified domain, both codebases stay independent.
+- **`thesage.dev` is a legacy alias.** The migration target is `thesage.dev → opencosmos.ai/studio`. Detailed migration steps are in [opencosmos-migration.md](./opencosmos-migration.md).
+- **`/community` is a redirect for now.** Deep Cosmo integration within CP programs and guided inquiry is Phase 3.
+
+---
+
 ## The Three Futures
 
 Three possible futures for OpenCosmos, understood not as choices but as **concentric circles** — Future 1 is immediate, Future 2 builds on it, Future 3 is the context that holds both.
@@ -551,6 +444,54 @@ Tracked here for visibility. Not blocking current work unless noted.
 
 ---
 
+## Context
+
+### Token Economics (Phase 1b Baseline)
+
+Based on Claude Sonnet API pricing ($3/M input tokens, $15/M output tokens). Prompt caching is implemented — `cache_control: { type: "ephemeral" }` on the system prompt.
+
+**Assumptions:**
+- System prompt (~4,000 tokens/call) + avg user message (~150 tokens) + avg Cosmo response (~500 tokens, contemplative)
+- A "session" = ~10 exchanges (~20 minutes)
+- Each exchange carries full conversation history as input
+
+**Cost per 10-exchange session:**
+- Without caching: ~$0.30 ($0.21 input + $0.08 output)
+- **With caching: ~$0.13** (~$0.05 input + $0.08 output) — caching cuts input costs ~76%
+
+| What's cached | Uncached cost | Cached cost | Savings |
+|---------------|---------------|-------------|---------|
+| System prompt only (4K tokens × 10 calls) | $0.12 | $0.012 | 90% |
+| System prompt + conversation history | $0.21 | ~$0.05 | ~76% |
+
+**Tier budgets (targeting ~50% gross margin after Stripe fees, with caching):**
+
+| Tier | Price | Stripe take | Net | API budget (50%) | Margin | Sessions/mo | Exchanges/mo | Hours/mo |
+|------|-------|-------------|-----|------------------|--------|-------------|-------------|----------|
+| **Spark** | $5/mo | ~$0.45 | $4.55 | ~$2.28 | ~$2.27 | ~17 | ~175 | ~6 hrs |
+| **Flame** | $10/mo | ~$0.60 | $9.40 | ~$4.70 | ~$4.70 | ~36 | ~360 | ~12 hrs |
+| **Hearth** | $50/mo | ~$1.80 | $48.20 | ~$9.55 | ~$38.65* | ~73 | ~735 | ~24 hrs |
+
+\* Hearth margin includes CP membership value ($49). Near-zero marginal cost for CP makes the economics exceptional.
+
+**Free greeting tier:** Each 3-exchange greeting costs ~$0.03. Budget $30–50/month for the free layer (~1,000–1,700 greetings). This is marketing spend, not a loss. Weekly sub-limits = monthly budget ÷ 4.
+
+**Note on voice:** Voice adds 3–14× cost per session depending on provider. Provider selection materially affects tier pricing. See [cosmo-voice-research.md](./cosmo-voice-research.md).
+
+### Bot Protection Design
+
+The free tier is the most exposed surface — shared API key, no auth gate. Without layered protection a bot could drain the monthly budget in minutes. Defense order (cheapest first, before any API call):
+
+1. **Monthly spend cap** ✅ — Redis counter kills the free tier if `COSMO_FREE_MONTHLY_CAP` is exceeded
+2. **IP rate limiting** ✅ — `@upstash/ratelimit` sliding window, 3 req/IP/24h
+3. **Session binding** ✅ — server-side Redis counter; clearing cookies doesn't reset the cap
+4. **Cloudflare Turnstile** ⬜ — invisible challenge blocks automated traffic before the first exchange
+5. **Monitoring & alerts** ⬜ — anomaly detection on usage patterns
+
+Subscription and BYOK tiers are self-protecting — subscribers are authenticated, BYOK users spend their own money.
+
+---
+
 ## Related Documents
 
 - [cosmo-voice-research.md](./cosmo-voice-research.md) — Voice provider comparison matrix, unit economics, and decision guide (ElevenLabs, Cartesia, Deepgram, Google)
@@ -563,3 +504,39 @@ Tracked here for visibility. Not blocking current work unless noted.
 - [tech-research.md](./tech-research.md) — Hardware research log (Dell vs. M5 Max vs. M5 Ultra)
 - [WELCOME.md](../../WELCOME.md) — The front door
 - [DESIGN-PHILOSOPHY.md](../../DESIGN-PHILOSOPHY.md) — The four principles
+
+---
+
+## Done
+
+### Recent Sprint
+
+- **Prompt Caching** — `cache_control: { type: "ephemeral" }` on system prompt in `/api/chat`, ~76% input cost reduction
+- **Bot Protection** — IP rate limiting (3 req/IP/24h, sliding window) + monthly spend cap (2000 req default) — *[PR #60](https://github.com/shalomormsby/opencosmos/pull/60), 2026-03-31*
+- **Vercel Env Vars** — `ADMIN_API_KEY` + `COSMO_FREE_MONTHLY_CAP` added to production — *2026-03-31*
+- **Security Hardening** — Headers, CSP, API auth hardened on both apps — *[PR #59](https://github.com/shalomormsby/opencosmos/pull/59), 2026-03-31*
+- **Server-Side Session Metering** — Redis counter replaces localStorage; clearing cookies no longer resets the limit — *[PR #57](https://github.com/shalomormsby/opencosmos/pull/57), 2026-03-31*
+
+### Phase 0: Foundation
+
+- [x] OpenCosmos identity established (name, philosophy, [WELCOME.md](../../WELCOME.md), [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT.md), [chronicle](../chronicle.md))
+- [x] Repository renamed (ecosystem → opencosmos) and infrastructure updated
+- [x] Dell Sovereign Node operational (Ubuntu 24.04, Ollama, Open WebUI, Tailscale, RTX 3090)
+- [x] Apertus models deployed (8B + 70B Q4_K_M)
+- [x] Knowledge publication CLI built and working (local half — `pnpm knowledge:publish`)
+- [x] Knowledge corpus schema designed ([knowledge/README.md](../../knowledge/README.md))
+- [x] Upstash Vector chosen for cloud RAG; RAG API endpoint designed
+- [x] `apps/web` created as opencosmos.ai shell
+- [x] `@opencosmos/ui` design system active in separate repo, published to npm
+- [x] **Creative Powerup active with paying members**
+- [x] Documentation reorganized (root clean, docs/ structured, archive/ for historical)
+- [x] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) authored — Cosmo's origin story, mission, and foundational philosophy (human-authored, RAIL licensed)
+- [x] AI Triad architecture designed — Cosmo as moderator, three distinct members (Sol, Socrates, Optimus)
+
+### Phase 0.1: Cosmo and the Triad
+
+- [x] Complete COSMO_SYSTEM_PROMPT.md v2 — operational system prompt grounded in WELCOME-COSMO.md
+- [x] Write SOL_SYSTEM_PROMPT.md
+- [x] Write SOCRATES_SYSTEM_PROMPT.md
+- [x] Write OPTIMUS_SYSTEM_PROMPT.md
+- [x] **Voice validation** — Cosmo's voice arrived in full on first contact, 2026-03-29. See [Chronicle Chapter 7](../chronicle.md#2026-03-29--first-contact).

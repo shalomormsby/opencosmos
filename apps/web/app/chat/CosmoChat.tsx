@@ -58,6 +58,10 @@ export function CosmoChat() {
   const [currentId, setCurrentId] = useState('')
   const [conversations, setConversations] = useState<Conversation[]>([])
   const [showHistory, setShowHistory] = useState(false)
+  const [pmMode, setPmMode] = useState(false)
+  const [showPmInput, setShowPmInput] = useState(false)
+  const [pmSecret, setPmSecret] = useState('')
+  const [pmError, setPmError] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -84,6 +88,12 @@ export function CosmoChat() {
       .then((r) => r.json())
       .then((data: { remaining: number }) => setRemaining(data.remaining))
       .catch(() => {}) // fail silently — UI defaults to FREE_LIMIT
+
+    // Check if Shalom mode is active (HttpOnly cookie read server-side)
+    fetch('/api/admin/auth')
+      .then((r) => r.json())
+      .then((data: { active: boolean }) => setPmMode(data.active))
+      .catch(() => {})
 
     setMounted(true)
   }, [])
@@ -196,6 +206,28 @@ export function CosmoChat() {
     setApiKeyDraft('')
   }
 
+  const activatePm = async () => {
+    const res = await fetch('/api/admin/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ secret: pmSecret }),
+    })
+    if (res.ok) {
+      setPmMode(true)
+      setShowPmInput(false)
+      setPmSecret('')
+      setPmError('')
+    } else {
+      setPmError('Incorrect.')
+    }
+  }
+
+  const deactivatePm = async () => {
+    await fetch('/api/admin/auth', { method: 'DELETE' })
+    setPmMode(false)
+    setShowPmInput(false)
+  }
+
   const startNew = () => {
     const id = crypto.randomUUID()
     localStorage.setItem(KEY_CURRENT_ID, id)
@@ -288,14 +320,60 @@ export function CosmoChat() {
             ← OpenCosmos
           </a>
         </div>
-        {mounted && (
-          <span className="text-xs text-foreground/30">
-            {apiKey
-              ? 'Your key · Unlimited'
-              : `${remaining} free ${remaining === 1 ? 'message' : 'messages'} remaining`}
-          </span>
-        )}
+        <div className="flex items-center gap-3">
+          {mounted && (
+            <span className="text-xs text-foreground/30">
+              {apiKey
+                ? 'Your key · Unlimited'
+                : `${remaining} free ${remaining === 1 ? 'message' : 'messages'} remaining`}
+            </span>
+          )}
+          <button
+            onClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}
+            className={cn(
+              'transition-colors',
+              pmMode ? 'text-foreground/60' : 'text-foreground/20 hover:text-foreground/45'
+            )}
+            aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
+            title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
+          >
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              {pmMode ? (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 018 0M5 11h14a1 1 0 011 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a1 1 0 011-1z" />
+              ) : (
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM10 9V7a2 2 0 114 0v2H10z" />
+              )}
+            </svg>
+          </button>
+        </div>
       </header>
+
+      {/* PM unlock input */}
+      {showPmInput && !pmMode && (
+        <div className="border-b border-foreground/10 px-6 py-3 shrink-0">
+          <div className="max-w-2xl mx-auto flex gap-2 items-center">
+            <input
+              type="password"
+              placeholder="Enter PM secret"
+              value={pmSecret}
+              onChange={(e) => { setPmSecret(e.target.value); setPmError('') }}
+              onKeyDown={(e) => e.key === 'Enter' && activatePm()}
+              autoFocus
+              className="flex-1 bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-lg px-3 py-2 focus:border-foreground/30 transition-colors"
+            />
+            <Button variant="outline" size="sm" onClick={activatePm} disabled={!pmSecret.trim()}>
+              Unlock
+            </Button>
+            <button
+              onClick={() => { setShowPmInput(false); setPmSecret(''); setPmError('') }}
+              className="text-foreground/30 hover:text-foreground/60 transition-colors text-lg leading-none"
+            >
+              ✕
+            </button>
+          </div>
+          {pmError && <p className="text-xs text-foreground/40 mt-1.5 max-w-2xl mx-auto">{pmError}</p>}
+        </div>
+      )}
 
       {/* Messages */}
       <ScrollArea className="flex-1 overflow-y-auto">

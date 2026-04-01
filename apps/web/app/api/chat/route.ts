@@ -7,6 +7,10 @@ import { Redis } from '@upstash/redis'
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
+const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
+const GITHUB_PM_PAT = process.env.GITHUB_PM_PAT ?? ''
+const PM_CACHE_KEY = 'cosmo_pm_context:v1'
+const PM_CACHE_TTL = 3600 // 1 hour
 const FREE_LIMIT = 3
 const SESSION_TTL = 604800 // 7 days
 
@@ -25,6 +29,51 @@ const SYSTEM_CONTENT = [
 
 // Default client uses server-side ANTHROPIC_API_KEY (shared free-tier key)
 const defaultClient = new Anthropic()
+
+const redis = new Redis({ url: REDIS_URL, token: REDIS_TOKEN })
+
+// Fetches all .md files from the private cosmo-context GitHub repo and
+// concatenates them into a single context string. Caches in Redis for 1 hour.
+// Fails open — returns null on any error so chat is never blocked.
+async function fetchPmContext(): Promise<string | null> {
+  try {
+    const cached = await redis.get<string>(PM_CACHE_KEY)
+    if (cached) return cached
+
+    const headers = {
+      Authorization: `Bearer ${GITHUB_PM_PAT}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+    }
+
+    const listRes = await fetch(`https://api.github.com/repos/${GITHUB_PM_REPO}/contents/`, { headers })
+    if (!listRes.ok) return null
+
+    const files = (await listRes.json()) as Array<{ name: string; path: string; type: string }>
+    const mdFiles = files.filter((f) => f.type === 'file' && f.name.endsWith('.md'))
+
+    const parts = await Promise.all(
+      mdFiles.map(async (f) => {
+        const res = await fetch(
+          `https://api.github.com/repos/${GITHUB_PM_REPO}/contents/${f.path}`,
+          { headers }
+        )
+        if (!res.ok) return null
+        const data = (await res.json()) as { content: string; encoding: string }
+        const content = Buffer.from(data.content, 'base64').toString('utf-8')
+        return `## ${f.name}\n\n${content}`
+      })
+    )
+
+    const context = parts.filter(Boolean).join('\n\n---\n\n')
+    if (!context) return null
+
+    await redis.set(PM_CACHE_KEY, context, { ex: PM_CACHE_TTL })
+    return context
+  } catch {
+    return null // fail open
+  }
+}
 
 // IP rate limiter: 3 free-tier requests per IP per 24 hours.
 // Uses sliding window so burst attempts don't reset the window.
@@ -152,10 +201,24 @@ export async function POST(req: NextRequest) {
     // The provided key is used only for this request and never stored.
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
 
+    // Shalom mode: inject private PM context when cosmo_admin cookie is present.
+    const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
+    const systemContent = [...SYSTEM_CONTENT]
+    if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
+      const pmContext = await fetchPmContext()
+      if (pmContext) {
+        systemContent.push({
+          type: 'text' as const,
+          text: `# Private Project Context\n\nThe following is Shalom's private project management context. Use it to answer questions about his projects, current status, priorities, and decisions.\n\n${pmContext}`,
+          cache_control: { type: 'ephemeral' as const },
+        })
+      }
+    }
+
     const stream = client.messages.stream({
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,
-      system: SYSTEM_CONTENT,
+      system: systemContent,
       messages,
     })
 
