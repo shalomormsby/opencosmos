@@ -1,5 +1,6 @@
 import { Header, Button, OrbBackground } from '@opencosmos/ui'
 import Link from 'next/link'
+import { AuthButton } from './AuthButton'
 
 export default function Home() {
   return (
@@ -16,11 +17,7 @@ export default function Home() {
           { label: 'Knowledge', href: '/knowledge' },
           { label: 'Studio', href: 'https://studio.opencosmos.ai' },
         ]}
-        actions={
-          <Button variant="secondary" size="sm" asChild>
-            <a href="/api/auth/signin">Sign in</a>
-          </Button>
-        }
+        actions={<AuthButton />}
       />
 
       <div className="relative flex flex-col items-center justify-center min-h-screen px-6 overflow-hidden">
