@@ -7,14 +7,12 @@ export async function middleware(request: NextRequest, event: NextFetchEvent) {
   try {
     return await workosMiddleware(request, event)
   } catch {
-    // Fail open — if WorkOS is unreachable or misconfigured, pass the request through
-    // so the rest of the site remains functional.
     return NextResponse.next()
   }
 }
 
+// Only run on auth routes — avoids WorkOS setting Cache-Control: no-store on
+// regular page responses, which causes Safari to not apply CSS on hard refresh.
 export const config = {
-  matcher: [
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  matcher: ['/callback', '/api/auth/:path*'],
 }
