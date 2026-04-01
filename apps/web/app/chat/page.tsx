@@ -6,6 +6,14 @@ export const metadata = {
 }
 
 export default async function ChatPage() {
-  const { user } = await withAuth({ ensureSignedIn: false })
-  return <CosmoChat user={user ?? undefined} />
+  let user: { firstName: string | null; email: string } | undefined
+
+  try {
+    const auth = await withAuth({ ensureSignedIn: false })
+    if (auth.user) user = { firstName: auth.user.firstName, email: auth.user.email }
+  } catch {
+    // withAuth failure (e.g. misconfigured env) should not break the chat page
+  }
+
+  return <CosmoChat user={user} />
 }
