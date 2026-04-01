@@ -1,4 +1,4 @@
-import { Header, Button, GitHubIcon, OrbBackground } from '@opencosmos/ui'
+import { Header, Button, OrbBackground } from '@opencosmos/ui'
 import Link from 'next/link'
 
 export default function Home() {
@@ -17,15 +17,8 @@ export default function Home() {
           { label: 'Studio', href: 'https://studio.opencosmos.ai' },
         ]}
         actions={
-          <Button variant="outline" size="sm" asChild className="gap-2">
-            <a
-              href="https://github.com/shalomormsby/opencosmos"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon className="w-4 h-4" />
-              Star on GitHub
-            </a>
+          <Button variant="secondary" size="sm" asChild>
+            <a href="/api/auth/signin">Sign in</a>
           </Button>
         }
       />
