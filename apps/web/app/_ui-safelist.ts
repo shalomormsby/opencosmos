@@ -5,7 +5,7 @@
  * scan @opencosmos/ui. This file lists every Tailwind class used by the
  * components imported in this app so Tailwind includes them in the CSS bundle.
  *
- * Components covered: Header, NavLink, Button, GitHubIcon (no Tailwind), Card, Badge, Input, Separator, ScrollArea, Breadcrumbs, OrbBackground
+ * Components covered: Header, NavLink, Button, GitHubIcon (no Tailwind), Card, Badge, Input, Separator, ScrollArea, Breadcrumbs, OrbBackground, AppSidebar, AppSidebarInset
  *
  * To regenerate after upgrading @opencosmos/ui, run the extraction script
  * documented in .claude/skills/create/SKILL.md § "Required CSS Setup".
@@ -179,5 +179,21 @@ export const _safelist = [
   'border-border border-foreground/10',
   'h-4 w-4 h-full w-full',
   'bg-background text-foreground',
+
+  // ── AppSidebar ────────────────────────────────────────────────────────────
+  'fixed left-0 top-0 bottom-0 z-40 flex flex-col overflow-hidden shrink-0',
+  'bg-background border-r border-foreground/8',
+  'w-8 h-8 h-16 px-[10px]',
+  'gap-2.5 flex-1 min-w-0 rounded-lg p-1.5',
+  'hover:bg-foreground/5 focus-visible:ring-[var(--color-focus)]',
+  'font-semibold text-sm text-foreground whitespace-nowrap',
+  'text-foreground/35 hover:text-foreground/65',
+  'justify-center w-9 h-9 mx-auto',
+  'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]',
+  'bg-foreground/8',
+  'px-2 py-2 space-y-0.5',
+  'border-foreground/8 px-3 py-3 justify-center',
+  // AppSidebarInset
+  'min-h-screen',
 
 ].join(' ')
