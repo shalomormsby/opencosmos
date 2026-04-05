@@ -234,6 +234,9 @@ importers:
       '@workos-inc/authkit-nextjs':
         specifier: ^3.0.0
         version: 3.0.0(next@16.1.6(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)
+      '@workos-inc/node':
+        specifier: ^8.11.0
+        version: 8.11.0
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -2929,8 +2932,8 @@ packages:
       react: ^19.2.1
       react-dom: ^19.2.1
 
-  '@workos-inc/node@8.10.0':
-    resolution: {integrity: sha512-3UqtU+QqITkQy77UZJumrZxb+4FcUjxgHfC4c186Q0rzSNDZ7YF7iNLWN7QB/q/26KbtgHlEpFS9GX75wUxSEQ==}
+  '@workos-inc/node@8.11.0':
+    resolution: {integrity: sha512-p1kcI6MRlq7jfqg77ZNwP+kvVbE/pr9VyYtJjYAhlT8OUhCVXLvh/fzmaqa2d/rcQgH6U05/mrW2qew16zqtgw==}
     engines: {node: '>=20.15.0'}
 
   abbrev@3.0.1:
@@ -8870,7 +8873,7 @@ snapshots:
 
   '@workos-inc/authkit-nextjs@3.0.0(next@16.1.6(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react@19.2.3)(typescript@5.9.3)':
     dependencies:
-      '@workos-inc/node': 8.10.0
+      '@workos-inc/node': 8.11.0
       iron-session: 8.0.4
       jose: 5.10.0
       next: 16.1.6(@babel/core@7.28.5)(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -8881,7 +8884,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  '@workos-inc/node@8.10.0': {}
+  '@workos-inc/node@8.11.0': {}
 
   abbrev@3.0.1: {}
 
