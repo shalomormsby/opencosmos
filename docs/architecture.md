@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-03-22
+**Last updated:** 2026-04-05
 
 ---
 
@@ -11,6 +11,7 @@
 | Service | Provider | Deployed from | Tier |
 |---------|----------|--------------|------|
 | opencosmos.ai | Vercel | `opencosmos/apps/web` | Free / Pro |
+| Auth (user accounts, login, OAuth) | WorkOS AuthKit | `@workos-inc/authkit-nextjs` | Free tier |
 | Portfolio (shalomormsby.com) | Vercel | `opencosmos/apps/portfolio` | Free / Pro |
 | Creative Powerup | Vercel | `opencosmos/apps/creative-powerup` | Free / Pro |
 | OpenCosmos Studio (component docs) | Vercel | `opencosmos-ui/apps/web` | Free / Pro |
@@ -409,6 +410,190 @@ knowledge/collections/
 These are `role: collection` documents that point to source texts in the corpus. They serve both humans (a reading path into each voice's lineage) and the system (a manifest of high-priority documents for voice-specific retrieval).
 
 **The corpus grows, the graph deepens:** Every new document added to the corpus doesn't just add content — it adds connections. A new commentary linking Buddhist and Stoic perspectives on suffering creates an edge between two previously separate regions of the graph. Over time, the graph becomes a map of how human wisdom traditions relate to each other — and this map is the substrate on which Cosmo and the Triad build their offerings.
+
+---
+
+## User Authentication & Accounts
+
+### Provider: WorkOS AuthKit
+
+Authentication is handled by **WorkOS AuthKit** (`@workos-inc/authkit-nextjs@^3.0.0`). WorkOS manages the user database, OAuth flows, session cookies, and webhook delivery. There is no custom user database — WorkOS is the source of truth for user identity.
+
+**Package:** `@workos-inc/authkit-nextjs` — Next.js-specific wrapper. Does NOT include webhook utilities; those require `@workos-inc/node` (separate package, also installed).
+
+### Required Environment Variables
+
+All must be set in Vercel → Settings → Environment Variables **and** declared in `turbo.json → globalPassThroughEnv` (see [Hard-Won Lesson: Turbo env vars](#hard-won-lessons) below).
+
+| Variable | Where to find it | Purpose |
+|----------|-----------------|---------|
+| `WORKOS_API_KEY` | WorkOS Dashboard → API Keys | Server-side API access |
+| `WORKOS_CLIENT_ID` | WorkOS Dashboard → Applications | Client identifier for AuthKit |
+| `WORKOS_COOKIE_PASSWORD` | Generated secret (32+ chars) | Cookie encryption |
+| `WORKOS_REDIRECT_URI` | `https://opencosmos.ai/callback` | Post-login redirect |
+| `WORKOS_WEBHOOK_SECRET` | WorkOS Dashboard → Webhooks → your endpoint → Secret | Webhook HMAC-SHA256 signature verification |
+
+### Auth Flow
+
+```
+User clicks "Log in"
+       │
+       ▼
+GET /api/auth/signin  →  getSignInUrl()  →  redirect to WorkOS hosted auth
+       │
+       ▼
+User authenticates on WorkOS (email/password, Google OAuth, etc.)
+       │
+       ▼
+WorkOS redirects to WORKOS_REDIRECT_URI (/callback)
+       │
+       ▼
+authkit-nextjs sets HttpOnly session cookie (encrypted with WORKOS_COOKIE_PASSWORD)
+       │
+       ▼
+User redirected to /dialog (or original destination)
+```
+
+**Sign-out:** `GET /api/auth/signout` → `signOut()` → clears session cookie, redirects to WorkOS.
+
+### API Routes
+
+| Route | Handler | Purpose |
+|-------|---------|---------|
+| `GET /api/auth/signin` | `getSignInUrl()` → redirect | Initiates WorkOS hosted auth flow |
+| `GET /api/auth/signout` | `signOut()` | Clears session, redirects to WorkOS |
+| `GET /api/auth/me` | `withAuth({ ensureSignedIn: false })` | Returns current user or null. Fields: `firstName`, `lastName`, `email`, `profilePictureUrl` |
+| `POST /api/webhooks/workos` | `workos.webhooks.constructEvent` | Receives WorkOS webhook events (see below) |
+
+### User Data Model
+
+WorkOS returns these fields (via `withAuth()` or `/api/auth/me`):
+
+```ts
+{
+  id: string                  // "user_01KN..."
+  firstName: string | null
+  lastName: string | null
+  email: string
+  emailVerified: boolean
+  profilePictureUrl: string | null
+  locale: string | null
+  createdAt: string           // ISO 8601
+  updatedAt: string
+  lastSignInAt: string | null
+  externalId: string | null
+  metadata: Record<string, unknown>
+}
+```
+
+**Note:** WorkOS sends events with snake_case fields (`first_name`, `last_name`, etc.) but the `@workos-inc/node` SDK's `deserializeUser()` converts them to camelCase before returning. Code should always use camelCase field names.
+
+### Session Checking (Server Components)
+
+```ts
+import { withAuth } from '@workos-inc/authkit-nextjs'
+
+// In a server component or route handler:
+const { user } = await withAuth({ ensureSignedIn: false })
+if (!user) redirect('/api/auth/signin')
+```
+
+`ensureSignedIn: false` — returns `{ user: null }` for unauthenticated requests rather than throwing. Always use this; then handle the null case explicitly.
+
+### Client-Side Auth State
+
+`app/AuthButton.tsx` — client component that fetches `/api/auth/me` on mount.
+- **Signed out / loading:** renders "Log in" button → `href="/api/auth/signin"`
+- **Signed in:** renders dropdown with account link and sign-out
+
+`app/SidebarAvatar.tsx` — same fetch, renders in the sidebar footer.
+- **Loading:** pulse skeleton (`w-7 h-7 rounded-full bg-foreground/8 animate-pulse`)
+- **Signed out:** generic person icon → `href="/api/auth/signin"`
+- **Signed in, no photo:** initials (firstName[0] + lastName[0]) → `href="/account"`
+- **Signed in, with photo:** profile picture → `href="/account"`
+
+### Account Page (`/account`)
+
+Server component at `app/account/page.tsx`. Redirects to sign-in if unauthenticated.
+
+**Sections:**
+1. **Profile card** — avatar (photo or initials), full name, email, member-since date, Log out button
+2. **API key** (`app/account/ApiKeyForm.tsx`, client component) — stores Anthropic API key in `localStorage` under key `cosmo_api_key`. Key is never sent to OpenCosmos servers — only forwarded directly to Anthropic on each chat request.
+3. **Plan tiers** — Explorer $5 / Seeker $10 / Luminary $20 — all "Coming soon" (no payment integration yet)
+
+### Webhook Handler
+
+**Endpoint:** `POST https://opencosmos.ai/api/webhooks/workos`
+
+**File:** `apps/web/app/api/webhooks/workos/route.ts`
+
+**Dependencies:** `@workos-inc/node` (separate from `authkit-nextjs` — required for `workos.webhooks.constructEvent`).
+
+**Verification:** HMAC-SHA256 via `workos.webhooks.constructEvent`. WorkOS sends a `workos-signature` header with timestamp + hash. Invalid or replayed signatures return 400. All valid events return `{ received: true }` with 200.
+
+**IMPORTANT — lazy instantiation:** `new WorkOS(apiKey)` must be inside the `POST` handler function, **not** at module scope. Next.js evaluates module-level code during static page data collection at build time, where env vars are undefined. Module-scope instantiation causes the build to crash with `WorkOS requires either an API key or a clientId`.
+
+```ts
+// ✅ Correct — lazy, inside handler
+export async function POST(req: NextRequest) {
+  const workos = new WorkOS(process.env.WORKOS_API_KEY!)
+  ...
+}
+
+// ❌ Wrong — module scope, crashes build
+const workos = new WorkOS(process.env.WORKOS_API_KEY!)
+export async function POST(...) { ... }
+```
+
+**Current `user.created` handler:** Logs user info only — no database write, no welcome email, no credit provisioning. This is intentional: no user database exists yet. When a database is added, this is where to provision new user records.
+
+**All other events:** Acknowledged with 200 to prevent WorkOS retry storms.
+
+**WorkOS webhook retry schedule:** WorkOS retries failed events on a fixed schedule (intervals grow over time). You cannot manually trigger retries from the dashboard — only wait for the next scheduled attempt, or create a new test event by registering a new user account.
+
+**To verify the webhook is live after a deploy:** Create a throwaway account at `opencosmos.ai` → immediately check Vercel function logs for `[webhook/workos] user.created`.
+
+### Free Tier Usage Model
+
+Users who are not signed in (or signed in but without an API key) get 3 free messages per session, tracked via an HttpOnly session cookie + Upstash Redis counter.
+
+| User state | Inference path | Limit |
+|-----------|---------------|-------|
+| Anonymous / no API key | OpenCosmos shared Anthropic key | 3 messages/session (Redis counter) |
+| BYOK (API key in localStorage) | User's own Anthropic key, forwarded | Unlimited (Anthropic rate limits apply) |
+| Subscription tier | (Coming soon) | Plan-dependent |
+
+**PM mode** (Shalom-only): A hidden button in the sidebar footer (opacity-0, always rendered) unlocks unlimited access via `COSMO_ADMIN_SECRET`. Activated via `POST /api/admin/auth` with the secret; deactivated via `DELETE /api/admin/auth`. Auth state stored in an HttpOnly cookie read server-side.
+
+### Hard-Won Lessons
+
+#### Turbo env vars must be declared in `turbo.json`
+
+Vercel env vars are **silently dropped** by Turborepo unless declared in `turbo.json → globalPassThroughEnv`. The build succeeds but the runtime env vars are `undefined`. This caused the WorkOS webhook handler to fail silently — signature verification threw because `WORKOS_WEBHOOK_SECRET` was undefined.
+
+All app env vars must appear in `turbo.json`:
+
+```json
+"globalPassThroughEnv": [
+  "WORKOS_API_KEY",
+  "WORKOS_CLIENT_ID",
+  "WORKOS_WEBHOOK_SECRET",
+  "WORKOS_COOKIE_PASSWORD",
+  "WORKOS_REDIRECT_URI",
+  "ANTHROPIC_API_KEY",
+  "COSMO_SYSTEM_PROMPT",
+  "COSMO_FREE_MONTHLY_CAP",
+  "COSMO_ADMIN_SECRET",
+  "UPSTASH_REDIS_REST_URL",
+  "UPSTASH_REDIS_REST_TOKEN"
+]
+```
+
+Use `globalPassThroughEnv` (not `globalEnv`) — secrets should be available to the pipeline without being hashed into the Turbo cache key.
+
+#### WorkOS webhook `constructEvent` is async
+
+`workos.webhooks.constructEvent()` returns a `Promise`. Always `await` it. The SDK type definition incorrectly shows `payload` as `Record<string, unknown>` but the function actually expects the raw request body string — cast with `payload as unknown as Record<string, unknown>` to satisfy TypeScript without transforming the value.
 
 ---
 
