@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Header, Button, GitHubIcon } from '@opencosmos/ui'
 import { getAllDocs } from '@/lib/knowledge'
 import KnowledgeBrowser from './KnowledgeBrowser'
+import { AppShell } from '@/app/AppShell'
 
 export const metadata: Metadata = {
   title: 'The Library — OpenCosmos',
@@ -10,17 +11,20 @@ export const metadata: Metadata = {
 }
 
 const NAV_LINKS = [
-  { label: 'Dialog', href: '/chat' },
+  { label: 'Dialog', href: '/dialog' },
   { label: 'Knowledge', href: '/knowledge' },
-  { label: 'Studio', href: 'https://studio.opencosmos.ai' },
+  { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
 ]
 
 export default function KnowledgePage() {
   const docs = getAllDocs()
 
   return (
+    <AppShell activePath="/knowledge">
     <main className="min-h-screen bg-background">
       <Header
+        sticky={false}
+        className="sticky top-0 z-40"
         logo={
           <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
             OpenCosmos
@@ -62,5 +66,6 @@ export default function KnowledgePage() {
         <KnowledgeBrowser docs={docs} />
       </div>
     </main>
+    </AppShell>
   )
 }

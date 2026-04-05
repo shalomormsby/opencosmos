@@ -1,9 +1,9 @@
 import { CosmoChat } from './CosmoChat'
 
 export const metadata = {
-  title: 'Cosmo — OpenCosmos',
+  title: 'Dialog — OpenCosmos',
 }
 
-export default function ChatPage() {
+export default function DialogPage() {
   return <CosmoChat />
 }
