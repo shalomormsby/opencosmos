@@ -11,16 +11,24 @@ import { WorkOS } from '@workos-inc/node'
 export async function POST(req: NextRequest) {
   const workos = new WorkOS(process.env.WORKOS_API_KEY!)
 
-  const payload = await req.text()
+  const rawBody = await req.text()
   const sigHeader = req.headers.get('workos-signature') ?? ''
+
+  // Parse the raw body into an object. The SDK calls JSON.stringify(payload) internally
+  // when computing the HMAC, so it needs a parsed object — not the raw string.
+  let parsedPayload: Record<string, unknown>
+  try {
+    parsedPayload = JSON.parse(rawBody)
+  } catch {
+    return NextResponse.json({ error: 'Invalid payload' }, { status: 400 })
+  }
 
   // Verify signature — rejects tampered or replayed payloads
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   let event: any
   try {
     event = await workos.webhooks.constructEvent({
-      // The SDK types say Record<string,unknown> but it actually expects the raw string
-      payload: payload as unknown as Record<string, unknown>,
+      payload: parsedPayload,
       sigHeader,
       secret: process.env.WORKOS_WEBHOOK_SECRET!,
     })
