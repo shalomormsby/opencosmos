@@ -633,9 +633,33 @@ All app env vars must appear in `turbo.json`:
 
 Use `globalPassThroughEnv` (not `globalEnv`) — secrets should be available to the pipeline without being hashed into the Turbo cache key.
 
-#### WorkOS webhook `constructEvent` is async
+#### WorkOS webhook `constructEvent` — signature verification and payload format
 
-`workos.webhooks.constructEvent()` returns a `Promise`. Always `await` it. The SDK type definition incorrectly shows `payload` as `Record<string, unknown>` but the function actually expects the raw request body string — cast with `payload as unknown as Record<string, unknown>` to satisfy TypeScript without transforming the value.
+`workos.webhooks.constructEvent()` returns a `Promise`. Always `await` it.
+
+**Payload must be a parsed JSON object, not a raw string.** The SDK's `computeSignature` method calls `JSON.stringify(payload)` internally to reconstruct `timestamp.json_body` before hashing — it needs to re-serialize the object identically to what WorkOS signed. Passing the raw text string causes `JSON.stringify` to double-encode it (`"\"{ \\\"event\\\"...}\""`) which never matches the original signature, producing `HTTP 400 Invalid signature` on every delivery.
+
+```ts
+// ✅ Correct — parse first, then pass the object
+const rawBody = await req.text()
+const parsedPayload = JSON.parse(rawBody)
+event = await workos.webhooks.constructEvent({
+  payload: parsedPayload,   // SDK will JSON.stringify this internally
+  sigHeader,
+  secret: process.env.WORKOS_WEBHOOK_SECRET!,
+})
+
+// ❌ Wrong — raw string causes JSON.stringify to double-encode
+event = await workos.webhooks.constructEvent({
+  payload: rawBody as unknown as Record<string, unknown>,
+  sigHeader,
+  secret: process.env.WORKOS_WEBHOOK_SECRET!,
+})
+```
+
+The SDK's TypeScript type (`payload: Record<string, unknown>`) is correct — the earlier note in this file claiming it expects a raw string was wrong and has been removed.
+
+> **Note:** This fix was deployed in commit `4ade138` but has not yet been verified against a live WorkOS delivery. Confirm by checking Vercel logs after the next `user.created` event.
 
 ---
 
