@@ -1,7 +1,18 @@
 {
   "$schema": "https://turbo.build/schema.json",
   "globalPassThroughEnv": [
-    "CACHE_BUST_2026_01_11_V2"
+    "CACHE_BUST_2026_01_11_V2",
+    "ANTHROPIC_API_KEY",
+    "COSMO_SYSTEM_PROMPT",
+    "COSMO_FREE_MONTHLY_CAP",
+    "COSMO_ADMIN_SECRET",
+    "UPSTASH_REDIS_REST_URL",
+    "UPSTASH_REDIS_REST_TOKEN",
+    "WORKOS_API_KEY",
+    "WORKOS_CLIENT_ID",
+    "WORKOS_WEBHOOK_SECRET",
+    "WORKOS_COOKIE_PASSWORD",
+    "WORKOS_REDIRECT_URI"
   ],
   "tasks": {
     "build": {
