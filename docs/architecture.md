@@ -463,6 +463,8 @@ User redirected to /dialog (or original destination)
 | `GET /api/auth/signin` | `getSignInUrl()` → redirect | Initiates WorkOS hosted auth flow |
 | `GET /api/auth/signout` | `signOut()` | Clears session, redirects to WorkOS |
 | `GET /api/auth/me` | `withAuth({ ensureSignedIn: false })` | Returns current user or null. Fields: `firstName`, `lastName`, `email`, `profilePictureUrl` |
+| `GET /api/conversations` | `withAuth({ ensureSignedIn: false })` | Returns all conversations for the authenticated user (Upstash Redis, keyed by WorkOS user ID). Returns `[]` for unauthenticated requests. |
+| `PATCH /api/conversations` | `withAuth({ ensureSignedIn: false })` | Upserts a single conversation for the authenticated user. Body: `{ conversation: Conversation }`. 401 if unauthenticated. |
 | `POST /api/webhooks/workos` | `workos.webhooks.constructEvent` | Receives WorkOS webhook events (see below) |
 
 ### User Data Model
@@ -511,6 +513,24 @@ if (!user) redirect('/api/auth/signin')
 - **Signed out:** generic person icon → `href="/api/auth/signin"`
 - **Signed in, no photo:** initials (firstName[0] + lastName[0]) → `href="/account"`
 - **Signed in, with photo:** profile picture → `href="/account"`
+
+### Cross-Device Conversation Sync
+
+Dialog conversations are stored in `localStorage` for all users. For authenticated users, they are also synced to Upstash Redis (via `/api/conversations`) so that history is accessible across devices and browsers.
+
+**On page load (if signed in):**
+1. Fetch `GET /api/conversations` — retrieve server conversations
+2. Identify local-only conversations (not yet on server) and `PATCH` each one up (migrates pre-login usage)
+3. Merge server conversations into localStorage (server wins on conflict)
+4. Update the sidebar with the merged result
+
+**On each send (if signed in):** `PATCH /api/conversations` with the updated conversation after streaming completes.
+
+**Storage key:** `cosmo_conversations:v1:{workos_user_id}` in Upstash Redis. TTL: 1 year.
+
+**Self-healing on network drop:** The migration PATCHes are fire-and-forget. If a network drop interrupts the initial migration, some conversations may not reach the server on that load — but they remain in localStorage. On the next page load, those conversations are still identified as `localOnly` (not yet on the server) and are PATCHed again. The process is idempotent and completes naturally on the next successful load.
+
+**Unauthenticated users:** localStorage only. No server sync. No change from previous behavior.
 
 ### Account Page (`/account`)
 
@@ -566,6 +586,28 @@ Users who are not signed in (or signed in but without an API key) get 3 free mes
 **PM mode** (Shalom-only): A hidden button in the sidebar footer (opacity-0, always rendered) unlocks unlimited access via `COSMO_ADMIN_SECRET`. Activated via `POST /api/admin/auth` with the secret; deactivated via `DELETE /api/admin/auth`. Auth state stored in an HttpOnly cookie read server-side.
 
 ### Hard-Won Lessons
+
+#### `proxy.ts` is required for `withAuth()` to function on Next.js 16+
+
+`@workos-inc/authkit-nextjs` v3 requires a `proxy.ts` file at the app root (Next.js 16+) — or `middleware.ts` on Next.js ≤15 — to inject the `x-workos-middleware` request header on every matched route. Without it, `withAuth()` silently returns `{ user: null }` for every request even when a valid session cookie exists.
+
+**Symptom:** User appears logged in (session cookie is set, dialog history is present) but `AuthButton` shows "Log in" and `SidebarAvatar` shows the generic icon on every page load.
+
+**Fix:** `apps/web/proxy.ts` at the repo root of the Next.js app:
+
+```ts
+import { authkitProxy } from '@workos-inc/authkit-nextjs'
+
+export default authkitProxy()
+
+export const config = {
+  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+}
+```
+
+Use the broad matcher with static asset exclusions (not a catch-all `/:path*`) to avoid intercepting Tailwind CSS v4 static assets, which breaks styles.
+
+**Note on naming:** In Next.js 16+, this file is called `proxy.ts`, not `middleware.ts`. Using `middleware.ts` in Next.js 16 is deprecated.
 
 #### Turbo env vars must be declared in `turbo.json`
 
