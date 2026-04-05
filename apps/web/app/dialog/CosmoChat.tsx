@@ -126,27 +126,29 @@ function BottomBarWrapper({ children, className }: { children: React.ReactNode; 
   const { isOpen } = useAppSidebar()
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
-  // On mobile there is no sidebar — clamp left to 0 so the bar never overflows the viewport
-  const [isMobile, setIsMobile] = useState(false)
-  useEffect(() => {
-    const mq = window.matchMedia('(max-width: 639px)')
-    setIsMobile(mq.matches)
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
-    mq.addEventListener('change', handler)
-    return () => mq.removeEventListener('change', handler)
-  }, [])
-  const sidebarLeft = isMobile ? 0 : (isOpen ? APP_SIDEBAR_WIDTH : APP_SIDEBAR_WIDTH_COLLAPSED)
   return (
     <div
       className={cn('fixed bottom-0 right-0 z-30', className)}
       style={{
-        left: sidebarLeft,
+        left: isOpen ? APP_SIDEBAR_WIDTH : APP_SIDEBAR_WIDTH_COLLAPSED,
         transition: shouldAnimate ? `left ${duration}ms ease-out` : 'none',
       }}
     >
       {children}
     </div>
   )
+}
+
+// Closes the sidebar on first visit to narrow viewports so the content area
+// stays usable. If the user has previously set an explicit preference (open
+// or closed), that preference is respected and this does nothing.
+function MobileSidebarInit({ storageKey }: { storageKey: string }) {
+  const { close } = useAppSidebar()
+  useEffect(() => {
+    const stored = localStorage.getItem(storageKey)
+    if (stored === null && window.innerWidth < 640) close()
+  }, [close, storageKey])
+  return null
 }
 
 export function CosmoChat() {
@@ -249,7 +251,9 @@ export function CosmoChat() {
   useEffect(() => {
     const el = textareaRef.current
     if (!el) return
-    el.style.height = '0px'
+    // Skip JS resize on browsers that support field-sizing:content (CSS handles it natively)
+    if (CSS.supports('field-sizing', 'content')) return
+    el.style.height = 'auto'
     el.style.height = `${Math.min(el.scrollHeight, 160)}px`
   }, [input])
 
@@ -440,6 +444,7 @@ export function CosmoChat() {
 
   return (
     <AppSidebarProvider defaultOpen={true} storageKey="appsidebar:dialog">
+      <MobileSidebarInit storageKey="appsidebar:dialog" />
       <AppSidebar
         logo={<OpenCosmosIcon size={20} />}
         bottomItems={[
@@ -601,7 +606,7 @@ export function CosmoChat() {
                 placeholder="What's present for you?"
                 rows={1}
                 disabled={isStreaming}
-                className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-xl px-4 py-3 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 max-h-[160px] overflow-y-auto [text-size-adjust:none] [-webkit-text-size-adjust:none]"
+                className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-xl px-4 py-3 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 min-h-[48px] max-h-[160px] overflow-y-auto [field-sizing:content]"
               />
               <Button
                 onClick={send}
