@@ -191,8 +191,8 @@ export const _safelist = [
   'justify-center w-9 h-9 mx-auto',
   'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]',
   'bg-foreground/8',
-  'px-2 py-2 space-y-0.5',
-  'border-foreground/8 px-3 py-3 justify-center',
+  'px-2 py-2 space-y-0.5 space-y-1 space-y-3',
+  'border-foreground/8 border-t px-3 py-3 justify-center min-h-0',
   // AppSidebarInset
   'min-h-screen',
 

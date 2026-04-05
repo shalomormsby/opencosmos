@@ -1,10 +1,11 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon } from '@opencosmos/ui'
+import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
+import { SidebarAvatar } from '../SidebarAvatar'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
@@ -52,6 +53,74 @@ function timeAgo(ts: number): string {
 
 // Shared liquid glass style — matches the header's always-on glass
 const glass = 'backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50'
+
+function SidebarFooterContent({
+  mounted,
+  apiKey,
+  remaining,
+  pmMode,
+  onPmClick,
+}: {
+  mounted: boolean
+  apiKey: string
+  remaining: number
+  pmMode: boolean
+  onPmClick: () => void
+}) {
+  const { isOpen } = useAppSidebar()
+
+  if (!isOpen) {
+    // Collapsed: avatar only — invisible PM lock sits on top
+    return (
+      <div className="relative flex justify-center">
+        <SidebarAvatar />
+        <button
+          onClick={onPmClick}
+          className="absolute inset-0 opacity-0"
+          aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
+          tabIndex={-1}
+        />
+      </div>
+    )
+  }
+
+  return (
+    <div className="space-y-2">
+      {/* Usage counter — left-aligned with the Log in button (offset by avatar w-7 + gap-2) */}
+      <div className="flex items-center gap-2">
+        <span className="w-7 shrink-0" />
+        {mounted && (
+          <span className="text-xs text-foreground/40 flex-1 min-w-0 truncate">
+            {apiKey
+              ? 'Your key · Unlimited'
+              : `${remaining} ${remaining === 1 ? 'message' : 'messages'} remaining`}
+          </span>
+        )}
+        {/* Invisible PM lock — occupies space to keep layout stable */}
+        <button
+          onClick={onPmClick}
+          className="opacity-0 w-4 h-4 shrink-0"
+          aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
+          title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            {pmMode ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 018 0M5 11h14a1 1 0 011 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a1 1 0 011-1z" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM10 9V7a2 2 0 114 0v2H10z" />
+            )}
+          </svg>
+        </button>
+      </div>
+
+      {/* Avatar + full-width Log in button */}
+      <div className="flex items-center gap-2">
+        <SidebarAvatar />
+        <AuthButton className="flex-1" />
+      </div>
+    </div>
+  )
+}
 
 export function CosmoChat() {
   const [messages, setMessages] = useState<Message[]>([])
@@ -248,25 +317,36 @@ export function CosmoChat() {
 
   // Conversation history content — rendered inside AppSidebar's children slot
   const historyContent = (
-    <div className="flex flex-col h-full">
-      <div className="px-3 py-3 border-b border-foreground/10 shrink-0">
-        <Button variant="outline" size="sm" className="w-full" onClick={startNew}>
-          New conversation
+    <div className="flex flex-col h-full overflow-hidden">
+      {/* + New dialog */}
+      <div className="px-3 pt-3 pb-2 shrink-0">
+        <Button variant="outline" size="sm" className="w-full gap-1.5" onClick={startNew}>
+          <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+          </svg>
+          New dialog
         </Button>
       </div>
-      <div className="flex-1 overflow-y-auto">
+
+      {/* Your dialogs label */}
+      <div className="px-4 pb-1 shrink-0">
+        <p className="text-xs uppercase tracking-widest text-foreground/25">Your dialogs</p>
+      </div>
+
+      {/* Scrollable list */}
+      <div className="flex-1 overflow-y-auto min-h-0">
         {conversations.length === 0 ? (
-          <p className="text-xs text-foreground/30 text-center py-10 px-4">
-            No previous conversations.
+          <p className="text-xs text-foreground/30 text-center py-8 px-4">
+            No previous dialogs.
           </p>
         ) : (
-          <div className="py-2">
+          <div className="py-1">
             {conversations.map((conv) => (
               <button
                 key={conv.id}
                 onClick={() => openConversation(conv)}
                 className={cn(
-                  'w-full text-left px-4 py-3 hover:bg-foreground/5 transition-colors',
+                  'w-full text-left px-4 py-2.5 hover:bg-foreground/5 transition-colors',
                   conv.id === currentId && 'bg-foreground/5'
                 )}
               >
@@ -281,16 +361,23 @@ export function CosmoChat() {
   )
 
   return (
-    <AppSidebarProvider defaultOpen={false}>
+    <AppSidebarProvider defaultOpen={true} storageKey="appsidebar:dialog">
       <AppSidebar
         logo={<OpenCosmosIcon size={20} />}
-        title="OpenCosmos"
-        items={[
-          { icon: <MessageSquare className="w-4 h-4" />, label: 'Dialog',    href: '/dialog',                      active: true },
+        bottomItems={[
+          { icon: <MessageSquare className="w-4 h-4" />, label: 'Dialog',    href: '/dialog',                                           active: true },
           { icon: <BookOpen     className="w-4 h-4" />, label: 'Knowledge', href: '/knowledge' },
-          { icon: <ExternalLink className="w-4 h-4" />, label: 'Studio',    href: 'https://studio.opencosmos.ai', external: true },
+          { icon: <ExternalLink className="w-4 h-4" />, label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started', external: true },
         ]}
-        footer={<AuthButton />}
+        footer={
+          <SidebarFooterContent
+            mounted={mounted}
+            apiKey={apiKey}
+            remaining={remaining}
+            pmMode={pmMode}
+            onPmClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}
+          />
+        }
       >
         {historyContent}
       </AppSidebar>
@@ -310,40 +397,10 @@ export function CosmoChat() {
           navLinks={[
             { label: 'Dialog',    href: '/dialog' },
             { label: 'Knowledge', href: '/knowledge' },
-            { label: 'Studio',    href: 'https://studio.opencosmos.ai' },
+            { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
           ]}
           actions={<AuthButton />}
         />
-
-        {/* Status bar */}
-        <div className={cn('sticky top-16 lg:top-20 z-30 flex items-center justify-end px-6 py-2', glass)}>
-          <div className="flex items-center gap-3">
-            {mounted && (
-              <span className="text-xs text-foreground/30">
-                {apiKey
-                  ? 'Your key · Unlimited'
-                  : `${remaining} free ${remaining === 1 ? 'message' : 'messages'} remaining`}
-              </span>
-            )}
-            <button
-              onClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}
-              className={cn(
-                'transition-colors',
-                pmMode ? 'text-foreground/60' : 'text-foreground/20 hover:text-foreground/45'
-              )}
-              aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
-              title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
-            >
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {pmMode ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 018 0M5 11h14a1 1 0 011 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a1 1 0 011-1z" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM10 9V7a2 2 0 114 0v2H10z" />
-                )}
-              </svg>
-            </button>
-          </div>
-        </div>
 
         {/* PM unlock input */}
         {showPmInput && !pmMode && (

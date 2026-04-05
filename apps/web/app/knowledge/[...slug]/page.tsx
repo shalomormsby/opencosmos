@@ -5,6 +5,7 @@ import { Header, Button, Badge, Separator, GitHubIcon, Breadcrumbs } from '@open
 import { getDoc, getAllDocs } from '@/lib/knowledge'
 import { CATEGORY_LABELS } from '@/lib/knowledge-meta'
 import DocViewer from './DocViewer'
+import { AppShell } from '@/app/AppShell'
 
 type Props = {
   params: Promise<{ slug: string[] }>
@@ -26,9 +27,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 const NAV_LINKS = [
-  { label: 'Dialog', href: '/chat' },
+  { label: 'Dialog', href: '/dialog' },
   { label: 'Knowledge', href: '/knowledge' },
-  { label: 'Studio', href: 'https://studio.opencosmos.ai' },
+  { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
 ]
 
 export default async function DocPage({ params }: Props) {
@@ -40,8 +41,11 @@ export default async function DocPage({ params }: Props) {
   const hasAttribution = doc.author || doc.era || doc.tradition || doc.origin_date
 
   return (
+    <AppShell activePath="/knowledge">
     <main className="min-h-screen bg-background">
       <Header
+        sticky={false}
+        className="sticky top-0 z-40"
         logo={
           <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
             OpenCosmos
@@ -153,5 +157,6 @@ export default async function DocPage({ params }: Props) {
         )}
       </div>
     </main>
+    </AppShell>
   )
 }
