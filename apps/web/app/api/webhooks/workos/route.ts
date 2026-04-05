@@ -4,10 +4,13 @@ import { WorkOS } from '@workos-inc/node'
 // Required env vars (add to Vercel → Settings → Environment Variables):
 //   WORKOS_API_KEY        — WorkOS API key (Dashboard → API Keys)
 //   WORKOS_WEBHOOK_SECRET — Signing secret (Dashboard → Webhooks → endpoint → Secret)
-
-const workos = new WorkOS(process.env.WORKOS_API_KEY!)
+//
+// WorkOS is instantiated lazily inside the handler so that missing env vars during
+// build-time static analysis don't crash Next.js page data collection.
 
 export async function POST(req: NextRequest) {
+  const workos = new WorkOS(process.env.WORKOS_API_KEY!)
+
   const payload = await req.text()
   const sigHeader = req.headers.get('workos-signature') ?? ''
 
