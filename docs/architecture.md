@@ -528,6 +528,8 @@ Dialog conversations are stored in `localStorage` for all users. For authenticat
 
 **Storage key:** `cosmo_conversations:v1:{workos_user_id}` in Upstash Redis. TTL: 1 year.
 
+**Self-healing on network drop:** The migration PATCHes are fire-and-forget. If a network drop interrupts the initial migration, some conversations may not reach the server on that load — but they remain in localStorage. On the next page load, those conversations are still identified as `localOnly` (not yet on the server) and are PATCHed again. The process is idempotent and completes naturally on the next successful load.
+
 **Unauthenticated users:** localStorage only. No server sync. No change from previous behavior.
 
 ### Account Page (`/account`)
