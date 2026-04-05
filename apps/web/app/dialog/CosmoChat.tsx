@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
-import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar } from '@opencosmos/ui'
+import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
@@ -122,6 +122,23 @@ function SidebarFooterContent({
   )
 }
 
+function BottomBarWrapper({ children, className }: { children: React.ReactNode; className?: string }) {
+  const { isOpen } = useAppSidebar()
+  const { shouldAnimate, scale } = useMotionPreference()
+  const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
+  return (
+    <div
+      className={cn('fixed bottom-0 right-0 z-30', className)}
+      style={{
+        left: isOpen ? APP_SIDEBAR_WIDTH : APP_SIDEBAR_WIDTH_COLLAPSED,
+        transition: shouldAnimate ? `left ${duration}ms ease-out` : 'none',
+      }}
+    >
+      {children}
+    </div>
+  )
+}
+
 export function CosmoChat() {
   const [messages, setMessages] = useState<Message[]>([])
   const [input, setInput] = useState('')
@@ -136,6 +153,7 @@ export function CosmoChat() {
   const [showPmInput, setShowPmInput] = useState(false)
   const [pmSecret, setPmSecret] = useState('')
   const [pmError, setPmError] = useState('')
+  const [isAuthenticated, setIsAuthenticated] = useState(false)
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
 
@@ -167,6 +185,48 @@ export function CosmoChat() {
     fetch('/api/admin/auth')
       .then((r) => r.json())
       .then((data: { active: boolean }) => setPmMode(data.active))
+      .catch(() => {})
+
+    // If signed in, merge server conversations with local ones so history is visible
+    // across devices. Local `id` is used (not currentId state) since state hasn't flushed yet.
+    fetch('/api/auth/me')
+      .then((r) => r.json())
+      .then(async (data: { user: object | null }) => {
+        if (!data.user) return
+        setIsAuthenticated(true)
+
+        const res = await fetch('/api/conversations')
+        if (!res.ok) return
+        const { conversations: serverConvs } = (await res.json()) as { conversations: Conversation[] }
+
+        const local = loadAll()
+
+        // Migrate any local-only conversations up to the server (e.g. pre-login usage)
+        const localOnly = Object.values(local).filter((c) => !serverConvs.find((s) => s.id === c.id))
+        for (const conv of localOnly) {
+          fetch('/api/conversations', {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ conversation: conv }),
+          }).catch(() => {})
+        }
+
+        if (serverConvs.length === 0) return
+
+        // Merge server into local (server wins on conflict), update localStorage + sidebar
+        const merged = { ...local }
+        for (const conv of serverConvs) {
+          merged[conv.id] = conv
+        }
+        localStorage.setItem(KEY_CONVERSATIONS, JSON.stringify(merged))
+        setConversations(Object.values(merged).sort((a, b) => b.updatedAt - a.updatedAt))
+
+        // If the currently open conversation came from server (not in local), load its messages
+        const fromServer = serverConvs.find((c) => c.id === id)
+        if (fromServer && !local[fromServer.id]) {
+          setMessages(fromServer.messages)
+        }
+      })
       .catch(() => {})
 
     setMounted(true)
@@ -249,13 +309,21 @@ export function CosmoChat() {
       ]
       const all = loadAll()
       const existing = all[currentId]
-      persist({
+      const savedConv: Conversation = {
         id: currentId,
         title: toTitle(finalMessages),
         messages: finalMessages,
         createdAt: existing?.createdAt ?? Date.now(),
         updatedAt: Date.now(),
-      })
+      }
+      persist(savedConv)
+      if (isAuthenticated) {
+        fetch('/api/conversations', {
+          method: 'PATCH',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ conversation: savedConv }),
+        }).catch(() => {})
+      }
       refreshConversations()
     } catch {
       setMessages((prev) => {
@@ -270,7 +338,7 @@ export function CosmoChat() {
       setIsStreaming(false)
       textareaRef.current?.focus()
     }
-  }, [input, isStreaming, isLimited, messages, apiKey, currentId, refreshConversations])
+  }, [input, isStreaming, isLimited, messages, apiKey, currentId, refreshConversations, isAuthenticated])
 
   const saveKey = () => {
     const key = apiKeyDraft.trim()
@@ -474,7 +542,7 @@ export function CosmoChat() {
 
         {/* Fixed bottom bar — liquid glass */}
         {isLimited ? (
-          <div className={cn('fixed bottom-0 left-0 right-0 z-30 px-6 py-5', glass)}>
+          <BottomBarWrapper className={cn('px-6 py-5', glass)}>
             <div className="max-w-2xl mx-auto space-y-3">
               <p className="text-sm text-foreground/50 leading-relaxed">
                 Your 3 free messages are complete. To continue, enter your{' '}
@@ -506,9 +574,9 @@ export function CosmoChat() {
                 forwarding to Anthropic.
               </p>
             </div>
-          </div>
+          </BottomBarWrapper>
         ) : (
-          <div className={cn('fixed bottom-0 left-0 right-0 z-30 px-6 py-4', glass)}>
+          <BottomBarWrapper className={cn('px-6 py-4', glass)}>
             <div className="max-w-2xl mx-auto flex gap-3 items-end">
               <textarea
                 ref={textareaRef}
@@ -537,7 +605,7 @@ export function CosmoChat() {
             <p className="text-xs text-foreground/20 text-center mt-2">
               Enter to send · Shift+Enter for new line
             </p>
-          </div>
+          </BottomBarWrapper>
         )}
       </AppSidebarInset>
     </AppSidebarProvider>
