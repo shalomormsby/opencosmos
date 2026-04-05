@@ -126,11 +126,21 @@ function BottomBarWrapper({ children, className }: { children: React.ReactNode; 
   const { isOpen } = useAppSidebar()
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
+  // On mobile there is no sidebar — clamp left to 0 so the bar never overflows the viewport
+  const [isMobile, setIsMobile] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)')
+    setIsMobile(mq.matches)
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches)
+    mq.addEventListener('change', handler)
+    return () => mq.removeEventListener('change', handler)
+  }, [])
+  const sidebarLeft = isMobile ? 0 : (isOpen ? APP_SIDEBAR_WIDTH : APP_SIDEBAR_WIDTH_COLLAPSED)
   return (
     <div
       className={cn('fixed bottom-0 right-0 z-30', className)}
       style={{
-        left: isOpen ? APP_SIDEBAR_WIDTH : APP_SIDEBAR_WIDTH_COLLAPSED,
+        left: sidebarLeft,
         transition: shouldAnimate ? `left ${duration}ms ease-out` : 'none',
       }}
     >
@@ -239,7 +249,7 @@ export function CosmoChat() {
   useEffect(() => {
     const el = textareaRef.current
     if (!el) return
-    el.style.height = 'auto'
+    el.style.height = '0px'
     el.style.height = `${Math.min(el.scrollHeight, 160)}px`
   }, [input])
 
@@ -591,7 +601,7 @@ export function CosmoChat() {
                 placeholder="What's present for you?"
                 rows={1}
                 disabled={isStreaming}
-                className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-xl px-4 py-3 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 min-h-[48px] max-h-[160px] overflow-y-auto"
+                className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-xl px-4 py-3 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 max-h-[160px] overflow-y-auto [text-size-adjust:none] [-webkit-text-size-adjust:none]"
               />
               <Button
                 onClick={send}
