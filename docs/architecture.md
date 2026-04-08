@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-04-05
+**Last updated:** 2026-04-06
 
 ---
 
@@ -21,6 +21,7 @@
 | LLM inference (primary) | Claude API (BYOK) | Constitutional AI via `@opencosmos/ai` | User-funded |
 | LLM inference (dev/local) | Dell XPS 8950 (RTX 3090) | Apertus 8B/70B via Ollama — development + experimentation | Self-hosted |
 | Monorepo | Turborepo + pnpm | Build orchestration | — |
+| Payments & billing | Stripe | `apps/web` (checkout, portal, webhooks) | Pay-as-you-go |
 | CI | GitHub Actions | Lint, typecheck, build verification | Free |
 | DNS | Spaceship | opencosmos.ai         | — |
 | npm | @opencosmos org | Design system packages | Free |
@@ -539,7 +540,7 @@ Server component at `app/account/page.tsx`. Redirects to sign-in if unauthentica
 **Sections:**
 1. **Profile card** — avatar (photo or initials), full name, email, member-since date, Log out button
 2. **API key** (`app/account/ApiKeyForm.tsx`, client component) — stores Anthropic API key in `localStorage` under key `cosmo_api_key`. Key is never sent to OpenCosmos servers — only forwarded directly to Anthropic on each chat request.
-3. **Plan tiers** — Explorer $5 / Seeker $10 / Luminary $20 — all "Coming soon" (no payment integration yet)
+3. **Plan tiers** (`app/account/ApiKeyForm.tsx`) — Spark $5 / Flame $10 / Hearth $50. Live checkout buttons for unauthenticated or unsubscribed users; active subscribers see usage meter + "Manage billing" portal link.
 
 ### Webhook Handler
 
@@ -581,9 +582,110 @@ Users who are not signed in (or signed in but without an API key) get 3 free mes
 |-----------|---------------|-------|
 | Anonymous / no API key | OpenCosmos shared Anthropic key | 3 messages/session (Redis counter) |
 | BYOK (API key in localStorage) | User's own Anthropic key, forwarded | Unlimited (Anthropic rate limits apply) |
-| Subscription tier | (Coming soon) | Plan-dependent |
+| Subscription tier (Spark/Flame/Hearth) | OpenCosmos shared Anthropic key | Plan token budget (weekly + monthly microdollar caps, tracked in Redis) |
 
 **PM mode** (Shalom-only): A hidden button in the sidebar footer (opacity-0, always rendered) unlocks unlimited access via `COSMO_ADMIN_SECRET`. Activated via `POST /api/admin/auth` with the secret; deactivated via `DELETE /api/admin/auth`. Auth state stored in an HttpOnly cookie read server-side.
+
+---
+
+## Stripe — Subscriptions & Billing
+
+**Status:** Stripe account created (2026-04-06). Test-mode products and price IDs in configuration.
+
+### Provider & Package
+
+| Item | Detail |
+|------|--------|
+| Provider | Stripe (separate account from Creative Powerup) |
+| Package | `stripe` v22+ (`apps/web`) |
+| Stripe API version | `2025-03-31.basil` |
+
+### Subscription Tiers
+
+| Tier | Price | API Budget/mo | Weekly Cap | Notes |
+|------|-------|--------------|------------|-------|
+| **Spark** | $5/mo | ~$2.28 (~50% of $4.55 net) | ~$0.57 | ~6 hrs/mo at target cost |
+| **Flame** | $10/mo | ~$4.70 (~50% of $9.40 net) | ~$1.18 | ~12 hrs/mo |
+| **Hearth** | $50/mo | ~$9.55 (~20% of $48.20 net) | ~$2.39 | ~24 hrs/mo + full CP membership (~$49 value). Rest is margin. |
+
+Token cost model: Claude Sonnet 4.6 at $3/M input + $15/M output, with conversation history caching applied for all subscribers. Costs tracked in **microdollars** (integers) in Redis to keep `INCR` atomic.
+
+### Required Environment Variables
+
+| Variable | Where to find it | Purpose |
+|----------|-----------------|---------|
+| `STRIPE_SECRET_KEY` | Stripe Dashboard → Developers → API Keys | Server-side API access (`sk_test_...` in test, `sk_live_...` in prod) |
+| `STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Developers → Webhooks → endpoint → Signing secret | Webhook HMAC-SHA256 verification (`whsec_...`) |
+| `STRIPE_PRICE_SPARK` | Stripe Dashboard → Products → Spark → Price ID | `price_...` for the $5/mo recurring price |
+| `STRIPE_PRICE_FLAME` | Stripe Dashboard → Products → Flame → Price ID | `price_...` for the $10/mo recurring price |
+| `STRIPE_PRICE_HEARTH` | Stripe Dashboard → Products → Hearth → Price ID | `price_...` for the $50/mo recurring price |
+
+All five are declared in `turbo.json → globalPassThroughEnv` and must be added to both `.env.local` (dev) and Vercel (prod).
+
+### API Routes
+
+| Route | Purpose |
+|-------|---------|
+| `POST /api/stripe/checkout` | Creates a Stripe Checkout Session. Body: `{ tier: 'spark' \| 'flame' \| 'hearth' }`. Returns `{ url }` for client redirect. Requires auth — 401 if unauthenticated. Embeds WorkOS `user.id` as `client_reference_id`. |
+| `POST /api/stripe/portal` | Creates a Stripe Billing Portal session. Returns `{ url }`. Requires auth + active subscription. |
+| `GET /api/subscription` | Returns current subscription status and usage for the authenticated user. Response: `{ subscription: null }` or `{ subscription: { tier, name, status, monthlyUSD, usagePercent, billingCycleAnchor } }`. |
+| `POST /api/webhooks/stripe` | Stripe webhook handler (see below). |
+
+### Webhook Handler
+
+**Endpoint:** `POST https://opencosmos.ai/api/webhooks/stripe`
+
+**File:** `apps/web/app/api/webhooks/stripe/route.ts`
+
+**Verification:** `stripe.webhooks.constructEvent(rawBody, sigHeader, STRIPE_WEBHOOK_SECRET)`. Unlike the WorkOS SDK, the Stripe SDK takes the **raw string body** — do not parse it before passing. The `stripe-signature` header provides the timestamp + HMAC hash.
+
+```ts
+// ✅ Correct — raw string body passed directly to Stripe
+const rawBody = await req.text()
+event = getStripe().webhooks.constructEvent(rawBody, sigHeader, process.env.STRIPE_WEBHOOK_SECRET!)
+
+// ❌ Wrong — parsing first breaks Stripe's signature verification
+const body = await req.json()
+event = getStripe().webhooks.constructEvent(JSON.stringify(body), ...)
+```
+
+**Events handled:**
+
+| Event | Action |
+|-------|--------|
+| `checkout.session.completed` | Retrieves full subscription via `session.subscription`, maps price ID → tier, writes `SubscriptionRecord` to Redis under `cosmo_sub:v1:{userId}`. |
+| `customer.subscription.updated` | Updates tier/status in Redis. Handles plan upgrades, downgrades, renewals, and `past_due`. |
+| `customer.subscription.deleted` | Deletes `SubscriptionRecord` from Redis. User reverts to free-tier access. |
+
+**WorkOS user ID → Stripe customer ID linkage:** The checkout session sets `client_reference_id = workos_user_id`. The webhook handler reads this to write the initial record. Subsequent subscription events use a reverse-lookup key (`cosmo_stripe_cust:v1:{stripeCustomerId}` → `userId`) written on first subscription creation.
+
+**Register these events in Stripe Dashboard:**
+- `checkout.session.completed`
+- `customer.subscription.updated`
+- `customer.subscription.deleted`
+
+### Redis Data Model
+
+| Key | Value | TTL | Purpose |
+|-----|-------|-----|---------|
+| `cosmo_sub:v1:{userId}` | `SubscriptionRecord` JSON | 13 months (refreshed on each webhook) | Subscription status, tier, Stripe IDs |
+| `cosmo_stripe_cust:v1:{stripeCustomerId}` | WorkOS `userId` string | 13 months | Reverse lookup for webhook handler |
+| `cosmo_usage_cost:monthly:v1:{userId}:{YYYY-M}` | integer (microdollars) | 40 days | Monthly token cost accumulator |
+| `cosmo_usage_cost:weekly:v1:{userId}:{YYYY-WW}` | integer (microdollars) | 12 days | Weekly token cost accumulator |
+
+**Microdollar encoding:** `1 microdollar = $0.000001`. Input token cost = `tokens × 3`; output token cost = `tokens × 15`. Integer values enable atomic `INCRBY` without floating-point drift.
+
+### Chat Route: Access Priority
+
+The chat handler (`app/api/chat/route.ts`) checks access in this order:
+
+1. **Admin cookie** (`cosmo_admin=1`) → bypass all limits
+2. **BYOK** (API key in request body) → use user's key, bypass all limits
+3. **Active subscriber** (authenticated + valid `SubscriptionRecord` + within budget) → use shared server key, track usage
+4. **Budget exhausted** (subscriber over weekly or monthly cap) → `429` with `period: 'weekly' | 'monthly'`
+5. **Free tier** → monthly cap check → IP rate limit → session counter (3 messages/session)
+
+Conversation history caching (adding `cache_control: ephemeral` to the last assistant message) is applied for subscribers only — reduces input token costs ~40–50% on long conversations.
 
 ### Hard-Won Lessons
 

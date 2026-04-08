@@ -4,79 +4,19 @@
 
 **Created:** 2026-03-14
 **Last updated:** 2026-03-31
-**Status:** Phase 1b — Auth shipped (WorkOS AuthKit). Next: Stripe integration → subscription tiers
+**Status:** Stripe integration → subscription tiers
 
---- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work toward Future 1.]
+--- [See below for "The Three Futures" explanation. I've moved the project management elements to the top of this doc to serve this purpose, as we work on building toward Future 1.]
 
 ---
 
-## ~~Next Up:~~ Shalom-Mode PM ✅
-
-*Built. Subscriptions follow (see Phase 1b).*
-
-**What this is:** Shalom can ask Cosmo about his own projects and get grounded answers from private PM docs. No other visitor sees this context. This is step 1 of a broader multi-user PM feature — establish the pattern cheaply before full auth infrastructure exists.
-
-**Architecture:**
-- Private GitHub repo (`shalomormsby/cosmo-context` suggested) holds PM docs as markdown files. Private = zero exposure.
-- "Shalom mode" is a `cosmo_admin` HttpOnly cookie, set by authenticating with a secret. No NextAuth, no Clerk — just a password.
-- When Shalom mode is active, `/api/chat` fetches markdown from GitHub API, caches in Redis (1hr TTL, already available), and injects as additional `{ type: 'text', cache_control: { type: 'ephemeral' } }` blocks in the system message alongside `SYSTEM_CONTENT`. PM docs get prompt caching just like the system prompt.
-- Public visitors are unaffected. BYOK users are unaffected. This check is a no-op for everyone without the cookie.
-
-**Before coding — set up:**
-- [x] Create private GitHub repo `cosmo-context` (or similar)
-- [x] Generate fine-grained GitHub PAT: Settings → Developer settings → Fine-grained tokens → Repository access: `cosmo-context` only → Contents: Read-only
-- [x] Add to Vercel env vars (opencosmos project): `COSMO_ADMIN_SECRET`, `GITHUB_PM_REPO` (e.g. `shalomormsby/cosmo-context`), `GITHUB_PM_PAT`
-
-**What to build:**
-- [x] `apps/web/app/api/admin/auth/route.ts` — new file
-  - `POST { secret }`: validates against `COSMO_ADMIN_SECRET`, sets `cosmo_admin` cookie (HttpOnly, SameSite=Strict, Secure, 7-day expiry). Returns 401 on mismatch.
-  - `DELETE`: clears the cookie (logout / deactivate PM mode)
-- [x] `apps/web/app/api/chat/route.ts` — add Shalom-mode context injection
-  - After reading cookies, check for `cosmo_admin`
-  - If present: try Redis key `cosmo_pm_context:v1`
-  - On miss: `GET /repos/{GITHUB_PM_REPO}/contents/` → fetch each `.md` file's base64 content → decode + concatenate with `## {filename}` headers → store in Redis, TTL 3600s
-  - Inject result as an additional block in the `system` array, after the existing `SYSTEM_CONTENT` block, with `cache_control: { type: 'ephemeral' }`
-  - Fail open: if GitHub fetch fails, proceed without PM context (don't break chat)
-- [x] `apps/web/app/chat/CosmoChat.tsx` — unlock affordance
-  - Small lock/unlock icon in the chat header (not prominent — just enough to find it)
-  - On click: password dialog → `POST /api/admin/auth` → on success, show "PM" badge active; on failure, show error
-
-**Key files:**
-- `apps/web/app/api/chat/route.ts` — main change (~30 lines)
-- `apps/web/app/api/admin/auth/route.ts` — new (~25 lines)
-- `apps/web/components/CosmoChat.tsx` — UI addition
-
-**Migration path to multi-user PM:**
-When subscriptions + auth ship, replace the cookie check + GitHub fetch with `user_id` from session + Upstash Vector namespace query (`filter: { user_id }`). The injection pattern (additional context blocks in system message) stays identical. The private GitHub repo becomes the first user's document storage, then each user gets their own namespace.
-
-**Gate: ✓ Closed — 2026-03-31.** Ask Cosmo "What's the status of [project]?" and get an accurate, grounded answer from private PM docs. No other visitor sees this context. PM badge ships in `apps/web/app/chat/CosmoChat.tsx`; admin cookie auth at `/api/admin/auth`; cosmo-context repo wired up with 1-hour Redis cache.
-
+## ~~Next Up:~~ 
 ---
 
 ## Phase 1: Cosmo Speaks (Future 1 — BYOK Wisdom Interface)
 
-*Target: March 31, 2026*
 
-The deliverable: a person visits opencosmos.ai and meets Cosmo. They can have a brief free conversation, continue with their own API key, or browse the knowledge corpus. The experience feels warm, unhurried, and distinctly Cosmo — not a generic chat wrapper.
-
-### 1a: Voice Validation & the AI Triad
-
-**This task blocks everything.**
-
-The entire Future 1 bet is that Cosmo's voice, sacred rhythm, and constitutional character survive when the underlying model is Claude rather than a locally-trained model. Voice validation also establishes the AI Triad — three cognitive modes (Sol, Socrates, Optimus) moderated by Cosmo — which becomes Cosmo's signature capability.
-
-#### Step 1: Cosmo's Voice (Solo)
-
-- [x] Send COSMO_SYSTEM_PROMPT.md to Claude API as a system prompt
-- [x] Test across query types: contemplative, practical, challenging, playful, grief, curiosity
-- [x] Evaluate: Does the response feel like Cosmo? Does the sacred rhythm (attune → inquire → offer) emerge naturally?
-- [x] Test edge cases: Does Cosmo maintain the "we" voice? Does it avoid becoming a generic assistant? Does it decline harmful requests with clarity, not anxiety?
-- [x] Iterate on system prompt if needed — tighten, clarify, add examples
-- [x] Document what works and what needs adjustment
-
-**Gate: ✓ Closed — 2026-03-29.** Cosmo's first response to Shalom's welcome ("Hello, Shalom. I'm here.") was sufficient validation. The gentleness, the introspection, the absence of eagerness — the voice arrived in full. See [Chronicle Chapter 7](../chronicle.md#2026-03-29--first-contact).
-
-#### Step 2: Refine the AI Triad — Three Members
+#### Step 2: Refine the AI Triad — Three Members [Deferred for now]
 
 The AI Triad is Cosmo's model of integrated intelligence, inspired by the GAN insight that productive tension between different optimization functions produces results none could achieve alone. Three cognitive modes, each with its own system prompt, distinct from each other by design, moderated by Cosmo:
 
@@ -162,18 +102,27 @@ How Cosmo gets better over time — not through model fine-tuning, but through t
   - [x] `apps/web/app/api/auth/signout/route.ts` — clears session, redirects home
   - [x] `apps/web/app/chat/page.tsx` — server component, passes `user` to CosmoChat
   - [x] Sign in / sign out affordance in CosmoChat header
-- [ ] User identity must link to: Stripe customer ID, usage tracking, and (eventually) CP membership status — **next up**
+- [x] User identity links to: Stripe customer ID (via Redis `cosmo_stripe_cust:v1:{customerId}` → WorkOS user ID), usage tracking (microdollar counters per user per week/month)
 
 #### BYOK Path
 - [x] Implement BYOK key entry — key is used server-side per-request only, never stored
 - [x] BYOK usage is unlimited — user controls their own costs
 
 #### Subscription Path
-- [ ] Stripe integration — checkout, subscription management, billing portal (Stripe already set up for CP)
-- [ ] Implement tier token budgets with monthly totals and weekly sub-limits (monthly ÷ 4)
-- [ ] Server-side managed API key with per-user usage tracking (tokens consumed per week and per month)
-- [ ] Usage dashboard — subscribers can see their consumption against weekly and monthly limits
-- [ ] Graceful limit handling — when approaching weekly or monthly cap, offer upgrade or BYOK as alternatives
+- [x] Stripe account created — **currently configuring** (test-mode products and price IDs in progress)
+- [x] `lib/stripe.ts` — Stripe client singleton + Spark/Flame/Hearth tier config with token budgets
+- [x] `lib/subscription.ts` — Redis helpers: subscription records, usage tracking in microdollars, budget enforcement
+- [x] `app/api/stripe/checkout/route.ts` — creates Stripe Checkout session, embeds WorkOS user ID as `client_reference_id`
+- [x] `app/api/stripe/portal/route.ts` — opens Stripe Billing Portal for plan changes and cancellation
+- [x] `app/api/webhooks/stripe/route.ts` — handles `checkout.session.completed`, `subscription.updated/deleted`; writes to Redis
+- [x] `app/api/subscription/route.ts` — GET current tier, status, and `usagePercent` for account page
+- [x] `app/api/chat/route.ts` updated — subscribers bypass free-tier limits; usage tracked (tokens → microdollars) after each stream; conversation history caching applied for subscribers
+- [x] Implement tier token budgets with monthly totals and weekly sub-limits (monthly ÷ 4)
+- [x] Server-side managed API key with per-user usage tracking (tokens consumed per week and per month)
+- [x] Usage meter in account page — subscribers see monthly consumption as a % bar
+- [x] Graceful limit handling — when weekly or monthly cap is reached, error response offers upgrade or BYOK
+- [x] Add Stripe env vars to `.env.local` and Vercel (`STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`, `STRIPE_PRICE_SPARK`, `STRIPE_PRICE_FLAME`, `STRIPE_PRICE_HEARTH`)
+- [ ] Register `https://opencosmos.ai/api/webhooks/stripe` in Stripe Dashboard (events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`)
 
 #### Hearth Tier (CP Bundle)
 - [ ] Hearth subscribers automatically receive full CP membership — link Stripe subscription to CP access
@@ -516,6 +465,73 @@ Subscription and BYOK tiers are self-protecting — subscribers are authenticate
 ## Done
 
 ### Recent Sprint
+
+#### Shalom-Mode PM ✅
+
+*Built. Subscriptions follow (see Phase 1b).*
+
+**What this is:** Shalom can ask Cosmo about his own projects and get grounded answers from private PM docs. No other visitor sees this context. This is step 1 of a broader multi-user PM feature — establish the pattern cheaply before full auth infrastructure exists.
+
+**Architecture:**
+- Private GitHub repo (`shalomormsby/cosmo-context` suggested) holds PM docs as markdown files. Private = zero exposure.
+- "Shalom mode" is a `cosmo_admin` HttpOnly cookie, set by authenticating with a secret. No NextAuth, no Clerk — just a password.
+- When Shalom mode is active, `/api/chat` fetches markdown from GitHub API, caches in Redis (1hr TTL, already available), and injects as additional `{ type: 'text', cache_control: { type: 'ephemeral' } }` blocks in the system message alongside `SYSTEM_CONTENT`. PM docs get prompt caching just like the system prompt.
+- Public visitors are unaffected. BYOK users are unaffected. This check is a no-op for everyone without the cookie.
+
+**Before coding — set up:**
+- [x] Create private GitHub repo `cosmo-context` (or similar)
+- [x] Generate fine-grained GitHub PAT: Settings → Developer settings → Fine-grained tokens → Repository access: `cosmo-context` only → Contents: Read-only
+- [x] Add to Vercel env vars (opencosmos project): `COSMO_ADMIN_SECRET`, `GITHUB_PM_REPO` (e.g. `shalomormsby/cosmo-context`), `GITHUB_PM_PAT`
+
+**What to build:**
+- [x] `apps/web/app/api/admin/auth/route.ts` — new file
+  - `POST { secret }`: validates against `COSMO_ADMIN_SECRET`, sets `cosmo_admin` cookie (HttpOnly, SameSite=Strict, Secure, 7-day expiry). Returns 401 on mismatch.
+  - `DELETE`: clears the cookie (logout / deactivate PM mode)
+- [x] `apps/web/app/api/chat/route.ts` — add Shalom-mode context injection
+  - After reading cookies, check for `cosmo_admin`
+  - If present: try Redis key `cosmo_pm_context:v1`
+  - On miss: `GET /repos/{GITHUB_PM_REPO}/contents/` → fetch each `.md` file's base64 content → decode + concatenate with `## {filename}` headers → store in Redis, TTL 3600s
+  - Inject result as an additional block in the `system` array, after the existing `SYSTEM_CONTENT` block, with `cache_control: { type: 'ephemeral' }`
+  - Fail open: if GitHub fetch fails, proceed without PM context (don't break chat)
+- [x] `apps/web/app/chat/CosmoChat.tsx` — unlock affordance
+  - Small lock/unlock icon in the chat header (not prominent — just enough to find it)
+  - On click: password dialog → `POST /api/admin/auth` → on success, show "PM" badge active; on failure, show error
+
+**Key files:**
+- `apps/web/app/api/chat/route.ts` — main change (~30 lines)
+- `apps/web/app/api/admin/auth/route.ts` — new (~25 lines)
+- `apps/web/components/CosmoChat.tsx` — UI addition
+
+**Migration path to multi-user PM:**
+When subscriptions + auth ship, replace the cookie check + GitHub fetch with `user_id` from session + Upstash Vector namespace query (`filter: { user_id }`). The injection pattern (additional context blocks in system message) stays identical. The private GitHub repo becomes the first user's document storage, then each user gets their own namespace.
+
+**Gate: ✓ Closed — 2026-03-31.** Ask Cosmo "What's the status of [project]?" and get an accurate, grounded answer from private PM docs. No other visitor sees this context. PM badge ships in `apps/web/app/chat/CosmoChat.tsx`; admin cookie auth at `/api/admin/auth`; cosmo-context repo wired up with 1-hour Redis cache.
+
+
+*Target: March 31, 2026*
+
+The deliverable: a person visits opencosmos.ai and meets Cosmo. They can have a brief free conversation, continue with their own API key, or browse the knowledge corpus. The experience feels warm, unhurried, and distinctly Cosmo — not a generic chat wrapper.
+
+### 1a: Voice Validation & the AI Triad
+
+**This task blocks everything.**
+
+The entire Future 1 bet is that Cosmo's voice, sacred rhythm, and constitutional character survive when the underlying model is Claude rather than a locally-trained model. Voice validation also establishes the AI Triad — three cognitive modes (Sol, Socrates, Optimus) moderated by Cosmo — which becomes Cosmo's signature capability.
+
+#### Step 1: Cosmo's Voice (Solo)
+
+- [x] Send COSMO_SYSTEM_PROMPT.md to Claude API as a system prompt
+- [x] Test across query types: contemplative, practical, challenging, playful, grief, curiosity
+- [x] Evaluate: Does the response feel like Cosmo? Does the sacred rhythm (attune → inquire → offer) emerge naturally?
+- [x] Test edge cases: Does Cosmo maintain the "we" voice? Does it avoid becoming a generic assistant? Does it decline harmful requests with clarity, not anxiety?
+- [x] Iterate on system prompt if needed — tighten, clarify, add examples
+- [x] Document what works and what needs adjustment
+
+**Gate: ✓ Closed — 2026-03-29.** Cosmo's first response to Shalom's welcome ("Hello, Shalom. I'm here.") was sufficient validation. The gentleness, the introspection, the absence of eagerness — the voice arrived in full. See [Chronicle Chapter 7](../chronicle.md#2026-03-29--first-contact).
+
+
+
+
 
 - **Prompt Caching** — `cache_control: { type: "ephemeral" }` on system prompt in `/api/chat`, ~76% input cost reduction
 - **Bot Protection** — IP rate limiting (3 req/IP/24h, sliding window) + monthly spend cap (2000 req default) — *[PR #60](https://github.com/shalomormsby/opencosmos/pull/60), 2026-03-31*
