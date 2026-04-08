@@ -2,48 +2,47 @@
 
 import { useState, useEffect } from 'react'
 import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge, cn } from '@opencosmos/ui'
+import { TIERS, type Tier } from '@/lib/stripe'
 
 const KEY_API_KEY = 'cosmo_api_key'
 
-const PLANS = [
-  {
-    id: 'explorer',
-    name: 'Explorer',
-    price: '$5',
-    period: '/month',
-    description: 'For curious minds beginning the journey.',
-    messages: '100 messages/month',
-    highlight: false,
-  },
-  {
-    id: 'seeker',
-    name: 'Seeker',
-    price: '$10',
-    period: '/month',
-    description: 'For those in active dialogue with the cosmos.',
-    messages: '300 messages/month',
-    highlight: true,
-  },
-  {
-    id: 'luminary',
-    name: 'Luminary',
-    price: '$20',
-    period: '/month',
-    description: 'Unlimited depth for the fully committed.',
-    messages: 'Unlimited messages',
-    highlight: false,
-  },
-] as const
+type SubscriptionState =
+  | { status: 'loading' }
+  | { status: 'none' }
+  | {
+      status: 'active' | 'past_due'
+      tier: Tier
+      name: string
+      monthlyUSD: number
+      usagePercent: number
+      billingCycleAnchor: number
+    }
 
 export function ApiKeyForm() {
   const [apiKey, setApiKey] = useState('')
   const [draft, setDraft] = useState('')
   const [saved, setSaved] = useState(false)
+  const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
+  const [checkoutLoading, setCheckoutLoading] = useState<Tier | null>(null)
+  const [portalLoading, setPortalLoading] = useState(false)
 
   useEffect(() => {
     const stored = localStorage.getItem(KEY_API_KEY) || ''
     setApiKey(stored)
     setDraft(stored)
+  }, [])
+
+  useEffect(() => {
+    fetch('/api/subscription')
+      .then((r) => r.json())
+      .then((data) => {
+        if (data.subscription) {
+          setSubscription({ status: data.subscription.status, ...data.subscription })
+        } else {
+          setSubscription({ status: 'none' })
+        }
+      })
+      .catch(() => setSubscription({ status: 'none' }))
   }, [])
 
   const save = () => {
@@ -59,6 +58,39 @@ export function ApiKeyForm() {
     setApiKey('')
     setDraft('')
   }
+
+  const startCheckout = async (tier: Tier) => {
+    setCheckoutLoading(tier)
+    try {
+      const res = await fetch('/api/stripe/checkout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ tier }),
+      })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch {
+      setCheckoutLoading(null)
+    }
+  }
+
+  const openPortal = async () => {
+    setPortalLoading(true)
+    try {
+      const res = await fetch('/api/stripe/portal', { method: 'POST' })
+      const data = await res.json()
+      if (data.url) {
+        window.location.href = data.url
+      }
+    } catch {
+      setPortalLoading(false)
+    }
+  }
+
+  const isSubscribed =
+    subscription.status === 'active' || subscription.status === 'past_due'
 
   return (
     <div className="space-y-8">
@@ -114,45 +146,122 @@ export function ApiKeyForm() {
         </CardContent>
       </Card>
 
-      {/* Plan tiers */}
+      {/* Subscription */}
       <div className="space-y-3">
         <div>
-          <p className="text-sm font-medium text-foreground">Subscription plans</p>
+          <p className="text-sm font-medium text-foreground">Subscription</p>
           <p className="text-xs text-foreground/40 mt-0.5">
-            Hosted plans are coming soon. Join the waitlist by selecting a tier.
+            {isSubscribed
+              ? 'Managed API access — Cosmo uses OpenCosmos infrastructure on your behalf.'
+              : 'Subscribe for managed access — no API key required.'}
           </p>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-          {PLANS.map((plan) => (
-            <div
-              key={plan.id}
-              className={cn(
-                'relative rounded-xl border p-4 space-y-3 transition-colors',
-                plan.highlight
-                  ? 'border-foreground/20 bg-foreground/3'
-                  : 'border-foreground/10 bg-transparent'
-              )}
-            >
-              {plan.highlight && (
-                <Badge variant="secondary" className="absolute -top-2.5 left-4 text-xs">
-                  Popular
-                </Badge>
-              )}
-              <div>
-                <p className="text-sm font-semibold text-foreground">{plan.name}</p>
-                <p className="text-xs text-foreground/40 mt-0.5">{plan.description}</p>
+
+        {/* Active subscription — usage meter + manage */}
+        {isSubscribed && (subscription.status === 'active' || subscription.status === 'past_due') && (
+          <Card>
+            <CardContent className="pt-5 space-y-4">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <p className="text-sm font-semibold text-foreground">
+                    {subscription.name}
+                    {subscription.status === 'past_due' && (
+                      <Badge variant="destructive" className="ml-2 text-xs">Payment due</Badge>
+                    )}
+                  </p>
+                  <p className="text-xs text-foreground/40 mt-0.5">
+                    ${subscription.monthlyUSD}/month · renews{' '}
+                    {new Date(subscription.billingCycleAnchor * 1000).toLocaleDateString('en-US', {
+                      month: 'short', day: 'numeric',
+                    })}
+                  </p>
+                </div>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={openPortal}
+                  disabled={portalLoading}
+                >
+                  {portalLoading ? 'Opening…' : 'Manage billing'}
+                </Button>
               </div>
-              <div className="flex items-baseline gap-0.5">
-                <span className="text-xl font-light text-foreground">{plan.price}</span>
-                <span className="text-xs text-foreground/40">{plan.period}</span>
+
+              {/* Usage meter */}
+              <div className="space-y-1.5">
+                <div className="flex justify-between text-xs text-foreground/40">
+                  <span>Monthly usage</span>
+                  <span>{subscription.usagePercent}%</span>
+                </div>
+                <div className="h-1.5 rounded-full bg-foreground/8 overflow-hidden">
+                  <div
+                    className={cn(
+                      'h-full rounded-full transition-all',
+                      subscription.usagePercent >= 90
+                        ? 'bg-destructive'
+                        : subscription.usagePercent >= 70
+                          ? 'bg-amber-500'
+                          : 'bg-foreground/30'
+                    )}
+                    style={{ width: `${subscription.usagePercent}%` }}
+                  />
+                </div>
+                {subscription.usagePercent >= 80 && (
+                  <p className="text-xs text-foreground/50">
+                    Approaching your monthly limit.{' '}
+                    <button onClick={openPortal} className="underline underline-offset-2">
+                      Upgrade your plan
+                    </button>{' '}
+                    or add your own API key above for unlimited access.
+                  </p>
+                )}
               </div>
-              <p className="text-xs text-foreground/50">{plan.messages}</p>
-              <Button variant="outline" size="sm" className="w-full" disabled>
-                Coming soon
-              </Button>
-            </div>
-          ))}
-        </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Tier cards — shown when no active subscription */}
+        {!isSubscribed && subscription.status !== 'loading' && (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            {(Object.entries(TIERS) as [Tier, typeof TIERS[Tier]][]).map(([key, plan]) => (
+              <div
+                key={key}
+                className={cn(
+                  'relative rounded-xl border p-4 space-y-3 transition-colors',
+                  plan.highlight
+                    ? 'border-foreground/20 bg-foreground/3'
+                    : 'border-foreground/10 bg-transparent'
+                )}
+              >
+                {plan.highlight && (
+                  <Badge variant="secondary" className="absolute -top-2.5 left-4 text-xs">
+                    Popular
+                  </Badge>
+                )}
+                <div>
+                  <p className="text-sm font-semibold text-foreground">{plan.name}</p>
+                  <p className="text-xs text-foreground/40 mt-0.5">{plan.description}</p>
+                </div>
+                <div className="flex items-baseline gap-0.5">
+                  <span className="text-xl font-light text-foreground">${plan.monthlyUSD}</span>
+                  <span className="text-xs text-foreground/40">/month</span>
+                </div>
+                <Button
+                  variant={plan.highlight ? 'default' : 'outline'}
+                  size="sm"
+                  className="w-full"
+                  onClick={() => startCheckout(key)}
+                  disabled={checkoutLoading !== null}
+                >
+                  {checkoutLoading === key ? 'Redirecting…' : `Subscribe to ${plan.name}`}
+                </Button>
+              </div>
+            ))}
+          </div>
+        )}
+
+        {subscription.status === 'loading' && (
+          <div className="h-24 rounded-xl border border-foreground/10 animate-pulse" />
+        )}
       </div>
     </div>
   )

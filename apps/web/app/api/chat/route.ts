@@ -3,6 +3,9 @@ import Anthropic from '@anthropic-ai/sdk'
 import { randomUUID } from 'crypto'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
+import { withAuth } from '@workos-inc/authkit-nextjs'
+import { getSubscription, incrementUsage, isWithinBudget } from '@/lib/subscription'
+import { TIERS } from '@/lib/stripe'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
@@ -150,6 +153,37 @@ function getClientIp(req: NextRequest): string {
   )
 }
 
+// ---------------------------------------------------------------------------
+// Conversation history caching
+//
+// Adding cache_control to the last assistant message reduces input token costs
+// ~40-50% on long conversations. The SDK marks that turn as the cache boundary;
+// everything up to and including it is served from cache on the next call.
+// ---------------------------------------------------------------------------
+
+type Message = { role: 'user' | 'assistant'; content: string | Anthropic.ContentBlockParam[] }
+
+function withHistoryCaching(messages: Message[]): Message[] {
+  if (messages.length < 2) return messages
+
+  // Find the last assistant message and mark it as the cache boundary.
+  const result = messages.map((m) => ({ ...m }))
+  for (let i = result.length - 1; i >= 0; i--) {
+    if (result[i].role === 'assistant') {
+      const content = typeof result[i].content === 'string'
+        ? [{ type: 'text' as const, text: result[i].content as string, cache_control: { type: 'ephemeral' as const } }]
+        : (result[i].content as Anthropic.ContentBlockParam[]).map((block, idx, arr) =>
+            idx === arr.length - 1
+              ? { ...block, cache_control: { type: 'ephemeral' as const } }
+              : block
+          )
+      result[i] = { ...result[i], content }
+      break
+    }
+  }
+  return result
+}
+
 export async function POST(req: NextRequest) {
   try {
     const { messages, apiKey } = await req.json()
@@ -158,52 +192,91 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
-    // Session tracking + bot protection for free-tier (skipped for BYOK and admin)
     const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
     let newSessionCookie: string | null = null
 
+    // ------------------------------------------------------------------
+    // Determine access path:
+    //   1. Admin (bypass everything)
+    //   2. BYOK (user-supplied key, unlimited, bypass free-tier limits)
+    //   3. Active subscriber (managed key, token-budgeted)
+    //   4. Free tier (session-limited, shared key)
+    // ------------------------------------------------------------------
+
+    let subscribedUserId: string | null = null
+    let subscriberTier: import('@/lib/stripe').Tier | null = null
+
     if (!apiKey && !isAdmin) {
-      // 1. Hard monthly spend cap — cheapest check, no Ratelimit SDK overhead
-      const underCap = await checkMonthlyCap()
-      if (!underCap) {
-        return NextResponse.json(
-          { error: 'free_tier_unavailable', message: 'Free tier is temporarily unavailable. Please use your own API key or subscribe.' },
-          { status: 503 }
-        )
+      // Check for an authenticated subscriber before falling to the free tier.
+      const { user } = await withAuth({ ensureSignedIn: false })
+      if (user) {
+        const sub = await getSubscription(user.id)
+        if (sub && sub.status === 'active') {
+          const usage = await import('@/lib/subscription').then(m => m.getUsage(user.id))
+          if (isWithinBudget(sub.tier, usage.monthTotal, usage.weekTotal)) {
+            subscribedUserId = user.id
+            subscriberTier = sub.tier
+          } else {
+            // Budget exhausted — inform the client which limit was hit.
+            const tierConfig = TIERS[sub.tier]
+            const isWeeklyExhausted = usage.weekTotal >= tierConfig.weeklyBudgetMicrodollars
+            return NextResponse.json(
+              {
+                error: 'subscription_limit_reached',
+                period: isWeeklyExhausted ? 'weekly' : 'monthly',
+                message: isWeeklyExhausted
+                  ? 'You\'ve reached your weekly conversation limit. It resets on Monday, or you can upgrade your plan.'
+                  : 'You\'ve reached your monthly conversation limit. It resets at the start of next month, or you can upgrade your plan.',
+              },
+              { status: 429 }
+            )
+          }
+        }
       }
 
-      // 2. IP rate limit — 3 requests per IP per 24h
-      const ip = getClientIp(req)
-      const { success: ipAllowed } = await ipRatelimit.limit(ip)
-      if (!ipAllowed) {
-        return NextResponse.json(
-          { error: 'rate_limited', message: 'Too many requests from this IP. Please try again later or use your own API key.' },
-          { status: 429 }
-        )
+      // No active subscription — apply free-tier guards.
+      if (!subscribedUserId) {
+        // 1. Hard monthly spend cap
+        const underCap = await checkMonthlyCap()
+        if (!underCap) {
+          return NextResponse.json(
+            { error: 'free_tier_unavailable', message: 'Free tier is temporarily unavailable. Please use your own API key or subscribe.' },
+            { status: 503 }
+          )
+        }
+
+        // 2. IP rate limit
+        const ip = getClientIp(req)
+        const { success: ipAllowed } = await ipRatelimit.limit(ip)
+        if (!ipAllowed) {
+          return NextResponse.json(
+            { error: 'rate_limited', message: 'Too many requests from this IP. Please try again later or use your own API key.' },
+            { status: 429 }
+          )
+        }
+
+        // 3. Session-based counter
+        const existingSession = req.cookies.get('cosmo_session')?.value
+        const sessionId = existingSession ?? randomUUID()
+        const { allowed } = await checkAndIncrement(sessionId)
+
+        if (!allowed) {
+          const res = NextResponse.json(
+            { error: 'free_limit_reached', remaining: 0 },
+            { status: 429 }
+          )
+          if (!existingSession) res.headers.set('Set-Cookie', sessionCookie(sessionId))
+          return res
+        }
+
+        if (!existingSession) newSessionCookie = sessionCookie(sessionId)
       }
-
-      // 3. Session-based counter (localStorage bypass protection)
-      const existingSession = req.cookies.get('cosmo_session')?.value
-      const sessionId = existingSession ?? randomUUID()
-      const { allowed } = await checkAndIncrement(sessionId)
-
-      if (!allowed) {
-        const res = NextResponse.json(
-          { error: 'free_limit_reached', remaining: 0 },
-          { status: 429 }
-        )
-        if (!existingSession) res.headers.set('Set-Cookie', sessionCookie(sessionId))
-        return res
-      }
-
-      if (!existingSession) newSessionCookie = sessionCookie(sessionId)
     }
 
-    // BYOK: use provided key. Otherwise fall back to server key (free tier).
-    // The provided key is used only for this request and never stored.
+    // BYOK: use provided key. Subscriber or free tier: use shared server key.
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
 
-    // Shalom mode: inject private PM context when cosmo_admin cookie is present.
+    // Shalom admin mode: inject private PM context.
     const systemContent = [...SYSTEM_CONTENT]
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
@@ -216,11 +289,15 @@ export async function POST(req: NextRequest) {
       }
     }
 
+    // Apply conversation history caching for subscribers (reduces costs ~40-50%).
+    // Free-tier requests are short-lived sessions where caching has minimal benefit.
+    const cachedMessages = subscribedUserId ? withHistoryCaching(messages) : messages
+
     const stream = client.messages.stream({
       model: 'claude-sonnet-4-6',
       max_tokens: 1024,
       system: systemContent,
-      messages,
+      messages: cachedMessages,
     })
 
     const readable = new ReadableStream({
@@ -233,6 +310,17 @@ export async function POST(req: NextRequest) {
             ) {
               controller.enqueue(new TextEncoder().encode(event.delta.text))
             }
+          }
+          // Track token usage for subscribers after stream completes.
+          // Fire-and-forget — never blocks the response.
+          if (subscribedUserId && subscriberTier) {
+            stream.finalMessage().then((msg) => {
+              incrementUsage(
+                subscribedUserId!,
+                msg.usage.input_tokens,
+                msg.usage.output_tokens,
+              ).catch(() => {})
+            }).catch(() => {})
           }
         } catch (err) {
           controller.error(err)
