@@ -14,13 +14,24 @@ const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
 const GITHUB_PM_PAT = process.env.GITHUB_PM_PAT ?? ''
 const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
-const FREE_LIMIT = 3
 const SESSION_TTL = 604800 // 7 days
 
-// Hard monthly spend cap: if free-tier request count exceeds this, the shared
-// key is effectively offline for the month. Each request ~$0.03 → 2000 = ~$60.
-// Adjust via COSMO_FREE_MONTHLY_CAP env var.
-const MONTHLY_CAP = parseInt(process.env.COSMO_FREE_MONTHLY_CAP ?? '2000', 10)
+// Free-tier token budget: 20k tokens ≈ 3–4 substantive exchanges with Cosmo.
+export const FREE_TOKEN_BUDGET = 20_000
+
+// Monthly cap denominated in estimated tokens (not requests).
+// Default: 50M tokens/month ≈ $15 at current rates. One 1.79M-token crafted
+// request incremented the old request counter by 1 — this closes that gap.
+// Set via COSMO_FREE_MONTHLY_TOKEN_CAP env var.
+const MONTHLY_TOKEN_CAP = parseInt(process.env.COSMO_FREE_MONTHLY_TOKEN_CAP ?? '50000000', 10)
+
+// Per-tier payload limits to prevent cost-inflation attacks (April 8, 2026 incident).
+// A 40k-char limit for free tier is ~2× a Wikipedia article — generous for real
+// users, impossible to exploit at scale. Admin and BYOK are exempt.
+const MAX_MESSAGES_FREE = 10
+const MAX_MESSAGES_SUBSCRIBER = 100
+const MAX_CHARS_FREE = 40_000      // ~10k tokens
+const MAX_CHARS_SUBSCRIBER = 400_000 // ~100k tokens
 
 const SYSTEM_CONTENT = [
   {
@@ -80,7 +91,6 @@ async function fetchPmContext(): Promise<string | null> {
 
 // IP rate limiter: 30 free-tier requests per IP per 24 hours.
 // Catches bot/scraper abuse without blocking households sharing a single IP.
-// The session counter (3 per session, 7-day TTL) is the real per-user limit.
 const ipRatelimit = new Ratelimit({
   redis: new Redis({ url: REDIS_URL, token: REDIS_TOKEN }),
   limiter: Ratelimit.slidingWindow(30, '24 h'),
@@ -88,8 +98,12 @@ const ipRatelimit = new Ratelimit({
   analytics: false,
 })
 
-function redisKey(sessionId: string) {
+function freeSessionKey(sessionId: string) {
   return `cosmo_free:v1:${sessionId}`
+}
+
+function freeTokenKey(sessionId: string) {
+  return `cosmo_free_tokens:v1:${sessionId}`
 }
 
 function monthlyCapKey(): string {
@@ -97,32 +111,51 @@ function monthlyCapKey(): string {
   return `cosmo_monthly:v1:${now.getUTCFullYear()}-${now.getUTCMonth() + 1}`
 }
 
-async function checkAndIncrement(
-  sessionId: string
-): Promise<{ allowed: boolean; remaining: number }> {
+// Reads current free-tier token usage for a session. Does not increment —
+// increment happens after the stream completes (fire-and-forget).
+async function getFreeTokenUsage(sessionId: string): Promise<number> {
   try {
-    const res = await fetch(`${REDIS_URL}/pipeline`, {
+    const res = await fetch(`${REDIS_URL}/get/${freeTokenKey(sessionId)}`, {
+      headers: { Authorization: `Bearer ${REDIS_TOKEN}` },
+    })
+    const data = (await res.json()) as { result: string | null }
+    return data.result ? parseInt(data.result, 10) : 0
+  } catch {
+    return 0 // fail open
+  }
+}
+
+// Increments the free-tier token counter after a stream completes.
+// Fire-and-forget — never blocks the response.
+async function incrementFreeTokens(
+  sessionId: string,
+  inputTokens: number,
+  outputTokens: number,
+): Promise<void> {
+  try {
+    await fetch(`${REDIS_URL}/pipeline`, {
       method: 'POST',
       headers: {
         Authorization: `Bearer ${REDIS_TOKEN}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify([
-        ['INCR', redisKey(sessionId)],
-        ['EXPIRE', redisKey(sessionId), SESSION_TTL],
+        ['INCRBY', freeTokenKey(sessionId), inputTokens + outputTokens],
+        ['EXPIRE', freeTokenKey(sessionId), SESSION_TTL],
+        // Keep the legacy message counter key alive in parallel (for session route backwards compat)
+        ['EXPIRE', freeSessionKey(sessionId), SESSION_TTL],
       ]),
     })
-    const [incrResult] = (await res.json()) as [{ result: number }]
-    const count = incrResult.result
-    return { allowed: count <= FREE_LIMIT, remaining: Math.max(0, FREE_LIMIT - count) }
   } catch {
-    return { allowed: true, remaining: FREE_LIMIT } // fail open
+    // Fail silently — token tracking is best-effort
   }
 }
 
-// Increment the monthly counter and check against the hard cap.
-// Fails open so a Redis outage doesn't take down the free tier.
-async function checkMonthlyCap(): Promise<boolean> {
+// Increment the monthly token counter and check against the hard cap.
+// Changed from request-count (INCR by 1) to token-estimate (INCRBY tokenEstimate)
+// so one oversized request can't sneak through the cap.
+// Fails open so a Redis outage never takes down the free tier.
+async function checkMonthlyCap(tokenEstimate: number): Promise<boolean> {
   try {
     const key = monthlyCapKey()
     const res = await fetch(`${REDIS_URL}/pipeline`, {
@@ -132,10 +165,10 @@ async function checkMonthlyCap(): Promise<boolean> {
         'Content-Type': 'application/json',
       },
       // TTL: 35 days — safely covers the full month + rollover
-      body: JSON.stringify([['INCR', key], ['EXPIRE', key, 3024000]]),
+      body: JSON.stringify([['INCRBY', key, tokenEstimate], ['EXPIRE', key, 3024000]]),
     })
     const [incrResult] = (await res.json()) as [{ result: number }]
-    return incrResult.result <= MONTHLY_CAP
+    return incrResult.result <= MONTHLY_TOKEN_CAP
   } catch {
     return true // fail open
   }
@@ -192,15 +225,26 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
+    // Compute payload size metrics up front — used by monthly cap and size limits.
+    // Rough heuristic: 4 chars ≈ 1 token.
+    const totalChars = messages.reduce(
+      (sum: number, m: Message) =>
+        sum + (typeof m.content === 'string' ? m.content.length : JSON.stringify(m.content).length),
+      0
+    )
+    const tokenEstimate = Math.ceil(totalChars / 4)
+
     const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
+    const ip = getClientIp(req)
     let newSessionCookie: string | null = null
+    let freeTierSessionId: string | null = null
 
     // ------------------------------------------------------------------
     // Determine access path:
     //   1. Admin (bypass everything)
     //   2. BYOK (user-supplied key, unlimited, bypass free-tier limits)
     //   3. Active subscriber (managed key, token-budgeted)
-    //   4. Free tier (session-limited, shared key)
+    //   4. Free tier (token-budgeted, shared key)
     // ------------------------------------------------------------------
 
     let subscribedUserId: string | null = null
@@ -236,8 +280,8 @@ export async function POST(req: NextRequest) {
 
       // No active subscription — apply free-tier guards.
       if (!subscribedUserId) {
-        // 1. Hard monthly spend cap
-        const underCap = await checkMonthlyCap()
+        // 1. Hard monthly token cap (increments by estimated tokens, not by 1)
+        const underCap = await checkMonthlyCap(tokenEstimate)
         if (!underCap) {
           return NextResponse.json(
             { error: 'free_tier_unavailable', message: 'Free tier is temporarily unavailable. Please use your own API key or subscribe.' },
@@ -246,7 +290,6 @@ export async function POST(req: NextRequest) {
         }
 
         // 2. IP rate limit
-        const ip = getClientIp(req)
         const { success: ipAllowed } = await ipRatelimit.limit(ip)
         if (!ipAllowed) {
           return NextResponse.json(
@@ -255,23 +298,62 @@ export async function POST(req: NextRequest) {
           )
         }
 
-        // 3. Session-based counter
+        // 3. Token budget check
+        // Stateless clients (bots, curl) that ignore Set-Cookie headers get pinned
+        // to their IP — this closes the session-bypass exploit (April 8, 2026).
+        // Real browser users get a UUID session cookie on their first request and
+        // use their own per-browser token bucket from the second request onward.
         const existingSession = req.cookies.get('cosmo_session')?.value
-        const sessionId = existingSession ?? randomUUID()
-        const { allowed } = await checkAndIncrement(sessionId)
+        const sessionId = existingSession ?? `ip:${ip}`
+        freeTierSessionId = sessionId
 
-        if (!allowed) {
-          const res = NextResponse.json(
+        const tokensUsed = await getFreeTokenUsage(sessionId)
+        if (tokensUsed >= FREE_TOKEN_BUDGET) {
+          return NextResponse.json(
             { error: 'free_limit_reached', remaining: 0 },
             { status: 429 }
           )
-          if (!existingSession) res.headers.set('Set-Cookie', sessionCookie(sessionId))
-          return res
         }
 
-        if (!existingSession) newSessionCookie = sessionCookie(sessionId)
+        // Give new browser users a UUID cookie so future requests use a per-browser
+        // token bucket instead of the shared IP bucket.
+        if (!existingSession) {
+          newSessionCookie = sessionCookie(randomUUID())
+        }
       }
     }
+
+    // ------------------------------------------------------------------
+    // Payload size limits — after auth resolves access path.
+    // Prevents cost-inflation attacks like the April 8, 2026 incident where
+    // 3 crafted requests with ~600k tokens each cost ~$50–80 in one day.
+    // Admin and BYOK are exempt (admin is you; BYOK users pay their own costs).
+    // ------------------------------------------------------------------
+    if (!isAdmin && !apiKey) {
+      const maxMessages = subscribedUserId ? MAX_MESSAGES_SUBSCRIBER : MAX_MESSAGES_FREE
+      const maxChars = subscribedUserId ? MAX_CHARS_SUBSCRIBER : MAX_CHARS_FREE
+
+      if (messages.length > maxMessages) {
+        return NextResponse.json({ error: 'too_many_messages' }, { status: 400 })
+      }
+      if (totalChars > maxChars) {
+        return NextResponse.json({ error: 'payload_too_large' }, { status: 413 })
+      }
+    }
+
+    // Structured request log — captured in Vercel Functions dashboard at no extra cost.
+    // This single log line would have revealed the April 8 attack immediately:
+    // estimatedTokens ~598k, accessPath: free, ip: [attacker].
+    console.log(JSON.stringify({
+      event: 'chat_request',
+      ts: new Date().toISOString(),
+      ip,
+      session: req.cookies.get('cosmo_session')?.value ?? 'new',
+      accessPath: isAdmin ? 'admin' : apiKey ? 'byok' : subscribedUserId ? `subscriber:${subscriberTier}` : 'free',
+      messageCount: messages.length,
+      estimatedChars: totalChars,
+      estimatedTokens: tokenEstimate,
+    }))
 
     // BYOK: use provided key. Subscriber or free tier: use shared server key.
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
@@ -311,17 +393,23 @@ export async function POST(req: NextRequest) {
               controller.enqueue(new TextEncoder().encode(event.delta.text))
             }
           }
-          // Track token usage for subscribers after stream completes.
-          // Fire-and-forget — never blocks the response.
-          if (subscribedUserId && subscriberTier) {
-            stream.finalMessage().then((msg) => {
+          // Track token usage after stream completes. Fire-and-forget — never blocks the response.
+          stream.finalMessage().then((msg) => {
+            if (subscribedUserId && subscriberTier) {
               incrementUsage(
                 subscribedUserId!,
                 msg.usage.input_tokens,
                 msg.usage.output_tokens,
               ).catch(() => {})
-            }).catch(() => {})
-          }
+            }
+            if (freeTierSessionId) {
+              incrementFreeTokens(
+                freeTierSessionId,
+                msg.usage.input_tokens,
+                msg.usage.output_tokens,
+              ).catch(() => {})
+            }
+          }).catch(() => {})
         } catch (err) {
           controller.error(err)
         } finally {

@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
 import { SidebarAvatar } from '../SidebarAvatar'
+import { TokenGauge } from '@/components/TokenGauge'
 
 type Message = { role: 'user' | 'assistant'; content: string }
 
@@ -17,7 +18,7 @@ type Conversation = {
   updatedAt: number
 }
 
-const FREE_LIMIT = 3
+const DEFAULT_TOKEN_BUDGET = 20_000
 const KEY_API_KEY = 'cosmo_api_key'
 const KEY_CONVERSATIONS = 'cosmo_conversations'
 const KEY_CURRENT_ID = 'cosmo_current_id'
@@ -54,16 +55,31 @@ function timeAgo(ts: number): string {
 // Shared liquid glass style — matches the header's always-on glass
 const glass = 'backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50'
 
+function formatResetCountdown(expiresAt: number): string {
+  if (!expiresAt) return ''
+  const secs = expiresAt - Math.floor(Date.now() / 1000)
+  if (secs <= 0) return 'Expired'
+  const days = Math.floor(secs / 86400)
+  const hours = Math.floor((secs % 86400) / 3600)
+  if (days > 0) return `Resets in ${days}d`
+  if (hours > 0) return `Resets in ${hours}h`
+  return 'Resets soon'
+}
+
 function SidebarFooterContent({
   mounted,
   apiKey,
-  remaining,
+  tokensUsed,
+  tokenBudget,
+  sessionExpiresAt,
   pmMode,
   onPmClick,
 }: {
   mounted: boolean
   apiKey: string
-  remaining: number
+  tokensUsed: number
+  tokenBudget: number
+  sessionExpiresAt: number
   pmMode: boolean
   onPmClick: () => void
 }) {
@@ -86,20 +102,27 @@ function SidebarFooterContent({
 
   return (
     <div className="space-y-2">
-      {/* Usage counter — left-aligned with the Log in button (offset by avatar w-7 + gap-2) */}
-      <div className="flex items-center gap-2">
+      {/* Token quota — left-aligned with the Log in button (offset by avatar w-7 + gap-2) */}
+      <div className="flex items-start gap-2">
         <span className="w-7 shrink-0" />
         {mounted && (
-          <span className="text-xs text-foreground/40 flex-1 min-w-0 truncate">
-            {apiKey
-              ? 'Your key · Unlimited'
-              : `${remaining} ${remaining === 1 ? 'message' : 'messages'} remaining`}
-          </span>
+          apiKey ? (
+            <span className="text-xs text-foreground/40 mt-0.5">Your key · Unlimited</span>
+          ) : (
+            <div className="flex flex-col gap-0.5">
+              <TokenGauge used={tokensUsed} total={tokenBudget} />
+              {sessionExpiresAt > 0 && (
+                <span className="text-[10px] text-foreground/25 text-center">
+                  {formatResetCountdown(sessionExpiresAt)}
+                </span>
+              )}
+            </div>
+          )
         )}
         {/* Invisible PM lock — occupies space to keep layout stable */}
         <button
           onClick={onPmClick}
-          className="opacity-0 w-4 h-4 shrink-0"
+          className="opacity-0 w-4 h-4 shrink-0 mt-0.5"
           aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
           title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
         >
@@ -157,7 +180,9 @@ export function CosmoChat() {
   const [isStreaming, setIsStreaming] = useState(false)
   const [apiKey, setApiKey] = useState('')
   const [apiKeyDraft, setApiKeyDraft] = useState('')
-  const [remaining, setRemaining] = useState(FREE_LIMIT)
+  const [tokensUsed, setTokensUsed] = useState(0)
+  const [tokenBudget, setTokenBudget] = useState(DEFAULT_TOKEN_BUDGET)
+  const [sessionExpiresAt, setSessionExpiresAt] = useState(0)
   const [mounted, setMounted] = useState(false)
   const [currentId, setCurrentId] = useState('')
   const [conversations, setConversations] = useState<Conversation[]>([])
@@ -187,11 +212,15 @@ export function CosmoChat() {
     setCurrentId(id)
     setConversations(Object.values(all).sort((a, b) => b.updatedAt - a.updatedAt))
 
-    // Fetch server-authoritative remaining count
+    // Fetch server-authoritative token quota
     fetch('/api/session')
       .then((r) => r.json())
-      .then((data: { remaining: number }) => setRemaining(data.remaining))
-      .catch(() => {}) // fail silently — UI defaults to FREE_LIMIT
+      .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
+        setTokensUsed(data.tokensUsed)
+        setTokenBudget(data.tokenBudget)
+        setSessionExpiresAt(data.sessionExpiresAt)
+      })
+      .catch(() => {}) // fail silently — UI defaults to DEFAULT_TOKEN_BUDGET
 
     // Check if Shalom mode is active (HttpOnly cookie read server-side)
     fetch('/api/admin/auth')
@@ -261,7 +290,7 @@ export function CosmoChat() {
     setConversations(Object.values(loadAll()).sort((a, b) => b.updatedAt - a.updatedAt))
   }, [])
 
-  const isLimited = mounted && !apiKey && !pmMode && remaining <= 0
+  const isLimited = mounted && !apiKey && !pmMode && tokensUsed >= tokenBudget
 
   const send = useCallback(async () => {
     if (!input.trim() || isStreaming || isLimited) return
@@ -281,7 +310,7 @@ export function CosmoChat() {
       })
 
       if (res.status === 429) {
-        setRemaining(0)
+        setTokensUsed(tokenBudget) // pin gauge to empty
         setMessages((prev) => prev.slice(0, -1)) // remove the empty assistant placeholder
         setIsStreaming(false)
         textareaRef.current?.focus()
@@ -309,11 +338,15 @@ export function CosmoChat() {
         })
       }
 
-      // Refresh server-authoritative remaining count after each free exchange
+      // Refresh server-authoritative token quota after each free exchange
       if (!apiKey) {
         fetch('/api/session')
           .then((r) => r.json())
-          .then((data: { remaining: number }) => setRemaining(data.remaining))
+          .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
+            setTokensUsed(data.tokensUsed)
+            setTokenBudget(data.tokenBudget)
+            setSessionExpiresAt(data.sessionExpiresAt)
+          })
           .catch(() => {})
       }
 
@@ -456,7 +489,9 @@ export function CosmoChat() {
           <SidebarFooterContent
             mounted={mounted}
             apiKey={apiKey}
-            remaining={remaining}
+            tokensUsed={tokensUsed}
+            tokenBudget={tokenBudget}
+            sessionExpiresAt={sessionExpiresAt}
             pmMode={pmMode}
             onPmClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}
           />
@@ -560,7 +595,7 @@ export function CosmoChat() {
           <BottomBarWrapper className={cn('px-6 py-5', glass)}>
             <div className="max-w-2xl mx-auto space-y-3">
               <p className="text-sm text-foreground/50 leading-relaxed">
-                Your 3 free messages are complete. To continue, enter your{' '}
+                You&rsquo;ve used your free token quota. To continue, enter your{' '}
                 <a
                   href="https://console.anthropic.com/settings/keys"
                   target="_blank"
@@ -569,6 +604,10 @@ export function CosmoChat() {
                 >
                   Anthropic API key
                 </a>
+                {' '}or{' '}
+                <Link href="/account" className="underline underline-offset-2 hover:text-foreground/80">
+                  subscribe
+                </Link>
                 .
               </p>
               <div className="flex gap-2">
