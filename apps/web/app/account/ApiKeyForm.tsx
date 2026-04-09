@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge, cn } from '@opencosmos/ui'
 import { TIERS, type Tier } from '@/lib/stripe'
+import { TokenGauge } from '@/components/TokenGauge'
 
 const KEY_API_KEY = 'cosmo_api_key'
 
@@ -25,6 +26,11 @@ export function ApiKeyForm() {
   const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
   const [checkoutLoading, setCheckoutLoading] = useState<Tier | null>(null)
   const [portalLoading, setPortalLoading] = useState(false)
+  const [sessionData, setSessionData] = useState<{
+    tokensUsed: number
+    tokenBudget: number
+    sessionExpiresAt: number
+  } | null>(null)
 
   useEffect(() => {
     const stored = localStorage.getItem(KEY_API_KEY) || ''
@@ -44,6 +50,18 @@ export function ApiKeyForm() {
       })
       .catch(() => setSubscription({ status: 'none' }))
   }, [])
+
+  // Fetch free-tier token quota for users without an active subscription or API key.
+  // Skipped for subscribers (they have a monthly budget meter instead).
+  useEffect(() => {
+    if (apiKey) return // BYOK — unlimited, no quota to show
+    fetch('/api/session')
+      .then((r) => r.json())
+      .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
+        setSessionData(data)
+      })
+      .catch(() => {})
+  }, [apiKey])
 
   const save = () => {
     const key = draft.trim()
@@ -128,9 +146,13 @@ export function ApiKeyForm() {
             )}
           </div>
           {apiKey && (
-            <p className="text-xs text-foreground/40">
-              Active — {apiKey.slice(0, 12)}•••
-            </p>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+              <span className="text-xs font-medium text-emerald-500">Connected</span>
+              <span className="text-xs font-mono text-foreground/60">
+                {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
+              </span>
+            </div>
           )}
           <p className="text-xs text-foreground/30">
             Get a key at{' '}
@@ -214,6 +236,38 @@ export function ApiKeyForm() {
                     or add your own API key above for unlimited access.
                   </p>
                 )}
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Free quota — shown for non-subscribers without an API key */}
+        {!isSubscribed && !apiKey && sessionData && subscription.status !== 'loading' && (
+          <Card>
+            <CardContent className="pt-5">
+              <div className="flex items-start gap-5">
+                <TokenGauge used={sessionData.tokensUsed} total={sessionData.tokenBudget} />
+                <div className="space-y-1 min-w-0">
+                  <p className="text-sm font-medium text-foreground">Free quota</p>
+                  <p className="text-xs text-foreground/40">
+                    {Math.max(0, sessionData.tokenBudget - sessionData.tokensUsed).toLocaleString()} of{' '}
+                    {sessionData.tokenBudget.toLocaleString()} tokens remaining
+                  </p>
+                  {sessionData.sessionExpiresAt > 0 && (
+                    <p className="text-xs text-foreground/30">
+                      {(() => {
+                        const secs = sessionData.sessionExpiresAt - Math.floor(Date.now() / 1000)
+                        if (secs <= 0) return 'Quota expired'
+                        const days = Math.floor(secs / 86400)
+                        const hours = Math.floor((secs % 86400) / 3600)
+                        return days > 0 ? `Resets in ${days} days` : hours > 0 ? `Resets in ${hours} hours` : 'Resets soon'
+                      })()}
+                    </p>
+                  )}
+                  <p className="text-xs text-foreground/25 pt-1">
+                    Subscribe for unlimited managed access, or bring your own key above.
+                  </p>
+                </div>
               </div>
             </CardContent>
           </Card>
