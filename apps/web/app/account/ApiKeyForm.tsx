@@ -33,9 +33,22 @@ export function ApiKeyForm() {
   } | null>(null)
 
   useEffect(() => {
+    // Load key synchronously from localStorage so all conditional rendering is
+    // correct on the first paint — prevents "Free quota" flashing for BYOK users.
     const stored = localStorage.getItem(KEY_API_KEY) || ''
     setApiKey(stored)
     setDraft(stored)
+
+    // Fetch session data only when there's no API key. Doing this here (after
+    // reading localStorage) ensures we never request session data for BYOK users.
+    if (!stored) {
+      fetch('/api/session')
+        .then((r) => r.json())
+        .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
+          setSessionData(data)
+        })
+        .catch(() => {})
+    }
   }, [])
 
   useEffect(() => {
@@ -50,18 +63,6 @@ export function ApiKeyForm() {
       })
       .catch(() => setSubscription({ status: 'none' }))
   }, [])
-
-  // Fetch free-tier token quota for users without an active subscription or API key.
-  // Skipped for subscribers (they have a monthly budget meter instead).
-  useEffect(() => {
-    if (apiKey) return // BYOK — unlimited, no quota to show
-    fetch('/api/session')
-      .then((r) => r.json())
-      .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
-        setSessionData(data)
-      })
-      .catch(() => {})
-  }, [apiKey])
 
   const save = () => {
     const key = draft.trim()
@@ -241,12 +242,32 @@ export function ApiKeyForm() {
           </Card>
         )}
 
+        {/* API connection — shown for BYOK users */}
+        {!isSubscribed && apiKey && (
+          <Card>
+            <CardContent className="pt-5">
+              <div className="flex items-center gap-5">
+                <TokenGauge unlimited className="shrink-0" />
+                <div className="space-y-1 min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                    <p className="text-sm font-medium text-foreground">API connection</p>
+                  </div>
+                  <p className="text-xs text-foreground/40">
+                    Unlimited — usage charged directly to your Anthropic account.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
         {/* Free quota — shown for non-subscribers without an API key */}
         {!isSubscribed && !apiKey && sessionData && subscription.status !== 'loading' && (
           <Card>
             <CardContent className="pt-5">
               <div className="flex items-start gap-5">
-                <TokenGauge used={sessionData.tokensUsed} total={sessionData.tokenBudget} />
+                <TokenGauge used={sessionData.tokensUsed} total={sessionData.tokenBudget} className="shrink-0" />
                 <div className="space-y-1 min-w-0">
                   <p className="text-sm font-medium text-foreground">Free quota</p>
                   <p className="text-xs text-foreground/40">
