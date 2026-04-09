@@ -63,7 +63,19 @@ export function ApiKeyForm() {
         }
         // hasByok is the server-authoritative signal that this user has used a
         // BYOK key — works regardless of which browser or device they're on.
-        if (data.hasByok) setHasByok(true)
+        if (data.hasByok) {
+          setHasByok(true)
+        } else {
+          // Backfill: if the user has a key in localStorage but no server flag
+          // (e.g. saved before server-side detection was deployed), write the flag
+          // now. The account page is authenticated so this call always resolves.
+          const storedKey = localStorage.getItem(KEY_API_KEY)
+          if (storedKey) {
+            fetch('/api/byok', { method: 'POST' })
+              .then(() => setHasByok(true))
+              .catch(() => {})
+          }
+        }
       })
       .catch(() => setSubscription({ status: 'none' }))
   }, [])
@@ -74,6 +86,10 @@ export function ApiKeyForm() {
     setApiKey(key)
     setSaved(true)
     setTimeout(() => setSaved(false), 2000)
+    // Record server-side that this authenticated user has a BYOK key.
+    // The account page is always authenticated, so this is more reliable than
+    // waiting for a chat message to trigger the flag.
+    fetch('/api/byok', { method: 'POST' }).catch(() => {})
   }
 
   const clear = () => {
