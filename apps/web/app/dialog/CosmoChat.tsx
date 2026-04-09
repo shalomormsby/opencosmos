@@ -55,23 +55,11 @@ function timeAgo(ts: number): string {
 // Shared liquid glass style — matches the header's always-on glass
 const glass = 'backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50'
 
-function formatResetCountdown(expiresAt: number): string {
-  if (!expiresAt) return ''
-  const secs = expiresAt - Math.floor(Date.now() / 1000)
-  if (secs <= 0) return 'Expired'
-  const days = Math.floor(secs / 86400)
-  const hours = Math.floor((secs % 86400) / 3600)
-  if (days > 0) return `Resets in ${days}d`
-  if (hours > 0) return `Resets in ${hours}h`
-  return 'Resets soon'
-}
-
 function SidebarFooterContent({
   mounted,
   apiKey,
   tokensUsed,
   tokenBudget,
-  sessionExpiresAt,
   pmMode,
   onPmClick,
 }: {
@@ -79,7 +67,6 @@ function SidebarFooterContent({
   apiKey: string
   tokensUsed: number
   tokenBudget: number
-  sessionExpiresAt: number
   pmMode: boolean
   onPmClick: () => void
 }) {
@@ -101,46 +88,34 @@ function SidebarFooterContent({
   }
 
   return (
-    <div className="space-y-2">
-      {/* Token quota — left-aligned with the Log in button (offset by avatar w-7 + gap-2) */}
-      <div className="flex items-start gap-2">
-        <span className="w-7 shrink-0" />
-        {mounted && (
-          apiKey ? (
-            <span className="text-xs text-foreground/40 mt-0.5">Your key · Unlimited</span>
+    // Single row: avatar · gauge · auth button · invisible PM lock
+    <div className="flex items-center gap-2">
+      <SidebarAvatar />
+      {mounted && (
+        <TokenGauge
+          used={tokensUsed}
+          total={tokenBudget}
+          unlimited={!!apiKey}
+          compact
+          className="shrink-0"
+        />
+      )}
+      <AuthButton className="flex-1" />
+      {/* Invisible PM lock — sits at the end to preserve tap target */}
+      <button
+        onClick={onPmClick}
+        className="opacity-0 w-4 h-4 shrink-0"
+        aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
+        title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
+      >
+        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {pmMode ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 018 0M5 11h14a1 1 0 011 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a1 1 0 011-1z" />
           ) : (
-            <div className="flex flex-col gap-0.5">
-              <TokenGauge used={tokensUsed} total={tokenBudget} />
-              {sessionExpiresAt > 0 && (
-                <span className="text-[10px] text-foreground/25 text-center">
-                  {formatResetCountdown(sessionExpiresAt)}
-                </span>
-              )}
-            </div>
-          )
-        )}
-        {/* Invisible PM lock — occupies space to keep layout stable */}
-        <button
-          onClick={onPmClick}
-          className="opacity-0 w-4 h-4 shrink-0 mt-0.5"
-          aria-label={pmMode ? 'Deactivate PM mode' : 'Activate PM mode'}
-          title={pmMode ? 'PM mode active — click to deactivate' : 'PM mode'}
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            {pmMode ? (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 11V7a4 4 0 018 0M5 11h14a1 1 0 011 1v7a2 2 0 01-2 2H6a2 2 0 01-2-2v-7a1 1 0 011-1z" />
-            ) : (
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM10 9V7a2 2 0 114 0v2H10z" />
-            )}
-          </svg>
-        </button>
-      </div>
-
-      {/* Avatar + full-width Log in button */}
-      <div className="flex items-center gap-2">
-        <SidebarAvatar />
-        <AuthButton className="flex-1" />
-      </div>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM10 9V7a2 2 0 114 0v2H10z" />
+          )}
+        </svg>
+      </button>
     </div>
   )
 }
@@ -491,7 +466,6 @@ export function CosmoChat() {
             apiKey={apiKey}
             tokensUsed={tokensUsed}
             tokenBudget={tokenBudget}
-            sessionExpiresAt={sessionExpiresAt}
             pmMode={pmMode}
             onPmClick={() => pmMode ? deactivatePm() : setShowPmInput(!showPmInput)}
           />
