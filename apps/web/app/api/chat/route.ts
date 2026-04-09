@@ -4,7 +4,7 @@ import { randomUUID } from 'crypto'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
 import { withAuth } from '@workos-inc/authkit-nextjs'
-import { getSubscription, incrementUsage, isWithinBudget } from '@/lib/subscription'
+import { getSubscription, incrementUsage, isWithinBudget, markByok } from '@/lib/subscription'
 import { TIERS } from '@/lib/stripe'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
@@ -250,9 +250,22 @@ export async function POST(req: NextRequest) {
     let subscribedUserId: string | null = null
     let subscriberTier: import('@/lib/stripe').Tier | null = null
 
+    // Resolve the authenticated user for all non-admin paths.
+    // For BYOK requests we still need the userId to record server-side BYOK status
+    // (so the account page can show "API connection" regardless of browser/device).
+    const authenticatedUser = !isAdmin
+      ? await withAuth({ ensureSignedIn: false }).then(a => a.user).catch(() => null)
+      : null
+
+    // BYOK + logged-in user: mark them server-side so the account page knows.
+    // Fire-and-forget — never blocks the response.
+    if (apiKey && authenticatedUser) {
+      markByok(authenticatedUser.id).catch(() => {})
+    }
+
     if (!apiKey && !isAdmin) {
       // Check for an authenticated subscriber before falling to the free tier.
-      const { user } = await withAuth({ ensureSignedIn: false })
+      const user = authenticatedUser
       if (user) {
         const sub = await getSubscription(user.id)
         if (sub && sub.status === 'active') {

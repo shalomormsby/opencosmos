@@ -138,3 +138,40 @@ export function isWithinBudget(
 export function monthlyUsagePercent(tier: Tier, monthTotal: number): number {
   return Math.min(100, Math.round((monthTotal / TIERS[tier].monthlyBudgetMicrodollars) * 100))
 }
+
+// ---------------------------------------------------------------------------
+// BYOK tracking
+//
+// Records server-side that an authenticated user has used a BYOK key.
+// The actual key is never stored — only the fact that they have one.
+// This lets the account page show "API connection" status regardless of which
+// browser or device the user is viewing it on.
+// ---------------------------------------------------------------------------
+
+const BYOK_TTL = 60 * 60 * 24 * 90 // 90 days — refreshes on each BYOK chat
+
+function byokKey(userId: string) {
+  return `cosmo_byok:v1:${userId}`
+}
+
+// Fire-and-forget from the chat route after a successful BYOK request.
+export async function markByok(userId: string): Promise<void> {
+  await redis.set(byokKey(userId), '1', { ex: BYOK_TTL })
+}
+
+export async function getByokFlag(userId: string): Promise<boolean> {
+  try {
+    const val = await redis.get<string>(byokKey(userId))
+    return val === '1'
+  } catch {
+    return false
+  }
+}
+
+export async function clearByok(userId: string): Promise<void> {
+  try {
+    await redis.del(byokKey(userId))
+  } catch {
+    // fail silently
+  }
+}

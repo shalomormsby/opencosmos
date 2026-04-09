@@ -1,7 +1,7 @@
 import { withAuth } from '@workos-inc/authkit-nextjs'
 import { NextResponse } from 'next/server'
 import { TIERS } from '@/lib/stripe'
-import { getSubscription, getUsage, monthlyUsagePercent } from '@/lib/subscription'
+import { getSubscription, getUsage, monthlyUsagePercent, getByokFlag } from '@/lib/subscription'
 
 // GET /api/subscription
 //
@@ -19,13 +19,14 @@ export async function GET() {
     return NextResponse.json({ subscription: null }, { status: 401 })
   }
 
-  const [sub, usage] = await Promise.all([
+  const [sub, usage, hasByok] = await Promise.all([
     getSubscription(user.id),
     getUsage(user.id),
+    getByokFlag(user.id),
   ])
 
   if (!sub || sub.status === 'canceled') {
-    return NextResponse.json({ subscription: null })
+    return NextResponse.json({ subscription: null, hasByok })
   }
 
   const usagePercent = monthlyUsagePercent(sub.tier, usage.monthTotal)
@@ -40,5 +41,6 @@ export async function GET() {
       usagePercent,
       billingCycleAnchor: sub.billingCycleAnchor,
     },
+    hasByok,
   })
 }

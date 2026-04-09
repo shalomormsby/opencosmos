@@ -26,6 +26,7 @@ export function ApiKeyForm() {
   const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
   const [checkoutLoading, setCheckoutLoading] = useState<Tier | null>(null)
   const [portalLoading, setPortalLoading] = useState(false)
+  const [hasByok, setHasByok] = useState(false)
   const [sessionData, setSessionData] = useState<{
     tokensUsed: number
     tokenBudget: number
@@ -60,6 +61,9 @@ export function ApiKeyForm() {
         } else {
           setSubscription({ status: 'none' })
         }
+        // hasByok is the server-authoritative signal that this user has used a
+        // BYOK key — works regardless of which browser or device they're on.
+        if (data.hasByok) setHasByok(true)
       })
       .catch(() => setSubscription({ status: 'none' }))
   }, [])
@@ -76,6 +80,9 @@ export function ApiKeyForm() {
     localStorage.removeItem(KEY_API_KEY)
     setApiKey('')
     setDraft('')
+    setHasByok(false)
+    // Revoke the server-side BYOK flag so the account page reflects the change.
+    fetch('/api/byok', { method: 'DELETE' }).catch(() => {})
   }
 
   const startCheckout = async (tier: Tier) => {
@@ -242,8 +249,8 @@ export function ApiKeyForm() {
           </Card>
         )}
 
-        {/* API connection — shown for BYOK users */}
-        {!isSubscribed && apiKey && (
+        {/* API connection — shown when BYOK key is detected (localStorage or server flag) */}
+        {!isSubscribed && (apiKey || hasByok) && (
           <Card>
             <CardContent className="pt-5">
               <div className="flex items-center gap-5">
@@ -262,8 +269,8 @@ export function ApiKeyForm() {
           </Card>
         )}
 
-        {/* Free quota — shown for non-subscribers without an API key */}
-        {!isSubscribed && !apiKey && sessionData && subscription.status !== 'loading' && (
+        {/* Free quota — shown for non-subscribers who have no API connection */}
+        {!isSubscribed && !apiKey && !hasByok && sessionData && subscription.status !== 'loading' && (
           <Card>
             <CardContent className="pt-5">
               <div className="flex items-start gap-5">
