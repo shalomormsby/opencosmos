@@ -10,6 +10,293 @@
 
 ---
 
+## Next Up:
+
+### API Security & Cost Protection
+
+> **Last updated:** 2026-04-09
+> **Priority:** High — blocking for subscriber launch. A real exploit was confirmed on 2026-04-08 (see incident below).
+
+#### Incident: April 8, 2026 — 1.79M Token Spike
+
+On April 8, 2026, the `opencosmos-main` Anthropic API key recorded **1,793,470 uncached input tokens** in a single day — more than 10× the previous weekly total. Anthropic billing crossed into the `200k–1M` context window tier, which carries a higher per-token rate.
+
+**Key facts established by forensic analysis:**
+- Confirmed not admin (Shalom did not have a long session that day)
+- Confirmed not BYOK (BYOK sessions charge the user's own key, not `opencosmos-main`)
+- Confirmed not a subscriber (Stripe showed zero active subscriptions at the time)
+- Therefore: the request(s) came through the **free tier path** with a crafted oversized payload
+- The cache signature reveals exactly **3 API calls**: one that wrote the system prompt to cache (`cache_write: 6,662`), two that read it (`cache_read: 13,324 = 2 × 6,662`). Three calls × ~600k tokens each = 1.79M total input.
+- Output tokens: 3,072 = 3 × 1,024 (`max_tokens` ceiling). Minimal — the attacker wasn't trying to get useful responses. This was cost inflation.
+
+**Root cause:** Two compounding vulnerabilities in `apps/web/app/api/chat/route.ts`:
+
+1. **No input payload size limit.** The route accepts `messages` from `req.json()` with no validation of array length or total content size. A single crafted request can contain arbitrarily many tokens. The only validation is `messages.length > 0`. There is no max message count, no max character count, no token estimate check.
+
+2. **Session counter is bypassable by any stateless client.** The 3-message-per-session limit works by reading a `cosmo_session` cookie. If the client sends no cookie, a fresh UUID is generated each request (`const sessionId = existingSession ?? randomUUID()`), which always starts at count 1 and is always within the limit. A curl script or bot that ignores Set-Cookie headers gets unlimited sessions.
+
+The IP rate limiter (30 requests/24h) is the only effective backstop — and 3 requests is nowhere near triggering it.
+
+**There is no request-level logging.** The incident was only detectable via the Anthropic Console dashboard the following day. No IP, no session ID, no message count, no timestamp — no forensic trail exists for this event.
+
+---
+
+#### Fix 1 — Input Size Hard Limits (Critical — fixes root cause)
+
+**File:** `apps/web/app/api/chat/route.ts`
+**Location:** After the auth/subscription resolution block (so `subscribedUserId` is known), before the `client.messages.stream()` call.
+
+```typescript
+// Hard limits on payload size to prevent cost-inflation attacks.
+// Free tier: enough for real conversation. Paid tiers: generous but bounded.
+const MAX_MESSAGES = isAdmin ? Infinity : subscribedUserId ? 100 : 10
+const MAX_CONTENT_CHARS = isAdmin ? Infinity : subscribedUserId ? 400_000 : 40_000
+
+if (messages.length > MAX_MESSAGES) {
+  return NextResponse.json({ error: 'too_many_messages' }, { status: 400 })
+}
+const totalChars = messages.reduce(
+  (sum: number, m: Message) =>
+    sum + (typeof m.content === 'string' ? m.content.length : JSON.stringify(m.content).length),
+  0
+)
+if (totalChars > MAX_CONTENT_CHARS) {
+  return NextResponse.json({ error: 'payload_too_large' }, { status: 413 })
+}
+```
+
+**Rationale:** A 40k-character free-tier limit is ~2× a typical Wikipedia article — generous for real users, impossible to exploit for token inflation. The 400k subscriber limit aligns with `withHistoryCaching` (targets long but bounded conversations). Admin is unrestricted.
+
+- [ ] Add message count + total character validation after auth resolution block
+- [ ] Admin path: unrestricted (`isAdmin` bypasses limits)
+- [ ] Free tier: max 10 messages, 40k chars
+- [ ] Subscriber: max 100 messages, 400k chars
+- [ ] Return `400` for too many messages, `413` for payload too large
+- [ ] Verify UI handles both error codes gracefully (show appropriate message, not blank failure)
+
+---
+
+#### Fix 2 — Session Counter: Tie Stateless Clients to IP (Medium)
+
+**File:** `apps/web/app/api/chat/route.ts`
+**Location:** Lines 259–272 — session counter logic inside the free-tier guard block.
+
+Currently, a client without a `cosmo_session` cookie gets a fresh UUID each request, bypassing the 3-message-per-session limit entirely. Fix: when no cookie is present, fall back to the client IP as the session key.
+
+```typescript
+const existingSession = req.cookies.get('cosmo_session')?.value
+// Stateless clients (bots, curl) that ignore Set-Cookie get pinned to their IP.
+// Browser users continue using their per-browser cookie session.
+const sessionId = existingSession ?? `ip:${ip}`
+const { allowed } = await checkAndIncrement(sessionId)
+```
+
+**Trade-off:** Shared IPs (households, offices) will share the 3-message free limit. Acceptable — the IP rate limiter (30/24h) already carries this constraint, and real users use the cookie-bearing browser path.
+
+- [ ] Update session ID fallback: `existingSession ?? \`ip:${ip}\``
+- [ ] Test: verify a cookie-less script hits the limit after 3 requests
+- [ ] Test: verify browser users still get per-browser sessions (cookie path unchanged)
+
+---
+
+#### Fix 3 — Monthly Cap: Count Tokens, Not Requests (High)
+
+**File:** `apps/web/app/api/chat/route.ts`
+**Location:** `checkMonthlyCap()` function (lines 125–142) and its call site at line 240.
+
+The current cap counts API calls (default: 2000/month). One 1.79M-token request increments the counter by 1 — invisible to this protection. Switch to counting estimated tokens instead.
+
+```typescript
+async function checkMonthlyCap(tokenEstimate: number = 1): Promise<boolean> {
+  try {
+    const key = monthlyCapKey()
+    const res = await fetch(`${REDIS_URL}/pipeline`, {
+      method: 'POST',
+      headers: { Authorization: `Bearer ${REDIS_TOKEN}`, 'Content-Type': 'application/json' },
+      body: JSON.stringify([['INCRBY', key, tokenEstimate], ['EXPIRE', key, 3024000]]),
+    })
+    const [incrResult] = (await res.json()) as [{ result: number }]
+    // ~50M tokens/month ≈ $15 at current rates. Tune via COSMO_FREE_MONTHLY_TOKEN_CAP.
+    const cap = parseInt(process.env.COSMO_FREE_MONTHLY_TOKEN_CAP ?? '50000000', 10)
+    return incrResult.result <= cap
+  } catch {
+    return true // fail open
+  }
+}
+```
+
+At the call site, pass the payload estimate: `checkMonthlyCap(Math.ceil(totalChars / 4))`.
+
+- [ ] Change `checkMonthlyCap` to accept `tokenEstimate: number = 1`
+- [ ] Switch Redis command from `INCR` to `INCRBY` with `tokenEstimate`
+- [ ] Compute `tokenEstimate = Math.ceil(totalChars / 4)` from Fix 1's `totalChars` variable
+- [ ] Add `COSMO_FREE_MONTHLY_TOKEN_CAP` env var to `.env.local` and Vercel (default: `50000000`)
+- [ ] Remove old `COSMO_FREE_MONTHLY_CAP` env var from Vercel (different unit — requests, not tokens)
+
+---
+
+#### Fix 4 — Structured Request Logging (Forensics)
+
+**File:** `apps/web/app/api/chat/route.ts`
+**Location:** Just before the `client.messages.stream(...)` call (line 296).
+
+Without logging, the April 8 incident was only detectable from the Anthropic Console the next day, with no actionable detail. Vercel captures `console.log` in function logs — costs nothing, provides a complete forensic trail.
+
+```typescript
+console.log(JSON.stringify({
+  event: 'chat_request',
+  ts: new Date().toISOString(),
+  ip,
+  session: existingSession ?? 'new',
+  accessPath: isAdmin ? 'admin' : subscribedUserId ? `subscriber:${subscriberTier}` : 'free',
+  messageCount: messages.length,
+  estimatedChars: totalChars,
+  estimatedTokens: Math.ceil(totalChars / 4),
+}))
+```
+
+This single line would have immediately surfaced the April 8 attack: `estimatedTokens: ~598000`, `ip: [attacker IP]`, `accessPath: free`.
+
+- [ ] Add structured `console.log` before stream starts
+- [ ] Fields: `ts`, `ip`, `session` (new/existing), `accessPath`, `messageCount`, `estimatedChars`, `estimatedTokens`
+- [ ] Verify entries appear in Vercel Functions dashboard → `apps/web` → `/api/chat`
+
+---
+
+#### Fix 5 — Anthropic Console Spend Limit (Immediate Backstop — do this now, no code required)
+
+Set a hard monthly spend limit directly on the `opencosmos-main` API key in the Anthropic Console. This is a circuit breaker outside the application — even an undiscovered vulnerability cannot exceed it.
+
+- [ ] Log in to console.anthropic.com → API Keys → `opencosmos-main`
+- [ ] Set monthly spend limit: $30–50 (covers legitimate free-tier budget; April 8 incident cost ~$50–80 in one day)
+- [ ] Set notification alert at 50% of the limit
+- [ ] Consider creating a separate API key for admin/internal use — isolates a free-tier exploit from burning internal budget
+
+---
+
+#### Fix 6 — Cloudflare Turnstile (Bot Prevention at Entry)
+
+Invisible CAPTCHA challenge before the first free exchange. Blocks automated traffic at the edge before it reaches the Next.js API route. Invisible to real browser users; fails for bots and scripts.
+
+**How it works:** A Turnstile widget in the chat UI generates a short-lived token per page load. The `/api/chat` route verifies this token server-side before proceeding. Apply to the free tier path only — subscribers and admin bypass (already authenticated).
+
+**Dependencies:** Cloudflare account, `TURNSTILE_SITE_KEY` + `TURNSTILE_SECRET_KEY` env vars, `@marsidev/react-turnstile` package.
+
+- [ ] Create Cloudflare account (if not already), add `opencosmos.ai` site, create Turnstile widget (Invisible mode)
+- [ ] Add `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` to `.env.local` and Vercel
+- [ ] `pnpm add @marsidev/react-turnstile` in `apps/web`
+- [ ] Add `<Turnstile siteKey={...} onSuccess={(token) => setTurnstileToken(token)} />` to the `CosmoChat` component
+- [ ] Pass `turnstileToken` in the chat POST body alongside `messages`
+- [ ] In `/api/chat`: verify token via `https://challenges.cloudflare.com/turnstile/v0/siteverify` before the rate-limit block (free-tier path only)
+- [ ] On verification failure: return `403 { error: 'bot_suspected' }` — UI shows "Something went wrong, please refresh"
+- [ ] Test: browser user passes silently; curl request without token is rejected
+
+---
+
+#### Fix 7 — Monitoring & Anomaly Alerts
+
+The April 8 incident was invisible until the next day. Close that gap with lightweight alerting.
+
+**Approach options:**
+- **Simpler (recommended first):** GitHub Actions cron that queries the Anthropic Usage API daily; posts to Slack/email if spend exceeds 2× the rolling 7-day average
+- **More powerful:** Vercel Log Drains (Pro feature) → forward structured logs from Fix 4 to a webhook for real-time alerting
+
+- [ ] Set up a Vercel usage alert for `/api/chat` function invocation spikes
+- [ ] Build or configure a daily spend check against the Anthropic Usage API (or Upstash `cosmo_monthly` key)
+- [ ] Alert threshold: 2× rolling 7-day average daily token count
+- [ ] Research Vercel Log Drains if on Pro plan — enables real-time alerting from Fix 4's structured logs
+
+---
+
+#### Implementation Order
+
+| Priority | Fix | Effort | Blocks |
+|----------|-----|--------|--------|
+| **Do now** | Fix 5: Anthropic Console spend limit | 5 min | Nothing — external action |
+| **This week** | Fix 4: Structured logging | 30 min | Forensics for all future incidents |
+| **This week** | Fix 1: Input size validation | 1 hr | Root cause of April 8 incident |
+| **This week** | Fix 3: Token-based monthly cap | 1 hr | Accurate budget enforcement |
+| **This week** | Fix 2: Session counter hardening | 30 min | Session bypass vulnerability |
+| **Before subscriber launch** | Fix 6: Cloudflare Turnstile | 2–3 hr | Bot prevention at entry |
+| **After launch** | Fix 7: Monitoring & alerts | 2–4 hr | Ongoing observability |
+
+**Gate:** No single unauthenticated request can produce more than ~10k tokens of input. Free-tier session counter cannot be bypassed by a stateless client. All requests produce a structured log entry. Monthly cap is denominated in tokens. Anthropic Console has a hard spend limit. Turnstile blocks automated requests before they reach the API route.
+
+---
+
+#### Unsolved: BYOK Account Page Display — Cross-Device Detection
+
+> **Status as of 2026-04-09:** Multiple PRs shipped, bug not resolved. Read this entire section before attempting another fix.
+
+**The symptom:** Authenticated users who have a working BYOK API connection see "Free quota" on `/account` instead of "API connection." Confirmed: a user known to be connecting via BYOK saw the wrong card consistently.
+
+---
+
+**What was tried (PRs #85–#89) and why each was insufficient:**
+
+**Attempt 1 — PR #85 / chat route `markByok`** (first idea, now in main)
+- Moved `withAuth({ ensureSignedIn: false })` outside the `if (!apiKey && !isAdmin)` guard
+- Added fire-and-forget `markByok(authenticatedUser.id)` after resolving auth
+- **Why it doesn't reliably work:** BYOK users frequently use the dialog WITHOUT being signed into WorkOS (the dialog doesn't require auth). If there's no WorkOS session cookie when the chat request arrives, `authenticatedUser` is null and `markByok` is never called. Even when the user IS signed in, if their session token is expired and the refresh fails, the `.catch(() => null)` swallows the error silently. This approach depends on a chat request arriving at the right moment under the right conditions.
+
+**Attempt 2 — PR #87 / `withAuth` guard fix** (investigation of the same chat route)
+- Confirmed the code structure was correct
+- Added `POST /api/byok` endpoint (`apps/web/app/api/byok/route.ts`)
+- Added backfill to `/account` page: if `hasByok` is false from server but key is in localStorage, call `POST /api/byok`
+- **Why it doesn't reliably work:** The backfill only fires when the user visits the account page on the SAME DEVICE where the key is stored in `localStorage`. On Device B (no key in localStorage), `localStorage.getItem(KEY_API_KEY)` returns null → no backfill fires → `hasByok` stays false → "Free quota" shows. The cross-device problem is not solved because the flag isn't reliably written from Device A.
+
+**Attempt 3 — PR #88 / account page backfill** (same as #87 — this was the same PR)
+
+**Attempt 4 — PR #89 / dialog `saveKey` + auth/me backfill** (open, not yet merged as of writing)
+- `saveKey()` in `CosmoChat.tsx` now calls `POST /api/byok` fire-and-forget
+- The `/api/auth/me` success handler in `CosmoChat` also calls `POST /api/byok` if the key is in localStorage
+- **Why it may still not reliably work:** Requires the user to open the dialog on Device A (with the key) while signed into WorkOS, AFTER this PR deploys. If they open the dialog without being signed in (no WorkOS session), `POST /api/byok` returns 401, but the `.then(() => setHasByok(true))` in the account page fires anyway (because `fetch` only rejects on network errors, not HTTP errors) — giving a false positive in the UI while leaving the server flag unset.
+
+---
+
+**The architectural constraint — why all these attempts keep failing:**
+
+BYOK keys live in `localStorage` only. To record server-side that a user has a BYOK key, you need both conditions simultaneously:
+1. The client has the key in `localStorage`
+2. The user is authenticated with WorkOS (has a valid `wos-session` cookie)
+
+These two conditions are independent. A user can:
+- Save a key in the dialog (unauthenticated) → condition 1 met, condition 2 not met
+- Sign in and visit account page on Device B (no key) → condition 2 met, condition 1 not met
+- Sign in and use the dialog on Device A (with key) → BOTH conditions met, flag gets written
+
+Only the third scenario writes the flag. The first two don't. The user may only ever encounter the third scenario by coincidence after a fix deploys.
+
+---
+
+**What to investigate next (required before another fix attempt):**
+
+1. **Verify whether `POST /api/byok` is being called at all.** Add a `console.log` to the route handler so Vercel function logs show when it's hit and whether `user` is null or not. Without this, every fix attempt is flying blind.
+
+2. **Check Upstash Redis directly** for any `cosmo_byok:v1:*` keys. If none exist for any user, the flag has never been written by any mechanism — which would confirm the auth/sync gap described above.
+
+3. **Confirm the `.then(() => setHasByok(true))` bug** in the account page backfill. This call fires even when the server returns 401 (non-network errors don't reject fetch promises). So the account page UI may show "API connection" locally even though the server flag was never written, masking the real failure.
+
+4. **Confirm whether the test user's device (Device A, with the key) has visited `/account` or the dialog after PR #87 deployed (2026-04-09T22:35Z).** If not, no write path has been triggered yet.
+
+---
+
+**The correct fix (not yet implemented):**
+
+Stop relying on fire-and-forget writes from chat requests. Instead: when a user visits `/account` and they ARE authenticated (guaranteed, since the route redirects unauthenticated users), perform an authoritative sync:
+
+1. If `localStorage.getItem('cosmo_api_key')` is non-empty on this device → `POST /api/byok` AND check `res.ok` before setting `hasByok: true`
+2. If `hasByok` is true from the server → show "API connection" (already works)
+3. If neither → show "Free quota"
+
+The account page already does step 1 (PR #88), but the bug is `fetch('/api/byok', { method: 'POST' }).then(() => setHasByok(true))` — the `.then` fires on 401 too. Fix: check `res.ok`.
+
+But the deeper fix is: stop requiring the flag to have been pre-written by a chat interaction. The account page is the authoritative sync point. If the key is here, write the flag here. If the key is not here, we cannot know — and should say so honestly.
+
+**For cross-device visibility specifically:** the only reliable architecture is one that stores a server-side indicator of BYOK status that is written EXPLICITLY by a user action (key save), not opportunistically during chat. This exists now (`POST /api/byok`), but all call sites call it fire-and-forget and ignore the response, making silent failures invisible.
+
+---
+
 ## Phase 1: Cosmo Speaks (Future 1 — BYOK Wisdom Interface)
 
 
@@ -80,9 +367,8 @@ How Cosmo gets better over time — not through model fine-tuning, but through t
 - **Token economics must be sustainable.** See [Token Economics in Context](#token-economics-phase-1b-baseline). The margin must cover infrastructure + contribute to Shalom's time.
 - **Engage Optimus** to architect the billing + usage tracking system once Cosmo is running on Claude API.
 
-#### Bot Protection (remaining)
-- [ ] **Cloudflare Turnstile** — lightweight invisible challenge before the first free exchange; blocks automated traffic without friction for real visitors
-- [ ] **Monitoring & alerts** — track free-tier usage patterns; alert on anomalies (request spikes, unusual IP distribution, rapid-fire exchanges)
+#### API Security & Cost Protection
+→ Full plan at [**Next Up: API Security & Cost Protection**](#api-security--cost-protection) — 7 fixes, implementation order, and the April 8 incident post-mortem. Blocking for subscriber launch.
 
 #### Conversation Infrastructure
 - [x] Build Cosmo conversation endpoint in `apps/web`
