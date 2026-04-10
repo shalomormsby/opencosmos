@@ -1,9 +1,9 @@
 # Cosmo Voice Interaction — Provider Research & Decision Guide
 
-> **Status: Provider selection reopened.** Two emerging alternatives — Chatterbox (Apache 2.0, self-hosted) and Mistral Voxtral (open weights) — surfaced in April 2026 with quality claims that exceed ElevenLabs Flash. See CTO Analysis below before committing to ElevenLabs.
+> **Status: Provider selection reopened.** Four alternatives to ElevenLabs Flash now warrant evaluation. See CTO Analysis below before committing. Provider decision blocked until that analysis is complete.
 
 **Created:** 2026-03-29
-**Last updated:** 2026-04-10 (Chatterbox + Voxtral evaluation added)
+**Last updated:** 2026-04-10 (Chatterbox, Voxtral, Fish Audio, PlayHT added)
 
 ## Decisions Made
 
@@ -16,9 +16,9 @@
 
 ---
 
-## CTO Analysis — Chatterbox & Voxtral (April 2026)
+## CTO Analysis — Four Alternatives to ElevenLabs (April 2026)
 
-> Two open-weight models surfaced that claim to match or exceed ElevenLabs Flash v2.5 in quality. This analysis evaluates whether they're viable for Cosmo before the ElevenLabs path is locked in.
+> Four providers now compete for the Cosmo TTS slot. Two are managed APIs (Fish Audio, PlayHT) that reduce cost without adding infrastructure. Two are open-weight models (Chatterbox, Voxtral) that could reduce cost to near-zero with self-hosting trade-offs. ElevenLabs Flash remains the confirmed fallback.
 
 ### Chatterbox TTS (Apache 2.0, self-hosted)
 
@@ -91,17 +91,106 @@ The quality claim is the strongest of any provider evaluated. The streaming arch
 
 ---
 
+### Fish Audio S2 Pro — The Managed API Undercutter
+
+**What it is:** Pure pay-as-you-go TTS API. Pricing: **$15.00 per 1M UTF-8 bytes** — which for English text (1 byte ≈ 1 character) works out to **$0.015/1K chars**. That's roughly 70% cheaper than ElevenLabs Flash ($0.08/1K chars), with no infrastructure to run.
+
+**License:** Managed API — commercially licensed by definition. No self-hosting required, no weights to license.
+
+**The byte encoding caveat:** For English Cosmo responses, byte ≈ char. If Cosmo ever speaks Japanese or Arabic (multi-byte UTF-8: 2–3 bytes/char), cost per word increases proportionally. Irrelevant for the current English-only use case; worth noting if multilingual voice is ever considered.
+
+**The session economics:**
+
+At $0.015/1K chars, a typical Cosmo exchange (~1,875 chars) costs $0.028 in TTS — vs $0.150 on ElevenLabs. Per session:
+
+| | ElevenLabs Flash | Fish Audio S2 Pro | Savings |
+|---|---|---|---|
+| TTS cost/exchange | $0.150 | **$0.028** | 81% |
+| TTS cost/session (10 exchanges) | $1.60 | **$0.28** | 83% |
+| Total (+ Claude + STT) | ~$1.76 | **~$0.44** | 75% |
+
+**Voice tier access at Fish Audio pricing:**
+
+| Tier | Budget | Text sessions | Fish Audio voice sessions |
+|------|--------|--------------|--------------------------|
+| Spark | $2.28 | ~17 | **~8** ✅ genuinely viable |
+| Flame | $4.70 | ~36 | **~17** ✅ generous |
+| Hearth | $9.55 | ~73 | **~34** ✅ very generous |
+
+This changes the access model fundamentally. At Fish Audio pricing, voice is viable at all tiers, including Spark. The "Hearth-only" constraint that exists at ElevenLabs pricing disappears entirely. The economics.md allotment model (separate voice-minutes pool) may be unnecessary — the token budget itself could absorb voice usage.
+
+**What needs verification:**
+
+- **Quality:** "Top-tier expressivity" is a claim. Fish Audio must be heard specifically on contemplative, warm, unhurried speech — Cosmo's register. Not all high-expressivity TTS handles slow, considered cadence well.
+- **Custom voice:** Verify that Fish Audio supports voice cloning or design. The "Cosmo" voice must be reproducible.
+- **Latency (TTFA):** Unverified. As a managed API, cold starts are the provider's problem, not ours — but must be <500ms in practice.
+- **Pricing durability:** "Aggressive undercutter" is a signal. These pricing strategies sometimes compress as companies pursue profitability. At $0.015/1K chars, Fish Audio is below most managed TTS providers. Risk of price increases is real. However, since it's a pure API (no infrastructure lock-in), switching cost is low.
+
+**Verdict: High priority for listening test.** If quality is verified at <500ms TTFA with a faithful Cosmo voice, Fish Audio is the pragmatic sweet spot — managed API simplicity at near-Chatterbox cost economics. The 75% cost reduction over ElevenLabs is substantial enough to warrant a same-day evaluation.
+
+---
+
+### PlayHT — The Fixed-Rate Hedge
+
+**What it is:** Subscription-based TTS API. Professional plan ~$39/mo (~600k words), Premium plan ~$99/mo with "unlimited" voice generation.
+
+**The "unlimited" caveat — and why it matters for Cosmo:**
+
+PlayHT's $99/mo "unlimited" applies to web app-style generation. **Multi-threaded WebSocket streaming for real-time conversational agents** — exactly what Cosmo's voice pipeline requires — typically requires PlayHT's Enterprise tier (custom contract, higher minimum spend).
+
+This is not a footnote. It changes the entire value proposition. If the $99/mo plan cannot support production-grade real-time streaming, PlayHT is not a viable option at any price — the product cannot be built on it.
+
+**The break-even math (if Enterprise streaming is resolved):**
+
+At Fish Audio pay-as-you-go ($0.44/voice session total), PlayHT $99/mo beats it when:
+
+```
+$99 / $0.28 (Fish Audio TTS only) = 354 full voice sessions/month to break even
+```
+
+At current subscriber scale, reaching 354 subscriber voice sessions/month requires meaningful adoption. This is not an immediate concern — it becomes relevant if Cosmo's voice feature takes off.
+
+| Monthly voice sessions | Fish Audio cost | PlayHT $99 | Cheaper option |
+|-----------------------|----------------|-----------|----------------|
+| 50 | $14 | $99 | Fish Audio |
+| 200 | $56 | $99 | Fish Audio |
+| 354 (break-even) | $99 | $99 | Equal |
+| 500 | $140 | $99 | PlayHT |
+| 1,000 | $280 | $99 | PlayHT |
+
+**Verdict: Premature, and gated on Enterprise streaming confirmation.**
+
+PlayHT's hedge logic is sound in the abstract — a fixed monthly cap prevents runaway costs if Cosmo goes unexpectedly viral. But it requires two things to be true simultaneously: (1) real-time WebSocket streaming is available on a fixed-fee plan without enterprise escalation, and (2) subscriber voice usage exceeds ~350 sessions/month. Neither is currently confirmed or likely in the near term.
+
+Start with Fish Audio pay-as-you-go. Revisit PlayHT if monthly voice session volume approaches 300 and streaming access is confirmed.
+
+---
+
 ### Revised Provider Decision Sequence
 
-Given the new information, the right sequence before implementation is:
+Given the full picture across five options, the right sequence before implementation:
 
-1. **Check Mistral la Plateforme for Voxtral API availability and pricing** (~15 minutes). If available commercially: run a listening test immediately. Highest quality + streaming-native + no ops burden = the best possible outcome if pricing is competitive.
+1. **Check Mistral la Plateforme for Voxtral API availability and pricing** (~15 min). If available commercially: run a listening test. Highest quality + streaming-native + managed API = best possible outcome if pricing is competitive with Fish Audio.
 
-2. **Deploy Chatterbox on Modal and benchmark TTFA** (~2–3 hours). Measure time-to-first-audio from a warm instance. If consistently <300ms and the Cosmo voice can be faithfully reproduced: this is the best long-term path. Apache 2.0, lowest marginal cost, no vendor dependency.
+2. **Run a Fish Audio listening test** (~1–2 hrs). Synthesize a set of Cosmo-style responses. Evaluate: does the voice feel warm, unhurried, wise — or does it collapse into "expressive but mechanical"? Verify custom voice support and TTFA. If it passes: Fish Audio is likely the near-term decision — 75% cheaper than ElevenLabs with no infrastructure complexity.
 
-3. **Keep ElevenLabs Flash as the confirmed fallback.** The custom "Cosmo" voice already exists there. If neither alternative clears the quality + latency bar, ElevenLabs with the Option A allotment model (Flame 30 min / Hearth 120 min, separate from token budget) is the decision and it's viable — see [economics.md § Voice Economics](../economics.md#voice-economics--feature-analysis).
+3. **Deploy Chatterbox on Modal and benchmark TTFA** (~2–3 hrs). If Fish Audio passes quality, this is a future optimization, not urgent. If Fish Audio fails on quality, Chatterbox is the next candidate. Gate: <300ms warm TTFA and faithful Cosmo voice recreation.
 
-> **Provider decision is unresolved.** Do not begin voice implementation until steps 1–2 above are complete. The cost and ops implications of the three paths are materially different.
+4. **PlayHT: confirm streaming API tier** (~30 min). Determine whether production real-time WebSocket streaming is available without Enterprise. If yes: note the ~350-session/month break-even point; revisit when volume approaches that threshold. If no: deprioritize.
+
+5. **Keep ElevenLabs Flash as the confirmed fallback.** Custom "Cosmo" voice already exists there. Option A allotment model (Flame 30 min / Hearth 120 min) is viable if all alternatives fail — see [economics.md § Voice Economics](../economics.md#voice-economics--feature-analysis).
+
+> **Provider decision is unresolved.** Do not begin voice implementation until steps 1–2 above are complete.
+
+### Provider Summary
+
+| Provider | Type | Quality claim | $/session (est.) | Ops burden | Status |
+|----------|------|--------------|-----------------|------------|--------|
+| Mistral Voxtral | Managed API (if avail.) | ⭐⭐⭐⭐⭐+ (above ElevenLabs in evals) | TBD | None | Verify API exists |
+| Fish Audio S2 Pro | Managed API | ⭐⭐⭐⭐⭐ (claimed) | **~$0.44** | None | Listening test needed |
+| Chatterbox | Self-hosted GPU | ⭐⭐⭐⭐⭐ (claimed, blind tests) | **~$0.003–0.18** | High | Latency + quality validation |
+| PlayHT | Managed subscription | ⭐⭐⭐⭐ | $99/mo flat | None | Streaming tier confirmation |
+| ElevenLabs Flash | Managed API | ⭐⭐⭐⭐⭐ (verified) | ~$1.76 | None | Confirmed fallback |
 
 ---
 
@@ -159,9 +248,10 @@ Research as of 2026-03-29. Prices are indicative; verify before implementation.
 
 | Provider | Model | Latency (TTFA) | Streaming | Voice Quality | Price/1K chars | Custom Voice | Notes |
 |----------|-------|---------------|-----------|--------------|----------------|--------------|-------|
-| **Mistral** | Voxtral | TBD (streaming-native) | Yes | ⭐⭐⭐⭐⭐+ (above ElevenLabs Flash in human pref. evals as of 03/2026) | TBD — API pricing unknown | TBD | ⚠️ **Weights are CC BY-NC (commercial use blocked).** API access via la Plateforme may be commercially licensed — verify first. If available: highest quality + streaming-native + no self-hosting. |
-| **Chatterbox** | — | Unknown (warm: target <300ms) | Likely (verify) | ⭐⭐⭐⭐⭐ (reportedly competitive with ElevenLabs in blind tests) | ~$0 API cost (self-hosted GPU) | Yes (cloning) | ✅ Apache 2.0 — fully commercial. Self-hosted via Modal/Replicate. ~$0.003/session at volume vs $1.60 ElevenLabs. Cold starts are a latency risk — warm instances required. Custom "Cosmo" voice must be recreated. |
-| **ElevenLabs** | Flash v2.5 | ~75ms | Yes | ⭐⭐⭐⭐⭐ Industry benchmark | $0.08 | Yes (cloning — "Cosmo" voice already created) | Most expressive. 32 languages. Highest cost. Confirmed fallback if alternatives don't clear the bar. |
+| **Mistral** | Voxtral | TBD (streaming-native arch.) | Yes | ⭐⭐⭐⭐⭐+ (above ElevenLabs Flash in human pref. evals as of 03/2026) | TBD — API pricing unknown | TBD | ⚠️ **Weights are CC BY-NC (commercial use blocked).** Viable only via Mistral API (la Plateforme) — verify commercial access first. If available: highest quality + streaming-native, no self-hosting. |
+| **Fish Audio** | S2 Pro | TBD (managed API) | Yes | ⭐⭐⭐⭐⭐ (claimed: "top-tier expressivity") | **$0.015/1K bytes** (~70% cheaper than ElevenLabs) | Verify | Managed API, pure pay-as-you-go. English: bytes ≈ chars. Quality and TTFA unverified for Cosmo's register. Pricing durability risk (aggressive undercutter). |
+| **Chatterbox** | — | Unknown (warm instance: target <300ms) | Likely (verify) | ⭐⭐⭐⭐⭐ (reportedly competitive with ElevenLabs in blind tests) | ~$0 API cost + GPU hosting (~$0.003–0.05/session) | Yes (cloning) | ✅ Apache 2.0 — fully commercial. Self-hosted via Modal/Replicate. Cold starts require warm instances. Custom "Cosmo" voice must be recreated. |
+| **ElevenLabs** | Flash v2.5 | ~75ms | Yes | ⭐⭐⭐⭐⭐ Industry benchmark (verified) | $0.08 | Yes (cloning — "Cosmo" voice already created) | Confirmed fallback. Most expressive. Custom voice exists. Highest per-char cost. |
 | **ElevenLabs** | Turbo v2.5 | ~250–300ms | Yes | ⭐⭐⭐⭐⭐ | $0.08 | Yes | Same quality, higher latency. Use Flash for real-time. |
 | **Cartesia** | Sonic 3 | ~sub-100ms | Yes (streaming-first) | ⭐⭐⭐⭐ Strong | ~$0.03/min | Yes | Purpose-built for real-time. Architecture optimized for streaming. Emerging competitor to ElevenLabs. |
 | **Deepgram** | Aura-2 | ~90–200ms | Yes | ⭐⭐⭐⭐ Professional | $0.03/1K chars | No | Enterprise-grade. Excellent cost-quality ratio. $200 free credit to start. Best for high-volume. |
@@ -197,6 +287,8 @@ STT is less complex — latency and accuracy are the main criteria. All viable o
 |----------|-----------------|-----------------|----------------------------------|--------------|
 | **Mistral Voxtral (API)** | TBD | ~$0.03 | ~$0.13 | **TBD** |
 | **Chatterbox (Modal warm)** | ~$0.003–0.05* | ~$0.00 (browser STT) | ~$0.13 | **~$0.13–0.18** |
+| **Fish Audio S2 Pro** | ~$0.28 | ~$0.00 (browser STT) | ~$0.13 | **~$0.41** |
+| **PlayHT** | $99/mo flat** | ~$0.00 | ~$0.13 | **$99+/mo** |
 | **ElevenLabs Flash** | ~$1.60 | ~$0.03 | ~$0.13 | **~$1.76** |
 | **Cartesia Sonic 3** | ~$0.36 | ~$0.03 | ~$0.13 | **~$0.52** |
 | **Deepgram Aura-2** | ~$0.60 | ~$0.02 | ~$0.13 | **~$0.75** |
@@ -206,7 +298,9 @@ STT is less complex — latency and accuracy are the main criteria. All viable o
 
 \* Chatterbox cost includes Modal warm-instance keep-alive amortized across usage. At low volumes (< 2 sessions/day), keep-alive dominates. At subscriber-scale usage, cost approaches the GPU compute floor (~$0.003/session).
 
-Voice adds **1–14× cost** over text-only depending on provider. At ElevenLabs pricing, voice is a premium feature. At Chatterbox pricing, voice is near-free and viable at all tiers. This is the most significant variable in the tier and access model decision.
+\** PlayHT modeled as fixed monthly fee. Break-even vs Fish Audio: ~354 full voice sessions/month. Enterprise tier may be required for production WebSocket streaming — confirm before evaluating.
+
+Voice adds **1–14× cost** over text-only depending on provider. At ElevenLabs pricing, voice is a premium feature. At Fish Audio pricing, voice is viable at all tiers. At Chatterbox pricing, voice is near-free. Provider choice is the single largest variable in the tier and access model decision.
 
 ### Voice impact on subscription tier budgets
 
@@ -236,9 +330,11 @@ Path 1 is recommended as the starting point. Revisit if usage data shows high vo
 
 - [x] ~~**Does ElevenLabs' voice quality differentiation justify ~3–5× the cost of Cartesia or Google WaveNet?**~~ **Resolved.** Yes — listening test confirmed ElevenLabs quality is meaningfully differentiated. However, this comparison predates Chatterbox and Voxtral. Re-evaluate against those two specifically.
 - [x] ~~**Does Cosmo need a custom voice?**~~ **Resolved.** Yes — custom voice "Cosmo" created in ElevenLabs. Voice identity is provider-independent; must be reproduced in whichever provider is selected.
-- [ ] **Is Mistral Voxtral available via commercial API (la Plateforme)?** Check api.mistral.ai. If yes: what's the pricing? This is the highest-priority check — resolves the license question and opens the best potential option.
-- [ ] **Does Chatterbox on Modal hit <300ms TTFA from a warm instance?** Deploy and benchmark. TTFA is the make-or-break constraint. Quality listening test with Cosmo voice recreation is the second gate.
-- [ ] **TTS provider decision** — Blocked until the two checks above are complete. Fallback: ElevenLabs Flash with Option A allotment model (see [economics.md](../economics.md)).
+- [ ] **Is Mistral Voxtral available via commercial API (la Plateforme)?** Check api.mistral.ai. If yes and competitive pricing: immediate listening test. Highest quality claim + streaming-native.
+- [ ] **Does Fish Audio S2 Pro pass the Cosmo voice quality bar?** Run a listening test with contemplative, unhurried Cosmo-register text. Verify TTFA and custom voice support. If it passes: likely the decision.
+- [ ] **Does Chatterbox on Modal hit <300ms TTFA from a warm instance?** Benchmark after Fish Audio evaluation. Needed only if Fish Audio fails on quality.
+- [ ] **Does PlayHT support production WebSocket streaming on a fixed-fee plan (not enterprise)?** Verify before considering PlayHT further. If enterprise is required, deprioritize.
+- [ ] **TTS provider decision** — Blocked until Voxtral API check + Fish Audio listening test are complete. Fallback: ElevenLabs Flash (see [economics.md](../economics.md)).
 - [ ] **STT: browser Web Speech API vs. Deepgram/Whisper?** Web Speech API is free and surprisingly accurate. Test it first before committing to a paid API — this is a quick win if it's acceptable.
 - [ ] **Streaming architecture:** WebSocket streaming (ElevenLabs supports) vs. chunked HTTP streaming? Affects implementation complexity. If Chatterbox is selected, verify streaming support on Modal. Decide before building.
 - [ ] **Tier access model:** Voice as Flame+ feature vs. separate add-on? At ElevenLabs pricing: Flame+ only. At Chatterbox pricing: potentially all tiers. Can't finalize until provider is decided. See [economics.md § Voice](../economics.md#voice-economics--feature-analysis).
@@ -248,12 +344,14 @@ Path 1 is recommended as the starting point. Revisit if usage data shows high vo
 
 ## Recommended Next Steps
 
-1. **Check Mistral la Plateforme for Voxtral API** (~15 min) — visit api.mistral.ai. If Voxtral is available commercially: run a listening test and get pricing. If yes and competitive: leading candidate. If not available: move to step 2.
-2. **Deploy Chatterbox on Modal and benchmark** (~2–3 hrs) — warm instance TTFA is the gate. If <300ms consistently and Cosmo voice recreation is faithful: this becomes the default path. Apache 2.0, lowest cost, no vendor lock-in.
-3. **STT prototype** — Test Web Speech API in the browser. If accuracy is acceptable for conversational input, use it — removes a paid dependency.
-4. **Decide: tier access model** — Can't finalize until provider is known. At ElevenLabs: Flame+ with separate allotment. At Chatterbox/Voxtral: potentially all tiers. See [economics.md](../economics.md).
-5. **Engage Optimus** — once provider and STT are decided, architect the streaming voice pipeline.
-6. **Male voice option** — revisit after initial voice is live.
+1. **Check Mistral la Plateforme for Voxtral API** (~15 min). If commercially available and competitive pricing: run listening test immediately.
+2. **Run Fish Audio S2 Pro listening test** (~1–2 hrs). Synthesize Cosmo-register responses. Evaluate warmth, unhurried cadence, expressiveness. Verify custom voice and TTFA. If it passes: likely the decision — 75% cheaper than ElevenLabs, zero infrastructure.
+3. **STT prototype** — Test Web Speech API before committing to a paid STT API.
+4. **Deploy Chatterbox on Modal and benchmark** (~2–3 hrs) — only if Fish Audio fails on quality. Warm instance TTFA <300ms is the gate.
+5. **Confirm PlayHT streaming tier** (~30 min) — verify whether $99/mo includes production WebSocket streaming without enterprise. File for later; revisit at ~300+ voice sessions/month.
+6. **Decide: tier access model** — finalizes after provider decision. At Fish Audio pricing, voice is viable at all tiers and may not need a separate allotment at all.
+7. **Engage Optimus** — once provider and STT are decided.
+8. **Male voice option** — revisit after initial voice is live.
 
 ---
 
@@ -270,3 +368,9 @@ Path 1 is recommended as the starting point. Revisit if usage data shows high vo
 - [Artificial Analysis TTS Leaderboard](https://artificialanalysis.ai/text-to-speech) — independent quality benchmarks
 - [Gladia: Best TTS APIs for Developers in 2026](https://www.gladia.io/blog/best-tts-apis-for-developers-in-2026-top-7-text-to-speech-services)
 - [AssemblyAI: Top TTS APIs in 2026](https://www.assemblyai.com/blog/top-text-to-speech-apis)
+- [Fish Audio Pricing](https://fish.audio/en/pricing/) — $15/1M bytes pay-as-you-go
+- [Fish Audio API Docs](https://fish.audio/en/api-docs/) — TTS streaming API reference
+- [PlayHT Pricing](https://play.ht/pricing/) — Professional $39/mo, Premium $99/mo; verify API streaming tier
+- [Chatterbox GitHub](https://github.com/resemble-ai/chatterbox) — Apache 2.0 TTS model
+- [Mistral la Plateforme](https://console.mistral.ai/) — check for Voxtral API access
+- [Modal GPU Pricing](https://modal.com/pricing) — serverless GPU hosting for Chatterbox
