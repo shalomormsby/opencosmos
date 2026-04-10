@@ -940,7 +940,7 @@ All benefit calls use `Promise.allSettled()` — a failure in one never blocks t
 
 > ⚠️ **Limitation — free tier only:** This method adds users as free Substack subscribers. It does **not** grant a paid Substack subscription. Flame and Hearth subscribers receive the newsletter but are not marked as paid Substack members.
 >
-> **TODO:** Apply for the Substack partner program to enable programmatic paid subscription gifting. This would let Flame/Hearth subscribers receive full paid Substack access. See `docs/projects/three-futures-roadmap.md → Substack partner API`.
+> **TODO:** Apply for the Substack partner program to enable programmatic paid subscription gifting. This would let Flame/Hearth subscribers receive full paid Substack access. See `docs/pm.md → Phase 1b → Substack partner API`.
 
 **On cancellation:** Substack subscribers are intentionally **not removed**. Revoking newsletter access on plan cancellation is punitive and hurts goodwill. Users can unsubscribe themselves if desired.
 
@@ -1085,7 +1085,8 @@ The original three-tier solar-powered sovereignty model (Sun-Grace Protocol, Lun
 - [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
 - [WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy
 - [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Operational system prompt (v2)
-- [three-futures-roadmap.md](projects/three-futures-roadmap.md) — Strategic plan and phased milestones
+- [pm.md](pm.md) — Active project tasks, priorities, and launch checklist
+- [strategy.md](strategy.md) — Three Futures, business model, revenue milestones
 - [chronicle.md](chronicle.md) — The story behind the decisions
 - [knowledge/README.md](../knowledge/README.md) — Knowledge corpus organization
 - [archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) — Cosmo AI technical blueprint (historical)

@@ -54,8 +54,10 @@ opencosmos/
 3. **[AGENTS.md](../AGENTS.md)** — Technical guide: file organization, document organization, build commands, conventions.
 4. **[packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice.
 5. **[docs/architecture.md](../docs/architecture.md)** — Infrastructure decisions, service map, and data flow.
-6. **[CHANGELOG.md](../CHANGELOG.md)** — Work history.
-7. **[docs/chronicle.md](../docs/chronicle.md)** — The story behind the decisions.
+6. **[docs/pm.md](../docs/pm.md)** — Active project tasks, priorities, and launch checklist.
+7. **[docs/strategy.md](../docs/strategy.md)** — Three Futures, business model, open questions.
+8. **[CHANGELOG.md](../CHANGELOG.md)** — Work history.
+9. **[docs/chronicle.md](../docs/chronicle.md)** — The story behind the decisions.
 
 ---
 
@@ -179,4 +181,4 @@ See [AGENTS.md § What NOT to Do](../AGENTS.md#what-not-to-do) for the full list
 
 ---
 
-**Current focus:** OpenCosmos migration (Phase 1) — see [docs/projects/opencosmos-migration.md](../docs/projects/opencosmos-migration.md).
+**Current focus:** Cosmo launch prep (Phase 1b) — see [docs/pm.md](../docs/pm.md).
