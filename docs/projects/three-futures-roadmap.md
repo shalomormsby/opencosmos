@@ -10,9 +10,6 @@
 
 ---
 
-## ~~Next Up:~~ 
----
-
 ## Phase 1: Cosmo Speaks (Future 1 — BYOK Wisdom Interface)
 
 

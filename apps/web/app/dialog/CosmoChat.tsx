@@ -211,6 +211,12 @@ export function CosmoChat() {
         if (!data.user) return
         setIsAuthenticated(true)
 
+        // Sync BYOK flag for users who set their key before server-side detection
+        // existed. Fire-and-forget — silently succeeds or 401s.
+        if (localStorage.getItem(KEY_API_KEY)) {
+          fetch('/api/byok', { method: 'POST' }).catch(() => {})
+        }
+
         const res = await fetch('/api/conversations')
         if (!res.ok) return
         const { conversations: serverConvs } = (await res.json()) as { conversations: Conversation[] }
@@ -368,6 +374,8 @@ export function CosmoChat() {
     localStorage.setItem(KEY_API_KEY, key)
     setApiKey(key)
     setApiKeyDraft('')
+    // Sync server-side BYOK flag so the account page reflects this key on any device.
+    fetch('/api/byok', { method: 'POST' }).catch(() => {})
   }
 
   const activatePm = async () => {
