@@ -45,6 +45,8 @@ BYOK Cosmo conversations    →   Full access for technical users, proves the ph
 Open-source framework        →   Ecosystem building, credibility
 ```
 
+> **For margin modeling, tier unit economics, and feature cost analysis, see [economics.md](economics.md).**
+
 ---
 
 ## Revenue Milestones
@@ -107,6 +109,7 @@ Tracked here for visibility. Not blocking current work unless noted.
 ## Related Documents
 
 - [pm.md](pm.md) — Active project tasks and status
+- [economics.md](economics.md) — Unit economics, tier margins, voice analysis
 - [architecture.md](architecture.md) — Infrastructure decisions, service map, data flow
 - [chronicle.md](chronicle.md) — The story behind the decisions (Chapters 3 & 4 cover Three Futures)
 - [WELCOME.md](../WELCOME.md) — The front door
