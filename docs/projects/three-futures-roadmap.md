@@ -17,6 +17,23 @@
 > **Last updated:** 2026-04-09
 > **Priority:** High — blocking for subscriber launch. A real exploit was confirmed on 2026-04-08 (see incident below).
 
+#### Status & Next Steps
+
+**Completed (shipped in PR #85, live on main):**
+- ✅ Fix 1 — Input size hard limits (free: 10 msg / 40k chars; subscriber: 100 / 400k; admin exempt)
+- ✅ Fix 2 — Session hardening: stateless clients pinned to `ip:{ip}` instead of fresh UUID per request
+- ✅ Fix 3 — Monthly cap now counts estimated tokens (`INCRBY tokenEstimate`) not requests (`INCR 1`)
+- ✅ Fix 4 — Structured JSON request logging on every `/api/chat` call (Vercel function logs)
+- ✅ Token quota UX — 3-message limit replaced with 20k-token budget + `TokenGauge` visualization
+
+**Pending — action required before subscriber launch:**
+- [ ] **Fix 5 (5 min, no code)** — Set hard monthly spend limit on `opencosmos-main` in Anthropic Console ($30–50). Also set a notification alert at 50%.
+- [ ] **Fix 6 (2–3 hr)** — Cloudflare Turnstile bot prevention — see detail below
+- [ ] **BYOK account display** — Cross-device "API connection" status still showing "Free quota" for known BYOK users — see investigation log below; requires diagnosis before next fix attempt
+
+**Not blocking launch:**
+- [ ] Fix 7 — Monitoring & anomaly alerts (after launch)
+
 #### Incident: April 8, 2026 — 1.79M Token Spike
 
 On April 8, 2026, the `opencosmos-main` Anthropic API key recorded **1,793,470 uncached input tokens** in a single day — more than 10× the previous weekly total. Anthropic billing crossed into the `200k–1M` context window tier, which carries a higher per-token rate.
@@ -67,11 +84,11 @@ if (totalChars > MAX_CONTENT_CHARS) {
 
 **Rationale:** A 40k-character free-tier limit is ~2× a typical Wikipedia article — generous for real users, impossible to exploit for token inflation. The 400k subscriber limit aligns with `withHistoryCaching` (targets long but bounded conversations). Admin is unrestricted.
 
-- [ ] Add message count + total character validation after auth resolution block
-- [ ] Admin path: unrestricted (`isAdmin` bypasses limits)
-- [ ] Free tier: max 10 messages, 40k chars
-- [ ] Subscriber: max 100 messages, 400k chars
-- [ ] Return `400` for too many messages, `413` for payload too large
+- [x] Add message count + total character validation after auth resolution block
+- [x] Admin path: unrestricted (`isAdmin` bypasses limits)
+- [x] Free tier: max 10 messages, 40k chars
+- [x] Subscriber: max 100 messages, 400k chars
+- [x] Return `400` for too many messages, `413` for payload too large
 - [ ] Verify UI handles both error codes gracefully (show appropriate message, not blank failure)
 
 ---
@@ -93,7 +110,7 @@ const { allowed } = await checkAndIncrement(sessionId)
 
 **Trade-off:** Shared IPs (households, offices) will share the 3-message free limit. Acceptable — the IP rate limiter (30/24h) already carries this constraint, and real users use the cookie-bearing browser path.
 
-- [ ] Update session ID fallback: `existingSession ?? \`ip:${ip}\``
+- [x] Update session ID fallback: `existingSession ?? \`ip:${ip}\``
 - [ ] Test: verify a cookie-less script hits the limit after 3 requests
 - [ ] Test: verify browser users still get per-browser sessions (cookie path unchanged)
 
@@ -127,10 +144,10 @@ async function checkMonthlyCap(tokenEstimate: number = 1): Promise<boolean> {
 
 At the call site, pass the payload estimate: `checkMonthlyCap(Math.ceil(totalChars / 4))`.
 
-- [ ] Change `checkMonthlyCap` to accept `tokenEstimate: number = 1`
-- [ ] Switch Redis command from `INCR` to `INCRBY` with `tokenEstimate`
-- [ ] Compute `tokenEstimate = Math.ceil(totalChars / 4)` from Fix 1's `totalChars` variable
-- [ ] Add `COSMO_FREE_MONTHLY_TOKEN_CAP` env var to `.env.local` and Vercel (default: `50000000`)
+- [x] Change `checkMonthlyCap` to accept `tokenEstimate: number = 1`
+- [x] Switch Redis command from `INCR` to `INCRBY` with `tokenEstimate`
+- [x] Compute `tokenEstimate = Math.ceil(totalChars / 4)` from Fix 1's `totalChars` variable
+- [x] Add `COSMO_FREE_MONTHLY_TOKEN_CAP` env var to `.env.local` and Vercel (default: `50000000`)
 - [ ] Remove old `COSMO_FREE_MONTHLY_CAP` env var from Vercel (different unit — requests, not tokens)
 
 ---
@@ -157,8 +174,8 @@ console.log(JSON.stringify({
 
 This single line would have immediately surfaced the April 8 attack: `estimatedTokens: ~598000`, `ip: [attacker IP]`, `accessPath: free`.
 
-- [ ] Add structured `console.log` before stream starts
-- [ ] Fields: `ts`, `ip`, `session` (new/existing), `accessPath`, `messageCount`, `estimatedChars`, `estimatedTokens`
+- [x] Add structured `console.log` before stream starts
+- [x] Fields: `ts`, `ip`, `session` (new/existing), `accessPath`, `messageCount`, `estimatedChars`, `estimatedTokens`
 - [ ] Verify entries appear in Vercel Functions dashboard → `apps/web` → `/api/chat`
 
 ---
@@ -210,15 +227,16 @@ The April 8 incident was invisible until the next day. Close that gap with light
 
 #### Implementation Order
 
-| Priority | Fix | Effort | Blocks |
-|----------|-----|--------|--------|
-| **Do now** | Fix 5: Anthropic Console spend limit | 5 min | Nothing — external action |
-| **This week** | Fix 4: Structured logging | 30 min | Forensics for all future incidents |
-| **This week** | Fix 1: Input size validation | 1 hr | Root cause of April 8 incident |
-| **This week** | Fix 3: Token-based monthly cap | 1 hr | Accurate budget enforcement |
-| **This week** | Fix 2: Session counter hardening | 30 min | Session bypass vulnerability |
-| **Before subscriber launch** | Fix 6: Cloudflare Turnstile | 2–3 hr | Bot prevention at entry |
-| **After launch** | Fix 7: Monitoring & alerts | 2–4 hr | Ongoing observability |
+| Status | Fix | Notes |
+|--------|-----|-------|
+| ✅ Done | Fix 1: Input size validation | Shipped PR #85 |
+| ✅ Done | Fix 2: Session counter hardening | Shipped PR #85 |
+| ✅ Done | Fix 3: Token-based monthly cap | Shipped PR #85 |
+| ✅ Done | Fix 4: Structured logging | Shipped PR #85 |
+| **⚠️ Do now** | Fix 5: Anthropic Console spend limit | 5 min, no code — external action |
+| **Next** | BYOK display bug | Diagnose before another fix attempt — see investigation log below |
+| **Before launch** | Fix 6: Cloudflare Turnstile | 2–3 hr |
+| After launch | Fix 7: Monitoring & alerts | 2–4 hr |
 
 **Gate:** No single unauthenticated request can produce more than ~10k tokens of input. Free-tier session counter cannot be bypassed by a stateless client. All requests produce a structured log entry. Monthly cap is denominated in tokens. Anthropic Console has a hard spend limit. Turnstile blocks automated requests before they reach the API route.
 
