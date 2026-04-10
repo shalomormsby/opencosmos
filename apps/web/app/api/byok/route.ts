@@ -7,6 +7,7 @@ import { clearByok, markByok } from '@/lib/subscription'
 // server-side flag is set immediately — no chat message required.
 export async function POST() {
   const { user } = await withAuth({ ensureSignedIn: false })
+  console.log(JSON.stringify({ event: 'byok_post', ts: new Date().toISOString(), userId: user?.id ?? null, authed: !!user }))
   if (!user) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
