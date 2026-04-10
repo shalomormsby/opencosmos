@@ -25,6 +25,7 @@ export const TIERS = {
     priceId: process.env.STRIPE_PRICE_SPARK!,
     name: 'Spark',
     description: 'For curious minds beginning the journey.',
+    features: ['152k tokens/month (≈ 6 hrs)'],
     monthlyUSD: 5,
     monthlyBudgetMicrodollars: 2_280_000,  // ~50% of $4.55 net
     weeklyBudgetMicrodollars:    570_000,
@@ -34,6 +35,10 @@ export const TIERS = {
     priceId: process.env.STRIPE_PRICE_FLAME!,
     name: 'Flame',
     description: 'For those in active dialogue with the cosmos.',
+    features: [
+      '313k tokens/month (≈ 12 hrs)',
+      'Love Is the Way Substack newsletter',
+    ],
     monthlyUSD: 10,
     monthlyBudgetMicrodollars: 4_700_000,  // ~50% of $9.40 net
     weeklyBudgetMicrodollars: 1_175_000,
@@ -42,7 +47,12 @@ export const TIERS = {
   hearth: {
     priceId: process.env.STRIPE_PRICE_HEARTH!,
     name: 'Hearth',
-    description: 'Cosmo + Substack + full Creative Powerup membership.',
+    description: 'Full depth — Cosmo, wisdom, and community.',
+    features: [
+      '637k tokens/month (≈ 24 hrs)',
+      'Love Is the Way Substack newsletter',
+      'Creative Powerup community membership',
+    ],
     monthlyUSD: 50,
     monthlyBudgetMicrodollars: 9_550_000,  // ~20% of $48.20 net (rest is margin — CP has near-zero marginal cost)
     weeklyBudgetMicrodollars: 2_387_500,
