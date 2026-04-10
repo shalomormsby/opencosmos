@@ -1,17 +1,107 @@
 # Cosmo Voice Interaction — Provider Research & Decision Guide
 
-> **Status: Provider and voice selected.** ElevenLabs Flash v2.5 with a custom voice named "Cosmo". Implementation decisions (streaming architecture, STT, tier access model) remain open. See Open Questions below.
+> **Status: Provider selection reopened.** Two emerging alternatives — Chatterbox (Apache 2.0, self-hosted) and Mistral Voxtral (open weights) — surfaced in April 2026 with quality claims that exceed ElevenLabs Flash. See CTO Analysis below before committing to ElevenLabs.
 
 **Created:** 2026-03-29
-**Last updated:** 2026-03-29 (voice selected)
+**Last updated:** 2026-04-10 (Chatterbox + Voxtral evaluation added)
 
 ## Decisions Made
 
 | Decision | Choice | Notes |
 |----------|--------|-------|
-| **TTS provider** | ElevenLabs Flash v2.5 | Selected after ~2 hours of listening tests across providers |
-| **Voice** | Custom — "Cosmo" | Created in ElevenLabs voice design tool. British accent, female. Description: *"With a slight British accent, Cosmo's voice feels grounded, authentic, and kind. Wise without being presumptuous, she's someone who invites trust. She speaks more from a place of empathy than of authority."* |
-**Feeds into:** [three-futures-roadmap.md § 1d Voice Interaction](./three-futures-roadmap.md#1d-conversation-experience-polish)
+| **TTS provider** | ⚠️ Reopened — see CTO Analysis | Was ElevenLabs Flash v2.5; two alternatives now warrant evaluation before committing |
+| **Voice** | Custom — "Cosmo" | Created in ElevenLabs voice design tool. British accent, female. Description: *"With a slight British accent, Cosmo's voice feels grounded, authentic, and kind. Wise without being presumptuous, she's someone who invites trust. She speaks more from a place of empathy than of authority."* Voice identity is provider-independent — must be reproduced in whichever provider is selected. |
+
+**Feeds into:** [pm.md § Phase 1d](../pm.md#phase-1d-conversation-polish)
+
+---
+
+## CTO Analysis — Chatterbox & Voxtral (April 2026)
+
+> Two open-weight models surfaced that claim to match or exceed ElevenLabs Flash v2.5 in quality. This analysis evaluates whether they're viable for Cosmo before the ElevenLabs path is locked in.
+
+### Chatterbox TTS (Apache 2.0, self-hosted)
+
+**What it is:** Open-source TTS model under Apache 2.0 — fully commercial use, no restrictions. Quality reportedly competitive with ElevenLabs in blind tests. Self-hosted, meaning zero per-character API cost once deployed.
+
+**License:** ✅ Apache 2.0. No commercial restrictions. Fine to use for paying subscribers.
+
+**The economics if it delivers on quality claims:**
+
+| Hosting platform | GPU | Cost/exchange (est.) | Cost/session | vs. ElevenLabs |
+|-----------------|-----|---------------------|-------------|----------------|
+| Modal (A10G, warm) | NVIDIA A10G | ~$0.0003 | ~$0.003 | **~500× cheaper** |
+| Replicate (A100, warm) | NVIDIA A100 | ~$0.0005 | ~$0.005 | **~300× cheaper** |
+| ElevenLabs Flash (baseline) | — | ~$0.150 | ~$1.60 | 1× |
+
+At those rates, voice goes from a marginal-cost premium (viable only at Hearth under the Option A allotment model) to a near-free feature viable at every tier, including the free greeting. The economics.md analysis would be entirely rewritten.
+
+**The hard problem — cold starts:**
+
+Cosmo's design constraint is <500ms TTFA. Serverless GPU platforms have cold start times of **2–5 seconds** when no instance is warm. This violates the latency requirement by 4–10×.
+
+The fix — warm instances — works but costs money even when idle:
+
+| Platform | Warm instance cost | Break-even (vs ElevenLabs at 1 voice session/day) |
+|---------|-------------------|--------------------------------------------------|
+| Modal (minimum container) | ~$0.50–2/day | ~0.3–1.1 ElevenLabs sessions/day — almost immediate |
+| Replicate (warm deployment) | ~$1–3/day | ~0.6–1.7 ElevenLabs sessions/day |
+
+**Even with warm-instance keep-alive costs, Chatterbox becomes cheaper than ElevenLabs after roughly 2 voice sessions per day.** At Cosmo's projected usage (subscribers × voice sessions/month), this tipping point is crossed immediately.
+
+**The custom Cosmo voice:**
+
+The "Cosmo" voice was created in ElevenLabs' voice design tool. That voice is locked to ElevenLabs. Switching to Chatterbox means:
+- Using Chatterbox's voice cloning with new reference audio (~30 min of clean recording from the same voice actor), OR
+- Starting from a library voice in Chatterbox and re-tuning for Cosmo's character
+
+This is not a blocker but it is real work, and voice identity matters deeply for Cosmo. The re-creation must feel like the same Cosmo. Budget a listening test session.
+
+**Verdict: High potential, requires validation.**
+
+The quality claim ("toe-to-toe with ElevenLabs in blind tests") and Apache 2.0 license are compelling. But until we run a latency benchmark on Modal/Replicate and hear a Cosmo voice recreation, this is a hypothesis. The cost case is strong enough to make the test worth 2–3 engineering hours.
+
+---
+
+### Mistral Voxtral TTS (CC BY-NC, open weights)
+
+**What it is:** Released March 2026 by Mistral. Hybrid architecture optimized for low-latency streaming. Currently scoring **above ElevenLabs Flash v2.5 in human preference evaluations for naturalness**. This is a stronger quality claim than Chatterbox — if accurate, Voxtral is the highest-quality TTS option evaluated to date.
+
+**The license problem:**
+
+The model weights are released under **CC BY-NC (Creative Commons Non-Commercial)**. OpenCosmos charges subscription fees. That is commercial use. Self-hosting Voxtral weights for paid subscribers is a **license violation**.
+
+This is not a gray area. CC BY-NC explicitly prohibits use "primarily intended for or directed toward commercial advantage or monetary compensation." Subscriptions qualify.
+
+**The only viable path: Mistral API access**
+
+Mistral operates la Plateforme (api.mistral.ai) — a commercial API for their models. If Voxtral is available there, API usage is governed by Mistral's API Terms of Service (commercially licensed), not by the CC BY-NC weights license. This is the same model as GPT-4: the weights may have different terms than the hosted API.
+
+**Status as of April 2026:** Voxtral API availability on la Plateforme is unconfirmed. **This must be verified before any further evaluation.**
+
+If Voxtral is available via Mistral API:
+- Quality potentially exceeds ElevenLabs Flash (human preference data)
+- Streaming-native ("hybrid architecture specifically designed for low-latency streaming") — likely sub-200ms TTFA
+- No self-hosting complexity — pure API call, same as ElevenLabs
+- Pricing unknown — verify at api.mistral.ai before assuming cost improvement
+
+**Verdict: Blocked for self-hosting. Potentially the best option if Mistral API access exists.**
+
+The quality claim is the strongest of any provider evaluated. The streaming architecture addresses Cosmo's latency requirement. If Mistral offers commercial API access to Voxtral at competitive pricing, this becomes the leading candidate. If API access doesn't exist or is priced above ElevenLabs, move on.
+
+---
+
+### Revised Provider Decision Sequence
+
+Given the new information, the right sequence before implementation is:
+
+1. **Check Mistral la Plateforme for Voxtral API availability and pricing** (~15 minutes). If available commercially: run a listening test immediately. Highest quality + streaming-native + no ops burden = the best possible outcome if pricing is competitive.
+
+2. **Deploy Chatterbox on Modal and benchmark TTFA** (~2–3 hours). Measure time-to-first-audio from a warm instance. If consistently <300ms and the Cosmo voice can be faithfully reproduced: this is the best long-term path. Apache 2.0, lowest marginal cost, no vendor dependency.
+
+3. **Keep ElevenLabs Flash as the confirmed fallback.** The custom "Cosmo" voice already exists there. If neither alternative clears the quality + latency bar, ElevenLabs with the Option A allotment model (Flame 30 min / Hearth 120 min, separate from token budget) is the decision and it's viable — see [economics.md § Voice Economics](../economics.md#voice-economics--feature-analysis).
+
+> **Provider decision is unresolved.** Do not begin voice implementation until steps 1–2 above are complete. The cost and ops implications of the three paths are materially different.
 
 ---
 
@@ -69,7 +159,9 @@ Research as of 2026-03-29. Prices are indicative; verify before implementation.
 
 | Provider | Model | Latency (TTFA) | Streaming | Voice Quality | Price/1K chars | Custom Voice | Notes |
 |----------|-------|---------------|-----------|--------------|----------------|--------------|-------|
-| **ElevenLabs** | Flash v2.5 | ~75ms | Yes | ⭐⭐⭐⭐⭐ Industry benchmark | $0.08 | Yes (cloning) | Most expressive. 32 languages. Highest cost. 1M free chars/mo on paid plans. |
+| **Mistral** | Voxtral | TBD (streaming-native) | Yes | ⭐⭐⭐⭐⭐+ (above ElevenLabs Flash in human pref. evals as of 03/2026) | TBD — API pricing unknown | TBD | ⚠️ **Weights are CC BY-NC (commercial use blocked).** API access via la Plateforme may be commercially licensed — verify first. If available: highest quality + streaming-native + no self-hosting. |
+| **Chatterbox** | — | Unknown (warm: target <300ms) | Likely (verify) | ⭐⭐⭐⭐⭐ (reportedly competitive with ElevenLabs in blind tests) | ~$0 API cost (self-hosted GPU) | Yes (cloning) | ✅ Apache 2.0 — fully commercial. Self-hosted via Modal/Replicate. ~$0.003/session at volume vs $1.60 ElevenLabs. Cold starts are a latency risk — warm instances required. Custom "Cosmo" voice must be recreated. |
+| **ElevenLabs** | Flash v2.5 | ~75ms | Yes | ⭐⭐⭐⭐⭐ Industry benchmark | $0.08 | Yes (cloning — "Cosmo" voice already created) | Most expressive. 32 languages. Highest cost. Confirmed fallback if alternatives don't clear the bar. |
 | **ElevenLabs** | Turbo v2.5 | ~250–300ms | Yes | ⭐⭐⭐⭐⭐ | $0.08 | Yes | Same quality, higher latency. Use Flash for real-time. |
 | **Cartesia** | Sonic 3 | ~sub-100ms | Yes (streaming-first) | ⭐⭐⭐⭐ Strong | ~$0.03/min | Yes | Purpose-built for real-time. Architecture optimized for streaming. Emerging competitor to ElevenLabs. |
 | **Deepgram** | Aura-2 | ~90–200ms | Yes | ⭐⭐⭐⭐ Professional | $0.03/1K chars | No | Enterprise-grade. Excellent cost-quality ratio. $200 free credit to start. Best for high-volume. |
@@ -103,6 +195,8 @@ STT is less complex — latency and accuracy are the main criteria. All viable o
 
 | Provider | TTS cost/session | STT cost/session | Claude cost/session (w/ caching) | Total/session |
 |----------|-----------------|-----------------|----------------------------------|--------------|
+| **Mistral Voxtral (API)** | TBD | ~$0.03 | ~$0.13 | **TBD** |
+| **Chatterbox (Modal warm)** | ~$0.003–0.05* | ~$0.00 (browser STT) | ~$0.13 | **~$0.13–0.18** |
 | **ElevenLabs Flash** | ~$1.60 | ~$0.03 | ~$0.13 | **~$1.76** |
 | **Cartesia Sonic 3** | ~$0.36 | ~$0.03 | ~$0.13 | **~$0.52** |
 | **Deepgram Aura-2** | ~$0.60 | ~$0.02 | ~$0.13 | **~$0.75** |
@@ -110,7 +204,9 @@ STT is less complex — latency and accuracy are the main criteria. All viable o
 | **Inworld TTS-1 Max** | ~$0.20 | ~$0.03 | ~$0.13 | **~$0.36** |
 | **Text-only (no voice)** | — | — | ~$0.13 | **~$0.13** |
 
-Voice adds **3–14× cost** over text-only, depending on provider. This is the most significant variable in tier pricing.
+\* Chatterbox cost includes Modal warm-instance keep-alive amortized across usage. At low volumes (< 2 sessions/day), keep-alive dominates. At subscriber-scale usage, cost approaches the GPU compute floor (~$0.003/session).
+
+Voice adds **1–14× cost** over text-only depending on provider. At ElevenLabs pricing, voice is a premium feature. At Chatterbox pricing, voice is near-free and viable at all tiers. This is the most significant variable in the tier and access model decision.
 
 ### Voice impact on subscription tier budgets
 
@@ -138,22 +234,26 @@ Path 1 is recommended as the starting point. Revisit if usage data shows high vo
 
 ## Open Questions
 
-- [x] ~~**Does ElevenLabs' voice quality differentiation justify ~3–5× the cost of Cartesia or Google WaveNet?**~~ **Resolved.** Yes — listening test confirmed ElevenLabs quality is meaningfully differentiated. Provider selected.
-- [x] ~~**Does Cosmo need a custom voice?**~~ **Resolved.** Yes — custom voice "Cosmo" created in ElevenLabs. See Decisions Made above.
-- [ ] **Should there be a male version of the Cosmo voice at a later point?** The current voice is female-presenting. A male version would give users a choice and broaden the sense that Cosmo transcends any single gender identity — which aligns with the "we" framing in Cosmo's philosophy. Worth considering once the initial voice implementation is live and tested.
-- [ ] **STT: browser Web Speech API vs. Deepgram/Whisper?** Web Speech API is free and surprisingly accurate. If STT accuracy is acceptable, this removes one API dependency. Worth testing first before committing to a paid STT API.
-- [ ] **Streaming architecture:** Does the UI need to implement WebSocket streaming (ElevenLabs supports this) or is chunked HTTP streaming sufficient? This affects implementation complexity — decide with Optimus before building.
-- [ ] **Tier access model:** Voice as Flame+ tier feature (Path 1) or separate add-on (Path 2)? Decide before implementation starts. See unit economics section for the cost implications of each path.
+- [x] ~~**Does ElevenLabs' voice quality differentiation justify ~3–5× the cost of Cartesia or Google WaveNet?**~~ **Resolved.** Yes — listening test confirmed ElevenLabs quality is meaningfully differentiated. However, this comparison predates Chatterbox and Voxtral. Re-evaluate against those two specifically.
+- [x] ~~**Does Cosmo need a custom voice?**~~ **Resolved.** Yes — custom voice "Cosmo" created in ElevenLabs. Voice identity is provider-independent; must be reproduced in whichever provider is selected.
+- [ ] **Is Mistral Voxtral available via commercial API (la Plateforme)?** Check api.mistral.ai. If yes: what's the pricing? This is the highest-priority check — resolves the license question and opens the best potential option.
+- [ ] **Does Chatterbox on Modal hit <300ms TTFA from a warm instance?** Deploy and benchmark. TTFA is the make-or-break constraint. Quality listening test with Cosmo voice recreation is the second gate.
+- [ ] **TTS provider decision** — Blocked until the two checks above are complete. Fallback: ElevenLabs Flash with Option A allotment model (see [economics.md](../economics.md)).
+- [ ] **STT: browser Web Speech API vs. Deepgram/Whisper?** Web Speech API is free and surprisingly accurate. Test it first before committing to a paid API — this is a quick win if it's acceptable.
+- [ ] **Streaming architecture:** WebSocket streaming (ElevenLabs supports) vs. chunked HTTP streaming? Affects implementation complexity. If Chatterbox is selected, verify streaming support on Modal. Decide before building.
+- [ ] **Tier access model:** Voice as Flame+ feature vs. separate add-on? At ElevenLabs pricing: Flame+ only. At Chatterbox pricing: potentially all tiers. Can't finalize until provider is decided. See [economics.md § Voice](../economics.md#voice-economics--feature-analysis).
+- [ ] **Should there be a male version of the Cosmo voice at a later point?** Worth considering after initial voice is live — gives users choice and honors Cosmo's "we" framing.
 
 ---
 
 ## Recommended Next Steps
 
-1. ~~**Listening test**~~ — Done. ElevenLabs Flash v2.5 selected. Custom voice "Cosmo" created.
-2. **STT prototype** — Test Web Speech API in the browser with a simple recording. If accuracy is acceptable for conversational input, use it and save the STT API cost.
-3. **Decide: tier access model** — Voice as Flame+ feature (Path 1) or separate add-on (Path 2)? See unit economics above.
-4. **Engage Optimus** — once STT and tier decisions are made, Optimus can architect the streaming voice pipeline (ElevenLabs Flash WebSocket streaming into the Cosmo conversation endpoint).
-5. **Revisit: male voice option** — after initial voice is live and tested with CP members.
+1. **Check Mistral la Plateforme for Voxtral API** (~15 min) — visit api.mistral.ai. If Voxtral is available commercially: run a listening test and get pricing. If yes and competitive: leading candidate. If not available: move to step 2.
+2. **Deploy Chatterbox on Modal and benchmark** (~2–3 hrs) — warm instance TTFA is the gate. If <300ms consistently and Cosmo voice recreation is faithful: this becomes the default path. Apache 2.0, lowest cost, no vendor lock-in.
+3. **STT prototype** — Test Web Speech API in the browser. If accuracy is acceptable for conversational input, use it — removes a paid dependency.
+4. **Decide: tier access model** — Can't finalize until provider is known. At ElevenLabs: Flame+ with separate allotment. At Chatterbox/Voxtral: potentially all tiers. See [economics.md](../economics.md).
+5. **Engage Optimus** — once provider and STT are decided, architect the streaming voice pipeline.
+6. **Male voice option** — revisit after initial voice is live.
 
 ---
 
