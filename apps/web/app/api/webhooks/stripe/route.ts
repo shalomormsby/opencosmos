@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import type Stripe from 'stripe'
 import { getStripe, tierFromPriceId } from '@/lib/stripe'
 import { setSubscription, deleteSubscription, userIdFromCustomerId } from '@/lib/subscription'
+import { getWorkOSUser, provisionBenefits, revokeBenefits } from '@/lib/benefits'
 
 // POST /api/webhooks/stripe
 //
@@ -63,6 +64,12 @@ export async function POST(req: NextRequest) {
           billingCycleAnchor: subscription.billing_cycle_anchor,
         })
 
+        // Provision Substack/Circle benefits for Flame and Hearth subscribers.
+        const workosUser = await getWorkOSUser(userId)
+        if (workosUser) {
+          await provisionBenefits(tier, workosUser.email, workosUser.name)
+        }
+
         console.log('[webhook/stripe] checkout.session.completed', { userId, tier })
         break
       }
@@ -109,7 +116,19 @@ export async function POST(req: NextRequest) {
         const userId = await userIdFromCustomerId(customerId)
 
         if (userId) {
+          const priceId = subscription.items.data[0]?.price.id ?? ''
+          const tier = tierFromPriceId(priceId)
+
           await deleteSubscription(userId, customerId)
+
+          // Revoke Circle membership for Hearth subscribers on cancellation.
+          if (tier) {
+            const workosUser = await getWorkOSUser(userId)
+            if (workosUser) {
+              await revokeBenefits(tier, workosUser.email)
+            }
+          }
+
           console.log('[webhook/stripe] customer.subscription.deleted', { userId })
         }
         break

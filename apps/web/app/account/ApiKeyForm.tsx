@@ -17,6 +17,8 @@ type SubscriptionState =
       monthlyUSD: number
       usagePercent: number
       billingCycleAnchor: number
+      tokensTotal: number
+      tokensUsed: number
     }
 
 export function ApiKeyForm() {
@@ -57,7 +59,12 @@ export function ApiKeyForm() {
       .then((r) => r.json())
       .then((data) => {
         if (data.subscription) {
-          setSubscription({ status: data.subscription.status, ...data.subscription })
+          setSubscription({
+            status: data.subscription.status,
+            ...data.subscription,
+            tokensTotal: data.subscription.tokensTotal ?? 0,
+            tokensUsed: data.subscription.tokensUsed ?? 0,
+          })
         } else {
           setSubscription({ status: 'none' })
         }
@@ -194,14 +201,6 @@ export function ApiKeyForm() {
 
       {/* Subscription */}
       <div className="space-y-3">
-        <div>
-          <p className="text-sm font-medium text-foreground">Subscription</p>
-          <p className="text-xs text-foreground/40 mt-0.5">
-            {isSubscribed
-              ? 'Managed API access — Cosmo uses OpenCosmos infrastructure on your behalf.'
-              : 'Subscribe for managed access — no API key required.'}
-          </p>
-        </div>
 
         {/* Active subscription — usage meter + manage */}
         {isSubscribed && (subscription.status === 'active' || subscription.status === 'past_due') && (
@@ -233,33 +232,27 @@ export function ApiKeyForm() {
               </div>
 
               {/* Usage meter */}
-              <div className="space-y-1.5">
-                <div className="flex justify-between text-xs text-foreground/40">
-                  <span>Monthly usage</span>
-                  <span>{subscription.usagePercent}%</span>
-                </div>
-                <div className="h-1.5 rounded-full bg-foreground/8 overflow-hidden">
-                  <div
-                    className={cn(
-                      'h-full rounded-full transition-all',
-                      subscription.usagePercent >= 90
-                        ? 'bg-destructive'
-                        : subscription.usagePercent >= 70
-                          ? 'bg-amber-500'
-                          : 'bg-foreground/30'
-                    )}
-                    style={{ width: `${subscription.usagePercent}%` }}
-                  />
-                </div>
-                {subscription.usagePercent >= 80 && (
-                  <p className="text-xs text-foreground/50">
-                    Approaching your monthly limit.{' '}
-                    <button onClick={openPortal} className="underline underline-offset-2">
-                      Upgrade your plan
-                    </button>{' '}
-                    or add your own API key above for unlimited access.
+              <div className="flex items-start gap-5">
+                <TokenGauge
+                  used={subscription.tokensUsed}
+                  total={subscription.tokensTotal}
+                  className="shrink-0"
+                />
+                <div className="space-y-1 min-w-0">
+                  <p className="text-xs text-foreground/40">
+                    {Math.max(0, subscription.tokensTotal - subscription.tokensUsed).toLocaleString()} of{' '}
+                    {subscription.tokensTotal.toLocaleString()} tokens remaining this month
                   </p>
-                )}
+                  {subscription.usagePercent >= 80 && (
+                    <p className="text-xs text-foreground/50">
+                      Approaching your monthly limit.{' '}
+                      <button onClick={openPortal} className="underline underline-offset-2">
+                        Upgrade your plan
+                      </button>{' '}
+                      or add your own API key above for unlimited access.
+                    </p>
+                  )}
+                </div>
               </div>
             </CardContent>
           </Card>
@@ -319,42 +312,59 @@ export function ApiKeyForm() {
 
         {/* Tier cards — shown when no active subscription */}
         {!isSubscribed && subscription.status !== 'loading' && (
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            {(Object.entries(TIERS) as [Tier, typeof TIERS[Tier]][]).map(([key, plan]) => (
-              <div
-                key={key}
-                className={cn(
-                  'relative rounded-xl border p-4 space-y-3 transition-colors',
-                  plan.highlight
-                    ? 'border-foreground/20 bg-foreground/3'
-                    : 'border-foreground/10 bg-transparent'
-                )}
-              >
-                {plan.highlight && (
-                  <Badge variant="secondary" className="absolute -top-2.5 left-4 text-xs">
-                    Popular
-                  </Badge>
-                )}
-                <div>
-                  <p className="text-sm font-semibold text-foreground">{plan.name}</p>
-                  <p className="text-xs text-foreground/40 mt-0.5">{plan.description}</p>
-                </div>
-                <div className="flex items-baseline gap-0.5">
-                  <span className="text-xl font-light text-foreground">${plan.monthlyUSD}</span>
-                  <span className="text-xs text-foreground/40">/month</span>
-                </div>
-                <Button
-                  variant={plan.highlight ? 'default' : 'outline'}
-                  size="sm"
-                  className="w-full"
-                  onClick={() => startCheckout(key)}
-                  disabled={checkoutLoading !== null}
+          <>
+            <div>
+              <p className="text-sm font-medium text-foreground">Subscription</p>
+              <p className="text-xs text-foreground/40 mt-0.5">
+                Subscribe for managed access — no API key required.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+              {(Object.entries(TIERS) as [Tier, typeof TIERS[Tier]][]).map(([key, plan]) => (
+                <div
+                  key={key}
+                  className={cn(
+                    'relative rounded-xl border p-4 space-y-3 transition-colors',
+                    plan.highlight
+                      ? 'border-foreground/20 bg-foreground/3'
+                      : 'border-foreground/10 bg-transparent'
+                  )}
                 >
-                  {checkoutLoading === key ? 'Redirecting…' : `Subscribe to ${plan.name}`}
-                </Button>
-              </div>
-            ))}
-          </div>
+                  {plan.highlight && (
+                    <Badge variant="secondary" className="absolute -top-2.5 left-4 text-xs">
+                      Popular
+                    </Badge>
+                  )}
+                  <div>
+                    <p className="text-sm font-semibold text-foreground">{plan.name}</p>
+                    <p className="text-xs text-foreground/40 mt-0.5">{plan.description}</p>
+                  </div>
+                  <ul className="space-y-1">
+                    {plan.features.map((f) => (
+                      <li key={f} className="flex items-start gap-1.5 text-xs text-foreground/50">
+                        <span className="mt-px text-[var(--color-success)] shrink-0">✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="flex items-baseline gap-0.5">
+                    <span className="text-xl font-light text-foreground">${plan.monthlyUSD}</span>
+                    <span className="text-xs text-foreground/40">/month</span>
+                  </div>
+                  <Button
+                    variant={plan.highlight ? 'default' : 'outline'}
+                    size="sm"
+                    className="w-full"
+                    onClick={() => startCheckout(key)}
+                    disabled={checkoutLoading !== null}
+                  >
+                    {checkoutLoading === key ? 'Redirecting…' : `Subscribe to ${plan.name}`}
+                  </Button>
+                </div>
+              ))}
+            </div>
+          </>
         )}
 
         {subscription.status === 'loading' && (

@@ -32,6 +32,12 @@ export async function GET() {
   const usagePercent = monthlyUsagePercent(sub.tier, usage.monthTotal)
   const tierConfig = TIERS[sub.tier]
 
+  // Token budget expressed as output-token equivalents: budget_microdollars / 15.
+  // Represents the guaranteed output ceiling — actual usage is more generous
+  // since uncached input tokens cost only 3 µ$/token vs 15 µ$/token for output.
+  const tokensTotal = Math.floor(tierConfig.monthlyBudgetMicrodollars / 15)
+  const tokensUsed = Math.floor(usage.monthTotal / 15)
+
   return NextResponse.json({
     subscription: {
       tier: sub.tier,
@@ -40,6 +46,8 @@ export async function GET() {
       monthlyUSD: tierConfig.monthlyUSD,
       usagePercent,
       billingCycleAnchor: sub.billingCycleAnchor,
+      tokensTotal,
+      tokensUsed,
     },
     hasByok,
   })

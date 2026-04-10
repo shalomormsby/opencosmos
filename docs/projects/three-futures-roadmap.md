@@ -12,6 +12,13 @@
 
 ## Next Up:
 
+- [ ] 1. Circle API key: Dashboard → Settings → API → copy your token. Add as CIRCLE_API_KEY in .env.local and Vercel.
+- [ ] 2. Circle community ID: Dashboard → Settings → General → Community ID. Add as CIRCLE_COMMUNITY_ID.
+- [ ] 3. Vercel: Add both env vars in your project settings.
+- Substack caveat: The /api/v1/free endpoint is the public subscribe form — it's not an official publisher API. It reliably adds free subscribers but doesn't grant paid Substack access (which is fine, since we're giving newsletter access, not a Substack paid subscription). If you ever need programmatic paid gifting, Substack has a partner API that requires direct arrangement with them.
+
+
+
 ### API Security & Cost Protection
 
 > **Last updated:** 2026-04-09
@@ -27,12 +34,13 @@
 - ✅ Token quota UX — 3-message limit replaced with 20k-token budget + `TokenGauge` visualization
 
 **Pending — action required before subscriber launch:**
-- [ ] **Fix 5 (5 min, no code)** — Set hard monthly spend limit on `opencosmos-main` in Anthropic Console ($30–50). Also set a notification alert at 50%.
-- [ ] **Fix 6 (2–3 hr)** — Cloudflare Turnstile bot prevention — see detail below
-- [ ] **BYOK account display** — Cross-device "API connection" status still showing "Free quota" for known BYOK users — see investigation log below; requires diagnosis before next fix attempt
+- ✅ **Fix 5 (5 min, no code)** — Set hard monthly spend limit on `opencosmos-main` in Anthropic Console ($30–50). Also set a notification alert at 50%.
+- ✅ **Fix 6** — Cloudflare Turnstile bot prevention — invisible challenge on free-tier path; bots without a valid token receive 403. See detail below for Cloudflare setup steps still required.
+- ✅ **BYOK account display** — Cross-device "API connection" status now showing correctly for known BYOK users
 
 **Not blocking launch:**
 - [ ] Fix 7 — Monitoring & anomaly alerts (after launch)
+- [ ] **Substack partner API** — Apply for Substack partner program to enable programmatic paid newsletter access for Flame/Hearth subscribers. Current implementation uses the public free-subscription form endpoint which grants free-tier Substack access only. Partner API enables gifting full paid access. Contact: substack.com/for-business
 
 #### Incident: April 8, 2026 — 1.79M Token Spike
 
