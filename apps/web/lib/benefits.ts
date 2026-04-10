@@ -1,4 +1,4 @@
-import { WorkOS } from '@workos-inc/sdk'
+import { WorkOS } from '@workos-inc/node'
 import type { Tier } from './stripe'
 
 // ---------------------------------------------------------------------------
