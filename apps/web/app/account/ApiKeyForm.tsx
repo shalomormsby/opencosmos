@@ -72,7 +72,7 @@ export function ApiKeyForm() {
           const storedKey = localStorage.getItem(KEY_API_KEY)
           if (storedKey) {
             fetch('/api/byok', { method: 'POST' })
-              .then(() => setHasByok(true))
+              .then(res => { if (res.ok) setHasByok(true) })
               .catch(() => {})
           }
         }
