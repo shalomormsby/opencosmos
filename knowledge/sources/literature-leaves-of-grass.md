@@ -25,6 +25,7 @@ summary: >-
 curated_at: '2026-03-23'
 curator: shalom
 source: public-domain
+corpus_tier: source
 author: Walt Whitman
 origin_date: '1855'
 era: modern

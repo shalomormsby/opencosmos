@@ -179,4 +179,12 @@ See [AGENTS.md § What NOT to Do](../AGENTS.md#what-not-to-do) for the full list
 
 ---
 
-**Current focus:** OpenCosmos migration (Phase 1) — see [docs/projects/opencosmos-migration.md](../docs/projects/opencosmos-migration.md).
+**Current focus:** Cosmo launch prep (Phase 1b) — see [docs/pm.md](../docs/pm.md).
+
+---
+
+## Knowledge Wiki (Ambient Context)
+
+The knowledge wiki is a synthesis layer above the raw source corpus. It is always loaded here so Claude has the current index in context without being explicitly asked.
+
+@knowledge/wiki/index.md

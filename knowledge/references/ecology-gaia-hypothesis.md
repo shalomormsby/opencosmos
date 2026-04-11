@@ -26,6 +26,7 @@ summary: >-
 curated_at: '2026-03-23'
 curator: shalom
 source: original
+corpus_tier: reference
 author: James Lovelock
 origin_date: 1970s
 era: contemporary

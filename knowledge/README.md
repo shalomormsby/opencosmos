@@ -20,7 +20,23 @@ The organizing principle: **the wisdom of humanity, made accessible to both huma
 
 ## How It's Organized
 
-Documents are organized into five categories based on their **relationship to knowledge** — not by subject, discipline, or tradition. This distinction matters because it's universal: it works for Buddhist scripture and TypeScript specifications alike.
+Documents are organized into **six** categories. Five are for curated source material (organized by role); one — the **wiki** — is the synthesis layer maintained by Claude.
+
+```
+knowledge/
+├── sources/          Primary works — the originals
+├── commentary/       Analysis, interpretation, explanation
+├── reference/        Definitions, glossaries, specifications
+├── guides/           Procedures, how-to, workflows
+├── collections/      Curated groupings and reading paths
+└── wiki/             LLM-synthesized concept pages, entity summaries, cross-tradition connections
+```
+
+The wiki is always loaded into Claude's context via `@knowledge/wiki/index.md` in `.claude/CLAUDE.md`. See [Wiki Layer](#wiki-layer) below for the full spec.
+
+---
+
+Documents in the five source categories are organized by their **relationship to knowledge** — not by subject, discipline, or tradition. This distinction matters because it's universal: it works for Buddhist scripture and TypeScript specifications alike.
 
 ```
 knowledge/
@@ -240,6 +256,100 @@ Format describes the literary or structural form of a document. It matters becau
 | `glossary` | Term definitions and lookup entries | Domain glossaries |
 | `anthology` | Curated collection of shorter works | Selected poems, essay collections |
 | `letter` | Epistolary form | Seneca's letters, Rilke's *Letters to a Young Poet* |
+
+---
+
+## Wiki Layer
+
+The wiki is a **synthesis layer** between raw source texts and RAG retrieval. Rather than requiring Cosmo AI to synthesize from scratch on every query, wiki pages pre-build cross-references, extract key claims, and flag contradictions — so retrieval returns already-connected knowledge.
+
+The wiki is **always in Claude's context** via `@knowledge/wiki/index.md` in `.claude/CLAUDE.md`. This is what makes it ambient rather than explicit: Claude sees the current index at session start without being asked.
+
+### Wiki Directory Structure
+
+```
+knowledge/wiki/
+├── index.md               # Master catalog — one-liner per article by category (loaded in context)
+├── log.md                 # Append-only audit trail of wiki edits (distinct from CURATION_LOG)
+├── entities/              # People, texts, traditions — who/what
+├── concepts/              # Ideas, themes, philosophical positions — what it means
+└── connections/           # Cross-tradition synthesis pages — how they relate
+```
+
+### Wiki Article Frontmatter
+
+Wiki pages extend the base knowledge schema with additional fields:
+
+```yaml
+role: wiki                          # Always "wiki" — distinguishes from source/guide/etc.
+confidence: high|medium|speculative # How firmly grounded is this synthesis?
+status: active|superseded|archived  # Is this page current?
+synthesizes:                        # Source documents this page draws from
+  - sources/buddhism-the-dhammapada.md
+  - sources/taoism-tao-te-ching.md
+last_reviewed: 2026-04-10           # When was this page last evaluated for freshness?
+open_questions:                     # Unanswered questions this page surfaces
+  - Is Buddhist non-self compatible with Platonic soul?
+contradictions:                     # Where sources genuinely disagree
+  - Dhammapada: self is illusion; Phaedo: soul is immortal — unresolved
+```
+
+**`confidence` is the key field for continual learning.** Pages begin as `speculative` when a synthesis is first proposed. As more source material confirms the synthesis, confidence is promoted to `medium` or `high`. When new evidence contradicts a page, it is marked `superseded` with a `failure_reason` note.
+
+### Wiki Article Structure
+
+Every wiki page follows this internal structure (order matters — RAG retrieval quality depends on front-loading key information):
+
+```markdown
+## Summary
+One-paragraph synthesis of what this article covers.
+
+## Key Claims
+- Claim 1 (falsifiable, citable to a specific source)
+- Claim 2
+
+## Connections
+- [[related-article.md]] — why these are related
+
+## Contradictions
+- Source A says X; Source B says Y — open for human resolution
+
+## Open Questions
+- Unanswered question this article cannot yet resolve
+```
+
+### Wiki Skills
+
+Three Claude Code skills power the wiki workflow:
+
+| Skill | Purpose | When to use |
+|-------|---------|-------------|
+| `/knowledge-compile convo` | Extract durable synthesis from the current conversation | After a conversation produces a notable cross-tradition insight |
+| `/knowledge-compile incoming/<file>` | Process a staged external reference into wiki pages | When an article or text drops into `knowledge/incoming/` |
+| `/knowledge-compile log` | Scan CURATION_LOG for recent additions and update affected wiki pages | After ingesting new source documents |
+| `/knowledge-review` | Health check: orphan pages, cross-reference symmetry, staleness, open questions | Periodically or before a major synthesis session |
+| `/knowledge-lookup <query>` | Search wiki pages for relevant synthesis before starting domain work | Before asking Cosmo a question already covered by the wiki |
+
+**Event-driven trigger:** The canonical trigger for compilation is "I just learned something durable" — not a scheduled cron job. When a conversation produces an insight worth keeping, run `/knowledge-compile convo` immediately.
+
+### Wiki Linting Rules (for `/knowledge-review`)
+
+- **Orphan pages:** Any wiki page with no entries in `synthesizes` or no items in `Connections` section is an orphan. Flag for completion.
+- **Cross-reference symmetry:** If page A links to page B, verify B links back to A. Asymmetric links indicate incomplete synthesis.
+- **Staleness:** Any `status: active` page with `last_reviewed` more than 90 days ago should be flagged for re-evaluation.
+- **Confidence promotion:** Any `confidence: speculative` page whose `synthesizes` list now includes 3+ source documents is a candidate for promotion to `confidence: medium`.
+- **Supersession:** When a page's key claims are contradicted by new source evidence, mark it `status: superseded`, add a `failure_reason` note, and create a replacement page.
+
+### Ambient Context Setup
+
+To load the wiki index into every Claude session:
+
+```
+# Add this line to .claude/CLAUDE.md (already done):
+@knowledge/wiki/index.md
+```
+
+Claude Code expands this at session start. Claude sees the full wiki index without being explicitly asked — the table of contents is always open.
 
 ---
 

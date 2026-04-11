@@ -13,10 +13,11 @@ summary: >
 curated_at: 2026-03-21
 curator: shalom
 source: original
+corpus_tier: source
 related_docs:
-  - cosmo-foundations.md
-  - socrates-foundations.md
-  - optimus-foundations.md
+  - collections/cosmo-foundations.md
+  - collections/socrates-foundations.md
+  - collections/optimus-foundations.md
 ---
 
 # Sol Foundations — Core Texts

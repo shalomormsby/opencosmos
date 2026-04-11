@@ -20,6 +20,7 @@ summary: >-
 curated_at: '2026-03-22'
 curator: shalom
 source: original
+corpus_tier: source
 ---
 # The Dhammapada
 Translated by Thomas Byrom

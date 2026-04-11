@@ -414,6 +414,78 @@ These are `role: collection` documents that point to source texts in the corpus.
 
 ---
 
+## Knowledge Wiki Layer
+
+**Added:** 2026-04-10 | **Reference:** [knowledge/guides/opencosmos-knowledge-wiki-workflow.md](../knowledge/guides/opencosmos-knowledge-wiki-workflow.md)
+
+A synthesis layer sits between raw source texts and RAG retrieval, based on Andrej Karpathy's LLM Wiki pattern. Rather than synthesizing from raw text on every query, the wiki pre-builds cross-references, extracts key claims, and documents contradictions at ingestion time.
+
+### Three-Layer Architecture
+
+```
+Layer 1 — Raw sources (immutable)
+  knowledge/sources/   knowledge/scriptures/   knowledge/references/
+
+Layer 2 — Wiki synthesis (LLM-maintained, compounding)    ← this layer
+  knowledge/wiki/
+    ├── index.md              # Always loaded in Claude's context via @import
+    ├── log.md                # Append-only audit trail
+    ├── entities/             # Person, text, tradition summaries
+    ├── concepts/             # Cross-tradition concept pages
+    └── connections/          # Explicit cross-tradition comparisons
+
+Layer 3 — Schema and conventions
+  knowledge/README.md   knowledge/wiki/index.md   frontmatter
+```
+
+### Ambient Context
+
+The wiki index is always loaded into Claude's context at session start via `.claude/CLAUDE.md`:
+
+```
+@knowledge/wiki/index.md
+```
+
+This makes the wiki **ambient** — Claude sees the current table of contents without being explicitly asked to look. The difference between a wiki you remember to query and one that's always present.
+
+### Event-Driven, Not Scheduled
+
+Compilation is triggered by "I just learned something durable" — not a cron job. Three skills power the workflow:
+
+| Skill | Purpose |
+|-------|---------|
+| `/knowledge-compile convo` | Extract synthesis from current conversation → write/update wiki pages |
+| `/knowledge-compile incoming/<file>` | Process staged document → wiki pages |
+| `/knowledge-compile log` | Scan recent CURATION_LOG → update affected wiki pages |
+| `/knowledge-review` | Health check: orphans, asymmetric links, staleness, promotion candidates |
+| `/knowledge-lookup <query>` | Search wiki before domain work |
+
+### Updated Ingestion Pipeline
+
+```
+stage → /groom → pnpm knowledge:publish → /knowledge-compile log
+```
+
+The final step updates wiki pages affected by the newly published source document.
+
+### Wiki Frontmatter Schema (key fields)
+
+```yaml
+role: wiki
+confidence: high|medium|speculative   # promotes as corpus confirms synthesis
+status: active|superseded|archived    # superseded when new evidence contradicts
+synthesizes: [list of source paths]   # grounding in primary sources
+last_reviewed: YYYY-MM-DD
+open_questions: [...]                 # accumulated gaps for future source additions
+contradictions: [...]                 # where sources genuinely disagree
+```
+
+### Why This Matters for the AI Triad
+
+The Triad's synthesis quality depends on pre-connected knowledge, not just raw retrieval. A concept page on `impermanence` that already links Buddhist *anicca*, Taoist flux, and Whitman's cycles is retrieved as a unified synthesis — rather than requiring the model to derive that connection during inference. Richer wiki pages → richer Triad responses.
+
+---
+
 ## User Authentication & Accounts
 
 ### Provider: WorkOS AuthKit
