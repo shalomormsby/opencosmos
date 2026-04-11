@@ -14,8 +14,8 @@
  *   pnpm knowledge:health
  */
 
-import { readFileSync, existsSync, readdirSync } from 'node:fs'
-import { resolve } from 'node:path'
+import { readFileSync, existsSync, readdirSync, statSync } from 'node:fs'
+import { resolve, relative, dirname } from 'node:path'
 import matter from 'gray-matter'
 import './knowledge/shared.js' // loads .env
 import { DOMAINS, ROLES, KNOWLEDGE_DIR, scanCorpus, type CorpusEntry } from './knowledge/shared.js'
@@ -36,6 +36,7 @@ function main() {
   printCrossRefIntegrity(corpus)
   printIslands(corpus)
   printImportPriority(corpus)
+  printBrokenBodyLinks()
 
   console.log('')
 }
@@ -269,6 +270,77 @@ function printImportPriority(corpus: CorpusEntry[]) {
       console.log(`      Referenced in: ${item.collections.join(', ')} | Score: ${item.score}`)
     }
   }
+}
+
+// ─── Broken Body Links ──────────────────────────────────────────────────────
+
+function findMarkdownFiles(dir: string, skipDirs: string[] = []): string[] {
+  const results: string[] = []
+  for (const entry of readdirSync(dir)) {
+    if (skipDirs.includes(entry)) continue
+    const full = resolve(dir, entry)
+    if (statSync(full).isDirectory()) {
+      results.push(...findMarkdownFiles(full, skipDirs))
+    } else if (entry.endsWith('.md')) {
+      results.push(full)
+    }
+  }
+  return results
+}
+
+function resolveInternalLink(sourceFile: string, href: string): string | null {
+  // Strip URL fragment and quoted title attributes (e.g. "title")
+  const clean = href.split('#')[0].replace(/\s+"[^"]*"$/, '').trim()
+  if (!clean) return null
+
+  if (clean.startsWith('/knowledge/')) {
+    // Absolute site path → resolve from knowledge dir root
+    const rest = clean.slice('/knowledge/'.length).replace(/\/$/, '')
+    return resolve(KNOWLEDGE_DIR, rest)
+  }
+
+  if (clean.startsWith('/')) {
+    // Absolute path outside /knowledge/ — can't verify from filesystem
+    return null
+  }
+
+  // Relative path — resolve from source file's directory, strip trailing slash
+  return resolve(dirname(sourceFile), clean.replace(/\/$/, ''))
+}
+
+function printBrokenBodyLinks() {
+  const files = findMarkdownFiles(KNOWLEDGE_DIR, ['incoming', 'node_modules'])
+  const broken: { file: string; line: number; href: string }[] = []
+  const LINK_RE = /\[([^\]]*)\]\(([^)]+)\)/g
+
+  for (const file of files) {
+    const lines = readFileSync(file, 'utf-8').split('\n')
+    for (let i = 0; i < lines.length; i++) {
+      LINK_RE.lastIndex = 0
+      let match
+      while ((match = LINK_RE.exec(lines[i])) !== null) {
+        const href = match[2]
+        if (href.startsWith('http') || href.startsWith('mailto:') || href.startsWith('#')) continue
+        const resolved = resolveInternalLink(file, href)
+        if (resolved === null) continue // outside /knowledge/ — skip
+        // Accept if the path exists as-is (file or directory), or with .md appended
+        if (!existsSync(resolved) && !existsSync(resolved + '.md')) {
+          broken.push({ file: relative(KNOWLEDGE_DIR, file), line: i + 1, href })
+        }
+      }
+    }
+  }
+
+  console.log('── Broken Body Links ───────────────────────────────────')
+  if (broken.length === 0) {
+    console.log('   ✅ All inline links resolve correctly.')
+  } else {
+    console.log(`   ⚠️  ${broken.length} broken link${broken.length > 1 ? 's' : ''}:`)
+    for (const { file, line, href } of broken) {
+      console.log(`      ${file}:${line} → ${href}`)
+    }
+  }
+  console.log('')
 }
 
 main()

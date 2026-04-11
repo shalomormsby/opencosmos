@@ -162,7 +162,7 @@ This updates all wiki pages affected by the newly published document. The trigge
 - Add frontmatter (the publication CLI handles that)
 - Split or delete files
 
-See the full reference: [Formatting Raw Text for Publication](opencosmos-knowledge-formatting-guide.md)
+See the full reference: [Formatting Raw Text for Publication](/knowledge/guides/opencosmos-knowledge-formatting-guide)
 
 ---
 

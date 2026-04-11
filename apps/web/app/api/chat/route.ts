@@ -237,7 +237,7 @@ function withHistoryCaching(messages: Message[]): Message[] {
 async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
   const secret = process.env.TURNSTILE_SECRET_KEY
   if (!secret) return true   // Not configured — skip (dev or pre-Cloudflare deploy)
-  if (!token) return false   // Missing token — reject
+  if (!token) { console.log('[turnstile] missing token'); return false }   // Missing token — reject
 
   try {
     const params = new URLSearchParams({ secret, response: token })
@@ -248,7 +248,9 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
       body: params,
     })
     const data = await res.json() as { success: boolean; 'error-codes'?: string[] }
-    if (!data.success) {
+    if (data.success) {
+      console.log('[turnstile] verified ok')
+    } else {
       console.log('[turnstile] rejected', { 'error-codes': data['error-codes'] })
     }
     return data.success

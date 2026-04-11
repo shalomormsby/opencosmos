@@ -418,7 +418,7 @@ These are `role: collection` documents that point to source texts in the corpus.
 
 **Added:** 2026-04-10 | **Reference:** [knowledge/guides/opencosmos-knowledge-wiki-workflow.md](../knowledge/guides/opencosmos-knowledge-wiki-workflow.md)
 
-A synthesis layer sits between raw source texts and RAG retrieval, based on Andrej Karpathy's LLM Wiki pattern. Rather than synthesizing from raw text on every query, the wiki pre-builds cross-references, extracts key claims, and documents contradictions at ingestion time.
+A synthesis layer sits between raw source texts and RAG retrieval, based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). Rather than synthesizing from raw text on every query, the wiki pre-builds cross-references, extracts key claims, and documents contradictions at ingestion time.
 
 ### Three-Layer Architecture
 
@@ -680,41 +680,22 @@ Users who are not signed in (or signed in but without an API key) get 3 free mes
 | **Flame** | $10/mo | ~$4.70 (~50% of $9.40 net) | ~$1.18 | ~12 hrs/mo |
 | **Hearth** | $50/mo | ~$9.55 (~20% of $48.20 net) | ~$2.39 | ~24 hrs/mo + full CP membership (~$49 value). Rest is margin. |
 
-Token cost model: Claude Sonnet 4.6 at $3/M input + $15/M output, with conversation history caching applied for all subscribers. Costs tracked in **microdollars** (integers) in Redis to keep `INCR` atomic.
+Token cost model: Claude Sonnet 4.6 at $3/M input + $15/M output, with conversation history caching applied for all subscribers. Costs tracked in **microdollars** (integers) in Redis to keep `INCRBY` atomic.
 
 ### Token Economics
 
-**Pricing basis:** Claude Sonnet 4.6 — $3/M input tokens, $15/M output tokens. Prompt caching applies `cache_control: { type: "ephemeral" }` on the system prompt for all subscribers, reducing effective input costs ~76–90%.
+> **For margin modeling, per-tier budgets, and feature cost analysis, see [economics.md](economics.md).** This section covers only the technical mechanics of how costs are tracked.
 
-**Session model:**
-- System prompt: ~4,000 tokens/call (cached after first call in a session)
-- Average user message: ~150 tokens
-- Average Cosmo response: ~500 tokens (contemplative)
-- Each exchange carries full conversation history as input
-- A "session" = ~10 exchanges (~20 minutes)
+**Microdollar encoding:** `1 µ$ = $0.000001`. Each token's cost is expressed in microdollars as an integer:
+- Input token: 3 µ$
+- Output token: 15 µ$
+- Cached input token: not counted (generous to subscribers — cache reads cost ~0.3 µ$, excluded from tracker)
 
-**Per-session cost (with caching):**
+This encoding allows atomic `INCRBY` operations in Redis without floating-point drift.
 
-| | Uncached | With caching | Savings |
-|---|---|---|---|
-| 10-exchange session | ~$0.30 | **~$0.13** | ~57% |
-| Per exchange | ~$0.030 | **~$0.013** | ~57% |
+**Token budget formula:** `monthlyBudgetMicrodollars / 15` = output-token equivalents. Dividing by the output rate (15 µ$/token) produces a conservative guaranteed floor — actual usage is higher because input tokens cost only 3 µ$ each. The gauge and plan cards display this number directly.
 
-**What caching saves:** The system prompt (~4,000 tokens) is written to cache on the first call (`cache_write`) and read from cache on all subsequent calls in the session. Cache reads cost $0.30/M vs $3/M — a 90% reduction on that portion of each request.
-
-**Monthly allotments by tier:**
-
-| Tier | API budget/mo | Token budget | Exchanges/mo | Hours/mo |
-|------|--------------|-------------|-------------|----------|
-| **Spark** ($5) | ~$2.28 | **152,000 tokens** | ~175 | ~6 hrs |
-| **Flame** ($10) | ~$4.70 | **313,000 tokens** | ~360 | ~12 hrs |
-| **Hearth** ($50) | ~$9.55 | **637,000 tokens** | ~735 | ~24 hrs |
-
-**Token budget formula:** `monthlyBudgetMicrodollars / 15` = output-token equivalents. At $15/M, this is the guaranteed output ceiling — actual usage runs higher because uncached input tokens cost only $3/M (3 µ$ vs 15 µ$). The gauge and plan cards display this number directly.
-
-*Hearth's $50 price carries a high margin — the excess funds Creative Powerup membership (~$49 value) and infrastructure. Near-zero marginal cost on CP makes the economics exceptional.*
-
-**Free greeting tier:** Each 3-exchange greeting costs ~$0.04. Budget $30–50/month for the free layer (~750–1,250 greetings), charged to the `opencosmos-main` Anthropic key. This is marketing spend, not a loss.
+**Caching mechanics:** `cache_control: { type: "ephemeral" }` is applied to the system prompt on every request for all subscribers. On the first exchange in a session, the system prompt is written to cache (`cache_write`). On all subsequent exchanges, it's read from cache at 10% of the uncached input cost. This is the largest cost reduction in the system (~76–90% of input cost eliminated after exchange 1).
 
 **Weekly caps:** Monthly budget ÷ 4. Enforced in Redis alongside the monthly cap to prevent a single week from exhausting the full allotment.
 
@@ -1157,6 +1138,7 @@ The original three-tier solar-powered sovereignty model (Sun-Grace Protocol, Lun
 - [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
 - [WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy
 - [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Operational system prompt (v2)
+- [economics.md](economics.md) — Unit economics: LLM costs, tier margins, voice analysis, feature economics
 - [pm.md](pm.md) — Active project tasks, priorities, and launch checklist
 - [strategy.md](strategy.md) — Three Futures, business model, revenue milestones
 - [chronicle.md](chronicle.md) — The story behind the decisions
