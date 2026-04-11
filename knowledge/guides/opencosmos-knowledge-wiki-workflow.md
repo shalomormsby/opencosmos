@@ -34,18 +34,31 @@ Wiki synthesis (knowledge/wiki/)          ← new layer
   ├── concepts/   — ideas and themes
   └── connections/ — cross-tradition comparisons
        │
-       ▼
-RAG retrieval (Upstash Vector / Open WebUI)
+       ├──→ @import in .claude/CLAUDE.md ──→ ambient in every Claude Code session
        │
-       ▼
-Cosmo AI responses
+       └──→ RAG retrieval (Upstash Vector / Open WebUI)
+                  │
+                  ▼
+           Cosmo AI responses
 ```
 
-The wiki is always in Claude's context via:
+### How the Wiki Reaches Claude Code (Ambient)
+
+The wiki index is always in Claude Code's context via a single directive at the bottom of `.claude/CLAUDE.md`:
+
 ```
-# in .claude/CLAUDE.md:
 @knowledge/wiki/index.md
 ```
+
+Claude Code expands `@path` references inline at session start — the entire wiki index becomes part of the starting context before any message is sent. This is what makes it **ambient**: Claude doesn't look it up, it simply knows it.
+
+> **Important distinction:** A regular markdown link `[wiki](../knowledge/wiki/index.md)` is navigational only — it does not cause the file to load. The `@` prefix is the loading mechanism. `.claude/CLAUDE.md` needs *both*: a link in Essential Files (for human navigation) and the `@` directive at the bottom (for ambient loading). If either is missing, the other alone is insufficient.
+
+### What Claude Code Sees at Session Start
+
+From the wiki index, Claude Code sees a structured table of contents: entity summaries (e.g., *"Plato: Athenian philosopher; 12 dialogues; justice, the Good, the soul"*), concept summaries (e.g., *"impermanence: Buddhist anicca, Taoist flux, Whitman's cycles, Nietzsche's eternal recurrence"*), and cross-tradition connections. This gives full corpus orientation — shape, not depth — without loading any source documents.
+
+Full architecture: [docs/architecture.md § Cosmo's Session Context](../../docs/architecture.md#cosmos-session-context)
 
 ---
 

@@ -19,6 +19,10 @@ const nextConfig = {
       join(__dirname, '../../packages/ai/COSMO_SYSTEM_PROMPT.md'),
       'utf-8'
     ),
+    COSMO_WIKI_INDEX: readFileSync(
+      join(__dirname, '../../knowledge/wiki/index.md'),
+      'utf-8'
+    ),
   },
   async headers() {
     return [

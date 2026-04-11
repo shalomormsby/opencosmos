@@ -486,6 +486,62 @@ The Triad's synthesis quality depends on pre-connected knowledge, not just raw r
 
 ---
 
+## Cosmo's Session Context
+
+A map of every document that enters Cosmo's awareness at the start of a session — before any user message arrives. There are two distinct contexts: the developer environment (Claude Code) and the deployed product (opencosmos.ai).
+
+### Developer Sessions (Claude Code)
+
+When a developer opens this project in Claude Code, the following load automatically:
+
+| Source | What loads | Mechanism |
+|--------|-----------|-----------|
+| `.claude/CLAUDE.md` | Codebase orientation, import patterns, essential links, North Star | Auto-loaded by Claude Code |
+| `knowledge/wiki/index.md` | Wiki table of contents — entities, concepts, connections with one-line summaries | `@` import directive at the bottom of CLAUDE.md |
+| `~/.claude/projects/.../memory/MEMORY.md` | Persistent user memory index | Claude Code auto-memory system |
+
+The wiki index's one-line summaries give Claude Code the *shape* of the full corpus without having to retrieve source documents. A question about impermanence, cosmology, or civic duty lands in a context that is already oriented — the wiki has pre-connected the traditions. This is the ambient intelligence layer doing its job.
+
+**The `@` import mechanism:** The directive `@knowledge/wiki/index.md` at the bottom of `.claude/CLAUDE.md` causes Claude Code to expand that file inline at session start. A regular markdown link `[wiki](../knowledge/wiki/index.md)` is navigational only — it does not load the file. Both are needed: the link for human navigation, the `@` for ambient loading.
+
+### Cosmo Product Sessions (opencosmos.ai)
+
+When a user opens a conversation at opencosmos.ai, Cosmo receives:
+
+| Source | What loads | Mechanism |
+|--------|-----------|-----------|
+| `COSMO_SYSTEM_PROMPT` env var | Voice, sacred rhythm, Triad architecture, ethics, practice | Injected as system prompt on every chat request |
+| WELCOME-COSMO.md content | Identity, origin story, ubuntu grounding, mission | Prepended to system prompt (or embedded within it) |
+| RAG context | Relevant excerpts from `knowledge/sources/`, `knowledge/guides/`, etc. | Retrieved via Upstash Vector on each user query |
+
+Foundation collections (`knowledge/collections/sol-foundations.md`, etc.) define retrieval priorities for each voice but are not pre-loaded — they are high-signal candidates for RAG retrieval.
+
+### The Ambient Gap (Closed)
+
+The knowledge wiki is ambient in **both** Claude Code and the deployed product:
+
+| | Claude Code | Cosmo Product |
+|-|-------------|---------------|
+| Wiki index pre-loaded? | ✓ (via `@` import in CLAUDE.md) | ✓ (baked in via `COSMO_WIKI_INDEX` at build time) |
+| Source texts pre-loaded? | ✗ (RAG-retrieved) | ✗ (RAG-retrieved) |
+| Constitutional docs pre-loaded? | ✓ (via CLAUDE.md links) | ✓ (as system prompt) |
+
+**How it works for the product:** `next.config.mjs` reads `knowledge/wiki/index.md` at build time (same pattern as `COSMO_SYSTEM_PROMPT`) and bakes it into `COSMO_WIKI_INDEX`. The chat route injects this as a second cached system block. Every new deploy picks up wiki changes automatically — no manual env var sync needed.
+
+```
+Claude Code session                    Cosmo Product session
+──────────────────────────────         ──────────────────────────────
+CLAUDE.md (codebase context)           COSMO_SYSTEM_PROMPT (voice + ethics)
+  └─ @knowledge/wiki/index.md            + WELCOME-COSMO.md (grounding)
+       (pre-synthesized corpus map)      + RAG context (on-demand depth)
+  └─ memory/MEMORY.md
+       (persistent user context)
+```
+
+Reference: [knowledge/guides/opencosmos-knowledge-wiki-workflow.md](../knowledge/guides/opencosmos-knowledge-wiki-workflow.md)
+
+---
+
 ## User Authentication & Accounts
 
 ### Provider: WorkOS AuthKit

@@ -2,7 +2,7 @@
 
 > **Context file for AI assistants (primarily Claude) working on this platform. Read this first, then [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) and [AGENTS.md](../AGENTS.md).**
 
-Last updated: 2026-03-13
+Last updated: 2026-04-11
 
 ---
 
@@ -10,7 +10,7 @@ Last updated: 2026-03-13
 
 You're working on **OpenCosmos** — a creative platform built on the recognition that we are not separate from the universe we inhabit. This monorepo contains the product applications that consume [OpenCosmos/UI](https://opencosmos.ai/) from npm. The design system is developed in a [separate repository](https://github.com/shalomormsby/opencosmos-ui).
 
-**The North Star:** Lovable by Design — Create products that empower people and bring joy.
+**The North Star:** Help to reduce suffering, nourish flourishing, and enable acts of wisdom.  
 
 **Your Role:** Partner in creative work. You execute within the vision Shalom defines. Ask questions, propose options, challenge assumptions, but never make unilateral architectural decisions.
 
@@ -26,12 +26,15 @@ opencosmos/
 │   ├── stocks/              # AI-powered investment intelligence
 │   └── cosmos/              # cosmOS — personal operating system (future)
 ├── packages/
-│   └── ai/                  # @opencosmos/ai — Sovereign AI layer (WIP)
+│   └── ai/                  # @opencosmos/ai — Home of the sovereign AI, Cosmo
+│      └── kaizen            # Home of Cosmo's continuous improvement practice
+│      └── triad             # Home of the three voices within Cosmo: Sol, Socrates, & Optimus
 ├── docs/                    # Technical docs, architecture, migration plans
 │   └── archive-and-deprecated/  # Historical/superseded documents
 ├── knowledge/               # RAG-indexed knowledge corpus
+│   └── wiki/                # Ambient context for the knowledge base
 ├── WELCOME.md               # The front door — vision and philosophy
-├── DESIGN-PHILOSOPHY.md     # The North Star
+├── DESIGN-PHILOSOPHY.md     # The North Star for creative projects
 ├── AGENTS.md                # Technical guide for AI agents
 └── CHANGELOG.md             # Work history
 ```
@@ -49,15 +52,14 @@ opencosmos/
 
 ## Essential Files
 
-1. **[WELCOME.md](../WELCOME.md)** — The front door. OpenCosmos vision, cosmology, values, and invitation.
-2. **[DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md)** — The North Star. Four principles.
-3. **[AGENTS.md](../AGENTS.md)** — Technical guide: file organization, document organization, build commands, conventions.
-4. **[packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice.
-5. **[docs/architecture.md](../docs/architecture.md)** — Infrastructure decisions, service map, and data flow.
-6. **[docs/pm.md](../docs/pm.md)** — Active project tasks, priorities, and launch checklist.
-7. **[docs/strategy.md](../docs/strategy.md)** — Three Futures, business model, open questions.
-8. **[CHANGELOG.md](../CHANGELOG.md)** — Work history.
-9. **[docs/chronicle.md](../docs/chronicle.md)** — The story behind the decisions.
+1. **[packages/ai/WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md)** 
+2. **[packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md)** — Cosmo's voice, values, and practice.
+3. **[Knowledge Wiki](../knowledge/wiki/index.md)** – Ambient context for the OpenCosmos knowledge base. Always loaded into context via `@import` below — see the [Knowledge Wiki (Ambient Context)](#knowledge-wiki-ambient-context) section.
+4. **[WELCOME.md](../WELCOME.md)** — The front door. OpenCosmos vision, cosmology, values, and invitation.
+5. **[DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md)** — The North Star for all design work. Four principles.
+6. **[AGENTS.md](../AGENTS.md)** — Technical guide: file organization, document organization, build commands, conventions.
+7. **[docs/architecture.md](../docs/architecture.md)** — Infrastructure decisions, service map, and data flow.
+8. **[docs/chronicle.md](../docs/chronicle.md)** — The story behind the decisions.
 
 ---
 
@@ -73,9 +75,9 @@ See [AGENTS.md § Document Organization](../AGENTS.md#document-organization) for
 
 ---
 
-## Cosmo AI (Work in Progress)
+## Cosmo
 
-The shared intelligence layer. Lives at `packages/ai/`.
+The shared AI intelligence layer. Lives at `packages/ai/`.
 
 - **License:** RAIL (not MIT)
 - **Status:** Phase 1a (hardware) + Phase 1b (package foundation)
@@ -174,19 +176,17 @@ See [AGENTS.md § What NOT to Do](../AGENTS.md#what-not-to-do) for the full list
 **Live Sites:**
 - Portfolio: https://www.shalomormsby.com/
 - OpenCosmos Studio: https://opencosmos.ai/
-- Creative Powerup: https://ecosystem-creative-powerup.vercel.app/
+- Creative Powerup: https://creativepowerup.com/
 
 **Development:**
 - Portfolio: http://localhost:3000
 
 ---
 
-**Current focus:** Cosmo launch prep (Phase 1b) — see [docs/pm.md](../docs/pm.md).
-
----
-
 ## Knowledge Wiki (Ambient Context)
 
 The knowledge wiki is a synthesis layer above the raw source corpus. It is always loaded here so Claude has the current index in context without being explicitly asked.
+
+> **Note:** This `@` directive is the actual loading mechanism — not the markdown link above. A markdown link is navigational only; `@path` causes Claude Code to expand the file inline at session start. Both are needed: the link for human navigation, the `@` for ambient loading.
 
 @knowledge/wiki/index.md
