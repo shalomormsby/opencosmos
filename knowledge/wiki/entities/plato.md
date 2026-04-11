@@ -6,6 +6,7 @@ confidence: high
 status: active
 synthesizes:
   - sources/philosophy-apology.md
+  - sources/philosophy-crito.md
   - sources/philosophy-euthyphro.md
   - sources/philosophy-gorgias.md
   - sources/philosophy-laws.md
@@ -16,7 +17,7 @@ synthesizes:
   - sources/philosophy-symposium.md
   - sources/philosophy-theaetetus.md
   - sources/philosophy-timaeus.md
-last_reviewed: 2026-04-10
+last_reviewed: 2026-04-11
 tags: [plato, socrates, ancient-philosophy, forms, the-good, justice, soul, dialectic, cosmology]
 ---
 
@@ -24,7 +25,7 @@ tags: [plato, socrates, ancient-philosophy, forms, the-good, justice, soul, dial
 
 ## Summary
 
-Plato (428–348 BCE) is the foundational figure of Western philosophy, author of 11 dialogues in the OpenCosmos corpus. His thought centers on two permanent concerns: the nature of the Good (and justice as its social expression), and the immortality of the soul as the seat of knowledge. His method — the Socratic dialogue — treats every question as an invitation to inquiry rather than a demand for answers. Across the corpus, his work spans ethics, epistemology, metaphysics, cosmology, and political philosophy.
+Plato (428–348 BCE) is the foundational figure of Western philosophy, author of 12 dialogues in the OpenCosmos corpus. His thought centers on two permanent concerns: the nature of the Good (and justice as its social expression), and the immortality of the soul as the seat of knowledge. His method — the Socratic dialogue — treats every question as an invitation to inquiry rather than a demand for answers. Across the corpus, his work spans ethics, epistemology, metaphysics, cosmology, and political philosophy.
 
 ## Key Claims
 
@@ -35,6 +36,7 @@ Plato (428–348 BCE) is the foundational figure of Western philosophy, author o
 - **Eros as ascent:** Love, properly cultivated, ascends from a beautiful body to all beautiful bodies, to beautiful souls, to the form of Beauty itself (*Symposium*).
 - **The cosmos as a living creature:** The Demiurge fashioned the cosmos to be as good and orderly as possible, modeling it on the eternal Forms. The world has a soul (*Timaeus*).
 - **Virtue is knowledge:** No one does wrong willingly — wrongdoing is ignorance of the Good (*Gorgias*, *Meno*).
+- **Civic obligation as sacred compact:** Citizens who remain in a city and enjoy its benefits have tacitly consented to its laws. Being wronged by the state does not license counter-wrongdoing — Socrates refuses escape even knowing his conviction was unjust (*Crito*).
 
 ## Connections
 
@@ -43,6 +45,7 @@ Plato (428–348 BCE) is the foundational figure of Western philosophy, author o
 - [[concepts/logos-and-tao.md]] — The Logos as world-ordering principle parallels the Taoist Tao
 - [[connections/cosmology-comparison.md]] — Timaeus provides the Platonic account of cosmic origin
 - [[entities/lao-tzu.md]] — Both Plato and Lao Tzu posit an ultimate principle beyond language (the Good / the Tao)
+- [[concepts/civic-duty.md]] — *Crito* is the foundational source for the social-contract argument for civic obedience
 
 ## Contradictions
 
