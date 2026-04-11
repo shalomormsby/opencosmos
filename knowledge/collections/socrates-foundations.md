@@ -38,7 +38,7 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 *Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
 
 ### Dialectical Philosophy
-- [ ] Plato's dialogues — *Apology*, *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life) <!-- corpus: Apology, Meno, The Republic, Euthyphro, Gorgias, Phaedo, Phaedrus, Symposium, Theaetetus, Timaeus, Laws -->
+- [x] Plato's dialogues — [*Apology*](../sources/philosophy-apology.md), *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life)
 - [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is and is not in our control, the discipline of assent) <!-- corpus: Discourses, Enchiridion -->
 - [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty, the view from above) <!-- corpus: Meditations -->
 

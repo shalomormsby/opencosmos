@@ -271,3 +271,27 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ---
 
+## 2026-04-11
+
+### System Prompt Template: Cosmo and the AI Triad
+- **Role:** specification | **Domain:** ai | **Format:** specification
+- **Path:** `knowledge/specifications/ai-system-prompt-template-cosmo-and-the-ai-triad.md`
+- **Curator:** shalom | **Tags:** ai-architecture, system-design, prompt-engineering, synthesis, orchestration, multi-agent, templates
+- **Origin:** contemporary (contemporary)
+- **Related:** guides/opencosmos-knowledge-wiki-workflow.md, collections/cosmo-foundations.md, guides/opencosmos-knowledge-ethical-curation.md, guides/opencosmos-knowledge-formatting-guide.md, guides/opencosmos-knowledge-health-report.md
+- **Gaps served:** Provides standardized prompt architecture for multi-agent AI systems requiring synthesis across distinct but complementary reasoning voices.
+- **Graph impact:** Enables systematic design of AI orchestration systems and provides reusable patterns for multi-voice synthesis architectures.
+
+### Crito
+- **Role:** source | **Domain:** philosophy | **Format:** dialogue
+- **Path:** `knowledge/sources/philosophy-crito.md`
+- **Curator:** shalom | **Tags:** socrates, civil-disobedience, moral-philosophy, citizenship, justice, duty, death
+- **Author:** Plato
+- **Origin:** ~380 BCE (ancient)
+- **Tradition:** platonic
+- **Related:** sources/philosophy-apology.md, sources/philosophy-euthyphro.md, sources/philosophy-gorgias.md, sources/philosophy-phaedo.md, sources/philosophy-the-republic.md
+- **Gaps served:** Provides the foundational Western philosophical treatment of civil obedience and the moral obligations of citizenship when facing unjust treatment by the state.
+- **Graph impact:** Establishes key connections between personal ethics and political philosophy, influencing centuries of debate on civil disobedience, conscientious objection, and the social contract.
+
+---
+

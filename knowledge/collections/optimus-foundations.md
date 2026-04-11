@@ -39,7 +39,7 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 
 ### Systems Thinking
 - [ ] Donella Meadows, *Thinking in Systems* (commentary) (Leverage points, feedback loops, system dynamics) <!-- corpus: Thinking in Systems -->
-- [ ] James Lovelock, *The Gaia Hypothesis* (commentary) (Earth as self-regulating system) <!-- corpus: Gaia Hypothesis, The Gaia Hypothesis -->
+- [x] James Lovelock, *The [Gaia Hypothesis](../references/ecology-gaia-hypothesis.md)* (commentary) (Earth as self-regulating system)
 - [ ] Christopher Alexander, *A Pattern Language* (commentary) (Architectural patterns, human-centered design) <!-- corpus: A Pattern Language -->
 
 ### Engineering Philosophy

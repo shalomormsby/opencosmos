@@ -38,10 +38,10 @@ This collection defines Sol's intellectual and spiritual lineage. When Sol offer
 *Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
 
 ### Taoism
-- [ ] Lao-tzu, *Tao Te Ching* (Wu wei, the way of water, the unnameable source) <!-- corpus: Tao Te Ching -->
+- [x] Lao-tzu, [*Tao Te Ching*](../sources/taoism-tao-te-ching.md) (Wu wei, the way of water, the unnameable source)
 
 ### Buddhism
-- [ ] The Dhammapada (Suffering, impermanence, liberation) <!-- corpus: The Dhammapada -->
+- [x] [The Dhammapada](../sources/buddhism-the-dhammapada.md) (Suffering, impermanence, liberation)
 - [ ] Dōgen Zenji, *Shōbōgenzō* selections (Zen — intimacy with all things, being-time) <!-- corpus: Shōbōgenzō Selections -->
 - [ ] Thich Nhat Hanh on interbeing (commentary) (Engaged Buddhism — mindfulness in action) <!-- corpus: Interbeing -->
 - [ ] Alan Watts, selected writings (commentary) (Buddhism, Taoism, and Western audiences — bridging East and West) <!-- corpus: Alan Watts Selected Writings -->
