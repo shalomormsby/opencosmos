@@ -295,3 +295,248 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ---
 
+## 2026-04-11
+
+### The Bhagavad-Gita (Song Celestial)
+- **Role:** source | **Domain:** vedic | **Format:** scripture
+- **Path:** `knowledge/sources/vedic-the-bhagavad-gita-song-celestial.md`
+- **Curator:** shalom | **Tags:** dharma, yoga, karma, devotion, self-realization, duty, divine-knowledge
+- **Author:** Vyasa (traditional attribution)
+- **Origin:** ~3rd century CE (ancient)
+- **Tradition:** vedanta
+- **Related:** sources/philosophy-crito.md, sources/buddhism-the-dhammapada.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md, sources/philosophy-meno.md
+- **Gaps served:** Provides accessible English verse translation of core Hindu philosophical teachings on duty, action, and spiritual liberation.
+- **Graph impact:** Connects Eastern philosophical concepts of dharma and yoga with Western literary traditions and enables cross-cultural dialogue on ethics and spirituality.
+
+### Demian: The Story of Emil Sinclair's Youth
+- **Role:** source | **Domain:** literature | **Format:** narrative
+- **Path:** `knowledge/sources/literature-demian-the-story-of-emil-sinclair-s-youth.md`
+- **Curator:** shalom | **Tags:** coming-of-age, self-realization, psychological-development, dual-worlds, individuation, spiritual-awakening
+- **Author:** Hermann Hesse
+- **Origin:** 1919 (modern)
+- **Tradition:** psychological realism
+- **Related:** sources/vedic-the-bhagavad-gita-song-celestial.md, sources/literature-leaves-of-grass.md, sources/cross-the-prophet.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md
+- **Gaps served:** Bridges literature and depth psychology to explore the archetypal journey of psychological and spiritual maturation.
+- **Graph impact:** Connects literary coming-of-age narratives with Jungian psychology and existential philosophy, influencing discussions of individuation and authentic selfhood.
+
+### Essays by Ralph Waldo Emerson
+- **Role:** collection | **Domain:** philosophy | **Format:** anthology
+- **Path:** `knowledge/collections/philosophy-essays-by-ralph-waldo-emerson.md`
+- **Curator:** shalom | **Tags:** transcendentalism, american-philosophy, self-reliance, nature, individualism, literary-essays
+- **Author:** Ralph Waldo Emerson
+- **Origin:** 1841-1860 (modern)
+- **Tradition:** transcendentalism
+- **Related:** sources/literature-leaves-of-grass.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md, sources/philosophy-meno.md, sources/philosophy-phaedo.md
+- **Gaps served:** Provides foundational texts of American transcendentalist thought that bridges European romantic philosophy with distinctly American individualism and spiritual pragmatism.
+- **Graph impact:** Connects European romanticism to American pragmatism while establishing intellectual foundations that influenced later American philosophy, literature, and social movements.
+
+### The Ethics
+- **Role:** source | **Domain:** philosophy | **Format:** treatise
+- **Path:** `knowledge/sources/philosophy-the-ethics.md`
+- **Curator:** shalom | **Tags:** metaphysics, substance, god, determinism, rationalism, geometric-method
+- **Author:** Benedict de Spinoza
+- **Origin:** 1677 (early-modern)
+- **Tradition:** rationalism
+- **Related:** sources/philosophy-symposium.md, sources/philosophy-timaeus.md, sources/philosophy-the-republic.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md
+- **Gaps served:** Provides rigorous geometric demonstration of metaphysical principles underlying ethical life and human freedom.
+- **Graph impact:** Connects rationalist metaphysics to practical ethics, bridging abstract philosophy with lived experience and spiritual understanding.
+
+### Gleanings from George Fox
+- **Role:** collection | **Domain:** indigenous | **Format:** anthology
+- **Path:** `knowledge/collections/indigenous-gleanings-from-george-fox.md`
+- **Curator:** shalom | **Tags:** quaker-mysticism, religious-individualism, inward-light, practical-spirituality, english-mysticism
+- **Author:** George Fox
+- **Origin:** 17th century (early-modern)
+- **Tradition:** quaker
+- **Related:** sources/cross-the-prophet.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md
+- **Gaps served:** Provides accessible thematic excerpts from Fox's extensive writings for readers seeking practical mystical wisdom without engaging the full corpus.
+- **Graph impact:** Connects early Quaker mysticism to broader contemplative traditions while highlighting the distinctive English character of Fox's spiritual approach.
+
+### Nature
+- **Role:** source | **Domain:** philosophy | **Format:** treatise
+- **Path:** `knowledge/sources/philosophy-nature.md`
+- **Curator:** shalom | **Tags:** transcendentalism, nature-philosophy, idealism, individualism, spirituality, american-philosophy
+- **Author:** Ralph Waldo Emerson
+- **Origin:** 1836 (modern)
+- **Tradition:** transcendentalism
+- **Related:** collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/literature-leaves-of-grass.md, sources/philosophy-apology.md, sources/philosophy-gorgias.md, sources/philosophy-meno.md
+- **Gaps served:** Provides the philosophical foundation for American transcendentalism and nature-based spirituality outside traditional religious frameworks.
+- **Graph impact:** Establishes connections between Romantic philosophy, American individualism, and environmental consciousness that influenced literature, ecology, and spiritual movements.
+
+### On the Duty of Civil Disobedience
+- **Role:** source | **Domain:** philosophy | **Format:** essay
+- **Path:** `knowledge/sources/philosophy-on-the-duty-of-civil-disobedience.md`
+- **Curator:** shalom | **Tags:** civil-disobedience, government, conscience, individual-rights, political-resistance, moral-duty
+- **Author:** Henry David Thoreau
+- **Origin:** 1849 (modern)
+- **Tradition:** transcendentalism
+- **Related:** sources/philosophy-crito.md, sources/philosophy-nature.md, collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/literature-leaves-of-grass.md, sources/philosophy-apology.md
+- **Gaps served:** Provides foundational philosophical justification for individual moral resistance to state authority when conscience conflicts with law.
+- **Graph impact:** Enables connections between transcendentalist philosophy, political resistance movements, and discussions of individual versus collective moral authority.
+
+### Poems of Nature by Henry David Thoreau
+- **Role:** collection | **Domain:** literature | **Format:** anthology
+- **Path:** `knowledge/collections/literature-poems-of-nature-by-henry-david-thoreau.md`
+- **Curator:** shalom | **Tags:** nature-poetry, transcendentalism, american-literature, concord, spiritual-awakening, pastoral-verse, romantic-poetry
+- **Author:** Henry David Thoreau
+- **Origin:** 1895 (modern)
+- **Tradition:** transcendentalism
+- **Related:** sources/literature-leaves-of-grass.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/philosophy-nature.md, collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/philosophy-on-the-duty-of-civil-disobedience.md
+- **Gaps served:** Provides the most complete collection of Thoreau's poetry available at the time, preserving verses that illuminate the biographical and spiritual dimensions of his transcendentalist philosophy.
+- **Graph impact:** Connects Thoreau's poetic voice to his philosophical prose works and reveals the personal experiences underlying his nature philosophy and transcendentalist beliefs.
+
+### Rubáiyát of Omar Khayyám, and Salámán and Absál
+- **Role:** source | **Domain:** literature | **Format:** anthology
+- **Path:** `knowledge/sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md`
+- **Curator:** shalom | **Tags:** persian-poetry, translation, rubaiyat, omar-khayyam, fitzgerald, sufism, mystical-poetry
+- **Author:** Edward FitzGerald
+- **Origin:** 1909 (modern)
+- **Tradition:** victorian-translation
+- **Related:** sources/literature-leaves-of-grass.md, collections/literature-poems-of-nature-by-henry-david-thoreau.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/philosophy-nature.md, sources/philosophy-on-the-duty-of-civil-disobedience.md
+- **Gaps served:** Bridges Persian mystical and philosophical poetry with Western literary tradition through masterful English verse translation.
+- **Graph impact:** Enables cross-cultural dialogue between Islamic mysticism, Western contemplative traditions, and modern literary appreciation of Persian wisdom literature.
+
+### Siddhartha: An Indian Tale
+- **Role:** source | **Domain:** literature | **Format:** narrative
+- **Path:** `knowledge/sources/literature-siddhartha-an-indian-tale.md`
+- **Curator:** shalom | **Tags:** spiritual-journey, self-discovery, enlightenment, brahman-tradition, coming-of-age, eastern-philosophy, existential-quest
+- **Author:** Hermann Hesse
+- **Origin:** 1922 (modern)
+- **Tradition:** european-orientalism
+- **Related:** sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, collections/literature-poems-of-nature-by-henry-david-thoreau.md, sources/philosophy-nature.md
+- **Gaps served:** Bridges Western literary tradition with Eastern philosophical concepts, making Buddhist and Hindu ideas accessible to Western readers through narrative form.
+- **Graph impact:** Creates dialogue between Western psychological literature and Eastern spirituality, influencing both contemplative practice and literary exploration of consciousness.
+
+### Steppenwolf
+- **Role:** source | **Domain:** literature | **Format:** narrative
+- **Path:** `knowledge/sources/literature-steppenwolf.md`
+- **Curator:** shalom | **Tags:** alienation, dual-nature, bourgeois-crisis, self-discovery, psychological-journey, modern-condition, artistic-sensibility
+- **Author:** Hermann Hesse
+- **Origin:** 1927 (modern)
+- **Tradition:** german-romanticism
+- **Related:** sources/literature-siddhartha-an-indian-tale.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, collections/literature-poems-of-nature-by-henry-david-thoreau.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
+- **Gaps served:** Provides a literary exploration of the psychological tensions between conformity and authenticity in modern industrial society.
+- **Graph impact:** Connects themes of existential crisis, artistic sensibility, and psychological integration across philosophy, psychology, and literature.
+
+### The Complete Works of William Shakespeare
+- **Role:** source | **Domain:** literature | **Format:** anthology
+- **Path:** `knowledge/sources/literature-the-complete-works-of-william-shakespeare.md`
+- **Curator:** shalom | **Tags:** poetry, sonnets, renaissance, love, mortality, beauty, time
+- **Author:** William Shakespeare
+- **Origin:** 1590s-1610s (early-modern)
+- **Tradition:** elizabethan
+- **Related:** sources/philosophy-phaedrus.md, sources/philosophy-symposium.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-steppenwolf.md
+- **Gaps served:** Provides foundational poetic exploration of universal themes of beauty, time, and human relationships that bridges literary art with philosophical inquiry.
+- **Graph impact:** Enables cross-connections between literary aesthetics, philosophical contemplation of mortality, and artistic approaches to preserving meaning across time.
+
+### The Egyptian Book of the Dead: Translation and Commentary
+- **Role:** reference | **Domain:** philosophy | **Format:** anthology
+- **Path:** `knowledge/references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md`
+- **Curator:** shalom | **Tags:** ancient-egypt, afterlife, funeral-texts, netherworld, resurrection, translation, mythology
+- **Author:** P. Le Page Renouf, E. Naville
+- **Origin:** 1904 (modern)
+- **Related:** sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/philosophy-nature.md, sources/philosophy-on-the-duty-of-civil-disobedience.md, collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/philosophy-apology.md
+- **Gaps served:** Provides accessible scholarly translation of foundational Egyptian texts on death and afterlife that bridges ancient wisdom with modern understanding.
+- **Graph impact:** Enables cross-cultural dialogue between Egyptian afterlife concepts and other contemplative traditions regarding consciousness, death, and spiritual transformation.
+
+### The Fairy-Faith in Celtic Countries
+- **Role:** source | **Domain:** indigenous | **Format:** treatise
+- **Path:** `knowledge/sources/indigenous-the-fairy-faith-in-celtic-countries.md`
+- **Curator:** shalom | **Tags:** celtic-mythology, fairy-faith, folk-religion, anthropology, oral-tradition, celtic-spirituality, ethnography
+- **Author:** W.Y. Evans-Wentz
+- **Origin:** 1911 (modern)
+- **Tradition:** celtic
+- **Related:** collections/indigenous-gleanings-from-george-fox.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-siddhartha-an-indian-tale.md
+- **Gaps served:** Provides systematic documentation of Celtic fairy beliefs as a living spiritual tradition rather than mere folklore, bridging academic anthropology with indigenous wisdom.
+- **Graph impact:** Establishes connections between Celtic spirituality, comparative mythology, and universal animistic traditions while preserving endangered oral traditions from Celtic communities.
+
+### The Forerunner
+- **Role:** source | **Domain:** literature | **Format:** anthology
+- **Path:** `knowledge/sources/literature-the-forerunner.md`
+- **Curator:** shalom | **Tags:** mysticism, spiritual-journey, self-discovery, divine-love, poetic-prose, metaphysical-poetry, wisdom-literature
+- **Author:** Kahlil Gibran
+- **Origin:** 1920 (modern)
+- **Tradition:** sufi-influenced mysticism
+- **Related:** sources/literature-siddhartha-an-indian-tale.md, sources/literature-steppenwolf.md, sources/cross-the-prophet.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
+- **Gaps served:** Provides accessible mystical literature bridging Eastern and Western spiritual traditions for modern readers seeking poetic wisdom.
+- **Graph impact:** Connects mystical philosophy with literary expression, enabling dialogues between contemplative traditions and modern spiritual seeking.
+
+### The Joyful Wisdom (La Gaya Scienza)
+- **Role:** source | **Domain:** philosophy | **Format:** treatise
+- **Path:** `knowledge/sources/philosophy-the-joyful-wisdom-la-gaya-scienza.md`
+- **Curator:** shalom | **Tags:** joyful-wisdom, life-affirmation, convalescence, perspectivism, nihilism, free-spirit
+- **Author:** Friedrich Nietzsche
+- **Origin:** 1882 (modern)
+- **Tradition:** german-idealism
+- **Related:** sources/philosophy-nature.md, sources/philosophy-on-the-duty-of-civil-disobedience.md, references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md, collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/philosophy-apology.md
+- **Gaps served:** Provides the essential bridge between Nietzsche's destructive critique of traditional values and his constructive philosophy of life-affirmation.
+- **Graph impact:** Connects themes of philosophical convalescence to broader discussions of meaning-creation, perspectivism, and the relationship between health and philosophical thinking.
+
+### The Kingdom of God Is Within You
+- **Role:** source | **Domain:** philosophy | **Format:** treatise
+- **Path:** `knowledge/sources/philosophy-the-kingdom-of-god-is-within-you.md`
+- **Curator:** shalom | **Tags:** non-resistance, christian-ethics, social-criticism, pacifism, spiritual-philosophy, political-theory
+- **Author:** Leo Tolstoy
+- **Origin:** 1893 (modern)
+- **Tradition:** christian-anarchism
+- **Related:** sources/philosophy-nature.md, sources/philosophy-on-the-duty-of-civil-disobedience.md, sources/philosophy-the-joyful-wisdom-la-gaya-scienza.md, references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md, collections/philosophy-essays-by-ralph-waldo-emerson.md
+- **Gaps served:** Bridges the gap between Christian theology and practical social philosophy by presenting a non-mystical interpretation of Christianity as a comprehensive life theory.
+- **Graph impact:** Connects Christian ethics with anarchist philosophy, pacifist movements, and social criticism, enabling dialogue between religious and secular approaches to non-violence.
+
+### The Madman
+- **Role:** source | **Domain:** literature | **Format:** poetry
+- **Path:** `knowledge/sources/literature-the-madman.md`
+- **Curator:** shalom | **Tags:** mysticism, spiritual-awakening, authenticity, masks, divine-relationship, inner-truth, madness-wisdom
+- **Author:** Kahlil Gibran
+- **Origin:** 1918 (modern)
+- **Tradition:** romantic mysticism
+- **Related:** sources/literature-the-forerunner.md, collections/literature-poems-of-nature-by-henry-david-thoreau.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
+- **Gaps served:** Bridges Eastern mystical wisdom with Western literary expression through accessible allegorical narratives about spiritual transformation.
+- **Graph impact:** Connects mystical poetry traditions with modern spiritual seeking and psychological exploration of authentic identity.
+
+### Walden, and On The Duty Of Civil Disobedience
+- **Role:** source | **Domain:** philosophy | **Format:** essay
+- **Path:** `knowledge/sources/philosophy-walden-and-on-the-duty-of-civil-disobedience.md`
+- **Curator:** shalom | **Tags:** simple-living, nature, civil-disobedience, transcendentalism, individualism, social-criticism
+- **Author:** Henry David Thoreau
+- **Origin:** 1854 (modern)
+- **Tradition:** transcendentalism
+- **Related:** collections/philosophy-essays-by-ralph-waldo-emerson.md, sources/literature-leaves-of-grass.md, sources/philosophy-nature.md, sources/philosophy-on-the-duty-of-civil-disobedience.md, sources/philosophy-the-kingdom-of-god-is-within-you.md
+- **Gaps served:** Provides a practical philosophy of simple living and principled resistance that bridges contemplative practice with social action.
+- **Graph impact:** Connects transcendentalist philosophy with environmental ethics, civil rights theory, and movements for social justice worldwide.
+
+### George Fox: An Autobiography
+- **Role:** source | **Domain:** indigenous | **Format:** narrative
+- **Path:** `knowledge/sources/indigenous-george-fox-an-autobiography.md`
+- **Curator:** shalom | **Tags:** quakerism, spiritual-autobiography, religious-experience, mysticism, early-modern-religion, christian-spirituality
+- **Author:** George Fox
+- **Origin:** 17th century (early-modern)
+- **Tradition:** quaker
+- **Related:** collections/indigenous-gleanings-from-george-fox.md, sources/literature-the-forerunner.md, sources/literature-the-madman.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
+- **Gaps served:** Provides firsthand account of the founding of Quakerism and the experiential basis of early Friends' theology of direct divine revelation.
+- **Graph impact:** Connects mystical Christianity to Protestant reformation movements and establishes foundation for understanding radical religious movements in early modern England.
+
+### The Journal of George Fox
+- **Role:** source | **Domain:** indigenous | **Format:** narrative
+- **Path:** `knowledge/sources/indigenous-the-journal-of-george-fox.md`
+- **Curator:** shalom | **Tags:** quakerism, religious-experience, spiritual-autobiography, christian-mysticism, early-modern-religion, persecution, ministry
+- **Author:** George Fox
+- **Origin:** ~1675 (early-modern)
+- **Tradition:** quakerism
+- **Related:** sources/indigenous-george-fox-an-autobiography.md, collections/indigenous-gleanings-from-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
+- **Gaps served:** Provides primary source documentation of the origins and early development of Quaker spirituality and practice through the founder's personal testimony.
+- **Graph impact:** Connects Christian mysticism with radical religious reformation, linking contemplative experience to social transformation and alternative religious community formation.
+
+### The Journal of George Fox, Volume II
+- **Role:** source | **Domain:** indigenous | **Format:** narrative
+- **Path:** `knowledge/sources/indigenous-the-journal-of-george-fox-volume-ii.md`
+- **Curator:** shalom | **Tags:** quaker-spirituality, religious-persecution, prison-ministry, christian-experience, social-reform, monthly-meetings
+- **Author:** George Fox
+- **Origin:** 1663-1669 (early-modern)
+- **Tradition:** quaker
+- **Related:** sources/indigenous-george-fox-an-autobiography.md, collections/indigenous-gleanings-from-george-fox.md, sources/indigenous-the-journal-of-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
+- **Gaps served:** Provides firsthand account of early Quaker movement and the practical establishment of Friends' organizational structures in 17th century England.
+- **Graph impact:** Connects early Christian mystical experience with social reform movements and demonstrates the relationship between personal spiritual insight and institutional religious change.
+
+---
+

@@ -100,7 +100,7 @@ Examples:
 
 Prepares raw text in `knowledge/incoming/` for publication. Adds markdown structure (headers, spacing, speaker formatting) while preserving every word of the original text. Also previews which wiki pages the new document will affect after publishing.
 
-**Full pipeline:** stage → **`/groom`** → `pnpm knowledge:publish` → `/knowledge-compile log`
+**Full pipeline:** drop raw text into `knowledge/incoming/` → **`/groom`** → `pnpm knowledge:publish` → `/knowledge-compile log`
 
 ### What it does
 

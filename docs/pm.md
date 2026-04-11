@@ -7,6 +7,11 @@
 ---
 
 ## Todo's from Shalom for OpenCosmos:  
+- Turnstile not working. Deployed to Vercel → Turnstile activates on first free-tier send (check Vercel logs for `[turnstile]` entries). Logging added, but currently nothing shows. Logs added: 
+    - [turnstile] verified ok — working correctly
+    - [turnstile] missing token — widget not rendering or token not being sent
+    - [turnstile] rejected — token invalid (e.g. expired, wrong site key)
+    - nothing — free-tier path still not being hit
 - opencosmos.ai:     
     - OpenCosmos/Creative Powerup integration: Solve Brian's request for Creative Powerup member credits to use with OpenCosmos
     - Create an icon and favicon
