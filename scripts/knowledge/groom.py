@@ -593,6 +593,179 @@ def process_prophet(text: str) -> str:
     return header + text.strip() + '\n'
 
 
+def process_scripture(text: str, title: str, author: Optional[str] = None,
+                      translator: Optional[str] = None) -> str:
+    """Generic scripture handler — chapter structure, no unwrapping (preserves verse).
+
+    Handles:
+    - CHAPTER I through CHAPTER XVIII (roman or arabic) → ## Chapter N
+    - BOOK I, BOOK II → ## Book N
+    - Speaker names (NAME:) → **NAME:**
+    - "HERE ENDETH/ENDS CHAPTER N." colophons → removed
+    - No line unwrapping — verse structure preserved
+    """
+    text = strip_gutenberg_end(text)
+
+    # Remove colophon lines like "HERE ENDETH CHAPTER I. OF THE BHAGAVAD-GITA,"
+    text = re.sub(r'^HERE END(?:ETH|S) CHAPTER.*$', '', text, flags=re.MULTILINE | re.IGNORECASE)
+
+    # Convert CHAPTER N (roman or arabic) → ## Chapter N
+    text = re.sub(
+        r'^CHAPTER ([IVXLCDM\d]+)\.?\s*$',
+        lambda m: f'## Chapter {m.group(1)}',
+        text,
+        flags=re.MULTILINE
+    )
+
+    # Convert BOOK N (roman) → ## Book N
+    roman_books = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII', 'VIII',
+                   'IX', 'X', 'XI', 'XII', 'XIII', 'XIV', 'XV', 'XVI', 'XVII', 'XVIII']
+    for roman in roman_books:
+        text = re.sub(rf'^BOOK {roman}\.?\s*$', f'## Book {roman}', text, flags=re.MULTILINE)
+
+    # Bold speaker names (Name: at line start)
+    text = bold_speakers(text)
+
+    text = collapse_blanks(text)
+
+    header = f'# {title}\n'
+    if author:
+        header += f'\n*By {author}*\n'
+    if translator:
+        header += f'\n*{translator}*\n'
+    header += '\n'
+    return header + text.strip() + '\n'
+
+
+def process_shakespeare(text: str) -> str:
+    """Process The Complete Works of William Shakespeare.
+
+    Handles:
+    - TOC stripping (everything before first play content)
+    - Play titles (long ALL-CAPS lines) → ## headers
+    - ACT N → ## Act N
+    - SCENE N. Description → ### Scene N. Description
+    - Character names (SHORT ALL-CAPS + period at line start) → **NAME.**
+    - No line unwrapping — verse must be preserved
+    """
+    text = strip_gutenberg_end(text)
+
+    # Strip previously-added header so --force re-runs don't produce duplicates
+    text = re.sub(
+        r'^# The Complete Works of William Shakespeare\s*\n\s*\*By William Shakespeare\*\s*\n+',
+        '',
+        text
+    )
+
+    # Strip TOC — find start of actual content.
+    # On a fresh run: second "THE SONNETS" marks the start of the sonnet sequence.
+    # On a --force re-run: "THE SONNETS" has become "## The Sonnets" — find that instead.
+    first_allcaps = text.find('THE SONNETS')
+    first_header = text.find('## The Sonnets')
+    if first_allcaps != -1:
+        second = text.find('THE SONNETS', first_allcaps + 11)
+        if second != -1:
+            text = text[second:]
+    elif first_header != -1:
+        text = text[first_header:]
+
+    # Convert known short section markers that don't meet the length threshold
+    text = re.sub(r'^THE SONNETS\s*$', '## The Sonnets', text, flags=re.MULTILINE)
+    text = re.sub(r'^AS YOU LIKE IT\s*$', '## As You Like It', text, flags=re.MULTILINE)
+    text = re.sub(r'^CYMBELINE\s*$', '## Cymbeline', text, flags=re.MULTILINE)
+
+    # Convert ACT markers
+    text = re.sub(r'^ACT ([IVX]+)\.?\s*$', lambda m: f'## Act {m.group(1)}', text, flags=re.MULTILINE)
+
+    # Convert SCENE markers (with optional description)
+    text = re.sub(
+        r'^SCENE ([IVX]+)\.?\s*(.*?)$',
+        lambda m: f'### Scene {m.group(1)}' + (f'. {m.group(2).strip()}' if m.group(2).strip() else ''),
+        text,
+        flags=re.MULTILINE
+    )
+
+    # Play title lines: long ALL-CAPS (20+ chars), no trailing period → ## Title Case
+    text = re.sub(
+        r'^([A-Z][A-Z ,\'\-;:]{19,})$',
+        lambda m: f'## {to_title_case(m.group(1))}' if not m.group(1).rstrip().endswith('.') else m.group(0),
+        text,
+        flags=re.MULTILINE
+    )
+
+    # Character names: short ALL-CAPS ending in period → **NAME.**
+    text = re.sub(
+        r'^([A-Z][A-Z ]{1,29})\.$',
+        r'**\1.**',
+        text,
+        flags=re.MULTILINE
+    )
+
+    text = collapse_blanks(text)
+
+    header = '# The Complete Works of William Shakespeare\n\n*By William Shakespeare*\n\n'
+    return header + text.strip() + '\n'
+
+
+def process_gibran(text: str, title: str, author: str = 'Kahlil Gibran') -> str:
+    """Process Kahlil Gibran parables and poems (Forerunner, Madman, etc.).
+
+    Handles:
+    - [Illustration] marker removal
+    - {N} page marker removal (marker only — does not swallow surrounding newlines)
+    - Metadata stripping: everything before the first substantive paragraph
+    - ALL-CAPS titles (including apostrophes/hyphens) → ### Title Case
+    - Hard line-wrap unwrapping (Gibran uses short prose paragraphs)
+    """
+    text = strip_gutenberg_end(text)
+
+    # Remove [Illustration] markers
+    text = re.sub(r'\[Illustration[^\]]*\]', '', text)
+
+    # Remove {N} page markers — marker only, preserve surrounding whitespace
+    # (Using \s* here would greedily eat blank lines and collapse structure)
+    text = re.sub(r'\{[ivxlcdm\d]+\}', '', text, flags=re.IGNORECASE)
+
+    # Strip all metadata before the actual prose text begins.
+    # The text starts at the first paragraph with > 100 chars that doesn't look
+    # like publisher metadata (image captions, copyright notices, review blurbs, TOC).
+    lines = text.split('\n')
+    content_start = 0
+    metadata_patterns = re.compile(
+        r'image\s|copyright|printed\s+in|alfred.*knopf|mcmx|new\s+york',
+        re.IGNORECASE
+    )
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if (len(stripped) > 100 and
+                not stripped.startswith('[') and
+                not re.match(r'^[\"\u201c\u201d]', stripped) and  # skip review blurbs (straight or curly quotes)
+                not stripped.startswith('#') and   # skip already-processed headers
+                not metadata_patterns.search(stripped) and
+                not len(re.findall(r'\b\d+\b', stripped)) >= 8):  # skip TOC entries with many page numbers
+            content_start = i
+            break
+
+    if content_start > 0:
+        text = '\n'.join(lines[content_start:])
+
+    # Convert ALL-CAPS section titles (including apostrophes/hyphens) to ### headers
+    text = re.sub(
+        r"^([A-Z][A-Z '\-]+)$",
+        lambda m: f'### {to_title_case(m.group(1))}' if 2 < len(m.group(1).strip()) < 60 else m.group(0),
+        text,
+        flags=re.MULTILINE
+    )
+
+    # Unwrap hard-wrapped lines (Gibran uses short prose paragraphs)
+    text = unwrap_hard_lines(text)
+
+    text = collapse_blanks(text)
+
+    header = f'# {title}\n\n*By {author}*\n\n'
+    return header + text.strip() + '\n'
+
+
 def process_generic(text: str) -> str:
     """Fallback processor: collapse blank lines, unwrap hard wraps."""
     text = strip_gutenberg_end(text)
@@ -631,6 +804,40 @@ FILE_REGISTRY: Dict[str, tuple] = {
     'cross-the-prophet':     ('prophet',),
     # Scientific
     'gaia-hypothesis-james-lovelock': ('scientific', 'The Gaia Hypothesis', 'James Lovelock'),
+
+    # ---- New incoming batch (2026-04-11) ----
+    # Scripture
+    'Bhagavad-Gîtâ':         ('scripture', 'Bhagavad-Gita', None, 'Translated by Sir Edwin Arnold'),
+    # Shakespeare
+    'The Complete Works of William Shakespeare': ('shakespeare',),
+    # Gibran
+    'The Forerunner, His Parables and Poems by Kahlil Gibran': ('gibran', 'The Forerunner'),
+    'The MadmanHis Parables and PoemsBy Kahlil Gibran':        ('gibran', 'The Madman'),
+    # Poetry collections
+    'Poems of Nature by Henry David Thoreau':  ('poetry', 'Poems of Nature', 'Henry David Thoreau'),
+    'Rubáiyát of Omar Khayyám, and Salámán and Absál by Omar Khayyam, Emerson, and Jami':
+        ('poetry', 'Rubáiyát of Omar Khayyám, and Salámán and Absál', 'Edward FitzGerald'),
+    # Scholarly/scientific
+    'The Fairy-Faith in Celtic Countries': ('scientific', 'The Fairy-Faith in Celtic Countries', 'W.Y. Evans-Wentz'),
+    # Generic prose — novels, essays, philosophy (registered to suppress warnings)
+    'Demian-Hermann Hesse':                      ('generic',),
+    'Siddhartha-Hermann Hesse':                  ('generic',),
+    'Steppenwolf-Hermann Hesse':                 ('generic',),
+    'Essays by Ralph Waldo Emerson':             ('generic',),
+    'Ethics-Spinoza':                            ('generic',),
+    'Gleanings from the Works of George Fox':    ('generic',),
+    'Nature-Ralph Waldo Emerson':                ('generic',),
+    'On the Duty of Civil Disobedience by Henry David Thoreau': ('generic',),
+    'The Egyptian Book of the-dead':             ('generic',),
+    'The Joyful Wisdom-Friedrich Wilhelm Nietzsche': ('generic',),
+    'The Kingdom of God Is Within You-Tolstoy':  ('generic',),
+    'Walden by Henry David Thoreau':             ('generic',),
+    'george-fox-autobiography':                  ('generic',),
+    'journal-of-george-fox-vol-1':               ('generic',),
+    'journal-of-george-fox-vol-2':               ('generic',),
+    # NOTE: 'Autobiography of a Yogi by Paramahansa Yogananda' is intentionally
+    # NOT registered — active copyright held by Self-Realization Fellowship (1946).
+    # Do not publish this file.
 }
 
 
@@ -667,7 +874,15 @@ def route_file(text: str, stem: str) -> str:
     elif proc_type == 'prophet':
         return process_prophet(text)
     elif proc_type == 'scripture':
-        return process_heart_sutra(text)  # Generic scripture handler
+        return process_scripture(text, args[0],
+                                  args[1] if len(args) > 1 else None,
+                                  args[2] if len(args) > 2 else None)
+    elif proc_type == 'shakespeare':
+        return process_shakespeare(text)
+    elif proc_type == 'gibran':
+        return process_gibran(text, args[0])
+    elif proc_type == 'generic':
+        return process_generic(text)
     else:
         print(f'  WARNING: Unknown processor type "{proc_type}", using generic')
         return process_generic(text)
