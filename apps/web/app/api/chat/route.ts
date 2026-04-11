@@ -8,6 +8,7 @@ import { getSubscription, incrementUsage, isWithinBudget, markByok } from '@/lib
 import { TIERS } from '@/lib/stripe'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
+const WIKI_INDEX = process.env.COSMO_WIKI_INDEX ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
@@ -39,6 +40,15 @@ const SYSTEM_CONTENT = [
     text: SYSTEM_PROMPT,
     cache_control: { type: 'ephemeral' as const },
   },
+  ...(WIKI_INDEX
+    ? [
+        {
+          type: 'text' as const,
+          text: `# Knowledge Wiki Index\n\nSynthesized cross-tradition knowledge map. Use as orientation before retrieving source documents.\n\n${WIKI_INDEX}`,
+          cache_control: { type: 'ephemeral' as const },
+        },
+      ]
+    : []),
 ]
 
 // Default client uses server-side ANTHROPIC_API_KEY (shared free-tier key)
