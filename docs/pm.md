@@ -35,6 +35,7 @@
 | **Portfolio** (`apps/portfolio`) | Production | P2 | Design consulting pipeline (Phase 3) |
 | **Creative Powerup** (`apps/creative-powerup`) | In development | P2 | Cosmo integration (Phase 3) |
 | **@opencosmos/ai** (`packages/ai`) | WIP | P2 | Package foundation (Phase 2a) |
+| **Knowledge Graph** (`opencosmos.ai/knowledge/graph`) | Planned | P2 | Data generator → viz component → route |
 | **Stocks** (`apps/stocks`) | In development | P3 | TBD |
 
 ---
@@ -84,6 +85,76 @@ Three tiers (Spark $5, Flame $10, Hearth $50), Stripe billing, WorkOS auth, usag
 - [ ] Build RAG API endpoint (`apps/web/app/api/knowledge/route.ts`)
 - [ ] Wire RAG retrieval into Cosmo conversation flow — constitutional layer queries corpus before responding
 - [ ] Community contribution pathway — submit knowledge for curation
+
+### Phase 1c+: Knowledge Graph — `opencosmos.ai/knowledge/graph`
+
+The knowledge wiki is a growing network of interconnected ideas — entities, concepts, cross-tradition syntheses. A graph visualization makes that structure visible and navigable for every visitor to opencosmos.ai. It is also a statement about what OpenCosmos is: a platform that treats knowledge as a living, relational web rather than a linear document collection.
+
+**Design criteria (non-negotiable):**
+- **Scalable** — must work gracefully at 8 nodes today and 200+ nodes in the future without visual collapse or performance degradation. The design should reveal structure, not fight it.
+- **Intelligible and useful** — visitors should be able to orient immediately: what are the clusters, what are the highly-connected concepts, where are the edges of the map? Clicking a node should bring you somewhere meaningful.
+- **Beautiful** — this is a cosmic knowledge graph on a platform called OpenCosmos. The aesthetic should feel like a star chart or constellation map: deep dark background, glowing nodes, luminous edges, confident typography. Reference: [Cosmograph](https://cosmograph.app/) — a WebGL-based graph tool with exactly the right visual register. We are not building a corporate org chart.
+
+**Inspiration:** Cosmograph's aesthetic (WebGL-rendered, dark-field, particle-like nodes with glowing edges) is the visual north star. Their npm package (`@cosmograph/react`) is a viable option at scale. For the initial build, `react-force-graph-2d` (MIT, canvas-based) is better suited to a small graph and allows full control over node rendering. Revisit Cosmograph when the graph reaches 100+ nodes or if the 3D mode (`react-force-graph-3d`) isn't sufficiently stunning.
+
+**Architecture — three layers:**
+
+*Layer 1: Data generator* (this repo, `scripts/knowledge/`)
+
+A script `generate-wiki-graph.ts` that reads all `knowledge/wiki/**/*.md`, extracts frontmatter and `## Connections` section wikilinks (`[[path]]` syntax), and outputs `knowledge/wiki/graph.json`:
+
+```json
+{
+  "nodes": [
+    { "id": "concepts/impermanence", "title": "Impermanence", "domain": "cross", "confidence": "high", "connectionCount": 4 }
+  ],
+  "edges": [
+    { "source": "concepts/impermanence", "target": "entities/lao-tzu", "label": "Taoist flux as the medium of all existence" }
+  ]
+}
+```
+
+The script extends the existing `scanCorpus()` + `gray-matter` pipeline in `scripts/knowledge/shared.ts`. Run as `pnpm graph` or as part of `/knowledge-compile`. The JSON is committed to `opencosmos-ui/public/` as a static asset.
+
+*Layer 2: Visualization component* (opencosmos-ui repo)
+
+A `<KnowledgeGraph />` component using `react-force-graph-2d`. Visual encoding:
+
+| Property | Encoding |
+|----------|----------|
+| Node color | Domain: `taoism` → jade, `philosophy` → gold, `literature` → cornflower, `cross` → violet |
+| Node size | Connection count (more connected = larger, minimum size preserved) |
+| Node glow | Confidence: `high` = bright halo, `medium` = soft, `speculative` = dim |
+| Edge opacity | 0.4 base; 1.0 on hover with label |
+| Background | CSS var `--background` (deep space dark) |
+| Labels | Always visible on hover; title-case, match design system type scale |
+
+Interaction model:
+- Click node → navigate to wiki page (or slide-in detail panel with summary, confidence, tags, and link)
+- Hover node → highlight direct connections, show edge labels
+- Zoom/pan → built-in force graph behavior
+- Legend → collapsible, shows domain colors and confidence encoding
+
+*Layer 3: Route* (opencosmos-ui repo, `apps/web/`)
+
+New page registered in `route-config.ts`. Natural location: `opencosmos.ai/knowledge/graph` — sits alongside the existing corpus browser at `opencosmos.ai/knowledge`. Could also live as a fullscreen experience at `/graph` with a link from `/knowledge`.
+
+**Tasks:**
+- [ ] Write `scripts/knowledge/generate-wiki-graph.ts` (~60 lines, extends existing pipeline)
+- [ ] Fix the 6 asymmetric wiki links identified in the 2026-04-10 health check before building the visualization (the graph will expose them)
+- [ ] Add `pnpm graph` script to root `package.json`; run as part of `/knowledge-compile`
+- [ ] Install `react-force-graph-2d` in opencosmos-ui (`apps/web`)
+- [ ] Build `<KnowledgeGraph />` component with visual encoding above
+- [ ] Wire route in `route-config.ts` → `opencosmos.ai/knowledge/graph`
+- [ ] Add link from the `/knowledge` corpus browser to the graph view
+- [ ] Evaluate: does the visual hold up at 8 nodes? Adjust force simulation charge/link distance so small graphs don't collapse to a point
+- [ ] Future: when graph reaches 100+ nodes, evaluate Cosmograph (`@cosmograph/react`) for WebGL rendering at scale
+
+**Cross-repo context:** Data lives in `opencosmos` (this repo). Visualization lives in `opencosmos-ui`. The `graph.json` bridges them — generated here, consumed there. Keep the schema stable once the component is built.
+
+**Home page integration:** The graph is also a candidate for the opencosmos.ai home page — replacing or complementing the static sphere placeholder with a living, animated knowledge constellation that communicates what OpenCosmos is before a visitor reads a word. At home-page scale, the graph would run in ambient/read-only mode (no click-to-navigate), with gentle continuous motion and no labels — pure visual communication of the platform's depth and interconnectedness. This is a separate design decision that follows the `/knowledge/graph` route being proven out first.
+
+---
 
 ### Phase 1d: Conversation Polish
 
