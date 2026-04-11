@@ -6,6 +6,26 @@
 
 ---
 
+## Todo's from Shalom for OpenCosmos:  
+- opencosmos.ai:     
+    - OpenCosmos/Creative Powerup integration: Solve Brian's request for Creative Powerup member credits to use with OpenCosmos
+    - Create an icon and favicon
+    - Add graceful error message when tokens are used up, or when there's an API error, or other error states
+    - Token guage: 
+        - Improve the logic of the display of the token gauge display
+            - If the connection = API, then do not display token gauge; do display the green ∞ in left sidebar
+        - Make the green display in the sidebar the same size it displays on the account page
+    - Voice UI: Analyze the cost of adding voice using elevenlabs, Flash model. 
+- OpenCosmos Home page: 
+    - Replace inert text with streaming text greeting
+    - Fix alignment issue of sphere on home page
+- Account page: 
+    - Enable users to upload profile photos (~5MB max), which, when displayed, show instead of their initials in their account icon.
+- Create a new "Subscribe" page: 
+    - Move subscription cards from the accounts page to a new subscribe page
+    - Subscription plan cards: Fix tiles with sticky bottom row that bottom-aligns the CTA
+- CFO mode: As the voice UI feature (described above) has financial implications, decide how best to centralize and organize strategic financial info like this, as well as the "Token Economics" section in ARCHITECTURE.md. If you were a wise CFO leading this part of OpenCosmos, how and where would you organize this info in this repo? 
+
 ## Projects
 
 | Project | Status | Priority | Next milestone |

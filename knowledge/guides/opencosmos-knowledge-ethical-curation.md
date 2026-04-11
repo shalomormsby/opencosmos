@@ -13,9 +13,10 @@ summary: >
 curated_at: 2026-03-28
 curator: shalom
 source: original
+corpus_tier: source
 related_docs:
-  - opencosmos-knowledge-formatting-guide.md
-  - opencosmos-knowledge-publish-workflow.md
+  - guides/opencosmos-knowledge-formatting-guide.md
+  - guides/opencosmos-knowledge-publish-workflow.md
 ---
 
 # Ethical Curation: Copyright, Fair Use, and the Corpus Tiers

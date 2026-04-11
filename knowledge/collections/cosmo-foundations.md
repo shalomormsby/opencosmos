@@ -13,10 +13,11 @@ summary: >
 curated_at: 2026-03-21
 curator: shalom
 source: original
+corpus_tier: source
 related_docs:
-  - sol-foundations.md
-  - socrates-foundations.md
-  - optimus-foundations.md
+  - collections/sol-foundations.md
+  - collections/socrates-foundations.md
+  - collections/optimus-foundations.md
 ---
 
 # Cosmo Foundations — Integrative Texts

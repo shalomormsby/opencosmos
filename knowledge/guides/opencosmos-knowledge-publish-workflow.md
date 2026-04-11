@@ -13,6 +13,7 @@ summary: >
 curated_at: 2026-03-22
 curator: shalom
 source: original
+corpus_tier: source
 related_docs:
   - guides/opencosmos-knowledge-tooling-overview.md
   - guides/opencosmos-knowledge-formatting-guide.md

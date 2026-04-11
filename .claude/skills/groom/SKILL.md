@@ -1,6 +1,6 @@
 ---
 name: groom
-description: Prepare raw markdown files in knowledge/incoming/ for publication to the knowledge base. Applies formatting cleanup (headers, spacing, structure) while preserving all original text.
+description: Prepare raw markdown files in knowledge/incoming/ for publication to the knowledge base. Applies formatting cleanup (headers, spacing, structure) while preserving all original text. Also previews which wiki pages the new document will affect.
 argument-hint: "[path] [--dry-run | --report | --force]"
 disable-model-invocation: true
 user-invocable: true
@@ -9,6 +9,10 @@ user-invocable: true
 # /groom — Knowledge Base Formatting Skill
 
 You are preparing raw text files in `knowledge/incoming/` for publication to the OpenCosmos knowledge base. Your job is formatting only — you must not rewrite, summarize, paraphrase, or alter any of the original content.
+
+**Full pipeline:** stage → **`/groom`** → `pnpm knowledge:publish` → `/knowledge-compile log`
+
+Your step covers formatting. After publish, `/knowledge-compile log` updates the knowledge wiki with any pages affected by the new document — run it immediately after publishing, not later.
 
 ## Critical: Always Use the Python Script
 
@@ -164,7 +168,30 @@ After processing, output a structured summary (the script prints this automatica
 ### Observations
 - Files lacking .md extension: [list]
 - Naming convention issues: [list]
+
+### Wiki Impact Preview
+For each successfully processed file, scan `knowledge/wiki/index.md` and identify which existing wiki pages this document will likely affect after publishing. Look for matching entities (authors, traditions), concepts (themes, ideas), and connections (cross-tradition comparisons).
+
+- filename → affects: wiki/entities/plato.md (adds a new dialogue to synthesizes list)
+- filename → affects: wiki/concepts/impermanence.md (adds Buddhist source support)
+- filename → creates opportunity: wiki/concepts/virtue.md (not yet written — this source would ground it)
+
+**Next step:** After `pnpm knowledge:publish`, run `/knowledge-compile log` to update these pages.
 ```
+
+---
+
+## Step 5: After Publishing
+
+Once `pnpm knowledge:publish` completes:
+
+```
+/knowledge-compile log
+```
+
+This scans the CURATION_LOG for entries added since the last wiki update and updates (or creates) affected wiki pages. Do this immediately — the trigger is "just published something new."
+
+If the new document introduces a theme or concept with no existing wiki page, `/knowledge-compile log` will create one at `confidence: speculative`. Run `/knowledge-review` periodically to promote pages as coverage deepens.
 
 ---
 

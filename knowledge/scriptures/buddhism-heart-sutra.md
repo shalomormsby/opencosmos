@@ -1,6 +1,6 @@
 ---
 title: Heart Sutra
-role: scripture
+role: source
 format: scripture
 domain: buddhism
 tags:
@@ -23,6 +23,7 @@ summary: >-
 curated_at: '2026-03-23'
 curator: shalom
 source: public-domain
+corpus_tier: source
 author: Unknown (traditional attribution)
 origin_date: ~400 CE
 era: ancient
