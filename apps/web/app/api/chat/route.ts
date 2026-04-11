@@ -217,9 +217,51 @@ function withHistoryCaching(messages: Message[]): Message[] {
   return result
 }
 
+// ---------------------------------------------------------------------------
+// Turnstile verification
+//
+// Verifies a Cloudflare Turnstile challenge token server-side. Called on the
+// free-tier path only — BYOK, subscriber, and admin bypass this check.
+//
+// Returns true when:
+//   - TURNSTILE_SECRET_KEY is not configured (dev mode — skip silently)
+//   - Cloudflare confirms the token is valid
+//   - Cloudflare's siteverify endpoint is unreachable (fail open — a CF outage
+//     should not take down the free tier; other rate limits remain as backstop)
+//
+// Returns false when:
+//   - Token is missing or empty
+//   - Cloudflare returns success: false (bot, expired token, or reused token)
+// ---------------------------------------------------------------------------
+
+async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) return true   // Not configured — skip (dev or pre-Cloudflare deploy)
+  if (!token) return false   // Missing token — reject
+
+  try {
+    const params = new URLSearchParams({ secret, response: token })
+    if (ip !== 'unknown') params.append('remoteip', ip)
+
+    const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+      method: 'POST',
+      body: params,
+    })
+    const data = await res.json() as { success: boolean; 'error-codes'?: string[] }
+    if (!data.success) {
+      console.log('[turnstile] rejected', { 'error-codes': data['error-codes'] })
+    }
+    return data.success
+  } catch (err) {
+    // Fail open — CF outage should not block real users
+    console.error('[turnstile] siteverify unreachable', err)
+    return true
+  }
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { messages, apiKey } = await req.json()
+    const { messages, apiKey, turnstileToken } = await req.json()
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
@@ -293,6 +335,13 @@ export async function POST(req: NextRequest) {
 
       // No active subscription — apply free-tier guards.
       if (!subscribedUserId) {
+        // 0. Turnstile bot prevention — runs before Redis hits.
+        //    Skipped when TURNSTILE_SECRET_KEY is not configured (dev).
+        const turnstileValid = await verifyTurnstile(turnstileToken ?? '', ip)
+        if (!turnstileValid) {
+          return NextResponse.json({ error: 'bot_suspected' }, { status: 403 })
+        }
+
         // 1. Hard monthly token cap (increments by estimated tokens, not by 1)
         const underCap = await checkMonthlyCap(tokenEstimate)
         if (!underCap) {

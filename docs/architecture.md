@@ -682,6 +682,42 @@ Users who are not signed in (or signed in but without an API key) get 3 free mes
 
 Token cost model: Claude Sonnet 4.6 at $3/M input + $15/M output, with conversation history caching applied for all subscribers. Costs tracked in **microdollars** (integers) in Redis to keep `INCR` atomic.
 
+### Token Economics
+
+**Pricing basis:** Claude Sonnet 4.6 — $3/M input tokens, $15/M output tokens. Prompt caching applies `cache_control: { type: "ephemeral" }` on the system prompt for all subscribers, reducing effective input costs ~76–90%.
+
+**Session model:**
+- System prompt: ~4,000 tokens/call (cached after first call in a session)
+- Average user message: ~150 tokens
+- Average Cosmo response: ~500 tokens (contemplative)
+- Each exchange carries full conversation history as input
+- A "session" = ~10 exchanges (~20 minutes)
+
+**Per-session cost (with caching):**
+
+| | Uncached | With caching | Savings |
+|---|---|---|---|
+| 10-exchange session | ~$0.30 | **~$0.13** | ~57% |
+| Per exchange | ~$0.030 | **~$0.013** | ~57% |
+
+**What caching saves:** The system prompt (~4,000 tokens) is written to cache on the first call (`cache_write`) and read from cache on all subsequent calls in the session. Cache reads cost $0.30/M vs $3/M — a 90% reduction on that portion of each request.
+
+**Monthly allotments by tier:**
+
+| Tier | API budget/mo | Token budget | Exchanges/mo | Hours/mo |
+|------|--------------|-------------|-------------|----------|
+| **Spark** ($5) | ~$2.28 | **152,000 tokens** | ~175 | ~6 hrs |
+| **Flame** ($10) | ~$4.70 | **313,000 tokens** | ~360 | ~12 hrs |
+| **Hearth** ($50) | ~$9.55 | **637,000 tokens** | ~735 | ~24 hrs |
+
+**Token budget formula:** `monthlyBudgetMicrodollars / 15` = output-token equivalents. At $15/M, this is the guaranteed output ceiling — actual usage runs higher because uncached input tokens cost only $3/M (3 µ$ vs 15 µ$). The gauge and plan cards display this number directly.
+
+*Hearth's $50 price carries a high margin — the excess funds Creative Powerup membership (~$49 value) and infrastructure. Near-zero marginal cost on CP makes the economics exceptional.*
+
+**Free greeting tier:** Each 3-exchange greeting costs ~$0.04. Budget $30–50/month for the free layer (~750–1,250 greetings), charged to the `opencosmos-main` Anthropic key. This is marketing spend, not a loss.
+
+**Weekly caps:** Monthly budget ÷ 4. Enforced in Redis alongside the monthly cap to prevent a single week from exhausting the full allotment.
+
 ### Required Environment Variables
 
 | Variable | Where to find it | Purpose |
@@ -755,9 +791,107 @@ The chat handler (`app/api/chat/route.ts`) checks access in this order:
 2. **BYOK** (API key in request body) → use user's key, bypass all limits
 3. **Active subscriber** (authenticated + valid `SubscriptionRecord` + within budget) → use shared server key, track usage
 4. **Budget exhausted** (subscriber over weekly or monthly cap) → `429` with `period: 'weekly' | 'monthly'`
-5. **Free tier** → monthly cap check → IP rate limit → session counter (3 messages/session)
+5. **Free tier** → **Turnstile verification** → monthly cap check → IP rate limit → token budget check
 
 Conversation history caching (adding `cache_control: ephemeral` to the last assistant message) is applied for subscribers only — reduces input token costs ~40–50% on long conversations.
+
+### Cloudflare Turnstile — Bot Prevention
+
+**Status:** Code deployed. Requires Cloudflare setup (site key + secret key) to activate. Inactive in dev when env vars are absent.
+
+**File:** `apps/web/app/api/chat/route.ts` → `verifyTurnstile()`  
+**Widget:** `apps/web/app/dialog/CosmoChat.tsx` → `<Turnstile />`  
+**Package:** `@marsidev/react-turnstile` v1.5+ (`apps/web`)
+
+#### How It Works
+
+An invisible Cloudflare Turnstile widget renders in the dialog UI on every page load. It runs a silent risk assessment in the browser and calls `onSuccess` with a short-lived challenge token (~300 second TTL). The token is included in the `/api/chat` request body. The server verifies it with Cloudflare's siteverify API before any Redis calls hit the free-tier path.
+
+Real browser users pass silently — the challenge completes in milliseconds, well before they finish typing. Bots and scripts that cannot execute the browser-side challenge have no token and receive a `403`.
+
+#### Access Scope
+
+| Path | Turnstile applied? |
+|------|--------------------|
+| Admin | No — bypassed entirely |
+| BYOK | No — user provides their own key |
+| Active subscriber | No — authenticated + subscription verified |
+| **Free tier** | **Yes — step 0 before any rate limit or Redis call** |
+
+#### Client-Side (CosmoChat.tsx)
+
+```tsx
+// Widget renders as a 0×0 invisible element. Skipped when site key is absent (dev).
+{process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+  <Turnstile
+    ref={turnstileRef}
+    siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+    onSuccess={setTurnstileToken}
+    options={{ size: 'invisible' }}
+  />
+)}
+```
+
+Token lifecycle:
+- `onSuccess` fires with a fresh token on page load and after each `reset()` call
+- Token is included in the POST body: `{ ..., turnstileToken: isFreeTier ? turnstileToken : undefined }`
+- After each free-tier send, `turnstileRef.current?.reset()` is called in the `finally` block — tokens are single-use once verified, so the next message needs a fresh one
+- Widget only rendered and token only sent when `!apiKey && !pmMode` (free tier)
+
+Error handling: `res.status === 403` from the server displays inline: *"Verification failed — please refresh the page and try again."*
+
+#### Server-Side (chat/route.ts)
+
+```ts
+async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
+  const secret = process.env.TURNSTILE_SECRET_KEY
+  if (!secret) return true   // Not configured — skip (dev or pre-Cloudflare deploy)
+  if (!token) return false   // Missing token — reject
+
+  const params = new URLSearchParams({ secret, response: token })
+  if (ip !== 'unknown') params.append('remoteip', ip)
+
+  const res = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST', body: params,
+  })
+  const data = await res.json()
+  return data.success
+}
+```
+
+- **Fail open on CF outage** — a Cloudflare availability event should not take down the free tier; IP rate limit and monthly cap remain as backstops
+- **Fail closed on missing/reused/expired tokens** — no token = `403`
+- `remoteip` is passed to Cloudflare when available for stronger verification; omitted if IP is `unknown`
+
+#### Environment Variables
+
+| Variable | Side | Where to find it | Purpose |
+|----------|------|-----------------|---------|
+| `NEXT_PUBLIC_TURNSTILE_SITE_KEY` | Client (build-time) | Cloudflare Dashboard → Turnstile → your site → Site Key | Embedded in the browser bundle; safe to expose |
+| `TURNSTILE_SECRET_KEY` | Server only | Cloudflare Dashboard → Turnstile → your site → Secret Key | Used in `siteverify` call; never sent to client |
+
+Both declared in `turbo.json → globalPassThroughEnv`. Add to `.env.local` (dev) and Vercel (prod).
+
+#### Cloudflare Setup (one-time)
+
+1. Cloudflare Dashboard → **Turnstile** → **Add site**
+2. Hostname: `opencosmos.ai` · Widget type: **Invisible**
+3. Copy Site Key → `NEXT_PUBLIC_TURNSTILE_SITE_KEY`
+4. Copy Secret Key → `TURNSTILE_SECRET_KEY`
+
+No Cloudflare proxy or DNS changes needed. Turnstile works purely as a browser widget + server-side API call — the site does not need to be on the Cloudflare network.
+
+#### Siteverify Response
+
+```json
+// Success
+{ "success": true, "challenge_ts": "2026-04-10T...", "hostname": "opencosmos.ai" }
+
+// Failure
+{ "success": false, "error-codes": ["invalid-input-response"] }
+```
+
+Common error codes: `missing-input-response` (no token), `invalid-input-response` (bad/reused token), `timeout-or-duplicate` (expired or already verified). All non-success results return `403 { error: 'bot_suspected' }` to the client.
 
 ### Hard-Won Lessons
 
@@ -837,6 +971,140 @@ The SDK's TypeScript type (`payload: Record<string, unknown>`) is correct — th
 
 ---
 
+## Subscription Benefits — Substack & Circle
+
+Flame and Hearth subscribers receive access to external platforms as part of their plan. Provisioning and revocation are triggered automatically by the Stripe webhook.
+
+**File:** `apps/web/lib/benefits.ts`  
+**Called from:** `apps/web/app/api/webhooks/stripe/route.ts`
+
+### Tier → Benefit Matrix
+
+| Tier | Substack newsletter | Circle community |
+|------|--------------------|--------------------|
+| **Spark** | — | — |
+| **Flame** | ✓ | — |
+| **Hearth** | ✓ | ✓ |
+
+### Trigger Flow
+
+```
+Stripe event: checkout.session.completed
+  → webhook handler retrieves tier from price ID
+  → calls getWorkOSUser(userId) to fetch email + name
+  → calls provisionBenefits(tier, email, name)
+      → addSubstackSubscriber()   [if flame or hearth]
+      → addCircleMember()         [if hearth only]
+
+Stripe event: customer.subscription.deleted
+  → calls revokeBenefits(tier, email)
+      → removeCircleMember()      [if hearth only]
+      → (Substack: intentionally left subscribed — see note below)
+```
+
+All benefit calls use `Promise.allSettled()` — a failure in one never blocks the other, and neither blocks the subscription confirmation response to Stripe.
+
+### Substack Integration
+
+**Publication:** `shalomormsby.substack.com`
+
+**Current approach:** Subscribes the user as a **free newsletter subscriber** via the publication's public subscription form endpoint. This is the same mechanism as submitting the "Subscribe" form on the Substack page — no auth credentials required from our side.
+
+> ⚠️ **Limitation — free tier only:** This method adds users as free Substack subscribers. It does **not** grant a paid Substack subscription. Flame and Hearth subscribers receive the newsletter but are not marked as paid Substack members.
+>
+> **TODO:** Apply for the Substack partner program to enable programmatic paid subscription gifting. This would let Flame/Hearth subscribers receive full paid Substack access. See `docs/pm.md → Phase 1b → Substack partner API`.
+
+**On cancellation:** Substack subscribers are intentionally **not removed**. Revoking newsletter access on plan cancellation is punitive and hurts goodwill. Users can unsubscribe themselves if desired.
+
+**Endpoint:**
+```
+POST https://shalomormsby.substack.com/api/v1/free
+Content-Type: application/json
+
+{ "email": "user@example.com", "first_name": "First" }
+```
+
+**Success response:** HTTP 200. No meaningful body — treat any 2xx as success.
+
+**Failure handling:** Non-2xx is logged at `[benefits/substack] subscribe failed {status} {body}` but does not throw. Network errors logged at `[benefits/substack] request error`.
+
+**No env vars required** for the subscribe call — it is a public endpoint.
+
+### Circle Integration
+
+**Community:** Creative Powerup — `community.creativepowerup.com`  
+**API base:** `https://app.circle.so/api/v1`  
+**Auth:** `Authorization: Token {CIRCLE_API_KEY}` header on every request
+
+**Required env vars:**
+
+| Variable | Where to find it | Purpose |
+|----------|-----------------|---------|
+| `CIRCLE_API_KEY` | Circle Dashboard → Settings → API | Bearer token for all API calls |
+| `CIRCLE_COMMUNITY_ID` | Circle Dashboard → Settings → General → Community ID | Numeric community identifier |
+
+Both are declared in `turbo.json → globalPassThroughEnv`. Add to `.env.local` (dev) and Vercel (prod).
+
+**On subscription (Hearth):**
+```
+POST https://app.circle.so/api/v1/community_members
+Authorization: Token {CIRCLE_API_KEY}
+Content-Type: application/json
+
+{
+  "community_id": "{CIRCLE_COMMUNITY_ID}",
+  "email": "user@example.com",
+  "name": "Full Name",
+  "skip_invitation": false
+}
+```
+`skip_invitation: false` sends the standard Circle welcome email/invite to the user.
+
+**On cancellation (Hearth):** Two-step process — look up member ID by email, then delete:
+
+```
+// Step 1: find member ID
+GET https://app.circle.so/api/v1/community_members
+  ?community_id={CIRCLE_COMMUNITY_ID}
+  &email=user@example.com
+Authorization: Token {CIRCLE_API_KEY}
+
+Response: { "community_members": [{ "id": 12345, ... }] }
+
+// Step 2: delete
+DELETE https://app.circle.so/api/v1/community_members/12345
+  ?community_id={CIRCLE_COMMUNITY_ID}
+Authorization: Token {CIRCLE_API_KEY}
+```
+
+If the member is not found in Step 1 (e.g. they manually left, or provisioning originally failed), the deletion is skipped cleanly — no error thrown.
+
+**Failure handling:** Non-2xx at either step is logged at `[benefits/circle] add member failed` / `[benefits/circle] member lookup failed` / `[benefits/circle] remove failed`. Network errors logged at `[benefits/circle] request error`. Never throws.
+
+### WorkOS User Lookup
+
+Both integrations need the subscriber's email and display name. These are not stored in Stripe or Redis — they live in WorkOS. The webhook handler resolves them via:
+
+```ts
+// apps/web/lib/benefits.ts
+const workos = new WorkOS(process.env.WORKOS_API_KEY!)
+const user = await workos.userManagement.getUser(userId)
+// userId = session.client_reference_id from the Stripe checkout session
+```
+
+If the lookup fails (network error, user deleted), `getWorkOSUser()` returns `null` and benefit provisioning is skipped entirely for that event, logged at `[benefits] WorkOS user lookup failed`.
+
+### Error Handling Philosophy
+
+Benefit provisioning is **best-effort and non-blocking**. The Stripe webhook always returns `{ received: true }` with HTTP 200 regardless of whether Substack or Circle calls succeed. This ensures:
+- Stripe never retries a webhook due to a benefit provisioning failure
+- A Circle API outage never prevents a subscriber from completing checkout
+- Failed provisioning is visible in Vercel function logs for manual remediation
+
+Manual remediation: if a benefit provisioning log shows failure, look up the subscriber in the Stripe Dashboard, get their email from WorkOS (or Stripe's `customer.email`), and add them manually in the Substack or Circle dashboard.
+
+---
+
 ## Sovereignty Tiers (Compute)
 
 Sovereignty Tiers govern **where LLMs process prompts** — not the knowledge base. The knowledge base is public by design. The strategic shift (see [chronicle.md Chapter 3](chronicle.md)) redefined sovereignty: it lives in the constitutional layer, not the hardware.
@@ -889,7 +1157,8 @@ The original three-tier solar-powered sovereignty model (Sun-Grace Protocol, Lun
 - [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
 - [WELCOME-COSMO.md](../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, mission, and foundational philosophy
 - [COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — Operational system prompt (v2)
-- [three-futures-roadmap.md](projects/three-futures-roadmap.md) — Strategic plan and phased milestones
+- [pm.md](pm.md) — Active project tasks, priorities, and launch checklist
+- [strategy.md](strategy.md) — Three Futures, business model, revenue milestones
 - [chronicle.md](chronicle.md) — The story behind the decisions
 - [knowledge/README.md](../knowledge/README.md) — Knowledge corpus organization
 - [archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) — Cosmo AI technical blueprint (historical)

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect, useCallback } from 'react'
+import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile'
 import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
@@ -166,8 +167,10 @@ export function CosmoChat() {
   const [pmSecret, setPmSecret] = useState('')
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
+  const [turnstileToken, setTurnstileToken] = useState('')
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const turnstileRef = useRef<TurnstileInstance>(null)
 
   useEffect(() => {
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
@@ -284,11 +287,33 @@ export function CosmoChat() {
     setIsStreaming(true)
 
     try {
+      const isFreeTier = !apiKey && !pmMode
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: newMessages, apiKey: apiKey || undefined }),
+        body: JSON.stringify({
+          messages: newMessages,
+          apiKey: apiKey || undefined,
+          // Only send the Turnstile token on the free-tier path. Server ignores
+          // it for BYOK and PM paths, but there's no point generating traffic.
+          turnstileToken: isFreeTier ? turnstileToken : undefined,
+        }),
       })
+
+      if (res.status === 403) {
+        // Turnstile rejected — bot suspected. Ask the user to refresh.
+        setMessages((prev) => {
+          const updated = [...prev]
+          updated[updated.length - 1] = {
+            ...updated[updated.length - 1],
+            content: 'Verification failed — please refresh the page and try again.',
+          }
+          return updated
+        })
+        setIsStreaming(false)
+        textareaRef.current?.focus()
+        return
+      }
 
       if (res.status === 429) {
         setTokensUsed(tokenBudget) // pin gauge to empty
@@ -365,8 +390,14 @@ export function CosmoChat() {
     } finally {
       setIsStreaming(false)
       textareaRef.current?.focus()
+      // Reset the Turnstile widget after each free-tier send so the next message
+      // has a fresh token. Tokens are single-use once verified server-side.
+      if (!apiKey && !pmMode) {
+        turnstileRef.current?.reset()
+        setTurnstileToken('')
+      }
     }
-  }, [input, isStreaming, isLimited, messages, apiKey, currentId, refreshConversations, isAuthenticated])
+  }, [input, isStreaming, isLimited, messages, apiKey, pmMode, currentId, refreshConversations, isAuthenticated, turnstileToken])
 
   const saveKey = () => {
     const key = apiKeyDraft.trim()
@@ -483,6 +514,17 @@ export function CosmoChat() {
       </AppSidebar>
 
       <AppSidebarInset>
+        {/* Invisible Turnstile widget — challenges free-tier users silently.
+            Skipped when NEXT_PUBLIC_TURNSTILE_SITE_KEY is not configured (dev). */}
+        {process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY && (
+          <Turnstile
+            ref={turnstileRef}
+            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
+            onSuccess={setTurnstileToken}
+            options={{ size: 'invisible' }}
+          />
+        )}
+
         {/* Main header — fixed with always-on liquid glass */}
         <Header
           sticky={false}

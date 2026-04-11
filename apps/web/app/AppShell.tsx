@@ -2,8 +2,8 @@
 
 import { AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar } from '@opencosmos/ui'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
-import { AuthButton } from './AuthButton'
 import { SidebarAvatar } from './SidebarAvatar'
+import { SidebarUsage } from './SidebarUsage'
 
 function ShellFooter() {
   const { isOpen } = useAppSidebar()
@@ -13,7 +13,7 @@ function ShellFooter() {
   return (
     <div className="flex items-center gap-2">
       <SidebarAvatar />
-      <AuthButton className="flex-1" />
+      <SidebarUsage />
     </div>
   )
 }
