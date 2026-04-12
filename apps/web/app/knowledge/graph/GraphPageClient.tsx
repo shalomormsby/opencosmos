@@ -16,7 +16,7 @@ import { useEffect, useRef, useState, type ComponentType } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import type { KnowledgePreviewData, KnowledgeGraphData, KnowledgeGraphProps } from '@opencosmos/ui/knowledge-graph'
-import { DOMAIN_COLORS } from '@opencosmos/ui/knowledge-graph'
+import { DOMAIN_COLORS } from './domain-colors'
 
 // Dynamic import lives in the Client Component — Next.js App Router rule:
 // component functions cannot be passed as props from Server → Client components.
