@@ -12,7 +12,7 @@
  * ssr: false is required because sigma.js WebGL needs the browser.
  */
 
-import { useEffect, useRef, useState, type ComponentType } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, type ComponentType } from 'react'
 import dynamic from 'next/dynamic'
 import { useRouter } from 'next/navigation'
 import type { KnowledgePreviewData, KnowledgeGraphData, KnowledgeGraphProps } from '@opencosmos/ui/knowledge-graph'
@@ -31,8 +31,10 @@ interface GraphPageClientProps {
 
 export function GraphPageClient({ preview }: GraphPageClientProps) {
   const router = useRouter()
+  const containerRef                      = useRef<HTMLDivElement>(null)
   const [graphData, setGraphData]       = useState<KnowledgeGraphData | null>(null)
   const [showSkeleton, setShowSkeleton] = useState(true)
+  const [containerReady, setContainerReady] = useState(false)
   const [error, setError]               = useState<string | null>(null)
 
   useEffect(() => {
@@ -56,12 +58,33 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
     return () => worker.terminate()
   }, [])
 
+  // Gate KnowledgeGraph mount until the container has real dimensions.
+  // sigma computes WebGL viewport matrices at init — a zero-height container
+  // produces degenerate matrices and renders nothing (labels appear via canvas2d
+  // but no WebGL nodes). ResizeObserver fires as soon as layout gives the div height.
+  useLayoutEffect(() => {
+    const el = containerRef.current
+    if (!el) return
+    if (el.clientHeight > 0) {
+      setContainerReady(true)
+      return
+    }
+    const ro = new ResizeObserver(() => {
+      if (el.clientHeight > 0) {
+        setContainerReady(true)
+        ro.disconnect()
+      }
+    })
+    ro.observe(el)
+    return () => ro.disconnect()
+  }, [])
+
   const handleNodeClick = (nodeId: string) => {
     router.push(`/knowledge/wiki/${nodeId}`)
   }
 
   return (
-    <div className="relative w-full h-full">
+    <div ref={containerRef} className="relative w-full h-full">
       {/* SVG skeleton — visible immediately from SSR preview data */}
       {preview && (
         <div
@@ -72,8 +95,8 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
         </div>
       )}
 
-      {/* Live graph — fades in when Web Worker finishes */}
-      {graphData && (
+      {/* Live graph — fades in when Web Worker finishes AND container has real height */}
+      {graphData && containerReady && (
         <div
           className="absolute inset-0 transition-opacity duration-[600ms]"
           style={{ opacity: showSkeleton ? 0 : 1, zIndex: 2 }}
