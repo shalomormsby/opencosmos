@@ -8,6 +8,32 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-04-11 — Phase 1c+: Knowledge Graph
+
+Built the full Knowledge Graph feature (`opencosmos.ai/knowledge/graph`) across both repos.
+
+### Added — opencosmos repo
+- `scripts/knowledge/generate-wiki-graph.ts` — graph generator: scans `knowledge/wiki/**/*.md`, builds nodes + edges from shared synthesis sources, runs ForceAtlas2 server-side, writes gzip-compressed graph + stripped preview to Upstash Redis. `pnpm graph` script.
+- `apps/web/app/api/knowledge/graph/route.ts` — GET endpoint; decompresses gzip from Redis; ISR `revalidate = 3600`
+- `apps/web/app/api/revalidate/route.ts` — on-demand ISR revalidation endpoint; validates `x-revalidate-secret` header
+- `apps/web/app/knowledge/graph/` — full-bleed graph page: SSR preview skeleton, Web Worker for off-thread JSON parse, crossfade to live renderer
+- `.github/workflows/knowledge-sync.yml` — GitHub Action: triggers on `knowledge/**` push to main; runs `pnpm graph`; POSTs on-demand revalidation
+
+### Added — opencosmos-ui repo
+- `packages/ui/src/components/data-display/knowledge-graph/` — `<KnowledgeGraph />` component published as `@opencosmos/ui/knowledge-graph` subpath
+  - `KnowledgeGraph.tsx` — sigma v3 WebGL renderer; three-state interaction (ambient → focus → search); cluster domain labels; search overlay with ⌘K + persistent mobile button; focus tooltip panel; WebGL context loss handler
+  - `GlowNodeProgram.ts` — sigma v3 custom node program; additive blending (`gl.SRC_ALPHA, gl.ONE`); GPU breathing animation via `u_time` uniform; `a_vibrancy` vertex attribute
+  - `CanvasGraph.tsx` — Safari/iOS canvas fallback; three-layer canvas (offscreen edges + live nodes + on-demand highlight); DPR scaling; domain-batched `globalAlpha` pulse; touch hit-target expansion
+  - `AccessibilityLayer` — `sr-only` DOM with traversable neighbor `<ul>`, `aria-live="polite"` focus announcements
+  - `types.ts`, `constants.ts` — shared types and domain color palette
+
+### Stats (2026-04-11)
+- 25 wiki nodes, 62 edges at first run
+- 7.3 KB full graph (gzip+Base64)
+- Edges derived from shared `synthesizes` sources across wiki articles
+
+---
+
 ## 2026-03-13 — Documentation Reorganization
 
 Cleaned up the documentation structure before the corpus grows further. Established clear rules for where docs live.

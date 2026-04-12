@@ -18,6 +18,7 @@ related_docs:
   - guides/opencosmos-knowledge-publish-workflow.md
   - guides/opencosmos-knowledge-health-report.md
   - guides/opencosmos-knowledge-formatting-guide.md
+  - guides/opencosmos-knowledge-graph.md
 ---
 
 # OpenCosmos Scripts Reference
