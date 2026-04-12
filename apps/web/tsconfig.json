@@ -25,6 +25,9 @@
     "paths": {
       "@/*": [
         "./*"
+      ],
+      "@opencosmos/ui/knowledge-graph": [
+        "./lib/knowledge-graph-stub"
       ]
     }
   },
