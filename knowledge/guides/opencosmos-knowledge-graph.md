@@ -218,10 +218,19 @@ Parsing a 2–3 MB JSON payload on the main thread blocks the UI for 80–150ms.
 | `apps/web/app/knowledge/graph/page.tsx` | Server component — fetches preview, renders skeleton |
 | `apps/web/app/knowledge/graph/GraphPageClient.tsx` | Client component — orchestrates Worker + KnowledgeGraph |
 | `apps/web/app/knowledge/graph/graphWorker.ts` | Web Worker — fetches + parses full graph JSON |
+| `apps/web/app/knowledge/graph/domain-colors.ts` | Local copy of `DOMAIN_COLORS` (see note below) |
 | `apps/web/app/api/knowledge/graph/route.ts` | API route — decompresses and streams graph JSON |
 | `apps/web/app/api/revalidate/route.ts` | API route — triggers ISR on POST from GitHub Actions |
 | `.github/workflows/knowledge-sync.yml` | CI — runs generator on `knowledge/**` push |
 | `packages/ui/src/components/data-display/knowledge-graph/` | `@opencosmos/ui` component (opencosmos-ui repo) |
+
+### Why `domain-colors.ts` is local
+
+`DOMAIN_COLORS` is a plain constant object — no WebGL, no React. But it lives in `@opencosmos/ui/knowledge-graph`, which re-exports from sigma. Even though `KnowledgeGraph` itself is wrapped in `dynamic({ ssr: false })`, Next.js/Turbopack still traces the static import chain of every client component during the server build. That trace reaches sigma's module-level code, which references `WebGL2RenderingContext` — a browser global that doesn't exist on the server — and crashes the build.
+
+Keeping `DOMAIN_COLORS` in a local file breaks the import chain: the server component graph never touches sigma. The `dynamic()` import is the only path that reaches the package, and it only runs in the browser.
+
+**If you update `DOMAIN_COLORS` in `@opencosmos/ui`,** remember to mirror the change in `apps/web/app/knowledge/graph/domain-colors.ts`.
 
 ---
 
