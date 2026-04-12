@@ -51,7 +51,7 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
       }
     }
 
-    worker.postMessage(null)
+    worker.postMessage({ origin: location.origin })
 
     return () => worker.terminate()
   }, [])
