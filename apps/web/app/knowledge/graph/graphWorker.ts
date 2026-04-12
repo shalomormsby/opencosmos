@@ -13,9 +13,10 @@
  * Binding termination to onmessage leaks the worker on early unmount.
  */
 
-self.onmessage = async () => {
+self.onmessage = async (e: MessageEvent<{ origin: string }>) => {
   try {
-    const res  = await fetch('/api/knowledge/graph')
+    const origin = e.data?.origin ?? self.location.origin
+    const res  = await fetch(`${origin}/api/knowledge/graph`)
 
     if (!res.ok) {
       self.postMessage({ error: `Graph API returned ${res.status}` })
