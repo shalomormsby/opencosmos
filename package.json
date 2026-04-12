@@ -8,10 +8,13 @@
         "lint": "turbo run lint",
         "knowledge:publish": "tsx scripts/publish-knowledge.ts",
         "knowledge:sync-dell": "tsx scripts/sync-dell.ts",
-        "knowledge:health": "tsx scripts/knowledge-health.ts"
+        "knowledge:health": "tsx scripts/knowledge-health.ts",
+        "graph": "tsx scripts/knowledge/generate-wiki-graph.ts"
     },
     "devDependencies": {
         "@inquirer/prompts": "^8.3.0",
+        "graphology": "^0.26.0",
+        "graphology-layout-forceatlas2": "^0.10.1",
         "tsx": "^4.21.0",
         "turbo": "latest"
     },

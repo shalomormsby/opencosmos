@@ -1,0 +1,51 @@
+name: Knowledge Sync
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'knowledge/**'
+
+concurrency:
+  # Cancel any in-progress run when a new push arrives.
+  # Safe: the generator always reads from the full repo checkout, not a Redis
+  # delta, so restarting from the latest HEAD always includes all merged files.
+  group: knowledge-graph-generator
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Sync knowledge corpus and regenerate graph
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Regenerate knowledge graph
+        env:
+          UPSTASH_REDIS_REST_URL:   ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+        run: pnpm graph
+
+      - name: Revalidate graph route (on-demand ISR)
+        # Triggers Next.js ISR so all users see the updated graph within seconds.
+        # The revalidate secret prevents unauthorized cache busting.
+        run: |
+          curl -X POST "${{ secrets.NEXT_PUBLIC_APP_URL }}/api/revalidate" \
+            -H "Content-Type: application/json" \
+            -H "x-revalidate-secret: ${{ secrets.REVALIDATE_SECRET }}" \
+            -d '{"path": "/knowledge/graph"}' \
+            --fail-with-body

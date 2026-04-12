@@ -32,8 +32,7 @@ related_docs:
   - sources/philosophy-nature.md
   - sources/philosophy-on-the-duty-of-civil-disobedience.md
   - sources/philosophy-the-joyful-wisdom-la-gaya-scienza.md
-  - >-
-    references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md
+  - references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
 ---
 "THE KINGDOM OF GOD IS WITHIN YOU"

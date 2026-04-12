@@ -232,6 +232,54 @@ On push to main (paths: knowledge/**):
 - **Embedding:** Upstash Vector supports server-side embedding with built-in models — no separate embedding API needed
 - **Metadata:** Frontmatter fields stored as vector metadata for filtered retrieval
 
+### Knowledge Graph (`/knowledge/graph`)
+
+A WebGL knowledge graph that visualises the wiki as a living constellation of ideas and connections. Route: `opencosmos.ai/knowledge/graph`.
+
+**Data flow:**
+
+```
+pnpm graph (generate-wiki-graph.ts)
+  ├─ Scans knowledge/wiki/entities|concepts|connections/*.md
+  ├─ Builds nodes from frontmatter (title, domain, confidence, vibrancy)
+  ├─ Builds edges from shared `synthesizes` sources across wiki articles
+  ├─ Seeds positions from Redis (layout stability across runs)
+  ├─ Runs ForceAtlas2 (~100 iterations, server-side only)
+  ├─ Writes gzip+Base64 full graph → Redis key `knowledge:graph`
+  └─ Writes stripped preview (top 40 by connectionCount) → Redis key `knowledge:graph:preview`
+
+GitHub Action (knowledge-sync.yml) triggers pnpm graph on push to main when knowledge/** changes
+  └─ POSTs to /api/revalidate → Next.js on-demand ISR revalidation → all users see update within seconds
+
+Page load (opencosmos.ai/knowledge/graph):
+  ├─ SSR fetches `knowledge:graph:preview` → renders SVG skeleton (milliseconds)
+  ├─ Web Worker fetches + parses full graph JSON off main thread (no jank)
+  └─ Crossfade: skeleton → live sigma.js WebGL renderer
+```
+
+**Component architecture (two repos):**
+
+| Layer | Location | Description |
+|-------|----------|-------------|
+| Generator | `opencosmos/scripts/knowledge/generate-wiki-graph.ts` | Node.js script; ForceAtlas2 runs here, never in browser |
+| API route | `opencosmos/apps/web/app/api/knowledge/graph/route.ts` | GET; decompresses gzip from Redis; ISR revalidate=3600 |
+| Revalidate | `opencosmos/apps/web/app/api/revalidate/route.ts` | POST; validates `x-revalidate-secret`; triggers ISR |
+| Page | `opencosmos/apps/web/app/knowledge/graph/` | SSR preview + Worker + skeleton → live crossfade |
+| Web Worker | `opencosmos/apps/web/app/knowledge/graph/graphWorker.ts` | Off-thread JSON parse |
+| Component | `opencosmos-ui/packages/ui/src/components/data-display/knowledge-graph/` | `@opencosmos/ui/knowledge-graph` subpath |
+| Renderer (WebGL) | `GlowNodeProgram.ts` | sigma v3 custom program; additive blending; GPU breathing animation |
+| Renderer (canvas) | `CanvasGraph.tsx` | Safari/iOS fallback; three-layer canvas; same interaction model |
+
+**Key technical decisions:**
+- ForceAtlas2 runs once server-side; positions baked into Redis. Client receives settled coordinates — no layout cost in the browser. Breathing animation is a GPU vertex shader (zero CPU cost), not a running physics simulation.
+- WebGL → canvas fallback is transparent to consumers (`<KnowledgeGraph />` is one component).
+- Graph data is gzip-compressed before writing to Redis (7 KB at 25 nodes; well within Upstash limits at 2,500 nodes).
+- Layout stability: existing node positions seeded from Redis before each ForceAtlas2 run; spatial memory preserved across generator runs.
+
+**New environment variables:**
+- `REVALIDATE_SECRET` — secures `/api/revalidate`; set in `.env.local`, Vercel (opencosmos.ai deployment), and GitHub Actions secrets
+- `NEXT_PUBLIC_APP_URL` — GitHub Actions secret for the revalidation curl (e.g. `https://opencosmos.ai`)
+
 ---
 
 ## Cosmo AI Architecture
