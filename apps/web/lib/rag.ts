@@ -92,7 +92,9 @@ export function formatRagChunks(chunks: RagChunk[]): string {
     return `${header}\n${sourceLabel}\n\n${c.text}`
   })
 
-  return `## Retrieved Passages\n\n${sections.join('\n\n---\n\n')}`
+  const preamble = `The following passages were retrieved from the OpenCosmos knowledge corpus based on the current conversation. These are real source documents — treat them as grounding material. Cite the title and author when you draw from them. If a passage directly answers the question, quote or paraphrase it and name the source.`
+
+  return `## Retrieved Passages\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
