@@ -209,10 +209,10 @@ function buildChunks(filePath: string): VectorChunk[] {
         tags,
         audience,
         text: storedText,
-        ...(author && { author }),
-        ...(tradition && { tradition }),
-        ...(isWiki && { wiki_path: relPath }),
       }
+      if (author) metadata.author = author
+      if (tradition) metadata.tradition = tradition
+      if (isWiki) metadata.wiki_path = relPath
 
       return { id, data, metadata }
     })

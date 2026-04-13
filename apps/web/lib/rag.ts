@@ -125,15 +125,16 @@ export async function fetchRagContext(
     .filter(r => r.metadata && (r.metadata as Record<string, unknown>).source)
     .map(r => {
       const meta = r.metadata as Record<string, unknown>
-      return {
+      const chunk: RagChunk = {
         text: (meta.text as string) ?? '',
         source: (meta.source as string) ?? '',
         title: (meta.title as string) ?? '',
         heading: (meta.heading as string) ?? '',
         domain: (meta.domain as string) ?? '',
-        ...(meta.author && { author: meta.author as string }),
-        ...(meta.tradition && { tradition: meta.tradition as string }),
       }
+      if (meta.author) chunk.author = meta.author as string
+      if (meta.tradition) chunk.tradition = meta.tradition as string
+      return chunk
     })
     .filter(c => c.text.length > 0)
 
