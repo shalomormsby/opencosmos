@@ -16,6 +16,7 @@
     "@react-sigma/core": "^5.0.6",
     "@upstash/ratelimit": "^2.0.8",
     "@upstash/redis": "^1.37.0",
+    "@upstash/vector": "^1.2.3",
     "@vercel/analytics": "^1.6.1",
     "@workos-inc/authkit-nextjs": "^3.0.0",
     "@workos-inc/node": "^8.11.0",

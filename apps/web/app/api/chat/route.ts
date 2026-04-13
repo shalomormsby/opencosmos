@@ -6,6 +6,7 @@ import { Redis } from '@upstash/redis'
 import { withAuth } from '@workos-inc/authkit-nextjs'
 import { getSubscription, incrementUsage, isWithinBudget, markByok } from '@/lib/subscription'
 import { TIERS } from '@/lib/stripe'
+import { fetchRagContext, formatRagChunks, type RagResult } from '@/lib/rag'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
 const WIKI_INDEX = process.env.COSMO_WIKI_INDEX ?? ''
@@ -279,6 +280,22 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
+    // Fire RAG fetch immediately — runs concurrently with auth checks below.
+    // Resolved via Promise.race with a 1.5s timeout before the Anthropic call.
+    const lastUserMsg = [...messages].reverse().find((m: Message) => m.role === 'user')
+    const lastUserText = lastUserMsg
+      ? (typeof lastUserMsg.content === 'string'
+          ? lastUserMsg.content
+          : (lastUserMsg.content as Anthropic.ContentBlockParam[])
+              .filter(b => b.type === 'text')
+              .map(b => (b as Anthropic.TextBlockParam).text)
+              .join(''))
+      : ''
+
+    const ragPromise: Promise<RagResult> = lastUserText
+      ? fetchRagContext(lastUserText, messages.slice(-6)).catch(() => ({ chunks: [], timedOut: false }))
+      : Promise.resolve({ chunks: [] })
+
     // Compute payload size metrics up front — used by monthly cap and size limits.
     // Rough heuristic: 4 chars ≈ 1 token.
     const totalChars = messages.reduce(
@@ -433,7 +450,9 @@ export async function POST(req: NextRequest) {
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
 
     // Shalom admin mode: inject private PM context.
-    const systemContent = [...SYSTEM_CONTENT]
+    // Typed as TextBlockParam[] so dynamic pushes (RAG, PM context) without
+    // cache_control are valid — cache_control is optional in the SDK type.
+    const systemContent: Anthropic.TextBlockParam[] = [...SYSTEM_CONTENT]
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
       if (pmContext) {
@@ -443,6 +462,29 @@ export async function POST(req: NextRequest) {
           cache_control: { type: 'ephemeral' as const },
         })
       }
+    }
+
+    // Resolve RAG context (non-blocking: 1.5s timeout, then proceed without it).
+    // Context injection order (spec § Phase 3):
+    //   1. SYSTEM_PROMPT    — static, prompt-cached
+    //   2. COSMO_WIKI_INDEX — static, prompt-cached
+    //   3. RAG chunks       — dynamic, inserted here
+    //   4. Conversation     — dynamic, inserted by messages param
+    const ragResult: RagResult = await Promise.race([
+      ragPromise,
+      new Promise<RagResult>(r => setTimeout(() => r({ chunks: [], timedOut: true }), 1500)),
+    ])
+
+    if (ragResult.chunks.length > 0) {
+      const ragText = formatRagChunks(ragResult.chunks)
+      if (ragText) {
+        systemContent.push({ type: 'text' as const, text: ragText })
+      }
+    } else if (ragResult.timedOut) {
+      systemContent.push({
+        type: 'text' as const,
+        text: '[RAG_TIMEOUT: knowledge corpus retrieval did not complete in time. Acknowledge this honestly if asked about specific texts — say you are having trouble accessing the specific passages right now, then respond from what you do hold. Do not hallucinate specific quotations.]',
+      })
     }
 
     // Apply conversation history caching for subscribers (reduces costs ~40-50%).

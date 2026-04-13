@@ -14,8 +14,8 @@ open_questions:
   - The Bhagavad-Gita's svadharma (one's own duty) is role-specific and hierarchical — a warrior's dharma is to fight, a priest's is to teach. How does this relate to universal moral principles? Can both be true?
   - Is dharma a descriptive claim (this is your duty given your nature and role) or a normative one (you ought to do this), or both?
 contradictions:
-  - The Bhagavad-Gita uses dharma to override Arjuna's nonviolent instinct: his dharma as a warrior requires him to fight even at great personal cost. Buddhist dhamma uses the teaching to ground ahimsa (non-harm) as a universal precept. The same etymological root generates opposite conclusions about whether violence can be dutiful.
-  - Svadharma (one's own dharma) is role-specific and hierarchical — the duty of a warrior is different from the duty of a priest. But the Bhagavad-Gita also teaches that all dharmas are paths to the same ultimate realization. This creates a tension: is dharma a pluralistic ethics (different duties for different people) or a universal ethics (one ultimate reality approached through multiple paths)?
+  - "The Bhagavad-Gita uses dharma to override Arjuna's nonviolent instinct: his dharma as a warrior requires him to fight even at great personal cost. Buddhist dhamma uses the teaching to ground ahimsa (non-harm) as a universal precept. The same etymological root generates opposite conclusions about whether violence can be dutiful."
+  - "Svadharma (one's own dharma) is role-specific and hierarchical — the duty of a warrior is different from the duty of a priest. But the Bhagavad-Gita also teaches that all dharmas are paths to the same ultimate realization. This creates a tension: is dharma a pluralistic ethics (different duties for different people) or a universal ethics (one ultimate reality approached through multiple paths)?"
 ---
 
 # Dharma — Cross-Tradition Synthesis

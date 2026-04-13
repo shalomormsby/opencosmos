@@ -40,6 +40,12 @@ jobs:
           UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
         run: pnpm graph
 
+      - name: Embed knowledge corpus
+        env:
+          UPSTASH_VECTOR_REST_URL:   ${{ secrets.UPSTASH_VECTOR_REST_URL }}
+          UPSTASH_VECTOR_REST_TOKEN: ${{ secrets.UPSTASH_VECTOR_REST_TOKEN }}
+        run: pnpm embed
+
       - name: Revalidate graph route (on-demand ISR)
         # Triggers Next.js ISR so all users see the updated graph within seconds.
         # The revalidate secret prevents unauthorized cache busting.

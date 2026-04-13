@@ -9,7 +9,8 @@
         "knowledge:publish": "tsx scripts/publish-knowledge.ts",
         "knowledge:sync-dell": "tsx scripts/sync-dell.ts",
         "knowledge:health": "tsx scripts/knowledge-health.ts",
-        "graph": "tsx scripts/knowledge/generate-wiki-graph.ts"
+        "graph": "tsx scripts/knowledge/generate-wiki-graph.ts",
+        "embed": "tsx scripts/knowledge/embed-knowledge.ts"
     },
     "devDependencies": {
         "@inquirer/prompts": "^8.3.0",
