@@ -2,9 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-03-13
+**Last updated:** 2026-04-12
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-04-12 — Phase 1d: Knowledge Intelligence Layer (Phases 1–3)
+
+Built the RAG embedding pipeline, retrieval API, and wired Cosmo's chat into the knowledge corpus. Cosmo can now cite specific source documents by name and author in conversation.
+
+### Added — opencosmos repo
+- `scripts/knowledge/embed-knowledge.ts` — embedding pipeline: chunks `knowledge/**` at H2 boundaries with 1-paragraph overlap, deterministic chunk IDs for idempotent re-runs, upserts to Upstash Vector (Upstash handles embedding generation). `pnpm embed` script.
+- `apps/web/lib/rag.ts` — `fetchRagContext()` helper: builds contextual query from last 3 exchange pairs, queries `topK: 8`, returns typed `RagChunk[]`. `formatRagChunks()` formats results as cited passage blocks.
+- `apps/web/app/api/knowledge/route.ts` — `POST /api/knowledge` endpoint; accepts `{query, conversation_history?, current_document?}`; foundation for sidebar companion (Phase 4).
+- `docs/knowledge-intelligence-layer.md` — full design spec for the Knowledge Intelligence Layer (Phases 0–7 + stretch goals).
+
+### Modified — opencosmos repo
+- `apps/web/app/api/chat/route.ts` — RAG fires concurrently with auth checks; 1.5s `Promise.race` timeout; chunks injected between wiki index and conversation history (preserving prompt cache boundary); `[RAG_TIMEOUT]` signal when retrieval times out.
+- `.github/workflows/knowledge-sync.yml` — added `pnpm embed` step after `pnpm graph`; uses `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` repo secrets.
+- `package.json` — added `pnpm embed` script.
+- `knowledge/wiki/concepts/{civic-duty,civil-disobedience,dharma,inner-light}.md` — fixed YAML frontmatter (unquoted sequence items with `colon + space` broke gray-matter).
+
+### Stats (2026-04-12)
+- 893 chunks from 83 knowledge files in Upstash Vector index
+- Context injection order: system prompt (cached) → wiki index (cached) → RAG chunks (dynamic) → conversation history
 
 ---
 

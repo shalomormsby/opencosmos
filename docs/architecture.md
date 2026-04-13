@@ -195,15 +195,14 @@ A living record of what was added, when, why it matters, and what it connects. A
 
 Lives at `apps/web/app/api/knowledge/route.ts`, deployed to `opencosmos.ai/api/knowledge`.
 
-- **Auth:** Public read — the knowledge is public by design. Optional API key via `@upstash/ratelimit` for heavy consumers.
-- **Rate limiting:** `@upstash/ratelimit` (same Upstash ecosystem, serverless, free tier). Default: 60 requests/minute per IP.
-- **Shape:** `GET /api/knowledge?q=<query>&limit=5&domain=buddhism`
-  - `q` (required) — natural language query
-  - `limit` (optional, default 5) — number of results
-  - `domain` (optional) — filter by domain code
-  - `role` (optional) — filter by document role (source, commentary, reference, guide, collection)
-- **Response:** Ranked chunks with source attribution (title, author, curator, domain, role, similarity score, source file path).
-- **Implementation:** Query Upstash Vector with optional metadata filters, return top-K results.
+- **Auth:** Public read — the knowledge is public by design.
+- **Shape:** `POST /api/knowledge`
+  - `query` (required) — natural language query
+  - `conversation_history` (optional) — last N turns used to build a contextual query
+  - `current_document` (optional) — full markdown content of the document the user is reading; always included when provided
+- **Response:** `{ chunks: RagChunk[] }` with source attribution (title, author, tradition, domain, heading, source path).
+- **Implementation:** `apps/web/lib/rag.ts` — `fetchRagContext()` builds a contextual query from the last 3 exchange pairs (improves retrieval for ongoing conversations), queries `topK: 8`, returns typed chunks. `formatRagChunks()` formats results as cited passage blocks for Cosmo's context window.
+- **Wired into chat:** `apps/web/app/api/chat/route.ts` fires RAG concurrently with auth checks, resolves via 1.5s `Promise.race`. Chunks injected between the wiki index and conversation history (preserving the prompt cache boundary on static blocks). `[RAG_TIMEOUT]` signal injected when retrieval times out so Cosmo can acknowledge it honestly.
 
 ### Knowledge Docs Site
 
@@ -216,21 +215,22 @@ A section of opencosmos.ai at `/knowledge/`, built from `knowledge/**/*.md` at d
 
 ### Sync Workflow (Git → Upstash Vector)
 
-A script/GitHub Action that keeps Upstash Vector in sync with `knowledge/`.
+`scripts/knowledge/embed-knowledge.ts` keeps Upstash Vector in sync with `knowledge/`. Run locally with `pnpm embed`; runs automatically in CI after `pnpm graph` on every `knowledge/**` push to main.
 
 ```
-On push to main (paths: knowledge/**):
-  1. Parse changed .md files (frontmatter + content)
-  2. Chunk by H2 sections (200-800 tokens, matching corpus guidelines)
-  3. Generate embeddings (Upstash's built-in embedding or external model)
-  4. Upsert to Upstash Vector with metadata (title, domain, role, tags, file path)
-  5. Delete vectors for removed files
+For each .md file in knowledge/**:
+  1. Parse YAML frontmatter (gray-matter)
+  2. Split body at ## H2 headings with 1-paragraph overlap
+  3. Build chunk_id: {relative/path.md}#{heading-slug}  (deterministic → idempotent re-runs)
+  4. Attach metadata: source, heading, title, author?, domain, tradition?, role, tags[], audience[]
+  5. Upsert to Upstash Vector (data = enriched text; Upstash handles embedding generation)
 ```
 
-- **Trigger:** GitHub Action on push to `main` when `knowledge/` files change
-- **Scope:** Incremental — only process changed files (git diff)
-- **Embedding:** Upstash Vector supports server-side embedding with built-in models — no separate embedding API needed
-- **Metadata:** Frontmatter fields stored as vector metadata for filtered retrieval
+- **Trigger:** GitHub Action on push to `main` when `knowledge/` files change (`.github/workflows/knowledge-sync.yml`)
+- **Idempotency:** Deterministic chunk IDs — re-runs update existing vectors, never duplicate
+- **Limits:** Embedding input capped at 3000 chars; stored metadata text capped at 2000 chars (within Upstash's 48KB metadata + 1MB data limits)
+- **Embedding:** Upstash Vector server-side embedding — no separate embedding API needed
+- **Current state:** 893 chunks from 83 knowledge files
 
 ### Knowledge Graph (`/knowledge/graph`)
 
@@ -466,7 +466,9 @@ These are `role: collection` documents that point to source texts in the corpus.
 
 **Added:** 2026-04-10 | **Reference:** [knowledge/guides/opencosmos-knowledge-wiki-workflow.md](../knowledge/guides/opencosmos-knowledge-wiki-workflow.md)
 
-A synthesis layer sits between raw source texts and RAG retrieval, based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). Rather than synthesizing from raw text on every query, the wiki pre-builds cross-references, extracts key claims, and documents contradictions at ingestion time.
+A synthesis layer sits between raw source texts and RAG retrieval, based on [Andrej Karpathy's LLM Wiki pattern](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f). Rather than synthesizing from raw text on every query, the wiki pre-builds cross-references, extracts key claims, and documents contradictions at ingestion time. 
+
+When "@knowledge/wiki/index.md" is added to the CLAUDE.md, this file is expanded inline at session start, thus loading the and effectively creating ambient knowledge. 
 
 ### Three-Layer Architecture
 

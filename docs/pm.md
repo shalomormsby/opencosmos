@@ -976,8 +976,8 @@ Inspired by Karpathy's LLM Wiki pattern and extended to serve Cosmo's deepest pu
 - [x] `scripts/knowledge/embed-knowledge.ts` — chunk at H2 boundaries, preserve frontmatter metadata, deterministic chunk IDs for idempotency
 - [x] Extend `.github/workflows/knowledge-sync.yml` to run embed step after graph generation
 - [x] Upsert to Upstash Vector (`@upstash/vector`, Upstash handles embedding generation)
-- [ ] **User action:** Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to GitHub repo secrets (Settings → Secrets → Actions)
-- [ ] Run `pnpm embed` locally to seed the index before first deploy
+- [x] **User action:** Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to GitHub repo secrets (Settings → Secrets → Actions)
+- [x] Run `pnpm embed` locally to seed the index — 893 chunks upserted
 
 **Phase 2 — RAG API endpoint:**
 - [x] `apps/web/app/api/knowledge/route.ts` — accepts `{query, conversation_history, current_document?}`
