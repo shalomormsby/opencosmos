@@ -293,7 +293,10 @@ export async function POST(req: NextRequest) {
       : ''
 
     const ragPromise: Promise<RagResult> = lastUserText
-      ? fetchRagContext(lastUserText, messages.slice(-6)).catch(() => ({ chunks: [], timedOut: false }))
+      ? fetchRagContext(lastUserText, messages.slice(-6)).catch((err) => {
+          console.error('[rag] fetchRagContext failed:', err?.message ?? err)
+          return { chunks: [], timedOut: false } satisfies RagResult
+        })
       : Promise.resolve({ chunks: [] })
 
     // Compute payload size metrics up front — used by monthly cap and size limits.
@@ -470,10 +473,15 @@ export async function POST(req: NextRequest) {
     //   2. COSMO_WIKI_INDEX — static, prompt-cached
     //   3. RAG chunks       — dynamic, inserted here
     //   4. Conversation     — dynamic, inserted by messages param
+    // 4s timeout — long enough to survive Vercel cold-start + Upstash round-trip.
+    // Only inject [RAG_TIMEOUT] if we actually have corpus access configured;
+    // missing env vars produce an empty result, not a timeout.
     const ragResult: RagResult = await Promise.race([
       ragPromise,
-      new Promise<RagResult>(r => setTimeout(() => r({ chunks: [], timedOut: true }), 1500)),
+      new Promise<RagResult>(r => setTimeout(() => r({ chunks: [], timedOut: true }), 4000)),
     ])
+
+    console.log('[rag]', { chunks: ragResult.chunks.length, timedOut: ragResult.timedOut ?? false })
 
     if (ragResult.chunks.length > 0) {
       const ragText = formatRagChunks(ragResult.chunks)
