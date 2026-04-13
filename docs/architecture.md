@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-04-12
+**Last updated:** 2026-04-13
 
 ---
 
@@ -93,7 +93,7 @@ curator: shalom
 source: public-domain           # original | public-domain | URL | citation
 ---
 
-(document content — structured by H2 sections, 200-800 tokens each)
+(document content — structured by H2/H3 sections, 200-800 tokens each)
 ```
 
 **How frontmatter flows through the system:**
@@ -201,8 +201,8 @@ Lives at `apps/web/app/api/knowledge/route.ts`, deployed to `opencosmos.ai/api/k
   - `conversation_history` (optional) — last N turns used to build a contextual query
   - `current_document` (optional) — full markdown content of the document the user is reading; always included when provided
 - **Response:** `{ chunks: RagChunk[] }` with source attribution (title, author, tradition, domain, heading, source path).
-- **Implementation:** `apps/web/lib/rag.ts` — `fetchRagContext()` builds a contextual query from the last 3 exchange pairs (improves retrieval for ongoing conversations), queries `topK: 8`, returns typed chunks. `formatRagChunks()` formats results as cited passage blocks for Cosmo's context window.
-- **Wired into chat:** `apps/web/app/api/chat/route.ts` fires RAG concurrently with auth checks, resolves via 1.5s `Promise.race`. Chunks injected between the wiki index and conversation history (preserving the prompt cache boundary on static blocks). `[RAG_TIMEOUT]` signal injected when retrieval times out so Cosmo can acknowledge it honestly.
+- **Implementation:** `apps/web/lib/rag.ts` — `fetchRagContext()` builds a contextual query from the last 3 exchange pairs (improves retrieval for ongoing conversations), queries `topK: 8`, returns typed chunks. `formatRagChunks()` formats results as cited passage blocks for Cosmo's context window. Accepts `docChanged?: boolean` — when true, conversation history is excluded from the query so previous-document context does not pollute retrieval for the current one.
+- **Wired into chat:** `apps/web/app/api/chat/route.ts` fires RAG concurrently with auth checks, resolves via 4s `Promise.race`. Chunks injected between the wiki index and conversation history (preserving the prompt cache boundary on static blocks). `[RAG_TIMEOUT]` signal injected when retrieval times out so Cosmo can acknowledge it honestly. Accepts `current_section` (the specific section the user is reading) and `doc_changed` (triggers history reset on document switch) from the client.
 
 ### Knowledge Docs Site
 
@@ -212,6 +212,7 @@ A section of opencosmos.ai at `/knowledge/`, built from `knowledge/**/*.md` at d
 - Browsable by domain, role, and tags
 - Search powered by the same Upstash Vector index (via the RAG API)
 - Built as part of the `apps/web` Next.js app — no separate deployment
+- **Document outline panel:** Sticky TOC sidebar (`TableOfContents.tsx`) extracted from H2/H3 headings using `rehype-slug` + `github-slugger` for consistent anchor IDs. IntersectionObserver highlights the active section. On active section change, the current section (heading, doc title, doc path) is written to `sessionStorage` under `cosmo_context` so the Cosmo chat at `/dialog` can read it and ground responses in the user's current reading position.
 
 ### Sync Workflow (Git → Upstash Vector)
 
@@ -220,17 +221,20 @@ A section of opencosmos.ai at `/knowledge/`, built from `knowledge/**/*.md` at d
 ```
 For each .md file in knowledge/**:
   1. Parse YAML frontmatter (gray-matter)
-  2. Split body at ## H2 headings with 1-paragraph overlap
-  3. Build chunk_id: {relative/path.md}#{heading-slug}  (deterministic → idempotent re-runs)
-  4. Attach metadata: source, heading, title, author?, domain, tradition?, role, tags[], audience[]
-  5. Upsert to Upstash Vector (data = enriched text; Upstash handles embedding generation)
+  2. Split body at ## H2 and ### H3 headings with 1-paragraph overlap
+     - H2 chunks: chunk_id = {path}#{h2-slug}
+     - H3 chunks: chunk_id = {path}#{h2-slug}/{h3-slug}; context includes parent H2 heading
+  3. Attach metadata: source, heading, parent_heading?, title, author?, domain, tradition?, role, tags[], audience[]
+  4. Upsert to Upstash Vector (data = enriched text; Upstash handles embedding generation)
 ```
 
 - **Trigger:** GitHub Action on push to `main` when `knowledge/` files change (`.github/workflows/knowledge-sync.yml`)
 - **Idempotency:** Deterministic chunk IDs — re-runs update existing vectors, never duplicate
 - **Limits:** Embedding input capped at 3000 chars; stored metadata text capped at 2000 chars (within Upstash's 48KB metadata + 1MB data limits)
 - **Embedding:** Upstash Vector server-side embedding — no separate embedding API needed
-- **Current state:** 893 chunks from 83 knowledge files
+- **Heading hierarchy:** H2 = primary chunk boundary (Book/Part/major section); H3 = secondary chunk boundary with parent H2 as context (Chapter/Act/named section); H4+ = in-chunk organization, no split
+- **Standardization skill:** `/standardize-knowledge` Claude Code skill converts CHAPTER/BOOK/ACT/ALL-CAPS heading patterns to standard `##`/`###` Markdown. After standardizing, `pnpm embed` re-indexes.
+- **Current state:** 1,106 chunks from 84 knowledge files
 
 ### Knowledge Graph (`/knowledge/graph`)
 

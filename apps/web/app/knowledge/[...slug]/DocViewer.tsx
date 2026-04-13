@@ -2,6 +2,7 @@
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeSlug from 'rehype-slug'
 import { cn } from '@opencosmos/ui'
 
 type Props = {
@@ -12,6 +13,7 @@ export default function DocViewer({ content }: Props) {
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
+      rehypePlugins={[rehypeSlug]}
       components={{
         h1: ({ children }) => (
           <h1 className="text-2xl font-light text-foreground mt-10 mb-4 leading-tight">

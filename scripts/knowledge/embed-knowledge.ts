@@ -42,17 +42,18 @@ loadEnv(join(ROOT_DIR, 'apps', 'web', '.env.local'))
 // ─── Types ───────────────────────────────────────────────────────────────────
 
 type ChunkMetadata = {
-  source: string      // relative path from repo root, e.g. knowledge/sources/foo.md
-  heading: string     // H2 heading text, or 'intro' for pre-H2 content
+  source: string           // relative path from repo root, e.g. knowledge/sources/foo.md
+  heading: string          // H2 or H3 heading text, or 'intro' for pre-heading content
+  parent_heading?: string  // H2 parent, present only for H3-level chunks
   title: string
   domain: string
   role: string
   tags: string[]
   audience: string[]
-  text: string        // the passage text (without context prefix) — shown to Cosmo in RAG context
+  text: string             // the passage text (without context prefix) — shown to Cosmo in RAG context
   author?: string
   tradition?: string
-  wiki_path?: string  // set for wiki pages only
+  wiki_path?: string       // set for wiki pages only
 }
 
 type VectorChunk = {
@@ -79,41 +80,66 @@ function lastParagraph(text: string): string {
 // ─── Chunking ─────────────────────────────────────────────────────────────────
 
 /**
- * Split markdown body at heading boundaries with 1-paragraph overlap.
+ * Split markdown body at H2 and H3 heading boundaries with 1-paragraph overlap.
  *
- * Recognises three heading styles found in the corpus:
- *   1. Markdown H2:       ## Heading Text
- *   2. CHAPTER headings:  CHAPTER I. Title  /  CHAPTER 1  /  CHAPTER I
- *   3. Titled chapters:   Chapter Title (Title Case word on its own line)
+ * Recognises:
+ *   1. Markdown H2:    ## Heading Text             → primary chunk boundary
+ *   2. Markdown H3:    ### Heading Text            → secondary chunk boundary (nested under H2)
+ *   3. CHAPTER:        CHAPTER I. Title / CHAPTER 1 / CHAPTER I
+ *
+ * H3 sections record their parent H2 so the embedding context can include
+ * the full hierarchy path (e.g. "Hamlet > Act III"). This improves retrieval
+ * for multi-level documents (plays, treatises with Books + Chapters, etc.).
+ *
+ * Docs with only H2 headings behave identically to the previous chunker.
  *
  * The overlap prepends the last paragraph of the preceding section onto the
- * next chunk, improving retrieval for questions that straddle section boundaries.
+ * next chunk, improving retrieval for questions that straddle boundaries.
  */
-function chunkAtH2(body: string): Array<{ heading: string; text: string }> {
+function chunkAtHeadings(body: string): Array<{ heading: string; parentHeading?: string; text: string }> {
   const lines = body.split('\n')
-  const sections: Array<{ heading: string; rawLines: string[] }> = []
+
+  type RawSection = {
+    heading: string
+    parentHeading?: string
+    rawLines: string[]
+  }
+
+  const sections: RawSection[] = []
   let currentHeading = 'intro'
+  let currentParent: string | undefined = undefined
   let currentLines: string[] = []
+  let lastH2Heading: string | undefined = undefined  // tracks most recent H2 for H3 nesting
 
   // Matches:  ## Heading
   const markdownH2 = /^## (.+)$/
+  // Matches:  ### Heading
+  const markdownH3 = /^### (.+)$/
   // Matches:  CHAPTER I.  /  CHAPTER IV  /  CHAPTER 3. Some Title
   const chapterHeading = /^(CHAPTER\s+[IVXLCDM\d]+\.?\s*.*)$/i
 
   for (const line of lines) {
     const h2Match = line.match(markdownH2)
-    const chapterMatch = line.match(chapterHeading)
-    const headingMatch = h2Match ?? chapterMatch
+    const h3Match = !h2Match ? line.match(markdownH3) : null
+    const chapterMatch = !h2Match && !h3Match ? line.match(chapterHeading) : null
 
-    if (headingMatch) {
-      sections.push({ heading: currentHeading, rawLines: currentLines })
-      currentHeading = headingMatch[1].trim()
+    if (h2Match || chapterMatch) {
+      sections.push({ heading: currentHeading, parentHeading: currentParent, rawLines: currentLines })
+      const newHeading = (h2Match?.[1] ?? chapterMatch?.[1])!.trim()
+      lastH2Heading = newHeading
+      currentHeading = newHeading
+      currentParent = undefined  // H2 has no parent
+      currentLines = []
+    } else if (h3Match) {
+      sections.push({ heading: currentHeading, parentHeading: currentParent, rawLines: currentLines })
+      currentHeading = h3Match[1].trim()
+      currentParent = lastH2Heading  // H3 belongs to the most recent H2
       currentLines = []
     } else {
       currentLines.push(line)
     }
   }
-  sections.push({ heading: currentHeading, rawLines: currentLines })
+  sections.push({ heading: currentHeading, parentHeading: currentParent, rawLines: currentLines })
 
   // Drop sections that are entirely empty
   const nonEmpty = sections.filter(s => s.rawLines.join('').trim().length > 0)
@@ -125,7 +151,7 @@ function chunkAtH2(body: string): Array<{ heading: string; text: string }> {
       const overlap = lastParagraph(prevText)
       if (overlap) text = `${overlap}\n\n${text}`
     }
-    return { heading: section.heading, text }
+    return { heading: section.heading, parentHeading: section.parentHeading, text }
   })
 }
 
@@ -188,7 +214,7 @@ function buildChunks(filePath: string): VectorChunk[] {
   ].filter(Boolean) as string[]
   const contextPrefix = contextLines.join('\n')
 
-  const sections = chunkAtH2(content)
+  const sections = chunkAtHeadings(content)
 
   // Upstash limits: 48KB per metadata object, 1MB per `data` string.
   // Spec target: 200–800 tokens per chunk (~800–3200 chars).
@@ -201,14 +227,24 @@ function buildChunks(filePath: string): VectorChunk[] {
   return sections
     .filter(s => s.text.length > 80) // skip trivially short chunks
     .map(s => {
-      const id = `${relPath}#${slugify(s.heading)}`
+      // H3 chunks get compound IDs: path#parent-slug/child-slug
+      const parentSlug = s.parentHeading ? slugify(s.parentHeading) : null
+      const headingSlug = slugify(s.heading)
+      const id = parentSlug
+        ? `${relPath}#${parentSlug}/${headingSlug}`
+        : `${relPath}#${headingSlug}`
+
+      // Section label for embedding: "Book II > Chapter III" for nested, "Chapter III" for flat
+      const sectionLabel = s.parentHeading
+        ? `${s.parentHeading} > ${s.heading}`
+        : s.heading
 
       // data = enriched text passed to Upstash for embedding generation
       // metadata.text = passage shown to Cosmo in the RAG context window
       const truncatedForData = s.text.length > DATA_TEXT_LIMIT
         ? s.text.slice(0, DATA_TEXT_LIMIT) + '…'
         : s.text
-      const data = `${contextPrefix}\n\nSection: ${s.heading}\n\n${truncatedForData}`
+      const data = `${contextPrefix}\n\nSection: ${sectionLabel}\n\n${truncatedForData}`
 
       const storedText = s.text.length > METADATA_TEXT_LIMIT
         ? s.text.slice(0, METADATA_TEXT_LIMIT) + '…'
@@ -224,6 +260,7 @@ function buildChunks(filePath: string): VectorChunk[] {
         audience,
         text: storedText,
       }
+      if (s.parentHeading) metadata.parent_heading = s.parentHeading
       if (author) metadata.author = author
       if (tradition) metadata.tradition = tradition
       if (isWiki) metadata.wiki_path = relPath

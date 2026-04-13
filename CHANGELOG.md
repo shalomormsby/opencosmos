@@ -2,9 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-04-12
+**Last updated:** 2026-04-13
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-04-13 — Phase 1d: Knowledge Navigation + Section-Aware Cosmo Context
+
+Built the document outline UI, fixed Cosmo's context explosion on large documents, and wired reading position into the chat flow.
+
+### Added
+- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — sticky TOC sidebar. IntersectionObserver tracks the active H2/H3 heading as the user scrolls. Clicking a heading smooth-scrolls to anchor. On each section change, writes `cosmo_context` to `sessionStorage` so the Cosmo chat can pick up the user's current reading position.
+- `.claude/skills/standardize-knowledge/SKILL.md` — `/standardize-knowledge` Claude Code skill. Analyzes each knowledge document's heading structure and converts CHAPTER/BOOK/ACT/ALL-CAPS patterns to standard Markdown H2/H3/H4 hierarchy. Handles 1-level docs (Fox journals), 2-level docs (philosophical treatises), and 3-level docs (Shakespeare). Flags the Shakespeare collected-works file for pre-splitting.
+
+### Modified
+- `scripts/knowledge/embed-knowledge.ts` — H3 support added to chunker (`chunkAtH2` → `chunkAtHeadings`). H3 sections become secondary chunk boundaries with parent H2 included as context in the embedding. Compound chunk IDs: `{path}#{h2-slug}/{h3-slug}`. `parent_heading?` added to `ChunkMetadata`.
+- `apps/web/app/knowledge/[...slug]/DocViewer.tsx` — added `rehype-slug` plugin so all headings get stable anchor IDs matching the TOC links.
+- `apps/web/app/knowledge/[...slug]/page.tsx` — two-column layout (`lg:grid-cols-[1fr_224px]`). Extracts TOC using `github-slugger` (same library as `rehype-slug` — IDs match exactly). Passes `toc`, `docTitle`, `docPath` to `TableOfContents`.
+- `apps/web/lib/rag.ts` — `fetchRagContext()` now accepts `docChanged?: boolean`. When true, `buildContextualQuery` excludes conversation history from the vector query, preventing previous-document context from polluting retrieval when the user switches documents.
+- `apps/web/app/api/chat/route.ts` — accepts `current_section?: { heading, doc_title, doc_path }` and `doc_changed?: boolean` from the client. `current_section` injected as a system block before RAG chunks. `doc_changed` forwarded to `fetchRagContext`.
+- `apps/web/app/dialog/CosmoChat.tsx` — `send()` reads `cosmo_context` from sessionStorage on each message. Passes `current_section` and `doc_changed` to `/api/chat`. Detects document switches via `lastDocPathRef` and sets `doc_changed: true` automatically.
+- `docs/architecture.md`, `CHANGELOG.md` — updated to reflect H3 chunking, TOC panel, section context wiring.
+
+### Stats (2026-04-13)
+- 1,106 chunks in Upstash Vector index (up from 893 before CHAPTER heading fix)
+- Context window on doc switch: previously 30k+ tokens (full doc text); now ≈ 0 extra tokens (section heading only, no full text)
 
 ---
 

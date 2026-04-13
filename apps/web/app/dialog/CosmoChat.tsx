@@ -171,6 +171,9 @@ export function CosmoChat() {
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
   const turnstileRef = useRef<TurnstileInstance>(null)
+  // Tracks the last doc_path sent so we can detect document switches and
+  // clear the RAG history window via doc_changed on the next request.
+  const lastDocPathRef = useRef<string | null>(null)
 
   useEffect(() => {
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
@@ -287,6 +290,29 @@ export function CosmoChat() {
     setIsStreaming(true)
 
     try {
+      // Read active reading context from sessionStorage (set by the knowledge
+      // browser's TableOfContents component as the user navigates sections).
+      // Only use context that's less than 5 minutes old — stale context is noise.
+      type StoredContext = { heading: string; doc_title: string; doc_path: string; timestamp: number }
+      let currentSection: { heading: string; doc_title: string; doc_path: string } | undefined
+      let docChanged = false
+      try {
+        const raw = sessionStorage.getItem('cosmo_context')
+        if (raw) {
+          const ctx = JSON.parse(raw) as StoredContext
+          if (Date.now() - ctx.timestamp < 5 * 60 * 1000) {
+            currentSection = { heading: ctx.heading, doc_title: ctx.doc_title, doc_path: ctx.doc_path }
+            // Detect document switch — clear RAG history to avoid pollution
+            if (lastDocPathRef.current !== null && lastDocPathRef.current !== ctx.doc_path) {
+              docChanged = true
+            }
+            lastDocPathRef.current = ctx.doc_path
+          }
+        }
+      } catch {
+        // sessionStorage unavailable — non-fatal, proceed without section context
+      }
+
       const isFreeTier = !apiKey && !pmMode
       const res = await fetch('/api/chat', {
         method: 'POST',
@@ -297,6 +323,8 @@ export function CosmoChat() {
           // Only send the Turnstile token on the free-tier path. Server ignores
           // it for BYOK and PM paths, but there's no point generating traffic.
           turnstileToken: isFreeTier ? turnstileToken : undefined,
+          current_section: currentSection,
+          doc_changed: docChanged || undefined,
         }),
       })
 

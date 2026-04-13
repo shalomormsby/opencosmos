@@ -50,11 +50,18 @@ function getIndex(): Index {
  * Build a contextual query string by prepending the last 3 exchange pairs
  * to the current query. This improves retrieval relevance for conversations
  * that have built up context (e.g., "why does he say that?" needs the prior turns).
+ *
+ * When `docChanged` is true (user navigated to a different document), the history
+ * window is cleared entirely — preventing previous-doc context from polluting
+ * vector retrieval for the new document.
  */
 function buildContextualQuery(
   query: string,
-  history: Array<{ role: string; content: string }>,
+  history: Array<{ role: string; content: unknown }>,
+  docChanged?: boolean,
 ): string {
+  if (docChanged) return query  // clean slate for new document
+
   const recentTurns = history.slice(-6) // last 3 pairs (user + assistant each)
   if (recentTurns.length === 0) return query
 
@@ -109,13 +116,17 @@ When drawing from these passages: cite the title and author. If quoting directly
  * @param currentDoc    Full markdown content of the document the user is reading,
  *                      if any. Always included when provided — it is the ground of
  *                      the conversation, regardless of similarity score.
+ * @param docChanged    When true, the user has navigated to a different document.
+ *                      History is excluded from the contextual query to prevent
+ *                      previous-doc context from polluting retrieval for the new doc.
  */
 export async function fetchRagContext(
   query: string,
-  history: Array<{ role: 'user' | 'assistant'; content: string }> = [],
+  history: Array<{ role: 'user' | 'assistant'; content: unknown }> = [],
   currentDoc?: string,
+  docChanged?: boolean,
 ): Promise<RagResult> {
-  const contextualQuery = buildContextualQuery(query, history)
+  const contextualQuery = buildContextualQuery(query, history, docChanged)
 
   const index = getIndex()
   const results = await index.query<Record<string, unknown>>({

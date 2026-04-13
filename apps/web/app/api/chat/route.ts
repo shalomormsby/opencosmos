@@ -277,16 +277,30 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
   }
 }
 
+type CurrentSection = {
+  heading: string
+  doc_title: string
+  doc_path: string
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { messages, apiKey, turnstileToken } = await req.json()
+    const { messages, apiKey, turnstileToken, current_section, doc_changed } = await req.json() as {
+      messages: Message[]
+      apiKey?: string
+      turnstileToken?: string
+      current_section?: CurrentSection
+      doc_changed?: boolean
+    }
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
 
     // Fire RAG fetch immediately — runs concurrently with auth checks below.
-    // Resolved via Promise.race with a 1.5s timeout before the Anthropic call.
+    // Resolved via Promise.race with a 4s timeout before the Anthropic call.
+    // doc_changed: clears conversation history from the RAG query so context
+    // from a previously-viewed document does not pollute retrieval for the new one.
     const lastUserMsg = [...messages].reverse().find((m: Message) => m.role === 'user')
     const lastUserText = lastUserMsg
       ? (typeof lastUserMsg.content === 'string'
@@ -298,7 +312,7 @@ export async function POST(req: NextRequest) {
       : ''
 
     const ragPromise: Promise<RagResult> = lastUserText
-      ? fetchRagContext(lastUserText, messages.slice(-6)).catch((err) => {
+      ? fetchRagContext(lastUserText, messages.slice(-6), undefined, doc_changed).catch((err) => {
           console.error('[rag] fetchRagContext failed:', err?.message ?? err)
           return { chunks: [], timedOut: false } satisfies RagResult
         })
@@ -491,6 +505,16 @@ export async function POST(req: NextRequest) {
       timedOut: ragResult.timedOut ?? false,
       sources: ragResult.chunks.slice(0, 4).map(c => `${c.title} / ${c.heading}`),
     })
+
+    // Inject current reading section if the user is browsing the knowledge library.
+    // This tells Cosmo which document and section the user is actively reading,
+    // so responses can be grounded in that specific context.
+    if (current_section) {
+      systemContent.push({
+        type: 'text' as const,
+        text: `## Current Reading Context\n\nThe user is currently reading the following document in the OpenCosmos knowledge library:\n\n**Document:** ${current_section.doc_title}\n**Section:** "${current_section.heading}"\n**Path:** ${current_section.doc_path}\n\nGround your response in the context of this section. The vector retrieval below may also include passages from this document.`,
+      })
+    }
 
     if (ragResult.chunks.length > 0) {
       const ragText = formatRagChunks(ragResult.chunks)
