@@ -2,7 +2,7 @@
 
 > Project management hub for all OpenCosmos work. For strategic rationale, see [strategy.md](strategy.md). For infrastructure details, see [architecture.md](architecture.md).
 
-**Updated:** 2026-04-11
+**Updated:** 2026-04-12
 
 ---
 
@@ -36,7 +36,7 @@
 | Project | Status | Priority | Next milestone |
 |---------|--------|----------|----------------|
 | **Cosmo** (`apps/web`) | Pre-launch | P0 | Circle setup → Stripe live → launch |
-| **Knowledge Graph** (`opencosmos.ai/knowledge/graph`) | Planned | **P1** | Data generator → Cosmograph component → route |
+| **Knowledge Graph** (`opencosmos.ai/knowledge/graph`) | **Blocked** | **P1** | Fix WebGL node render — pipeline complete, nodes invisible |
 | **@opencosmos/ui** (separate repo) | Active | P1 | Ongoing maintenance |
 | **Portfolio** (`apps/portfolio`) | Production | P2 | Design consulting pipeline (Phase 3) |
 | **Creative Powerup** (`apps/creative-powerup`) | In development | P2 | Cosmo integration (Phase 3) |
@@ -92,6 +92,69 @@ Three tiers (Spark $5, Flame $10, Hearth $50), Stripe billing, WorkOS auth, usag
 - [ ] Community contribution pathway — submit knowledge for curation
 
 ### Phase 1c+: Knowledge Graph — `opencosmos.ai/knowledge/graph` [P1]
+
+**Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/knowledge/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
+
+#### What's been built (shipped)
+
+- `scripts/knowledge/generate-wiki-graph.ts` — reads `knowledge/wiki/**`, runs ForceAtlas2, writes gzip+Base64 to Upstash Redis
+- `apps/web/app/api/knowledge/graph/route.ts` — decompresses and serves graph JSON
+- `apps/web/app/knowledge/graph/graphWorker.ts` — Web Worker fetches + parses JSON off main thread
+- `apps/web/app/knowledge/graph/GraphPageClient.tsx` — orchestrates skeleton → live crossfade
+- `apps/web/app/knowledge/graph/domain-colors.ts` — local DOMAIN_COLORS copy to break Turbopack's SSR import chain to sigma
+- `@opencosmos/ui@1.4.2` — KnowledgeGraph component with custom `GlowNodeProgram` WebGL renderer
+- `knowledge/guides/opencosmos-knowledge-graph.md` — complete technical guide
+
+#### Bugs fixed along the way
+
+| Bug | Fix |
+|-----|-----|
+| Web Worker `fetch` failed ("Failed to parse URL from /api/knowledge/graph") | Pass `location.origin` from main thread via `postMessage`; construct absolute URL in worker |
+| Sigma crash: "Container has no height" | `allowInvalidContainer: true` in SigmaContainer settings (`@opencosmos/ui@1.4.1`) |
+| Build crash: `WebGL2RenderingContext is not defined` (SSR) | Create local `domain-colors.ts` to break Turbopack's static import trace to sigma |
+| npm publish E404 (release workflow) | Add `NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}` to release workflow; user created Granular Access Token |
+| Lockfile pinned to old version despite `^` range | `pnpm update @opencosmos/ui --filter web` + commit lockfile |
+
+#### The remaining blocker — nodes don't render
+
+**Symptom:** Black canvas. Sigma's canvas2d label layer renders correctly (text appears at right positions, including cluster labels like "CONTEMPLATIVE", "Dialog"). Zero WebGL geometry — no nodes, no edges.
+
+**What this tells us:** Sigma itself is alive. Graph data is loaded (labels prove this). The issue is specific to the WebGL program layer, not the data pipeline or mount lifecycle.
+
+**Attempts so far:**
+
+1. **`allowInvalidContainer: true`** — sigma was crashing on zero-height container at init. This fixed the crash but didn't fix the render.
+
+2. **`ResizeObserver` gate in GraphPageClient** — delayed `<KnowledgeGraph>` mount until `containerRef.clientHeight > 0`. Did not fix the render.
+
+3. **`gl_PointSize` formula fix** — diagnosed that `u_correctionRatio` ≈ 0.001 (= 1/viewportWidth), which would make `gl_PointSize ≈ 0.01` (invisible). Changed vertex shader to use `u_sizeRatio` + `u_pixelRatio`, matching sigma's built-in `NodePointProgram` formula. Published as `@opencosmos/ui@1.4.2`. Did not fix the render.
+
+**Current best guess (with low confidence):**
+
+Sigma's `Program` base class calls `this.renderProgram(params, this.normalProgram)` in its `render()` method. `GlowNodeProgram` overrides `render()` to set additive blending, then calls `super.render(params)`. The question is whether `this.normalProgram` is fully initialized by the time `render()` is first called — if it's `undefined` or has an uninitialized `gl` context, the `gl.blendFunc` call in the override would throw, silently abort the render, and leave the canvas black. This would be consistent with all symptoms.
+
+**Best guess for the next fix:**
+
+Two parallel approaches worth trying:
+
+1. **Remove the custom render override entirely** — replace `GlowNodeProgram` with sigma's built-in `NodePointProgram` as a temporary test. If nodes appear, the issue is definitively in the render() override or shader. If nodes still don't appear, the issue is in the attribute packing or graph data.
+
+2. **Guard `this.normalProgram` in render()** — add a null check before `gl.blendFunc`:
+   ```ts
+   render(params: RenderParams) {
+     if (!this.normalProgram?.gl) { super.render(params); return }
+     const { gl } = this.normalProgram
+     gl.blendFunc(gl.SRC_ALPHA, gl.ONE)
+     super.render(params)
+     gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA)
+   }
+   ```
+
+**Honest assessment:** Three rounds of fixes have not solved this. The root cause is somewhere in the interaction between the custom WebGL program and sigma's internal rendering pipeline. Without a minimal reproducible example (a local HTML page with sigma + the GlowNodeProgram, no React, no Next.js, no SSR) it is difficult to isolate whether the issue is in the shader, the attribute packing, the render() override, or something sigma does during initialization. The minimal reproduction test is probably the most useful next step before making another change.
+
+**Paused.** Work on this feature is paused as of 2026-04-12. The data pipeline and infrastructure are complete and correct. Only the WebGL node renderer is broken.
+
+---
 
 **Why this is P1:** Every time someone adds to the corpus, they should *see* it change. The graph is the reward for contributing — a palpable, beautiful, living confirmation that the knowledge is growing and connecting. It is also the single best communication of what OpenCosmos is: a platform that treats knowledge as a living, relational web. No visitor should have to read a paragraph to understand that. They should see it.
 
@@ -891,7 +954,68 @@ The component and the generator have zero dependency on each other. Consumers of
 
 ---
 
-### Phase 1d: Conversation Polish
+### Phase 1d: Knowledge Intelligence Layer
+
+> Full design spec: **[docs/knowledge-intelligence-layer.md](knowledge-intelligence-layer.md)**
+
+Inspired by Karpathy's LLM Wiki pattern and extended to serve Cosmo's deepest purpose: a companion who navigates interconnected wisdom with the user. The graph is the visual representation of the knowledge base. The RAG layer is its retrieval infrastructure. The sidebar companion is Cosmo present in the reading experience.
+
+**Success criterion:** A person reads the Tao Te Ching on `/knowledge`. Opens the sidebar. Asks a question. Cosmo responds from the text, draws a connection to Emerson's Over-Soul and the Quaker Inner Light that the person hadn't considered, and offers a question that opens something new. The person feels accompanied, not processed.
+
+**Prerequisite (user action):**
+- [x] Create Upstash Vector index at console.upstash.com [Done]
+- [x] Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to `apps/web/.env.local` + Vercel
+- [x] `pnpm add @upstash/vector --filter web`
+
+**Phase 0 — Fix graph WebGL rendering** (`opencosmos-ui` repo):
+- [ ] Diagnose: swap `GlowNodeProgram` → `NodePointProgram` to isolate root cause
+- [ ] Fix: add null guard to `GlowNodeProgram.render()` before `gl.blendFunc` call
+- [ ] Publish `@opencosmos/ui@1.4.3` (with fix) and update lockfile in `apps/web`
+
+**Phase 1 — Embedding pipeline:**
+- [x] `scripts/knowledge/embed-knowledge.ts` — chunk at H2 boundaries, preserve frontmatter metadata, deterministic chunk IDs for idempotency
+- [x] Extend `.github/workflows/knowledge-sync.yml` to run embed step after graph generation
+- [x] Upsert to Upstash Vector (`@upstash/vector`, Upstash handles embedding generation)
+- [ ] **User action:** Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to GitHub repo secrets (Settings → Secrets → Actions)
+- [ ] Run `pnpm embed` locally to seed the index before first deploy
+
+**Phase 2 — RAG API endpoint:**
+- [x] `apps/web/app/api/knowledge/route.ts` — accepts `{query, conversation_history, current_document?}`
+- [x] `apps/web/lib/rag.ts` — `fetchRagContext()` helper; builds contextual query from last 3 exchange pairs; fail-open
+- [x] Return chunks with full metadata (source, author, tradition, heading) for honest citation
+
+**Phase 3 — Wire RAG into Cosmo chat:**
+- [x] Modify `apps/web/app/api/chat/route.ts` — non-blocking RAG call with 1.5s timeout fallback
+- [x] Inject retrieved passages between wiki index and conversation history in context window
+- [x] Format citations clearly: `**[Title]** (author, tradition)`
+
+**Phase 4 — Sidebar companion:**
+- [ ] `CosmoChatSidebar.tsx` — collapsible right-side panel on `/knowledge/[...slug]` pages
+- [ ] `useSectionInView.ts` — IntersectionObserver tracks current H2 section
+- [ ] `apps/web/app/api/knowledge/chat/route.ts` — document-aware system addendum
+- [ ] Conversation continuity in `sessionStorage` across document navigation
+- [ ] Free tier token budget applies (no auth required)
+
+**Phase 5 — Graph + RAG metadata unification:**
+- [ ] Add `knowledge/graph/manifest.json` write step to `generate-wiki-graph.ts`
+- [ ] Extend `fetchRagContext()` to surface degree-1 graph neighbors as lower-priority context
+- [ ] Cross-tradition connections become structural, not coincidental
+
+**Phase 6 — Community contribution pathway:**
+- [ ] `apps/web/app/knowledge/contribute/page.tsx` — simple submission form
+- [ ] `apps/web/app/api/knowledge/contribute/route.ts` — creates GitHub issue via `GITHUB_ISSUES_PAT`
+
+**Phase 7 — Wiki lint operation:**
+- [ ] Scheduled GitHub Action: orphaned pages, stale claims, missing entity pages, disconnected nodes
+- [ ] Output as GitHub issue — human-reviewed, not auto-corrected
+
+**Stretch goals** (see [knowledge-intelligence-layer.md § Stretch Goals](knowledge-intelligence-layer.md#stretch-goals)):
+- Graph lights up alongside Cosmo conversation (retrieved nodes highlighted in real time)
+- Project brain: custom knowledge graph for personal project management
+
+---
+
+### Phase 1e: Conversation Polish
 
 - [ ] Per-session conversation history (client-side)
 - [ ] Mobile-responsive conversation interface
@@ -899,7 +1023,7 @@ The component and the generator have zero dependency on each other. Consumers of
 - [ ] Accessibility: screen reader support, keyboard navigation, focus management
 - [ ] Voice interaction: provider TBD — see [projects/cosmo-voice-research.md](projects/cosmo-voice-research.md). Complete listening test (ElevenLabs Flash vs. Cartesia Sonic 3 vs. Google WaveNet) before building.
 
-### Phase 1e: Cosmo as PM
+### Phase 1f: Cosmo as PM
 
 - [ ] Publish this PM doc and architecture.md to the knowledge corpus as reference documents
 - [ ] Cosmo can answer "What phase are we in?" grounded in corpus — natural consequence of Phase 1c

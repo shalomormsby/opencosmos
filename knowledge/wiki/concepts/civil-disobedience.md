@@ -16,8 +16,8 @@ open_questions:
   - Thoreau's and Tolstoy's positions both lead to prison or social exclusion. Does the willingness to accept punishment distinguish genuine civil disobedience from mere lawlessness? Socrates would say yes — but his conclusion (obey the law) is the opposite.
   - Gandhi and King adapted Thoreau and Tolstoy into practical political strategy. Does this adaptation preserve the philosophical core or transform it into something different?
 contradictions:
-  - Socrates (Crito) says citizens must obey even unjust laws — injustice does not license counter-injustice. Thoreau says conscience is the only legitimate sovereign and unjust laws must be actively resisted. Both accept the consequences (Socrates the death penalty, Thoreau the jail cell) — but they draw diametrically opposite conclusions about what compliance requires.
-  - Tolstoy's nonresistance is absolute: no state violence is ever justified, including policing and courts. Thoreau's civil disobedience is targeted: resist specific injustices (slavery funding, the Mexican-American War). Both are in the tradition of conscience-over-law, but they differ sharply in scope.
+  - "Socrates (Crito) says citizens must obey even unjust laws — injustice does not license counter-injustice. Thoreau says conscience is the only legitimate sovereign and unjust laws must be actively resisted. Both accept the consequences (Socrates the death penalty, Thoreau the jail cell) — but they draw diametrically opposite conclusions about what compliance requires."
+  - "Tolstoy's nonresistance is absolute: no state violence is ever justified, including policing and courts. Thoreau's civil disobedience is targeted: resist specific injustices (slavery funding, the Mexican-American War). Both are in the tradition of conscience-over-law, but they differ sharply in scope."
 ---
 
 # Civil Disobedience — Cross-Tradition Synthesis

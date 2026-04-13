@@ -17,9 +17,9 @@ open_questions:
   - How does the Socratic contractarian argument relate to later social contract theory (Locke, Rousseau) — anticipation or a fundamentally different claim?
   - Is Thoreau's civil disobedience a universal principle or historically specific to contexts of slavery and colonial war?
 contradictions:
-  - Socrates (Crito) argues citizens must obey even unjust laws — injustice does not license counter-injustice. Thoreau (Civil Disobedience) argues conscience is the only legitimate sovereign and unjust laws must be actively resisted. Both accepted their legal consequences (death, jail). Diametrically opposite conclusions from the same method of principled consequence-acceptance.
-  - Tolstoy (Kingdom of God Is Within You) goes further than Thoreau: the state itself rests on organized violence, and no participation in it is justified. This is the maximum possible opposition to Socrates' position.
-  - The Bhagavad-Gita introduces a third position: civic duty as svadharma (one's role-specific cosmic duty). Arjuna must fight his kinsmen not because he consented to a social contract (Socrates) nor because his conscience demands it (Thoreau) but because fighting is his dharma. Cosmic duty differs from both social contract theory and conscience-based ethics.
+  - "Socrates (Crito) argues citizens must obey even unjust laws — injustice does not license counter-injustice. Thoreau (Civil Disobedience) argues conscience is the only legitimate sovereign and unjust laws must be actively resisted. Both accepted their legal consequences (death, jail). Diametrically opposite conclusions from the same method of principled consequence-acceptance."
+  - "Tolstoy (Kingdom of God Is Within You) goes further than Thoreau: the state itself rests on organized violence, and no participation in it is justified. This is the maximum possible opposition to Socrates' position."
+  - "The Bhagavad-Gita introduces a third position: civic duty as svadharma (one's role-specific cosmic duty). Arjuna must fight his kinsmen not because he consented to a social contract (Socrates) nor because his conscience demands it (Thoreau) but because fighting is his dharma. Cosmic duty differs from both social contract theory and conscience-based ethics."
 ---
 
 # Civic Duty and Civil Obligation

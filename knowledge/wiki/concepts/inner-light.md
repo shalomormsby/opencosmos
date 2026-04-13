@@ -17,8 +17,8 @@ open_questions:
   - Is the Inner Light a specifically Christian doctrine (the Light of Christ within) or a universal human capacity available regardless of tradition? Fox claimed the latter but his language is saturated with the former.
   - How does the Quaker experience of silent worship relate to Buddhist meditation? Both involve sitting in silence, attending to what arises — but the theological frameworks and expected outcomes are very different.
 contradictions:
-  - Fox claims the Inner Light is universal — "there is that of God in every man." But his practical program (plain speech, refusal of oaths, silent worship) is thoroughly Protestant Christian in form. The universalist claim and the sectarian practice are in tension.
-  - Emerson's Over-Soul is a philosophical secularization of the Inner Light: all individual minds participate in one universal Mind. But Emerson's version is more optimistic and less morally demanding — it lacks Fox's insistence that the Light requires testimony (plain speech, peace testimony, refusal of class deference). Emerson's version can become a comfortable individualism; Fox's version led him to prison nine times.
+  - "Fox claims the Inner Light is universal — \"there is that of God in every man.\" But his practical program (plain speech, refusal of oaths, silent worship) is thoroughly Protestant Christian in form. The universalist claim and the sectarian practice are in tension."
+  - "Emerson's Over-Soul is a philosophical secularization of the Inner Light: all individual minds participate in one universal Mind. But Emerson's version is more optimistic and less morally demanding — it lacks Fox's insistence that the Light requires testimony (plain speech, peace testimony, refusal of class deference). Emerson's version can become a comfortable individualism; Fox's version led him to prison nine times."
 ---
 
 # Inner Light — Cross-Tradition Synthesis
