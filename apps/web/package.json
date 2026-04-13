@@ -20,6 +20,7 @@
     "@vercel/analytics": "^1.6.1",
     "@workos-inc/authkit-nextjs": "^3.0.0",
     "@workos-inc/node": "^8.11.0",
+    "github-slugger": "^2.0.0",
     "graphology": "^0.26.0",
     "graphology-layout-forceatlas2": "^0.10.1",
     "gray-matter": "^4.0.3",
@@ -28,6 +29,7 @@
     "react": "^19.2.1",
     "react-dom": "^19.2.1",
     "react-markdown": "^10.1.0",
+    "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.1",
     "sigma": "^3.0.2",
     "stripe": "^22.0.0"
