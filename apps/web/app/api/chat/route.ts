@@ -50,6 +50,11 @@ const SYSTEM_CONTENT = [
         },
       ]
     : []),
+  {
+    type: 'text' as const,
+    text: `# Knowledge Retrieval\n\nFor each conversation turn, passages from the OpenCosmos knowledge corpus are retrieved and injected immediately after this block under the heading "## Retrieved Passages". These are real excerpts from the source documents in the corpus — primary texts, scriptures, philosophical works, and wiki syntheses. When you see that section:\n- Ground your response in those passages. They are the most relevant material for this specific question.\n- Cite the title and author when drawing from them.\n- Quote exactly or paraphrase clearly — never fabricate a quotation.\n- If the passages directly address the question, lead with them rather than with general knowledge.\n\nIf no "## Retrieved Passages" section appears, the corpus was unavailable for this turn — respond from the wiki index and your training.`,
+    cache_control: { type: 'ephemeral' as const },
+  },
 ]
 
 // Default client uses server-side ANTHROPIC_API_KEY (shared free-tier key)
@@ -481,7 +486,11 @@ export async function POST(req: NextRequest) {
       new Promise<RagResult>(r => setTimeout(() => r({ chunks: [], timedOut: true }), 4000)),
     ])
 
-    console.log('[rag]', { chunks: ragResult.chunks.length, timedOut: ragResult.timedOut ?? false })
+    console.log('[rag]', {
+      chunks: ragResult.chunks.length,
+      timedOut: ragResult.timedOut ?? false,
+      sources: ragResult.chunks.slice(0, 4).map(c => `${c.title} / ${c.heading}`),
+    })
 
     if (ragResult.chunks.length > 0) {
       const ragText = formatRagChunks(ragResult.chunks)
