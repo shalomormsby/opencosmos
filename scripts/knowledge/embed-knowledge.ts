@@ -79,7 +79,13 @@ function lastParagraph(text: string): string {
 // ─── Chunking ─────────────────────────────────────────────────────────────────
 
 /**
- * Split markdown body at ## H2 headings with 1-paragraph overlap.
+ * Split markdown body at heading boundaries with 1-paragraph overlap.
+ *
+ * Recognises three heading styles found in the corpus:
+ *   1. Markdown H2:       ## Heading Text
+ *   2. CHAPTER headings:  CHAPTER I. Title  /  CHAPTER 1  /  CHAPTER I
+ *   3. Titled chapters:   Chapter Title (Title Case word on its own line)
+ *
  * The overlap prepends the last paragraph of the preceding section onto the
  * next chunk, improving retrieval for questions that straddle section boundaries.
  */
@@ -89,11 +95,19 @@ function chunkAtH2(body: string): Array<{ heading: string; text: string }> {
   let currentHeading = 'intro'
   let currentLines: string[] = []
 
+  // Matches:  ## Heading
+  const markdownH2 = /^## (.+)$/
+  // Matches:  CHAPTER I.  /  CHAPTER IV  /  CHAPTER 3. Some Title
+  const chapterHeading = /^(CHAPTER\s+[IVXLCDM\d]+\.?\s*.*)$/i
+
   for (const line of lines) {
-    const h2Match = line.match(/^## (.+)$/)
-    if (h2Match) {
+    const h2Match = line.match(markdownH2)
+    const chapterMatch = line.match(chapterHeading)
+    const headingMatch = h2Match ?? chapterMatch
+
+    if (headingMatch) {
       sections.push({ heading: currentHeading, rawLines: currentLines })
-      currentHeading = h2Match[1].trim()
+      currentHeading = headingMatch[1].trim()
       currentLines = []
     } else {
       currentLines.push(line)
