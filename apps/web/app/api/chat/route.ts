@@ -450,7 +450,9 @@ export async function POST(req: NextRequest) {
     const client = apiKey ? new Anthropic({ apiKey }) : defaultClient
 
     // Shalom admin mode: inject private PM context.
-    const systemContent = [...SYSTEM_CONTENT]
+    // Typed as TextBlockParam[] so dynamic pushes (RAG, PM context) without
+    // cache_control are valid — cache_control is optional in the SDK type.
+    const systemContent: Anthropic.TextBlockParam[] = [...SYSTEM_CONTENT]
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
       if (pmContext) {
