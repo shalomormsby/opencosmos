@@ -92,7 +92,9 @@ export function formatRagChunks(chunks: RagChunk[]): string {
     return `${header}\n${sourceLabel}\n\n${c.text}`
   })
 
-  const preamble = `The following passages were retrieved from the OpenCosmos knowledge corpus based on the current conversation. These are real source documents — treat them as grounding material. Cite the title and author when you draw from them. If a passage directly answers the question, quote or paraphrase it and name the source.`
+  const preamble = `The following passages were retrieved from the OpenCosmos knowledge corpus based on the current conversation. These are real source documents — treat them as grounding material.
+
+When drawing from these passages: cite the title and author. If quoting directly, use the exact words from the passage and attribute them — do not paraphrase and present it as a quote. Never fabricate or reconstruct a quotation that is not present in the retrieved text. If you cannot find the precise words, paraphrase clearly and say so. Precision and honesty in citation are non-negotiable.`
 
   return `## Retrieved Passages\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
 }
