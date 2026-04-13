@@ -2,7 +2,7 @@
 
 > Platform-level technical decisions and infrastructure. For the design philosophy, see [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md). For the Cosmo AI technical blueprint, see [docs/archive-and-deprecated/INCEPTION.md](archive-and-deprecated/INCEPTION.md) (historical).
 
-**Last updated:** 2026-04-06
+**Last updated:** 2026-04-12
 
 ---
 
