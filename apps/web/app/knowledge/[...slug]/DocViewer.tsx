@@ -20,13 +20,13 @@ export default function DocViewer({ content }: Props) {
             {children}
           </h1>
         ),
-        h2: ({ children }) => (
-          <h2 className="text-xl font-light text-foreground mt-10 mb-3 leading-snug">
+        h2: ({ children, id }) => (
+          <h2 id={id} className="text-xl font-light text-foreground mt-10 mb-3 leading-snug scroll-mt-28">
             {children}
           </h2>
         ),
-        h3: ({ children }) => (
-          <h3 className="text-base font-medium text-foreground mt-8 mb-2">{children}</h3>
+        h3: ({ children, id }) => (
+          <h3 id={id} className="text-base font-medium text-foreground mt-8 mb-2 scroll-mt-28">{children}</h3>
         ),
         p: ({ children }) => (
           <p className="text-foreground/70 leading-relaxed mb-5">{children}</p>

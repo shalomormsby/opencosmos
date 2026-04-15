@@ -92,23 +92,24 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
   return (
     <aside
       aria-label="Document outline"
-      className="hidden lg:block"
+      className="hidden lg:block sticky top-28 self-start max-h-[calc(100vh-8rem)] overflow-y-auto"
     >
-      <nav className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 scrollbar-thin">
-        <p className="text-xs uppercase tracking-widest text-foreground/30 mb-3 font-medium">
-          On this page
-        </p>
-        <ul className="space-y-0.5">
-          {toc.map(entry => (
+      <p className="text-xs uppercase tracking-widest text-foreground/30 mb-3 font-medium px-2">
+        On this page
+      </p>
+      <ul className="space-y-0.5">
+        {toc.map(entry => {
+          const isActive = activeId === entry.id
+          return (
             <li key={entry.id}>
               <a
                 href={`#${entry.id}`}
                 className={cn(
-                  'block text-sm leading-snug py-1 transition-colors',
-                  entry.depth === 3 ? 'pl-3' : 'pl-0',
-                  activeId === entry.id
-                    ? 'text-foreground font-medium'
-                    : 'text-foreground/40 hover:text-foreground/70',
+                  'block text-sm leading-snug py-1 border-l-2 transition-colors',
+                  entry.depth === 3 ? 'pl-4' : 'pl-2',
+                  isActive
+                    ? 'border-white text-white font-medium'
+                    : 'border-transparent text-foreground/40 hover:text-foreground/70 hover:border-foreground/20',
                 )}
                 onClick={(e) => {
                   e.preventDefault()
@@ -119,9 +120,9 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
                 {entry.text}
               </a>
             </li>
-          ))}
-        </ul>
-      </nav>
+          )
+        })}
+      </ul>
     </aside>
   )
 }
