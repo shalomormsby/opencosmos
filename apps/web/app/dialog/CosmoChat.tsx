@@ -656,11 +656,7 @@ export function CosmoChat() {
                 >
                   Anthropic API key
                 </a>
-                {' '}or{' '}
-                <Link href="/account" className="underline underline-offset-2 hover:text-foreground/80">
-                  subscribe
-                </Link>
-                .
+                {' '}below.
               </p>
               <div className="flex gap-2">
                 <Input

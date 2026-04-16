@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge } from '@opencosmos/ui'
+import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@opencosmos/ui'
 import { TokenGauge } from '@/components/TokenGauge'
 
 const KEY_API_KEY = 'cosmo_api_key'
@@ -25,7 +25,6 @@ export function ApiKeyForm() {
   const [draft, setDraft] = useState('')
   const [saved, setSaved] = useState(false)
   const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
-  const [portalLoading, setPortalLoading] = useState(false)
   const [hasByok, setHasByok] = useState(false)
   const [sessionData, setSessionData] = useState<{
     tokensUsed: number
@@ -106,22 +105,6 @@ export function ApiKeyForm() {
     fetch('/api/byok', { method: 'DELETE' }).catch(() => {})
   }
 
-  const openPortal = async () => {
-    setPortalLoading(true)
-    try {
-      const res = await fetch('/api/stripe/portal', { method: 'POST' })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      }
-    } catch {
-      setPortalLoading(false)
-    }
-  }
-
-  const isSubscribed =
-    subscription.status === 'active' || subscription.status === 'past_due'
-
   return (
     <div className="space-y-8">
       {/* API Key */}
@@ -198,64 +181,8 @@ export function ApiKeyForm() {
       {/* Subscription — hidden entirely for BYOK users; top card already shows unlimited status */}
       {!apiKey && !hasByok && <div className="space-y-3">
 
-        {/* Active subscription — usage meter + manage */}
-        {isSubscribed && (subscription.status === 'active' || subscription.status === 'past_due') && (
-          <Card>
-            <CardContent className="pt-5 space-y-4">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {subscription.name}
-                    {subscription.status === 'past_due' && (
-                      <Badge variant="destructive" className="ml-2 text-xs">Payment due</Badge>
-                    )}
-                  </p>
-                  <p className="text-xs text-foreground/40 mt-0.5">
-                    ${subscription.monthlyUSD}/month · renews{' '}
-                    {new Date(subscription.billingCycleAnchor * 1000).toLocaleDateString('en-US', {
-                      month: 'short', day: 'numeric',
-                    })}
-                  </p>
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={openPortal}
-                  disabled={portalLoading}
-                >
-                  {portalLoading ? 'Opening…' : 'Manage billing'}
-                </Button>
-              </div>
-
-              {/* Usage meter */}
-              <div className="flex items-start gap-5">
-                <TokenGauge
-                  used={subscription.tokensUsed}
-                  total={subscription.tokensTotal}
-                  className="shrink-0"
-                />
-                <div className="space-y-1 min-w-0">
-                  <p className="text-xs text-foreground/40">
-                    {Math.max(0, subscription.tokensTotal - subscription.tokensUsed).toLocaleString()} of{' '}
-                    {subscription.tokensTotal.toLocaleString()} tokens remaining this month
-                  </p>
-                  {subscription.usagePercent >= 80 && (
-                    <p className="text-xs text-foreground/50">
-                      Approaching your monthly limit.{' '}
-                      <button onClick={openPortal} className="underline underline-offset-2">
-                        Upgrade your plan
-                      </button>{' '}
-                      or add your own API key above for unlimited access.
-                    </p>
-                  )}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Free quota — shown for non-subscribers who have no API connection */}
-        {!isSubscribed && !apiKey && !hasByok && sessionData && subscription.status !== 'loading' && (
+        {/* Free quota — shown while no API key is connected */}
+        {sessionData && subscription.status !== 'loading' && (
           <Card>
             <CardContent className="pt-5">
               <div className="flex items-start gap-5">
@@ -286,8 +213,8 @@ export function ApiKeyForm() {
           </Card>
         )}
 
-        {/* Community handoff — shown only when no subscription AND no BYOK key */}
-        {!isSubscribed && !apiKey && !hasByok && subscription.status !== 'loading' && (
+        {/* Community handoff */}
+        {subscription.status !== 'loading' && (
           <Card className="border-foreground/10">
             <CardHeader>
               <CardTitle className="text-base">Go deeper with Cosmo</CardTitle>
