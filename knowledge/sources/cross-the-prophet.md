@@ -27,6 +27,8 @@ corpus_tier: source
 
 *By Kahlil Gibran*
 
+## The Coming of the Ship
+
 Almustafa, the chosen and the beloved, who was a dawn unto his own day, had waited twelve years in the city of Orphalese for his ship that was to return and bear him back to the isle of his birth.
 
 And in the twelfth year, on the seventh day of Ielool, the month of reaping, he climbed the hill without the city walls and looked seaward; and he beheld his ship coming with the mist.
@@ -181,7 +183,9 @@ People of Orphalese, of what can I speak save of that which is even now moving w
 
 ***** *****
 
-Then said Almitra, Speak to us of _Love_.
+## On Love
+
+Then said Almitra, Speak to us of Love.
 
 And he raised his head and looked upon the people, and there fell a stillness upon them. And with a great voice he said:
 
@@ -261,7 +265,9 @@ And then to sleep with a prayer for the beloved in your heart and a song of prai
 
 ***** *****
 
-Then Almitra spoke again and said, And what of _Marriage_ master?
+## On Marriage
+
+Then Almitra spoke again and said, And what of Marriage master?
 
 And he answered saying:
 
@@ -303,7 +309,9 @@ And the oak tree and the cypress grow not in each other’s shadow.
 
 ***** *****
 
-And a woman who held a babe against her bosom said, Speak to us of _Children_.
+## On Children
+
+And a woman who held a babe against her bosom said, Speak to us of Children.
 
 And he said:
 
@@ -339,7 +347,9 @@ For even as he loves the arrow that flies, so He loves also the bow that is stab
 
 ***** *****
 
-Then said a rich man, Speak to us of _Giving_.
+## On Giving
+
+Then said a rich man, Speak to us of Giving.
 
 And he answered:
 
@@ -407,7 +417,9 @@ For to be overmindful of your debt, is to doubt his generosity who has the freeh
 
 ***** *****
 
-Then an old man, a keeper of an inn, said, Speak to us of _Eating and Drinking_.
+## On Eating and Drinking
+
+Then an old man, a keeper of an inn, said, Speak to us of Eating and Drinking.
 
 And he said:
 
@@ -452,7 +464,9 @@ And let there be in the song a remembrance for the autumn days, and for the vine
 *****
 *****
 
-Then a ploughman said, Speak to us of _Work_.
+## On Work
+
+Then a ploughman said, Speak to us of Work.
 
 And he answered, saying:
 
@@ -524,7 +538,9 @@ And if you sing though as angels, and love not the singing, you muffle man’s e
 
 ***** *****
 
-Then a woman said, Speak to us of _Joy and Sorrow_.
+## On Joy and Sorrow
+
+Then a woman said, Speak to us of Joy and Sorrow.
 
 And he answered:
 
@@ -560,7 +576,9 @@ When the treasure-keeper lifts you to weigh his gold and his silver, needs must 
 
 ***** *****
 
-Then a mason came forth and said, Speak to us of _Houses_.
+## On Houses
+
+Then a mason came forth and said, Speak to us of Houses.
 
 And he answered and said:
 
@@ -622,7 +640,9 @@ For that which is boundless in you abides in the mansion of the sky, whose door 
 
 ***** *****
 
-And the weaver said, Speak to us of _Clothes_.
+## On Clothes
+
+And the weaver said, Speak to us of Clothes.
 
 And he answered:
 
@@ -650,7 +670,9 @@ And forget not that the earth delights to feel your bare feet and the winds long
 
 ***** *****
 
-And a merchant said, Speak to us of _Buying and Selling_.
+## On Buying and Selling
+
+And a merchant said, Speak to us of Buying and Selling.
 
 And he answered and said:
 
@@ -684,7 +706,9 @@ For the master spirit of the earth shall not sleep peacefully upon the wind till
 
 ***** *****
 
-Then one of the judges of the city stood forth and said, Speak to us of _Crime and Punishment_.
+## On Crime and Punishment
+
+Then one of the judges of the city stood forth and said, Speak to us of Crime and Punishment.
 
 And he answered, saying:
 
@@ -792,7 +816,9 @@ Only then shall you know that the erect and the fallen are but one man standing 
 
 ***** *****
 
-Then a lawyer said, But what of our _Laws_, master?
+## On Laws
+
+Then a lawyer said, But what of our Laws, master?
 
 And he answered:
 
@@ -846,7 +872,9 @@ People of Orphalese, you can muffle the drum, and you can loosen the strings of 
 
 ***** *****
 
-And an orator said, Speak to us of _Freedom_.
+## On Freedom
+
+And an orator said, Speak to us of Freedom.
 
 And he answered:
 
@@ -894,7 +922,9 @@ And thus your freedom when it loses its fetters becomes itself the fetter of a g
 
 ***** *****
 
-And the priestess spoke again and said: Speak to us of _Reason and Passion_.
+## On Reason and Passion
+
+And the priestess spoke again and said: Speak to us of Reason and Passion.
 
 And he answered, saying:
 
@@ -928,7 +958,9 @@ And since you are a breath in God’s sphere, and a leaf in God’s forest, you 
 
 ***** *****
 
-And a woman spoke, saying, Tell us of _Pain_.
+## On Pain
+
+And a woman spoke, saying, Tell us of Pain.
 
 And he said:
 
@@ -950,7 +982,9 @@ Therefore trust the physician, and drink his remedy in silence and tranquillity:
 
 ***** *****
 
-And a man said, Speak to us of _Self-Knowledge_.
+## On Self-Knowledge
+
+And a man said, Speak to us of Self-Knowledge.
 
 And he answered, saying:
 
@@ -988,7 +1022,9 @@ The soul unfolds itself, like a lotus of countless petals.
 
 ***** *****
 
-Then said a teacher, Speak to us of _Teaching_.
+## On Teaching
+
+Then said a teacher, Speak to us of Teaching.
 
 And he said:
 
@@ -1010,7 +1046,9 @@ And even as each one of you stands alone in God’s knowledge, so must each one 
 
 ***** *****
 
-And a youth said, Speak to us of _Friendship_.
+## On Friendship
+
+And a youth said, Speak to us of Friendship.
 
 And he answered, saying:
 
@@ -1054,7 +1092,9 @@ For in the dew of little things the heart finds its morning and is refreshed.
 
 ***** *****
 
-And then a scholar said, Speak of _Talking_.
+## On Talking
+
+And then a scholar said, Speak of Talking.
 
 And he answered, saying:
 
@@ -1088,7 +1128,9 @@ When the colour is forgotten and the vessel is no more.
 
 ***** *****
 
-And an astronomer said, Master, what of _Time_?
+## On Time
+
+And an astronomer said, Master, what of Time?
 
 And he answered:
 
@@ -1118,7 +1160,9 @@ And let today embrace the past with remembrance and the future with longing.
 
 ***** *****
 
-And one of the elders of the city said, Speak to us of _Good and Evil_.
+## On Good and Evil
+
+And one of the elders of the city said, Speak to us of Good and Evil.
 
 And he answered:
 
@@ -1182,7 +1226,9 @@ For the truly good ask not the naked, “Where is your garment?” nor the house
 
 ***** *****
 
-Then a priestess said, Speak to us of _Prayer_.
+## On Prayer
+
+Then a priestess said, Speak to us of Prayer.
 
 And he answered, saying:
 
@@ -1230,7 +1276,9 @@ Thou art our need; and in giving us more of thyself thou givest us all.”
 
 ***** *****
 
-Then a hermit, who visited the city once a year, came forth and said, Speak to us of _Pleasure_.
+## On Pleasure
+
+Then a hermit, who visited the city once a year, came forth and said, Speak to us of Pleasure.
 
 And he answered, saying:
 
@@ -1320,7 +1368,9 @@ People of Orphalese, be in your pleasures like the flowers and the bees.
 
 ***** *****
 
-And a poet said, Speak to us of _Beauty_.
+## On Beauty
+
+And a poet said, Speak to us of Beauty.
 
 And he answered:
 
@@ -1384,7 +1434,9 @@ But you are eternity and you are the mirror.
 
 ***** *****
 
-And an old priest said, Speak to us of _Religion_.
+## On Religion
+
+And an old priest said, Speak to us of Religion.
 
 And he said:
 
@@ -1438,7 +1490,9 @@ You shall see Him smiling in flowers, then rising and waving His hands in trees.
 
 ***** *****
 
-Then Almitra spoke, saying, We would ask now of _Death_.
+## On Death
+
+Then Almitra spoke, saying, We would ask now of Death.
 
 And he said:
 
@@ -1475,6 +1529,8 @@ Only when you drink from the river of silence shall you indeed sing.
 And when you have reached the mountain top, then you shall begin to climb.
 
 And when the earth shall claim your limbs, then shall you truly dance.
+
+## The Farewell
 
 And now it was evening.
 

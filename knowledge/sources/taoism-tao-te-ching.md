@@ -217,7 +217,7 @@ An unbroken thread beyond description.
 It returns to nothingness.
 The form of the formless,
 The image of the imageless,
-It is alled indefinable and beyond imagination.
+It is called indefinable and beyond imagination.
 
 Stand before it and there is no beginning.
 Follow it and there is no end.

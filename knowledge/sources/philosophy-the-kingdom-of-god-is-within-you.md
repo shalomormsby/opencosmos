@@ -35,7 +35,7 @@ related_docs:
   - references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
 ---
-"THE KINGDOM OF GOD IS WITHIN YOU"
+# "THE KINGDOM OF GOD IS WITHIN YOU"
 
 CHRISTIANITY NOT AS A MYSTIC RELIGION BUT AS A NEW THEORY OF LIFE
 
@@ -69,7 +69,8 @@ January, 1894.
 
 [vii]
 
-PREFACE. In the year 1884 I wrote a book under the title "What I Believe," in which I did in fact make a sincere statement of my beliefs.
+## PREFACE. 
+In the year 1884 I wrote a book under the title "What I Believe," in which I did in fact make a sincere statement of my beliefs.
 
 In affirming my belief in Christ's teaching, I could not help explaining why I do not believe, and consider as mistaken, the Church's doctrine, which is usually called Christianity.
 
@@ -90,7 +91,8 @@ Yasnaïa Poliana,
 
 [ix]
 
-CONTENTS. CHAPTER	PAGE I. The Doctrine of Non-resistance to Evil by Force has been Professed by a Minority of Men from the Very Foundation of Christianity,
+## CONTENTS. 
+CHAPTER	PAGE I. The Doctrine of Non-resistance to Evil by Force has been Professed by a Minority of Men from the Very Foundation of Christianity,
 
 1 II. Criticisms of the Doctrine of Non-resistance to Evil by Force on the Part of Believers and of Unbelievers,
 
@@ -122,7 +124,10 @@ The Christian Conception of Life has Already Arisen in our Society, and will Inf
 
 "Ye have been bought with a price; be not ye the servants of men."—1 Cor. vii. 23.
 
-"THE KINGDOM OF GOD IS WITHIN YOU." CHAPTER I. THE DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE HAS BEEN PROFESSED BY A MINORITY OF MEN FROM THE VERY FOUNDATION OF CHRISTIANITY.
+"THE KINGDOM OF GOD IS WITHIN YOU." 
+
+## CHAPTER I. 
+THE DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE HAS BEEN PROFESSED BY A MINORITY OF MEN FROM THE VERY FOUNDATION OF CHRISTIANITY.
 
 Of the Book "What I Believe"—The Correspondence Evoked by it—Letters from Quakers—Garrison's Declaration—Adin Ballou, his Works, his Catechism—Helchitsky's "Net of Faith"—The Attitude of the World to Works Elucidating Christ's Teaching—Dymond's Book "On War"—Musser's "Non-resistance Asserted"—Attitude of the Government in 1818 to Men who Refused to Serve in the Army—Hostile Attitude of Governments Generally and of Liberals to Those who Refuse to Assist in Acts of State Violence, and their Conscious Efforts to Silence and Suppress these Manifestations of Christian Non-resistance.
 
@@ -376,7 +381,8 @@ Everywhere the same story is repeated. Not only the government, but the great ma
 
 So that the information I have gained of the attitude of the higher ruling classes, not only in Russia but in Europe and America, toward the elucidation of this question has convinced me that there exists in these ruling classes a consciously hostile attitude to true Christianity, which is shown pre-eminently in their reticence in regard to all manifestations of it.
 
-CHAPTER II. CRITICISMS OF THE DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE ON THE PART OF BELIEVERS AND OF UNBELIEVERS.
+## CHAPTER II. 
+CRITICISMS OF THE DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE ON THE PART OF BELIEVERS AND OF UNBELIEVERS.
 
 Fate of the Book "What I Believe"—Evasive Character of Religious Criticisms of Principles of my Book—1st Reply: Use of Force not Opposed to Christianity—2d Reply: Use of Force Necessary to Restrain Evil Doers—3d Reply: Duty of Using Force in Defense of One's Neighbor—4th Reply: The Breach of the Command of Non-resistance to be Regarded Simply as a Weakness—5th Reply: Reply Evaded by Making Believe that the Question has long been Decided—To Devise such Subterfuges and to take Refuge Behind the Authority of the Church, of Antiquity, and of Religion is all that Ecclesiastical Critics can do to get out of the Contradiction between Use of Force and Christianity in Theory and in Practice—General Attitude of the Ecclesiastical World and of the Authorities to Profession of True Christianity—General Character of Russian Freethinking Critics—Foreign Freethinking Critics—Mistaken Arguments of these Critics the Result of Misunderstanding the True Meaning of Christ's Teaching.
 
@@ -492,7 +498,8 @@ But this assumption, that what seems evil to us is really evil, shows a complete
 
 [48]
 
-CHAPTER III. CHRISTIANITY MISUNDERSTOOD BY BELIEVERS.
+## CHAPTER III. 
+CHRISTIANITY MISUNDERSTOOD BY BELIEVERS.
 
 Meaning of Christian Doctrine, Understood by a Minority, has Become Completely Incomprehensible for the Majority of Men—Reason of this to be Found in Misinterpretation of Christianity and Mistaken Conviction of Believers and Unbelievers Alike that they Understand it—The Meaning of Christianity Obscured for Believers by the Church—The First Appearance of Christ's Teaching—Its Essence and Difference from Heathen Religions—Christianity not Fully Comprehended at the Beginning, Became More and More Clear to those who Accepted it from its Correspondence with Truth—Simultaneously with this Arose the Claim to Possession of the Authentic Meaning of the Doctrine Based on the Miraculous Nature of its Transmission—Assembly of Disciples as Described in the Acts—The Authoritative Claim to the Sole Possession of the True Meaning of Christ's Teaching Supported by Miraculous Evidence has Led by Logical Development to the Creeds of the Churches—A Church Could Not be Founded by Christ—Definitions of a Church According to the Catechisms—The Churches have Always been Several in Number and Hostile to One Another—What is Heresy—The Work of G. Arnold on Heresies—Heresies the Manifestations of Progress in the Churches—Churches Cause Dissension among Men, and are Always Hostile to Christianity—Account of the Work Done by the Russian Church—Matt. xxiii. 23—The Sermon on the Mount or the Creed—The Orthodox Church Conceals from the People the True Meaning of Christianity—The Same Thing is Done by the Other Churches—All the External Conditions of Modern Life are such as to Destroy the Doctrine of the Church, and therefore the Churches use Every Effort to Support their Doctrines.
 
@@ -750,7 +757,8 @@ Let the Church stop its work of hypnotizing the masses, and deceiving children e
 
 [85]
 
-CHAPTER IV. CHRISTIANITY MISUNDERSTOOD BY MEN OF SCIENCE.
+## CHAPTER IV. 
+CHRISTIANITY MISUNDERSTOOD BY MEN OF SCIENCE.
 
 Attitude of Men of Science to Religions in General—What Religion is, and What is its Significance for the Life of Humanity—Three Conceptions of Life—Christian Religion the Expression of the Divine Conception of Life—Misinterpretation of Christianity by Men of Science, who Study it in its External Manifestations Due to their Criticising it from Standpoint of Social Conception of Life—Opinion, Resulting from this Misinterpretation, that Christ's Moral Teaching is Exaggerated and Cannot be put into Practice—Expression of Divine Conception of Life in the Gospel—False Ideas of Men of Science on Christianity Proceed from their Conviction that they have an Infallible Method of Criticism—From which come Two Misconceptions in Regard to Christian Doctrine—First Misconception, that the Teaching Cannot be put into Practice, Due to the Christian Religion Directing Life in a Way Different from that of the Social Theory of Life—Christianity holds up Ideal, does not lay down Rules—To the Animal Force of Man Christ Adds the Consciousness of a Divine Force—Christianity Seems to Destroy Possibility of Life only when the Ideal held up is Mistaken for Rule—Ideal Must Not be Lowered—Life, According to Christ's Teaching, is Movement—The Ideal and the Precepts—Second Misconception Shown in Replacing Love and Service of God by Love and Service of Humanity—Men of Science Imagine their Doctrine of Service of Humanity and Christianity are Identical—Doctrine of Service of Humanity Based on Social Conception of Life—Love for Humanity, Logically Deduced from Love of Self, has No Meaning because Humanity is a Fiction—Christian Love Deduced from Love of God, Finds its Object in the whole World, not in Humanity Alone—Christianity Teaches Man to Live in Accordance with his Divine Nature—It Shows that the Essence of the Soul of Man is Love, and that his Happiness Ensues from Love of God, whom he Recognizes as Love within himself.
 
@@ -948,7 +956,8 @@ Such are the two principal misunderstandings relating to the Christian religion,
 
 The mistaken notion of scientific men that the essence of Christianity consists in the supernatural, and that its moral teaching is impracticable, constitutes another reason of the failure of men of the present day to understand Christianity.
 
-CHAPTER V. CONTRADICTION BETWEEN OUR LIFE AND OUR CHRISTIAN CONSCIENCE.
+## CHAPTER V. 
+CONTRADICTION BETWEEN OUR LIFE AND OUR CHRISTIAN CONSCIENCE.
 
 Men Think they can Accept Christianity without Altering their Life—Pagan Conception of Life does not Correspond with Present Stage of Development of Humanity, and Christian Conception Alone Can Accord with it—Christian Conception of Life not yet Understood by Men, but the Progress of Life itself will Lead them Inevitably to Adopt it—The Requirements of a New Theory of Life Always Seem Incomprehensible, Mystic, and Supernatural—So Seem the Requirements of the Christian Theory of Life to the Majority of Men—The Absorption of the Christian Conception of Life will Inevitably be Brought About as the Result of Material and Spiritual Causes—The Fact of Men Knowing the Requirements of the Higher View of Life, and yet Continuing to Preserve Inferior Organizations of Life, Leads to Contradictions and Sufferings which Embitter Existence and Must Result in its Transformation—The Contradictions of our Life—The Economic Contradiction and the Suffering Induced by it for Rich and Poor Alike—The Political Contradiction and the Sufferings Induced by Obedience to the Laws of the State—The International Contradiction and the Recognition of it by Contemporaries: Komarovsky, Ferri, Booth, Passy, Lawson, Wilson, Bartlett, Defourney, Moneta—The Striking Character of the Military Contradiction.
 
@@ -1122,7 +1131,8 @@ To recognize this clearly is enough to drive a man out of his senses or to make 
 
 And this is the only explanation of the dreadful intensity with which men of modern times strive to stupefy themselves, with spirits, tobacco, opium, cards, reading newspapers, traveling, and all kinds of spectacles and amusements. These pursuits are followed up as an important, serious business. And indeed they are a serious business. If there were no external means of dulling their sensibilities, half of mankind would shoot themselves without delay, for to live in opposition to one's reason is the most intolerable condition. And that is the condition of all men of the present day. All men of the modern world exist in a state of continual and flagrant antagonism between their conscience and their way of life. This antagonism is apparent in economic as well as political[133] life. But most striking of all is the contradiction between the Christian law of the brotherhood of men existing in the conscience and the necessity under which all men are placed by compulsory military service of being prepared for hatred and murder—of being at the same time a Christian and a gladiator.
 
-CHAPTER VI. ATTITUDE OF MEN OF THE PRESENT DAY TO WAR.
+## CHAPTER VI. 
+ATTITUDE OF MEN OF THE PRESENT DAY TO WAR.
 
 People do not Try to Remove the Contradiction between Life and Conscience by a Change of Life, but their Cultivated Leaders Exert Every Effort to Obscure the Demands of Conscience, and Justify their Life; in this Way they Degrade Society below Paganism to a State of Primeval Barbarism—Undefined Attitude of Modern Leaders of Thought to War, to Universal Militarism, and to Compulsory Service in Army—One Section Regards War as an Accidental Political Phenomenon, to be Avoided by External Measures only—Peace Congress—The Article in the Revue des Revues—Proposition of Maxime du Camp—Value of Boards of Arbitration and Suppression of Armies—Attitude of Governments to Men of this Opinion and What they Do—Another Section Regards War as Cruel, but Inevitable—Maupassant—Rod—A Third Section Regard War as Necessary, and not without its Advantages—Doucet—Claretie—Zola—Vogüé.
 
@@ -1444,7 +1454,8 @@ All discussion of the possibility of re-establishing peace instead of everlastin
 
 Instead of transforming their life into harmony with their conscience, they try by every means to stifle its voice. But it is in darkness that the light begins to shine, and so the light is rising upon our epoch.
 
-CHAPTER VII. SIGNIFICANCE OF COMPULSORY SERVICE.
+## CHAPTER VII. 
+SIGNIFICANCE OF COMPULSORY SERVICE.
 
 Universal Compulsory Service is not a Political Accident, but the Furthest Limit of the Contradiction Inherent in the Social Conception of Life—Origin of Authority in Society—Basis of Authority is Physical Violence—To be Able to Perform its Acts of Violence Authority Needs a Special Organization—The Army—Authority, that is, Violence, is the Principle which is Destroying the Social Conception of Life—Attitude of Authority to the Masses, that is, Attitude of Government to Working Oppressed Classes—Governments Try to Foster in Working Classes the Idea that State Force is Necessary to Defend Them from External Enemies—But the Army is Principally Needed to Preserve Government from its own Subjects—The Working Classes—Speech of M. de Caprivi—All Privileges of Ruling Classes Based on Violence—The Increase of Armies up to Point of Universal Service—Universal Compulsory Service Destroys all the Advantages of Social Life, which Government is Intended to Preserve—Compulsory Service is the Furthest Limit of Submission, since in Name of the State it Requires Sacrifice of all that can be Precious to a Man—Is Government Necessary?—The Sacrifices Demanded by Government in Compulsory Service have No Longer any Reasonable Basis—And there is More Advantage to be Gained by not Submitting to the Demands of the State than by Submitting to Them.
 
@@ -1608,7 +1619,8 @@ But no considerations as to how far the state is useful or beneficial to the men
 
 [184]
 
-CHAPTER VIII. DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE MUST INEVITABLY BE ACCEPTED BY MEN OF THE PRESENT DAY.
+## CHAPTER VIII. 
+DOCTRINE OF NON-RESISTANCE TO EVIL BY FORCE MUST INEVITABLY BE ACCEPTED BY MEN OF THE PRESENT DAY.
 
 Christianity is Not a System of Rules, but a New Conception of Life, and therefore it was Not Obligatory and was Not Accepted in its True Significance by All, but only by a Few—Christianity is, Moreover, Prophetic of the Destruction of the Pagan Life, and therefore of Necessity of the Acceptance of the Christian Doctrines—Non-resistance of Evil by Force is One Aspect of the Christian Doctrine, which must Inevitably in Our Times be Accepted by Men—Two Methods of Deciding Every Quarrel—First Method is to Find a Universal Definition of Evil, which All Must Accept, and to Resist this Evil by Force—Second Method is the Christian One of Complete Non-resistance by Force—Though the Failure of the First Method was Recognized since the Early Days of Christianity, it was Still Proposed, and only as Mankind has Progressed it has Become More and More Evident that there Cannot be any Universal Definition of Evil—This is Recognized by All at the Present Day, and if Force is Still Used to Resist Evil, it is Not Because it is Now Regarded as Right, but Because People Don't Know How to Avoid It—The Difficulty of Avoiding It is the Result of the Subtle and Complex Character of the Government Use of Force—Force is Used in Four Ways: Intimidation, Bribery, Hypnotism, and Coercion by Force of Arms—State Violence Can Never be Suppressed by the Forcible Overthrow of the Government—Men are Led by the Sufferings of the Pagan Mode of Life to the Necessity of Accepting Christ's Teaching with its Doctrine of Non-resistance by Force—The Consciousness of its Truth which is Diffused Throughout Our Society, Will also Bring About its Acceptance—This Consciousness is in Complete Contradiction with Our Life—This is Specially Obvious in Compulsory Military Service, but Through Habit and the Application of the Four Methods of Violence by the State, Men do not See this Inconsistency of Christianity with Life of a Soldier—They do Not even See It, though the Authorities Themselves Show all the Immorality of a Soldier's Duties with Perfect Clearness—The Call to Military Service is the Supreme Test for Every Man, when the Choice is Offered Him, between Adopting the Christian Doctrine of Non-resistance, or Slavishly Submitting to the Existing[185] State Organization—Men Usually Renounce All They Hold Sacred, and Submit to the Demands of Government, Seeming to See No Other Course Open to Them—For Men of the Pagan Conception of Life there is No Other Course Open, and Never Will Be, in Spite of the Growing Horrors of War—Society, Made Up of Such Men, Must Perish, and No Social Reorganization Can Save It—Pagan Life Has Reached Its Extreme Limit, and Will Annihilate Itself.
 
@@ -1774,7 +1786,8 @@ The contradiction between life and conscience and the misery resulting from it h
 
 The first half of the prophecy has been fulfilled in the generation of men who have not accepted Christ's teaching. Their descendants have been brought now to the absolute necessity of putting the truth of the second half to the test of experience.
 
-CHAPTER IX. THE ACCEPTANCE OF THE CHRISTIAN CONCEPTION OF LIFE WILL EMANCIPATE MEN FROM THE MISERIES OF OUR PAGAN LIFE.
+## CHAPTER IX. 
+THE ACCEPTANCE OF THE CHRISTIAN CONCEPTION OF LIFE WILL EMANCIPATE MEN FROM THE MISERIES OF OUR PAGAN LIFE.
 
 The External Life of Christian Peoples Remains Pagan Though they are Penetrated by Christian Consciousness—The Way Out of this Contradiction is by the Acceptance of the Christian Theory of Life—Only Through Christianity is Every Man Free, and Emancipated of All Human Authority—This Emancipation can be Effected by no Change in External Conditions of Life, but Only by a Change in the Conception of Life—The Christian Ideal of Life Requires Renunciation of all Violence, and in Emancipating the Man who Accepts it, Emancipates the Whole World from All External Authorities—The Way Out of the Present Apparently Hopeless Position is for Every Man who is Capable of Assimilating the Christian Conception of Life, to Accept it and Live in Accordance with it—But Men Consider this Way too Slow, and Look for Deliverance Through Changes in Material Conditions of Life Aided by Government—That Will Lead to No Improvement, as it is simply Increasing the Evil under which Men are Suffering—A Striking Instance of this is the Submission to Compulsory Military Service, which it would be More Advantageous for Every Man to Refuse than to Submit to—The Emancipation of Men Can Only be Brought About by each Individual Emancipating Himself, and the Examples of this Self-emancipation which are already Appearing Threaten the Destruction of Governmental Authority—Refusal to Comply with the Unchristian Demands of Government Undermines the Authority of the State and Emancipates Men—And therefore Cases[209] of such Non-compliance are Regarded with more Dread by State Authorities than any Conspiracies or Acts of Violence—Examples of Non-compliance in Russia, in Regard to Oath of Allegiance, Payment of Taxes, Passports, Police Duties, and Military Service—Examples of such Non-compliance in other States—Governments do not Know how to Treat Men who Refuse to Comply with their Demands on Christian Grounds—Such People, without Striking a Blow, Undermine the very Basis of Government from Within—To Punish them is Equivalent to Openly Renouncing Christianity, and Assisting in Diffusing the Very Principle by which these Men Justify their Non-compliance—So Governments are in a Helpless Position—Men who Maintain the Uselessness of Personal Independence, only Retard the Dissolution of the Present State Organization Based on Force.
 
@@ -1954,7 +1967,8 @@ But the thing has gone too far. Already ruling governments feel their weak and d
 
 And this fire is beginning to burn.
 
-CHAPTER X. EVIL CANNOT BE SUPPRESSED BY THE PHYSICAL FORCE OF THE GOVERNMENT—THE MORAL PROGRESS OF HUMANITY IS BROUGHT ABOUT NOT ONLY BY INDIVIDUAL RECOGNITION OF TRUTH, BUT ALSO THROUGH THE ESTABLISHMENT OF A PUBLIC OPINION.
+## CHAPTER X. 
+EVIL CANNOT BE SUPPRESSED BY THE PHYSICAL FORCE OF THE GOVERNMENT—THE MORAL PROGRESS OF HUMANITY IS BROUGHT ABOUT NOT ONLY BY INDIVIDUAL RECOGNITION OF TRUTH, BUT ALSO THROUGH THE ESTABLISHMENT OF A PUBLIC OPINION.
 
 Christianity Destroys the State—But Which is Most Necessary: Christianity or the State?—There are Some who Assert the Necessity of a State Organization, and Others who Deny it, both Arguing from same First Principles—Neither Contention can be Proved by Abstract Argument—The Question must be Decided by the Stage in the Development of Conscience of Each Man, which will either Prevent or Allow him to Support a Government Organization—Recognition of the Futility and Immorality of Supporting a State Organization Contrary to Christian Principles will Decide the Question for Every Man, in Spite of any Action on Part of the State—Argument of those who Defend the Government, that it is a Form of Social Life, Needed to Protect the Good from the Wicked, till all Nations and all Members of each Nation have Become Christians—The Most Wicked are Always those in Power—The whole History of Humanity is the History of the Forcible Appropriation of Power by the Wicked and their Oppression of the Good—The Recognition by Governments of the Necessity of Opposing Evil by Force is Equivalent to Suicide on their Part—The Abolition of State-violence cannot Increase the Sum Total of Acts of Violence—The Suppression of the Use of Force is not only Possible, but is even Taking Place before Our Eyes—But it will Never be Suppressed[236] by the Violence of Government, but through Men who have Attained Power by Evidence Recognizing its Emptiness and Becoming Better and Less Capable of Using Force—Individual Men and also Whole Nations Pass Through this Process—By this Means Christianity is Diffused Through Consciousness of Men, not only in Spite of Use of Violence by Government, but even Through its Action, and therefore the Suppression is not to be Dreaded, but is Brought About by the National Progress of Life—Objection of those who Defend State Organization that Universal Adoption of Christianity is hardly Likely to be Realized at any Time—The General Adoption of the Truths of Christianity is being Brought About not only by the Gradual and Inward Means, that is, by Knowledge of the Truth, Prophetic Insight, and Recognition of the Emptiness of Power, and Renunciation of it by Individuals, but also by Another External Means, the Acceptance of a New Truth by Whole Masses of Men on a Lower Level of Development Through Simple Confidence in their Leaders—When a Certain Stage in the Diffusion of a Truth has been Reached, a Public Opinion is Created which Impels a Whole Mass of Men, formerly Antagonistic to the New Truth, to Accept it—And therefore all Men may Quickly be Brought to Renounce the use of Violence when once a Christian Public Opinion is Established—The Conviction of Force being Necessary Hinders the Establishment of a Christian Public Opinion—The Use of Violence Leads Men to Distrust the Spiritual Force which is the Only Force by which they Advance—Neither Nations nor Individuals have been really Subjugated by Force, but only by Public Opinion, which no Force can Resist—Savage Nations and Savage Men can only be Subdued by the Diffusion of a Christian Standard among them, while actually Christian Nations in order to Subdue them do all they can to Destroy a Christian Standard—These Fruitless Attempts to Civilize Savages Cannot be Adduced as Proofs that Men Cannot be Subdued by Christianity—Violence by Corrupting Public Opinion, only Hinders the Social Organization from being What it Ought to Be—And by the Use of Violence being Suppressed, a Christian Public Opinion would be Established—Whatever might be the Result of the Suppression of Use of Force, this Unknown Future could not be Worse than the Present Condition, and so there is no Need to Dread it—To Attain Knowledge of the Unknown, and to Move Toward it, is the Essence of Life.
 
@@ -2166,7 +2180,8 @@ The conditions of the new order of life cannot be known by us because we have to
 
 That is the life of each individual man, and that is the life of human societies and of humanity.
 
-CHAPTER XI. THE CHRISTIAN CONCEPTION OF LIFE HAS ALREADY ARISEN IN OUR SOCIETY, AND WILL INFALLIBLY PUT AN END TO THE PRESENT ORGANIZATION OF OUR LIFE BASED ON FORCE—WHEN THAT WILL BE.
+## CHAPTER XI. 
+THE CHRISTIAN CONCEPTION OF LIFE HAS ALREADY ARISEN IN OUR SOCIETY, AND WILL INFALLIBLY PUT AN END TO THE PRESENT ORGANIZATION OF OUR LIFE BASED ON FORCE—WHEN THAT WILL BE.
 
 The Condition and Organization of our Society are Terrible, but they Rest only on Public Opinion, and can be Destroyed by it—Already Violence is Regarded from a Different Point of View; the Number of those who are Ready to Serve the Government is Diminishing; and even the Servants of Government are Ashamed of their Position, and so often Do Not Perform their Duties—These Facts are all Signs of the Rise of a Public Opinion, which Continually Growing will Lead to No One being Willing to Enter Government Service—Moreover, it Becomes More and More Evident that those Offices are of No Practical Use—Men already Begin to Understand the Futility of all Institutions Based on Violence, and if a Few already Understand it, All will One Day Understand it—The Day of Deliverance is Unknown, but it Depends on Men Themselves, on how far Each Man Lives According to the Light that is in Him.
 
@@ -2290,7 +2305,8 @@ How can we tell whether it is far to the goal which humanity is approaching, whe
 
 All we can know is what we who make up mankind ought to do, and not to do, to bring about the coming of the kingdom of God. And that we all know. And we need only each begin to do what we ought to do, we need only each live with all the light that is in us, to bring about at once the promised kingdom of God to which every man's heart is yearning.
 
-CHAPTER XII. CONCLUSION—REPENT YE, FOR THE KINGDOM OF HEAVEN IS AT HAND.
+## CHAPTER XII. 
+CONCLUSION—REPENT YE, FOR THE KINGDOM OF HEAVEN IS AT HAND.
 
 1. Chance Meeting with a Train Carrying Soldiers to Restore Order Among the Famishing Peasants—Reason of the Expedition—How the Decisions of the Higher Authorities are Enforced in Cases of Insubordination on Part of the Peasants—What Happened at Orel, as an Example of How the Rights of the Propertied Classes are Maintained by Murder and Torture—All the Privileges of the Wealthy are Based on Similar Acts of Violence.
 
