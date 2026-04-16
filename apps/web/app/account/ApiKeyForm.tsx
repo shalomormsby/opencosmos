@@ -128,56 +128,62 @@ export function ApiKeyForm() {
       <Card>
         <CardHeader>
           <CardTitle className="text-base">Your Anthropic API Key</CardTitle>
-          <CardDescription>
-            {apiKey
-              ? 'Your key is connected and in use. Clear it below to remove BYOK access.'
-              : 'Bring your own key for unlimited messages. Your key is stored only in your browser and is never sent to OpenCosmos servers — only forwarded directly to Anthropic.'}
-          </CardDescription>
+          {!apiKey && (
+            <CardDescription>
+              Bring your own key for unlimited messages. Your key is stored only in your browser
+              and is never sent to OpenCosmos servers — only forwarded directly to Anthropic.
+            </CardDescription>
+          )}
         </CardHeader>
         <CardContent className="space-y-3">
-          <div className="flex gap-2">
-            <Input
-              type="password"
-              placeholder="sk-ant-..."
-              value={draft}
-              onChange={(e) => { setDraft(e.target.value); setSaved(false) }}
-              onKeyDown={(e) => e.key === 'Enter' && save()}
-              className="flex-1 font-mono text-sm"
-            />
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={save}
-              disabled={!draft.trim() || draft === apiKey}
-            >
-              {saved ? 'Saved' : 'Save'}
-            </Button>
-            {apiKey && (
+          {apiKey ? (
+            /* Connected state — show status + clear, no form */
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                <span className="text-xs font-medium text-emerald-500">Connected</span>
+                <span className="text-xs font-mono text-foreground/60">
+                  {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
+                </span>
+              </div>
               <Button variant="ghost" size="sm" onClick={clear} className="text-foreground/40">
                 Clear
               </Button>
-            )}
-          </div>
-          {apiKey && (
-            <div className="flex items-center gap-2">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-              <span className="text-xs font-medium text-emerald-500">Connected</span>
-              <span className="text-xs font-mono text-foreground/60">
-                {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
-              </span>
             </div>
+          ) : (
+            /* No key — show form */
+            <>
+              <div className="flex gap-2">
+                <Input
+                  type="password"
+                  placeholder="sk-ant-..."
+                  value={draft}
+                  onChange={(e) => { setDraft(e.target.value); setSaved(false) }}
+                  onKeyDown={(e) => e.key === 'Enter' && save()}
+                  className="flex-1 font-mono text-sm"
+                />
+                <Button
+                  variant="outline"
+                  size="sm"
+                  onClick={save}
+                  disabled={!draft.trim() || draft === apiKey}
+                >
+                  {saved ? 'Saved' : 'Save'}
+                </Button>
+              </div>
+              <p className="text-xs text-foreground/30">
+                Get a key at{' '}
+                <a
+                  href="https://console.anthropic.com/settings/keys"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
+                >
+                  console.anthropic.com
+                </a>
+              </p>
+            </>
           )}
-          <p className="text-xs text-foreground/30">
-            Get a key at{' '}
-            <a
-              href="https://console.anthropic.com/settings/keys"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
-            >
-              console.anthropic.com
-            </a>
-          </p>
         </CardContent>
       </Card>
 
