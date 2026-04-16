@@ -12,6 +12,13 @@ export function SidebarUsage() {
   const [state, setState] = useState<UsageState>({ kind: 'idle' })
 
   useEffect(() => {
+    // Check localStorage immediately — if a BYOK key is present we know the user
+    // is unlimited without waiting for the server response.
+    if (localStorage.getItem('cosmo_api_key')) {
+      setState({ kind: 'unlimited' })
+      return
+    }
+
     fetch('/api/subscription')
       .then((r) => r.json())
       .then((data) => {

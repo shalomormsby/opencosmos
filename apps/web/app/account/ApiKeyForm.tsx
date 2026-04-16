@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge } from '@opencosmos/ui'
+import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent } from '@opencosmos/ui'
 import { TokenGauge } from '@/components/TokenGauge'
 
 const KEY_API_KEY = 'cosmo_api_key'
@@ -25,7 +25,6 @@ export function ApiKeyForm() {
   const [draft, setDraft] = useState('')
   const [saved, setSaved] = useState(false)
   const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
-  const [portalLoading, setPortalLoading] = useState(false)
   const [hasByok, setHasByok] = useState(false)
   const [sessionData, setSessionData] = useState<{
     tokensUsed: number
@@ -106,22 +105,6 @@ export function ApiKeyForm() {
     fetch('/api/byok', { method: 'DELETE' }).catch(() => {})
   }
 
-  const openPortal = async () => {
-    setPortalLoading(true)
-    try {
-      const res = await fetch('/api/stripe/portal', { method: 'POST' })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      }
-    } catch {
-      setPortalLoading(false)
-    }
-  }
-
-  const isSubscribed =
-    subscription.status === 'active' || subscription.status === 'past_due'
-
   return (
     <div className="space-y-8">
       {/* API Key */}
@@ -137,18 +120,26 @@ export function ApiKeyForm() {
         </CardHeader>
         <CardContent className="space-y-3">
           {apiKey ? (
-            /* Connected state — show status + clear, no form */
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                <span className="text-xs font-medium text-emerald-500">Connected</span>
-                <span className="text-xs font-mono text-foreground/60">
-                  {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
-                </span>
+            /* Connected state — show status + unlimited indicator + clear, no form */
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <span className="text-xs font-medium text-emerald-500">Connected</span>
+                  <span className="text-xs font-mono text-foreground/60">
+                    {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
+                  </span>
+                </div>
+                <Button variant="ghost" size="sm" onClick={clear} className="text-foreground/40">
+                  Clear
+                </Button>
               </div>
-              <Button variant="ghost" size="sm" onClick={clear} className="text-foreground/40">
-                Clear
-              </Button>
+              <div className="flex items-center gap-3">
+                <TokenGauge unlimited className="shrink-0" />
+                <p className="text-xs text-foreground/40">
+                  Unlimited — usage charged directly to your Anthropic account.
+                </p>
+              </div>
             </div>
           ) : (
             /* No key — show form */
@@ -187,87 +178,11 @@ export function ApiKeyForm() {
         </CardContent>
       </Card>
 
-      {/* Subscription */}
-      <div className="space-y-3">
+      {/* Subscription — hidden entirely for BYOK users; top card already shows unlimited status */}
+      {!apiKey && !hasByok && <div className="space-y-3">
 
-        {/* Active subscription — usage meter + manage */}
-        {isSubscribed && (subscription.status === 'active' || subscription.status === 'past_due') && (
-          <Card>
-            <CardContent className="pt-5 space-y-4">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <p className="text-sm font-semibold text-foreground">
-                    {subscription.name}
-                    {subscription.status === 'past_due' && (
-                      <Badge variant="destructive" className="ml-2 text-xs">Payment due</Badge>
-                    )}
-                  </p>
-                  <p className="text-xs text-foreground/40 mt-0.5">
-                    ${subscription.monthlyUSD}/month · renews{' '}
-                    {new Date(subscription.billingCycleAnchor * 1000).toLocaleDateString('en-US', {
-                      month: 'short', day: 'numeric',
-                    })}
-                  </p>
-                </div>
-                <Button
-                  variant="outline"
-                  size="sm"
-                  onClick={openPortal}
-                  disabled={portalLoading}
-                >
-                  {portalLoading ? 'Opening…' : 'Manage billing'}
-                </Button>
-              </div>
-
-              {/* Usage meter */}
-              <div className="flex items-start gap-5">
-                <TokenGauge
-                  used={subscription.tokensUsed}
-                  total={subscription.tokensTotal}
-                  className="shrink-0"
-                />
-                <div className="space-y-1 min-w-0">
-                  <p className="text-xs text-foreground/40">
-                    {Math.max(0, subscription.tokensTotal - subscription.tokensUsed).toLocaleString()} of{' '}
-                    {subscription.tokensTotal.toLocaleString()} tokens remaining this month
-                  </p>
-                  {subscription.usagePercent >= 80 && (
-                    <p className="text-xs text-foreground/50">
-                      Approaching your monthly limit.{' '}
-                      <button onClick={openPortal} className="underline underline-offset-2">
-                        Upgrade your plan
-                      </button>{' '}
-                      or add your own API key above for unlimited access.
-                    </p>
-                  )}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* API connection — shown when BYOK key is detected (localStorage or server flag) */}
-        {!isSubscribed && (apiKey || hasByok) && (
-          <Card>
-            <CardContent className="pt-5">
-              <div className="flex items-center gap-5">
-                <TokenGauge unlimited className="shrink-0" />
-                <div className="space-y-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                    <p className="text-sm font-medium text-foreground">API connection</p>
-                  </div>
-                  <p className="text-xs text-foreground/40">
-                    Unlimited — usage charged directly to your Anthropic account.
-                  </p>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* Free quota — shown for non-subscribers who have no API connection */}
-        {!isSubscribed && !apiKey && !hasByok && sessionData && subscription.status !== 'loading' && (
+        {/* Free quota — shown while no API key is connected */}
+        {sessionData && subscription.status !== 'loading' && (
           <Card>
             <CardContent className="pt-5">
               <div className="flex items-start gap-5">
@@ -298,8 +213,8 @@ export function ApiKeyForm() {
           </Card>
         )}
 
-        {/* Community handoff — shown only when no subscription AND no BYOK key */}
-        {!isSubscribed && !apiKey && !hasByok && subscription.status !== 'loading' && (
+        {/* Community handoff */}
+        {subscription.status !== 'loading' && (
           <Card className="border-foreground/10">
             <CardHeader>
               <CardTitle className="text-base">Go deeper with Cosmo</CardTitle>
@@ -323,7 +238,7 @@ export function ApiKeyForm() {
         {subscription.status === 'loading' && (
           <div className="h-24 rounded-xl border border-foreground/10 animate-pulse" />
         )}
-      </div>
+      </div>}
     </div>
   )
 }
