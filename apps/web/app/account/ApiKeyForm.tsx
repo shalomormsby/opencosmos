@@ -137,18 +137,26 @@ export function ApiKeyForm() {
         </CardHeader>
         <CardContent className="space-y-3">
           {apiKey ? (
-            /* Connected state — show status + clear, no form */
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                <span className="text-xs font-medium text-emerald-500">Connected</span>
-                <span className="text-xs font-mono text-foreground/60">
-                  {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
-                </span>
+            /* Connected state — show status + unlimited indicator + clear, no form */
+            <div className="space-y-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                  <span className="text-xs font-medium text-emerald-500">Connected</span>
+                  <span className="text-xs font-mono text-foreground/60">
+                    {apiKey.slice(0, 16)}...{apiKey.slice(-4)}
+                  </span>
+                </div>
+                <Button variant="ghost" size="sm" onClick={clear} className="text-foreground/40">
+                  Clear
+                </Button>
               </div>
-              <Button variant="ghost" size="sm" onClick={clear} className="text-foreground/40">
-                Clear
-              </Button>
+              <div className="flex items-center gap-3">
+                <TokenGauge unlimited className="shrink-0" />
+                <p className="text-xs text-foreground/40">
+                  Unlimited — usage charged directly to your Anthropic account.
+                </p>
+              </div>
             </div>
           ) : (
             /* No key — show form */
@@ -187,8 +195,8 @@ export function ApiKeyForm() {
         </CardContent>
       </Card>
 
-      {/* Subscription */}
-      <div className="space-y-3">
+      {/* Subscription — hidden entirely for BYOK users; top card already shows unlimited status */}
+      {!apiKey && !hasByok && <div className="space-y-3">
 
         {/* Active subscription — usage meter + manage */}
         {isSubscribed && (subscription.status === 'active' || subscription.status === 'past_due') && (
@@ -240,26 +248,6 @@ export function ApiKeyForm() {
                       or add your own API key above for unlimited access.
                     </p>
                   )}
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        )}
-
-        {/* API connection — shown when BYOK key is detected (localStorage or server flag) */}
-        {!isSubscribed && (apiKey || hasByok) && (
-          <Card>
-            <CardContent className="pt-5">
-              <div className="flex items-center gap-5">
-                <TokenGauge unlimited className="shrink-0" />
-                <div className="space-y-1 min-w-0">
-                  <div className="flex items-center gap-2">
-                    <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
-                    <p className="text-sm font-medium text-foreground">API connection</p>
-                  </div>
-                  <p className="text-xs text-foreground/40">
-                    Unlimited — usage charged directly to your Anthropic account.
-                  </p>
                 </div>
               </div>
             </CardContent>
@@ -323,7 +311,7 @@ export function ApiKeyForm() {
         {subscription.status === 'loading' && (
           <div className="h-24 rounded-xl border border-foreground/10 animate-pulse" />
         )}
-      </div>
+      </div>}
     </div>
   )
 }
