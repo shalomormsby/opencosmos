@@ -2,17 +2,25 @@
 
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import remarkBreaks from 'remark-breaks'
 import rehypeSlug from 'rehype-slug'
 import { cn } from '@opencosmos/ui'
 
+// Formats where a single newline is an intentional line break (verse, poetry,
+// scripture). remark-breaks renders these as <br> instead of collapsing them
+// into spaces the way standard Markdown does.
+const VERSE_FORMATS = new Set(['scripture', 'poetry', 'anthology'])
+
 type Props = {
   content: string
+  format?: string
 }
 
-export default function DocViewer({ content }: Props) {
+export default function DocViewer({ content, format }: Props) {
+  const useBreaks = format ? VERSE_FORMATS.has(format) : false
   return (
     <ReactMarkdown
-      remarkPlugins={[remarkGfm]}
+      remarkPlugins={useBreaks ? [remarkGfm, remarkBreaks] : [remarkGfm]}
       rehypePlugins={[rehypeSlug]}
       components={{
         h1: ({ children }) => (
