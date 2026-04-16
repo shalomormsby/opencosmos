@@ -2,9 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-04-13
+**Last updated:** 2026-04-15
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-04-15 — Knowledge docs: verse line break fix
+
+Fixed a Markdown rendering bug where single newlines in scripture, poetry, and anthology documents were collapsed into spaces, merging verse lines into run-on sentences. Added `remark-breaks` to DocViewer, applied conditionally when `format` is `scripture`, `poetry`, or `anthology`. Prose formats are unaffected. Fixes the Dhammapada, Tao Te Ching, Bhagavad Gita, Shakespeare, Rubaiyat, and all other verse texts in the corpus.
+
+---
+
+## 2026-04-15 — Knowledge docs: TOC anchor and sticky fixes
+
+Fixed three bugs in the document outline panel introduced in the 2026-04-13 release:
+- Anchor clicks did nothing — custom `h2`/`h3` components in DocViewer were not forwarding the `id` prop injected by `rehype-slug`, so `getElementById()` returned null. Added `id` forwarding and `scroll-mt-28` offset for the sticky header.
+- TOC panel was not sticking — `position: sticky` was on a `<nav>` inside an `<aside>` with no height of its own. Moved sticky positioning directly to the `<aside>`.
+- Active section now renders in pure white (`#FFFFFF`) with a white left-border indicator.
 
 ---
 
@@ -13,7 +28,9 @@ All notable changes to this project will be documented in this file.
 Built the document outline UI, fixed Cosmo's context explosion on large documents, and wired reading position into the chat flow.
 
 ### Added
-- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — sticky TOC sidebar. IntersectionObserver tracks the active H2/H3 heading as the user scrolls. Clicking a heading smooth-scrolls to anchor. On each section change, writes `cosmo_context` to `sessionStorage` so the Cosmo chat can pick up the user's current reading position.
+- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — sticky document outline panel that appears in the right sidebar of every knowledge doc page on desktop. Displays H2 and H3 headings as anchor links; clicking a heading smooth-scrolls to that section. Uses IntersectionObserver to track which section is currently in view and highlights it in the outline. On each section change, writes the active heading, document title, and path to `sessionStorage` under `cosmo_context`, so the Cosmo chat at `/dialog` can pick up the user's current reading position and ground responses in that specific section.
+
+  **Known limitation:** The active-section tracking does not yet fluidly or reliably follow the reader through the document. The IntersectionObserver fires correctly, but the highlight can lag or jump — particularly on long documents with uneven section lengths, and on documents where `remark-breaks` causes heading density to differ from the raw markdown structure. This needs a revised scroll-tracking approach (e.g. `scrollY`-based position calculation rather than pure IntersectionObserver) in a future pass.
 - `.claude/skills/standardize-knowledge/SKILL.md` — `/standardize-knowledge` Claude Code skill. Analyzes each knowledge document's heading structure and converts CHAPTER/BOOK/ACT/ALL-CAPS patterns to standard Markdown H2/H3/H4 hierarchy. Handles 1-level docs (Fox journals), 2-level docs (philosophical treatises), and 3-level docs (Shakespeare). Flags the Shakespeare collected-works file for pre-splitting.
 
 ### Modified
