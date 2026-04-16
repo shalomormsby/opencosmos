@@ -25,8 +25,6 @@ corpus_tier: source
 # The Dhammapada
 Translated by Thomas Byrom
 
-# Table of Contents
-
 ## 1. Choices
 
 We are what we think.

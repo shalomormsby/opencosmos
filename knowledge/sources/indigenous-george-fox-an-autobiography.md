@@ -306,7 +306,7 @@ Signature George Fox
 
 [65]
 
-CHAPTER I. Boyhood—A Seeker.
+## CHAPTER I. Boyhood — A Seeker
 
 1624-1648. That all may know the dealings of the Lord with me, and the various exercises, trials, and troubles through which He led me, in order to prepare and fit me for the work unto which He had appointed me, and may thereby be drawn to admire and glorify His infinite wisdom and goodness, I think fit (before I proceed to set forth my public travels in the service of Truth) briefly to mention how it was with me in my youth, and how the work of the Lord was begun, and gradually carried on in me, even from my childhood.
 
@@ -440,7 +440,7 @@ Then came the tempter and set upon me again, charging me that I had sinned again
 
 [90]
 
-CHAPTER II. The First Years of Ministry
+## CHAPTER II. The First Years of Ministry
 
 1648-1649. After this[M] I went to Mansfield, where was a great meeting of professors and people. Here I was moved to pray; and the Lord's power was so great that the house seemed to be shaken. When I had done, some of the professors said it was now as in the days of the apostles, when the house was shaken where they were.[22] After I had prayed, one of the professors would pray, which brought deadness and a veil over them; and others of the professors were grieved at him and told him it was a temptation upon him. Then he came to me, and desired that I would pray again; but I could not pray in man's will.
 
@@ -534,7 +534,7 @@ But in this free Spirit of the Lord Jesus was I sent forth to declare the Word o
 
 [109]
 
-CHAPTER III. The Challenge and the First Taste of Prison
+## CHAPTER III. The Challenge and the First Taste of Prison
 
 1648-1649. Now, as I went towards Nottingham, on a First-day, in the morning, going with Friends to a meeting there, when I came on the top of a hill in sight of the town, I espied the great steeple-house. And the Lord said unto me, "Thou must go cry against yonder great idol, and against the worshippers therein."
 
@@ -592,7 +592,7 @@ After I had reproved them for their blasphemous expressions, I went away; for I 
 
 [118]
 
-CHAPTER IV. A Year in Derby Jail
+## CHAPTER IV. A Year in Derby Jail
 
 1650-1651. As I travelled through markets, fairs, and divers places, I saw death and darkness in all people where the power of the Lord God had not shaken them. As I was passing on in Leicestershire I came to Twy-Cross, where there were excise-men. I was moved of the Lord to go to them, and warn them to take heed of oppressing the poor; and people were much affected with it.
 
@@ -674,7 +674,7 @@ There was a great judgment upon the town, and the magistrates were uneasy about 
 
 [132]
 
-CHAPTER V. One Man May Shake the Country for Ten Miles
+## CHAPTER V. One Man May Shake the Country for Ten Miles
 
 1651-1652. Being again at liberty, I went on, as before, in the work of the Lord, passing through the country into Leicestershire, having meetings as I went; and the Lord's Spirit and power accompanied me.
 
@@ -786,7 +786,7 @@ The Lord had said unto me that if but one man or woman were raised by His power 
 
 [150]
 
-CHAPTER VI A New Era Begins
+## CHAPTER VI A New Era Begins
 
 1652. As we travelled we came near a very great hill, called Pendle Hill, and I was moved of the Lord to go up to the top of it; which I did with difficulty, it was so very steep and high. When I was come to the top, I saw the sea bordering upon Lancashire. From the top of this hill the Lord let me see in what places he had a great people to be gathered. As I went down, I found a spring of water in the side of the hill, with which I refreshed myself, having eaten or drunk but little for several days before.[50]
 
@@ -948,7 +948,7 @@ It was a day of everlasting salvation to hundreds of people: for the Lord Jesus 
 
 [179]
 
-CHAPTER VII. In Prison Again
+## CHAPTER VII. In Prison Again
 
 1653. About the beginning of the year 1653 I returned to Swarthmore, and going to a meeting at Gleaston, a professor challenged to dispute with me. I went to the house where he was, and called him to come forth; but the Lord's power was over him, so that he durst not meddle.
 
@@ -1056,7 +1056,7 @@ A great convincement there was in Cumberland, Bishoprick, Northumberland, Westmo
 
 [197]
 
-CHAPTER VIII. A Visit to Oliver Cromwell
+## CHAPTER VIII. A Visit to Oliver Cromwell
 
 1653-1654. About this time the priests and professors fell to prophesying against us afresh. They had said long before that we should be destroyed within a month; and after that, they prolonged the time to half a year. But that time being long expired, and we mightily increased in number, they now gave forth that we would eat out one another. For often after meetings many tender people, having a great way to go, tarried at Friends' houses by the way, and sometimes more than there were beds to lodge in; so that some lay on the hay-mows. Hereupon Cain's fear possessed the professors and world's people; for they were afraid that when we had eaten one another out, we should all come to be maintained by the parishes, and be chargeable to them.
 
@@ -1204,7 +1204,7 @@ A great convincement there was in London; some in the Protector's house and fami
 
 [222]
 
-CHAPTER IX. A Visit to the Southern Counties Which Ends in Launceston Jail
+## CHAPTER IX. A Visit to the Southern Counties Which Ends in Launceston Jail
 
 1655-1656. It came upon me about this time from the Lord to write a short paper and send it forth as an exhortation and warning to the Pope, and to all kings and rulers in Europe.
 
@@ -1526,7 +1526,7 @@ We understood afterwards that he left the business to Colonel Bennet, who had th
 
 [269]
 
-CHAPTER X. Panting the Seed in Wales.
+## CHAPTER X. Panting the Seed in Wales
 
 1656-1657. Being released from our imprisonment, we got horses, rode towards Humphrey Lower's, and met him upon the road. He told us he was much troubled in his mind concerning us, and could not rest at home, but was going to Colonel Bennet to seek our liberty. When we told him we were set at liberty, and were going to his house, he was exceeding glad. To his house we went, and had a fine, precious meeting; many were convinced, and turned by the Spirit of the Lord to the Lord Jesus Christ's teaching.
 
@@ -1710,7 +1710,7 @@ Next day I came over the Sands to Swarthmore, where Friends were glad to see me.
 
 [297]
 
-CHAPTER XI. In the Home of the Covenanters.
+## CHAPTER XI. In the Home of the Covenanters
 
 1657. After I had tarried two First-days at Swarthmore,[100] and had visited Friends in their meetings thereabouts, I passed into Westmoreland, in the same work, till I came to John Audland's, where there was a general meeting.
 
@@ -1862,7 +1862,7 @@ Not but that there is abundance of the thick, cloddy earth of hypocrisy and fals
 
 [317]
 
-CHAPTER XII. Great Events in London.
+## CHAPTER XII. Great Events in London
 
 1658-1659. We came into Bedfordshire, where we had large gatherings in the name of Jesus.[107] After some time we came to John Crook's, where a general yearly meeting for the whole nation was appointed to be held.[108] This meeting lasted three days, and many Friends from most parts of the nation came to it; so that the inns and towns round thereabouts were filled, for many thousands of people were at it. And although there was some disturbance by some rude people that had run out from Truth, yet the Lord's[318] power came over all, and a glorious meeting it was. The everlasting gospel was preached, and many received it, which gospel brought life and immortality to light in them, and shined over all.
 
@@ -1942,7 +1942,7 @@ About this time great stirs were in the nation, the minds of people being unsett
 
 [331]
 
-CHAPTER XIII. In the First Year of King Charles.
+## CHAPTER XIII. In the First Year of King Charles
 
 1660. I entered Bristol on the Seventh day of the week.[117] The day before, the soldiers came with their muskets into the meeting, and were exceedingly rude, beating and striking Friends with them, and drove them out of the orchard in a great rage, threatening what they would do if Friends came there again. For the mayor and the commander of the soldiers had, it seems, combined together to make a disturbance amongst Friends.
 
@@ -2186,7 +2186,7 @@ Thus, after I had been a prisoner somewhat more than twenty weeks, I was freely 
 
 [363]
 
-CHAPTER XIV. Labors, Dangers and Sufferings.
+## CHAPTER XIV. Labors, Dangers and Sufferings
 
 1661-1662. Now did I see the end of the travail which I had in my sore exercise at Reading;[126] for the everlasting power of the Lord was over all, and His blessed Truth, life, and light shined over the nation. Great and glorious meetings we had, and very quiet; and many flocked unto the Truth. Richard Hubberthorn had been with the King, who said that none should molest us so long as we lived peaceably, and promised this upon the word of a king; telling Richard that we might make use of his promise.[127]
 
@@ -2370,7 +2370,7 @@ Now, there being very many Friends in prison in the nation,[136] Richard Hubbert
 
 [392]
 
-CHAPTER XV. In Prison for not Swearing.
+## CHAPTER XV. In Prison for not Swearing
 
 1662-1665. After I had made some stay in London, and had cleared myself of those services that at that time lay upon me there, I went into the country, having with me Alexander Parker and John Stubbs. We travelled through the country, visiting Friends' meetings, till we came to Bristol.
 
@@ -2824,7 +2824,7 @@ By reason of my long and close imprisonment in so bad a place I was become very 
 
 [436]
 
-CHAPTER XVI. A Year in Scarborough Castle.
+## CHAPTER XVI. A Year in Scarborough Castle
 
 1665-1666. After the assize, Colonel Kirby and other justices were very uneasy with my being at Lancaster; for I had galled them sore at my trials there, and they laboured much to get me removed thence to some remote place. Colonel Kirby sometimes threatened that I should be sent beyond sea.
 
@@ -3028,7 +3028,7 @@ When I came into that country again, most of those that dwelt in Lancashire were
 
 [459]
 
-CHAPTER XVII. At the Work of Organizing.
+## CHAPTER XVII. At the Work of Organizing
 
 1667-1670. I then visited Friends till I came to York, where we had a large meeting. After this I went to visit Justice Robinson, an ancient justice of the peace, who had been very loving to me and Friends from the beginning.
 
@@ -3230,7 +3230,7 @@ Many things more did I see concerning the heavenly city, the New Jerusalem, whic
 
 [482]
 
-CHAPTER XVIII. Two Years in America.
+## CHAPTER XVIII. Two Years in America
 
 1671-1673. When I received notice of my wife's being taken to prison again,[154] I sent two of her daughters to the King, and they procured his order to the sheriff of Lancashire for her discharge. But though I expected she would have been set at liberty, yet this violent storm of persecution coming suddenly on, the persecutors there found means to hold her still in prison.
 
@@ -3660,7 +3660,7 @@ We went on shore that afternoon, and got to Shirehampton. We procured horses and
 
 [536]
 
-CHAPTER XIX. The Last Imprisonment.
+## CHAPTER XIX. The Last Imprisonment
 
 1673-1678. Between this and the fair, my wife came out of the North to Bristol to me, and her son-in-law, Thomas Lower, with two of her daughters,[171] came with her. Her other son-in-law, John Rous, William Penn and his wife, and Gerrard Roberts, came from London, and many Friends from several parts of the nation, to the fair; and glorious, powerful meetings we had at that time, for the Lord's infinite power and life was over all.
 
@@ -3888,7 +3888,7 @@ G. F.
 
 [562]
 
-CHAPTER XX. "The Seed Reigns over Death."
+## CHAPTER XX. "The Seed Reigns over Death"
 
 1679-1691.
 [The year 1679 was spent almost entirely in retirement at Swarthmore, but in 1680 the activity and travels begin again. This last decade of Fox's life finds him much of the time in or about London, for there are new storms to be met, and he could not lie at ease in the "North." The Wilkinson-Story movement in opposition to a settled system of government and discipline made his presence in the "South" necessary. But even more than for this was he concerned over the fresh spasm of persecution which during the closing years of Charles' reign filled the prisons and jails with Quakers. Whenever or wherever the "Conventicle Act" was enforced Friends were sure to have the large end of the suffering to bear.]

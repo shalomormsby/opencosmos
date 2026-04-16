@@ -35,7 +35,8 @@ related_docs:
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
   - sources/philosophy-apology.md
 ---
-THE EGYPTIAN BOOK OF THE DEAD. TRANSLATION AND COMMENTARY, BY THE LATE Sir P. LE PAGE RENOUF, Knt. CONTINUED AND COMPLETED BY Prof. E. NAVILLE, D.C.L., &c., &c., Professor of Egyptology at the University of Geneva. WITH VIGNETTES AND OTHER ILLUSTRATIONS. PRIVATELY PRINTED FOR THE SOCIETY OF BIBLICAL ARCHÆOLOGY, 37, Great Russell Street, Bloomsbury, LONDON, 1904. LONDON: HARRISON AND SONS, PRINTERS IN ORDINARY TO HIS MAJESTY, ST. MARTIN’S LANE. TO LADY RENOUF THIS WORK IS DEDICATED IN ACCORDANCE WITH THE EXPRESSED WISH OF HER LATE HUSBAND SIR PETER LE PAGE RENOUF.
+# THE EGYPTIAN BOOK OF THE DEAD. 
+TRANSLATION AND COMMENTARY, BY THE LATE Sir P. LE PAGE RENOUF, Knt. CONTINUED AND COMPLETED BY Prof. E. NAVILLE, D.C.L., &c., &c., Professor of Egyptology at the University of Geneva. WITH VIGNETTES AND OTHER ILLUSTRATIONS. PRIVATELY PRINTED FOR THE SOCIETY OF BIBLICAL ARCHÆOLOGY, 37, Great Russell Street, Bloomsbury, LONDON, 1904. LONDON: HARRISON AND SONS, PRINTERS IN ORDINARY TO HIS MAJESTY, ST. MARTIN’S LANE. TO LADY RENOUF THIS WORK IS DEDICATED IN ACCORDANCE WITH THE EXPRESSED WISH OF HER LATE HUSBAND SIR PETER LE PAGE RENOUF.
 
 INDEX TO THE CHAPTERS AND REFERENCES TO THE VIGNETTES. CHAPTERS.	 	 	VIGNETTES. I.	The Beginning of the Chapters of Coming forth by Day, of the Words which bring about Resurrection and Glory, and of Coming out of and entering into Amenta. Said upon the Day of Burial of N, the Victorious, who entereth after coming forth. Here is N the victorious. He saith—	pages 1, 2	Plates I, II. II.	Chapter for Coming forth by day and Living after death.	11, 12	No Vignettes. III.	Another Chapter like it.	12 IV.	Another Chapter, for travelling on the road which is above the earth.	13 V.	Chapter whereby work may not be imposed [upon a person] in the Netherworld.	13 VI.	Chapter whereby the funereal Statuettes may be made to do work for a person in the Netherworld.	15, 16 VII.	Chapter of passing through the chine of Apepi which is void.	16 VIII.	Chapter of opening the Tuat by day.	17 IX.	Chapter for opening the Tuat.	18 X.	Chapter for coming forth victoriously.	19 XI.	Chapter for coming out against the adversary in the Netherworld.	19 viXII.	Chapter for entering and for coming forth out of the Netherworld.	20 XIII.	Chapter for entering after coming out from Amenta.	20 XIV.	Chapter for removing displeasure from the heart of the god against the deceased person.	21 XV.	Hymn I.—A Hymn to Râ at his rising.	22–25	III, X, XV.
  	[Litany].—Adored be Râ as he setteth in the Land of Life.	25, 26
@@ -112,7 +113,8 @@ Edouard Naville.
 
 4. Das Aegyptische Todtenbuch der XVIII bis XX Dynastie, zusammengestellt und herausgegeben von Edouard Naville, Berlin, 1886.
 
-1BOOK OF THE DEAD. CHAPTER I. (1)The Beginning of the Chapters of Coming forth by Day, of the (2)Words which bring about Resurrection and Glory, and of Coming out of and entering into Amenta. Said upon the Day of Burial of N, the Victorious,(3) who entereth after coming forth.(4) Here is N the Victorious. He saith—
+## 1 BOOK OF THE DEAD. CHAPTER I. 
+(1)The Beginning of the Chapters of Coming forth by Day, of the (2)Words which bring about Resurrection and Glory, and of Coming out of and entering into Amenta. Said upon the Day of Burial of N, the Victorious,(3) who entereth after coming forth.(4) Here is N the Victorious. He saith—
 
 O (5)Bull of Amenta, It is Thoth, the everlasting King, who is here.
 
@@ -276,7 +278,8 @@ The papyrus Da which is of the same period reads ⁂⁂⁂⁂⁂⁂⁂⁂⁂⁂ 
 
 9. This is one of the meanings of ⁂⁂⁂, but in this place it may simply mean ‘going round in a ship.’
 
-CHAPTER II. Chapter for Coming forth by day and Living after death. Oh thou Only One,(1) who shinest from the Moon, let me come forth amid that train(2) of thine, at large,(3) and let me be revealed(4) as one of those in glory.(5)
+## CHAPTER II. 
+Chapter for Coming forth by day and Living after death. Oh thou Only One,(1) who shinest from the Moon, let me come forth amid that train(2) of thine, at large,(3) and let me be revealed(4) as one of those in glory.(5)
 
 And when the Tuat is opened to the gods, let N come forth to do his pleasure upon earth amid the Living.
 
@@ -294,7 +297,8 @@ Osiris is ⁂⁂⁂⁂⁂, ‘the leader of the host,’ Sharpe, I, 105.
 
 5. Or ‘among the Glorious ones,’ ⁂⁂⁂⁂⁂⁂.
 
-CHAPTER III. Another chapter like it. Oh Tmu, who proceedest from Ur-henhenu,(1) who art resplendent as the Lion-faced,(2) and who strewest thy words to those who are before thee;
+## CHAPTER III. 
+Another chapter like it. Oh Tmu, who proceedest from Ur-henhenu,(1) who art resplendent as the Lion-faced,(2) and who strewest thy words to those who are before thee;
 
 Here cometh the faithful N, from the band of those who do the bidding of thy words.
 
@@ -312,7 +316,8 @@ Notes. The only ancient copy of this chapter is in the papyrus of Amen-neb (Ae),
 
 3. See note 8 on Chapter 1.
 
-CHAPTER IV. Another Chapter, for travelling on the road which is above the earth. It is I who travel on the Stream(1) which divideth the divine Pair,(2) I am come, let there be given to me the lands of Osiris.
+## CHAPTER IV. 
+Another Chapter, for travelling on the road which is above the earth. It is I who travel on the Stream(1) which divideth the divine Pair,(2) I am come, let there be given to me the lands of Osiris.
 
 Notes. This fourth chapter has not as yet been found in any of the papyri of the best period.
 
@@ -346,7 +351,8 @@ But if the scribe had consulted the oldest texts accessible in his day, he would
 
 10. Champollion, Notices, tom. II, p. 640.
 
-CHAPTER VI. Chapter whereby the funereal Statuettes may be made to do work for a person in the Netherworld. O Statuette(1) there! Should I be called and appointed to do any of the labours that are done in the Netherworld by a person according to his abilities, lo! all obstacles have been beaten down 16for thee; be thou counted for me at every moment, for planting the fields, for watering the soil, for conveying the sands of east and west.
+## CHAPTER VI. 
+Chapter whereby the funereal Statuettes may be made to do work for a person in the Netherworld. O Statuette(1) there! Should I be called and appointed to do any of the labours that are done in the Netherworld by a person according to his abilities, lo! all obstacles have been beaten down 16for thee; be thou counted for me at every moment, for planting the fields, for watering the soil, for conveying the sands of east and west.
 
 Here am I, whithersoever thou callest me.
 
@@ -354,7 +360,8 @@ Note. 1. This chapter is inscribed on the funereal statuettes, of which enormous
 
 In the earlier texts ⁂⁂⁂⁂⁂⁂, ⁂⁂⁂⁂⁂⁂⁂, ⁂⁂⁂⁂⁂⁂⁂; in the later ⁂⁂⁂⁂⁂⁂. The latter word being read ušebti, has very naturally been considered as derived from ⁂⁂⁂⁂, in Coptic ⲟⲩⲱϣⲃ, ‘to answer.’ For the statuette is addressed at the beginning of the chapter, and it replies at the end. But there is no reason for supposing that the earlier form had the same meaning.
 
-CHAPTER VII. Chapter of passing through the chine of Apepi which is void. Oh, One of Wax,(1) who takest captive and seizest with violence, and livest upon those who are motionless! Let me not become motionless before thee, let me not be paralysed before thee, let not thy venoms enter into my limbs, for my limbs are the limbs of Tmu.
+## CHAPTER VII. 
+Chapter of passing through the chine of Apepi which is void. Oh, One of Wax,(1) who takest captive and seizest with violence, and livest upon those who are motionless! Let me not become motionless before thee, let me not be paralysed before thee, let not thy venoms enter into my limbs, for my limbs are the limbs of Tmu.
 
 And if thou wouldst not be paralysed, let me not be paralysed.
 
@@ -374,7 +381,8 @@ On comparing this chapter with the 99th, it would appear that the occasion for r
 
 2. The more recent texts omit this ending and substitute, “I know, I know.” Some MSS. have both readings.
 
-CHAPTER VIII. Chapter of opening the Tuat by day. The Hour(1) discloseth what the head of Thoth keepeth close, who giveth might to the Eye of Horus.(2)
+## CHAPTER VIII. 
+Chapter of opening the Tuat by day. The Hour(1) discloseth what the head of Thoth keepeth close, who giveth might to the Eye of Horus.(2)
 
 And I call upon the Eye of Horus which gleams as an ornament upon the brow of Râ, the father of the gods.
 
@@ -396,7 +404,8 @@ Stay, Horus, for he is counted among the gods.
 
 Our modern acceptation of the word ‘perfect’ is often wrongly applied to ⁂. We should think rather of such phrases as ‘annum perficere,’ ‘sole perfecto.’
 
-CHAPTER IX. Chapter for opening the Tuat. O Soul most mighty,(1) here am I: I am come to thee that I may see thee.
+## CHAPTER IX. 
+Chapter for opening the Tuat. O Soul most mighty,(1) here am I: I am come to thee that I may see thee.
 
 I open the Tuat that I may see my father Osiris and may drive away the darkness.
 
@@ -410,13 +419,15 @@ Oh, all ye gods and goddesses, the path is made for me.
 
 19Note. 1. ⁂⁂⁂⁂⁂ ‘Soul most mighty,’ is one of the principal names of Osiris. The whole chapter is spoken in the person of Horus, the son of Osiris.
 
-CHAPTER X. Chapter for coming forth victoriously. I come forth victoriously against the adversaries.
+## CHAPTER X. 
+Chapter for coming forth victoriously. I come forth victoriously against the adversaries.
 
 I cleave the heaven, I open the horizon and I travel over the earth on foot. There come forward to me the Glorious and the Great ones, for I am furnished with numberless Words of Might.
 
 I eat with my mouth, and I chew with my jaw; for, lo, I worship the god who is Lord of the Tuat, and that is given to me which endureth amid overthrow.
 
-CHAPTER XI. Chapter for coming out against the adversary in the Netherworld. Here is the Osiris N.
+## CHAPTER XI. 
+Chapter for coming out against the adversary in the Netherworld. Here is the Osiris N.
 
 O Eater of his arm: away from his path!
 
@@ -428,9 +439,10 @@ I shall not be given up; my adversary shall fall before me; he hath been given u
 
 I rise up like Horus, I sit down as Ptah, I am victorious as Thoth, and powerful as Tmu: I walk upon my feet, I speak with my mouth, searching for him who hath been given up to me; he shall not be delivered from me.
 
-20Note. There is unfortunately no early text of this chapter, which we have in a very corrupt form, and can only restore conjecturally. The Eater of his arm is evidently Darkness, which is destroyed by the Sun.
+20 Note. There is unfortunately no early text of this chapter, which we have in a very corrupt form, and can only restore conjecturally. The Eater of his arm is evidently Darkness, which is destroyed by the Sun.
 
-CHAPTER XII. Chapter for entering and for coming forth out of the Netherworld. Salutation to thee, O Râ, who guardest the secrets of the gates(1) over this domain of Seb, and this Balance with which Râ raiseth up Maât (2) daily:
+## CHAPTER XII. 
+Chapter for entering and for coming forth out of the Netherworld. Salutation to thee, O Râ, who guardest the secrets of the gates(1) over this domain of Seb, and this Balance with which Râ raiseth up Maât (2) daily:
 
 Here am I, who cleave open(3) the earth, grant that I may come and acquire advance in age.(4)
 
@@ -444,7 +456,8 @@ Notes. This chapter, like the next, occurs only in Pa among the older MSS. It co
 
 4. As the sun, who is represented as an infant at dawn and as an aged man at sunset.
 
-CHAPTER XIII. Chapter for entering after coming out from Amenta. I enter as a Hawk and come forth as a Bennu(1) at Dawn.
+## CHAPTER XIII. 
+Chapter for entering after coming out from Amenta. I enter as a Hawk and come forth as a Bennu(1) at Dawn.
 
 Let the way be made for me that I may adore Râ at the fair Amenta, and the locks(2) of Osiris. I urge on the hounds of Horus.
 

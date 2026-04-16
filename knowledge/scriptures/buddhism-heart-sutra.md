@@ -39,10 +39,6 @@ related_docs:
 
 *Translated by Thich Nhat Hanh*
 
-*Translated by Thich Nhat Hanh*
-
-*Translated by Thich Nhat Hanh*
-
 Avalokiteshvara
 while practicing deeply with
 the Insight that Brings Us to the Other Shore,

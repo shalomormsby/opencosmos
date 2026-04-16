@@ -8,6 +8,22 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-04-15 — Knowledge corpus: heading standardization
+
+Converted plain-text chapter labels to standard Markdown H1/H2/H3 hierarchy across nine knowledge documents, enabling TOC extraction and section-aware RAG chunking:
+
+- `cross-the-prophet.md` — added H2 sections for each discourse (On Love, On Marriage, On Children, On Giving, …, On Death, The Farewell). Fixed a typo: "On Dealth" → "On Death".
+- `indigenous-george-fox-an-autobiography.md` — converted CHAPTER I–XX run-ons to H2 headings.
+- `philosophy-the-kingdom-of-god-is-within-you.md` — added H1 for title; converted CHAPTER I–XII to H2.
+- `philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md` — added H1 for title; converted CHAPTER I–n run-ons to H2.
+- `philosophy-nature.md` — added H1 for title; converted CHAPTER I–VIII and section labels to H2.
+- `philosophy-on-the-duty-of-civil-disobedience.md` — added H1 for title, separated byline.
+- `buddhism-the-dhammapada.md` — removed spurious "Table of Contents" H1 that was duplicating the document title.
+- `buddhism-heart-sutra.md` — removed three duplicate "Translated by Thich Nhat Hanh" lines.
+- `taoism-tao-te-ching.md` — fixed typo: "alled" → "called".
+
+---
+
 ## 2026-04-15 — Knowledge docs: TOC active-section tracking rewrite
 
 Replaced the `IntersectionObserver` + `aboveFold` set approach in `TableOfContents.tsx` with a `scroll` event + `requestAnimationFrame` + direct `getBoundingClientRect()` read. The old approach had three failure modes: missed events during fast scrolling (IO only fires on transitions, not continuously), complete staleness inside long sections (no boundary crossings → no events → highlight freezes), and an empty initial state before the first event fired. The new approach recalculates from current DOM truth on every scroll frame, throttled by rAF. The `HEADER_OFFSET = 120` constant matches `scroll-mt-28` (112px) plus an 8px buffer so the highlight advances exactly when a heading locks into place under the sticky header. Tracking is now fluid, continuous, and correct from first render.
