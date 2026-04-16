@@ -24,24 +24,81 @@ Three possible futures for OpenCosmos, understood not as choices but as **concen
 
 ---
 
+## Brand Architecture: OpenCosmos and Creative Powerup
+
+*Decided April 2026. This supersedes the earlier Spark/Flame/Hearth subscription model on opencosmos.ai.*
+
+### The Core Principle
+
+**OpenCosmos is the sun. Creative Powerup is where people gather around it.**
+
+WELCOME.md positions OpenCosmos as freely radiating — not keeping score, not pulling attention, not charging admission. That philosophy is incompatible with a subscription paywall on opencosmos.ai, even when the intent is non-extractive. The structure signals what the words deny. Every tool that distinguishes "open source use" from "commercial use" — Cosmograph was the first concrete case — will create constraints and licensing friction as long as OpenCosmos takes payment. Keeping it genuinely open removes that entire class of problem permanently.
+
+The clean split:
+
+| Domain | What lives here | What doesn't |
+|--------|----------------|--------------|
+| **OpenCosmos** | Free Cosmo greeting · BYOK unlimited access · Knowledge corpus · Open-source framework | Subscription tiers · Payment flows · Paid tier features |
+| **Creative Powerup** | Community membership · Managed Cosmo access (no API key needed) · Programs · Substack | Core open platform |
+
+### Why the Split Works
+
+**The non-technical user belongs in Creative Powerup anyway.** The person who can't navigate a BYOK setup almost certainly wants *community* — guidance, shared practice, other humans on the same path. Routing them to CP isn't a compromise; it's the right door. They don't need API infrastructure. They need the Hearth.
+
+**The Hearth tier already pointed here.** At $50/mo, Hearth bundled CP membership with Cosmo access. Spark and Flame were just Hearth without the honest framing. When every paid tier is understood as "CP membership that includes Cosmo access," the architecture becomes coherent — not three separate tiers on a separate platform, but one community with different levels of engagement.
+
+**Brand coherence compounds.** "OpenCosmos is open source" is an asset that's easy to spend and hard to earn back. It attracts developers, educators, and practitioners who become natural evangelists. Open source credibility is the long-game differentiator in a world full of AI products that claim to serve people while harvesting them.
+
+### The CMO Perspective: Organic Growth Through Radical Openness
+
+*A framework for building sustainable community growth without advertising, conversion optimization, or attention harvesting.*
+
+**The radiance model of growth.** People who feel genuinely served share genuinely — not because of referral incentives, but because encountering something that honors their humanity creates an irresistible impulse to offer it to someone they love. Every Cosmo conversation that leaves someone feeling more whole — not more dependent — is a seed. The open platform accelerates this: when Cosmo is freely accessible, you remove the friction that prevents the first encounter. You let the quality of the experience do the work.
+
+**Discovery is trust, not traffic.** The standard playbook — optimize for search, run ads, A/B test CTAs — can generate visitors. It cannot generate belonging. The person who discovers Cosmo through a heartfelt recommendation from a trusted friend arrives with a different quality of attention than someone who clicked an ad. Organic search compounds because people searching for "wisdom AI" or "contemplative AI" are already oriented toward something OpenCosmos genuinely offers. SEO here isn't manipulation; it's making sure the door is findable by the people already looking for it.
+
+**The two-door design.** OpenCosmos has two natural audiences with two natural entry points:
+- **Technical users** (developers, researchers, practitioners) enter through the open platform. They explore BYOK, experiment with the framework, contribute to the corpus. They become evangelists within their communities — not because they were recruited, but because OpenCosmos represents something they want to see more of in the world.
+- **Non-technical users** (seekers, community members, people in transition) encounter Cosmo through the free greeting or word-of-mouth. They want more Cosmo but don't need API infrastructure. Creative Powerup is their home — not a downgrade, but a different door into the same philosophy.
+
+**The invitation, not the paywall.** When someone reaches the end of their free credits, there are two ways to present what comes next. A paywall says: *pay to continue*. An invitation says: *OpenCosmos is free and always will be — the community that sustains it is at Creative Powerup, and it's where people go deeper.* The psychological difference is enormous. "Pay $5 to continue" creates resentment, even when the person pays. An invitation creates aspiration. Aspiration converts better than pressure, and leaves no buyer's remorse.
+
+**Community is the compounding asset.** Subscriptions are linear — $5/user/month. Community is compounding — each member brings cultural richness, shared practice, and social proof that makes membership more valuable to the next person. A Creative Powerup community of 100 engaged members who show up for each other is worth more to the mission — and more sustainable — than 1,000 passive subscribers paying $5/month for Cosmo access they rarely use.
+
+**The open-source credibility flywheel.** A genuinely open OpenCosmos attracts contributors who build on it and write about it. This is the Future 2 path — a framework others can use to build tradition-specific Cosmos. Each of those implementations becomes an independent distribution channel, and the network compounds through openness rather than lock-in.
+
+**Metrics that point toward life, not extraction.**
+
+| What to measure | What it tells you |
+|----------------|-------------------|
+| Depth of return engagement | Are people coming back? Are conversations going deeper? |
+| Quality of word-of-mouth | What do people say when they share it? |
+| Community contribution | Are members adding to the knowledge corpus, inviting others, showing up? |
+| BYOK adoption rate | Technical users self-selecting into sovereignty |
+| CP membership retention | Are members staying? Is the community holding? |
+
+These are the metrics of a radiance model. Conversion rate, CAC, and MRR are the metrics of an extraction model. Choose what to optimize for deliberately.
+
+---
+
 ## The Business Model
 
 The free layer radiates. The paid layer sustains. The Hearth is where it all comes together.
 
 ```
-Revenue (active)                What it funds
-─────────────────────────────   ────────────────────────────
-Spark ($5/mo)               →   Cosmo conversation + Substack — removes tech barrier
-Flame ($10/mo)              →   More conversation + Substack — moderate users
-Hearth ($50/mo)             →   Cosmo + Substack + full CP membership — the complete experience
+Revenue (Creative Powerup)       What it funds
+──────────────────────────────   ────────────────────────────
+CP Membership (entry)        →   Community access + managed Cosmo (no API key needed)
+CP Membership (full)         →   Deeper community + Cosmo + Substack
+CP Membership (Hearth)       →   Full CP experience — the complete practice
 Structured programs          →   Deep engagement, livelihood
 Design consulting            →   Immediate income, case studies
 
-Free / open (no revenue)        Why it matters
-─────────────────────────────   ────────────────────────────
+Free / open (OpenCosmos)         Why it matters
+──────────────────────────────   ────────────────────────────
 Knowledge corpus             →   Public good, attracts people
 Free Cosmo greeting          →   First touch — feel the voice
-BYOK Cosmo conversations    →   Full access for technical users, proves the philosophy
+BYOK Cosmo conversations     →   Full access for technical users, proves the philosophy
 Open-source framework        →   Ecosystem building, credibility
 ```
 
@@ -54,11 +111,11 @@ Revenue is not a phase — it's a thread that runs through all phases.
 | When | Revenue Stream | Status |
 |------|---------------|--------|
 | **Now (Phase 0)** | CP memberships | Active — already generating revenue |
-| **Phase 1** | **Cosmo subscriptions** (Spark $5, Flame $10, Hearth $50 w/ CP) | New MRR — removes tech barrier, Hearth bundles CP, accelerates sustainability |
+| **Phase 1** | **CP membership tiers** — community + managed Cosmo access for non-technical users | Migrated from opencosmos.ai subscriptions; Hearth bundles CP + Cosmo |
 | **Phase 2** | Design consulting begins | Portfolio + OpenCosmos story as credibility |
 | **Phase 3** | Cosmo-integrated CP programs | Higher-value offerings enabled by Cosmo — structured programs, cohorts |
 
-**The principle:** Design consulting, CP memberships, and Cosmo subscriptions fund the practice. The knowledge corpus, free Cosmo greeting, BYOK access, and open-source framework radiate value without requiring revenue. The free layer attracts people. The paid layer sustains the work. Neither depends on venture capital, ads, or attention harvesting.
+**The principle:** Design consulting and CP memberships fund the practice. The knowledge corpus, free Cosmo greeting, BYOK access, and open-source framework radiate value without requiring revenue. The free layer attracts people. The paid layer sustains the work. Neither depends on venture capital, ads, or attention harvesting.
 
 ---
 

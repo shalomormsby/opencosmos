@@ -1,8 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
-import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge, cn } from '@opencosmos/ui'
-import { TIERS, type Tier } from '@/lib/stripe'
+import { Button, Input, Card, CardHeader, CardTitle, CardDescription, CardContent, Badge } from '@opencosmos/ui'
 import { TokenGauge } from '@/components/TokenGauge'
 
 const KEY_API_KEY = 'cosmo_api_key'
@@ -12,7 +11,7 @@ type SubscriptionState =
   | { status: 'none' }
   | {
       status: 'active' | 'past_due'
-      tier: Tier
+      tier: string
       name: string
       monthlyUSD: number
       usagePercent: number
@@ -26,7 +25,6 @@ export function ApiKeyForm() {
   const [draft, setDraft] = useState('')
   const [saved, setSaved] = useState(false)
   const [subscription, setSubscription] = useState<SubscriptionState>({ status: 'loading' })
-  const [checkoutLoading, setCheckoutLoading] = useState<Tier | null>(null)
   const [portalLoading, setPortalLoading] = useState(false)
   const [hasByok, setHasByok] = useState(false)
   const [sessionData, setSessionData] = useState<{
@@ -108,23 +106,6 @@ export function ApiKeyForm() {
     fetch('/api/byok', { method: 'DELETE' }).catch(() => {})
   }
 
-  const startCheckout = async (tier: Tier) => {
-    setCheckoutLoading(tier)
-    try {
-      const res = await fetch('/api/stripe/checkout', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ tier }),
-      })
-      const data = await res.json()
-      if (data.url) {
-        window.location.href = data.url
-      }
-    } catch {
-      setCheckoutLoading(null)
-    }
-  }
-
   const openPortal = async () => {
     setPortalLoading(true)
     try {
@@ -148,8 +129,9 @@ export function ApiKeyForm() {
         <CardHeader>
           <CardTitle className="text-base">Your Anthropic API Key</CardTitle>
           <CardDescription>
-            Bring your own key for unlimited messages. Your key is stored only in your browser
-            and is never sent to OpenCosmos servers — only forwarded directly to Anthropic.
+            {apiKey
+              ? 'Your key is connected and in use. Clear it below to remove BYOK access.'
+              : 'Bring your own key for unlimited messages. Your key is stored only in your browser and is never sent to OpenCosmos servers — only forwarded directly to Anthropic.'}
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3">
@@ -302,7 +284,7 @@ export function ApiKeyForm() {
                     </p>
                   )}
                   <p className="text-xs text-foreground/25 pt-1">
-                    Subscribe for unlimited managed access, or bring your own key above.
+                    Bring your own key above for unlimited access, or join Creative Powerup for managed access.
                   </p>
                 </div>
               </div>
@@ -310,61 +292,26 @@ export function ApiKeyForm() {
           </Card>
         )}
 
-        {/* Tier cards — shown when no active subscription */}
-        {!isSubscribed && subscription.status !== 'loading' && (
-          <>
-            <div>
-              <p className="text-sm font-medium text-foreground">Subscription</p>
-              <p className="text-xs text-foreground/40 mt-0.5">
-                Subscribe for managed access — no API key required.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-              {(Object.entries(TIERS) as [Tier, typeof TIERS[Tier]][]).map(([key, plan]) => (
-                <div
-                  key={key}
-                  className={cn(
-                    'relative rounded-xl border p-4 space-y-3 transition-colors',
-                    plan.highlight
-                      ? 'border-foreground/20 bg-foreground/3'
-                      : 'border-foreground/10 bg-transparent'
-                  )}
-                >
-                  {plan.highlight && (
-                    <Badge variant="secondary" className="absolute -top-2.5 left-4 text-xs">
-                      Popular
-                    </Badge>
-                  )}
-                  <div>
-                    <p className="text-sm font-semibold text-foreground">{plan.name}</p>
-                    <p className="text-xs text-foreground/40 mt-0.5">{plan.description}</p>
-                  </div>
-                  <ul className="space-y-1">
-                    {plan.features.map((f) => (
-                      <li key={f} className="flex items-start gap-1.5 text-xs text-foreground/50">
-                        <span className="mt-px text-[var(--color-success)] shrink-0">✓</span>
-                        {f}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-baseline gap-0.5">
-                    <span className="text-xl font-light text-foreground">${plan.monthlyUSD}</span>
-                    <span className="text-xs text-foreground/40">/month</span>
-                  </div>
-                  <Button
-                    variant={plan.highlight ? 'default' : 'outline'}
-                    size="sm"
-                    className="w-full"
-                    onClick={() => startCheckout(key)}
-                    disabled={checkoutLoading !== null}
-                  >
-                    {checkoutLoading === key ? 'Redirecting…' : `Subscribe to ${plan.name}`}
-                  </Button>
-                </div>
-              ))}
-            </div>
-          </>
+        {/* Community handoff — shown only when no subscription AND no BYOK key */}
+        {!isSubscribed && !apiKey && !hasByok && subscription.status !== 'loading' && (
+          <Card className="border-foreground/10">
+            <CardHeader>
+              <CardTitle className="text-base">Go deeper with Cosmo</CardTitle>
+              <CardDescription>
+                OpenCosmos is freely open — the platform, the knowledge corpus, the framework.
+                Creative Powerup is the membership community that sustains this work and makes
+                Cosmo accessible to everyone, no API key required. It&apos;s where the deeper
+                practice, the conversations, and the community live.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Button variant="outline" size="sm" asChild>
+                <a href="https://creativepowerup.com" target="_blank" rel="noopener noreferrer">
+                  Explore Creative Powerup →
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
         )}
 
         {subscription.status === 'loading' && (
