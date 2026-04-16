@@ -22,49 +22,52 @@ type Props = {
   docPath: string   // relative knowledge/ path, e.g. "knowledge/sources/foo.md"
 }
 
+// Matches scroll-mt-28 (7rem = 112px) on h2/h3 in DocViewer, plus a small
+// buffer so the heading registers as "active" the moment it locks into place.
+const HEADER_OFFSET = 120
+
 export default function TableOfContents({ toc, docTitle, docPath }: Props) {
-  const [activeId, setActiveId] = useState<string>('')
-  const observerRef = useRef<IntersectionObserver | null>(null)
+  const [activeId, setActiveId] = useState<string>(toc[0]?.id ?? '')
+  const headingElsRef = useRef<HTMLElement[]>([])
+  const rafRef = useRef<number>(0)
 
   useEffect(() => {
     if (toc.length === 0) return
 
-    const headingIds = new Set(toc.map(e => e.id))
+    // Collect heading elements in document order. Re-collected whenever toc
+    // changes (navigation to a new document).
+    headingElsRef.current = toc
+      .map(e => document.getElementById(e.id))
+      .filter((el): el is HTMLElement => el !== null)
 
-    // Track which headings are above the viewport fold so we can determine
-    // the "active" one — the last heading that has scrolled past the top.
-    const aboveFold = new Set<string>()
+    function updateActive() {
+      const els = headingElsRef.current
+      if (els.length === 0) return
 
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          const id = entry.target.id
-          if (!headingIds.has(id)) continue
-
-          if (entry.isIntersecting) {
-            aboveFold.delete(id)
-          } else if (entry.boundingClientRect.top < 0) {
-            // Heading has scrolled past the top
-            aboveFold.add(id)
-          }
+      // Walk every heading in order. The last one whose top edge sits at or
+      // above the threshold is the section currently being read.
+      let next = els[0].id
+      for (const el of els) {
+        if (el.getBoundingClientRect().top <= HEADER_OFFSET) {
+          next = el.id
         }
+      }
+      setActiveId(next)
+    }
 
-        // Active = the last heading that scrolled above the fold,
-        // or the first TOC entry if nothing has scrolled yet.
-        const orderedIds = toc.map(e => e.id)
-        let nextActive = ''
-        for (const id of orderedIds) {
-          if (aboveFold.has(id)) nextActive = id
-        }
-        setActiveId(nextActive || orderedIds[0] || '')
-      },
-      { rootMargin: '-64px 0px -80% 0px', threshold: 0 },
-    )
+    function onScroll() {
+      cancelAnimationFrame(rafRef.current)
+      rafRef.current = requestAnimationFrame(updateActive)
+    }
 
-    const headings = document.querySelectorAll('h2[id], h3[id]')
-    headings.forEach(el => observerRef.current!.observe(el))
+    // Seed the initial state before the user scrolls.
+    updateActive()
 
-    return () => observerRef.current?.disconnect()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      cancelAnimationFrame(rafRef.current)
+    }
   }, [toc])
 
   // Write active section to sessionStorage whenever it changes so the

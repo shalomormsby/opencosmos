@@ -8,13 +8,19 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-04-15 — Knowledge docs: TOC active-section tracking rewrite
+
+Replaced the `IntersectionObserver` + `aboveFold` set approach in `TableOfContents.tsx` with a `scroll` event + `requestAnimationFrame` + direct `getBoundingClientRect()` read. The old approach had three failure modes: missed events during fast scrolling (IO only fires on transitions, not continuously), complete staleness inside long sections (no boundary crossings → no events → highlight freezes), and an empty initial state before the first event fired. The new approach recalculates from current DOM truth on every scroll frame, throttled by rAF. The `HEADER_OFFSET = 120` constant matches `scroll-mt-28` (112px) plus an 8px buffer so the highlight advances exactly when a heading locks into place under the sticky header. Tracking is now fluid, continuous, and correct from first render.
+
+---
+
 ## 2026-04-15 — Knowledge docs: verse line break fix
 
 Fixed a Markdown rendering bug where single newlines in scripture, poetry, and anthology documents were collapsed into spaces, merging verse lines into run-on sentences. Added `remark-breaks` to DocViewer, applied conditionally when `format` is `scripture`, `poetry`, or `anthology`. Prose formats are unaffected. Fixes the Dhammapada, Tao Te Ching, Bhagavad Gita, Shakespeare, Rubaiyat, and all other verse texts in the corpus.
 
 ---
 
-## 2026-04-15 — Knowledge docs: TOC anchor and sticky fixes
+## 2026-04-15 — Knowledge docs: Table of Contents anchor and sticky fixes
 
 Fixed three bugs in the document outline panel introduced in the 2026-04-13 release:
 - Anchor clicks did nothing — custom `h2`/`h3` components in DocViewer were not forwarding the `id` prop injected by `rehype-slug`, so `getElementById()` returned null. Added `id` forwarding and `scroll-mt-28` offset for the sticky header.
