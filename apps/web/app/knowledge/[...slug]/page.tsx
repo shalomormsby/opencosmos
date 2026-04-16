@@ -139,7 +139,7 @@ export default async function DocPage({ params }: Props) {
             <Separator className="mb-10" />
 
             {/* Content */}
-            <DocViewer content={doc.content} />
+            <DocViewer content={doc.content} format={doc.format} />
 
             {/* Tags */}
             {doc.tags.length > 0 && (
