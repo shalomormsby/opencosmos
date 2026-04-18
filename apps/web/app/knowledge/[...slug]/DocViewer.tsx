@@ -19,6 +19,7 @@ type Props = {
 export default function DocViewer({ content, format }: Props) {
   const useBreaks = format ? VERSE_FORMATS.has(format) : false
   return (
+    <div data-doc-content>
     <ReactMarkdown
       remarkPlugins={useBreaks ? [remarkGfm, remarkBreaks] : [remarkGfm]}
       rehypePlugins={[rehypeSlug]}
@@ -108,5 +109,6 @@ export default function DocViewer({ content, format }: Props) {
     >
       {content}
     </ReactMarkdown>
+    </div>
   )
 }

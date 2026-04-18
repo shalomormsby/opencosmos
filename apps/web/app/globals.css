@@ -2,7 +2,33 @@
 @import "@opencosmos/ui/theme.css";
 @import "@opencosmos/ui/globals.css";
 
+/* OpenCosmos is always dark. Override the Studio Light defaults that
+   @opencosmos/ui/globals.css puts on :root so server-rendered paint
+   shows dark colors immediately — otherwise the body flashes white
+   until ThemeProvider hydrates and injects the real Volt Dark tokens.
+   These values need only approximate the target dark theme; ThemeProvider
+   replaces them on mount with the full palette. */
 @layer base {
+  :root {
+    --color-background: #000000;
+    --color-background-secondary: #0a0a0a;
+    --color-background-tertiary: #111111;
+    --color-foreground: #fafafa;
+    --color-text-primary: #fafafa;
+    --color-text-secondary: #a3a3a3;
+    --color-text-muted: #737373;
+    --color-card: #0a0a0a;
+    --color-card-foreground: #fafafa;
+    --color-popover: #0a0a0a;
+    --color-popover-foreground: #fafafa;
+    --color-muted: #171717;
+    --color-muted-foreground: #a3a3a3;
+    --color-surface: #0a0a0a;
+    --color-border: #262626;
+    --color-input: #262626;
+    color-scheme: dark;
+  }
+
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);

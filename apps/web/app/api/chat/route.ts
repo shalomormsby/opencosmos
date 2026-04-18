@@ -279,6 +279,7 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
 
 type CurrentSection = {
   heading: string
+  passage?: string
   doc_title: string
   doc_path: string
 }
@@ -507,12 +508,15 @@ export async function POST(req: NextRequest) {
     })
 
     // Inject current reading section if the user is browsing the knowledge library.
-    // This tells Cosmo which document and section the user is actively reading,
-    // so responses can be grounded in that specific context.
+    // This tells Cosmo which document, section, and passage the user is actively
+    // reading, so responses can be grounded in that specific context.
     if (current_section) {
+      const passageBlock = current_section.passage
+        ? `\n\nPassage they are reading right now:\n> ${current_section.passage}`
+        : ''
       systemContent.push({
         type: 'text' as const,
-        text: `## Current Reading Context\n\nThe user is currently reading the following document in the OpenCosmos knowledge library:\n\n**Document:** ${current_section.doc_title}\n**Section:** "${current_section.heading}"\n**Path:** ${current_section.doc_path}\n\nGround your response in the context of this section. The vector retrieval below may also include passages from this document.`,
+        text: `## Current Reading Context\n\nThe user is currently reading the following document in the OpenCosmos knowledge library:\n\n**Document:** ${current_section.doc_title}\n**Section:** "${current_section.heading}"\n**Path:** ${current_section.doc_path}${passageBlock}\n\nGround your response in the context of this section and passage. The vector retrieval below may also include passages from this document.`,
       })
     }
 
