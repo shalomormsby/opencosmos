@@ -1,5 +1,6 @@
 ---
 title: Leaves of Grass
+work_type: work
 role: source
 format: poetry
 domain: literature
@@ -37,8 +38,6 @@ related_docs:
   - sources/philosophy-meno.md
   - sources/philosophy-phaedo.md
 ---
-# Leaves of Grass
-
 *By Walt Whitman*
 
 > Come, said my soul,

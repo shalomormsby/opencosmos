@@ -6,12 +6,15 @@ const KNOWLEDGE_DIR = path.join(process.cwd(), '../../knowledge')
 
 const BROWSABLE_DIRS = ['sources', 'guides', 'collections', 'references', 'scriptures'] as const
 
+export type WorkType = 'work' | 'collection' | 'reference' | 'wiki'
+
 export type KnowledgeDocMeta = {
   slug: string[]
   href: string
   category: string
   title: string
   role: string
+  work_type?: WorkType
   format: string
   domain: string
   tags: string[]
@@ -24,6 +27,7 @@ export type KnowledgeDocMeta = {
   era?: string
   origin_date?: string
   related_docs?: string[]
+  parent_work?: string
 }
 
 export type KnowledgeDoc = KnowledgeDocMeta & {
@@ -37,6 +41,7 @@ function parseMeta(data: Record<string, unknown>, slug: string[]): KnowledgeDocM
     category: slug[0] ?? '',
     title: data.title ? String(data.title) : slug[slug.length - 1]!,
     role: data.role ? String(data.role) : '',
+    work_type: isWorkType(data.work_type) ? data.work_type : undefined,
     format: data.format ? String(data.format) : '',
     domain: data.domain ? String(data.domain) : '',
     tags: Array.isArray(data.tags) ? data.tags.map(String) : [],
@@ -49,7 +54,12 @@ function parseMeta(data: Record<string, unknown>, slug: string[]): KnowledgeDocM
     era: data.era ? String(data.era) : undefined,
     origin_date: data.origin_date ? String(data.origin_date) : undefined,
     related_docs: Array.isArray(data.related_docs) ? data.related_docs.map(String) : undefined,
+    parent_work: data.parent_work ? String(data.parent_work) : undefined,
   }
+}
+
+function isWorkType(value: unknown): value is WorkType {
+  return value === 'work' || value === 'collection' || value === 'reference' || value === 'wiki'
 }
 
 export function getAllDocs(): KnowledgeDocMeta[] {

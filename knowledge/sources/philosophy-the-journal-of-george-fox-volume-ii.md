@@ -2,7 +2,7 @@
 title: 'The Journal of George Fox, Volume II'
 role: source
 format: narrative
-domain: indigenous
+domain: philosophy
 tags:
   - quaker-spirituality
   - religious-persecution
@@ -28,11 +28,11 @@ source: public-domain
 author: George Fox
 origin_date: 1663-1669
 era: early-modern
-tradition: quaker
+tradition: quakerism
 related_docs:
-  - sources/indigenous-george-fox-an-autobiography.md
-  - collections/indigenous-gleanings-from-george-fox.md
-  - sources/indigenous-the-journal-of-george-fox.md
+  - sources/philosophy-george-fox-an-autobiography.md
+  - collections/philosophy-gleanings-from-george-fox.md
+  - sources/philosophy-the-journal-of-george-fox.md
   - sources/indigenous-the-fairy-faith-in-celtic-countries.md
   - sources/cross-the-prophet.md
 ---

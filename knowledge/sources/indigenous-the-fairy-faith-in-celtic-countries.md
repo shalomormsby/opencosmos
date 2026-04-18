@@ -1,5 +1,6 @@
 ---
 title: The Fairy-Faith in Celtic Countries
+work_type: work
 role: source
 format: treatise
 domain: indigenous
@@ -30,14 +31,12 @@ origin_date: '1911'
 era: modern
 tradition: celtic
 related_docs:
-  - collections/indigenous-gleanings-from-george-fox.md
+  - collections/philosophy-gleanings-from-george-fox.md
   - sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
   - sources/literature-siddhartha-an-indian-tale.md
 ---
-# The Fairy-Faith in Celtic Countries
-
 *By W.Y. Evans-Wentz*
 
 THE FAIRY-FAITH IN CELTIC COUNTRIES

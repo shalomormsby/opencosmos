@@ -2,7 +2,7 @@
 title: The Journal of George Fox
 role: source
 format: narrative
-domain: indigenous
+domain: philosophy
 tags:
   - quakerism
   - religious-experience
@@ -30,8 +30,8 @@ origin_date: ~1675
 era: early-modern
 tradition: quakerism
 related_docs:
-  - sources/indigenous-george-fox-an-autobiography.md
-  - collections/indigenous-gleanings-from-george-fox.md
+  - sources/philosophy-george-fox-an-autobiography.md
+  - collections/philosophy-gleanings-from-george-fox.md
   - sources/indigenous-the-fairy-faith-in-celtic-countries.md
   - sources/cross-the-prophet.md
   - sources/literature-demian-the-story-of-emil-sinclair-s-youth.md

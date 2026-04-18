@@ -1,5 +1,6 @@
 ---
 title: Phaedrus
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -35,8 +36,6 @@ related_docs:
   - sources/philosophy-meno.md
   - sources/philosophy-phaedo.md
 ---
-# Phaedrus
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

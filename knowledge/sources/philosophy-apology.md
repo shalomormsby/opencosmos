@@ -1,5 +1,6 @@
 ---
 title: Apology
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -35,8 +36,6 @@ related_docs:
   - collections/sol-foundations.md
   - sources/buddhism-the-dhammapada.md
 ---
-# Apology
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

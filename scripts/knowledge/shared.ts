@@ -20,6 +20,7 @@ if (existsSync(envPath)) {
 // ─── Constants ──────────────────────────────────────────────────────────────
 
 export const ROLES = ['source', 'commentary', 'reference', 'guide', 'collection'] as const
+export const WORK_TYPES = ['work', 'collection', 'reference', 'wiki'] as const
 export const FORMATS = [
   'treatise', 'poetry', 'aphorisms', 'scripture', 'dialogue', 'essay',
   'manifesto', 'specification', 'manual', 'narrative', 'glossary', 'anthology', 'letter',
@@ -37,11 +38,13 @@ export const KNOWLEDGE_DIR = resolve(__dirname, '..', '..', 'knowledge')
 // ─── Types ──────────────────────────────────────────────────────────────────
 
 export type Role = (typeof ROLES)[number]
+export type WorkType = (typeof WORK_TYPES)[number]
 export const ERAS = ['ancient', 'medieval', 'early-modern', 'modern', 'contemporary'] as const
 
 export type Frontmatter = {
   title: string
   role: Role
+  work_type: WorkType
   format: string
   domain: string
   tags: string[]
@@ -57,6 +60,7 @@ export type Frontmatter = {
   era?: string
   tradition?: string
   related_docs?: string[]
+  parent_work?: string
 }
 
 // ─── Utilities ──────────────────────────────────────────────────────────────

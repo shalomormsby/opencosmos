@@ -1,5 +1,6 @@
 ---
 title: Symposium
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -35,8 +36,6 @@ related_docs:
   - sources/philosophy-phaedo.md
   - sources/philosophy-apology.md
 ---
-# Symposium
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

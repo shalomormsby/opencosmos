@@ -1,5 +1,6 @@
 ---
 title: The Prophet
+work_type: work
 role: source
 format: poetry
 domain: cross
@@ -23,8 +24,6 @@ curator: shalom
 source: public-domain
 corpus_tier: source
 ---
-# The Prophet
-
 *By Kahlil Gibran*
 
 ## The Coming of the Ship

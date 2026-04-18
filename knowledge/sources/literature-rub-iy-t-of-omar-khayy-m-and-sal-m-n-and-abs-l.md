@@ -1,5 +1,6 @@
 ---
 title: 'Rubáiyát of Omar Khayyám, and Salámán and Absál'
+work_type: work
 role: source
 format: anthology
 domain: literature
@@ -35,8 +36,6 @@ related_docs:
   - sources/philosophy-nature.md
   - sources/philosophy-on-the-duty-of-civil-disobedience.md
 ---
-# Rubáiyát of Omar Khayyám, and Salámán and Absál
-
 *By Edward FitzGerald*
 
 Rubáiyát

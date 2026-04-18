@@ -1,5 +1,6 @@
 ---
 title: Laws
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -33,8 +34,6 @@ related_docs:
   - sources/cross-the-prophet.md
   - references/ecology-gaia-hypothesis.md
 ---
-# Laws
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

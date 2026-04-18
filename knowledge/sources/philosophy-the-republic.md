@@ -1,5 +1,6 @@
 ---
 title: The Republic
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -33,8 +34,6 @@ related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-laws.md
 ---
-# The Republic
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

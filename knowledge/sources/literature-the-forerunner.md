@@ -1,5 +1,6 @@
 ---
 title: The Forerunner
+work_type: work
 role: source
 format: anthology
 domain: literature
@@ -36,8 +37,6 @@ related_docs:
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
 ---
-# The Forerunner
-
 *By Kahlil Gibran*
 
 You are your own forerunner, and the towers you have builded are but the foundation of your giant-self. And that self too shall be a foundation.

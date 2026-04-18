@@ -1,5 +1,6 @@
 ---
 title: Theaetetus
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -36,8 +37,6 @@ related_docs:
   - sources/philosophy-phaedrus.md
   - sources/philosophy-euthyphro.md
 ---
-# Theaetetus
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

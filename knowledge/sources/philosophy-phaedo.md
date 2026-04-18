@@ -1,5 +1,6 @@
 ---
 title: Phaedo
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -36,8 +37,6 @@ related_docs:
   - sources/philosophy-euthyphro.md
   - sources/philosophy-laws.md
 ---
-# Phaedo
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

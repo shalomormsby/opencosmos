@@ -90,7 +90,7 @@ Each chunk stores:
 - `id` — deterministic path + heading slug
 - `data` — enriched text passed to Upstash for embedding (title + author + domain + section label + body, capped at 3000 chars)
 - `metadata` — what Cosmo reads in its context window:
-  - `source` — relative path (e.g. `knowledge/sources/indigenous-george-fox-an-autobiography.md`)
+  - `source` — relative path (e.g. `knowledge/sources/philosophy-george-fox-an-autobiography.md`)
   - `heading` — section heading text
   - `parent_heading` — H2 parent for H3-level chunks
   - `title`, `author`, `tradition`, `domain`, `role`, `tags`, `audience`
@@ -127,7 +127,7 @@ The knowledge browser's TOC panel tracks which section the user is currently rea
 {
   "heading": "Chapter III. The Opening of the Light",
   "doc_title": "George Fox — An Autobiography",
-  "doc_path": "knowledge/sources/indigenous-george-fox-an-autobiography.md",
+  "doc_path": "knowledge/sources/philosophy-george-fox-an-autobiography.md",
   "timestamp": 1744512000000
 }
 ```

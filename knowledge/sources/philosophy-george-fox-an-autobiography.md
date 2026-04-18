@@ -2,7 +2,7 @@
 title: 'George Fox: An Autobiography'
 role: source
 format: narrative
-domain: indigenous
+domain: philosophy
 tags:
   - quakerism
   - spiritual-autobiography
@@ -27,9 +27,9 @@ source: public-domain
 author: George Fox
 origin_date: 17th century
 era: early-modern
-tradition: quaker
+tradition: quakerism
 related_docs:
-  - collections/indigenous-gleanings-from-george-fox.md
+  - collections/philosophy-gleanings-from-george-fox.md
   - sources/literature-the-forerunner.md
   - sources/literature-the-madman.md
   - sources/indigenous-the-fairy-faith-in-celtic-countries.md
