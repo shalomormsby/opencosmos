@@ -35,7 +35,7 @@ export function TokenGauge({
         <span
           className={cn(
             'font-light tabular-nums',
-            compact ? 'text-xs text-foreground/40' : 'text-2xl text-[var(--color-success)]',
+            compact ? 'text-sm text-[var(--color-success)]' : 'text-2xl text-[var(--color-success)]',
           )}
         >
           ∞

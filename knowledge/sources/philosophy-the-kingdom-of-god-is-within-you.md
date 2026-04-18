@@ -35,7 +35,6 @@ related_docs:
   - references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
 ---
-# "THE KINGDOM OF GOD IS WITHIN YOU"
 
 CHRISTIANITY NOT AS A MYSTIC RELIGION BUT AS A NEW THEORY OF LIFE
 

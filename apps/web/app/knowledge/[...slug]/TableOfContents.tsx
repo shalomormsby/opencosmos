@@ -11,6 +11,7 @@ export type TocEntry = {
 
 type CosmoContext = {
   heading: string
+  passage: string
   doc_title: string
   doc_path: string
   timestamp: number
@@ -26,9 +27,15 @@ type Props = {
 // buffer so the heading registers as "active" the moment it locks into place.
 const HEADER_OFFSET = 120
 
+// Cap passage length sent to Cosmo — enough for meaningful grounding without
+// ballooning the prompt. Typical paragraphs are 200–600 chars.
+const PASSAGE_MAX_CHARS = 800
+
 export default function TableOfContents({ toc, docTitle, docPath }: Props) {
   const [activeId, setActiveId] = useState<string>(toc[0]?.id ?? '')
+  const [passage, setPassage] = useState<string>('')
   const headingElsRef = useRef<HTMLElement[]>([])
+  const paragraphElsRef = useRef<HTMLElement[]>([])
   const rafRef = useRef<number>(0)
 
   useEffect(() => {
@@ -39,6 +46,13 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
     headingElsRef.current = toc
       .map(e => document.getElementById(e.id))
       .filter((el): el is HTMLElement => el !== null)
+
+    // Collect paragraph elements inside the doc content wrapper so we can
+    // report the user's current passage back to Cosmo.
+    const container = document.querySelector('[data-doc-content]')
+    paragraphElsRef.current = container
+      ? Array.from(container.querySelectorAll('p')) as HTMLElement[]
+      : []
 
     function updateActive() {
       const els = headingElsRef.current
@@ -53,6 +67,29 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
         }
       }
       setActiveId(next)
+
+      // Find the paragraph currently under the reading threshold. Prefer a
+      // paragraph that straddles the line; otherwise fall back to the last
+      // one whose top has passed it.
+      const paragraphs = paragraphElsRef.current
+      let chosen: HTMLElement | null = null
+      for (const p of paragraphs) {
+        const rect = p.getBoundingClientRect()
+        if (rect.top <= HEADER_OFFSET && rect.bottom > HEADER_OFFSET) {
+          chosen = p
+          break
+        }
+      }
+      if (!chosen) {
+        for (let i = paragraphs.length - 1; i >= 0; i--) {
+          if (paragraphs[i].getBoundingClientRect().top <= HEADER_OFFSET) {
+            chosen = paragraphs[i]
+            break
+          }
+        }
+      }
+      const text = chosen?.textContent?.trim() ?? ''
+      setPassage(text.length > PASSAGE_MAX_CHARS ? text.slice(0, PASSAGE_MAX_CHARS) + '…' : text)
     }
 
     function onScroll() {
@@ -70,8 +107,8 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
     }
   }, [toc])
 
-  // Write active section to sessionStorage whenever it changes so the
-  // Cosmo chat at /dialog can pick it up and ground responses in context.
+  // Write active section + current passage to sessionStorage whenever either
+  // changes so the Cosmo chat at /dialog can pick it up and ground responses.
   useEffect(() => {
     if (!activeId) return
     const entry = toc.find(e => e.id === activeId)
@@ -79,6 +116,7 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
 
     const ctx: CosmoContext = {
       heading: entry.text,
+      passage,
       doc_title: docTitle,
       doc_path: docPath,
       timestamp: Date.now(),
@@ -88,7 +126,7 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
     } catch {
       // sessionStorage unavailable (private browsing, storage full) — non-fatal
     }
-  }, [activeId, toc, docTitle, docPath])
+  }, [activeId, passage, toc, docTitle, docPath])
 
   if (toc.length === 0) return null
 

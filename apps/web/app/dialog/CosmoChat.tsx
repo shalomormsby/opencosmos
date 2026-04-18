@@ -292,16 +292,16 @@ export function CosmoChat() {
     try {
       // Read active reading context from sessionStorage (set by the knowledge
       // browser's TableOfContents component as the user navigates sections).
-      // Only use context that's less than 5 minutes old — stale context is noise.
-      type StoredContext = { heading: string; doc_title: string; doc_path: string; timestamp: number }
-      let currentSection: { heading: string; doc_title: string; doc_path: string } | undefined
+      // Only use context that's less than 30 minutes old — stale context is noise.
+      type StoredContext = { heading: string; passage?: string; doc_title: string; doc_path: string; timestamp: number }
+      let currentSection: { heading: string; passage?: string; doc_title: string; doc_path: string } | undefined
       let docChanged = false
       try {
         const raw = sessionStorage.getItem('cosmo_context')
         if (raw) {
           const ctx = JSON.parse(raw) as StoredContext
-          if (Date.now() - ctx.timestamp < 5 * 60 * 1000) {
-            currentSection = { heading: ctx.heading, doc_title: ctx.doc_title, doc_path: ctx.doc_path }
+          if (Date.now() - ctx.timestamp < 30 * 60 * 1000) {
+            currentSection = { heading: ctx.heading, passage: ctx.passage, doc_title: ctx.doc_title, doc_path: ctx.doc_path }
             // Detect document switch — clear RAG history to avoid pollution
             if (lastDocPathRef.current !== null && lastDocPathRef.current !== ctx.doc_path) {
               docChanged = true

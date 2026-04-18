@@ -2,7 +2,7 @@
 
 > Project management hub for all OpenCosmos work. For strategic rationale, see [strategy.md](strategy.md). For infrastructure details, see [architecture.md](architecture.md).
 
-**Updated:** 2026-04-12
+**Updated:** 2026-04-18
 
 ---
 
@@ -13,51 +13,43 @@
     - [turnstile] rejected — token invalid (e.g. expired, wrong site key)
     - nothing — free-tier path still not being hit
 - opencosmos.ai:     
-    - OpenCosmos/Creative Powerup integration: Solve Brian's request for Creative Powerup member credits to use with OpenCosmos
+    - **CP member token access** — Brian's request (CP member credits on OpenCosmos) is now the primary P0 project. See [Phase 2](#phase-2-cp-member-token-access--top-up) below.
     - Create an icon and favicon
     - Add graceful error message when tokens are used up, or when there's an API error, or other error states
-    - Token guage: 
-        - Improve the logic of the display of the token gauge display
-            - If the connection = API, then do not display token gauge; do display the green ∞ in left sidebar
-        - Make the green display in the sidebar the same size it displays on the account page
+    - Token gauge: Make the green ∞ display in the sidebar the same size as it displays on the account page
     - Voice UI: Analyze the cost of adding voice using elevenlabs, Flash model. 
 - OpenCosmos Home page: 
     - Replace inert text with streaming text greeting
     - Fix alignment issue of sphere on home page
 - Account page: 
     - Enable users to upload profile photos (~5MB max), which, when displayed, show instead of their initials in their account icon.
-- Create a new "Subscribe" page: 
-    - Move subscription cards from the accounts page to a new subscribe page
-    - Subscription plan cards: Fix tiles with sticky bottom row that bottom-aligns the CTA
-- CFO mode: As the voice UI feature (described above) has financial implications, decide how best to centralize and organize strategic financial info like this, as well as the "Token Economics" section in ARCHITECTURE.md. If you were a wise CFO leading this part of OpenCosmos, how and where would you organize this info in this repo? 
 
-## Projects
+## Status Overview
 
-| Project | Status | Priority | Next milestone |
-|---------|--------|----------|----------------|
-| **Cosmo** (`apps/web`) | Pre-launch | P0 | Circle setup → Stripe live → launch |
-| **Knowledge Graph** (`opencosmos.ai/knowledge/graph`) | **Blocked** | **P1** | Fix WebGL node render — pipeline complete, nodes invisible |
-| **@opencosmos/ui** (separate repo) | Active | P1 | Ongoing maintenance |
-| **Portfolio** (`apps/portfolio`) | Production | P2 | Design consulting pipeline (Phase 3) |
-| **Creative Powerup** (`apps/creative-powerup`) | In development | P2 | Cosmo integration (Phase 3) |
-| **@opencosmos/ai** (`packages/ai`) | WIP | P2 | Package foundation (Phase 2a) |
-| **Stocks** (`apps/stocks`) | In development | P3 | TBD |
+> Bird's-eye view of every active workstream. **Update the Status column whenever a task state changes — always before opening a PR for that work.** Priorities: P0 highest. Status legend: 🟢 active · 🟡 PR-ready · 🔵 blocked (needs decision/external) · ⚪ planned · ✅ done.
 
----
+| Area | Phase / Task | Status | Priority | Next step |
+|------|--------------|--------|----------|-----------|
+| **Cosmo** (`apps/web`) | [Phase 1: Constellation § Phase 0](#phase-0--verify--commit-quick-wins) — H1 strips, Cosmo context, paint-safe | 🟡 PR-ready | P1 | Merge `fix/knowledge-graph-prep` → main; test on prod |
+| Cosmo | [Phase 1: Constellation § Phase 1](#phase-1--standardize-the-standardization-skill) — patch standardize-knowledge, strip 22 H1 files | ⚪ Planned | P1 | Begin after Phase 0 merges |
+| Cosmo | [Phase 1: Constellation § Phase 2](#phase-2--split-monoliths) — `/split-collection` skill + Shakespeare split | ⚪ Planned | P1 | Follows Phase 1 |
+| Cosmo | [Phase 1: Constellation § Phase 3](#phase-3--quote-infrastructure) — quote YAML substrate, embed pipeline | ⚪ Planned | P1 | Awaiting sample quote data from Shalom |
+| Cosmo | [Phase 1: Constellation § Phase 5](#phase-5--build-opencosmosconstellation) — `@opencosmos/constellation` package | ⚪ Planned | P1 | Built in `opencosmos-ui` repo |
+| Cosmo | [Phase 1: Constellation § Phases 6–9](#phase-6--opencosmos-consumes-opencosmosconstellation) — consume, semantic edges, citations, sidebar | ⚪ Planned | P1 | Sequential after Phase 5 ships |
+| Cosmo | [Phase 1: Constellation § Phase 10–11](#phase-10--community-contribution-pathway) — contribution pathway, wiki lint | ⚪ Planned | P2 | After Phase 9 |
+| Cosmo | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
+| Cosmo | [Phase 1b residuals](#phase-1b-subscriptions--infrastructure-preserved-ui-superseded) — Stripe webhook, privacy policy, TOS, Fix 7 | ⚪ Planned | P1 | External actions (Stripe, legal) |
+| Cosmo | [Phase 3: Conversation polish](#phase-3-conversation-polish) — mobile, accessibility, voice | ⚪ Planned | P2 | — |
+| Cosmo | [Phase 4: Cosmo as PM](#phase-4-cosmo-as-pm) — publish PM doc to corpus | ⚪ Planned | P2 | Natural consequence of Phase 1 RAG |
+| **@opencosmos/ai** (`packages/ai`) | [Phase 5: Package foundation](#phase-5-opencosmosai-package-foundation) | ⚪ Planned | P2 | After Constellation ships |
+| @opencosmos/ai | [Phase 6: Federated Cosmo schema](#phase-6-federated-cosmo-schema-design-phase) | ⚪ Planned | P3 | Design only — no code |
+| @opencosmos/ai | [Phase 7: Cosmo-powered CP programs](#phase-7-cosmo-powered-cp-programs) | ⚪ Planned | P3 | Depends on Phase 5 + CP tokens |
+| **@opencosmos/ui** (separate repo) | Ongoing maintenance | 🟢 Active | P1 | — |
+| **Portfolio** (`apps/portfolio`) | Case studies + consulting pipeline | ⚪ Planned | P2 | — |
+| **Creative Powerup** (`apps/creative-powerup`) | Cosmo integration | ⚪ Planned | P3 | Depends on Phase 2 CP tokens |
+| **Stocks** (`apps/stocks`) | TBD | ⚪ Planned | P3 | No active sprint |
+| **Turnstile** | Verify free-tier activation on Vercel | 🔵 Blocked | P2 | Nothing in logs — needs investigation |
 
-## Launch Checklist — Cosmo
-
-External setup remaining before launch:
-
-- ✅ Cloudflare Turnstile keys added to `.env` and Vercel (`NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`)
-- [ ] **Circle** — Dashboard → Settings → API → copy token → set `CIRCLE_API_KEY` in `.env.local` + Vercel
-- [ ] **Circle community ID** — Dashboard → Settings → General → Community ID → set `CIRCLE_COMMUNITY_ID` in `.env.local` + Vercel
-- [ ] **Anthropic spend limit** — Verify the monthly limit is active on `opencosmos-main` in console.anthropic.com (Fix 5)
-- [ ] **Stripe live mode** — Swap test price IDs for live `STRIPE_PRICE_SPARK/FLAME/HEARTH` in Vercel when ready to accept real payments
-
-After PR #91 merges:
-- Deploy to Vercel → verify Turnstile activates on first free-tier send (check Vercel logs for `[turnstile]` entries)
-- Verify benefit provisioning on test checkout: Substack subscriber list + Circle member list
 
 ---
 
@@ -69,29 +61,664 @@ Conversation interface at opencosmos.ai. Organized by phase.
 
 Cosmo's voice validated on first contact. See [Chronicle Chapter 7](chronicle.md#2026-03-29--first-contact). AI Triad system prompts (Sol, Socrates, Optimus) written but deferred until post-launch.
 
-### Phase 1b: Subscriptions — Infrastructure Complete, Tasks Remaining
+### Phase 1b: Subscriptions — Infrastructure Preserved, UI Superseded
 
-Three tiers (Spark $5, Flame $10, Hearth $50), Stripe billing, WorkOS auth, usage tracking (microdollar counters), TokenGauge UI, BYOK path, and bot protection (Fixes 1–6) are all shipped.
+> **2026-04-16 Brand Architecture Pivot:** OpenCosmos no longer offers subscription tiers. The account page shows only: BYOK (unlimited), free 20K token quota, and a CP community invitation. All paid Cosmo access moves to Creative Powerup memberships. The Stripe infrastructure (checkout, portal, webhooks, benefit provisioning) remains intact for existing subscribers to manage billing — no new checkout flows belong on opencosmos.ai. See [strategy.md § Brand Architecture](strategy.md).
 
-**Open tasks:**
-- [ ] Register `https://opencosmos.ai/api/webhooks/stripe` in Stripe Dashboard — events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted`
-- [ ] Hearth tier: automatically provision full CP membership on subscribe, revoke on cancel
-- [ ] Existing CP members: offer migration path to Hearth (they get Cosmo included)
+Three tiers (Spark $5, Flame $10, Hearth $50), Stripe billing, WorkOS auth, usage tracking (microdollar counters), TokenGauge UI, BYOK path, and bot protection (Fixes 1–6) are all shipped. Subscription UI removed in PRs #112–#113.
+
+**Still needed:**
+- [ ] Register `https://opencosmos.ai/api/webhooks/stripe` in Stripe Dashboard — events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted` *(required for existing subscribers to cancel/update billing — no new subscriptions, but webhook is still needed)*
 - [ ] **Privacy policy** — required before Stripe processes real payments. Must cover: usage metrics collected, BYOK key non-storage, Stripe data handling, retention period, user rights.
 - [ ] **Terms of service** — usage limits, acceptable use, subscription terms
-- [ ] **Substack partner API** — Apply at substack.com/for-business to enable programmatic paid newsletter access for Flame/Hearth. Current `POST /api/v1/free` endpoint grants free-tier Substack access only; partner API enables gifting paid subscriptions.
 - [ ] Fix 7 — Monitoring & anomaly alerts (post-launch; see [architecture.md § Bot Protection](architecture.md#bot-protection-design))
 
-### Phase 1c: Knowledge Corpus (Cloud RAG)
+**Superseded (no action required):**
+- ~~Hearth tier: automatically provision full CP membership on subscribe, revoke on cancel~~ — no new Hearth subscriptions on opencosmos.ai
+- ~~Existing CP members: offer migration path to Hearth~~ — moot; CP membership stays in Creative Powerup
+- ~~Substack partner API~~ — no Flame/Hearth tiers to provision
 
-- ✅ Knowledge corpus browser at `opencosmos.ai/knowledge` — live
-- [ ] Set up Upstash Vector (account, index, `UPSTASH_VECTOR_URL` + `UPSTASH_VECTOR_TOKEN` in `.env`)
-- [ ] Build GitHub Action sync workflow: on push to `main` when `knowledge/**` changes → chunk by H2 → upsert to Upstash Vector with frontmatter metadata
-- [ ] Build RAG API endpoint (`apps/web/app/api/knowledge/route.ts`)
-- [ ] Wire RAG retrieval into Cosmo conversation flow — constitutional layer queries corpus before responding
-- [ ] Community contribution pathway — submit knowledge for curation
+### Phase 2: CP Member Token Access & Top-up
 
-### Phase 1c+: Knowledge Graph — `opencosmos.ai/knowledge/graph` [P1]
+**Status:** Planning — architectural questions require Shalom's decisions before implementation begins.
+
+**Why this exists:** The brand architecture pivot closes the OpenCosmos subscription path but opens a new obligation: CP members need managed Cosmo access (no API key required). This project builds that path cleanly, reusing the Phase 1b infrastructure rather than replacing it.
+
+---
+
+#### What already works
+
+**Case 1 — Free visitor quota:** Already complete. The 20K token session budget, account page quota card, and `isLimited` state in CosmoChat (which shows the API key entry form + CP invitation when quota is exhausted) are all intact and functioning. No action required for Case 1.
+
+**Case 2 — CP member token access:** Requires implementation. See below.
+
+---
+
+#### Case 2: CP Member Token Tracking + Buy-More
+
+CP members should receive a token allotment per tier, tracked against their usage. When the allotment is exhausted, they can purchase additional tokens at cost. Purchased tokens are non-expiring while CP membership is active.
+
+**Existing infrastructure that can be reused (nothing needs rebuilding):**
+
+| File | What it does |
+|------|-------------|
+| `apps/web/lib/subscription.ts` | `getSubscription()`, `incrementUsage()`, `isWithinBudget()`, `monthlyUsagePercent()`, `getByokFlag()`, `markByok()` — all Redis-backed. Needs a `bonusTokens` counter added. |
+| `apps/web/lib/stripe.ts` | `TIERS` config with `monthlyBudgetMicrodollars` per tier; checkout and portal session creation. TIERS config needs updating for CP allotments; checkout needs a `token_pack` product type. |
+| `apps/web/lib/benefits.ts` | Circle member provisioning for Hearth tier — the Circle API connection pattern already exists here. **Invert it:** instead of provisioning Circle from Cosmo, receive Circle events to provision Cosmo from CP. |
+| `apps/web/app/api/subscription/route.ts` | Returns `hasByok` + subscription usage data. Already the source of truth for sidebar and account page usage display. |
+| `apps/web/app/api/stripe/checkout/route.ts` | Stripe checkout session creation. Intact and UI-hidden. Re-expose for token top-up purchases. |
+| `apps/web/app/api/webhooks/stripe/route.ts` | Handles `checkout.session.completed`, `customer.subscription.updated/deleted`. Extend to handle token pack purchases. |
+
+**Token economics reference:**
+- Input: 3 µ$/token · Output: 15 µ$/token
+- Typical conversation: ~20K tokens ≈ $0.30 cost
+- Old tier budgets for reference: 152K tokens ≈ $1/month cost; 313K ≈ $2/month; 637K ≈ $4/month
+
+---
+
+#### Open questions — requires Shalom's decisions
+
+**Q1 — How is CP membership verified from OpenCosmos?**
+
+This is the critical architectural question. Three options:
+
+*Option A — Circle webhook (recommended):* When someone joins CP on Circle, a webhook fires. A new `/api/webhooks/circle` route receives it, matches the member's email against the authenticated WorkOS user, and writes `cp_member: true` + `cp_tier: entry|full|hearth` to Redis with their token allotment. This is an inversion of the existing `benefits.ts` Circle pattern — exactly the right reuse. Requires: Circle webhook secret env var, a mapping from Circle "space" or membership level to tier name.
+
+*Option B — Stripe webhook from CP:* If CP uses its own Stripe account, a shared webhook route can receive CP subscription events. Requires coordinating webhook secrets between two Stripe accounts.
+
+*Option C — Manual admin flag:* A private `POST /api/admin/cp-member` endpoint sets the Redis flag manually. Not scalable, but viable for low membership counts during initial rollout while webhook integration is being built.
+
+**Decision needed:** Which verification path? If Option A, does Circle support webhooks on membership join/level changes? What's the CP Circle community ID?
+
+---
+
+**Q2 — What are the CP tier token allotments?**
+
+The old Spark/Flame/Hearth allotments (152K/313K/637K tokens/month) were designed for standalone $5/$10/$50 Cosmo subscriptions. CP tiers have different pricing and different value propositions. New allotments are needed.
+
+Suggested approach: anchor allotments to CP membership cost, not the old tier math. At ~$0.30/10K tokens cost, 100K tokens costs ~$3 — a meaningful fraction of a $X/month CP membership. Shalom should decide: what fraction of each CP tier's monthly fee covers Cosmo usage? That fraction divided by $0.30/10K gives the monthly allotment.
+
+**Decision needed:** Monthly token allotment for each CP tier (entry, full, hearth).
+
+---
+
+**Q3 — "Buy more tokens at cost" mechanic:**
+
+When a CP member exhausts their monthly allotment, they purchase additional tokens at cost (no markup).
+
+*Suggested pack sizes:* $3 for 100K tokens · $9 for 350K tokens · $25 for 1M tokens. These are at-cost rates; Shalom confirms final pack sizes and prices.
+
+*Implementation:* A one-time Stripe payment (not a subscription) with `metadata.token_pack = '100k'|'350k'|'1m'`. The webhook handler receives `checkout.session.completed`, identifies it as a token pack via metadata, and calls `addBonusTokens(userId, packSize)` in `subscription.ts`. Bonus tokens are stored in a separate Redis counter (`cosmo:bonus_tokens:{userId}`), distinct from the monthly allotment. `isWithinBudget()` checks monthly allotment first; when exhausted, deducts from bonus balance. Bonus tokens do not expire on monthly reset — only when consumed or CP membership lapses.
+
+**Decision needed:** Confirm pack sizes and prices. Any objection to the non-expiring bonus mechanic?
+
+---
+
+**Q4 — Where does the "buy more" UI live?**
+
+*Option A — Account page inline (recommended for MVP):* When a CP member is near or at limit, the account page token gauge shows a "Top up" button alongside the usage meter. One click opens Stripe checkout for token packs. No new pages, minimum surface area.
+
+*Option B — Modal on quota exhaustion in CosmoChat:* When `isLimited` fires for a CP member (distinct from free-tier exhaustion, which shows the API key form), a CP-specific modal appears offering token top-up. Better UX — catches the user at the moment of need. Requires detecting CP member status in the `isLimited` check.
+
+*Option C — Dedicated `/account/tokens` page:* Room for usage history, pack comparisons. A later-iteration refinement.
+
+Recommended path: build Option A first; add Option B as a UX enhancement once the plumbing works.
+
+**Decision needed:** Confirm Option A as the starting point, or preference for Option B.
+
+---
+
+#### Implementation sequence (after decisions above)
+
+1. Implement CP membership verification per Q1 decision
+2. Update `TIERS` config in `subscription.ts` / `stripe.ts` with new CP allotments (Q2)
+3. Add `bonusTokens` Redis counter to `subscription.ts`; update `isWithinBudget()` to deduct bonus after monthly allotment
+4. Add `addBonusTokens(userId, packSize)` function to `subscription.ts`
+5. Create Stripe one-time token pack products; wire `POST /api/stripe/checkout` to support `type: 'token_pack'`
+6. Extend webhook handler to identify and handle token pack `checkout.session.completed` events
+7. Update account page: CP member state shows tier allotment usage + "Top up" button (Q4)
+8. Update CosmoChat `isLimited` state: CP member → "Top up" flow vs. free tier → "Enter API key + visit CP"
+9. Register Stripe webhook for token pack product events
+
+---
+
+### Phase 1: Constellation — Corpus Standardization → Living Knowledge Graph [P1]
+
+**Status as of 2026-04-18:** Active. Phase 0 (foundational cleanup) verified on localhost and PR-ready. Supersedes the sigma.js WebGL approach in [Phase 1c+ (deprecated)](#phase-1c-deprecated-knowledge-graph--opencosmosaiknowledgegraph-p1) paused 2026-04-12. Consolidates three previously-separate workstreams (Cloud RAG, Knowledge Intelligence Layer, Constellation) into one coherent plan.
+
+#### Context
+
+OpenCosmos wants a **dynamic, interactive knowledge graph** that renders the entire corpus — works, sections, quotes, and the relationships between them — as a navigable visual substrate. The user should be able to explore by intuition ("this looks interesting, what is it?"), Cosmo should be able to traverse it as part of reasoning ("I'll walk from Tolstoy → Thoreau → Gandhi"), and the whole thing should feel like a living map rather than a database dump.
+
+This project delivers that vision in six connected workstreams:
+
+1. **Foundational cleanup** — strip H1 drift across the corpus, extend Cosmo reading context, fix first-paint light-mode flash and sidebar infinity parity (Phase 0 implemented, PR-ready).
+2. **Cloud RAG retrieval** — Upstash Vector + `fetchRagContext()` wired into Cosmo's conversation flow. Embed pipeline complete, 893 chunks upserted; RAG API endpoint and citation formatting live (see [Done](#done) for what shipped as part of the former Phase 1c / Phase 1d §§1–3).
+3. **Standardization skill hardening** — patch `/standardize-knowledge` so it's safe corpus-wide, and extend the frontmatter schema with fields the graph needs (`work_type`, `parent_work`).
+4. **Corpus restructuring** — physically split monoliths (Shakespeare, Khayyám, Walden) into per-work files; add a quote substrate (`knowledge/quotes/`) for ~1,800 attributed passages.
+5. **Visualization** — build `@opencosmos/constellation`: an open-source React component in `opencosmos-ui` built on `@cosmos.gl/graph` (MIT, same engine as Cosmograph). OpenCosmos dogfoods it; the wider community gets it as a gift.
+6. **Cosmo in the Knowledge sidebar + community pathways** — companion chat grounded in the reading view; community contribution form; scheduled wiki-lint action (rebuilt atop the now-landed RAG infrastructure; formerly Phase 1d §§4–7).
+
+**Critical license finding that shaped this plan:** `@cosmograph/cosmograph` is still CC BY-NC-4.0 (non-commercial). Rather than accept the restriction, we use its MIT-licensed underlying engine `@cosmos.gl/graph` and build a React wrapper that becomes a reusable community primitive — answering the question of "can this be a community empowerment resource" with yes.
+
+#### Key decisions
+
+##### 1. Graph library: `@cosmos.gl/graph` (MIT), wrapped as `@opencosmos/constellation`
+
+- **Engine:** `@cosmos.gl/graph` v3.0 beta — same GPU force-directed engine that powers Cosmograph. MIT licensed. Member of OpenJS Foundation.
+- **Wrapper:** a new package in the `opencosmos-ui` monorepo: `@opencosmos/constellation`.
+- **Responsibilities:** thin React shell around `new Graph()`, HTML label overlay (using `getSampledNodePositionsMap()` for positioning), LOD helper (visual-weight by zoom, not visibility), theme-aware color scales, idiomatic React props (`nodes`, `links`, `onNodeClick`, …) that internally transform to Float32Array.
+- **Why a new package (not a component in `@opencosmos/ui`):** `@opencosmos/ui` is for app chrome; a knowledge-graph visualizer is a specialized domain primitive. Separate package = separate semver cadence, fewer transitive deps for `@opencosmos/ui` consumers, cleaner story for the community (`import { KnowledgeGraph } from '@opencosmos/constellation'`).
+- **What OpenCosmos consumes vs what the community gets:** same component. The community resource is production-validated by OpenCosmos before it ships.
+
+##### 2. Node hierarchy (five tiers, rendered simultaneously)
+
+```
+Corpus
+  └─ Tradition       (platonic, stoic, buddhism, indigenous, transcendentalism, …)
+       └─ Work       (Hamlet, The Republic, The Prophet, Walden, a single Rumi poem)
+            └─ Section  (Act III, Book I, "On Love")
+                 └─ Quote  (an attributed passage, often sourced to a section)
+```
+
+- **Tradition nodes:** synthesized from frontmatter `tradition` field, one per distinct value. Large cluster-center nodes, prominent at all zoom levels.
+- **Work nodes:** every source doc with `work_type: 'work'`. Primary layer — always rendered.
+- **Section nodes:** every H2 heading within a work. Always rendered; size and label visibility scale with zoom.
+- **Quote nodes:** small nodes attached by edge to their source work (and, if known, source section). Always rendered. At landing-page zoom they form a fine dust around each work; at closer zoom they resolve into individual citations.
+- **Collection nodes:** NOT a separate tier — collections become soft groupings via `related_docs`/`synthesizes`.
+
+**Rationale:** Five tiers mirrors how humans actually navigate knowledge (tradition → specific work → section of that work → quotable line). Three-tier (works only) is too flat; seven-tier (adding corpus + century) is too fine.
+
+**Density philosophy — the whole constellation, always visible.** The full graph (all ~3,000+ nodes) renders simultaneously as the landing-page experience — a gently animated starfield of the entire corpus, every tradition, work, section, and quote present at once. What zoom controls is not *presence* but *resolution*: node size, label visibility, edge opacity, and label culling. Far-out, the graph reads as constellations of light; zoomed in, individual stars (quotes, sections) become named and interactive. LOD is a visual-weight system, not a visibility gate.
+
+##### 3. Shakespeare and other monoliths: physical split into per-work files
+
+**Physical split, not vector-index-only.** Reasons, in order of importance:
+
+1. **Graph clarity.** Nodes = files. Every work gets its own node; every node has a file.
+2. **URL cleanliness.** `/knowledge/shakespeare/hamlet` beats `/knowledge/shakespeare/collected-works#hamlet`. Better for sharing, better for Cosmo citations (clickable deep links).
+3. **RAG precision.** Retrieval for "Hamlet's soliloquy" should rank Hamlet's chunks highest. With per-work files, Upstash Vector's `source` metadata does this natively.
+4. **Frontmatter per work.** Each play has distinct `tradition` nuance (history vs tragedy vs comedy) and `related_docs`.
+5. **Authoring ergonomics.** Editing a 5.3MB file is painful; editing `hamlet.md` (~200KB) is fine.
+
+**Collections survive as slim index files** with frontmatter only: `literature-the-complete-works-of-william-shakespeare.md` becomes ~30 lines of frontmatter + `related_docs` listing the 38 per-play files.
+
+**Targets for splitting (priority order):**
+- `literature-the-complete-works-of-william-shakespeare.md` — 38 plays + 1 sonnets file (the 154 sonnets become H2 sections within one `shakespeare-sonnets.md`).
+- `literature-leaves-of-grass.md` (Whitman) — H2-per-poem, keep as one file.
+- `literature-the-forerunner.md` (Gibran) — H2-per-parable, keep as one file.
+- `literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md` — two distinct works → two files.
+- `philosophy-walden-and-on-the-duty-of-civil-disobedience.md` — two distinct works → split (extract Walden; deprecate combined file, keep standalone civil-disobedience).
+- `philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md` (757 KB) — keep as one file; ensure H2 chapters are clean.
+
+**Rule of thumb:** if a file contains ≥ 2 works that a reader would cite separately, split them.
+
+##### 4. Quote substrate: YAML files in `knowledge/quotes/`
+
+~1,800 quotes incoming. A quote has fundamentally different shape from a work (fragment, not whole):
+
+- **Format:** YAML, not Markdown. Quotes are structured (author, source, theme, text), not narrative.
+- **File organization:** `knowledge/quotes/{author-or-source-slug}.yaml`. E.g. `quotes/shakespeare.yaml`, `quotes/rumi.yaml`, `quotes/proverbs.yaml`.
+- **Why not one-big-quotes.yaml:** future editing (add/remove per author), meaningful diffs, parallel attribution to source works.
+- **Why not per-quote .md files:** 1,800 files is noise; quotes don't need TOC or pages. They're graph citizens, not library items.
+
+Example `knowledge/quotes/shakespeare.yaml`:
+```yaml
+attribution_default:
+  author: William Shakespeare
+  tradition: literature
+  era: early-modern
+quotes:
+  - id: hamlet-act3-to-be-or-not-to-be
+    source_work: sources/literature/shakespeare-hamlet.md
+    source_section: "Act III, Scene I"
+    text: "To be, or not to be, that is the question…"
+    themes: [existence, mortality, doubt]
+```
+
+**Embed pipeline additions:**
+- New file-type handler in `scripts/knowledge/embed-knowledge.ts`: YAML files produce one chunk per quote (not per heading).
+- Chunk metadata: `chunk_type: 'quote'`, `source_work`, `source_section`, `themes`, `attribution`.
+- Chunk ID format: `knowledge/quotes/shakespeare.yaml#hamlet-act3-to-be-or-not-to-be`.
+
+##### 5. Frontmatter schema additions
+
+Extend `Frontmatter` in [scripts/knowledge/shared.ts](../scripts/knowledge/shared.ts) and [apps/web/lib/knowledge.ts](../apps/web/lib/knowledge.ts):
+
+```typescript
+type Frontmatter = {
+  // ...existing fields...
+  work_type: 'work' | 'collection' | 'reference' | 'wiki'   // NEW, required
+  parent_work?: string                                       // NEW, optional
+}
+
+type QuoteRecord = {                   // NEW — for knowledge/quotes/*.yaml
+  id: string
+  source_work?: string
+  source_section?: string
+  text: string
+  themes?: string[]
+  author?: string
+  tradition?: string
+  era?: string
+}
+```
+
+`work_type` required on every new/cleaned source doc. Backfill: walk `knowledge/sources/` → `work`, `knowledge/collections/` → `collection`, `knowledge/references/` → `reference`, `knowledge/wiki/` → `wiki`. Human review where ambiguous.
+
+##### 6. Cosmo-in-Knowledge-sidebar (deferred to Phase 9, deliberate)
+
+Cosmo embedded in the Knowledge route's left sidebar, with duplicate Dialog/Knowledge/Studio nav items removed. Requires:
+- Extract `CosmoChatPanel` from `CosmoChat.tsx`; lift state into `useCosmoSession()`.
+- Add `sidebarContent` slot prop to `AppShell`.
+- Mobile fallback (< 1024px): floating action button with bottom sheet.
+- Grounding: reads `sessionStorage['cosmo_context']` — automatic integration with `current_section` / `current_passage`.
+
+Best done after Phase 5 lands so the constellation-aware experience is present when the sidebar ships.
+
+#### Phased implementation
+
+##### Phase 0 — Verify + commit quick wins (today, 15 min)
+
+Already implemented in this session; pending localhost verification:
+
+- [ ] `pnpm dev` → verify:
+  - Knowledge docs render; TOC active-section tracking works.
+  - Dialog sidebar infinity is green + `text-sm` (matches Knowledge).
+  - First page load shows black, not white flash.
+  - Scroll through a knowledge doc, then open `/dialog` and ask a question — Cosmo's response references the passage.
+- [ ] Commit: `fix(knowledge): standardize body H1, enrich Cosmo context, paint-safe layout`
+
+##### Phase 1 — Standardize the standardization skill (1–2 hours)
+
+**Files:**
+- [.claude/skills/standardize-knowledge/SKILL.md](../.claude/skills/standardize-knowledge/SKILL.md)
+
+**Changes:**
+
+1. **Add Step 0.5 — frontmatter enrichment check.** Verify `work_type`; infer from path if missing. Flag ambiguous cases for manual review.
+2. **Add Step 2b — strip H1-in-body.** Any `^# ` line before the first `^## ` is an H1-in-body and is deleted along with the trailing blank line. Frontmatter `title` is authoritative.
+3. **Extend Step 1 grep** to include `knowledge/references/`.
+4. **Rewrite Shakespeare special case (Step 2)** to reference a new auxiliary skill `/split-collection`: "If this is a multi-work file, invoke `/split-collection` first, then re-run."
+5. **Add Step 5b — required-field verification.** Fail the file if after cleanup `work_type` is unset or `title` is missing.
+6. **Step 6 footer — list required env vars** for `pnpm embed` to prevent silent re-index failure.
+
+**Strip the remaining 22 H1-in-body files** as the first corpus-wide application of the patched skill.
+
+##### Phase 2 — Split monoliths (1 day)
+
+**New skill:** `.claude/skills/split-collection/SKILL.md` — splits a multi-work file into per-work files + slim collection index.
+
+**Procedure (Shakespeare):**
+
+1. Parse the 5.3MB file by H2 headings. Each matching H2 is a work boundary.
+2. Map heading title → slug (`Hamlet, Prince of Denmark` → `hamlet`; `Henry IV, Part 1` → `henry-iv-part-1`).
+3. For each work, create `knowledge/sources/shakespeare/{slug}.md`:
+   - Frontmatter: copy from collection file, override `title`, set `work_type: 'work'`, `parent_work: sources/literature-the-complete-works-of-william-shakespeare.md`, infer `format` from heading pattern.
+   - Body: from the H2 to the next H2, downshifted one level.
+4. Sonnets: 154 sonnets become H2 sections within `knowledge/sources/shakespeare/sonnets.md`.
+5. Rewrite original collection file as slim pointer:
+   ```yaml
+   ---
+   title: "The Complete Works of William Shakespeare"
+   role: collection
+   work_type: collection
+   author: William Shakespeare
+   related_docs:
+     - sources/shakespeare/hamlet.md
+     # ... 37 more ...
+   ---
+   ```
+6. Run patched `/standardize-knowledge` on every new per-work file.
+
+Apply to: Shakespeare, Whitman (H2-per-poem, no split), Gibran Forerunner (H2-per-parable, no split), Khayyám+Salámán (two-file split), Walden+Civil Disobedience (extract Walden, deprecate combined).
+
+##### Phase 3 — Quote infrastructure (1–2 days)
+
+**Files:**
+- New: `knowledge/quotes/README.md`, `knowledge/quotes/{author}.yaml` × many.
+- Modify: [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — add YAML handler, `chunk_type: 'quote'` branch.
+- Modify: [scripts/knowledge/shared.ts](../scripts/knowledge/shared.ts) — add `QuoteRecord` type + parse helper.
+
+**Changes:**
+
+- Detect `.yaml` / `.yml` files in `knowledge/quotes/`. Parse with `js-yaml`.
+- For each quote, emit chunk with `id: knowledge/quotes/{file}.yaml#{quote.id}`, `metadata.chunk_type: 'quote'`, text (≤2000 chars), `source_work`, `source_section`, `themes`, `attribution`, inherited `domain`.
+- Quotes use no overlap (atomic chunks).
+
+**RAG integration:**
+- [apps/web/lib/rag.ts](../apps/web/lib/rag.ts) — quote-specific formatting: `> "text" — Attribution, Source`.
+- Cosmo quote citation token: `[quote: path/to/file.yaml#quote-id]` (distinct from work `[ref: ...]`).
+
+##### Phase 4 — Re-embed and generate initial graph (30 min)
+
+```bash
+pnpm embed
+pnpm graph
+curl localhost:3000/api/knowledge/graph
+```
+
+##### Phase 5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo)
+
+**Repo:** `/Users/shalomormsby/Developer/opencosmos-ui`
+**New package:** `packages/constellation/`
+
+```
+packages/constellation/
+├── src/
+│   ├── KnowledgeGraph.tsx          # main component
+│   ├── useGraphInstance.ts         # instance + lifecycle hook
+│   ├── labels/
+│   │   ├── LabelLayer.tsx
+│   │   └── useNodeSampling.ts      # wraps getSampledNodePositionsMap
+│   ├── lod/
+│   │   ├── useLevelOfDetail.ts     # zoom → visual-weight (size, label, opacity)
+│   │   └── defaults.ts             # all tiers always visible
+│   ├── motion/
+│   │   ├── useAmbientDrift.ts      # gentle idle motion
+│   │   └── useZoomTo.ts            # programmatic zoom-to-node
+│   ├── data/
+│   │   ├── toFloat32.ts            # nodes/links → typed arrays
+│   │   └── types.ts
+│   ├── theme/palettes.ts
+│   └── index.ts
+├── package.json                    # peerDep: react ^18, @cosmos.gl/graph ^3
+└── README.md
+```
+
+**Public API:**
+```tsx
+import { KnowledgeGraph } from '@opencosmos/constellation'
+
+<KnowledgeGraph
+  nodes={nodes}          // GraphNode[] — ALL nodes, always rendered
+  links={links}
+  nodeColorBy="domain"
+  nodeSizeBy="degree"
+  clusterBy="tradition"
+  // LOD controls visual WEIGHT, not visibility.
+  lodRules={[
+    { minZoom: 0,   sizeScale: n => n.tier === 'tradition' ? 1.0 : n.tier === 'work' ? 0.6 : n.tier === 'section' ? 0.25 : 0.12, showLabel: n => n.tier === 'tradition' },
+    { minZoom: 1.5, sizeScale: n => n.tier === 'quote' ? 0.35 : 1.0,                                                              showLabel: n => n.tier !== 'quote' },
+    { minZoom: 3,   sizeScale: () => 1.0,                                                                                          showLabel: () => true },
+  ]}
+  ambientMotion={{ enabled: true, amplitude: 0.5, speed: 0.08 }}
+  focus={focusNodeId}          // programmatic zoom-to; null = full-corpus view
+  focusRadius={2}              // highlight N-hop neighborhood
+  onNodeClick={(node) => { /* ... */ }}
+  highlightedNodeIds={[]}       // for Cosmo's visible reasoning trail
+  theme="dark"
+/>
+```
+
+**Implementation notes:**
+
+- `useGraphInstance` creates `new Graph(container, config)` on mount, cleans up on unmount.
+- `toFloat32` converts `{nodes, links}` to typed arrays while maintaining an `index → GraphNode` map for event callbacks.
+- Label layer is a single absolutely-positioned div; uses `getSampledNodePositionsMap()` + `trackNodePositionsByIds()`; position-syncs every frame via requestAnimationFrame.
+- **LOD = visual weight.** `useLevelOfDetail` listens to zoom and re-derives per-node `sizeScale`, label visibility, edge opacity. Every node stays on canvas — no visibility gates.
+- **Ambient motion.** `useAmbientDrift` applies very-low-amplitude, low-frequency perturbation when the user is idle. Stops on interaction. Respects `prefers-reduced-motion` — amplitude clamped to 0.
+- **Zoom-to-context.** `useZoomTo` exposes `graphRef.current?.zoomTo({ nodeId, paddingPx, durationMs })` — tweens the camera to frame target + N-hop neighborhood.
+- Theme: reads CSS variables `--color-domain-philosophy` etc. with sensible fallbacks.
+
+**Landing-page experience (OpenCosmos's canonical use):**
+
+1. Page mounts → full corpus renders at zoomed-out "starfield" view. Every node present; labels culled to tradition-tier. Ambient drift begins.
+2. After ~2–3 seconds of idle admiration, the camera gently tweens toward the user's specified context — last-read doc (from `sessionStorage['cosmo_context']`), a `?focus=` param, or a default "today's invitation" node.
+3. On arrival, labels for nearby sections/quotes fade in; ambient drift continues at lower amplitude near the focused subgraph.
+4. Interaction (scroll / drag / click) ends the intro animation immediately.
+
+This "gentle starfield that zooms into your corner" feel is also the pattern any community consumer can adopt.
+
+**Docs in OpenCosmos Studio:**
+- `/docs/constellation/getting-started`
+- Live CodeSandbox embed
+- "Bring your own corpus" recipe
+
+**Publish:** `@opencosmos/constellation@0.1.0` to npm.
+
+##### Phase 6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days)
+
+**Files:**
+- Modify: [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts) — emit hierarchical node set (tradition + work + section + quote) with `tier` field.
+- Modify: [apps/web/app/knowledge/graph/GraphPageClient.tsx](../apps/web/app/knowledge/graph/GraphPageClient.tsx) — replace sigma.js with `<KnowledgeGraph>` from `@opencosmos/constellation`. Wire landing-page intro: read `sessionStorage['cosmo_context']`, honor `?focus=`, fall back to "today's invitation". Pass `ambientMotion={{ enabled: true }}`, `focus={resolvedFocusId}`. Entire corpus always rendered.
+- Delete (opencosmos-ui historical location): `packages/ui/src/components/data-display/knowledge-graph/` (retire sigma.js).
+- Modify: [apps/web/app/api/knowledge/graph/route.ts](../apps/web/app/api/knowledge/graph/route.ts) — JSON shape stays similar. **Performance note:** verify payload ≤ ~2MB gzipped with full corpus (~3k nodes + 10k edges). If larger, stream or paginate quotes behind a second fetch that hydrates after first paint.
+
+**New graph generator output:**
+```json
+{
+  "nodes": [
+    {"id":"tradition/platonic","tier":"tradition","label":"Platonic","tradition":"platonic","domain":"philosophy"},
+    {"id":"sources/philosophy-apology.md","tier":"work","label":"Apology","tradition":"platonic","author":"Plato"},
+    {"id":"sources/philosophy-apology.md#the-good","tier":"section","label":"The Good","parent":"sources/philosophy-apology.md"},
+    {"id":"knowledge/quotes/plato.yaml#apology-unexamined-life","tier":"quote","label":"Unexamined life","parent":"sources/philosophy-apology.md"}
+  ],
+  "links": [
+    {"source":"tradition/platonic","target":"sources/philosophy-apology.md","type":"hierarchy"},
+    {"source":"sources/philosophy-apology.md","target":"sources/philosophy-apology.md#the-good","type":"contains"},
+    {"source":"knowledge/quotes/plato.yaml#apology-unexamined-life","target":"sources/philosophy-apology.md","type":"cites"}
+  ]
+}
+```
+
+##### Phase 7 — Semantic edges (1 day)
+
+**File:** [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts)
+
+- After building hierarchical nodes, query Upstash Vector for all chunk embeddings (paginate).
+- For each node (work or section), find top-3 cosine-similarity neighbors across the corpus.
+- Emit edges `{source, target, type: 'semantic', weight: similarity_score}`.
+- Cache similarity matrix in Redis under `graph:semantic:v1:{corpus_hash}`.
+- In `@opencosmos/constellation`, `type: 'semantic'` edges render at 30% opacity and thinner; curated edges render at 100% opacity and thicker.
+
+##### Phase 8 — Cosmo citations + bidirectional links (2–3 days)
+
+**Files:**
+- [packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — citation format: "Cite sources as `[ref: path/to/file.md#section-slug]` for works or `[quote: path/to/file.yaml#quote-id]` for quotes. Inline within your sentence."
+- [apps/web/app/dialog/CosmoChat.tsx](../apps/web/app/dialog/CosmoChat.tsx) — post-process message text, replace citation tokens with clickable `<Link>` components that navigate to `/knowledge/{slug}` + emit `window.postMessage({type:'highlight-node', id:X})` for any open graph tab.
+- [apps/web/app/knowledge/[...slug]/TableOfContents.tsx](../apps/web/app/knowledge/[...slug]/TableOfContents.tsx) — add "See in graph →" link under the active section, linking to `/knowledge/graph?focus={slug}`.
+- [apps/web/app/knowledge/graph/GraphPageClient.tsx](../apps/web/app/knowledge/graph/GraphPageClient.tsx) — read `?focus=` query param, center graph + highlight 1-hop neighbors on mount.
+
+**Cosmo's "visible reasoning":** when Cosmo emits a citation mid-response, the passage viewer (if open) briefly pulses the active section; the graph (if open) pulses the cited node. User sees Cosmo's journey, not just its destination.
+
+##### Phase 9 — Cosmo-in-Knowledge-sidebar (2–3 days, done last)
+
+**Files:**
+- New: `apps/web/app/dialog/useCosmoSession.ts` — hook that owns messages/apiKey/tokens/PM state.
+- Modify: [apps/web/app/dialog/CosmoChat.tsx](../apps/web/app/dialog/CosmoChat.tsx) — extract `CosmoChatPanel`, wrap with `useCosmoSession()`.
+- Modify: [apps/web/app/AppShell.tsx](../apps/web/app/AppShell.tsx) — add `sidebarContent?: ReactNode` prop.
+- Modify: [apps/web/app/knowledge/[...slug]/page.tsx](../apps/web/app/knowledge/[...slug]/page.tsx) — pass `<CosmoChatPanel variant="sidebar" />` as `sidebarContent`.
+- Modify: [apps/web/app/knowledge/page.tsx](../apps/web/app/knowledge/page.tsx) — same for the library index.
+- Mobile: below `lg`, revert to current nav; floating action button planned for Phase 10.
+
+##### Phase 10 — Community contribution pathway
+
+Absorbed from the former Phase 1d §6. Opens a path for the community to add to the corpus — human-curated, not auto-accepted.
+
+- [ ] `apps/web/app/knowledge/contribute/page.tsx` — simple submission form (domain, title, body, source citation)
+- [ ] `apps/web/app/api/knowledge/contribute/route.ts` — creates a GitHub issue via `GITHUB_ISSUES_PAT`; labels `knowledge-contribution`; returns issue URL
+- [ ] Contribution UI also calls `detectTentativeEdges()` client-side, passing the pending node + tentative links into `<KnowledgeGraph pendingNodes>` for optimistic injection (dashed ring, `confidence: "pending"`). After merge + revalidation the canonical node replaces it.
+
+##### Phase 11 — Wiki lint + graph metadata unification
+
+Absorbed from the former Phase 1d §§5, 7.
+
+- [ ] Scheduled GitHub Action: detect orphaned pages, stale claims, missing entity pages, disconnected nodes. Output as a GitHub issue — human-reviewed, not auto-corrected.
+- [ ] `knowledge/graph/manifest.json` write step in `scripts/knowledge/generate-wiki-graph.ts` so the RAG layer can introspect the graph topology.
+- [ ] Extend `fetchRagContext()` to surface degree-1 graph neighbors as lower-priority context — cross-tradition connections become structural, not coincidental.
+- [ ] Stretch: retrieved nodes highlighted in real time in the constellation while Cosmo responds (see [knowledge-intelligence-layer.md § Stretch Goals](knowledge-intelligence-layer.md#stretch-goals)).
+
+#### Files touched
+
+**This session (already edited, pending commit):**
+- `knowledge/sources/philosophy-nature.md`, `philosophy-the-kingdom-of-god-is-within-you.md`, `philosophy-on-the-duty-of-civil-disobedience.md`, `knowledge/references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md` — H1 strips
+- `apps/web/app/dialog/CosmoChat.tsx` — TTL 5min → 30min; pass `current_passage`
+- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — capture current passage
+- `apps/web/app/knowledge/[...slug]/DocViewer.tsx` — `data-doc-content` wrapper
+- `apps/web/app/api/chat/route.ts` — extended `CurrentSection`, richer system block
+- `apps/web/app/layout.tsx` — inline `#000` + `color-scheme: dark`
+- `apps/web/components/TokenGauge.tsx` — compact+unlimited → green + `text-sm`
+
+**Phase 1:** `.claude/skills/standardize-knowledge/SKILL.md`, `scripts/knowledge/shared.ts` (+ `work_type`, `parent_work`), `apps/web/lib/knowledge.ts` (+ `work_type`, `parent_work`), 22 `knowledge/sources/*.md` (strip H1).
+
+**Phase 2:** New `.claude/skills/split-collection/SKILL.md`, Shakespeare split → `knowledge/sources/shakespeare/*.md`, other monoliths.
+
+**Phase 3:** New `knowledge/quotes/README.md` + `.yaml` data, `scripts/knowledge/embed-knowledge.ts`, `scripts/knowledge/shared.ts`, `apps/web/lib/rag.ts`.
+
+**Phase 5 (opencosmos-ui repo):** New `packages/constellation/*`.
+
+**Phases 6–9 (opencosmos repo):** `scripts/knowledge/generate-wiki-graph.ts`, `apps/web/app/knowledge/graph/GraphPageClient.tsx`, `packages/ai/COSMO_SYSTEM_PROMPT.md`, `apps/web/app/dialog/CosmoChat.tsx`, `apps/web/app/AppShell.tsx`, `apps/web/app/knowledge/[...slug]/*`.
+
+#### Existing utilities to reuse (do not re-invent)
+
+- **Heading chunker:** [scripts/knowledge/embed-knowledge.ts:82-157 `chunkAtHeadings()`](../scripts/knowledge/embed-knowledge.ts#L82-L157) — already handles H2/H3 + legacy CHAPTER. Extend for quotes.
+- **TOC extractor:** [apps/web/app/knowledge/[...slug]/page.tsx:16-24 `extractToc()`](../apps/web/app/knowledge/[...slug]/page.tsx#L16-L24) — uses `github-slugger`; slug IDs match `rehype-slug` output.
+- **Frontmatter parser:** `gray-matter` via [apps/web/lib/knowledge.ts](../apps/web/lib/knowledge.ts).
+- **Graph data cache:** Upstash Redis, gzipped JSON, ISR revalidate=3600 at [apps/web/app/api/knowledge/graph/route.ts](../apps/web/app/api/knowledge/graph/route.ts). Keep as-is.
+- **Vector retrieval:** [apps/web/lib/rag.ts](../apps/web/lib/rag.ts). Keep.
+- **Sidebar slot pattern:** [apps/web/app/AppShell.tsx](../apps/web/app/AppShell.tsx) already accepts `bottomItems` + `footer` — add `sidebarContent` in the same spirit.
+- **Cosmo context transmission:** `sessionStorage['cosmo_context']` + `current_section` payload — already end-to-end; the new `current_passage` field rides the same channel.
+
+#### Verification (end-to-end)
+
+**Phase 0 (today):**
+1. `pnpm dev` in `apps/web`.
+2. Open `localhost:3000/knowledge/sources/philosophy-nature` — page loads, no body H1 visible, TOC works.
+3. Scroll into middle of a section — active heading highlights in TOC.
+4. Open `/dialog` — sidebar infinity is green + matches Knowledge.
+5. Reload `/` — no white flash; page paints black.
+6. Ask Cosmo about the passage you scrolled through — response references the specific paragraph, not just chapter.
+
+**Phase 1–2:**
+1. `/standardize-knowledge all` runs cleanly: no H1-in-body remains, all docs have `work_type`.
+2. `git status` shows 22 modified files; diffs are purely H1 deletions.
+3. Shakespeare split produces ~38 per-play files; `pnpm build` passes.
+4. `curl localhost:3000/knowledge/sources/shakespeare/hamlet` → Hamlet renders.
+
+**Phase 3–4:**
+1. Add 5 test quotes to `knowledge/quotes/test.yaml`.
+2. `pnpm embed` succeeds; Upstash Vector shows new chunks with `chunk_type: 'quote'`.
+3. Ask Cosmo about a quote's theme — response retrieves + attributes correctly.
+
+**Phase 5:**
+1. `pnpm --filter @opencosmos/constellation test` passes.
+2. Storybook shows `<KnowledgeGraph>` rendering sample data.
+3. `pnpm --filter @opencosmos/constellation publish --dry-run` produces expected tarball.
+
+**Phase 6–7:**
+1. `pnpm graph` → Redis contains new hierarchical JSON.
+2. `/knowledge/graph` renders the **entire corpus at once** at landing zoom — traditions as bright anchors, works as mid-tier lights, sections and quotes as fine dust. No tier hidden.
+3. Ambient drift is visible: nodes breathe slightly.
+4. After ~2–3 seconds with no interaction, camera gently tweens toward the focus target.
+5. Any scroll/drag/click during intro immediately cancels the tween.
+6. Zooming in manually causes nearby labels to fade in; zooming out causes them to cull back to tradition-tier.
+7. `prefers-reduced-motion` disables ambient drift and replaces intro tween with instant jump.
+8. Hovering a node shows label; clicking navigates to the work.
+9. Semantic edges visible as thin translucent connectors; curated edges prominent.
+
+**Phase 8:**
+1. Ask Cosmo: "What does Tolstoy say about non-violence?" — response contains `[ref: ...]` tokens rendered as clickable links.
+2. Click citation → navigates to doc + scrolls to section.
+3. From TOC, click "See in graph" → graph centers on node, 1-hop neighbors highlighted.
+
+**Phase 9:**
+1. `/knowledge/sources/philosophy-apology` loads with Cosmo chat panel in left sidebar.
+2. Duplicate Dialog/Knowledge/Studio nav links are gone.
+3. Question in panel grounds in currently-open document.
+4. On mobile (< 1024px), sidebar chat reverts to nav; floating action button (Phase 10) TBD.
+
+#### Timeline
+
+- Phase 0: today (15 min).
+- Phase 1: 1 half-day.
+- Phase 2: 1 day.
+- Phase 3: 1–2 days.
+- Phase 4: 30 minutes.
+- Phase 5: 3–5 days (cross-repo; longest).
+- Phase 6: 1 day.
+- Phase 7: 1 day.
+- Phase 8: 2–3 days.
+- Phase 9: 2–3 days.
+
+**Total:** ~3 weeks focused work. Phases parallelizable where independent (quotes/split; constellation/corpus).
+
+#### Open questions
+
+1. **Tradition palette.** 12-color palette from `@opencosmos/tokens`, mapped alphabetically by default, frontmatter override. Can land with defaults and tune later.
+2. **Constellation name.** `@opencosmos/constellation` fits the brand. Alternatives: `@opencosmos/atlas`, `@opencosmos/starfield`. Not plan-blocking.
+3. **Community resource scope.** Minimal v0.1.0 README; invest in docs when API is proven by real OpenCosmos use.
+4. **Walden extraction.** Confirm: extract Walden into own file, deprecate combined file, civil-disobedience stays standalone.
+5. **Quote ingestion format.** User has 1,800 quotes — current format? (CSV? Notes? Doc?) Sample unblocks YAML schema.
+
+---
+
+### Phase 3: Conversation Polish
+
+- [ ] Per-session conversation history (client-side)
+- [ ] Mobile-responsive conversation interface
+- [ ] Error states and graceful degradation (invalid API key, rate limit hit, API down)
+- [ ] Accessibility: screen reader support, keyboard navigation, focus management
+- [ ] Voice interaction: provider TBD — see [projects/cosmo-voice-research.md](projects/cosmo-voice-research.md). Complete listening test (ElevenLabs Flash vs. Cartesia Sonic 3 vs. Google WaveNet) before building.
+
+### Phase 4: Cosmo as PM
+
+- [ ] Publish this PM doc and architecture.md to the knowledge corpus as reference documents
+- [ ] Cosmo can answer "What phase are we in?" grounded in corpus — natural consequence of Phase 1 (RAG pipeline already live)
+
+### Phase 5: @opencosmos/ai Package Foundation
+
+Extract Cosmo patterns into a reusable, model-agnostic developer package.
+
+- [ ] Resolve workspace config: add `packages/*` to `pnpm-workspace.yaml`
+- [ ] Initialize `packages/ai` (TypeScript, tsup build config, exports)
+- [ ] Extract constitutional layer from `apps/web` into the package
+- [ ] `createCosmoClient(config)` factory — model-agnostic (Claude, Ollama, any OpenAI-compatible API)
+- [ ] Constitutional prompt templates as composable modules
+- [ ] RAG retrieval as pluggable strategy (Upstash, local, custom)
+- [ ] `cosmo.offer(prompt)` and `cosmo.triad(prompt)` API surface
+- [ ] Kaizen exemplars as few-shot example injection
+- [ ] Unit tests + constitutional snapshot tests
+- [ ] Knowledge Publication Tooling: extract CLI as reusable pattern, publish frontmatter schema as spec
+
+**Gate:** `npm install @opencosmos/ai`, configure with any supported LLM provider, get constitutional AI responses. Working example in README.
+
+### Phase 6: Federated Cosmo Schema (Design Phase)
+
+- [ ] Design the schema for a federated wisdom-grounded AI network
+- [ ] Answer: What would a "Buddhist Cosmo" or "Stoic Cosmo" need from the framework?
+- [ ] Define how different corpus instances interoperate
+- [ ] Governance model: who curates, quality standards, community maintenance
+- [ ] Output: a written specification, not code
+
+### Phase 7: Cosmo-Powered CP Programs
+
+- [ ] Cosmo integrated into structured CP programs and cohorts
+- [ ] Guided inquiry sessions using the sacred rhythm (attune → inquire → offer)
+- [ ] Practice templates: daily contemplation, creative inquiry, philosophical dialogue
+- [ ] Living Memory protocol: community wisdom feeds back into corpus (with curation gates)
+- [ ] Hearth tier members receive full CP membership (infrastructure in Phase 1b, CP integration here — note: Hearth is superseded; see [Phase 1b](#phase-1b-subscriptions--infrastructure-preserved-ui-superseded) for brand architecture pivot)
+
+---
+
+## Completed Work
+
+## Environment Setup — Done ✅
+
+All set up in `.env.local` / Vercel / GitHub Secrets:
+
+- ✅ **`REVALIDATE_SECRET`** — Add to `apps/web/.env.local`, Vercel (opencosmos.ai), and GitHub Actions secrets. Used by `POST /api/revalidate` to authorize on-demand ISR revalidation after knowledge graph sync.
+- ✅ **`NEXT_PUBLIC_APP_URL=https://opencosmos.ai`** — Add to GitHub Actions secrets (used by `knowledge-sync.yml` to POST revalidation after graph update).
+- ✅ Cloudflare Turnstile keys — added (`NEXT_PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY`)
+- ✅ Anthropic spend limit — confirmed active on `opencosmos-main` (Fix 5)
+
+---
+
+
+## Blocked or Deprecated Projects 
+This plans in this section are provided for reference, as examples of plans that did not work and ideas and strategies to not repeat. 
+
+### Phase 1c+ (Deprecated): Knowledge Graph — `opencosmos.ai/knowledge/graph` [P1]
 
 **Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/knowledge/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
 
@@ -862,7 +1489,7 @@ This gives screen reader users full traversal parity: they walk the graph from n
 - [x] Generator computes `vibrancy`: recencyScore + referenceBonus + log-normalized connectivityBonus; foundational floor at 0.75
 - [x] `pnpm graph` added to root `package.json`
 - [x] `/api/revalidate` route built — validates `x-revalidate-secret` header, calls `revalidatePath`
-- [ ] Add `REVALIDATE_SECRET` to `apps/web/.env.local` + Vercel (opencosmos.ai deployment) + GitHub Actions secrets. Also add `NEXT_PUBLIC_APP_URL=https://opencosmos.ai` to GitHub Actions secrets.
+- [ ] Add `REVALIDATE_SECRET` + `NEXT_PUBLIC_APP_URL` to env — see [Environment Setup](#environment-setup--pending) above
 - [x] `.github/workflows/knowledge-sync.yml` created: triggers on `knowledge/**` push to main, `cancel-in-progress: true`, runs `pnpm graph` + POSTs to `/api/revalidate`
 
 *Design system component (opencosmos-ui repo):*
@@ -952,114 +1579,7 @@ The component and the generator have zero dependency on each other. Consumers of
 - `<KnowledgeGraph />` component → **opencosmos-ui** (published as `@opencosmos/ui/knowledge-graph`)
 - The component is open-source and reusable by any graph-structured knowledge product
 
----
 
-### Phase 1d: Knowledge Intelligence Layer
-
-> Full design spec: **[docs/knowledge-intelligence-layer.md](knowledge-intelligence-layer.md)**
-
-Inspired by Karpathy's LLM Wiki pattern and extended to serve Cosmo's deepest purpose: a companion who navigates interconnected wisdom with the user. The graph is the visual representation of the knowledge base. The RAG layer is its retrieval infrastructure. The sidebar companion is Cosmo present in the reading experience.
-
-**Success criterion:** A person reads the Tao Te Ching on `/knowledge`. Opens the sidebar. Asks a question. Cosmo responds from the text, draws a connection to Emerson's Over-Soul and the Quaker Inner Light that the person hadn't considered, and offers a question that opens something new. The person feels accompanied, not processed.
-
-**Prerequisite (user action):**
-- [x] Create Upstash Vector index at console.upstash.com [Done]
-- [x] Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to `apps/web/.env.local` + Vercel
-- [x] `pnpm add @upstash/vector --filter web`
-
-**Phase 0 — Fix graph WebGL rendering** (`opencosmos-ui` repo):
-- [ ] Diagnose: swap `GlowNodeProgram` → `NodePointProgram` to isolate root cause
-- [ ] Fix: add null guard to `GlowNodeProgram.render()` before `gl.blendFunc` call
-- [ ] Publish `@opencosmos/ui@1.4.3` (with fix) and update lockfile in `apps/web`
-
-**Phase 1 — Embedding pipeline:**
-- [x] `scripts/knowledge/embed-knowledge.ts` — chunk at H2 boundaries, preserve frontmatter metadata, deterministic chunk IDs for idempotency
-- [x] Extend `.github/workflows/knowledge-sync.yml` to run embed step after graph generation
-- [x] Upsert to Upstash Vector (`@upstash/vector`, Upstash handles embedding generation)
-- [x] **User action:** Add `UPSTASH_VECTOR_REST_URL` + `UPSTASH_VECTOR_REST_TOKEN` to GitHub repo secrets (Settings → Secrets → Actions)
-- [x] Run `pnpm embed` locally to seed the index — 893 chunks upserted
-
-**Phase 2 — RAG API endpoint:**
-- [x] `apps/web/app/api/knowledge/route.ts` — accepts `{query, conversation_history, current_document?}`
-- [x] `apps/web/lib/rag.ts` — `fetchRagContext()` helper; builds contextual query from last 3 exchange pairs; fail-open
-- [x] Return chunks with full metadata (source, author, tradition, heading) for honest citation
-
-**Phase 3 — Wire RAG into Cosmo chat:**
-- [x] Modify `apps/web/app/api/chat/route.ts` — non-blocking RAG call with 1.5s timeout fallback
-- [x] Inject retrieved passages between wiki index and conversation history in context window
-- [x] Format citations clearly: `**[Title]** (author, tradition)`
-
-**Phase 4 — Sidebar companion:**
-- [ ] `CosmoChatSidebar.tsx` — collapsible right-side panel on `/knowledge/[...slug]` pages
-- [ ] `useSectionInView.ts` — IntersectionObserver tracks current H2 section
-- [ ] `apps/web/app/api/knowledge/chat/route.ts` — document-aware system addendum
-- [ ] Conversation continuity in `sessionStorage` across document navigation
-- [ ] Free tier token budget applies (no auth required)
-
-**Phase 5 — Graph + RAG metadata unification:**
-- [ ] Add `knowledge/graph/manifest.json` write step to `generate-wiki-graph.ts`
-- [ ] Extend `fetchRagContext()` to surface degree-1 graph neighbors as lower-priority context
-- [ ] Cross-tradition connections become structural, not coincidental
-
-**Phase 6 — Community contribution pathway:**
-- [ ] `apps/web/app/knowledge/contribute/page.tsx` — simple submission form
-- [ ] `apps/web/app/api/knowledge/contribute/route.ts` — creates GitHub issue via `GITHUB_ISSUES_PAT`
-
-**Phase 7 — Wiki lint operation:**
-- [ ] Scheduled GitHub Action: orphaned pages, stale claims, missing entity pages, disconnected nodes
-- [ ] Output as GitHub issue — human-reviewed, not auto-corrected
-
-**Stretch goals** (see [knowledge-intelligence-layer.md § Stretch Goals](knowledge-intelligence-layer.md#stretch-goals)):
-- Graph lights up alongside Cosmo conversation (retrieved nodes highlighted in real time)
-- Project brain: custom knowledge graph for personal project management
-
----
-
-### Phase 1e: Conversation Polish
-
-- [ ] Per-session conversation history (client-side)
-- [ ] Mobile-responsive conversation interface
-- [ ] Error states and graceful degradation (invalid API key, rate limit hit, API down)
-- [ ] Accessibility: screen reader support, keyboard navigation, focus management
-- [ ] Voice interaction: provider TBD — see [projects/cosmo-voice-research.md](projects/cosmo-voice-research.md). Complete listening test (ElevenLabs Flash vs. Cartesia Sonic 3 vs. Google WaveNet) before building.
-
-### Phase 1f: Cosmo as PM
-
-- [ ] Publish this PM doc and architecture.md to the knowledge corpus as reference documents
-- [ ] Cosmo can answer "What phase are we in?" grounded in corpus — natural consequence of Phase 1c
-
-### Phase 2: @opencosmos/ai Package Foundation
-
-Extract Cosmo patterns into a reusable, model-agnostic developer package.
-
-- [ ] Resolve workspace config: add `packages/*` to `pnpm-workspace.yaml`
-- [ ] Initialize `packages/ai` (TypeScript, tsup build config, exports)
-- [ ] Extract constitutional layer from `apps/web` into the package
-- [ ] `createCosmoClient(config)` factory — model-agnostic (Claude, Ollama, any OpenAI-compatible API)
-- [ ] Constitutional prompt templates as composable modules
-- [ ] RAG retrieval as pluggable strategy (Upstash, local, custom)
-- [ ] `cosmo.offer(prompt)` and `cosmo.triad(prompt)` API surface
-- [ ] Kaizen exemplars as few-shot example injection
-- [ ] Unit tests + constitutional snapshot tests
-- [ ] Knowledge Publication Tooling: extract CLI as reusable pattern, publish frontmatter schema as spec
-
-**Gate:** `npm install @opencosmos/ai`, configure with any supported LLM provider, get constitutional AI responses. Working example in README.
-
-### Phase 2: Federated Cosmo Schema (Design Phase)
-
-- [ ] Design the schema for a federated wisdom-grounded AI network
-- [ ] Answer: What would a "Buddhist Cosmo" or "Stoic Cosmo" need from the framework?
-- [ ] Define how different corpus instances interoperate
-- [ ] Governance model: who curates, quality standards, community maintenance
-- [ ] Output: a written specification, not code
-
-### Phase 3: Cosmo-Powered CP Programs
-
-- [ ] Cosmo integrated into structured CP programs and cohorts
-- [ ] Guided inquiry sessions using the sacred rhythm (attune → inquire → offer)
-- [ ] Practice templates: daily contemplation, creative inquiry, philosophical dialogue
-- [ ] Living Memory protocol: community wisdom feeds back into corpus (with curation gates)
-- [ ] Hearth tier members receive full CP membership (infrastructure in Phase 1b, CP integration here)
 
 ### Site Architecture: opencosmos.ai
 
@@ -1069,7 +1589,7 @@ opencosmos.ai/
 ├── /chat          → Conversation with Cosmo
 ├── /knowledge     → Knowledge corpus browser (live ✅)
 ├── /studio        → Design system docs (proxied from opencosmos-ui via Vercel rewrites)
-└── /community     → Creative Powerup (redirect for now; deep integration Phase 3)
+└── /community     → Creative Powerup (redirect for now; deep integration Phase 7)
 ```
 
 Key: `/studio` maps via Vercel rewrites to the `opencosmos-ui` repo's deployed docs site — unified domain, independent codebases.
@@ -1086,7 +1606,7 @@ Design system published to npm as `@opencosmos/ui`. Maintained in the [opencosmo
 
 ## @opencosmos/ai — `packages/ai`
 
-Sovereign AI layer — WIP. Phase 2a tasks tracked under [Cosmo § Phase 2](#phase-2-opencosmoai-package-foundation) above.
+Sovereign AI layer — WIP. Tasks tracked under [Cosmo § Phase 5](#phase-5-opencosmosai-package-foundation) above.
 
 License: RAIL (not MIT).
 
@@ -1105,12 +1625,11 @@ Production at [shalomormsby.com](https://www.shalomormsby.com/).
 
 ## Creative Powerup — `apps/creative-powerup`
 
-Community platform. In development at ecosystem-creative-powerup.vercel.app.
+Community platform. In development at ecosystem-creative-powerup.vercel.app. This is where paid Cosmo access lives (no API key required for members). See [strategy.md § Brand Architecture](strategy.md) for the OpenCosmos / CP split.
 
 **Open tasks:**
-- [ ] Cosmo integration for structured CP programs (Phase 3)
-- [ ] Hearth tier subscription → automatic CP membership (linked from Cosmo Phase 1b)
-- [ ] Existing CP members: migration path to Hearth tier
+- [ ] CP member token access on OpenCosmos — see [Phase 2](#phase-2-cp-member-token-access--top-up) above; requires Circle webhook or equivalent membership verification
+- [ ] Cosmo integration for structured CP programs (Phase 7)
 
 ---
 
@@ -1135,6 +1654,15 @@ AI-powered investment intelligence. In development. No active sprint items.
 
 ## Done
 
+### Brand Architecture Pivot (2026-04-16) — PRs #112–#113
+
+- ✅ Strategic decision: OpenCosmos stays purely open (BYOK + free quota + corpus); all paid Cosmo access moves to Creative Powerup memberships. Full rationale in [strategy.md § Brand Architecture](strategy.md).
+- ✅ Account page: removed all subscription UI (tier cards, active subscription card, portal/upgrade links) for all user states
+- ✅ Account page: BYOK-connected state shows clean green indicator + masked key + unlimited TokenGauge; no form
+- ✅ Account page: free visitor state shows 20K quota meter + CP community invitation tile (links to creativepowerup.com)
+- ✅ Sidebar: BYOK users see ∞ immediately (localStorage-first check; no longer depends on server `hasByok` timing)
+- ✅ CosmoChat: removed "or subscribe" link from `isLimited` exhaustion message
+
 ### Phase 1b — Subscription Infrastructure (PRs #85–#91)
 
 - ✅ Stripe billing — Spark/Flame/Hearth tiers, checkout, webhook, portal, tier config with token budgets
@@ -1142,7 +1670,7 @@ AI-powered investment intelligence. In development. No active sprint items.
 - ✅ Usage tracking — microdollar counters in Redis (`input × 3 + output × 15 µ$/token`), weekly + monthly sub-limits
 - ✅ TokenGauge UI — Sidebar (∞ for BYOK, gauge for subscribers/free), Account page (exact tokens remaining)
 - ✅ Subscription benefit provisioning — Substack (free newsletter via public endpoint) + Circle (member API)
-- ✅ Account page — subscription display reordered, tier cards with token allotments (152k/313k/637k), features list
+- ✅ Account page — subscription display, tier cards, BYOK detection *(UI superseded by brand architecture pivot; infrastructure preserved)*
 - ✅ BYOK cross-device detection — `hasByok` flag set via `POST /api/byok` on key save and dialog auth (PR #90)
 - ✅ Security: input size limits (Fix 1), session hardening (Fix 2), token-based monthly cap (Fix 3), structured logging (Fix 4)
 - ✅ Fix 5: Anthropic Console spend limit — external action, verified

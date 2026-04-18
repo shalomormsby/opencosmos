@@ -35,26 +35,7 @@ related_docs:
   - sources/indigenous-the-fairy-faith-in-celtic-countries.md
   - sources/cross-the-prophet.md
 ---
-Title: George Fox: An Autobiography
-
-Author: George Fox
-
-Editor: Rufus M. Jones
-
-Release date: June 24, 2013 [eBook #43031] Most recently updated: October 23, 2024
-
-Language: English
-
-Other information and formats: www.gutenberg.org/ebooks/43031
-
-Credits: Produced by sp1nd, Julia Neufeld and the Online Distributed Proofreading Team at http://www.pgdp.net (This file was produced from images generously made available by The Internet Archive)
-
-*** START OF THE PROJECT GUTENBERG EBOOK GEORGE FOX: AN AUTOBIOGRAPHY ***
-titlepage GEORGE FOX AN AUTOBIOGRAPHY
-
 GEORGE FOX GEORGE FOX FROM A PAINTING BY S. CHINN
-
-GEORGE FOX An Autobiography
 
 EDITED WITH AN INTRODUCTION AND NOTES BY RUFUS M. JONES, M.A., Litt. D. PROFESSOR OF PHILOSOPHY IN HAVERFORD COLLEGE
 
@@ -786,7 +767,7 @@ The Lord had said unto me that if but one man or woman were raised by His power 
 
 [150]
 
-## CHAPTER VI A New Era Begins
+## CHAPTER VI. A New Era Begins
 
 1652. As we travelled we came near a very great hill, called Pendle Hill, and I was moved of the Lord to go up to the top of it; which I did with difficulty, it was so very steep and high. When I was come to the top, I saw the sea bordering upon Lancashire. From the top of this hill the Lord let me see in what places he had a great people to be gathered. As I went down, I found a spring of water in the side of the hill, with which I refreshed myself, having eaten or drunk but little for several days before.[50]
 
@@ -1526,7 +1507,7 @@ We understood afterwards that he left the business to Colonel Bennet, who had th
 
 [269]
 
-## CHAPTER X. Panting the Seed in Wales
+## CHAPTER X. Planting the Seed in Wales
 
 1656-1657. Being released from our imprisonment, we got horses, rode towards Humphrey Lower's, and met him upon the road. He told us he was much troubled in his mind concerning us, and could not rest at home, but was going to Colonel Bennet to seek our liberty. When we told him we were set at liberty, and were going to his house, he was exceeding glad. To his house we went, and had a fine, precious meeting; many were convinced, and turned by the Spirit of the Lord to the Lord Jesus Christ's teaching.
 
