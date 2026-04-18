@@ -2,7 +2,7 @@
 title: Gleanings from George Fox
 role: collection
 format: anthology
-domain: indigenous
+domain: philosophy
 tags:
   - quaker-mysticism
   - religious-individualism
@@ -26,7 +26,7 @@ source: public-domain
 author: George Fox
 origin_date: 17th century
 era: early-modern
-tradition: quaker
+tradition: quakerism
 related_docs:
   - sources/cross-the-prophet.md
   - sources/literature-demian-the-story-of-emil-sinclair-s-youth.md

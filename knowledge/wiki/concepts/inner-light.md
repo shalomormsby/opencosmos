@@ -5,9 +5,9 @@ domain: cross
 confidence: speculative
 status: active
 synthesizes:
-  - sources/indigenous-george-fox-an-autobiography.md
-  - sources/indigenous-the-journal-of-george-fox.md
-  - collections/indigenous-gleanings-from-george-fox.md
+  - sources/philosophy-george-fox-an-autobiography.md
+  - sources/philosophy-the-journal-of-george-fox.md
+  - collections/philosophy-gleanings-from-george-fox.md
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
   - sources/philosophy-nature.md
 last_reviewed: 2026-04-11

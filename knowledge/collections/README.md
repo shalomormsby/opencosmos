@@ -35,7 +35,7 @@ These collections are referenced from within each voice's system prompt and are 
 
 | Collection | What it is |
 |------------|------------|
-| [indigenous-gleanings-from-george-fox.md](indigenous-gleanings-from-george-fox.md) | Curated selections from George Fox's journals — a thematic reading path through his spiritual insights |
+| [philosophy-gleanings-from-george-fox.md](philosophy-gleanings-from-george-fox.md) | Curated selections from George Fox's journals — a thematic reading path through his spiritual insights |
 | [literature-poems-of-nature-by-henry-david-thoreau.md](literature-poems-of-nature-by-henry-david-thoreau.md) | Thoreau's nature poetry — a standalone reading collection |
 | [philosophy-essays-by-ralph-waldo-emerson.md](philosophy-essays-by-ralph-waldo-emerson.md) | Emerson's essays — curated reading order through the Transcendentalist canon |
 

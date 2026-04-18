@@ -5,10 +5,10 @@ domain: contemplative
 confidence: high
 status: active
 synthesizes:
-  - sources/indigenous-george-fox-an-autobiography.md
-  - sources/indigenous-the-journal-of-george-fox.md
-  - sources/indigenous-the-journal-of-george-fox-volume-ii.md
-  - collections/indigenous-gleanings-from-george-fox.md
+  - sources/philosophy-george-fox-an-autobiography.md
+  - sources/philosophy-the-journal-of-george-fox.md
+  - sources/philosophy-the-journal-of-george-fox-volume-ii.md
+  - collections/philosophy-gleanings-from-george-fox.md
 last_reviewed: 2026-04-11
 tags: [george-fox, quakers, inner-light, direct-experience, nonviolence, plain-speech, equality, conscience, mysticism, 17th-century, friends]
 open_questions:

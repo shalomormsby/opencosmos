@@ -343,7 +343,7 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ### Gleanings from George Fox
 - **Role:** collection | **Domain:** indigenous | **Format:** anthology
-- **Path:** `knowledge/collections/indigenous-gleanings-from-george-fox.md`
+- **Path:** `knowledge/collections/philosophy-gleanings-from-george-fox.md`
 - **Curator:** shalom | **Tags:** quaker-mysticism, religious-individualism, inward-light, practical-spirituality, english-mysticism
 - **Author:** George Fox
 - **Origin:** 17th century (early-modern)
@@ -446,7 +446,7 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 - **Author:** W.Y. Evans-Wentz
 - **Origin:** 1911 (modern)
 - **Tradition:** celtic
-- **Related:** collections/indigenous-gleanings-from-george-fox.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-siddhartha-an-indian-tale.md
+- **Related:** collections/philosophy-gleanings-from-george-fox.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-siddhartha-an-indian-tale.md
 - **Gaps served:** Provides systematic documentation of Celtic fairy beliefs as a living spiritual tradition rather than mere folklore, bridging academic anthropology with indigenous wisdom.
 - **Graph impact:** Establishes connections between Celtic spirituality, comparative mythology, and universal animistic traditions while preserving endangered oral traditions from Celtic communities.
 
@@ -507,34 +507,34 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ### George Fox: An Autobiography
 - **Role:** source | **Domain:** indigenous | **Format:** narrative
-- **Path:** `knowledge/sources/indigenous-george-fox-an-autobiography.md`
+- **Path:** `knowledge/sources/philosophy-george-fox-an-autobiography.md`
 - **Curator:** shalom | **Tags:** quakerism, spiritual-autobiography, religious-experience, mysticism, early-modern-religion, christian-spirituality
 - **Author:** George Fox
 - **Origin:** 17th century (early-modern)
 - **Tradition:** quaker
-- **Related:** collections/indigenous-gleanings-from-george-fox.md, sources/literature-the-forerunner.md, sources/literature-the-madman.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
+- **Related:** collections/philosophy-gleanings-from-george-fox.md, sources/literature-the-forerunner.md, sources/literature-the-madman.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
 - **Gaps served:** Provides firsthand account of the founding of Quakerism and the experiential basis of early Friends' theology of direct divine revelation.
 - **Graph impact:** Connects mystical Christianity to Protestant reformation movements and establishes foundation for understanding radical religious movements in early modern England.
 
 ### The Journal of George Fox
 - **Role:** source | **Domain:** indigenous | **Format:** narrative
-- **Path:** `knowledge/sources/indigenous-the-journal-of-george-fox.md`
+- **Path:** `knowledge/sources/philosophy-the-journal-of-george-fox.md`
 - **Curator:** shalom | **Tags:** quakerism, religious-experience, spiritual-autobiography, christian-mysticism, early-modern-religion, persecution, ministry
 - **Author:** George Fox
 - **Origin:** ~1675 (early-modern)
 - **Tradition:** quakerism
-- **Related:** sources/indigenous-george-fox-an-autobiography.md, collections/indigenous-gleanings-from-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
+- **Related:** sources/philosophy-george-fox-an-autobiography.md, collections/philosophy-gleanings-from-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md, sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
 - **Gaps served:** Provides primary source documentation of the origins and early development of Quaker spirituality and practice through the founder's personal testimony.
 - **Graph impact:** Connects Christian mysticism with radical religious reformation, linking contemplative experience to social transformation and alternative religious community formation.
 
 ### The Journal of George Fox, Volume II
 - **Role:** source | **Domain:** indigenous | **Format:** narrative
-- **Path:** `knowledge/sources/indigenous-the-journal-of-george-fox-volume-ii.md`
+- **Path:** `knowledge/sources/philosophy-the-journal-of-george-fox-volume-ii.md`
 - **Curator:** shalom | **Tags:** quaker-spirituality, religious-persecution, prison-ministry, christian-experience, social-reform, monthly-meetings
 - **Author:** George Fox
 - **Origin:** 1663-1669 (early-modern)
 - **Tradition:** quaker
-- **Related:** sources/indigenous-george-fox-an-autobiography.md, collections/indigenous-gleanings-from-george-fox.md, sources/indigenous-the-journal-of-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
+- **Related:** sources/philosophy-george-fox-an-autobiography.md, collections/philosophy-gleanings-from-george-fox.md, sources/philosophy-the-journal-of-george-fox.md, sources/indigenous-the-fairy-faith-in-celtic-countries.md, sources/cross-the-prophet.md
 - **Gaps served:** Provides firsthand account of early Quaker movement and the practical establishment of Friends' organizational structures in 17th century England.
 - **Graph impact:** Connects early Christian mystical experience with social reform movements and demonstrates the relationship between personal spiritual insight and institutional religious change.
 

@@ -31,7 +31,7 @@ origin_date: '1911'
 era: modern
 tradition: celtic
 related_docs:
-  - collections/indigenous-gleanings-from-george-fox.md
+  - collections/philosophy-gleanings-from-george-fox.md
   - sources/literature-demian-the-story-of-emil-sinclair-s-youth.md
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md

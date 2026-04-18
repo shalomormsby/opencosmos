@@ -2,9 +2,73 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-04-15
+**Last updated:** 2026-04-18
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-04-18 — Constellation Phase 1: standardize the standardization skill
+
+Hardened `/standardize-knowledge` so it's safe to run corpus-wide and
+extended the frontmatter schema with the fields the forthcoming knowledge
+graph (`@opencosmos/constellation`) needs.
+
+### Skill — `.claude/skills/standardize-knowledge/SKILL.md`
+- **Step 0.5 (new)** — frontmatter enrichment check. Infers `work_type`
+  from path (`sources/` → `work`, `collections/` → `collection`,
+  `references/` → `reference`, `wiki/` → `wiki`). Ambiguous files are
+  flagged for manual review instead of auto-backfilled.
+- **Step 1** — grep scope extended to `knowledge/references/`.
+- **Step 2** — multi-work-monolith special case rewritten to delegate to
+  the forthcoming `/split-collection` skill (Phase 2) instead of carrying
+  a stale hard-coded path to the Shakespeare collection.
+- **Step 2b (new)** — strips any `^# ` line before the first `^## `.
+  Frontmatter `title` is the document's authoritative heading.
+- **Step 5b (new)** — refuses to consider a file standardized without
+  both `title` and `work_type`.
+- **Step 6 footer (new)** — lists the env vars required by `pnpm embed`
+  (`UPSTASH_VECTOR_REST_URL`, `UPSTASH_VECTOR_REST_TOKEN`) so the
+  re-index step can't fail silently.
+
+### Frontmatter schema
+- `scripts/knowledge/shared.ts` — adds `WORK_TYPES` / `WorkType`; makes
+  `work_type` required and `parent_work` optional on `Frontmatter`.
+- `scripts/knowledge/frontmatter.ts` — publish pipeline now populates
+  `work_type` from role so the type change is backward-compatible.
+- `apps/web/lib/knowledge.ts` — exposes `work_type` + `parent_work` on
+  `KnowledgeDocMeta` for downstream graph consumers.
+
+### Corpus
+- Stripped H1-title-drift and backfilled `work_type: work` on all 22
+  `knowledge/sources/*.md` files that still carried a duplicated title
+  in the body. Every source doc now has exactly one canonical H1
+  (rendered from frontmatter `title`) plus clean H2 section boundaries.
+
+### Knowledge corpus: domain correction — George Fox files
+- Renamed 5 Fox corpus files from `indigenous-*` to `philosophy-*` to
+  match the books' own `tradition: quakerism` and align with precedent
+  (Tolstoy's *The Kingdom of God Is Within You* is `philosophy` +
+  `christian-anarchism`). Quakerism is a single-tradition Christian
+  mystical movement, not an indigenous tradition.
+  - `sources/indigenous-george-fox-an-autobiography.md` → `sources/philosophy-george-fox-an-autobiography.md`
+  - `sources/indigenous-the-journal-of-george-fox.md` → `sources/philosophy-the-journal-of-george-fox.md`
+  - `sources/indigenous-the-journal-of-george-fox-volume-ii.md` → `sources/philosophy-the-journal-of-george-fox-volume-ii.md`
+  - `collections/indigenous-gleanings-from-george-fox.md` → `collections/philosophy-gleanings-from-george-fox.md`
+- Normalized frontmatter: `domain: indigenous` → `domain: philosophy`,
+  `tradition: quaker` → `tradition: quakerism` (the fourth file already
+  used `quakerism`).
+- Rewrote every inbound path reference: the Celtic fairy-faith source's
+  `related_docs`, `knowledge/wiki/entities/george-fox.md`,
+  `knowledge/wiki/concepts/inner-light.md`,
+  `knowledge/guides/opencosmos-rag-architecture.md`, and
+  `knowledge/collections/README.md`. The 2026-04-15 CHANGELOG entry is
+  preserved as historical record of the pre-rename state.
+
+Verified: `pnpm --filter web build` clean (80/80 pages),
+`apps/web` tsc clean, standardized doc pages render a single
+frontmatter-driven H1 on localhost, `/api/knowledge/graph` endpoint
+intact. Full plan in [docs/pm.md § Phase 1: Constellation § Phase 1](docs/pm.md#phase-1--standardize-the-standardization-skill).
 
 ---
 
