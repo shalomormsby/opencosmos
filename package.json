@@ -3,7 +3,7 @@
     "version": "0.1.0",
     "private": true,
     "scripts": {
-        "dev": "turbo run dev --concurrency 20",
+        "dev": "turbo run dev --concurrency 20 --filter=!@opencosmos/stocks",
         "build": "turbo run build",
         "lint": "turbo run lint",
         "knowledge:publish": "tsx scripts/publish-knowledge.ts",
