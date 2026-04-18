@@ -1,5 +1,6 @@
 ---
 title: The Madman
+work_type: work
 role: source
 format: poetry
 domain: literature
@@ -35,8 +36,6 @@ related_docs:
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
 ---
-# The Madman
-
 *By Kahlil Gibran*
 
 You ask me how I became a madman. It happened thus: One day, long before many gods were born, I woke from a deep sleep and found all my masks were stolen,—the seven masks I have fashioned and worn in seven lives,—I ran maskless through the crowded streets shouting, “Thieves, thieves, the cursed thieves.”

@@ -5,8 +5,8 @@
 import { editor, select } from '@inquirer/prompts'
 import matter from 'gray-matter'
 import {
-  ROLES, FORMATS, DOMAINS, AUDIENCES, COMPLEXITIES, ERAS,
-  type Role, type Frontmatter,
+  ROLES, WORK_TYPES, FORMATS, DOMAINS, AUDIENCES, COMPLEXITIES, ERAS,
+  type Role, type WorkType, type Frontmatter,
   type CorpusEntry,
   parseJsonResponse, scanCorpus,
 } from './shared.js'
@@ -101,9 +101,11 @@ export async function reviewFrontmatter(
 ): Promise<Frontmatter> {
   const today = new Date().toISOString().slice(0, 10)
 
+  const role: Role = (suggestions.role as Role) || 'source'
   const defaults: Frontmatter = {
     title: suggestions.title || '',
-    role: (suggestions.role as Role) || 'source',
+    role,
+    work_type: suggestions.work_type || workTypeForRole(role),
     format: suggestions.format || 'essay',
     domain: suggestions.domain || 'philosophy',
     tags: suggestions.tags || [],
@@ -118,6 +120,7 @@ export async function reviewFrontmatter(
     ...(suggestions.era && { era: suggestions.era }),
     ...(suggestions.tradition && { tradition: suggestions.tradition }),
     ...(suggestions.related_docs && { related_docs: suggestions.related_docs }),
+    ...(suggestions.parent_work && { parent_work: suggestions.parent_work }),
   }
 
   // Pretty-print suggestions
@@ -159,10 +162,18 @@ export async function reviewFrontmatter(
   return parseFrontmatterYaml(edited, defaults)
 }
 
+function workTypeForRole(role: Role): WorkType {
+  if (role === 'collection') return 'collection'
+  if (role === 'reference') return 'reference'
+  if (role === 'guide') return 'wiki'
+  return 'work'
+}
+
 function formatFrontmatter(fm: Frontmatter): string {
   const lines = [
     `title: "${fm.title}"`,
     `role: ${fm.role}`,
+    `work_type: ${fm.work_type}`,
     `format: ${fm.format}`,
     `domain: ${fm.domain}`,
     `tags: [${fm.tags.join(', ')}]`,
@@ -180,6 +191,7 @@ function formatFrontmatter(fm: Frontmatter): string {
   if (fm.era) lines.push(`era: ${fm.era}`)
   if (fm.tradition) lines.push(`tradition: ${fm.tradition}`)
   if (fm.related_docs?.length) lines.push(`related_docs: [${fm.related_docs.join(', ')}]`)
+  if (fm.parent_work) lines.push(`parent_work: "${fm.parent_work}"`)
 
   return lines.join('\n')
 }
@@ -193,6 +205,7 @@ function parseFrontmatterYaml(yaml: string, fallback: Frontmatter): Frontmatter 
     const result: Frontmatter = {
       title: data.title || fallback.title,
       role: ROLES.includes(data.role) ? data.role : fallback.role,
+      work_type: WORK_TYPES.includes(data.work_type) ? data.work_type : fallback.work_type,
       format: FORMATS.includes(data.format) ? data.format : fallback.format,
       domain: DOMAINS.includes(data.domain) ? data.domain : fallback.domain,
       tags: Array.isArray(data.tags) ? data.tags.map(String) : fallback.tags,
@@ -210,6 +223,7 @@ function parseFrontmatterYaml(yaml: string, fallback: Frontmatter): Frontmatter 
     if (data.era && ERAS.includes(data.era)) result.era = data.era
     if (data.tradition) result.tradition = data.tradition
     if (Array.isArray(data.related_docs)) result.related_docs = data.related_docs.map(String)
+    if (data.parent_work) result.parent_work = String(data.parent_work)
 
     return result
   } catch {

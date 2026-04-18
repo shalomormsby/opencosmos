@@ -1,5 +1,6 @@
 ---
 title: Euthyphro
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -35,8 +36,6 @@ related_docs:
   - collections/socrates-foundations.md
   - collections/sol-foundations.md
 ---
-# Euthyphro
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

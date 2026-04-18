@@ -1,5 +1,6 @@
 ---
 title: The Bhagavad-Gita (Song Celestial)
+work_type: work
 role: source
 format: scripture
 domain: vedic
@@ -35,8 +36,6 @@ related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md
 ---
-# Bhagavad-Gita
-
 *Translated by Sir Edwin Arnold*
 
 The Song Celestial.

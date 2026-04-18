@@ -1,5 +1,6 @@
 ---
 title: Timaeus
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -35,8 +36,6 @@ related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md
 ---
-# Timaeus
-
 *By Plato*
 
 *Translated by Benjamin Jowett*

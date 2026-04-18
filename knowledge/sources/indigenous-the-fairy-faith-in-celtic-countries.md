@@ -1,5 +1,6 @@
 ---
 title: The Fairy-Faith in Celtic Countries
+work_type: work
 role: source
 format: treatise
 domain: indigenous
@@ -36,8 +37,6 @@ related_docs:
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
   - sources/literature-siddhartha-an-indian-tale.md
 ---
-# The Fairy-Faith in Celtic Countries
-
 *By W.Y. Evans-Wentz*
 
 THE FAIRY-FAITH IN CELTIC COUNTRIES

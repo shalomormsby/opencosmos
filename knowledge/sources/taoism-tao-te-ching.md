@@ -1,5 +1,6 @@
 ---
 title: Tao Te Ching
+work_type: work
 role: source
 format: scripture
 domain: taoism
@@ -37,8 +38,6 @@ related_docs:
   - sources/philosophy-symposium.md
   - sources/philosophy-apology.md
 ---
-# Tao Te Ching
-
 *By Lao Tsu*
 
 *A New Translation by Gia-Fu Feng and Jane English*

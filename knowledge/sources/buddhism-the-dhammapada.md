@@ -1,5 +1,6 @@
 ---
 title: The Dhammapada
+work_type: work
 role: source
 format: scripture
 domain: buddhism
@@ -22,7 +23,6 @@ curator: shalom
 source: original
 corpus_tier: source
 ---
-# The Dhammapada
 Translated by Thomas Byrom
 
 ## 1. Choices

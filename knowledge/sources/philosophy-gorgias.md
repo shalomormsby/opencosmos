@@ -1,5 +1,6 @@
 ---
 title: Gorgias
+work_type: work
 role: source
 format: dialogue
 domain: philosophy
@@ -37,8 +38,6 @@ related_docs:
   - sources/cross-the-prophet.md
   - collections/cosmo-foundations.md
 ---
-# Gorgias
-
 *By Plato*
 
 *Translated by Benjamin Jowett*
