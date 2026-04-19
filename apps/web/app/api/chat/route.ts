@@ -7,6 +7,7 @@ import { withAuth } from '@workos-inc/authkit-nextjs'
 import { getSubscription, incrementUsage, isWithinBudget, markByok } from '@/lib/subscription'
 import { TIERS } from '@/lib/stripe'
 import { fetchRagContext, formatRagChunks, type RagResult } from '@/lib/rag'
+import { getDoc, slugFromDocPath, extractSection } from '@/lib/knowledge'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
 const WIKI_INDEX = process.env.COSMO_WIKI_INDEX ?? ''
@@ -508,15 +509,46 @@ export async function POST(req: NextRequest) {
     })
 
     // Inject current reading section if the user is browsing the knowledge library.
-    // This tells Cosmo which document, section, and passage the user is actively
-    // reading, so responses can be grounded in that specific context.
+    // When we can resolve the source file, the FULL section text is injected
+    // verbatim — Cosmo no longer depends on vector-similarity to recover the
+    // chapter the user is actively reading.
     if (current_section) {
-      const passageBlock = current_section.passage
-        ? `\n\nPassage they are reading right now:\n> ${current_section.passage}`
-        : ''
+      const slug = slugFromDocPath(current_section.doc_path)
+      const doc = slug ? getDoc(slug) : null
+      const sectionText = doc ? extractSection(doc.content, current_section.heading) : null
+
+      const lines: string[] = [
+        '## Current Reading Context',
+        '',
+        'The user is currently reading the following document in the OpenCosmos knowledge library:',
+        '',
+        `**Document:** ${current_section.doc_title}`,
+        `**Section:** "${current_section.heading}"`,
+        `**Path:** ${current_section.doc_path}`,
+      ]
+      if (current_section.passage) {
+        lines.push('', `**Passage they are scrolled near:**\n> ${current_section.passage}`)
+      }
+      if (sectionText) {
+        lines.push(
+          '',
+          '---',
+          '',
+          `**Full text of section "${current_section.heading}" (verbatim from source):**`,
+          '',
+          sectionText,
+          '',
+          '---',
+          '',
+          'Quote from the verbatim section text above when discussing this section. The vector retrieval below may include additional passages from elsewhere in the corpus.',
+        )
+      } else {
+        lines.push('', 'Ground your response in the context of this section. The vector retrieval below may also include passages from this document.')
+      }
+
       systemContent.push({
         type: 'text' as const,
-        text: `## Current Reading Context\n\nThe user is currently reading the following document in the OpenCosmos knowledge library:\n\n**Document:** ${current_section.doc_title}\n**Section:** "${current_section.heading}"\n**Path:** ${current_section.doc_path}${passageBlock}\n\nGround your response in the context of this section and passage. The vector retrieval below may also include passages from this document.`,
+        text: lines.join('\n'),
       })
     }
 

@@ -71,9 +71,21 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
       // Find the paragraph currently under the reading threshold. Prefer a
       // paragraph that straddles the line; otherwise fall back to the last
       // one whose top has passed it.
-      const paragraphs = paragraphElsRef.current
+      //
+      // Restrict candidates to paragraphs that follow the active heading in
+      // document order — without this, scrolling to an anchor like #thirteen
+      // can pick up the trailing paragraph of the previous section (which sits
+      // just above the offset) and report it as the active passage of the new
+      // section, lying to Cosmo about which chapter the user is reading.
+      const activeHeadingEl = els.find(h => h.id === next) ?? null
+      const candidates = activeHeadingEl
+        ? paragraphElsRef.current.filter(
+            p => Boolean(activeHeadingEl.compareDocumentPosition(p) & Node.DOCUMENT_POSITION_FOLLOWING),
+          )
+        : paragraphElsRef.current
+
       let chosen: HTMLElement | null = null
-      for (const p of paragraphs) {
+      for (const p of candidates) {
         const rect = p.getBoundingClientRect()
         if (rect.top <= HEADER_OFFSET && rect.bottom > HEADER_OFFSET) {
           chosen = p
@@ -81,9 +93,9 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
         }
       }
       if (!chosen) {
-        for (let i = paragraphs.length - 1; i >= 0; i--) {
-          if (paragraphs[i].getBoundingClientRect().top <= HEADER_OFFSET) {
-            chosen = paragraphs[i]
+        for (let i = candidates.length - 1; i >= 0; i--) {
+          if (candidates[i].getBoundingClientRect().top <= HEADER_OFFSET) {
+            chosen = candidates[i]
             break
           }
         }

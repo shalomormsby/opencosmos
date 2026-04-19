@@ -94,3 +94,38 @@ export function getDoc(slugParts: string[]): KnowledgeDoc | null {
     content,
   }
 }
+
+// Validate a doc_path coming from the client (sessionStorage) and reduce it
+// to the slug parts getDoc() expects. Rejects anything outside knowledge/.
+export function slugFromDocPath(docPath: string): string[] | null {
+  if (typeof docPath !== 'string') return null
+  if (!docPath.startsWith('knowledge/') || !docPath.endsWith('.md')) return null
+  const inner = docPath.slice('knowledge/'.length, -'.md'.length)
+  if (!inner || inner.includes('..') || inner.includes('//')) return null
+  const parts = inner.split('/').filter(Boolean)
+  if (parts.length < 2) return null
+  return parts
+}
+
+// Extract a single section's full text from a doc's markdown by heading text.
+// Matches `## <heading>` or `### <heading>` exactly. Returns the heading line
+// through the line before the next sibling-or-shallower heading (next H2 always
+// terminates; if we started on an H3, the next H3 also terminates).
+export function extractSection(content: string, heading: string): string | null {
+  const esc = heading.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  const headingPattern = new RegExp(`^(##|###)\\s+${esc}\\s*$`, 'm')
+  const match = content.match(headingPattern)
+  if (!match) return null
+
+  const startIndex = match.index!
+  const lines = content.slice(startIndex).split('\n')
+  const startedOnH3 = match[1] === '###'
+
+  let endLineIdx = lines.length
+  for (let i = 1; i < lines.length; i++) {
+    if (/^##\s+/.test(lines[i])) { endLineIdx = i; break }
+    if (startedOnH3 && /^###\s+/.test(lines[i])) { endLineIdx = i; break }
+  }
+
+  return lines.slice(0, endLineIdx).join('\n').trim()
+}

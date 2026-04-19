@@ -8,6 +8,52 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-04-18 — Cosmo knowledge retrieval: full-section grounding
+
+Fixed a compound bug that prevented Cosmo from accurately quoting
+chapters the user was actively reading. Example: asked "What does
+Chapter 13 of the Tao Te Ching say about misfortune?", Cosmo quoted
+the closing line of Chapter 12 as if it were Chapter 13's, then
+correctly admitted it couldn't see the chapter's body.
+
+### Root cause — two compounding bugs
+1. **No full-section grounding on the server.** The chat route injected
+   only vector-similarity chunks (≤2000 chars each) plus `current_section`
+   metadata. The source document was never read, so Cosmo depended on
+   top-K semantic search landing the right chunk — unreliable for
+   "chapter X of work Y" queries where the chunk boundary matters.
+2. **Active-passage detection desynced from the active heading.** When
+   the user scrolled to an anchor like `#thirteen`, the TOC's
+   active-paragraph search ran across every `<p>` in the doc and picked
+   the last one whose top had crossed the reading offset — which was
+   the closing line of Chapter 12 (used by the chunker as overlap into
+   Chapter 13). The browser told Cosmo: *heading = Thirteen, passage =
+   "Therefore the sage is guided by what he feels…"*.
+
+### Fix
+- `apps/web/lib/knowledge.ts` — adds `slugFromDocPath()`
+  (path-traversal-safe) and `extractSection(content, heading)` (reads an
+  H2/H3 section verbatim, terminates at the next sibling-or-shallower
+  heading).
+- `apps/web/app/api/chat/route.ts` — when `current_section` is set, the
+  server now reads the source markdown and injects the **full chapter
+  text verbatim** into the system prompt. Cosmo no longer depends on
+  vector-similarity for the chapter the user is actively reading.
+- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — restricts the
+  active-paragraph search to paragraphs that follow the active heading
+  in document order (`compareDocumentPosition & DOCUMENT_POSITION_FOLLOWING`).
+  Scrolling to a new anchor can no longer surface the previous section's
+  closing paragraph as the current one.
+
+Verified: `extractSection('Thirteen')` on `taoism-tao-te-ching.md`
+returns the full chapter (disgrace → misfortune → surrender → love the
+world), terminated at `## Fourteen`. Same helper handles H3 headings
+(Leaves of Grass). `slugFromDocPath()` rejects `..` traversal,
+non-`knowledge/` prefixes, bad extensions, and non-strings.
+`pnpm --filter web build` clean (80 pages).
+
+---
+
 ## 2026-04-18 — Constellation Phase 1: standardize the standardization skill
 
 Hardened `/standardize-knowledge` so it's safe to run corpus-wide and
