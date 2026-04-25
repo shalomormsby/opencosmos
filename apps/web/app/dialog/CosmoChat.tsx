@@ -1,6 +1,8 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import ReactMarkdown, { type Components } from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
@@ -8,6 +10,48 @@ import { AuthButton } from '../AuthButton'
 import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
 import { DialogHistoryPanel } from './DialogHistoryPanel'
+
+// Tighter scale than DocViewer — chat bubbles use text-sm and shouldn't have
+// the article-style vertical rhythm. last:mb-0 prevents trailing whitespace
+// in the bubble.
+const chatMarkdownComponents: Components = {
+  p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
+  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+  em: ({ children }) => <em className="italic">{children}</em>,
+  a: ({ href, children }) => (
+    <a
+      href={href}
+      target={href?.startsWith('http') ? '_blank' : undefined}
+      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+      className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
+    >
+      {children}
+    </a>
+  ),
+  ul: ({ children }) => <ul className="list-disc list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ul>,
+  ol: ({ children }) => <ol className="list-decimal list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ol>,
+  li: ({ children }) => <li>{children}</li>,
+  blockquote: ({ children }) => (
+    <blockquote className="border-l-2 border-foreground/20 pl-4 my-3 text-foreground/70 italic">
+      {children}
+    </blockquote>
+  ),
+  code: ({ className, children }) => {
+    const isBlock = Boolean(className?.startsWith('language-'))
+    return (
+      <code className={cn('font-mono', isBlock ? className : 'px-1 py-0.5 rounded text-xs bg-foreground/5')}>
+        {children}
+      </code>
+    )
+  },
+  pre: ({ children }) => (
+    <pre className="bg-foreground/5 rounded-lg p-3 overflow-x-auto mb-3 last:mb-0 text-xs">{children}</pre>
+  ),
+  h1: ({ children }) => <h1 className="text-base font-semibold mt-3 mb-2 first:mt-0">{children}</h1>,
+  h2: ({ children }) => <h2 className="text-sm font-semibold mt-3 mb-2 first:mt-0">{children}</h2>,
+  h3: ({ children }) => <h3 className="text-sm font-medium mt-2 mb-1 first:mt-0">{children}</h3>,
+  hr: () => <hr className="my-4 border-foreground/10" />,
+}
 
 // Shared liquid glass style — matches the header's always-on glass
 const glass = 'backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50'
@@ -166,13 +210,19 @@ export function CosmoChat() {
                 </span>
                 <div
                   className={cn(
-                    'rounded-2xl px-5 py-4 text-sm leading-relaxed whitespace-pre-wrap max-w-prose',
+                    'rounded-2xl px-5 py-4 text-sm leading-relaxed max-w-prose',
                     msg.role === 'user'
-                      ? 'bg-foreground/8 text-foreground'
+                      ? 'bg-foreground/8 text-foreground whitespace-pre-wrap'
                       : 'border border-foreground/10 text-foreground'
                   )}
                 >
-                  {msg.content}
+                  {msg.role === 'assistant' ? (
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents}>
+                      {msg.content}
+                    </ReactMarkdown>
+                  ) : (
+                    msg.content
+                  )}
                   {isStreaming &&
                     i === messages.length - 1 &&
                     msg.role === 'assistant' &&
