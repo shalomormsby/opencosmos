@@ -1,7 +1,9 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import { cn } from '@opencosmos/ui'
+import { emitCosmoEvent } from '@/lib/cosmo-events'
+import { ScrollContainerContext } from '../../ScrollContainerContext'
 
 export type TocEntry = {
   id: string
@@ -25,6 +27,8 @@ type Props = {
 
 // Matches scroll-mt-28 (7rem = 112px) on h2/h3 in DocViewer, plus a small
 // buffer so the heading registers as "active" the moment it locks into place.
+// Inside a scrollable container (KnowledgeShell main panel), the threshold is
+// measured from the container's viewport top, not 0.
 const HEADER_OFFSET = 120
 
 // Cap passage length sent to Cosmo — enough for meaningful grounding without
@@ -37,9 +41,12 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
   const headingElsRef = useRef<HTMLElement[]>([])
   const paragraphElsRef = useRef<HTMLElement[]>([])
   const rafRef = useRef<number>(0)
+  const scrollContainer = useContext(ScrollContainerContext)
 
   useEffect(() => {
     if (toc.length === 0) return
+
+    const scrollTarget: HTMLElement | Window = scrollContainer ?? window
 
     // Collect heading elements in document order. Re-collected whenever toc
     // changes (navigation to a new document).
@@ -58,11 +65,15 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
       const els = headingElsRef.current
       if (els.length === 0) return
 
+      const threshold = scrollContainer
+        ? scrollContainer.getBoundingClientRect().top + HEADER_OFFSET
+        : HEADER_OFFSET
+
       // Walk every heading in order. The last one whose top edge sits at or
       // above the threshold is the section currently being read.
       let next = els[0].id
       for (const el of els) {
-        if (el.getBoundingClientRect().top <= HEADER_OFFSET) {
+        if (el.getBoundingClientRect().top <= threshold) {
           next = el.id
         }
       }
@@ -87,14 +98,14 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
       let chosen: HTMLElement | null = null
       for (const p of candidates) {
         const rect = p.getBoundingClientRect()
-        if (rect.top <= HEADER_OFFSET && rect.bottom > HEADER_OFFSET) {
+        if (rect.top <= threshold && rect.bottom > threshold) {
           chosen = p
           break
         }
       }
       if (!chosen) {
         for (let i = candidates.length - 1; i >= 0; i--) {
-          if (candidates[i].getBoundingClientRect().top <= HEADER_OFFSET) {
+          if (candidates[i].getBoundingClientRect().top <= threshold) {
             chosen = candidates[i]
             break
           }
@@ -112,12 +123,12 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
     // Seed the initial state before the user scrolls.
     updateActive()
 
-    window.addEventListener('scroll', onScroll, { passive: true })
+    scrollTarget.addEventListener('scroll', onScroll, { passive: true })
     return () => {
-      window.removeEventListener('scroll', onScroll)
+      scrollTarget.removeEventListener('scroll', onScroll)
       cancelAnimationFrame(rafRef.current)
     }
-  }, [toc])
+  }, [toc, scrollContainer])
 
   // Write active section + current passage to sessionStorage whenever either
   // changes so the Cosmo chat at /dialog can pick it up and ground responses.
@@ -138,6 +149,12 @@ export default function TableOfContents({ toc, docTitle, docPath }: Props) {
     } catch {
       // sessionStorage unavailable (private browsing, storage full) — non-fatal
     }
+    emitCosmoEvent('selected-section', {
+      doc_path: docPath,
+      doc_title: docTitle,
+      heading: entry.text,
+      passage,
+    })
   }, [activeId, passage, toc, docTitle, docPath])
 
   if (toc.length === 0) return null
