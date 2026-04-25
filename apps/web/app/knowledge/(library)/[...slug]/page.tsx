@@ -2,12 +2,11 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import GithubSlugger from 'github-slugger'
-import { Header, Button, Badge, Separator, GitHubIcon, Breadcrumbs } from '@opencosmos/ui'
+import { Badge, Separator } from '@opencosmos/ui'
 import { getDoc, getAllDocs } from '@/lib/knowledge'
 import { CATEGORY_LABELS } from '@/lib/knowledge-meta'
 import DocViewer from './DocViewer'
 import TableOfContents, { type TocEntry } from './TableOfContents'
-import { AppShell } from '@/app/AppShell'
 
 /**
  * Extract H2 and H3 headings from raw markdown for the TOC sidebar.
@@ -42,12 +41,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 }
 
-const NAV_LINKS = [
-  { label: 'Dialog', href: '/dialog' },
-  { label: 'Knowledge', href: '/knowledge' },
-  { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
-]
-
 export default async function DocPage({ params }: Props) {
   const { slug } = await params
   const doc = getDoc(slug)
@@ -60,48 +53,50 @@ export default async function DocPage({ params }: Props) {
   const docPath = `knowledge/${slug.join('/')}.md`
 
   return (
-    <AppShell activePath="/knowledge">
-    <main className="min-h-screen bg-background">
-      <Header
-        sticky={false}
-        className="sticky top-0 z-40"
-        logo={
-          <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
-            OpenCosmos
-          </Link>
-        }
-        navAlignment="right"
-        navLinks={NAV_LINKS}
-        actions={
-          <Button variant="outline" size="sm" asChild className="gap-2">
-            <a
-              href="https://github.com/shalomormsby/opencosmos"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <GitHubIcon className="w-4 h-4" />
-              Star on GitHub
-            </a>
-          </Button>
-        }
-      />
-
-      {/* Two-column layout: document + TOC sidebar */}
-      <div className="max-w-6xl mx-auto px-6 pt-32 pb-24">
+    <div className="max-w-6xl mx-auto px-6 pt-16 pb-24">
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_224px] gap-12 items-start">
 
           {/* Main document column */}
           <div className="min-w-0">
-            {/* Breadcrumb */}
-            <Breadcrumbs
-              variant="bold"
-              items={[
-                { label: 'The Library', href: '/knowledge' },
-                { label: CATEGORY_LABELS[doc.category] ?? doc.category, href: '/knowledge' },
-                { label: doc.title },
-              ]}
-              className="mb-10"
-            />
+            {/* Breadcrumb — Next.js Link-based so navigation back to /knowledge
+                stays a soft route change. The shared @opencosmos/ui Breadcrumbs
+                renders a plain <a href> which triggers a full reload and
+                remounts the chat sidebar. */}
+            <nav aria-label="Breadcrumb" className="mb-10">
+              <ol className="flex items-center flex-nowrap list-none m-0 p-0 text-sm overflow-x-auto scrollbar-hide">
+                {[
+                  { label: 'The Library', href: '/knowledge' },
+                  { label: CATEGORY_LABELS[doc.category] ?? doc.category, href: '/knowledge' },
+                  { label: doc.title },
+                ].map((item, i, arr) => {
+                  const isLast = i === arr.length - 1
+                  return (
+                    <li key={i} className="flex items-center flex-shrink-0">
+                      {item.href && !isLast ? (
+                        <Link
+                          href={item.href}
+                          className="text-[var(--color-primary)] hover:bg-[var(--color-text-primary)] hover:text-[var(--color-background)] font-medium px-1.5 py-1.5 -mx-1.5 -my-1.5 rounded transition-colors duration-150 active:scale-95"
+                        >
+                          {item.label}
+                        </Link>
+                      ) : (
+                        <span
+                          aria-current={isLast ? 'page' : undefined}
+                          className="text-[var(--color-text-primary)] font-semibold"
+                        >
+                          {item.label}
+                        </span>
+                      )}
+                      {!isLast && (
+                        <span aria-hidden="true" className="mx-2 select-none text-[var(--color-border)] font-bold">
+                          /
+                        </span>
+                      )}
+                    </li>
+                  )
+                })}
+              </ol>
+            </nav>
 
             {/* Badges */}
             <div className="flex flex-wrap gap-2 mb-6">
@@ -185,8 +180,6 @@ export default async function DocPage({ params }: Props) {
           <TableOfContents toc={toc} docTitle={doc.title} docPath={docPath} />
 
         </div>
-      </div>
-    </main>
-    </AppShell>
+    </div>
   )
 }

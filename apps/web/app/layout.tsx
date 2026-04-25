@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from '@opencosmos/ui'
 import { Analytics } from '@vercel/analytics/next'
+import { CosmoSessionProvider } from './dialog/useCosmoSession'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -13,8 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" suppressHydrationWarning style={{ backgroundColor: '#000', colorScheme: 'dark' }}>
       <body className="bg-background text-foreground antialiased" suppressHydrationWarning>
         <ThemeProvider>
-          {children}
-          <Analytics />
+          <CosmoSessionProvider>
+            {children}
+            <Analytics />
+          </CosmoSessionProvider>
         </ThemeProvider>
       </body>
     </html>
