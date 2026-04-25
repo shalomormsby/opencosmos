@@ -19,8 +19,8 @@ const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
 const SESSION_TTL = 604800 // 7 days
 
-// Free-tier token budget: 20k tokens ≈ 3–4 substantive exchanges with Cosmo.
-export const FREE_TOKEN_BUDGET = 20_000
+// Free-tier token budget: 100k tokens ≈ 15–20 substantive exchanges with Cosmo.
+export const FREE_TOKEN_BUDGET = 100_000
 
 // Monthly cap denominated in estimated tokens (not requests).
 // Default: 50M tokens/month ≈ $15 at current rates. One 1.79M-token crafted

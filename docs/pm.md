@@ -30,8 +30,8 @@
 
 | Area | Phase / Task | Status | Priority | Next step |
 |------|--------------|--------|----------|-----------|
-| **Cosmo** (`apps/web`) | [Phase 1: Constellation § Phase 0](#phase-0--verify--commit-quick-wins) — H1 strips, Cosmo context, paint-safe | 🟡 PR-ready | P1 | Merge `fix/knowledge-graph-prep` → main; test on prod |
-| Cosmo | [Phase 1: Constellation § Phase 1](#phase-1--standardize-the-standardization-skill) — patch standardize-knowledge, strip 22 H1 files | 🟡 PR-ready | P1 | Review + merge `feat/constellation-phase-1` → main |
+| **Cosmo** (`apps/web`) | [Phase 1: Constellation § Phase 0](#phase-0--verify--commit-quick-wins) — H1 strips, Cosmo context, paint-safe | 🟢 Done & live on prod | P1 | Merge `fix/knowledge-graph-prep` → main; test on prod |
+| Cosmo | [Phase 1: Constellation § Phase 1](#phase-1--standardize-the-standardization-skill) — patch standardize-knowledge, strip 22 H1 files | 🟢 Done & live on prod | P1 | Review + merge `feat/constellation-phase-1` → main |
 | Cosmo | [Phase 1: Constellation § Phase 2](#phase-2--split-monoliths) — `/split-collection` skill + Shakespeare split | ⚪ Planned | P1 | Follows Phase 1 |
 | Cosmo | [Phase 1: Constellation § Phase 3](#phase-3--quote-infrastructure) — quote YAML substrate, embed pipeline | ⚪ Planned | P1 | Awaiting sample quote data from Shalom |
 | Cosmo | [Phase 1: Constellation § Phase 5](#phase-5--build-opencosmosconstellation) — `@opencosmos/constellation` package | ⚪ Planned | P1 | Built in `opencosmos-ui` repo |
