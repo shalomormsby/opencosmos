@@ -66,7 +66,7 @@ type CosmoSession = {
   setPmSecret: (v: string) => void
 
   // Actions
-  send: () => Promise<void>
+  send: (override?: string) => Promise<void>
   startNew: () => void
   openConversation: (conv: Conversation) => void
   saveKey: () => void
@@ -190,11 +190,12 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
 
   const isLimited = mounted && !apiKey && !pmMode && tokensUsed >= tokenBudget
 
-  const send = useCallback(async () => {
-    if (!input.trim() || isStreaming || isLimited) return
+  const send = useCallback(async (override?: string) => {
+    const raw = override !== undefined ? override : input
+    if (!raw.trim() || isStreaming || isLimited) return
 
-    const content = input.trim()
-    setInput('')
+    const content = raw.trim()
+    if (override === undefined) setInput('')
 
     const newMessages: Message[] = [...messages, { role: 'user', content }]
     setMessages([...newMessages, { role: 'assistant', content: '' }])

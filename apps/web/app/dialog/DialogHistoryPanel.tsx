@@ -2,6 +2,7 @@
 
 import { Button, cn } from '@opencosmos/ui'
 import { useCosmoSession, type Conversation } from './useCosmoSession'
+import { ShareButton } from './ShareButton'
 
 function timeAgo(ts: number): string {
   const mins = Math.floor((Date.now() - ts) / 60000)
@@ -37,13 +38,14 @@ export function DialogHistoryPanel({ showNewButton = true, onOpen, onNew }: Prop
   return (
     <div className="flex flex-col h-full overflow-hidden">
       {showNewButton && (
-        <div className="px-5 pt-3 pb-2 shrink-0">
-          <Button variant="outline" size="sm" className="w-full gap-1.5" onClick={handleNew}>
+        <div className="px-5 pt-3 pb-2 shrink-0 flex gap-2">
+          <Button variant="outline" size="sm" className="flex-1 gap-1.5" onClick={handleNew}>
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
             </svg>
             New dialog
           </Button>
+          <ShareButton className="flex-1 gap-1.5" />
         </div>
       )}
 
