@@ -1,6 +1,6 @@
 'use client'
 
-import { AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar } from '@opencosmos/ui'
+import { AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar } from '@opencosmos/ui'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
 import { SidebarAvatar } from './SidebarAvatar'
 import { SidebarUsage } from './SidebarUsage'
@@ -28,7 +28,7 @@ export function AppShell({
   return (
     <AppSidebarProvider defaultOpen={false} storageKey="appsidebar:shell">
       <AppSidebar
-        logo={<OpenCosmosIcon size={20} />}
+        logo={<InfinityAnim size="xs" technique="dashes" duration={12} />}
         bottomItems={[
           {
             icon: <MessageSquare className="w-4 h-4" />,
