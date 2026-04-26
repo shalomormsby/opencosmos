@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@opencosmos/ui": "^1.1.1",
+    "@opencosmos/ui": "^1.5.1",
     "@vercel/analytics": "^1.6.1",
     "framer-motion": "^12.23.26",
     "next": "^16.1.6",
@@ -18,10 +18,10 @@
     "zustand": "^5.0.9"
   },
   "devDependencies": {
+    "@tailwindcss/postcss": "^4.0.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4.0.0",
     "eslint": "^9.39.2",
     "eslint-config-next": "16.0.10",
     "postcss": "^8.4.49",
