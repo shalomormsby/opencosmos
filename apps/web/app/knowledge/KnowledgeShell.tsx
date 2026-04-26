@@ -14,7 +14,7 @@ import {
   Header,
   Button,
   GitHubIcon,
-  OpenCosmosIcon,
+  InfinityAnim,
   AppSidebarProvider,
   useAppSidebar,
   useMotionPreference,
@@ -146,8 +146,8 @@ function ChatSidebar() {
           )}
           aria-label={isOpen ? 'Collapse sidebar' : 'Expand sidebar'}
         >
-          <span className="w-8 h-8 shrink-0 flex items-center justify-center">
-            <OpenCosmosIcon size={20} />
+          <span className="shrink-0 flex items-center justify-center">
+            <InfinityAnim size="xs" technique="dashes" duration={12} />
           </span>
         </button>
         <button
