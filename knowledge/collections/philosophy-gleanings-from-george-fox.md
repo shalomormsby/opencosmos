@@ -1,5 +1,6 @@
 ---
 title: Gleanings from George Fox
+work_type: collection
 role: collection
 format: anthology
 domain: philosophy
@@ -50,7 +51,9 @@ LONDON: HEADLEY BROTHERS, BISHOPSGATE, E.C.
 
 Contents.
  	PAGE
-Introduction	7-14 PART I. Narrative Passages	17-28 PART II. Special Testimonies	31-90 1. BUSINESS LIFE	31 2. THE INWARD LIGHT	35 3. JUSTICE	41 4. MEETINGS AND MINISTRY	46 5. OATHS	64 6. RESPECTING PERSONS	66 7. THE SCRIPTURES	69 8. SIN	74 9. SLAVERY	81 10. WAR	82 11. WOMEN	84 PART III. Social Life	93-109 1. SOCIAL LIFE	93 2. GENERAL EXHORTATIONS	103 Introduction. I. George Fox may be variously described. If we look at him from the standpoint of orthodox Catholicism we shall see a heretical genius, a man who tried to re-organise the church and succeeded in establishing a sect—in defiance of the fact of the rarity of the religious and the still greater rarity of the mystical temperament—upon a basis of mystical opportunism, in a condition of divorce from sacraments, culture and tradition.
+Introduction	7-14 PART I. Narrative Passages	17-28 PART II. Special Testimonies	31-90 1. BUSINESS LIFE	31 2. THE INWARD LIGHT	35 3. JUSTICE	41 4. MEETINGS AND MINISTRY	46 5. OATHS	64 6. RESPECTING PERSONS	66 7. THE SCRIPTURES	69 8. SIN	74 9. SLAVERY	81 10. WAR	82 11. WOMEN	84 PART III. Social Life	93-109 1. SOCIAL LIFE	93 2. GENERAL EXHORTATIONS	103 ## Introduction
+
+I. George Fox may be variously described. If we look at him from the standpoint of orthodox Catholicism we shall see a heretical genius, a man who tried to re-organise the church and succeeded in establishing a sect—in defiance of the fact of the rarity of the religious and the still greater rarity of the mystical temperament—upon a basis of mystical opportunism, in a condition of divorce from sacraments, culture and tradition.
 
 From the Protestant point of view he becomes the man who made a temporarily successful attempt to undermine the authority of the Scriptures; his failure being attested by the return of the majority of the Quakers, from the third generation onwards, to biblicism—their tacit throwing up of their earlier position with regard to the inward light.
 
@@ -86,7 +89,9 @@ VI. What Fox did with the unconsciousness of genius, modern thought is elaborati
 
 Metaphysic, come out at last from her academic seclusion to the light of common day, points the way to the threshold of reality, declares that we may possess and be possessed by it, not via the intellect, but directly by intuition. This reality that we ignorantly worship the mystics have declared to us as goodness, beauty and truth. Fox called it God in man, the life, the seed, the divine light latent in every son of man, and once in the life of this planet fully and completely informing a human frame.
 
-PART I. NARRATIVE PASSAGES. NOTE. The reference “C.J.” indicates the Cambridge edition of Fox’s Journal, compiled from original MSS. (Cambs. Univ. Press. 1911); “Works,” refer to the Philadelphia edition of Fox’s printed works. Punctuation, which varies in the different editions and is almost lacking in MSS. and of course in literal transcripts, has been altered or inserted by the compiler, as seemed needful.
+## Part I. Narrative Passages
+
+NOTE. The reference “C.J.” indicates the Cambridge edition of Fox’s Journal, compiled from original MSS. (Cambs. Univ. Press. 1911); “Works,” refer to the Philadelphia edition of Fox’s printed works. Punctuation, which varies in the different editions and is almost lacking in MSS. and of course in literal transcripts, has been altered or inserted by the compiler, as seemed needful.
 
 Narrative Passages. Self-Revelation. Then the Lord gently led me along, and let me see His love, which was endless and eternal, surpassing all the knowledge men have in the natural state or can obtain from history or books, and that love let me see myself as I was without him. I was afraid of all company, for I saw them perfectly where they were, through the love of God which let me see myself. I had not fellowship with any people, priests or professors or any sort of separated people, but with Christ, who hath the key, and opened the door of Light and Life unto me. I was afraid of all carnal talk and talkers, for I could see nothing but corruptions and the life lay under the burthen of corruptions. When I myself was in the deep, shut up under all, I could not believe that I should ever overcome, my troubles, my sorrows, and my temptations were so great, that I thought many times I should have despaired I was so tempted.
 
@@ -178,7 +183,11 @@ A Veiled Condition. When at any time my condition was veiled, my secret belief w
 
 (Journal, 8th ed., Vol. I, p. 14).
 
-PART II. SPECIAL TESTIMONIES. I. Business Life. Prices. And is it not more savoury to ask no more than you will have for your commodity[2]; to keep yea and nay in your communication, and here will be an equal balancing of things and a consideration before you utter words and a using of this world as though you used it not; and a possessing as though you possessed not.
+## Part II. Special Testimonies
+
+### I. Business Life
+
+Prices. And is it not more savoury to ask no more than you will have for your commodity[2]; to keep yea and nay in your communication, and here will be an equal balancing of things and a consideration before you utter words and a using of this world as though you used it not; and a possessing as though you possessed not.
 
 (Works, IV., p. 100, slightly condensed.)
 
@@ -204,7 +213,9 @@ In All Husbandry. So in all husbandry speak truth, act truth, doing justly and u
 
 (Works, VII., p. 193.)
 
-II. The Inward Light. Every Man. God hath dealt to every man a measure of faith.
+### II. The Inward Light
+
+Every Man. God hath dealt to every man a measure of faith.
 
 (Works, VIII., p. 68.)
 
@@ -286,7 +297,9 @@ So the son of God within riseth through death to destroy death in man.
 
 (C. J., I., p. 98.)
 
-III. Justice. Laws against God. Now if a law be made over the conscience that is pure, that law is against God.
+### III. Justice
+
+Laws against God. Now if a law be made over the conscience that is pure, that law is against God.
 
 (C. J., I., p. 96.)
 
@@ -316,7 +329,9 @@ Speedy Justice. And I also wrote to the judges what a sore thing it was that pri
 
 (C. J., I., p. 14.)
 
-IV. Meetings and Ministry. Silent Ministry. My dear friends, keep your meetings, and ye will feel the seed to arise, though never a word be spoken amongst you.
+### IV. Meetings and Ministry
+
+Silent Ministry. My dear friends, keep your meetings, and ye will feel the seed to arise, though never a word be spoken amongst you.
 
 (Works, VII., p. 115.)
 
@@ -494,7 +509,9 @@ Interdependence. And the least member in the church hath an office and is servic
 
 (Works, VII., p. 347.)
 
-V. Oaths. Oaths. Dear friends and brethren in all your words, in all your business and employment, have a care of breaking your words and promises to any people; but that you may consider beforehand, whether you may be able to perform and fulfil both your words and promises, that your yea be yea, and nay, nay in all things; which Christ hath set up instead of an oath and swearing.
+### V. Oaths
+
+Oaths. Dear friends and brethren in all your words, in all your business and employment, have a care of breaking your words and promises to any people; but that you may consider beforehand, whether you may be able to perform and fulfil both your words and promises, that your yea be yea, and nay, nay in all things; which Christ hath set up instead of an oath and swearing.
 
 (Works, VIII., p. 219.)
 
@@ -508,7 +525,9 @@ So this is the word of the Lord God to you all, feel that you stand in the prese
 
 (C. J., I., p. 319.)
 
-VI. Respecting Persons. Honour and Glory. And so as you honour God, with God shall you be honoured. But seek it as eagerly as you will without him it will fly from you. Through flattery you may obtain which will corrupt your judgment and let in upon you everlasting dishonour. Wherefore turn to the Lord with your whole hearts and seek his glory alone.
+### VI. Respecting Persons
+
+Honour and Glory. And so as you honour God, with God shall you be honoured. But seek it as eagerly as you will without him it will fly from you. Through flattery you may obtain which will corrupt your judgment and let in upon you everlasting dishonour. Wherefore turn to the Lord with your whole hearts and seek his glory alone.
 
 (C. J., I., p. 134.)
 
@@ -536,7 +555,9 @@ Hat Honour. So I asked him (if) he were the Governor and wherefore he cast the f
 
 (Short Journal, pp. 78, 79.)
 
-VII. The Scriptures. The Word. In the beginning was the word and none knows this word but who are come to the beginning. Now, all people and priests, who can witness this? Who are come hither? Who are come hither into the beginning? What our hands have handled and what our eyes have seen what was from the beginning. The word of life this declare we unto you. Who know this word are pure are made clean through the word, are washed by the word, are sanctified by the word, are cut to pieces by the word and are divided asunder by the word; and this word is a hammer beating down everything, that the seed of God may rise up and come to the beginning; and all who know this word are come into the beginning. It is as a fire burning up all corruptions and this is the word that is nigh thee in thy heart; and this is the word which all the prophets spoke from; and this is the word that became flesh and dwelt among us (saith the Saints); and this is the word of life which the apostles preached, the substance of all figures, types and shadows and this is the word which makes all the Saints one, that reconciles their hearts together to the Lord; this is the word by which all things stand and remain, and are upheld by his word and power and this is the word which doth endure forever; all who are born again of the immortal seed witness this word with me. And now the word is made manifest the same as ever was, which gathers together the hearts of people, which divides asunder the precious and the vile and of twain hath made one, and this is the word that lets see that all flesh is grass and this is the word which was before any letter was written, and all who have not this word put the letter for the word and are in Cain’s nature, envying and murdering running on swiftly to evil; and Cain’s sacrifice God doth not accept, and all the preaching and all the praying and all your reading and all your singing and all your expounding and all your churches and all your worships and all your teachers and all your baptisms, which are invented from the letter, the carnal mind invents them. All this is for the fire. Your profession must be gathered together in bundles and cast into the fire, for they are the works of the flesh proceeding from the first nature. And all you who live in the first nature not knowing the word of God but only the letter, ye crucify the just and yet get up into the just’s place, quenching the light within you. Now I witness it by the same word as ever was. They draw people unto the letter and tell them it is the word and to hearken to them who speak their vain imaginations of it. So they bear rule by their means over the poor people, which the Lord was ever against. For God is free and will have his people so and his gospel is a free gospel and his mercies are free and his grace is free. His gospel is free to every creature and his grace is free to every creature. His grace is not the letter, his gospel is not the letter, his glad tidings is not the letter, for many poor troubled souls may be under death and condemnation and have the letter and these teachers of the letter, and there lie wounded but no peace.
+### VII. The Scriptures
+
+The Word. In the beginning was the word and none knows this word but who are come to the beginning. Now, all people and priests, who can witness this? Who are come hither? Who are come hither into the beginning? What our hands have handled and what our eyes have seen what was from the beginning. The word of life this declare we unto you. Who know this word are pure are made clean through the word, are washed by the word, are sanctified by the word, are cut to pieces by the word and are divided asunder by the word; and this word is a hammer beating down everything, that the seed of God may rise up and come to the beginning; and all who know this word are come into the beginning. It is as a fire burning up all corruptions and this is the word that is nigh thee in thy heart; and this is the word which all the prophets spoke from; and this is the word that became flesh and dwelt among us (saith the Saints); and this is the word of life which the apostles preached, the substance of all figures, types and shadows and this is the word which makes all the Saints one, that reconciles their hearts together to the Lord; this is the word by which all things stand and remain, and are upheld by his word and power and this is the word which doth endure forever; all who are born again of the immortal seed witness this word with me. And now the word is made manifest the same as ever was, which gathers together the hearts of people, which divides asunder the precious and the vile and of twain hath made one, and this is the word that lets see that all flesh is grass and this is the word which was before any letter was written, and all who have not this word put the letter for the word and are in Cain’s nature, envying and murdering running on swiftly to evil; and Cain’s sacrifice God doth not accept, and all the preaching and all the praying and all your reading and all your singing and all your expounding and all your churches and all your worships and all your teachers and all your baptisms, which are invented from the letter, the carnal mind invents them. All this is for the fire. Your profession must be gathered together in bundles and cast into the fire, for they are the works of the flesh proceeding from the first nature. And all you who live in the first nature not knowing the word of God but only the letter, ye crucify the just and yet get up into the just’s place, quenching the light within you. Now I witness it by the same word as ever was. They draw people unto the letter and tell them it is the word and to hearken to them who speak their vain imaginations of it. So they bear rule by their means over the poor people, which the Lord was ever against. For God is free and will have his people so and his gospel is a free gospel and his mercies are free and his grace is free. His gospel is free to every creature and his grace is free to every creature. His grace is not the letter, his gospel is not the letter, his glad tidings is not the letter, for many poor troubled souls may be under death and condemnation and have the letter and these teachers of the letter, and there lie wounded but no peace.
 
 So all people consider and see if you can witness your souls raised out of death and you brought into the everlasting covenant. So who can witness their souls brought out of death are come into the beginning, but thou that hast nothing but the letter and art spending thy money and thy labour and not satisfied, thou art following the greedy dumb dog which can never have enough.
 
@@ -560,7 +581,9 @@ Possessing the Scriptures. And ye are sanctified through the obedience of the sp
 
 (C. J., I., p. 96.)
 
-VIII. Sin. Pleading for Unholiness. When I was in prison, diverse professors came to discourse with me; and I had a sense, before they spoke, that they came to plead for sin and imperfection. I asked them, Whether they were believers and had faith? And they said Yes. I asked them, In whom? And they said, In Christ. I replied, If ye are true believers in Christ, you are passed from death to life and if passed from death, then from sin that bringeth death. And if your faith be true, it will give you victory over sin and the devil; for they said they could not believe that any could be free from sin on this side the grave. I bid them give over babbling about the Scriptures which were holy men’s words, whilst they pleaded for unholiness.
+### VIII. Sin
+
+Pleading for Unholiness. When I was in prison, diverse professors came to discourse with me; and I had a sense, before they spoke, that they came to plead for sin and imperfection. I asked them, Whether they were believers and had faith? And they said Yes. I asked them, In whom? And they said, In Christ. I replied, If ye are true believers in Christ, you are passed from death to life and if passed from death, then from sin that bringeth death. And if your faith be true, it will give you victory over sin and the devil; for they said they could not believe that any could be free from sin on this side the grave. I bid them give over babbling about the Scriptures which were holy men’s words, whilst they pleaded for unholiness.
 
 (Journal, 8th ed., II., p. 56.)
 
@@ -612,11 +635,15 @@ The End of Sin. This spirit baptiseth into the one body and this spirit is the u
 
 (C. J., I., p. 95.)
 
-IX. Slavery. Enslaved Races. I am moved to write these things to you in all the plantations. God that made the world and all things therein and giveth life and breath to all is the God of spirits of all flesh and is no respecter of persons. He hath made all nations of one blood. And he doth enlighten every man that cometh into the world. And the gospel is preached to every creature under heaven, which is the power that giveth liberty and freedom and is glad tidings to every captivated creature under the whole heavens.
+### IX. Slavery
+
+Enslaved Races. I am moved to write these things to you in all the plantations. God that made the world and all things therein and giveth life and breath to all is the God of spirits of all flesh and is no respecter of persons. He hath made all nations of one blood. And he doth enlighten every man that cometh into the world. And the gospel is preached to every creature under heaven, which is the power that giveth liberty and freedom and is glad tidings to every captivated creature under the whole heavens.
 
 (Works, VII., p. 144, condensed.)
 
-X. War. So the keeper of the house of correction was commanded to bring me up before the commissioners and soldiers in the market-place and there they proffered me perferment because of my virtue as they said, with many other compliments, and asked me if I would not take up arms for the Commonwealth against the King. But I told them I lived in the virtue of that life and power that took away the occasion of all wars; and I knew from whence all wars did rise; from the lust according to James his doctrine. And still they courted me to accept of their offer, and thought that I did but compliment with them, but I told them I was come into the covenant of peace which was before wars and strifes was. And they said they offered it in love and kindness to me because of my virtue and such like, and I told them if that were their love and kindness I trampled it under my feet.
+### X. War
+
+So the keeper of the house of correction was commanded to bring me up before the commissioners and soldiers in the market-place and there they proffered me perferment because of my virtue as they said, with many other compliments, and asked me if I would not take up arms for the Commonwealth against the King. But I told them I lived in the virtue of that life and power that took away the occasion of all wars; and I knew from whence all wars did rise; from the lust according to James his doctrine. And still they courted me to accept of their offer, and thought that I did but compliment with them, but I told them I was come into the covenant of peace which was before wars and strifes was. And they said they offered it in love and kindness to me because of my virtue and such like, and I told them if that were their love and kindness I trampled it under my feet.
 
 (C. J., I., pp. 11, 12.)
 
@@ -634,7 +661,9 @@ Seek the peace of all men.
 
 (Works, VIII., p. 62.)
 
-XI. Concerning Women. Marriage. For man and woman were helps-meet in the image of God and in righteousness and holiness, in the dominion before they fell; but after the fall in the transgression the man was to rule over his wife; but in the restoration by Christ into the image of God and his righteousness and holiness again in that they are helps-meet, man and woman, as they were before the fall.
+### XI. Concerning Women
+
+Marriage. For man and woman were helps-meet in the image of God and in righteousness and holiness, in the dominion before they fell; but after the fall in the transgression the man was to rule over his wife; but in the restoration by Christ into the image of God and his righteousness and holiness again in that they are helps-meet, man and woman, as they were before the fall.
 
 (Works, VIII., p. 39.)
 
@@ -708,7 +737,11 @@ Mothers in the Church. And the elder women in the truth were not only called eld
 
 (Works, VIII., p. 41.)
 
-PART III. SOCIAL LIFE. I. Social Life. Bringing up Children. Some among you breed up your children not as when you were in a profession only, in such a rude, heady way that when they grow up they do not matter you nor care for you.... In many things they are worse than many of the world’s, more loose, stubborn and disobedient ... so that when they come to be set to prentice many times they run quite out into the world.... Therefore while they are young restrain them ... in all things keep your authority which is given to you of God.
+## Part III. Social Life
+
+### I. Social Life
+
+Bringing up Children. Some among you breed up your children not as when you were in a profession only, in such a rude, heady way that when they grow up they do not matter you nor care for you.... In many things they are worse than many of the world’s, more loose, stubborn and disobedient ... so that when they come to be set to prentice many times they run quite out into the world.... Therefore while they are young restrain them ... in all things keep your authority which is given to you of God.
 
 (Works, VIII., p. 23.)
 
@@ -814,7 +847,9 @@ Unity. Mind the light, that all may be refreshed one in another and all in one. 
 
 (Works, VII., p. 19.)
 
-II. General Exhortations. The dead make dead ways for the dead to walk in.
+### II. General Exhortations
+
+The dead make dead ways for the dead to walk in.
 
 (Works, VIII., p. 28.)
 
