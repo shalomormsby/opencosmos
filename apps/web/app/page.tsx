@@ -32,7 +32,7 @@ export default function Home() {
           </div>
 
           {/* Hero content */}
-          <div className="max-w-xl w-full space-y-8 relative z-10">
+          <div className="max-w-[31.5rem] w-full space-y-8 relative z-10">
             <div className="flex justify-start">
               <ThinkingIndicator
                 pool="landing"

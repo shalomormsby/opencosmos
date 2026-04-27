@@ -37,8 +37,8 @@ importers:
   apps/creative-powerup:
     dependencies:
       '@opencosmos/ui':
-        specifier: ^1.5.1
-        version: 1.5.1(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
+        specifier: ^1.8.0
+        version: 1.8.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@16.1.6(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
@@ -98,8 +98,8 @@ importers:
         specifier: ^16.0.10
         version: 16.1.0(@mdx-js/loader@3.1.1)(@mdx-js/react@3.1.1(@types/react@19.2.13)(react@19.2.3))
       '@opencosmos/ui':
-        specifier: ^1.5.1
-        version: 1.5.1(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
+        specifier: ^1.8.0
+        version: 1.8.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
       '@vercel/analytics':
         specifier: ^1.6.1
         version: 1.6.1(next@16.1.0(babel-plugin-react-compiler@1.0.0)(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
@@ -229,8 +229,8 @@ importers:
         specifier: ^1.5.0
         version: 1.5.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@opencosmos/ui':
-        specifier: ^1.7.0
-        version: 1.7.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
+        specifier: ^1.8.0
+        version: 1.8.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
       '@react-sigma/core':
         specifier: ^5.0.6
         version: 5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))
@@ -901,20 +901,20 @@ packages:
     resolution: {integrity: sha512-vBZP4NlzfOlerQTnba4aqZoMhE/a9HY7HRqoOPaETQcSQuWEIyZMHGfVu6w9wGtGK5fED5qRs2DteVCjOH60sA==}
     engines: {node: '>=14'}
 
-  '@floating-ui/core@1.7.3':
-    resolution: {integrity: sha512-sGnvb5dmrJaKEZ+LDIpguvdX3bDlEllmv4/ClQ9awcmCZrlx5jQyyMWFM5kBI+EyNOCDDiKk8il0zeuX3Zlg/w==}
+  '@floating-ui/core@1.7.5':
+    resolution: {integrity: sha512-1Ih4WTWyw0+lKyFMcBHGbb5U5FtuHJuujoyyr5zTaWS5EYMeT6Jb2AuDeftsCsEuchO+mM2ij5+q9crhydzLhQ==}
 
-  '@floating-ui/dom@1.7.4':
-    resolution: {integrity: sha512-OOchDgh4F2CchOX94cRVqhvy7b3AFb+/rQXyswmzmGakRfkMgoWVjfnLWkRirfLEfuD4ysVW16eXzwt3jHIzKA==}
+  '@floating-ui/dom@1.7.6':
+    resolution: {integrity: sha512-9gZSAI5XM36880PPMm//9dfiEngYoC6Am2izES1FF406YFsjvyBMmeJ2g4SAju3xWwtuynNRFL2s9hgxpLI5SQ==}
 
-  '@floating-ui/react-dom@2.1.6':
-    resolution: {integrity: sha512-4JX6rEatQEvlmgU80wZyq9RT96HZJa88q8hp0pBd+LrczeDI4o6uA2M+uvxngVHo4Ihr8uibXxH6+70zhAFrVw==}
+  '@floating-ui/react-dom@2.1.8':
+    resolution: {integrity: sha512-cC52bHwM/n/CxS87FH0yWdngEZrjdtLW/qVruo68qg+prK7ZQ4YGdut2GyDVpoGeAYe/h899rVeOVm6Oi40k2A==}
     peerDependencies:
       react: ^19.2.1
       react-dom: ^19.2.1
 
-  '@floating-ui/utils@0.2.10':
-    resolution: {integrity: sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ==}
+  '@floating-ui/utils@0.2.11':
+    resolution: {integrity: sha512-RiB/yIh78pcIxl6lLMG0CgBXAZ2Y0eVHqMPYugu+9U0AeT6YBeiJpf7lbdJNIugFP5SIjwNRgo4DhR1Qxi26Gg==}
 
   '@google/generative-ai@0.24.1':
     resolution: {integrity: sha512-MqO+MLfM6kjxcKoy0p1wRzG3b4ZZXtPI+z2IE26UogS2Cm/XHO+7gGRBh6gcJsOiIVoH93UwKvW4HdgiOZCy9Q==}
@@ -1490,52 +1490,8 @@ packages:
     resolution: {integrity: sha512-eA3dO87vQJhFmR59utXH8r0nnulW7C7oTcxfp3bpiiTiv59luCkOkbbALCIa8TzBDdELoRD/zJEIfKcynyFR6Q==}
     engines: {node: '>=18'}
 
-  '@opencosmos/ui@1.5.1':
-    resolution: {integrity: sha512-lwJqLVkomCMdXmJ5KyksG6sbIPaqXJXAwlURU4z38sTDwN7ZUsWuo7xkstFV+9a8SwW7SzoTU8W+l0RHdzHdPQ==}
-    hasBin: true
-    peerDependencies:
-      '@dnd-kit/core': ^6.3.1
-      '@dnd-kit/sortable': ^10.0.0
-      '@dnd-kit/utilities': ^3.2.2
-      '@hookform/resolvers': ^3.10.0
-      '@react-sigma/core': ^5.0.6
-      '@tanstack/react-table': ^8.21.3
-      date-fns: ^4.1.0
-      framer-motion: '*'
-      graphology: ^0.26.0
-      react: ^19.2.1
-      react-day-picker: ^9.13.0
-      react-hook-form: ^7.70.0
-      sigma: ^3.0.2
-      zod: ^3.24.1
-    peerDependenciesMeta:
-      '@dnd-kit/core':
-        optional: true
-      '@dnd-kit/sortable':
-        optional: true
-      '@dnd-kit/utilities':
-        optional: true
-      '@hookform/resolvers':
-        optional: true
-      '@react-sigma/core':
-        optional: true
-      '@tanstack/react-table':
-        optional: true
-      date-fns:
-        optional: true
-      graphology:
-        optional: true
-      react-day-picker:
-        optional: true
-      react-hook-form:
-        optional: true
-      sigma:
-        optional: true
-      zod:
-        optional: true
-
-  '@opencosmos/ui@1.7.0':
-    resolution: {integrity: sha512-HNKnqMqWnbSyJ8ldqALbI+k/1aU8SaU5vmZ7SwMvKHNF1lFoPch3LWy0Is1uHkHUecIwKVF+0q4tWq76Pw7B0g==}
+  '@opencosmos/ui@1.8.0':
+    resolution: {integrity: sha512-PUtiGL/8+tgd7DksJH3Ltz0osMM2VMHVJrc50R9iLkGRPk0QzWfOiuVRF6NeevTuRRsOclsGK11/+/2ubJQgUQ==}
     hasBin: true
     peerDependencies:
       '@dnd-kit/core': ^6.3.1
@@ -5472,8 +5428,8 @@ packages:
       '@types/react':
         optional: true
 
-  react-resizable-panels@4.4.0:
-    resolution: {integrity: sha512-vGH1rIhyDOL4RSWYTx3eatjDohDFIRxJCAXUOaeL9HyamptUnUezqndjMtBo9hQeaq1CIP0NBbc7ZV3lBtlgxA==}
+  react-resizable-panels@4.10.0:
+    resolution: {integrity: sha512-frjewRQt7TCv/vCH1pJfjZ7RxAhr5pKuqVQtVgzFq/vherxBFOWyC3xMbryx5Ti2wylViGUFc93Etg4rB3E0UA==}
     peerDependencies:
       react: ^19.2.1
       react-dom: ^19.2.1
@@ -6750,22 +6706,22 @@ snapshots:
 
   '@fastify/busboy@2.1.1': {}
 
-  '@floating-ui/core@1.7.3':
+  '@floating-ui/core@1.7.5':
     dependencies:
-      '@floating-ui/utils': 0.2.10
+      '@floating-ui/utils': 0.2.11
 
-  '@floating-ui/dom@1.7.4':
+  '@floating-ui/dom@1.7.6':
     dependencies:
-      '@floating-ui/core': 1.7.3
-      '@floating-ui/utils': 0.2.10
+      '@floating-ui/core': 1.7.5
+      '@floating-ui/utils': 0.2.11
 
-  '@floating-ui/react-dom@2.1.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
+  '@floating-ui/react-dom@2.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/dom': 1.7.4
+      '@floating-ui/dom': 1.7.6
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@floating-ui/utils@0.2.10': {}
+  '@floating-ui/utils@0.2.11': {}
 
   '@google/generative-ai@0.24.1': {}
 
@@ -7363,7 +7319,7 @@ snapshots:
 
   '@notionhq/client@5.6.0': {}
 
-  '@opencosmos/ui@1.5.1(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)':
+  '@opencosmos/ui@1.8.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)':
     dependencies:
       '@radix-ui/react-accordion': 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-alert-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7400,69 +7356,7 @@ snapshots:
       lucide-react: 0.562.0(react@19.2.3)
       react: 19.2.3
       react-dropzone: 15.0.0(react@19.2.3)
-      react-resizable-panels: 4.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      sonner: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      tailwind-merge: 3.5.0
-      vaul: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      zustand: 5.0.9(@types/react@19.2.13)(immer@11.1.3)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))
-    optionalDependencies:
-      '@dnd-kit/core': 6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
-      '@dnd-kit/utilities': 3.2.2(react@19.2.3)
-      '@hookform/resolvers': 3.10.0(react-hook-form@7.70.0(react@19.2.3))
-      '@react-sigma/core': 5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))
-      '@tanstack/react-table': 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      date-fns: 4.1.0
-      graphology: 0.26.0(graphology-types@0.24.8)
-      react-day-picker: 9.13.0(react@19.2.3)
-      react-hook-form: 7.70.0(react@19.2.3)
-      sigma: 3.0.2(graphology-types@0.24.8)
-      zod: 3.25.76
-    transitivePeerDependencies:
-      - '@types/react'
-      - '@types/react-dom'
-      - immer
-      - react-dom
-      - use-sync-external-store
-
-  '@opencosmos/ui@1.7.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)':
-    dependencies:
-      '@radix-ui/react-accordion': 1.2.12(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-alert-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-aspect-ratio': 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-avatar': 1.1.11(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-checkbox': 1.3.3(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-collapsible': 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-context-menu': 2.2.16(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-dialog': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-dropdown-menu': 2.1.16(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-hover-card': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-label': 2.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-menubar': 1.1.16(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-navigation-menu': 1.2.14(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-popover': 1.1.15(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-progress': 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-radio-group': 1.3.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-scroll-area': 1.2.10(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-select': 2.2.6(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-separator': 1.1.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-slider': 1.3.6(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-slot': 1.2.4(@types/react@19.2.13)(react@19.2.3)
-      '@radix-ui/react-switch': 1.2.6(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-tabs': 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-toggle': 1.1.10(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-toggle-group': 1.1.11(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@radix-ui/react-tooltip': 1.2.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      class-variance-authority: 0.7.1
-      clsx: 2.1.1
-      cmdk: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      embla-carousel-react: 8.6.0(react@19.2.3)
-      framer-motion: 12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      input-otp: 1.4.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      lucide-react: 0.562.0(react@19.2.3)
-      react: 19.2.3
-      react-dropzone: 15.0.0(react@19.2.3)
-      react-resizable-panels: 4.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      react-resizable-panels: 4.10.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       sonner: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tailwind-merge: 3.5.0
       vaul: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7830,7 +7724,7 @@ snapshots:
 
   '@radix-ui/react-popper@1.2.8(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
-      '@floating-ui/react-dom': 2.1.6(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@floating-ui/react-dom': 2.1.8(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-arrow': 1.1.7(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-compose-refs': 1.1.2(@types/react@19.2.13)(react@19.2.3)
       '@radix-ui/react-context': 1.1.2(@types/react@19.2.13)(react@19.2.3)
@@ -9859,7 +9753,7 @@ snapshots:
       '@next/eslint-plugin-next': 16.0.10
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-import: 2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-jsx-a11y: 6.10.2(eslint@9.39.2(jiti@2.6.1))
       eslint-plugin-react: 7.37.5(eslint@9.39.2(jiti@2.6.1))
@@ -9902,7 +9796,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       '@nolyfill/is-core-module': 1.0.39
       debug: 4.4.3
@@ -9917,36 +9811,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1)):
-    dependencies:
-      '@nolyfill/is-core-module': 1.0.39
-      debug: 4.4.3
-      eslint: 9.39.2(jiti@2.6.1)
-      get-tsconfig: 4.13.0
-      is-bun-module: 2.0.0
-      stable-hash: 0.0.5
-      tinyglobby: 0.2.15
-      unrs-resolver: 1.11.1
-    optionalDependencies:
-      eslint-plugin-import: 2.32.0(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)):
+  eslint-module-utils@2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
       '@typescript-eslint/parser': 8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
-      eslint: 9.39.2(jiti@2.6.1)
-      eslint-import-resolver-node: 0.3.9
-      eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
-    transitivePeerDependencies:
-      - supports-color
-
-  eslint-module-utils@2.12.1(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1)):
-    dependencies:
-      debug: 3.2.7
-    optionalDependencies:
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0)(eslint@9.39.2(jiti@2.6.1))
@@ -9964,7 +9833,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1)))(eslint@9.39.2(jiti@2.6.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -9993,7 +9862,7 @@ snapshots:
       doctrine: 2.1.0
       eslint: 9.39.2(jiti@2.6.1)
       eslint-import-resolver-node: 0.3.9
-      eslint-module-utils: 2.12.1(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
+      eslint-module-utils: 2.12.1(@typescript-eslint/parser@8.50.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.10.1)(eslint@9.39.2(jiti@2.6.1))
       hasown: 2.0.2
       is-core-module: 2.16.1
       is-glob: 4.0.3
@@ -12178,7 +12047,7 @@ snapshots:
     optionalDependencies:
       '@types/react': 19.2.13
 
-  react-resizable-panels@4.4.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
+  react-resizable-panels@4.10.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3):
     dependencies:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
