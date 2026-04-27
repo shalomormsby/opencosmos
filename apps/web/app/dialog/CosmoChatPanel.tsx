@@ -213,7 +213,7 @@ export function CosmoChatPanel() {
                 className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-lg px-3 py-2 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 min-h-[40px] max-h-[160px] overflow-y-auto [field-sizing:content]"
               />
               <Button
-                onClick={send}
+                onClick={() => send()}
                 disabled={!input.trim() || isStreaming}
                 size="sm"
                 className="shrink-0 h-10"
