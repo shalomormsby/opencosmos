@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import { CosmoChat } from './CosmoChat'
 
 export const metadata = {
@@ -5,5 +6,9 @@ export const metadata = {
 }
 
 export default function DialogPage() {
-  return <CosmoChat />
+  return (
+    <Suspense>
+      <CosmoChat />
+    </Suspense>
+  )
 }

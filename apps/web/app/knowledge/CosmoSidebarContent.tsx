@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Tabs, TabsList, TabsTrigger, Button } from '@opencosmos/ui'
 import { CosmoChatPanel } from '../dialog/CosmoChatPanel'
 import { DialogHistoryPanel } from '../dialog/DialogHistoryPanel'
+import { ShareButton } from '../dialog/ShareButton'
 import { useCosmoSession } from '../dialog/useCosmoSession'
 
 type Tab = 'dialog' | 'history'
@@ -38,11 +39,11 @@ export function CosmoSidebarContent() {
       <div className="flex-1 min-h-0 flex flex-col overflow-hidden">
         {tab === 'dialog' ? (
           <>
-            <div className="shrink-0 px-5 pt-3 pb-1">
+            <div className="shrink-0 px-5 pt-3 pb-1 flex gap-2">
               <Button
                 variant="outline"
                 size="sm"
-                className="w-full gap-1.5"
+                className="flex-1 gap-1.5"
                 onClick={() => {
                   startNew()
                   setTab('dialog')
@@ -53,6 +54,7 @@ export function CosmoSidebarContent() {
                 </svg>
                 New dialog
               </Button>
+              <ShareButton className="flex-1 gap-1.5" />
             </div>
             <div className="flex-1 min-h-0">
               <CosmoChatPanel />

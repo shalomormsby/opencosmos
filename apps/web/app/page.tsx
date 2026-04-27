@@ -1,7 +1,8 @@
-import { Header, Button, OrbBackground } from '@opencosmos/ui'
+import { Header, OrbBackground, ThinkingIndicator } from '@opencosmos/ui'
 import Link from 'next/link'
 import { AuthButton } from './AuthButton'
 import { AppShell } from './AppShell'
+import { HeroChatInput } from './HeroChatInput'
 
 export default function Home() {
   return (
@@ -31,19 +32,18 @@ export default function Home() {
           </div>
 
           {/* Hero content */}
-          <div className="max-w-lg text-center space-y-8 relative z-10">
-            <div className="space-y-3">
-              <h1 className="text-4xl font-light tracking-wide text-foreground">
-                OpenCosmos
-              </h1>
-              <p className="text-foreground/50 leading-relaxed">
-                At home in the universe.
-              </p>
+          <div className="max-w-xl w-full space-y-8 relative z-10">
+            <div className="flex justify-start">
+              <ThinkingIndicator
+                pool="landing"
+                shuffle
+                size="lg"
+                cycleMs={4000}
+                markPalette="white-white"
+              />
             </div>
 
-            <Button variant="secondary" size="lg" asChild>
-              <Link href="/dialog">Meet Cosmo →</Link>
-            </Button>
+            <HeroChatInput />
           </div>
         </div>
       </main>

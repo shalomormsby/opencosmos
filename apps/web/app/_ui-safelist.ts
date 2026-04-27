@@ -196,4 +196,49 @@ export const _safelist = [
   // AppSidebarInset
   'min-h-screen',
 
+  // ── ThinkingIndicator ─────────────────────────────────────────────────────
+  'sr-only',
+  'inline-flex items-center text-[var(--color-text-secondary)]',
+  'gap-2 gap-2.5 gap-3',
+  'shrink-0 inline-flex items-center',
+  'relative inline-block text-left',
+  'invisible whitespace-pre',
+  'absolute inset-0 whitespace-pre',
+
+  // ── Dialog (Radix overlay + content + header/title/description/footer) ────
+  'data-[state=open]:animate-in data-[state=closed]:animate-out',
+  'data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+  'data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95',
+  'fixed inset-0 z-50 bg-black/50',
+  'bg-background grid translate-x-[-50%] translate-y-[-50%]',
+  'fixed top-[50%] left-[50%] z-50 w-full max-w-[calc(100%-2rem)]',
+  'gap-4 rounded-lg border p-6 shadow-lg duration-200 outline-none',
+  'sm:max-w-lg sm:max-w-md',
+  'ring-offset-background focus:ring-ring',
+  'data-[state=open]:bg-accent data-[state=open]:text-muted-foreground',
+  'absolute top-4 right-4 rounded-xs opacity-70 transition-opacity hover:opacity-100',
+  'focus:ring-2 focus:ring-offset-2 focus:outline-none disabled:pointer-events-none',
+  '[&_svg]:pointer-events-none [&_svg]:shrink-0',
+  "[&_svg:not([class*='size-'])]:size-4",
+  'flex flex-col gap-2 text-center sm:text-left',
+  'flex flex-col-reverse gap-2 sm:flex-row sm:justify-end',
+  'text-lg leading-none font-semibold',
+  'text-muted-foreground text-sm',
+
+  // ── Label (form labels in ShareDialog / PasscodeGate) ─────────────────────
+  'text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70',
+
+  // ── ShareDialog inline classes ────────────────────────────────────────────
+  'space-y-2 space-y-5',
+  'flex flex-col items-start gap-1 rounded-lg border p-3 text-left transition-colors',
+  'border-foreground/40 bg-foreground/5 border-foreground/10 hover:border-foreground/20',
+  'grid grid-cols-2 gap-2',
+  'text-xs text-foreground/50 text-foreground/60',
+  'rounded-lg border border-foreground/10 bg-foreground/5 p-3',
+  'text-2xl font-mono tracking-[0.4em] text-foreground tracking-[0.5em]',
+  'flex gap-2 justify-end',
+  'flex-1 font-mono text-xs',
+  'text-destructive',
+  'sm:max-w-sm sm:max-w-md',
+
 ].join(' ')

@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useRouter, useSearchParams } from 'next/navigation'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, OpenCosmosIcon, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
+import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
@@ -112,6 +113,22 @@ export function CosmoChat() {
 
   const bottomRef = useRef<HTMLDivElement>(null)
   const textareaRef = useRef<HTMLTextAreaElement>(null)
+  const router = useRouter()
+  const searchParams = useSearchParams()
+  const initialQueryHandledRef = useRef(false)
+
+  // Handoff from the landing page: ?q=… seeds and auto-sends a single message.
+  // Strips the param afterwards so a refresh won't re-send.
+  useEffect(() => {
+    if (initialQueryHandledRef.current) return
+    const q = searchParams.get('q')
+    if (!q) return
+    const trimmed = q.trim()
+    if (!trimmed) return
+    initialQueryHandledRef.current = true
+    void send(trimmed)
+    router.replace('/dialog')
+  }, [searchParams, send, router])
 
   useEffect(() => {
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -133,7 +150,7 @@ export function CosmoChat() {
     <AppSidebarProvider defaultOpen={true} storageKey="appsidebar:dialog">
       <MobileSidebarInit storageKey="appsidebar:dialog" />
       <AppSidebar
-        logo={<OpenCosmosIcon size={20} />}
+        logo={<InfinityAnim size="xs" technique="dashes" duration={12} />}
         bottomItems={[
           { icon: <MessageSquare className="w-4 h-4" />, label: 'Dialog',    href: '/dialog',                                           active: true },
           { icon: <BookOpen     className="w-4 h-4" />, label: 'Knowledge', href: '/knowledge' },
@@ -290,7 +307,7 @@ export function CosmoChat() {
                 className="flex-1 resize-none bg-transparent text-sm text-foreground placeholder:text-foreground/30 outline-none border border-foreground/15 rounded-xl px-4 py-3 leading-relaxed focus:border-foreground/30 transition-colors disabled:opacity-50 min-h-[48px] max-h-[160px] overflow-y-auto [field-sizing:content]"
               />
               <Button
-                onClick={send}
+                onClick={() => send()}
                 disabled={!input.trim() || isStreaming}
                 size="sm"
                 className="shrink-0 h-12"
