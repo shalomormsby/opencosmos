@@ -123,7 +123,7 @@ Passion, enmity, folly.
 Know the truth and find peace.
 Share the way.
 
-## Wakefulness
+## 2. Wakefulness
 
 Wakefulness is the way to life.
 The fool sleeps

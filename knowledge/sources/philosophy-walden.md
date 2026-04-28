@@ -33,20 +33,8 @@ related_docs:
   - sources/philosophy-on-the-duty-of-civil-disobedience.md
   - sources/philosophy-the-kingdom-of-god-is-within-you.md
 ---
-The Project Gutenberg eBook of Walden, and On The Duty Of Civil Disobedience This eBook is for the use of anyone anywhere in the United States and most other parts of the world at no cost and with almost no restrictions whatsoever. You may copy it, give it away or re-use it under the terms of the Project Gutenberg License included with this eBook or online at www.gutenberg.org. If you are not located in the United States, you will have to check the laws of the country where you are located before using this eBook. Title: Walden, and On The Duty Of Civil Disobedience
 
-Author: Henry David Thoreau
-
-Release date: January 1, 1995 [eBook #205] Most recently updated: February 20, 2026
-
-Language: English
-
-Other information and formats: www.gutenberg.org/ebooks/205
-
-Credits: Judith Boss, and David Widger
-
-*** START OF THE PROJECT GUTENBERG EBOOK WALDEN, AND ON THE DUTY OF CIVIL DISOBEDIENCE ***
-WALDEN and ON THE DUTY OF CIVIL DISOBEDIENCE by Henry David Thoreau cover Contents WALDEN
+WALDEN by Henry David Thoreau cover Contents WALDEN
 
 Economy Where I Lived, and What I Lived For Reading Sounds Solitude Visitors The Bean-Field The Village The Ponds Baker Farm Higher Laws Brute Neighbors House-Warming Former Inhabitants and Winter Visitors Winter Animals The Pond in Winter Spring Conclusion
 
@@ -222,6 +210,7 @@ I have thus a tight shingled and plastered house, ten feet wide by fifteen long,
     Transportation,..................  1.40  I carried a good part
                                        ————  on my back.
         In all,..................... $28.12½
+        
 These are all the materials excepting the timber stones and sand, which I claimed by squatter’s right. I have also a small wood-shed adjoining, made chiefly of the stuff which was left after building the house.
 
 I intend to build me a house which will surpass any on the main street in Concord in grandeur and luxury, as soon as it pleases me as much and will cost me no more than my present one.
