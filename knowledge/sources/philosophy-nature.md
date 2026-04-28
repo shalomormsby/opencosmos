@@ -57,7 +57,7 @@ CHAPTER VI.	IDEALISM	     45
 CHAPTER VII.	SPIRIT	     59 
 CHAPTER VIII.	PROSPECTS	     64
 
-## INTRODUCTION.
+## Introduction
 
 OUR age is retrospective. It builds the sepulchres of the fathers. It writes biographies, histories, and criticism. The foregoing generations beheld God and nature face to face; we, through their eyes. Why should not we also enjoy an original relation to the universe? Why should not we have a poetry and philosophy of insight and not of tradition, and a religion by revelation to us, and not the history of theirs? Embosomed for a season in nature, whose floods of life stream around and through us, and invite us by the powers they supply, to action proportioned to nature, why should we grope among the dry bones of the past, or put the living generation into masquerade out of its faded wardrobe? The sun shines to-day also. There is more wool and flax in the fields. There are new lands, new men, new thoughts. Let us demand our own works and laws and worship.
 
@@ -67,9 +67,7 @@ All science has one aim, namely, to find a theory of nature. We have theories of
 
 Philosophically considered, the universe is composed of Nature and the Soul. Strictly speaking, therefore, all that is separate from us, all which Philosophy distinguishes as the NOT ME, that is, both nature and art, all other men and my own body, must be ranked under this name, NATURE. In enumerating the values of nature and casting up their sum, I shall use the word in both senses;—in its common and in its philosophical import. In inquiries so general as our present one, the inaccuracy is not material; no confusion of thought will occur. Nature, in the common sense, refers to essences unchanged by man; space, the air, the river, the leaf. Art is applied to the mixture of his will with the same things, as in a house, a canal, a statue, a picture. But his operations taken together are so insignificant, a little chipping, baking, patching, and washing, that in an impression so grand as that of the world on the human mind, they do not vary the result.
 
-NATURE.
-
-## CHAPTER I.
+## Chapter I. Nature
 
 TO go into solitude, a man needs to retire as much from his chamber as from society. I am not solitary whilst I read and write, though nobody is with me. But if a man would be alone, let him look at the stars. The rays that come from those heavenly worlds, will separate between him and what he touches. One might think the atmosphere was made transparent with this design, to give man, in the heavenly bodies, the perpetual presence of the sublime. Seen in the streets of cities, how great they are! If the stars should appear one night in a thousand years, how would men believe and adore; and preserve for many generations the remembrance of the city of God which had been shown! But every night come out these envoys of beauty, and light the universe with their admonishing smile.
 
@@ -83,9 +81,7 @@ The greatest delight which the fields and woods minister, is the suggestion of a
 
 Yet it is certain that the power to produce this delight, does not reside in nature, but in man, or in a harmony of both. It is necessary to use these pleasures with great temperance. For, nature is not always tricked in holiday attire, but the same scene which yesterday breathed perfume and glittered as for the frolic of the nymphs, is overspread with melancholy today. Nature always wears the colors of the spirit. To a man laboring under calamity, the heat of his own fire hath sadness in it. Then, there is a kind of contempt of the landscape felt by him who has just lost by death a dear friend. The sky is less grand as it shuts down over less worth in the population.
 
-## CHAPTER II.
-
-COMMODITY.
+## Chapter II. Commodity
 
 WHOEVER considers the final cause of the world, will discern a multitude of uses that result. They all admit of being thrown into one of the following classes; Commodity; Beauty; Language; and Discipline.
 
@@ -100,9 +96,7 @@ The useful arts are reproductions or new combinations by the wit of man, of the 
 
 But there is no need of specifying particulars in this class of uses. The catalogue is endless, and the examples so obvious, that I shall leave them to the reader's reflection, with the general remark, that this mercenary benefit is one which has respect to a farther good. A man is fed, not that he may be fed, but that he may work.
 
-## CHAPTER III.
-
-BEAUTY.
+## Chapter III. Beauty
 
 A NOBLER want of man is served by nature, namely, the love of Beauty.
 
@@ -130,9 +124,7 @@ The production of a work of art throws a light upon the mystery of humanity. A w
 
 The world thus exists to the soul to satisfy the desire of beauty. This element I call an ultimate end. No reason can be asked or given why the soul seeks beauty. Beauty, in its largest and profoundest sense, is one expression for the universe. God is the all-fair. Truth, and goodness, and beauty, are but different faces of the same All. But beauty in nature is not ultimate. It is the herald of inward and eternal beauty, and is not alone a solid and satisfactory good. It must stand as a part, and not as yet the last or highest expression of the final cause of Nature.
 
-## CHAPTER IV.
-
-LANGUAGE.
+## Chapter IV. Language
 
 LANGUAGE is a third use which Nature subserves to man. Nature is the vehicle, and threefold degree.
 
@@ -174,9 +166,7 @@ This doctrine is abstruse, and though the images of "garment," "scoriae," "mirro
 
 A new interest surprises us, whilst, under the view now suggested, we contemplate the fearful extent and multitude of objects; since "every object rightly seen, unlocks a new faculty of the soul." That which was unconscious truth, becomes, when interpreted and defined in an object, a part of the domain of knowledge,—a new weapon in the magazine of power.
 
-## CHAPTER V.
-
-DISCIPLINE.
+## Chapter V. Discipline
 
 IN view of the significance of nature, we arrive at once at a new fact, that nature is a discipline. This use of the world includes the preceding uses, as parts of itself.
 
@@ -214,9 +204,7 @@ Words and actions are not the attributes of brute nature. They introduce us to t
 
 It were a pleasant inquiry to follow into detail their ministry to our education, but where would it stop? We are associated in adolescent and adult life with some friends, who, like skies and waters, are coextensive with our idea; who, answering each to a certain affection of the soul, satisfy our desire on that side; whom we lack power to put at such focal distance from us, that we can mend or even analyze them. We cannot choose but love them. When much intercourse with a friend has supplied us with a standard of excellence, and has increased our respect for the resources of God who thus sends a real person to outgo our ideal; when he has, moreover, become an object of thought, and, whilst his character retains all its unconscious effect, is converted in the mind into solid and sweet wisdom,—it is a sign to us that his office is closing, and he is commonly withdrawn from our sight in a short time.
 
-## CHAPTER VI.
-
-IDEALISM.
+## Chapter VI. Idealism
 
 THUS is the unspeakable but intelligible and practicable meaning of the world conveyed to man, the immortal pupil, in every object of sense. To this one end of Discipline, all parts of nature conspire.
 
@@ -297,9 +285,7 @@ It appears that motion, poetry, physical and intellectual science, and religion,
 
 The advantage of the ideal theory over the popular faith, is this, that it presents the world in precisely that view which is most desirable to the mind. It is, in fact, the view which Reason, both speculative and practical, that is, philosophy and virtue, take. For, seen in the light of thought, the world always is phenomenal; and virtue subordinates it to the mind. Idealism sees the world in God. It beholds the whole circle of persons and things, of actions and events, of country and religion, not as painfully accumulated, atom after atom, act after act, in an aged creeping Past, but as one vast picture, which God paints on the instant eternity, for the contemplation of the soul. Therefore the soul holds itself off from a too trivial and microscopic study of the universal tablet. It respects the end too much, to immerse itself in the means. It sees something more important in Christianity, than the scandals of ecclesiastical history, or the niceties of criticism; and, very incurious concerning persons or miracles, and not at all disturbed by chasms of historical evidence, it accepts from God the phenomenon, as it finds it, as the pure and awful form of religion in the world. It is not hot and passionate at the appearance of what it calls its own good or bad fortune, at the union or opposition of other persons. No man is its enemy. It accepts whatsoever befalls, as part of its lesson. It is a watcher more than a doer, and it is a doer, only that it may the better watch.
 
-## CHAPTER VII.
-
-SPIRIT.
+## Chapter VII. Spirit
 
 IT is essential to a true theory of nature and of man, that it should contain somewhat progressive. Uses that are exhausted or that may be, and facts that end in the statement, cannot be all that is true of this brave lodging wherein man is harbored, and wherein all his faculties find appropriate and endless exercise. And all the uses of nature admit of being summed in one, which yields the activity of man an infinite scope. Through all its kingdoms, to the suburbs and outskirts of things, it is faithful to the cause whence it had its origin. It always speaks of Spirit. It suggests the absolute. It is a perpetual effect. It is a great shadow pointing always to the sun behind us.
 
@@ -322,9 +308,7 @@ carries upon its face the highest certificate of truth, because it animates me t
 
 The world proceeds from the same spirit as the body of man. It is a remoter and inferior incarnation of God, a projection of God in the unconscious. But it differs from the body in one important respect. It is not, like that, now subjected to the human will. Its serene order is inviolable by us. It is, therefore, to us, the present expositor of the divine mind. It is a fixed point whereby we may measure our departure. As we degenerate, the contrast between us and our house is more evident. We are as much strangers in nature, as we are aliens from God. We do not understand the notes of birds. The fox and the deer run away from us; the bear and tiger rend us. We do not know the uses of more than a few plants, as corn and the apple, the potato and the vine. Is not the landscape, every glimpse of which hath a grandeur, a face of him? Yet this may show us what discord is between man and nature, for you cannot freely admire a noble landscape, if laborers are digging in the field hard by. The poet finds something ridiculous in his delight, until he is out of the sight of men.
 
-## CHAPTER VIII.
-
-PROSPECTS.
+## Chapter VIII. Prospects
 
 IN inquiries respecting the laws of the world and the frame of things, the highest reason is always the truest. That which seems faintly possible—it is so refined, is often faint and dim because it is deepest seated in the mind among the eternal verities. Empirical science is apt to cloud the sight, and, by the very knowledge of functions and processes, to bereave the student of the manly contemplation of the whole. The savant becomes unpoetic. But the best read naturalist who lends an entire and devout attention to truth, will see that there remains much to learn of his relation to the world, and that it is not to be learned by any addition or subtraction or other comparison of known quantities, but is arrived at by untaught sallies of the spirit, by a continual self-recovery, and by entire humility. He will perceive that there are far more excellent qualities in the student than preciseness and infallibility; that a guess is often more fruitful than an indisputable affirmation, and that a dream may let us deeper into the secret of nature than a hundred concerted experiments.
 
