@@ -1,0 +1,362 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <path id="inf" d="M 410,250 C 410,291.9 358.3,312.6 325.4,303.3 C 292.5,294 270.9,270.9 250,250 C 229.1,229.1 207.5,206 174.6,196.7 C 141.7,187.4 90,208.1 90,250 C 90,291.9 141.7,312.6 174.6,303.3 C 207.5,294 229.1,270.9 250,250 C 270.9,229.1 292.5,206 325.4,196.7 C 358.3,187.4 410,208.1 410,250 Z"/>
+
+    <filter id="bloom" x="-300%" y="-300%" width="700%" height="700%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="35" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="b2"/>
+      <feMerge><feMergeNode in="b1"/><feMergeNode in="b2"/></feMerge>
+    </filter>
+    <filter id="gw" x="-200%" y="-200%" width="500%" height="500%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="12"/>
+    </filter>
+    <filter id="gm" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gt" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gc" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gh" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="3" result="b1"/>
+      <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="b2"/>
+      <feMerge><feMergeNode in="b2"/><feMergeNode in="b1"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="gs" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="500" height="500" fill="#040810"/>
+
+  <!-- Base infinity track -->
+  <use href="#inf" style="fill:none;stroke:rgba(100,140,200,0.07);stroke-width:5;stroke-linecap:round;stroke-linejoin:round"/>
+
+  <!-- Bloom aura at front -->
+  <line x1="0" y1="-45" x2="0" y2="45" stroke="#1a0a44" stroke-width="14" stroke-linecap="round" opacity="0.6" filter="url(#bloom)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.200s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-40" x2="0" y2="40" stroke="#1a0a44" stroke-width="12" stroke-linecap="round" opacity="0.55" filter="url(#bloom)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.190s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-35" x2="0" y2="35" stroke="#0e3366" stroke-width="10" stroke-linecap="round" opacity="0.5" filter="url(#gw)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.180s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-30" x2="0" y2="30" stroke="#0e4477" stroke-width="8" stroke-linecap="round" opacity="0.45" filter="url(#gw)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.160s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-26" x2="0" y2="26" stroke="#1a6688" stroke-width="7" stroke-linecap="round" opacity="0.4" filter="url(#gm)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.140s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-22" x2="0" y2="22" stroke="#1a6688" stroke-width="6" stroke-linecap="round" opacity="0.35" filter="url(#gm)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.120s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+
+  <!-- Tapered comet body: 100 perpendicular lines -->
+  <line x1="0" y1="-0.5" x2="0" y2="0.5" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.08">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="0.0000s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.5" x2="0" y2="0.5" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.08">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0121s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.5" x2="0" y2="0.5" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.08">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0242s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.6" x2="0" y2="0.6" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.08">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0364s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.6" x2="0" y2="0.6" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.08">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0485s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.6" x2="0" y2="0.6" stroke="#0e3344" stroke-width="1.0" stroke-linecap="round" opacity="0.09">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0606s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.7" x2="0" y2="0.7" stroke="#0e3344" stroke-width="1.1" stroke-linecap="round" opacity="0.09">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0727s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.8" x2="0" y2="0.8" stroke="#0e3344" stroke-width="1.1" stroke-linecap="round" opacity="0.09">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0848s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-0.9" x2="0" y2="0.9" stroke="#0e3344" stroke-width="1.1" stroke-linecap="round" opacity="0.10">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.0970s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1" x2="0" y2="1.0" stroke="#0e3344" stroke-width="1.1" stroke-linecap="round" opacity="0.10">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1091s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.1" x2="0" y2="1.1" stroke="#0e3344" stroke-width="1.1" stroke-linecap="round" opacity="0.11">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1212s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.2" x2="0" y2="1.2" stroke="#0e3344" stroke-width="1.2" stroke-linecap="round" opacity="0.11">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1333s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.3" x2="0" y2="1.3" stroke="#155566" stroke-width="1.2" stroke-linecap="round" opacity="0.12">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1455s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.4" x2="0" y2="1.4" stroke="#155566" stroke-width="1.2" stroke-linecap="round" opacity="0.12">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1576s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.6" x2="0" y2="1.6" stroke="#155566" stroke-width="1.3" stroke-linecap="round" opacity="0.13">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1697s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.7" x2="0" y2="1.7" stroke="#155566" stroke-width="1.3" stroke-linecap="round" opacity="0.14">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1818s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-1.9" x2="0" y2="1.9" stroke="#155566" stroke-width="1.3" stroke-linecap="round" opacity="0.14">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.1939s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-2" x2="0" y2="2.0" stroke="#155566" stroke-width="1.4" stroke-linecap="round" opacity="0.15">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2061s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-2.2" x2="0" y2="2.2" stroke="#155566" stroke-width="1.4" stroke-linecap="round" opacity="0.16">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2182s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-2.4" x2="0" y2="2.4" stroke="#155566" stroke-width="1.5" stroke-linecap="round" opacity="0.17">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2303s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-2.6" x2="0" y2="2.6" stroke="#155566" stroke-width="1.5" stroke-linecap="round" opacity="0.18">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2424s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-2.8" x2="0" y2="2.8" stroke="#155566" stroke-width="1.6" stroke-linecap="round" opacity="0.19">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2545s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-3" x2="0" y2="3.0" stroke="#155566" stroke-width="1.6" stroke-linecap="round" opacity="0.20">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2667s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-3.2" x2="0" y2="3.2" stroke="#155566" stroke-width="1.7" stroke-linecap="round" opacity="0.21">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2788s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-3.4" x2="0" y2="3.4" stroke="#155566" stroke-width="1.7" stroke-linecap="round" opacity="0.22">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.2909s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-3.6" x2="0" y2="3.6" stroke="#1a7799" stroke-width="1.8" stroke-linecap="round" opacity="0.23">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3030s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-3.8" x2="0" y2="3.8" stroke="#1a7799" stroke-width="1.9" stroke-linecap="round" opacity="0.24">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3152s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-4.1" x2="0" y2="4.1" stroke="#1a7799" stroke-width="1.9" stroke-linecap="round" opacity="0.25">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3273s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-4.3" x2="0" y2="4.3" stroke="#1a7799" stroke-width="2.0" stroke-linecap="round" opacity="0.26">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3394s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-4.5" x2="0" y2="4.5" stroke="#1a7799" stroke-width="2.0" stroke-linecap="round" opacity="0.27">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3515s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-4.8" x2="0" y2="4.8" stroke="#1a7799" stroke-width="2.1" stroke-linecap="round" opacity="0.28">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3636s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-5" x2="0" y2="5.0" stroke="#1a7799" stroke-width="2.2" stroke-linecap="round" opacity="0.29">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3758s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-5.3" x2="0" y2="5.3" stroke="#1a7799" stroke-width="2.2" stroke-linecap="round" opacity="0.31">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.3879s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-5.6" x2="0" y2="5.6" stroke="#1a7799" stroke-width="2.3" stroke-linecap="round" opacity="0.32">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4000s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-5.8" x2="0" y2="5.8" stroke="#1a7799" stroke-width="2.4" stroke-linecap="round" opacity="0.33">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4121s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-6.1" x2="0" y2="6.1" stroke="#1a7799" stroke-width="2.4" stroke-linecap="round" opacity="0.34">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4242s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-6.4" x2="0" y2="6.4" stroke="#1a7799" stroke-width="2.5" stroke-linecap="round" opacity="0.36">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4364s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-6.6" x2="0" y2="6.6" stroke="#1a7799" stroke-width="2.6" stroke-linecap="round" opacity="0.37">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4485s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-6.9" x2="0" y2="6.9" stroke="#1a7799" stroke-width="2.6" stroke-linecap="round" opacity="0.38">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4606s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-7.2" x2="0" y2="7.2" stroke="#1a7799" stroke-width="2.7" stroke-linecap="round" opacity="0.40">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4727s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-7.5" x2="0" y2="7.5" stroke="#2299bb" stroke-width="2.8" stroke-linecap="round" opacity="0.41">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4848s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-7.8" x2="0" y2="7.8" stroke="#2299bb" stroke-width="2.9" stroke-linecap="round" opacity="0.42">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.4970s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-8.1" x2="0" y2="8.1" stroke="#2299bb" stroke-width="2.9" stroke-linecap="round" opacity="0.44">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5091s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-8.3" x2="0" y2="8.3" stroke="#2299bb" stroke-width="3.0" stroke-linecap="round" opacity="0.45">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5212s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-8.6" x2="0" y2="8.6" stroke="#2299bb" stroke-width="3.1" stroke-linecap="round" opacity="0.46">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5333s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-8.9" x2="0" y2="8.9" stroke="#2299bb" stroke-width="3.2" stroke-linecap="round" opacity="0.48">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5455s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-9.2" x2="0" y2="9.2" stroke="#2299bb" stroke-width="3.2" stroke-linecap="round" opacity="0.49">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5576s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-9.5" x2="0" y2="9.5" stroke="#2299bb" stroke-width="3.3" stroke-linecap="round" opacity="0.51">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5697s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-9.8" x2="0" y2="9.8" stroke="#2299bb" stroke-width="3.4" stroke-linecap="round" opacity="0.52">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5818s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-10.1" x2="0" y2="10.1" stroke="#2299bb" stroke-width="3.5" stroke-linecap="round" opacity="0.53">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.5939s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-10.4" x2="0" y2="10.4" stroke="#2299bb" stroke-width="3.5" stroke-linecap="round" opacity="0.55">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6061s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-10.7" x2="0" y2="10.7" stroke="#2299bb" stroke-width="3.6" stroke-linecap="round" opacity="0.56">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6182s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-11" x2="0" y2="11.0" stroke="#2299bb" stroke-width="3.7" stroke-linecap="round" opacity="0.57">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6303s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-11.3" x2="0" y2="11.3" stroke="#2299bb" stroke-width="3.8" stroke-linecap="round" opacity="0.59">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6424s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-11.6" x2="0" y2="11.6" stroke="#2299bb" stroke-width="3.8" stroke-linecap="round" opacity="0.60">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6545s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-11.9" x2="0" y2="11.9" stroke="#55ccdd" stroke-width="3.9" stroke-linecap="round" opacity="0.62" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6667s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-12.2" x2="0" y2="12.2" stroke="#55ccdd" stroke-width="4.0" stroke-linecap="round" opacity="0.63" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6788s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-12.4" x2="0" y2="12.4" stroke="#55ccdd" stroke-width="4.1" stroke-linecap="round" opacity="0.64" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.6909s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-12.7" x2="0" y2="12.7" stroke="#55ccdd" stroke-width="4.1" stroke-linecap="round" opacity="0.66" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7030s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-13" x2="0" y2="13.0" stroke="#55ccdd" stroke-width="4.2" stroke-linecap="round" opacity="0.67" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7152s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-13.3" x2="0" y2="13.3" stroke="#55ccdd" stroke-width="4.3" stroke-linecap="round" opacity="0.68" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7273s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-13.6" x2="0" y2="13.6" stroke="#55ccdd" stroke-width="4.4" stroke-linecap="round" opacity="0.70" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7394s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-13.9" x2="0" y2="13.9" stroke="#55ccdd" stroke-width="4.4" stroke-linecap="round" opacity="0.71" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7515s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-14.1" x2="0" y2="14.1" stroke="#55ccdd" stroke-width="4.5" stroke-linecap="round" opacity="0.72" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7636s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-14.4" x2="0" y2="14.4" stroke="#55ccdd" stroke-width="4.6" stroke-linecap="round" opacity="0.74" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7758s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-14.7" x2="0" y2="14.7" stroke="#55ccdd" stroke-width="4.6" stroke-linecap="round" opacity="0.75" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.7879s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-14.9" x2="0" y2="14.9" stroke="#55ccdd" stroke-width="4.7" stroke-linecap="round" opacity="0.76" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8000s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-15.2" x2="0" y2="15.2" stroke="#55ccdd" stroke-width="4.8" stroke-linecap="round" opacity="0.77" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8121s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-15.5" x2="0" y2="15.5" stroke="#55ccdd" stroke-width="4.8" stroke-linecap="round" opacity="0.79" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8242s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-15.7" x2="0" y2="15.7" stroke="#55ccdd" stroke-width="4.9" stroke-linecap="round" opacity="0.80" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8364s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-16" x2="0" y2="16.0" stroke="#88ddee" stroke-width="5.0" stroke-linecap="round" opacity="0.81" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8485s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-16.2" x2="0" y2="16.2" stroke="#88ddee" stroke-width="5.0" stroke-linecap="round" opacity="0.82" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8606s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-16.4" x2="0" y2="16.4" stroke="#88ddee" stroke-width="5.1" stroke-linecap="round" opacity="0.83" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8727s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-16.7" x2="0" y2="16.7" stroke="#88ddee" stroke-width="5.1" stroke-linecap="round" opacity="0.84" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8848s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-16.9" x2="0" y2="16.9" stroke="#88ddee" stroke-width="5.2" stroke-linecap="round" opacity="0.85" filter="url(#gs)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.8970s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-17.1" x2="0" y2="17.1" stroke="#88ddee" stroke-width="5.3" stroke-linecap="round" opacity="0.86" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9091s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-17.3" x2="0" y2="17.3" stroke="#88ddee" stroke-width="5.3" stroke-linecap="round" opacity="0.87" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9212s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-17.5" x2="0" y2="17.5" stroke="#88ddee" stroke-width="5.4" stroke-linecap="round" opacity="0.88" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9333s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-17.7" x2="0" y2="17.7" stroke="#88ddee" stroke-width="5.4" stroke-linecap="round" opacity="0.89" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9455s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-17.9" x2="0" y2="17.9" stroke="#88ddee" stroke-width="5.5" stroke-linecap="round" opacity="0.90" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9576s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.1" x2="0" y2="18.1" stroke="#bbecf5" stroke-width="5.5" stroke-linecap="round" opacity="0.91" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9697s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.3" x2="0" y2="18.3" stroke="#bbecf5" stroke-width="5.6" stroke-linecap="round" opacity="0.92" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9818s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.5" x2="0" y2="18.5" stroke="#bbecf5" stroke-width="5.6" stroke-linecap="round" opacity="0.93" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-0.9939s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.6" x2="0" y2="18.6" stroke="#bbecf5" stroke-width="5.7" stroke-linecap="round" opacity="0.94" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0061s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.8" x2="0" y2="18.8" stroke="#bbecf5" stroke-width="5.7" stroke-linecap="round" opacity="0.94" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0182s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-18.9" x2="0" y2="18.9" stroke="#bbecf5" stroke-width="5.7" stroke-linecap="round" opacity="0.95" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0303s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.1" x2="0" y2="19.1" stroke="#bbecf5" stroke-width="5.8" stroke-linecap="round" opacity="0.96" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0424s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.2" x2="0" y2="19.2" stroke="#bbecf5" stroke-width="5.8" stroke-linecap="round" opacity="0.96" filter="url(#gt)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0545s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.3" x2="0" y2="19.3" stroke="#ddf4ff" stroke-width="5.8" stroke-linecap="round" opacity="0.97" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0667s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.4" x2="0" y2="19.4" stroke="#ddf4ff" stroke-width="5.9" stroke-linecap="round" opacity="0.97" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0788s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.5" x2="0" y2="19.5" stroke="#ddf4ff" stroke-width="5.9" stroke-linecap="round" opacity="0.98" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.0909s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.6" x2="0" y2="19.6" stroke="#ddf4ff" stroke-width="5.9" stroke-linecap="round" opacity="0.98" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1030s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.7" x2="0" y2="19.7" stroke="#ddf4ff" stroke-width="5.9" stroke-linecap="round" opacity="0.99" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1152s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.8" x2="0" y2="19.8" stroke="#ddf4ff" stroke-width="5.9" stroke-linecap="round" opacity="0.99" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1273s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.9" x2="0" y2="19.9" stroke="#ddf4ff" stroke-width="6.0" stroke-linecap="round" opacity="0.99" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1394s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.9" x2="0" y2="19.9" stroke="#ffffff" stroke-width="6.0" stroke-linecap="round" opacity="1.00" filter="url(#gc)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1515s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-19.9" x2="0" y2="19.9" stroke="#ffffff" stroke-width="6.0" stroke-linecap="round" opacity="1.00" filter="url(#gh)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1636s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-20" x2="0" y2="20.0" stroke="#ffffff" stroke-width="6.0" stroke-linecap="round" opacity="1.00" filter="url(#gh)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1758s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-20" x2="0" y2="20.0" stroke="#ffffff" stroke-width="6.0" stroke-linecap="round" opacity="1.00" filter="url(#gh)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.1879s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+  <line x1="0" y1="-20" x2="0" y2="20.0" stroke="#ffffff" stroke-width="6.0" stroke-linecap="round" opacity="1.00" filter="url(#gh)">
+    <animateMotion dur="3s" repeatCount="indefinite" rotate="auto" begin="-1.2000s" calcMode="linear"><mpath href="#inf"/></animateMotion>
+  </line>
+</svg>
