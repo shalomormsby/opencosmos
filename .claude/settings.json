@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit(~/.claude/skills/clean/**)",
+      "Bash(pnpm version-packages *)",
+      "Bash(pnpm release *)",
+      "Bash(npm access *)",
+      "Edit(~/.claude/skills/pr/**)"
+    ]
+  }
+}
