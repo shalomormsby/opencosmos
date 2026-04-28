@@ -36,19 +36,34 @@ related_docs:
   - collections/literature-poems-of-nature-by-henry-david-thoreau.md
   - sources/philosophy-nature.md
 ---
-Siddhartha An Indian Tale by Hermann Hesse
+# Siddhartha: An Indian Tale
+*By Hermann Hesse*
 
-Contents
+## Contents
 
-FIRST PART THE SON OF THE BRAHMAN WITH THE SAMANAS GOTAMA AWAKENING
+- [First Part](#first-part)
+  - [The Son of the Brahman](#the-son-of-the-brahman)
+  - [With the Samanas](#with-the-samanas)
+  - [Gotama](#gotama)
+  - [Awakening](#awakening)
+- [Second Part](#second-part)
+  - [Kamala](#kamala)
+  - [With the Childlike People](#with-the-childlike-people)
+  - [Samsara](#samsara)
+  - [By the River](#by-the-river)
+  - [The Ferryman](#the-ferryman)
+  - [The Son](#the-son)
+  - [Om](#om)
+  - [Govinda](#govinda)
 
-SECOND PART KAMALA WITH THE CHILDLIKE PEOPLE SANSARA BY THE RIVER THE FERRYMAN THE SON OM GOVINDA
 
-FIRST PART
+## First Part
 
 To Romain Rolland, my dear friend
 
-THE SON OF THE BRAHMAN In the shade of the house, in the sunshine of the riverbank near the boats, in the shade of the Sal-wood forest, in the shade of the fig tree is where Siddhartha grew up, the handsome son of the Brahman, the young falcon, together with his friend Govinda, son of a Brahman. The sun tanned his light shoulders by the banks of the river when bathing, performing the sacred ablutions, the sacred offerings. In the mango grove, shade poured into his black eyes, when playing as a boy, when his mother sang, when the sacred offerings were made, when his father, the scholar, taught him, when the wise men talked. For a long time, Siddhartha had been partaking in the discussions of the wise men, practising debate with Govinda, practising with Govinda the art of reflection, the service of meditation. He already knew how to speak the Om silently, the word of words, to speak it silently into himself while inhaling, to speak it silently out of himself while exhaling, with all the concentration of his soul, the forehead surrounded by the glow of the clear-thinking spirit. He already knew to feel Atman in the depths of his being, indestructible, one with the universe.
+### The Son of the Brahman
+
+In the shade of the house, in the sunshine of the riverbank near the boats, in the shade of the Sal-wood forest, in the shade of the fig tree is where Siddhartha grew up, the handsome son of the Brahman, the young falcon, together with his friend Govinda, son of a Brahman. The sun tanned his light shoulders by the banks of the river when bathing, performing the sacred ablutions, the sacred offerings. In the mango grove, shade poured into his black eyes, when playing as a boy, when his mother sang, when the sacred offerings were made, when his father, the scholar, taught him, when the wise men talked. For a long time, Siddhartha had been partaking in the discussions of the wise men, practising debate with Govinda, practising with Govinda the art of reflection, the service of meditation. He already knew how to speak the Om silently, the word of words, to speak it silently into himself while inhaling, to speak it silently out of himself while exhaling, with all the concentration of his soul, the forehead surrounded by the glow of the clear-thinking spirit. He already knew to feel Atman in the depths of his being, indestructible, one with the universe.
 
 Joy leapt in his father’s heart for his son who was quick to learn, thirsty for knowledge; he saw him growing up to become great wise man and priest, a prince among the Brahmans.
 
@@ -154,7 +169,9 @@ As he slowly left on stiff legs in the first light of day the still quiet town, 
 
 “I have come,” said Govinda.
 
-WITH THE SAMANAS In the evening of this day they caught up with the ascetics, the skinny Samanas, and offered them their companionship and—obedience. They were accepted.
+### With the Samanas
+
+In the evening of this day they caught up with the ascetics, the skinny Samanas, and offered them their companionship and—obedience. They were accepted.
 
 Siddhartha gave his garments to a poor Brahman in the street. He wore nothing more than the loincloth and the earth-coloured, unsown cloak. He ate only once a day, and never something cooked. He fasted for fifteen days. He fasted for twenty-eight days. The flesh waned from his thighs and cheeks. Feverish dreams flickered from his enlarged eyes, long nails grew slowly on his parched fingers and a dry, shaggy beard grew on his chin. His glance turned to ice when he encountered women; his mouth twitched with contempt, when he walked through a city of nicely dressed people. He saw merchants trading, princes hunting, mourners wailing for their dead, whores offering themselves, physicians trying to help the sick, priests determining the most suitable day for seeding, lovers loving, mothers nursing their children—and all of this was not worthy of one look from his eye, it all lied, it all stank, it all stank of lies, it all pretended to be meaningful and joyful and beautiful, and it all was just concealed putrefaction. The world tasted bitter. Life was torture.
 
@@ -240,7 +257,9 @@ On the way, Govinda said: “Oh Siddhartha, you have learned more from the Saman
 
 “I do not seek to walk on water,” said Siddhartha. “Let old Samanas be content with such feats!”
 
-GOTAMA In the town of Savathi, every child knew the name of the exalted Buddha, and every house was prepared to fill the alms-dish of Gotama’s disciples, the silently begging ones. Near the town was Gotama’s favourite place to stay, the grove of Jetavana, which the rich merchant Anathapindika, an obedient worshipper of the exalted one, had given him and his people for a gift.
+### Gotama
+
+In the town of Savathi, every child knew the name of the exalted Buddha, and every house was prepared to fill the alms-dish of Gotama’s disciples, the silently begging ones. Near the town was Gotama’s favourite place to stay, the grove of Jetavana, which the rich merchant Anathapindika, an obedient worshipper of the exalted one, had given him and his people for a gift.
 
 All tales and answers, which the two young ascetics had received in their search for Gotama’s abode, had pointed them towards this area. And arriving at Savathi, in the very first house, before the door of which they stopped to beg, food has been offered to them, and they accepted the food, and Siddhartha asked the woman, who handed them the food:
 
@@ -332,7 +351,9 @@ I saw a man, Siddhartha thought, a single man, before whom I would have to lower
 
 I am deprived by the Buddha, thought Siddhartha, I am deprived, and even more he has given to me. He has deprived me of my friend, the one who had believed in me and now believes in him, who had been my shadow and is now Gotama’s shadow. But he has given me Siddhartha, myself.
 
-AWAKENING When Siddhartha left the grove, where the Buddha, the perfected one, stayed behind, where Govinda stayed behind, then he felt that in this grove his past life also stayed behind and parted from him. He pondered about this sensation, which filled him completely, as he was slowly walking along. He pondered deeply, like diving into a deep water he let himself sink down to the ground of the sensation, down to the place where the causes lie, because to identify the causes, so it seemed to him, is the very essence of thinking, and by this alone sensations turn into realizations and are not lost, but become entities and start to emit like rays of light what is inside of them.
+### Awakening
+
+When Siddhartha left the grove, where the Buddha, the perfected one, stayed behind, where Govinda stayed behind, then he felt that in this grove his past life also stayed behind and parted from him. He pondered about this sensation, which filled him completely, as he was slowly walking along. He pondered deeply, like diving into a deep water he let himself sink down to the ground of the sensation, down to the place where the causes lie, because to identify the causes, so it seemed to him, is the very essence of thinking, and by this alone sensations turn into realizations and are not lost, but become entities and start to emit like rays of light what is inside of them.
 
 Slowly walking along, Siddhartha pondered. He realized that he was no youth any more, but had turned into a man. He realized that one thing had left him, as a snake is left by its old skin, that one thing no longer existed in him, which had accompanied him throughout his youth and used to be a part of him: the wish to have teachers and to listen to teachings. He had also left the last teacher who had appeared on his path, even him, the highest and wisest teacher, the most holy one, Buddha, he had left him, had to part with him, was not able to accept his teachings.
 
@@ -356,7 +377,13 @@ Motionless, Siddhartha remained standing there, and for the time of one moment a
 
 Out of this moment, when the world melted away all around him, when he stood alone like a star in the sky, out of this moment of a cold and despair, Siddhartha emerged, more a self than before, more firmly concentrated. He felt: This had been the last tremor of the awakening, the last struggle of this birth. And it was not long until he walked again in long strides, started to proceed swiftly and impatiently, heading no longer for home, no longer to his father, no longer back.
 
-SECOND PART Dedicated to Wilhelm Gundert, my cousin in Japan KAMALA Siddhartha learned something new on every step of his path, for the world was transformed, and his heart was enchanted. He saw the sun rising over the mountains with their forests and setting over the distant beach with its palm-trees. At night, he saw the stars in the sky in their fixed positions and the crescent of the moon floating like a boat in the blue. He saw trees, stars, animals, clouds, rainbows, rocks, herbs, flowers, stream and river, the glistening dew in the bushes in the morning, distant high mountains which were blue and pale, birds sang and bees, wind silverishly blew through the rice-field. All of this, a thousand-fold and colourful, had always been there, always the sun and the moon had shone, always rivers had roared and bees had buzzed, but in former times all of this had been nothing more to Siddhartha than a fleeting, deceptive veil before his eyes, looked upon in distrust, destined to be penetrated and destroyed by thought, since it was not the essential existence, since this essence lay beyond, on the other side of, the visible. But now, his liberated eyes stayed on this side, he saw and became aware of the visible, sought to be at home in this world, did not search for the true essence, did not aim at a world beyond. Beautiful was this world, looking at it thus, without searching, thus simply, thus childlike. Beautiful were the moon and the stars, beautiful was the stream and the banks, the forest and the rocks, the goat and the gold-beetle, the flower and the butterfly. Beautiful and lovely it was, thus to walk through the world, thus childlike, thus awoken, thus open to what is near, thus without distrust. Differently the sun burnt the head, differently the shade of the forest cooled him down, differently the stream and the cistern, the pumpkin and the banana tasted. Short were the days, short the nights, every hour sped swiftly away like a sail on the sea, and under the sail was a ship full of treasures, full of joy. Siddhartha saw a group of apes moving through the high canopy of the forest, high in the branches, and heard their savage, greedy song. Siddhartha saw a male sheep following a female one and mating with her. In a lake of reeds, he saw the pike hungrily hunting for its dinner; propelling themselves away from it, in fear, wiggling and sparkling, the young fish jumped in droves out of the water; the scent of strength and passion came forcefully out of the hasty eddies of the water, which the pike stirred up, impetuously hunting.
+## Second Part
+
+Dedicated to Wilhelm Gundert, my cousin in Japan
+
+### Kamala
+
+Siddhartha learned something new on every step of his path, for the world was transformed, and his heart was enchanted. He saw the sun rising over the mountains with their forests and setting over the distant beach with its palm-trees. At night, he saw the stars in the sky in their fixed positions and the crescent of the moon floating like a boat in the blue. He saw trees, stars, animals, clouds, rainbows, rocks, herbs, flowers, stream and river, the glistening dew in the bushes in the morning, distant high mountains which were blue and pale, birds sang and bees, wind silverishly blew through the rice-field. All of this, a thousand-fold and colourful, had always been there, always the sun and the moon had shone, always rivers had roared and bees had buzzed, but in former times all of this had been nothing more to Siddhartha than a fleeting, deceptive veil before his eyes, looked upon in distrust, destined to be penetrated and destroyed by thought, since it was not the essential existence, since this essence lay beyond, on the other side of, the visible. But now, his liberated eyes stayed on this side, he saw and became aware of the visible, sought to be at home in this world, did not search for the true essence, did not aim at a world beyond. Beautiful was this world, looking at it thus, without searching, thus simply, thus childlike. Beautiful were the moon and the stars, beautiful was the stream and the banks, the forest and the rocks, the goat and the gold-beetle, the flower and the butterfly. Beautiful and lovely it was, thus to walk through the world, thus childlike, thus awoken, thus open to what is near, thus without distrust. Differently the sun burnt the head, differently the shade of the forest cooled him down, differently the stream and the cistern, the pumpkin and the banana tasted. Short were the days, short the nights, every hour sped swiftly away like a sail on the sea, and under the sail was a ship full of treasures, full of joy. Siddhartha saw a group of apes moving through the high canopy of the forest, high in the branches, and heard their savage, greedy song. Siddhartha saw a male sheep following a female one and mating with her. In a lake of reeds, he saw the pike hungrily hunting for its dinner; propelling themselves away from it, in fear, wiggling and sparkling, the young fish jumped in droves out of the water; the scent of strength and passion came forcefully out of the hasty eddies of the water, which the pike stirred up, impetuously hunting.
 
 All of this had always existed, and he had not seen it; he had not been with it. Now he was with it, he was part of it. Light and shadow ran through his eyes, stars and moon ran through his heart.
 
@@ -506,7 +533,9 @@ Kamala listened to him. She loved his voice, she loved the look from his eyes.
 
 With one kiss, Siddhartha bid his farewell. “I wish that it should be this way, my teacher; that my glance shall please you, that always good fortune shall come to me out of your direction!”
 
-WITH THE CHILDLIKE PEOPLE Siddhartha went to Kamaswami the merchant, he was directed into a rich house, servants led him between precious carpets into a chamber, where he awaited the master of the house.
+### With the Childlike People
+
+Siddhartha went to Kamaswami the merchant, he was directed into a rich house, servants led him between precious carpets into a chamber, where he awaited the master of the house.
 
 Kamaswami entered, a swiftly, smoothly moving man with very gray hair, with very intelligent, cautious eyes, with a greedy mouth. Politely, the host and the guest greeted one another.
 
@@ -600,7 +629,9 @@ The courtesan bent over him, took a long look at his face, at his eyes, which ha
 
 “It might very well be so,” Siddhartha said tiredly. “I am like you. You also do not love—how else could you practise love as a craft? Perhaps, people of our kind can’t love. The childlike people can; that’s their secret.”
 
-SANSARA For a long time, Siddhartha had lived the life of the world and of lust, though without being a part of it. His senses, which he had killed off in hot years as a Samana, had awoken again, he had tasted riches, had tasted lust, had tasted power; nevertheless he had still remained in his heart for a long time a Samana; Kamala, being smart, had realized this quite right. It was still the art of thinking, of waiting, of fasting, which guided his life; still the people of the world, the childlike people, had remained alien to him as he was alien to them.
+### Samsara
+
+For a long time, Siddhartha had lived the life of the world and of lust, though without being a part of it. His senses, which he had killed off in hot years as a Samana, had awoken again, he had tasted riches, had tasted lust, had tasted power; nevertheless he had still remained in his heart for a long time a Samana; Kamala, being smart, had realized this quite right. It was still the art of thinking, of waiting, of fasting, which guided his life; still the people of the world, the childlike people, had remained alien to him as he was alien to them.
 
 Years passed by; surrounded by the good life, Siddhartha hardly felt them fading away. He had become rich, for quite a while he possessed a house of his own and his own servants, and a garden before the city by the river. The people liked him, they came to him, whenever they needed money or advice, but there was nobody close to him, except Kamala.
 
@@ -634,7 +665,9 @@ In the same hour of the night, Siddhartha left his garden, left the city, and ne
 
 When she received the first news of Siddhartha’s disappearance, she went to the window, where she held a rare singing bird captive in a golden cage. She opened the door of the cage, took the bird out and let it fly. For a long time, she gazed after it, the flying bird. From this day on, she received no more visitors and kept her house locked. But after some time, she became aware that she was pregnant from the last time she was together with Siddhartha.
 
-BY THE RIVER Siddhartha walked through the forest, was already far from the city, and knew nothing but that one thing, that there was no going back for him, that this life, as he had lived it for many years until now, was over and done away with, and that he had tasted all of it, sucked everything out of it until he was disgusted with it. Dead was the singing bird he had dreamt of. Dead was the bird in his heart. Deeply, he had been entangled in Samsara, he had sucked up disgust and death from all sides into his body, like a sponge sucks up water until it is full. And full he was, full of the feeling of been sick of it, full of misery, full of death, there was nothing left in this world which could have attracted him, given him joy, given him comfort.
+### By the River
+
+Siddhartha walked through the forest, was already far from the city, and knew nothing but that one thing, that there was no going back for him, that this life, as he had lived it for many years until now, was over and done away with, and that he had tasted all of it, sucked everything out of it until he was disgusted with it. Dead was the singing bird he had dreamt of. Dead was the bird in his heart. Deeply, he had been entangled in Samsara, he had sucked up disgust and death from all sides into his body, like a sponge sucks up water until it is full. And full he was, full of the feeling of been sick of it, full of misery, full of death, there was nothing left in this world which could have attracted him, given him joy, given him comfort.
 
 Passionately he wished to know nothing about himself anymore, to have rest, to be dead. If there only was a lightning-bolt to strike him dead! If there only was a tiger to devour him! If there only was a wine, a poison which would numb his senses, bring him forgetfulness and sleep, and no awakening from that! Was there still any kind of filth he had not soiled himself with, a sin or foolish act he had not committed, a dreariness of the soul he had not brought upon himself? Was it still at all possible to be alive? Was it possible to breathe in again and again, to breathe out, to feel hunger, to eat again, to sleep again, to sleep with a woman again? Was this cycle not exhausted and brought to a conclusion for him?
 
@@ -732,7 +765,9 @@ Now Siddhartha also got some idea of why he had fought this self in vain as a Br
 
 He thought these thoughts, listened with a smile to his stomach, listened gratefully to a buzzing bee. Cheerfully, he looked into the rushing river, never before he had liked a water so well as this one, never before he had perceived the voice and the parable of the moving water thus strongly and beautifully. It seemed to him, as if the river had something special to tell him, something he did not know yet, which was still awaiting him. In this river, Siddhartha had intended to drown himself, in it the old, tired, desperate Siddhartha had drowned today. But the new Siddhartha felt a deep love for this rushing water, and decided for himself, not to leave it very soon.
 
-THE FERRYMAN By this river I want to stay, thought Siddhartha, it is the same which I have crossed a long time ago on my way to the childlike people, a friendly ferryman had guided me then, he is the one I want to go to, starting out from his hut, my path had led me at that time into a new life, which had now grown old and is dead—my present path, my present new life, shall also take its start there!
+### The Ferryman
+
+By this river I want to stay, thought Siddhartha, it is the same which I have crossed a long time ago on my way to the childlike people, a friendly ferryman had guided me then, he is the one I want to go to, starting out from his hut, my path had led me at that time into a new life, which had now grown old and is dead—my present path, my present new life, shall also take its start there!
 
 Tenderly, he looked into the rushing water, into the transparent green, into the crystal lines of its drawing, so rich in secrets. Bright pearls he saw rising from the deep, quiet bubbles of air floating on the reflecting surface, the blue of the sky being depicted in it. With a thousand eyes, the river looked at him, with green ones, with white ones, with crystal ones, with sky-blue ones. How did he love this water, how did it delight him, how grateful was he to it! In his heart he heard the voice talking, which was newly awaking, and it told him: Love this water! Stay near it! Learn from it! Oh yes, he wanted to learn from it, he wanted to listen to it. He who would understand this water and its secrets, so it seemed to him, would also understand many other things, many secrets, all secrets.
 
@@ -878,7 +913,9 @@ Early in the morning, even before the sun could be seen, Vasudeva came out of th
 
 While the boy was still asleep, they built the funeral pile.
 
-THE SON Timid and weeping, the boy had attended his mother’s funeral; gloomy and shy, he had listened to Siddhartha, who greeted him as his son and welcomed him at his place in Vasudeva’s hut. Pale, he sat for many days by the hill of the dead, did not want to eat, gave no open look, did not open his heart, met his fate with resistance and denial.
+### The Son
+
+Timid and weeping, the boy had attended his mother’s funeral; gloomy and shy, he had listened to Siddhartha, who greeted him as his son and welcomed him at his place in Vasudeva’s hut. Pale, he sat for many days by the hill of the dead, did not want to eat, gave no open look, did not open his heart, met his fate with resistance and denial.
 
 Siddhartha spared him and let him do as he pleased, he honoured his mourning. Siddhartha understood that his son did not know him, that he could not love him like a father. Slowly, he also saw and understood that the eleven-year-old was a pampered boy, a mother’s boy, and that he had grown up in the habits of rich people, accustomed to finer food, to a soft bed, accustomed to giving orders to servants. Siddhartha understood that the mourning, pampered child could not suddenly and willingly be content with a life among strangers and in poverty. He did not force him, he did many a chore for him, always picked the best piece of the meal for him. Slowly, he hoped to win him over, by friendly patience.
 
@@ -948,7 +985,9 @@ That this wound did not blossom yet, did not shine yet, at this hour, made him s
 
 From this petrified state, he was awoken by a hand touching his shoulder. Instantly, he recognised this touch, this tender, bashful touch, and regained his senses. He rose and greeted Vasudeva, who had followed him. And when he looked into Vasudeva’s friendly face, into the small wrinkles, which were as if they were filled with nothing but his smile, into the happy eyes, then he smiled too. Now he saw the bananas lying in front of him, picked them up, gave one to the ferryman, ate the other one himself. After this, he silently went back into the forest with Vasudeva, returned home to the ferry. Neither one talked about what had happened today, neither one mentioned the boy’s name, neither one spoke about him running away, neither one spoke about the wound. In the hut, Siddhartha lay down on his bed, and when after a while Vasudeva came to him, to offer him a bowl of coconut-milk, he already found him asleep.
 
-OM For a long time, the wound continued to burn. Many a traveller Siddhartha had to ferry across the river who was accompanied by a son or a daughter, and he saw none of them without envying him, without thinking: “So many, so many thousands possess this sweetest of good fortunes—why don’t I? Even bad people, even thieves and robbers have children and love them, and are being loved by them, all except for me.” Thus simply, thus without reason he now thought, thus similar to the childlike people he had become.
+### Om
+
+For a long time, the wound continued to burn. Many a traveller Siddhartha had to ferry across the river who was accompanied by a son or a daughter, and he saw none of them without envying him, without thinking: “So many, so many thousands possess this sweetest of good fortunes—why don’t I? Even bad people, even thieves and robbers have children and love them, and are being loved by them, all except for me.” Thus simply, thus without reason he now thought, thus similar to the childlike people he had become.
 
 Differently than before, he now looked upon people, less smart, less proud, but instead warmer, more curious, more involved. When he ferried travellers of the ordinary kind, childlike people, businessmen, warriors, women, these people did not seem alien to him as they used to: he understood them, he understood and shared their life, which was not guided by thoughts and insight, but solely by urges and wishes, he felt like them. Though he was near perfection and was bearing his final wound, it still seemed to him as if those childlike people were his brothers, their vanities, desires for possession, and ridiculous aspects were no longer ridiculous to him, became understandable, became lovable, even became worthy of veneration to him. The blind love of a mother for her child, the stupid, blind pride of a conceited father for his only son, the blind, wild desire of a young, vain woman for jewelry and admiring glances from men, all of these urges, all of this childish stuff, all of these simple, foolish, but immensely strong, strongly living, strongly prevailing urges and desires were now no childish notions for Siddhartha any more, he saw people living for their sake, saw them achieving infinitely much for their sake, travelling, conducting wars, suffering infinitely much, bearing infinitely much, and he could love them for it, he saw life, that what is alive, the indestructible, the Brahman in each of their passions, each of their acts. Worthy of love and admiration were these people in their blind loyalty, their blind strength and tenacity. They lacked nothing, there was nothing the knowledgeable one, the thinker, had to put him above them except for one little thing, a single, tiny, small thing: the consciousness, the conscious thought of the oneness of all life. And Siddhartha even doubted in many an hour, whether this knowledge, this thought was to be valued thus highly, whether it might not also perhaps be a childish idea of the thinking people, of the thinking and childlike people. In all other respects, the worldly people were of equal rank to the wise men, were often far superior to them, just as animals too can, after all, in some moments, seem to be superior to humans in their tough, unrelenting performance of what is necessary.
 
@@ -998,7 +1037,9 @@ Siddhartha made a deep bow before him who bid his farewell.
 
 With a bright smile, he left; Siddhartha watched him leaving. With deep joy, with deep solemnity he watched him leave, saw his steps full of peace, saw his head full of lustre, saw his body full of light.
 
-GOVINDA Together with other monks, Govinda used to spend the time of rest between pilgrimages in the pleasure-grove, which the courtesan Kamala had given to the followers of Gotama for a gift. He heard talk of an old ferryman, who lived one day’s journey away by the river, and who was regarded as a wise man by many. When Govinda went back on his way, he chose the path to the ferry, eager to see the ferryman. Because, though he had lived his entire life by the rules, though he was also looked upon with veneration by the younger monks on account of his age and his modesty, the restlessness and the searching still had not perished from his heart.
+### Govinda
+
+Together with other monks, Govinda used to spend the time of rest between pilgrimages in the pleasure-grove, which the courtesan Kamala had given to the followers of Gotama for a gift. He heard talk of an old ferryman, who lived one day’s journey away by the river, and who was regarded as a wise man by many. When Govinda went back on his way, he chose the path to the ferry, eager to see the ferryman. Because, though he had lived his entire life by the rules, though he was also looked upon with veneration by the younger monks on account of his age and his modesty, the restlessness and the searching still had not perished from his heart.
 
 He came to the river and asked the old man to ferry him over, and when they got off the boat on the other side, he said to the old man: “You’re very good to us monks and pilgrims, you have already ferried many of us across the river. Aren’t you too, ferryman, a searcher for the right path?”
 

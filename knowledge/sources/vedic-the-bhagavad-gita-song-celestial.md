@@ -62,13 +62,13 @@ TO INDIA
 
 So have I read this wonderful and spirit-thrilling speech,
 By Krishna and Prince Arjun held, discoursing each with each;
-So have I writ its wisdom here,--its hidden mystery,
+So have I writ its wisdom here,—its hidden mystery,
 For England; O our India! as dear to me as She!
 
 EDWIN ARNOLD
 
 PREFACE
-This famous and marvellous Sanskrit poem occurs as an episode of the Mahabharata, in the sixth--or "Bhishma"--Parva of the great Hindoo epic. It enjoys immense popularity and authority in India, where it is reckoned as one of the ``Five Jewels,"--pancharatnani--of Devanagiri literature. In plain but noble language it unfolds a philosophical system which remains to this day the prevailing Brahmanic belief, blending as it does the doctrines of Kapila, Patanjali, and the Vedas. So lofty are many of its declarations, so sublime its aspirations, so pure and tender its piety, that Schlegel, after his study of the poem, breaks forth into this outburst of delight and praise towards its unknown author: "Magistrorum reverentia a Brachmanis inter sanctissima pietatis officia refertur. Ergo te primum, Vates sanctissime, Numinisque hypopheta! quisquis tandem inter mortales dictus tu fueris, carminis bujus auctor,, cujus oraculis mens ad excelsa quaeque,quaeque,, aeterna atque divina, cum inenarraoih quddam delectatione rapitur-te primum, inquam, salvere jubeo, et vestigia tua semper adore." Lassen re-echoes this splendid tribute; and indeed, so striking are some of the moralities here inculcated, and so close the parallelism--ofttimes actually verbal-- between its teachings and those of the New Testament, that a controversy has arisen between Pandits and Missionaries on the point whether the author borrowed from Christian sources, or the Evangelists and Apostles from him.
+This famous and marvellous Sanskrit poem occurs as an episode of the Mahabharata, in the sixth—or "Bhishma"—Parva of the great Hindoo epic. It enjoys immense popularity and authority in India, where it is reckoned as one of the ``Five Jewels,"—pancharatnani—of Devanagiri literature. In plain but noble language it unfolds a philosophical system which remains to this day the prevailing Brahmanic belief, blending as it does the doctrines of Kapila, Patanjali, and the Vedas. So lofty are many of its declarations, so sublime its aspirations, so pure and tender its piety, that Schlegel, after his study of the poem, breaks forth into this outburst of delight and praise towards its unknown author: "Magistrorum reverentia a Brachmanis inter sanctissima pietatis officia refertur. Ergo te primum, Vates sanctissime, Numinisque hypopheta! quisquis tandem inter mortales dictus tu fueris, carminis bujus auctor,, cujus oraculis mens ad excelsa quaeque,quaeque,, aeterna atque divina, cum inenarraoih quddam delectatione rapitur-te primum, inquam, salvere jubeo, et vestigia tua semper adore." Lassen re-echoes this splendid tribute; and indeed, so striking are some of the moralities here inculcated, and so close the parallelism—ofttimes actually verbal— between its teachings and those of the New Testament, that a controversy has arisen between Pandits and Missionaries on the point whether the author borrowed from Christian sources, or the Evangelists and Apostles from him.
 
 This raises the question of its date, which cannot be positively settled. It must have been inlaid into the ancient epic at a period later than that of the original Mahabharata, but Mr Kasinath Telang has offered some fair arguments to prove it anterior to the Christian era. The weight of evidence, however, tends to place its composition at about the third century after Christ; and perhaps there are really echoes in this Brahmanic poem of the lessons of Galilee, and of the Syrian incarnation.
 
@@ -80,7 +80,7 @@ There is little else to say which the "Song Celestial" does not explain for itse
 
 EDWIN ARNOLD, C.S.I.
 
-CONTENTS
+## Contents
 
 I. THE DISTRESS OF ARJUNA
 II. THE BOOK OF DOCTRINES
@@ -102,12 +102,13 @@ XVII. RELIGION BY THE THREEFOLD FAITH
 XVIII. RELIGION BY DELIVERANCE AND RENUNCIATION
 
 ## Chapter I
-Dhritirashtra:
-Ranged thus for battle on the sacred plain--
-On Kurukshetra--say, Sanjaya! say
+### the Distress of Arjuna
+**Dhritirashtra:**
+Ranged thus for battle on the sacred plain—
+On Kurukshetra—say, Sanjaya! say
 What wrought my people, and the Pandavas?
 
-Sanjaya:
+**Sanjaya:**
 When he beheld the host of Pandavas,
 Raja Duryodhana to Drona drew,
 And spake these words: "Ah, Guru! see this line,
@@ -122,7 +123,7 @@ Purujit, Kuntibhoj, and Saivya,
 With Yudhamanyu, and Uttamauj
 Subhadra's child; and Drupadi's;-all famed!
 All mounted on their shining chariots!
-On our side, too,--thou best of Brahmans! see
+On our side, too,—thou best of Brahmans! see
 Excellent chiefs, commanders of my line,
 Whose names I joy to count: thyself the first,
 Then Bhishma, Karna, Kripa fierce in fight,
@@ -148,7 +149,7 @@ Yoked with white steeds, blowing their battle-shells,
 Krishna the God, Arjuna at his side:
 Krishna, with knotted locks, blew his great conch
 Carved of the "Giant's bone;" Arjuna blew
-Indra's loud gift; Bhima the terrible--
+Indra's loud gift; Bhima the terrible—
 Wolf-bellied Bhima-blew a long reed-conch;
 And Yudhisthira, Kunti's blameless son,
 Winded a mighty shell, "Victory's Voice;"
@@ -189,7 +190,7 @@ Some that side ranged: and, seeing those opposed,
 Such kith grown enemies-Arjuna's heart
 Melted with pity, while he uttered this:
 
-Arjuna.
+**Arjuna:**
 Krishna! as I behold, come here to shed
 Their common blood, yon concourse of our kin,
 My members fail, my tongue dries in my mouth,
@@ -224,12 +225,12 @@ What peace could come of that, O Madhava?
 For if indeed, blinded by lust and wrath,
 These cannot see, or will not see, the sin
 Of kingly lines o'erthrown and kinsmen slain,
-How should not we, who see, shun such a crime--
-We who perceive the guilt and feel the shame--
+How should not we, who see, shun such a crime—
+We who perceive the guilt and feel the shame—
 O thou Delight of Men, Janardana?
 By overthrow of houses perisheth
 Their sweet continuous household piety,
-And-rites neglected, piety extinct--
+And-rites neglected, piety extinct—
 Enters impiety upon that home;
 Its women grow unwomaned, whence there spring
 Mad passions, and the mingling-up of castes,
@@ -237,7 +238,7 @@ Sending a Hell-ward road that family,
 And whoso wrought its doom by wicked wrath.
 Nay, and the souls of honoured ancestors
 Fall from their place of peace, being bereft
-Of funeral-cakes and the wan death-water.[FN#1]
+Of funeral-cakes and the wan death-water.
 So teach our holy hymns. Thus, if we slay
 Kinsfolk and friends for love of earthly power,
 Ahovat! what an evil fault it were!
@@ -249,16 +250,14 @@ So speaking, in the face of those two hosts,
 Arjuna sank upon his chariot-seat,
 And let fall bow and arrows, sick at heart.
 
-Entitled "Arjun-Vishad,"
-Or "The Book of the Distress of Arjuna."
-
 ## Chapter II
-Sanjaya.
+### Doctrines
+**Sanjaya:**
 Him, filled with such compassion and such grief,
 With eyes tear-dimmed, despondent, in stern words
 The Driver, Madhusudan, thus addressed:
 
-Krishna.
+**Krishna:**
 How hath this weakness taken thee? Whence springs
 The inglorious trouble, shameful to the brave,
 Barring the path of virtue? Nay, Arjun!
@@ -266,16 +265,16 @@ Forbid thyself to feebleness! it mars
 Thy warrior-name! cast off the coward-fit!
 Wake! Be thyself! Arise, Scourge of thy Foes!
 
-Arjuna.
+**Arjuna:**
 How can I, in the battle, shoot with shafts
-On Bhishma, or on Drona-O thou Chief!--
+On Bhishma, or on Drona-O thou Chief!—
 Both worshipful, both honourable men?
 
 Better to live on beggar's bread
 With those we love alive,
 Than taste their blood in rich feasts spread,
 And guiltily survive!
-Ah! were it worse-who knows?--to be
+Ah! were it worse-who knows?—to be
 Victor or vanquished here,
 When those confront us angrily
 Whose death leaves living drear?
@@ -285,17 +284,17 @@ To Thee, the Guide I reverence most,
 That I may counsel learn:
 I know not what would heal the grief
 Burned into soul and sense,
-If I were earth's unchallenged chief--
-A god--and these gone thence!
+If I were earth's unchallenged chief—
+A god—and these gone thence!
 
-Sanjaya.
+**Sanjaya:**
 So spake Arjuna to the Lord of Hearts,
 And sighing,"I will not fight!" held silence then.
 To whom, with tender smile, (O Bharata! )
 While the Prince wept despairing 'twixt those hosts,
 Krishna made answer in divinest verse:
 
-Krishna.
+**Krishna:**
 Thou grievest where no grief should be! thou speak'st
 Words lacking wisdom! for the wise in heart
 Mourn not for those that live, nor those that die.
@@ -306,8 +305,8 @@ All, that doth live, lives always! To man's frame
 As there come infancy and youth and age,
 So come there raisings-up and layings-down
 Of other and of other life-abodes,
-Which the wise know, and fear not. This that irks--
-Thy sense-life, thrilling to the elements--
+Which the wise know, and fear not. This that irks—
+Thy sense-life, thrilling to the elements—
 Bringing thee heat and cold, sorrows and joys,
 'Tis brief and mutable! Bear with it, Prince!
 As the wise bear. The soul which is not moved,
@@ -333,7 +332,7 @@ Birthless and deathless and changeless remaineth the spirit for ever;
 Death hath not touched it at all, dead though the house of it seems!
 
 Who knoweth it exhaustless, self-sustained,
-Immortal, indestructible,--shall such
+Immortal, indestructible,—shall such
 Say, "I have killed a man, or caused to kill?"
 
 Nay, but as when one layeth
@@ -352,11 +351,11 @@ Unentered, unassailed, unharmed, untouched,
 Immortal, all-arriving, stable, sure,
 Invisible, ineffable, by word
 And thought uncompassed, ever all itself,
-Thus is the Soul declared! How wilt thou, then,--
-Knowing it so,--grieve when thou shouldst not grieve?
+Thus is the Soul declared! How wilt thou, then,—
+Knowing it so,—grieve when thou shouldst not grieve?
 How, if thou hearest that the man new-dead
-Is, like the man new-born, still living man--
-One same, existent Spirit--wilt thou weep?
+Is, like the man new-born, still living man—
+One same, existent Spirit—wilt thou weep?
 The end of birth is death; the end of death
 Is birth: this is ordained! and mournest thou,
 Chief of the stalwart arm! for what befalls
@@ -378,12 +377,12 @@ For that which cannot suffer. Do thy part!
 Be mindful of thy name, and tremble not!
 Nought better can betide a martial soul
 Than lawful war; happy the warrior
-To whom comes joy of battle--comes, as now,
+To whom comes joy of battle—comes, as now,
 Glorious and fair, unsought; opening for him
 A gateway unto Heav'n. But, if thou shunn'st
-This honourable field--a Kshattriya--
+This honourable field—a Kshattriya—
 If, knowing thy duty and thy task, thou bidd'st
-Duty and task go by--that shall be sin!
+Duty and task go by—that shall be sin!
 And those to come shall speak thee infamy
 From age to age; but infamy is worse
 For men of noble blood to bear than death!
@@ -393,31 +392,31 @@ Of those who held thee mighty-souled the scorn
 Thou must abide, while all thine enemies
 Will scatter bitter speech of thee, to mock
 The valour which thou hadst; what fate could fall
-More grievously than this? Either--being killed--
-Thou wilt win Swarga's safety, or--alive
-And victor--thou wilt reign an earthly king.
+More grievously than this? Either—being killed—
+Thou wilt win Swarga's safety, or—alive
+And victor—thou wilt reign an earthly king.
 Therefore, arise, thou Son of Kunti! brace
-Thine arm for conflict, nerve thy heart to meet--
-As things alike to thee--pleasure or pain,
+Thine arm for conflict, nerve thy heart to meet—
+As things alike to thee—pleasure or pain,
 Profit or ruin, victory or defeat:
 So minded, gird thee to the fight, for so
 Thou shalt not sin!
 
 Thus far I speak to thee
-As from the "Sankhya"--unspiritually--
+As from the "Sankhya"—unspiritually—
 Hear now the deeper teaching of the Yog,
 Which holding, understanding, thou shalt burst
 Thy Karmabandh, the bondage of wrought deeds.
 Here shall no end be hindered, no hope marred,
-No loss be feared: faith--yea, a little faith--
+No loss be feared: faith—yea, a little faith—
 Shall save thee from the anguish of thy dread.
-Here, Glory of the Kurus! shines one rule--
-One steadfast rule--while shifting souls have laws
+Here, Glory of the Kurus! shines one rule—
+One steadfast rule—while shifting souls have laws
 Many and hard. Specious, but wrongful deem
 The speech of those ill-taught ones who extol
 The letter of their Vedas, saying, "This
 Is all we have, or need;" being weak at heart
-With wants, seekers of Heaven: which comes--they say--
+With wants, seekers of Heaven: which comes—they say—
 As "fruit of good deeds done;" promising men
 Much profit in new births for works of faith;
 In various rites abounding; following whereon
@@ -427,9 +426,9 @@ Least fixity of soul have such, least hold
 On heavenly meditation. Much these teach,
 From Veds, concerning the "three qualities;"
 But thou, be free of the "three qualities,"
-Free of the "pairs of opposites,"[FN#2] and free
+Free of the "pairs of opposites," and free
 From that sad righteousness which calculates;
-Self-ruled, Arjuna! simple, satisfied![FN#3]
+Self-ruled, Arjuna! simple, satisfied!
 Look! like as when a tank pours water forth
 To suit all needs, so do these Brahmans draw
 Text for all wants from tank of Holy Writ.
@@ -446,12 +445,12 @@ Yet, the right act
 Is less, far less, than the right-thinking mind.
 Seek refuge in thy soul; have there thy heaven!
 Scorn them that follow virtue for her gifts!
-The mind of pure devotion--even here--
+The mind of pure devotion—even here—
 Casts equally aside good deeds and bad,
 Passing above them. Unto pure devotion
 Devote thyself: with perfect meditation
-Comes perfect act, and the right-hearted rise--
-More certainly because they seek no gain--
+Comes perfect act, and the right-hearted rise—
+More certainly because they seek no gain—
 Forth from the bands of body, step by step,
 To highest seats of bliss. When thy firm soul
 Hath shaken off those tangled oracles
@@ -460,23 +459,23 @@ To high neglect of what's denied or said,
 This way or that way, in doctrinal writ.
 Troubled no longer by the priestly lore,
 Safe shall it live, and sure; steadfastly bent
-On meditation. This is Yog--and Peace!
+On meditation. This is Yog—and Peace!
 
-Arjuna.
+**Arjuna:**
 What is his mark who hath that steadfast heart,
 Confirmed in holy meditation? How
 Know we his speech, Kesava? Sits he, moves he
 Like other men?
 
-Krishna.
+**Krishna:**
 When one, O Pritha's Son!
-Abandoning desires which shake the mind--
+Abandoning desires which shake the mind—
 Finds in his soul full comfort for his soul,
-He hath attained the Yog--that man is such!
+He hath attained the Yog—that man is such!
 In sorrows not dejected, and in joys
 Not overjoyed; dwelling outside the stress
 Of passion, fear, and anger; fixed in calms
-Of lofty contemplation;--such an one
+Of lofty contemplation;—such an one
 Is Muni, is the Sage, the true Recluse!
 He who to none and nowhere overbound
 By ties of flesh, takes evil things and good
@@ -489,7 +488,7 @@ Which else assails them, such an one, my Prince!
 Hath wisdom's mark! Things that solicit sense
 Hold off from the self-governed; nay, it comes,
 The appetites of him who lives beyond
-Depart,--aroused no more. Yet may it chance,
+Depart,—aroused no more. Yet may it chance,
 O Son of Kunti! that a governed mind
 Shall some time feel the sense-storms sweep, and wrest
 Strong self-control by the roots. Let him regain
@@ -499,7 +498,7 @@ Who keeps the mastery of himself! If one
 Ponders on objects of the sense, there springs
 Attraction; from attraction grows desire,
 Desire flames to fierce passion, passion breeds
-Recklessness; then the memory--all betrayed--
+Recklessness; then the memory—all betrayed—
 Lets noble purpose go, and saps the mind,
 Till purpose, mind, and man are all undone.
 But, if one deals with objects of the sense
@@ -519,7 +518,7 @@ That gives itself to follow shows of sense
 Seeth its helm of wisdom rent away,
 And, like a ship in waves of whirlwind, drives
 To wreck and death. Only with him, great Prince!
-Whose senses are not swayed by things of sense--
+Whose senses are not swayed by things of sense—
 Only with him who holds his mastery,
 Shows wisdom perfect. What is midnight-gloom
 To unenlightened souls shines wakeful day
@@ -530,7 +529,7 @@ To his true-seeing eyes. Such is the Saint!
 And like the ocean, day by day receiving
 Floods from all lands, which never overflows
 Its boundary-line not leaping, and not leaving,
-Fed by the rivers, but unswelled by those;--
+Fed by the rivers, but unswelled by those;—
 
 So is the perfect one! to his soul's ocean
 The world of sense pours streams of witchery;
@@ -546,11 +545,9 @@ When that last step is reached! Live where he will,
 Die when he may, such passeth from all 'plaining,
 To blest Nirvana, with the Gods, attaining.
 
-Entitled "Sankhya-Yog,"
-Or "The Book of Doctrines."
-
 ## Chapter III
-Arjuna.
+### Virtue in Work
+**Arjuna:**
 Thou whom all mortals praise, Janardana!
 If meditation be a nobler thing
 Than action, wherefore, then, great Kesava!
@@ -559,13 +556,13 @@ Now am I by thy doubtful speech disturbed!
 Tell me one thing, and tell me certainly;
 By what road shall I find the better end?
 
-Krishna.
+**Krishna:**
 I told thee, blameless Lord! there be two paths
 Shown to this world; two schools of wisdom.
 
 First
 The Sankhya's, which doth save in way of works
-Prescribed[FN#4] by reason; next, the Yog, which bids
+Prescribed by reason; next, the Yog, which bids
 Attain by meditation, spiritually:
 Yet these are one! No man shall 'scape from act
 By shunning action; nay, and none shall come
@@ -587,9 +584,9 @@ There is a task of holiness to do,
 Unlike world-binding toil, which bindeth not
 The faithful soul; such earthly duty do
 Free from desire, and thou shalt well perform
-Thy heavenly purpose. Spake Prajapati--
+Thy heavenly purpose. Spake Prajapati—
 In the beginning, when all men were made,
-And, with mankind, the sacrifice-- "Do this!
+And, with mankind, the sacrifice— "Do this!
 Work! sacrifice! Increase and multiply
 With sacrifice! This shall be Kamaduk,
 Your 'Cow of Plenty,' giving back her milk
@@ -616,7 +613,7 @@ Self-concentrated, serving self alone,
 No part hath he in aught; nothing achieved,
 Nought wrought or unwrought toucheth him; no hope
 Of help for all the living things of earth
-Depends from him.[FN#5] Therefore, thy task prescribed
+Depends from him. Therefore, thy task prescribed
 With spirit unattached gladly perform,
 Since in performance of plain duty man
 Mounts to his highest bliss. By works alone
@@ -628,8 +625,8 @@ The multitude will follow. Look on me,
 Thou Son of Pritha! in the three wide worlds
 I am not bound to any toil, no height
 Awaits to scale, no gift remains to gain,
-Yet I act here! and, if I acted not--
-Earnest and watchful--those that look to me
+Yet I act here! and, if I acted not—
+Earnest and watchful—those that look to me
 For guidance, sinking back to sloth again
 Because I slumbered, would decline from good,
 And I should break earth's order and commit
@@ -643,7 +640,7 @@ In all he finds to do, with unyoked soul.
 All things are everywhere by Nature wrought
 In interaction of the qualities.
 The fool, cheated by self, thinks, "This I did"
-And "That I wrought; "but--ah, thou strong-armed Prince!--
+And "That I wrought; "but—ah, thou strong-armed Prince!—
 A better-lessoned mind, knowing the play
 Of visible things within the world of sense,
 And how the qualities must qualify,
@@ -654,7 +651,7 @@ Those make thou not to stumble, having the light;
 But all thy dues discharging, for My sake,
 With meditation centred inwardly,
 Seeking no profit, satisfied, serene,
-Heedless of issue--fight! They who shall keep
+Heedless of issue—fight! They who shall keep
 My ordinance thus, the wise and willing hearts,
 Have quittance from all issue of their acts;
 But those who disregard My ordinance,
@@ -672,16 +669,16 @@ Than take tasks not his own, though they seem good.
 To die performing duty is no ill;
 But who seeks other roads shall wander still.
 
-Arjuna.
+**Arjuna:**
 Yet tell me, Teacher! by what force doth man
 Go to his ill, unwilling; as if one
 Pushed him that evil path?
 
-Krishna.
+**Krishna:**
 Kama it is!
 Passion it is! born of the Darknesses,
 Which pusheth him. Mighty of appetite,
-Sinful, and strong is this!--man's enemy!
+Sinful, and strong is this!—man's enemy!
 As smoke blots the white fire, as clinging rust
 Mars the bright mirror, as the womb surrounds
 The babe unborn, so is the world of things
@@ -689,7 +686,7 @@ Foiled, soiled, enclosed in this desire of flesh.
 The wise fall, caught in it; the unresting foe
 It is of wisdom, wearing countless forms,
 Fair but deceitful, subtle as a flame.
-Sense, mind, and reason--these, O Kunti's Son!
+Sense, mind, and reason—these, O Kunti's Son!
 Are booty for it; in its play with these
 It maddens man, beguiling, blinding him.
 Therefore, thou noblest child of Bharata!
@@ -703,36 +700,34 @@ Put forth full force of Soul in thy own soul!
 Fight! vanquish foes and doubts, dear Hero! slay
 What haunts thee in fond shapes, and would betray!
 
-Entitled "Karma-Yog,"
-Or "The Book of Virtue in Work."
-
 ## Chapter IV
-Krishna.
+### the Religion of Knowledge,
+**Krishna:**
 This deathless Yoga, this deep union,
-I taught Vivaswata,[FN#6] the Lord of Light;
+I taught Vivaswata, the Lord of Light;
 Vivaswata to Manu gave it; he
 To Ikshwaku; so passed it down the line
 Of all my royal Rishis. Then, with years,
 The truth grew dim and perished, noble Prince!
-Now once again to thee it is declared--
-This ancient lore, this mystery supreme--
+Now once again to thee it is declared—
+This ancient lore, this mystery supreme—
 Seeing I find thee votary and friend.
 
-Arjuna.
+**Arjuna:**
 Thy birth, dear Lord, was in these later days,
 And bright Vivaswata's preceded time!
 How shall I comprehend this thing thou sayest,
 "From the beginning it was I who taught?"
 
-Krishna.
+**Krishna:**
 Manifold the renewals of my birth
 Have been, Arjuna! and of thy births, too!
 But mine I know, and thine thou knowest not,
 O Slayer of thy Foes! Albeit I be
 Unborn, undying, indestructible,
-The Lord of all things living; not the less--
+The Lord of all things living; not the less—
 By Maya, by my magic which I stamp
-On floating Nature-forms, the primal vast--
+On floating Nature-forms, the primal vast—
 I come, and go, and come. When Righteousness
 Declines, O Bharata! when Wickedness
 Is strong, I rise, from age to age, and take
@@ -745,7 +740,7 @@ Puts on its load no more, falls no more down
 To earthly birth: to Me he comes, dear Prince!
 Many there be who come! from fear set free,
 From anger, from desire; keeping their hearts
-Fixed upon me--my Faithful--purified
+Fixed upon me—my Faithful—purified
 By sacred flame of Knowledge. Such as these
 Mix with my being. Whoso worship me,
 Them I exalt; but all men everywhere
@@ -758,7 +753,7 @@ After their qualities and gifts. Yea, I
 Created, the Reposeful; I that live
 Immortally, made all those mortal births:
 For works soil not my essence, being works
-Wrought uninvolved.[FN#7] Who knows me acting thus
+Wrought uninvolved. Who knows me acting thus
 Unchained by action, action binds not him;
 And, so perceiving, all those saints of old
 Worked, seeking for deliverance. Work thou
@@ -768,10 +763,10 @@ Thou sayst, perplexed, It hath been asked before
 By singers and by sages, "What is act,
 And what inaction? "I will teach thee this,
 And, knowing, thou shalt learn which work doth save
-Needs must one rightly meditate those three--
-Doing,--not doing,--and undoing. Here
+Needs must one rightly meditate those three—
+Doing,—not doing,—and undoing. Here
 Thorny and dark the path is! He who sees
-How action may be rest, rest action--he
+How action may be rest, rest action—he
 Is wisest 'mid his kind; he hath the truth!
 He doeth well, acting or resting. Freed
 In all his works from prickings of desire,
@@ -780,8 +775,8 @@ The wise call that man wise; and such an one,
 Renouncing fruit of deeds, always content.
 Always self-satisfying, if he works,
 Doth nothing that shall stain his separate soul,
-Which--quit of fear and hope--subduing self--
-Rejecting outward impulse--yielding up
+Which—quit of fear and hope—subduing self—
+Rejecting outward impulse—yielding up
 To body's need nothing save body, dwells
 Sinless amid all sin, with equal calm
 Taking what may befall, by grief unmoved,
@@ -789,7 +784,7 @@ Unmoved by joy, unenvyingly; the same
 In good and evil fortunes; nowise bound
 By bond of deeds. Nay, but of such an one,
 Whose crave is gone, whose soul is liberate,
-Whose heart is set on truth--of such an one
+Whose heart is set on truth—of such an one
 What work he does is work of sacrifice,
 Which passeth purely into ash and smoke
 Consumed upon the altar! All's then God!
@@ -833,7 +828,7 @@ Are spread and are accepted! Comprehend
 That all proceed by act; for knowing this,
 Thou shalt be quit of doubt. The sacrifice
 Which Knowledge pays is better than great gifts
-Offered by wealth, since gifts' worth--O my Prince!
+Offered by wealth, since gifts' worth—O my Prince!
 Lies in the mind which gives, the will that serves:
 And these are gained by reverence, by strong search,
 By humble heed of those who see the Truth
@@ -849,10 +844,10 @@ So unto ash, Arjuna! unto nought
 The flame of Knowledge wastes works' dross away!
 There is no purifier like thereto
 In all this world, and he who seeketh it
-Shall find it--being grown perfect--in himself.
+Shall find it—being grown perfect—in himself.
 Believing, he receives it when the soul
-Masters itself, and cleaves to Truth, and comes--
-Possessing knowledge--to the higher peace,
+Masters itself, and cleaves to Truth, and comes—
+Possessing knowledge—to the higher peace,
 The uttermost repose. But those untaught,
 And those without full faith, and those who fear
 Are shent; no peace is here or other where,
@@ -866,17 +861,15 @@ This doubt that binds thy heart-beats! cleave the bond
 Born of thy ignorance! Be bold and wise!
 Give thyself to the field with me! Arise!
 
-Entitled "Jnana Yog,"
-Or "The Book of the Religion of Knowledge,"
-
 ## Chapter V
-Arjuna.
+### Religion by Renouncing Fruit of Works
+**Arjuna:**
 Yet, Krishna! at the one time thou dost laud
 Surcease of works, and, at another time,
 Service through work. Of these twain plainly tell
 Which is the better way?
 
-Krishna.
+**Krishna:**
 To cease from works
 Is well, and to do works in holiness
 Is well; and both conduct to bliss supreme;
@@ -884,8 +877,8 @@ But of these twain the better way is his
 Who working piously refraineth not.
 
 That is the true Renouncer, firm and fixed,
-Who--seeking nought, rejecting nought--dwells proof
-Against the "opposites."[FN#8] O valiant Prince!
+Who—seeking nought, rejecting nought—dwells proof
+Against the "opposites." O valiant Prince!
 In doing, such breaks lightly from all deed:
 'Tis the new scholar talks as they were two,
 This Sankhya and this Yoga: wise men know
@@ -896,11 +889,11 @@ Sees with clear eyes! Yet such abstraction, Chief!
 Is hard to win without much holiness.
 Whoso is fixed in holiness, self-ruled,
 Pure-hearted, lord of senses and of self,
-Lost in the common life of all which lives--
-A "Yogayukt"--he is a Saint who wends
+Lost in the common life of all which lives—
+A "Yogayukt"—he is a Saint who wends
 Straightway to Brahm. Such an one is not touched
 By taint of deeds. "Nought of myself I do!"
-Thus will he think-who holds the truth of truths--
+Thus will he think-who holds the truth of truths—
 In seeing, hearing, touching, smelling; when
 He eats, or goes, or breathes; slumbers or talks,
 Holds fast or loosens, opes his eyes or shuts;
@@ -910,20 +903,20 @@ Detaching end from act, with act content,
 The world of sense can no more stain his soul
 Than waters mar th' enamelled lotus-leaf.
 With life, with heart, with mind,-nay, with the help
-Of all five senses--letting selfhood go--
+Of all five senses—letting selfhood go—
 Yogins toil ever towards their souls' release.
 Such votaries, renouncing fruit of deeds,
 Gain endless peace: the unvowed, the passion-bound,
 Seeking a fruit from works, are fastened down.
 The embodied sage, withdrawn within his soul,
 At every act sits godlike in "the town
-Which hath nine gateways,"[FN#9] neither doing aught
+Which hath nine gateways," neither doing aught
 Nor causing any deed. This world's Lord makes
 Neither the work, nor passion for the work,
 Nor lust for fruit of work; the man's own self
 Pushes to these! The Master of this World
 Takes on himself the good or evil deeds
-Of no man--dwelling beyond! Mankind errs here
+Of no man—dwelling beyond! Mankind errs here
 By folly, darkening knowledge. But, for whom
 That darkness of the soul is chased by light,
 Splendid and clear shines manifest the Truth
@@ -931,14 +924,14 @@ As if a Sun of Wisdom sprang to shed
 Its beams of dawn. Him meditating still,
 Him seeking, with Him blended, stayed on Him,
 The souls illuminated take that road
-Which hath no turning back--their sins flung off
+Which hath no turning back—their sins flung off
 By strength of faith. [Who will may have this Light;
 Who hath it sees.] To him who wisely sees,
 The Brahman with his scrolls and sanctities,
 The cow, the elephant, the unclean dog,
 The Outcast gorging dog's meat, are all one.
 
-The world is overcome--aye! even here!
+The world is overcome—aye! even here!
 By such as fix their faith on Unity.
 The sinless Brahma dwells in Unity,
 And they in Brahma. Be not over-glad
@@ -971,7 +964,7 @@ Whose outward breath and inward breath are drawn
 Equal and slow through nostrils still and close;
 That one-with organs, heart, and mind constrained,
 Bent on deliverance, having put away
-Passion, and fear, and rage;--hath, even now,
+Passion, and fear, and rage;—hath, even now,
 Obtained deliverance, ever and ever freed.
 Yea! for he knows Me Who am He that heeds
 The sacrifice and worship, God revealed;
@@ -979,14 +972,12 @@ And He who heeds not, being Lord of Worlds,
 Lover of all that lives, God unrevealed,
 Wherein who will shall find surety and shield!
 
-Entitled "Karmasanyasayog,"
-Or "The Book of Religion by Renouncing Fruit of Works."
-
 ## Chapter VI
-Krishna.
+### Religion by Self-Restraint
+**Krishna:**
 Therefore, who doeth work rightful to do,
 Not seeking gain from work, that man, O Prince!
-Is Sanyasi and Yogi--both in one
+Is Sanyasi and Yogi—both in one
 And he is neither who lights not the flame
 Of sacrifice, nor setteth hand to task.
 
@@ -995,7 +986,7 @@ Worship by work, for who renounceth not
 Works not as Yogin. So is that well said:
 "By works the votary doth rise to faith,
 And saintship is the ceasing from all works;
-Because the perfect Yogin acts--but acts
+Because the perfect Yogin acts—but acts
 Unmoved by passions and unbound by deeds,
 Setting result aside.
 
@@ -1004,7 +995,7 @@ The Self by Soul, not trample down his Self,
 Since Soul that is Self's friend may grow Self's foe.
 Soul is Self's friend when Self doth rule o'er Self,
 But Self turns enemy if Soul's own self
-Hates Self as not itself.[FN#10]
+Hates Self as not itself.
 
 The sovereign soul
 Of him who lives self-governed and at peace
@@ -1024,20 +1015,20 @@ Sequestered should he sit,
 Steadfastly meditating, solitary,
 His thoughts controlled, his passions laid away,
 Quit of belongings. In a fair, still spot
-Having his fixed abode,--not too much raised,
-Nor yet too low,--let him abide, his goods
+Having his fixed abode,—not too much raised,
+Nor yet too low,—let him abide, his goods
 A cloth, a deerskin, and the Kusa-grass.
 There, setting hard his mind upon The One,
 Restraining heart and senses, silent, calm,
 Let him accomplish Yoga, and achieve
 Pureness of soul, holding immovable
 Body and neck and head, his gaze absorbed
-Upon his nose-end,[FN#11] rapt from all around,
+Upon his nose-end, rapt from all around,
 Tranquil in spirit, free of fear, intent
 Upon his Brahmacharya vow, devout,
 Musing on Me, lost in the thought of Me.
 That Yojin, so devoted, so controlled,
-Comes to the peace beyond,--My peace, the peace
+Comes to the peace beyond,—My peace, the peace
 Of high Nirvana!
 
 But for earthly needs
@@ -1053,15 +1044,15 @@ Waking betimes for duty.
 
 When the man,
 So living, centres on his soul the thought
-Straitly restrained--untouched internally
-By stress of sense--then is he Yukta. See!
+Straitly restrained—untouched internally
+By stress of sense—then is he Yukta. See!
 Steadfast a lamp burns sheltered from the wind;
 Such is the likeness of the Yogi's mind
 Shut from sense-storms and burning bright to Heaven.
 When mind broods placid, soothed with holy wont;
 When Self contemplates self, and in itself
 Hath comfort; when it knows the nameless joy
-Beyond all scope of sense, revealed to soul--
+Beyond all scope of sense, revealed to soul—
 Only to soul! and, knowing, wavers not,
 True to the farther Truth; when, holding this,
 It deems no other treasure comparable,
@@ -1079,7 +1070,7 @@ With watchful ward; so, step by step, it comes
 To gift of peace assured and heart assuaged,
 When the mind dwells self-wrapped, and the soul broods
 Cumberless. But, as often as the heart
-Breaks--wild and wavering--from control, so oft
+Breaks—wild and wavering—from control, so oft
 Let him re-curb it, let him rein it back
 To the soul's governance; for perfect bliss
 Grows only in the bosom tranquillised,
@@ -1097,21 +1088,21 @@ Hold upon Me; but, dwell he where he may,
 Whate'er his life, in Me he dwells and lives,
 Because he knows and worships Me, Who dwell
 In all which lives, and cleaves to Me in all.
-Arjuna! if a man sees everywhere--
-Taught by his own similitude--one Life,
+Arjuna! if a man sees everywhere—
+Taught by his own similitude—one Life,
 One Essence in the Evil and the Good,
 Hold him a Yogi, yea! well-perfected!
 
-Arjuna.
+**Arjuna:**
 Slayer of Madhu! yet again, this Yog,
 This Peace, derived from equanimity,
-Made known by thee--I see no fixity
+Made known by thee—I see no fixity
 Therein, no rest, because the heart of men
 Is unfixed, Krishna! rash, tumultuous,
 Wilful and strong. It were all one, I think,
 To hold the wayward wind, as tame man's heart.
 
-Krishna.
+**Krishna:**
 Hero long-armed! beyond denial, hard
 Man's heart is to restrain, and wavering;
 Yet may it grow restrained by habit, Prince!
@@ -1120,7 +1111,7 @@ Cometh not lightly to th' ungoverned ones;
 But he who will be master of himself
 Shall win it, if he stoutly strive thereto.
 
-Arjuna.
+**Arjuna:**
 And what road goeth he who, having faith,
 Fails, Krishna! in the striving; falling back
 From holiness, missing the perfect rule?
@@ -1130,7 +1121,7 @@ When lightning splits it, and it vanisheth?
 Fain would I hear thee answer me herein,
 Since, Krishna! none save thou can clear the doubt.
 
-Krishna.
+**Krishna:**
 He is not lost, thou Son of Pritha! No!
 Nor earth, nor heaven is forfeit, even for him,
 Because no heart that holds one right desire
@@ -1160,26 +1151,24 @@ Yogi Arjuna! And of such believe,
 Truest and best is he who worships Me
 With inmost soul, stayed on My Mystery!
 
-Entitled "Atmasanyamayog,"
-Or "The Book of Religion by Self-Restraint."
-
 ## Chapter VII
-Krishna.
+### Religion by Discernment
+**Krishna:**
 Learn now, dear Prince! how, if thy soul be set
-Ever on Me--still exercising Yog,
-Still making Me thy Refuge--thou shalt come
+Ever on Me—still exercising Yog,
+Still making Me thy Refuge—thou shalt come
 Most surely unto perfect hold of Me.
 I will declare to thee that utmost lore,
 Whole and particular, which, when thou knowest,
 Leaveth no more to know here in this world.
 
 Of many thousand mortals, one, perchance,
-Striveth for Truth; and of those few that strive--
-Nay, and rise high--one only--here and there--
+Striveth for Truth; and of those few that strive—
+Nay, and rise high—one only—here and there—
 Knoweth Me, as I am, the very Truth.
 
 Earth, water, flame, air, ether, life, and mind,
-And individuality--those eight
+And individuality—those eight
 Make up the showing of Me, Manifest.
 
 These be my lower Nature; learn the higher,
@@ -1208,8 +1197,8 @@ Yet am I right desire in all who yearn,
 Chief of the Bharatas! for all those moods,
 Soothfast, or passionate, or ignorant,
 Which Nature frames, deduce from me; but all
-Are merged in me--not I in them! The world--
-Deceived by those three qualities of being--
+Are merged in me—not I in them! The world—
+Deceived by those three qualities of being—
 Wotteth not Me Who am outside them all,
 Above them all, Eternal! Hard it is
 To pierce that veil divine of various shows
@@ -1220,7 +1209,7 @@ I am not known
 To evil-doers, nor to foolish ones,
 Nor to the base and churlish; nor to those
 Whose mind is cheated by the show of things,
-Nor those that take the way of Asuras.[FN#12]
+Nor those that take the way of Asuras.
 
 Four sorts of mortals know me: he who weeps,
 Arjuna! and the man who yearns to know;
@@ -1233,22 +1222,22 @@ That last is, the devout soul, wise, intent
 Upon "The One." Dear, above all, am I
 To him; and he is dearest unto me!
 All four are good, and seek me; but mine own,
-The true of heart, the faithful--stayed on me,
+The true of heart, the faithful—stayed on me,
 Taking me as their utmost blessedness,
-They are not "mine,"but I--even I myself!
+They are not "mine,"but I—even I myself!
 At end of many births to Me they come!
 Yet hard the wise Mahatma is to find,
-That man who sayeth, "All is Vasudev!"[FN#13]
+That man who sayeth, "All is Vasudev!"
 
 There be those, too, whose knowledge, turned aside
 By this desire or that, gives them to serve
 Some lower gods, with various rites, constrained
-By that which mouldeth them. Unto all such--
-Worship what shrine they will, what shapes, in faith--
+By that which mouldeth them. Unto all such—
+Worship what shrine they will, what shapes, in faith—
 'Tis I who give them faith! I am content!
 The heart thus asking favour from its God,
 Darkened but ardent, hath the end it craves,
-The lesser blessing--but 'tis I who give!
+The lesser blessing—but 'tis I who give!
 Yet soon is withered what small fruit they reap:
 Those men of little minds, who worship so,
 Go where they worship, passing with their gods.
@@ -1257,8 +1246,8 @@ Which deem th' Unmanifested manifest,
 Not comprehending Me in my true Self!
 Imperishable, viewless, undeclared,
 Hidden behind my magic veil of shows,
-I am not seen by all; I am not known--
-Unborn and changeless--to the idle world.
+I am not seen by all; I am not known—
+Unborn and changeless—to the idle world.
 But I, Arjuna! know all things which were,
 And all which are, and all which are to be,
 Albeit not one among them knoweth Me!
@@ -1271,7 +1260,7 @@ Freed from the "opposites,"and fixed in faith,
 Cleave unto Me.
 
 Who cleave, who seek in Me
-Refuge from birth[FN#14] and death, those have the Truth!
+Refuge from birth and death, those have the Truth!
 Those know Me BRAHMA; know Me Soul of Souls,
 The ADHYATMAN; know KARMA, my work;
 Know I am ADHIBHUTA, Lord of Life,
@@ -1280,11 +1269,9 @@ And ADHIYAJNA, Lord of Sacrifice;
 Worship Me well, with hearts of love and faith,
 And find and hold me in the hour of death.
 
-Entitled "Vijnanayog,"
-Or "The Book of Religion by Discernment."
-
 ## Chapter VIII
-Arjuna.
+### The book of Religion by Devotion to the One Supreme God
+**Arjuna:**
 Who is that BRAHMA? What that Soul of Souls,
 The ADHYATMAN? What, Thou Best of All!
 Thy work, the KARMA? Tell me what it is
@@ -1294,7 +1281,7 @@ Thou canst be ADHIYAJNA in thy flesh?
 Slayer of Madhu! Further, make me know
 How good men find thee in the hour of death?
 
-Krishna.
+**Krishna:**
 I BRAHMA am! the One Eternal GOD,
 And ADHYATMAN is My Being's name,
 The Soul of Souls! What goeth forth from Me,
@@ -1304,12 +1291,12 @@ I am the ADHIBHUTA, Lord of Lives;
 And ADHIDAIVA, Lord of all the Gods,
 Because I am PURUSHA, who begets.
 And ADHIYAJNA, Lord of Sacrifice,
-I--speaking with thee in this body here--
+I—speaking with thee in this body here—
 Am, thou embodied one! (for all the shrines
 Flame unto Me!) And, at the hour of death,
 He that hath meditated Me alone,
 In putting off his flesh, comes forth to Me,
-Enters into My Being--doubt thou not!
+Enters into My Being—doubt thou not!
 But, if he meditated otherwise
 At hour of death, in putting off the flesh,
 He goes to what he looked for, Kunti's Son!
@@ -1324,39 +1311,39 @@ The Uttermost, Purusha, Holiest!
 
 Whoso hath known Me, Lord of sage and singer,
 Ancient of days; of all the Three Worlds Stay,
-Boundless,--but unto every atom Bringer
+Boundless,—but unto every atom Bringer
 Of that which quickens it: whoso, I say,
 
 Hath known My form, which passeth mortal knowing;
-Seen my effulgence--which no eye hath seen--
+Seen my effulgence—which no eye hath seen—
 Than the sun's burning gold more brightly glowing,
-Dispersing darkness,--unto him hath been
+Dispersing darkness,—unto him hath been
 
 Right life! And, in the hour when life is ending,
 With mind set fast and trustful piety,
 Drawing still breath beneath calm brows unbending,
-In happy peace that faithful one doth die,--
+In happy peace that faithful one doth die,—
 
 In glad peace passeth to Purusha's heaven.
 The place which they who read the Vedas name
 AKSHARAM, "Ultimate;" whereto have striven
-Saints and ascetics--their road is the same.
+Saints and ascetics—their road is the same.
 
-That way--the highest way--goes he who shuts
+That way—the highest way—goes he who shuts
 The gates of all his senses, locks desire
 Safe in his heart, centres the vital airs
 Upon his parting thought, steadfastly set;
-And, murmuring OM, the sacred syllable--
-Emblem of BRAHM--dies, meditating Me.
+And, murmuring OM, the sacred syllable—
+Emblem of BRAHM—dies, meditating Me.
 
 For who, none other Gods regarding, looks
 Ever to Me, easily am I gained
 By such a Yogi; and, attaining Me,
-They fall not--those Mahatmas--back to birth,
+They fall not—those Mahatmas—back to birth,
 To life, which is the place of pain, which ends,
 But take the way of utmost blessedness.
 
-The worlds, Arjuna!--even Brahma's world--
+The worlds, Arjuna!—even Brahma's world—
 Roll back again from Death to Life's unrest;
 But they, O Kunti's Son! that reach to Me,
 Taste birth no more. If ye know Brahma's Day
@@ -1367,11 +1354,11 @@ When that vast Dawn doth break, th' Invisible
 Is brought anew into the Visible;
 When that deep Night doth darken, all which is
 Fades back again to Him Who sent it forth;
-Yea! this vast company of living things--
-Again and yet again produced--expires
+Yea! this vast company of living things—
+Again and yet again produced—expires
 At Brahma's Nightfall; and, at Brahma's Dawn,
 Riseth, without its will, to life new-born.
-But--higher, deeper, innermost--abides
+But—higher, deeper, innermost—abides
 Another Life, not like the life of sense,
 Escaping sight, unchanging. This endures
 When all created things have passed away:
@@ -1381,25 +1368,24 @@ Thither arriving none return. That Life
 Is Mine, and I am there! And, Prince! by faith
 Which wanders not, there is a way to come
 Thither. I, the PURUSHA, I Who spread
-The Universe around me--in Whom dwell
-All living Things--may so be reached and seen!
+The Universe around me—in Whom dwell
+All living Things—may so be reached and seen!
 
-. . . . . . . . . . . . . . [FN#14]
+. . . . . . . . . . . . . . 
 
 Richer than holy fruit on Vedas growing,
 Greater than gifts, better than prayer or fast,
 Such wisdom is! The Yogi, this way knowing,
 Comes to the Utmost Perfect Peace at last.
 
-Entitled "Aksharaparabrahmayog,"
-Or "The book of Religion by Devotion to the One Supreme God."
-
 ## Chapter IX
-Krishna.
-Now will I open unto thee--whose heart
-Rejects not--that last lore, deepest-concealed,
+### Religion by the Kingly Knowledge and the Kingly
+Mystery
+**Krishna:**
+Now will I open unto thee—whose heart
+Rejects not—that last lore, deepest-concealed,
 That farthest secret of My Heavens and Earths,
-Which but to know shall set thee free from ills,--
+Which but to know shall set thee free from ills,—
 A royal lore! a Kingly mystery!
 Yea! for the soul such light as purgeth it
 From every sin; a light of holiness
@@ -1412,14 +1398,14 @@ Destroyer of thy foes! They sink anew
 Into the realm of Flesh, where all things change!
 
 By Me the whole vast Universe of things
-Is spread abroad;--by Me, the Unmanifest!
+Is spread abroad;—by Me, the Unmanifest!
 In Me are all existences contained;
 Not I in them!
 
 Yet they are not contained,
 Those visible things! Receive and strive to embrace
-The mystery majestical! My Being--
-Creating all, sustaining all--still dwells
+The mystery majestical! My Being—
+Creating all, sustaining all—still dwells
 Outside of all!
 
 See! as the shoreless airs
@@ -1435,8 +1421,8 @@ Issue new-born from Me.
 By Energy
 And help of Prakriti my outer Self,
 Again, and yet again, I make go forth
-The realms of visible things--without their will--
-All of them--by the power of Prakriti.
+The realms of visible things—without their will—
+All of them—by the power of Prakriti.
 
 Yet these great makings, Prince! involve Me not
 Enchain Me not! I sit apart from them,
@@ -1446,7 +1432,7 @@ Thus doth the stuff of worlds, moulded by Me,
 Bring forth all that which is, moving or still,
 Living or lifeless! Thus the worlds go on!
 
-The minds untaught mistake Me, veiled in form;--
+The minds untaught mistake Me, veiled in form;—
 Naught see they of My secret Presence, nought
 Of My hid Nature, ruling all which lives.
 Vain hopes pursuing, vain deeds doing; fed
@@ -1454,7 +1440,7 @@ On vainest knowledge, senselessly they seek
 An evil way, the way of brutes and fiends.
 But My Mahatmas, those of noble soul
 Who tread the path celestial, worship Me
-With hearts unwandering,--knowing Me the Source,
+With hearts unwandering,—knowing Me the Source,
 Th' Eternal Source, of Life. Unendingly
 They glorify Me; seek Me; keep their vows
 Of reverence and love, with changeless faith
@@ -1484,7 +1470,7 @@ And Life Invisible!
 
 Yea! those who learn
 The threefold Veds, who drink the Soma-wine,
-Purge sins, pay sacrifice--from Me they earn
+Purge sins, pay sacrifice—from Me they earn
 Passage to Swarga; where the meats divine
 
 Of great gods feed them in high Indra's heaven.
@@ -1520,7 +1506,7 @@ Praying or fasting, let it all be done
 For Me, as Mine. So shalt thou free thyself
 From Karmabandh, the chain which holdeth men
 To good and evil issue, so shalt come
-Safe unto Me-when thou art quit of flesh--
+Safe unto Me-when thou art quit of flesh—
 By faith and abdication joined to Me!
 
 I am alike for all! I know not hate,
@@ -1538,24 +1524,21 @@ Be certain none can perish, trusting Me!
 O Pritha's Son! whoso will turn to Me,
 Though they be born from the very womb of Sin,
 Woman or man; sprung of the Vaisya caste
-Or lowly disregarded Sudra,--all
+Or lowly disregarded Sudra,—all
 Plant foot upon the highest path; how then
 The holy Brahmans and My Royal Saints?
-Ah! ye who into this ill world are come--
-Fleeting and false--set your faith fast on Me!
+Ah! ye who into this ill world are come—
+Fleeting and false—set your faith fast on Me!
 Fix heart and thought on Me! Adore Me! Bring
 Offerings to Me! Make Me prostrations! Make
 Me your supremest joy! and, undivided,
 Unto My rest your spirits shall be guided.
 
-Entitled "Rajavidyarajaguhyayog,"
-Or "The Book of Religion by the Kingly Knowledge and the Kingly
-Mystery."
-
 ## Chapter X
-Krishna.[FN#l6]
-Hear farther yet, thou Long-Armed Lord! these latest words I say--
-Uttered to bring thee bliss and peace, who lovest Me alway--
+### Religion by the Heavenly Perfections
+**Krishna:**[FN#l6]
+Hear farther yet, thou Long-Armed Lord! these latest words I say—
+Uttered to bring thee bliss and peace, who lovest Me alway—
 Not the great company of gods nor kingly Rishis know
 My Nature, Who have made the gods and Rishis long ago;
 He only knoweth-only he is free of sin, and wise,
@@ -1565,31 +1548,31 @@ To mortal men distributed, those natures spring from Me!
 Intellect, skill, enlightenment, endurance, self-control,
 Truthfulness, equability, and grief or joy of soul,
 And birth and death, and fearfulness, and fearlessness, and shame,
-And honour, and sweet harmlessness,[FN#17] and peace which is the
+And honour, and sweet harmlessness, and peace which is the
 same
 Whate'er befalls, and mirth, and tears, and piety, and thrift,
-And wish to give, and will to help,--all cometh of My gift!
-The Seven Chief Saints, the Elders Four, the Lordly Manus set--
-Sharing My work--to rule the worlds, these too did I beget;
+And wish to give, and will to help,—all cometh of My gift!
+The Seven Chief Saints, the Elders Four, the Lordly Manus set—
+Sharing My work—to rule the worlds, these too did I beget;
 And Rishis, Pitris, Manus, all, by one thought of My mind;
 Thence did arise, to fill this world, the races of mankind;
-Wherefrom who comprehends My Reign of mystic Majesty--
-That truth of truths--is thenceforth linked in faultless faith to Me:
+Wherefrom who comprehends My Reign of mystic Majesty—
+That truth of truths—is thenceforth linked in faultless faith to Me:
 Yea! knowing Me the source of all, by Me all creatures wrought,
 The wise in spirit cleave to Me, into My Being brought;
 Hearts fixed on Me; breaths breathed to Me; praising Me, each to each,
 So have they happiness and peace, with pious thought and speech;
-And unto these--thus serving well, thus loving ceaselessly--
+And unto these—thus serving well, thus loving ceaselessly—
 I give a mind of perfect mood, whereby they draw to Me;
 And, all for love of them, within their darkened souls I dwell,
 And, with bright rays of wisdom's lamp, their ignorance dispel.
 
-Arjuna.
+**Arjuna:**
 Yes! Thou art Parabrahm! The High Abode!
 The Great Purification! Thou art God
 Eternal, All-creating, Holy, First,
 Without beginning! Lord of Lords and Gods!
-Declared by all the Saints--by Narada,
+Declared by all the Saints—by Narada,
 Vyasa Asita, and Devalas;
 And here Thyself declaring unto me!
 What Thou hast said now know I to be truth,
@@ -1609,9 +1592,9 @@ Mayst Thou be grasped? Ah! yet again recount,
 Clear and complete, Thy great appearances,
 The secrets of Thy Majesty and Might,
 Thou High Delight of Men! Never enough
-Can mine ears drink the Amrit[FN#18] of such words!
+Can mine ears drink the Amrit of such words!
 
-Krishna.
+**Krishna:**
 Hanta! So be it! Kuru Prince! I will to thee unfold
 Some portions of My Majesty, whose powers are manifold!
 I am the Spirit seated deep in every creature's heart;
@@ -1628,7 +1611,7 @@ Of Vasus, and of mountain-peaks Meru; Vrihaspati
 Know Me 'mid planetary Powers; 'mid Warriors heavenly
 Skanda; of all the water-floods the Sea which drinketh each,
 And Bhrigu of the holy Saints, and OM of sacred speech;
-Of prayers the prayer ye whisper;[FN#19] of hills Himala's snow,
+Of prayers the prayer ye whisper; of hills Himala's snow,
 And Aswattha, the fig-tree, of all the trees that grow;
 Of the Devarshis, Narada; and Chitrarath of them
 That sing in Heaven, and Kapila of Munis, and the gem
@@ -1648,7 +1631,7 @@ Makar 'mid fishes of the sea, and Ganges 'mid the streams;
 Yea! First, and Last, and Centre of all which is or seems
 I am, Arjuna! Wisdom Supreme of what is wise,
 Words on the uttering lips I am, and eyesight of the eyes,
-And "A" of written characters, Dwandwa[FN#20] of knitted speech,
+And "A" of written characters, Dwandwa of knitted speech,
 And Endless Life, and boundless Love, whose power sustaineth each;
 And bitter Death which seizes all, and joyous sudden Birth,
 Which brings to light all beings that are to be on earth;
@@ -1661,7 +1644,7 @@ Double-Eight;
 The splendour of the splendid, and the greatness of the great,
 Victory I am, and Action! and the goodness of the good,
 And Vasudev of Vrishni's race, and of this Pandu brood
-Thyself!--Yea, my Arjuna! thyself; for thou art Mine!
+Thyself!—Yea, my Arjuna! thyself; for thou art Mine!
 Of poets Usana, of saints Vyasa, sage divine;
 The policy of conquerors, the potency of kings,
 The great unbroken silence in learning's secret things;
@@ -1675,16 +1658,14 @@ From Me hath all proceeded. Receive thou this aright!
 Yet how shouldst thou receive, O Prince! the vastness of this word?
 I, who am all, and made it all, abide its separate Lord!
 
-Entitled "Vibhuti Yog,"
-Or "The Book of Religion by the Heavenly Perfections."
-
 ## Chapter XI
-Arjuna.
+### the Manifesting of the One and Manifold
+**Arjuna:**
 This, for my soul's peace, have I heard from Thee,
 The unfolding of the Mystery Supreme
 Named Adhyatman; comprehending which,
-My darkness is dispelled; for now I know--
-O Lotus-eyed![FN#21]--whence is the birth of men,
+My darkness is dispelled; for now I know—
+O Lotus-eyed!—whence is the birth of men,
 And whence their death, and what the majesties
 Of Thine immortal rule. Fain would I see,
 As thou Thyself declar'st it, Sovereign Lord!
@@ -1694,22 +1675,22 @@ If this can be, if I may bear the sight,
 Make Thyself visible, Lord of all prayers!
 Show me Thy very self, the Eternal God!
 
-Krishna.
+**Krishna:**
 Gaze, then, thou Son of Pritha! I manifest for thee
 Those hundred thousand thousand shapes that clothe my Mystery:
 I show thee all my semblances, infinite, rich, divine,
 My changeful hues, my countless forms. See! in this face of mine,
 Adityas, Vasus, Rudras, Aswins, and Maruts; see
 Wonders unnumbered, Indian Prince! revealed to none save thee.
-Behold! this is the Universe!--Look! what is live and dead
-I gather all in one--in Me! Gaze, as thy lips have said,
+Behold! this is the Universe!—Look! what is live and dead
+I gather all in one—in Me! Gaze, as thy lips have said,
 On GOD ETERNAL, VERY GOD! See Me! see what thou prayest!
 
-Thou canst not!--nor, with human eyes, Arjuna! ever mayest!
+Thou canst not!—nor, with human eyes, Arjuna! ever mayest!
 Therefore I give thee sense divine. Have other eyes, new light!
 And, look! This is My glory, unveiled to mortal sight!
 
-Sanjaya.
+**Sanjaya:**
 Then, O King! the God, so saying,
 Stood, to Pritha's Son displaying
 All the splendour, wonder, dread
@@ -1725,8 +1706,8 @@ Robed in garb of woven lustres,
 Breathing from His perfect Presence
 Breaths of every subtle essence
 Of all heavenly odours; shedding
-Blinding brilliance; overspreading--
-Boundless, beautiful--all spaces
+Blinding brilliance; overspreading—
+Boundless, beautiful—all spaces
 With His all-regarding faces;
 So He showed! If there should rise
 Suddenly within the skies
@@ -1740,8 +1721,8 @@ All this universe enfold
 All its huge diversity
 Into one vast shape, and be
 Visible, and viewed, and blended
-In one Body--subtle, splendid,
-Nameless--th' All-comprehending
+In one Body—subtle, splendid,
+Nameless—th' All-comprehending
 God of Gods, the Never-Ending
 Deity!
 
@@ -1750,7 +1731,7 @@ Thrilled, o'erfilled, dazzled, and dazed,
 Arjuna knelt; and bowed his head,
 And clasped his palms; and cried, and said:
 
-Arjuna.
+**Arjuna:**
 Yea! I have seen! I see!
 Lord! all is wrapped in Thee!
 The gods are in Thy glorious frame! the creatures
@@ -1764,11 +1745,11 @@ Of saints and sages, and the serpent races
 Ananta, Vasuki;
 Yea! mightiest Lord! I see
 Thy thousand thousand arms, and breasts, and faces,
-And eyes,--on every side
+And eyes,—on every side
 Perfect, diversified;
 And nowhere end of Thee, nowhere beginning,
-Nowhere a centre! Shifts--
-Wherever soul's gaze lifts--
+Nowhere a centre! Shifts—
+Wherever soul's gaze lifts—
 Thy central Self, all-wielding, and all-winning!
 
 Infinite King! I see
@@ -1803,7 +1784,7 @@ Of Thy perfections! Space
 Star-sprinkled, and void place
 From pole to pole of the Blue, from bound to bound,
 Hath Thee in every spot,
-Thee, Thee!--Where Thou art not,
+Thee, Thee!—Where Thou art not,
 O Holy, Marvellous Form! is nowhere found!
 
 O Mystic, Awful One!
@@ -1825,18 +1806,18 @@ Th' Adityas' shining forms,
 Vasus and Sadhyas, Viswas, Ushmapas;
 Maruts, and those great Twins
 The heavenly, fair, Aswins,
-Gandharvas, Rakshasas, Siddhas, and Asuras,[FN#22]--
+Gandharvas, Rakshasas, Siddhas, and Asuras,—
 
 These see Thee, and revere
 In sudden-stricken fear;
-Yea! the Worlds,--seeing Thee with form stupendous,
+Yea! the Worlds,—seeing Thee with form stupendous,
 With faces manifold,
 With eyes which all behold,
 Unnumbered eyes, vast arms, members tremendous,
 
 Flanks, lit with sun and star,
 Feet planted near and far,
-Tushes of terror, mouths wrathful and tender;--
+Tushes of terror, mouths wrathful and tender;—
 The Three wide Worlds before Thee
 Adore, as I adore Thee,
 Quake, as I quake, to witness so much splendour!
@@ -1906,12 +1887,12 @@ Who art Thou, feasting thus upon Thy dead?
 
 Who? awful Deity!
 I bow myself to Thee,
-Namostu Te, Devavara! Prasid![FN#23]
+Namostu Te, Devavara! Prasid!
 O Mightiest Lord! rehearse
 Why hast Thou face so fierce?
 Whence doth this aspect horrible proceed?
 
-Krishna.
+**Krishna:**
 Thou seest Me as Time who kills,
 Time who brings all to doom,
 The Slayer Time, Ancient of Days, come hither to consume;
@@ -1919,22 +1900,22 @@ Excepting thee, of all these hosts of hostile chiefs arrayed,
 There stands not one shall leave alive the battlefield! Dismayed
 No longer be! Arise! obtain renown! destroy thy foes!
 Fight for the kingdom waiting thee when thou hast vanquished those.
-By Me they fall--not thee! the stroke of death is dealt them now,
+By Me they fall—not thee! the stroke of death is dealt them now,
 Even as they show thus gallantly; My instrument art thou!
 Strike, strong-armed Prince, at Drona! at Bhishma strike! deal death
 On Karna, Jyadratha; stay all their warlike breath!
 'Tis I who bid them perish! Thou wilt but slay the slain;
 Fight! they must fall, and thou must live, victor upon this plain!
 
-Sanjaya.
+**Sanjaya:**
 Hearing mighty Keshav's word,
 Tremblingly that helmed Lord
-Clasped his lifted palms, and--praying
-Grace of Krishna--stood there, saying,
+Clasped his lifted palms, and—praying
+Grace of Krishna—stood there, saying,
 With bowed brow and accents broken,
 These words, timorously spoken:
 
-Arjuna.
+**Arjuna:**
 Worthily, Lord of Might!
 The whole world hath delight
 In Thy surpassing power, obeying Thee;
@@ -1961,7 +1942,7 @@ Wisdom Thyself! O Part
 In all, and All; for all from Thee have risen
 Numberless now I see
 The aspects are of Thee!
-Vayu[FN#24] Thou art, and He who keeps the prison
+Vayu Thou art, and He who keeps the prison
 
 Of Narak, Yama dark;
 And Agni's shining spark;
@@ -1973,8 +1954,8 @@ They knelt in worshipping the old world's far light,
 The first of mortal men.
 Again, Thou God! again
 A thousand thousand times be magnified!
-Honour and worship be--
-Glory and praise,--to Thee
+Honour and worship be—
+Glory and praise,—to Thee
 Namo, Namaste, cried on every side;
 
 Cried here, above, below,
@@ -2040,7 +2021,7 @@ This frightened heart is fain
 To see restored again
 My Charioteer, in Krishna's kind disguise.
 
-Krishna.
+**Krishna:**
 Yea! thou hast seen, Arjuna! because I loved thee well,
 The secret countenance of Me, revealed by mystic spell,
 Shining, and wonderful, and vast, majestic, manifold,
@@ -2055,7 +2036,7 @@ My terror with My glory. As I before have been
 So will I be again for thee; with lightened heart behold!
 Once more I am thy Krishna, the form thou knew'st of old!
 
-Sanjaya.
+**Sanjaya:**
 These words to Arjuna spake
 Vasudev, and straight did take
 Back again the semblance dear
@@ -2065,12 +2046,12 @@ When the Prince beheld once more
 Mighty BRAHMA's form and face
 Clothed in Krishna's gentle grace.
 
-Arjuna.
+**Arjuna:**
 Now that I see come back, Janardana!
 This friendly human frame, my mind can think
 Calm thoughts once more; my heart beats still again!
 
-Krishna.
+**Krishna:**
 Yea! it was wonderful and terrible
 To view me as thou didst, dear Prince! The gods
 Dread and desire continually to view!
@@ -2085,23 +2066,20 @@ In all; adoreth always; loveth all
 Which I have made, and Me, for Love's sole end
 That man, Arjuna! unto Me doth wend.
 
-Entitled "Viswarupadarsanam,"
-Or "The Book of the Manifesting of the One and Manifold."
-
 ## Chapter XII
-Arjuna.
-Lord! of the men who serve Thee--true in heart--
+**Arjuna:**
+Lord! of the men who serve Thee—true in heart—
 As God revealed; and of the men who serve,
 Worshipping Thee Unrevealed, Unbodied, Far,
 Which take the better way of faith and life?
 
-Krishna.
-Whoever serve Me--as I show Myself--
+**Krishna:**
+Whoever serve Me—as I show Myself—
 Constantly true, in full devotion fixed,
-Those hold I very holy. But who serve--
+Those hold I very holy. But who serve—
 Worshipping Me The One, The Invisible,
 The Unrevealed, Unnamed, Unthinkable,
-Uttermost, All-pervading, Highest, Sure--
+Uttermost, All-pervading, Highest, Sure—
 Who thus adore Me, mastering their sense,
 Of one set mind to all, glad in all good,
 These blessed souls come unto Me.
@@ -2113,7 +2091,7 @@ Shall scarce be trod by man bearing the flesh!
 But whereso any doeth all his deeds
 Renouncing self for Me, full of Me, fixed
 To serve only the Highest, night and day
-Musing on Me--him will I swiftly lift
+Musing on Me—him will I swiftly lift
 Forth from life's ocean of distress and death,
 Whose soul clings fast to Me. Cling thou to Me!
 Clasp Me with heart and mind! so shalt thou dwell
@@ -2132,7 +2110,7 @@ Renouncing hope for Me, with lowliest heart,
 So shalt thou come; for, though to know is more
 Than diligence, yet worship better is
 Than knowing, and renouncing better still.
-Near to renunciation--very near--
+Near to renunciation—very near—
 Dwelleth Eternal Peace!
 
 Who hateth nought
@@ -2141,11 +2119,11 @@ Compassionate, from arrogance exempt,
 Exempt from love of self, unchangeable
 By good or ill; patient, contented, firm
 In faith, mastering himself, true to his word,
-Seeking Me, heart and soul; vowed unto Me,--
+Seeking Me, heart and soul; vowed unto Me,—
 That man I love! Who troubleth not his kind,
 And is not troubled by them; clear of wrath,
 Living too high for gladness, grief, or fear,
-That man I love! Who, dwelling quiet-eyed,[FN#25]
+That man I love! Who, dwelling quiet-eyed,
 Stainless, serene, well-balanced, unperplexed,
 Working with Me, yet from all works detached,
 That man I love! Who, fixed in faith on Me,
@@ -2168,25 +2146,26 @@ Entitled "Bhaktiyog,"
 Or"The Book of the Religion of Faith."
 
 ## Chapter XIII
-Arjuna.
-Now would I hear, O gracious Kesava![FN#26]
+### Religion by Separation of Matter and Spirit
+**Arjuna:**
+Now would I hear, O gracious Kesava!
 Of Life which seems, and Soul beyond, which sees,
 And what it is we know-or think to know.
 
-Krishna.
+**Krishna:**
 Yea! Son of Kunti! for this flesh ye see
 Is Kshetra, is the field where Life disports;
 And that which views and knows it is the Soul,
 Kshetrajna. In all "fields," thou Indian prince!
 I am Kshetrajna. I am what surveys!
 Only that knowledge knows which knows the known
-By the knower![FN#27] What it is, that "field" of life,
+By the knower! What it is, that "field" of life,
 What qualities it hath, and whence it is,
 And why it changeth, and the faculty
 That wotteth it, the mightiness of this,
 And how it wotteth-hear these things from Me!
 
-. . . . . . . . . . . .[FN#28]
+. . . . . . . . . . . .
 
 The elements, the conscious life, the mind,
 The unseen vital force, the nine strange gates
@@ -2205,19 +2184,19 @@ Detachment, lightly holding unto home,
 Children, and wife, and all that bindeth men;
 An ever-tranquil heart in fortunes good
 And fortunes evil, with a will set firm
-To worship Me--Me only! ceasing not;
+To worship Me—Me only! ceasing not;
 Loving all solitudes, and shunning noise
 Of foolish crowds; endeavours resolute
 To reach perception of the Utmost Soul,
 And grace to understand what gain it were
-So to attain,--this is true Wisdom, Prince!
+So to attain,—this is true Wisdom, Prince!
 And what is otherwise is ignorance!
 
 Now will I speak of knowledge best to know-
 That Truth which giveth man Amrit to drink,
 The Truth of HIM, the Para-Brahm, the All,
 The Uncreated;; not Asat, not Sat,
-Not Form, nor the Unformed; yet both, and more;--
+Not Form, nor the Unformed; yet both, and more;—
 Whose hands are everywhere, and everywhere
 Planted His feet, and everywhere His eyes
 Beholding, and His ears in every place
@@ -2227,14 +2206,14 @@ Glorified in the senses He hath given,
 Yet beyond sense He is; sustaining all,
 Yet dwells He unattached: of forms and modes
 Master, yet neither form nor mode hath He;
-He is within all beings--and without--
+He is within all beings—and without—
 Motionless, yet still moving; not discerned
 For subtlety of instant presence; close
 To all, to each; yet measurelessly far!
 Not manifold, and yet subsisting still
 In all which lives; for ever to be known
 As the Sustainer, yet, at the End of Times,
-He maketh all to end--and re-creates.
+He maketh all to end—and re-creates.
 The Light of Lights He is, in the heart of the Dark
 Shining eternally. Wisdom He is
 And Wisdom's way, and Guide of all the wise,
@@ -2254,10 +2233,10 @@ Feeling of pain and pleasure. Spirit, linked
 To moulded matter, entereth into bond
 With qualities by Nature framed, and, thus
 Married to matter, breeds the birth again
-In good or evil yonis.[FN#29]
+In good or evil yonis.
 
 Yet is this
-Yea! in its bodily prison!--Spirit pure,
+Yea! in its bodily prison!—Spirit pure,
 Spirit supreme; surveying, governing,
 Guarding, possessing; Lord and Master still
 PURUSHA, Ultimate, One Soul with Me.
@@ -2272,12 +2251,12 @@ Self-schooled; and some by long philosophy
 And holy life reach thither; some by works:
 Some, never so attaining, hear of light
 From other lips, and seize, and cleave to it
-Worshipping; yea! and those--to teaching true--
+Worshipping; yea! and those—to teaching true—
 Overpass Death!
 
 Wherever, Indian Prince!
-Life is--of moving things, or things unmoved,
-Plant or still seed--know, what is there hath grown
+Life is—of moving things, or things unmoved,
+Plant or still seed—know, what is there hath grown
 By bond of Matter and of Spirit: Know
 He sees indeed who sees in all alike
 The living, lordly Soul; the Soul Supreme,
@@ -2289,7 +2268,7 @@ But goes the highest road which brings to bliss.
 Seeing, he sees, indeed, who sees that works
 Are Nature's wont, for Soul to practise by
 Acting, yet not the agent; sees the mass
-Of separate living things--each of its kind--
+Of separate living things—each of its kind—
 Issue from One, and blend again to One:
 Then hath he BRAHMA, he attains!
 
@@ -2308,11 +2287,9 @@ How Matter, and what deals with it, divide;
 And how the Spirit and the flesh have strife,
 Those wise ones go the way which leads to Life!
 
-Entitled "Kshetrakshetrajnavibhagayog,"
-Or "The Book of Religion by Separation of Matter and Spirit."
-
 ## Chapter XIV
-Krishna.
+### Religion by Separation from the Qualities
+**Krishna:**
 Yet farther will I open unto thee
 This wisdom of all wisdoms, uttermost,
 The which possessing, all My saints have passed
@@ -2353,13 +2330,13 @@ The Lamp of Knowledge, then may one see well
 Soothfastness settled in that city reigns;
 Where longing is, and ardour, and unrest,
 Impulse to strive and gain, and avarice,
-Those spring from Passion--Prince!--engrained; and where
+Those spring from Passion—Prince!—engrained; and where
 Darkness and dulness, sloth and stupor are,
 'Tis Ignorance hath caused them, Kuru Chief!
 
 Moreover, when a soul departeth, fixed
-In Soothfastness, it goeth to the place--
-Perfect and pure--of those that know all Truth.
+In Soothfastness, it goeth to the place—
+Perfect and pure—of those that know all Truth.
 If it departeth in set habitude
 Of Impulse, it shall pass into the world
 Of spirits tied to works; and, if it dies
@@ -2382,26 +2359,26 @@ And knows what rules beyond the Qualities,
 Then is he come nigh unto Me!
 
 The Soul,
-Thus passing forth from the Three Qualities--
-Whereby arise all bodies--overcomes
+Thus passing forth from the Three Qualities—
+Whereby arise all bodies—overcomes
 Birth, Death, Sorrow, and Age; and drinketh deep
 The undying wine of Amrit.
 
-Arjuna.
+**Arjuna:**
 Oh, my Lord!
 Which be the signs to know him that hath gone
 Past the Three Modes? How liveth he? What way
 Leadeth him safe beyond the threefold Modes?
 
-Krishna.
+**Krishna:**
 He who with equanimity surveys
 Lustre of goodness, strife of passion, sloth
 Of ignorance, not angry if they are,
 Not wishful when they are not: he who sits
 A sojourner and stranger in their midst
-Unruffled, standing off, saying--serene--
+Unruffled, standing off, saying—serene—
 When troubles break, "These be the Qualities!"
-He unto whom--self-centred--grief and joy
+He unto whom—self-centred—grief and joy
 Sound as one word; to whose deep-seeing eyes
 The clod, the marble, and the gold are one;
 Whose equal heart holds the same gentleness
@@ -2409,10 +2386,10 @@ For lovely and unlovely things, firm-set,
 Well-pleased in praise and dispraise; satisfied
 With honour or dishonour; unto friends
 And unto foes alike in tolerance;
-Detached from undertakings,--he is named
+Detached from undertakings,—he is named
 Surmounter of the Qualities!
 
-And such--
+And such—
 With single, fervent faith adoring Me,
 Passing beyond the Qualities, conforms
 To Brahma, and attains Me!
@@ -2422,18 +2399,16 @@ That whereof Brahma is the likeness! Mine
 The Amrit is; and Immortality
 Is mine; and mine perfect Felicity!
 
-Entitled "Gunatrayavibhagayog,"
-Or "The Book of Religion by Separation from the Qualities."
-
 ## Chapter XV
-Krishna.
-Men call the Aswattha,--the Banyan-tree,--
-Which hath its boughs beneath, its roots above,--
+### Religion by attaining the Supreme
+**Krishna:**
+Men call the Aswattha,—the Banyan-tree,—
+Which hath its boughs beneath, its roots above,—
 The ever-holy tree. Yea! for its leaves
 Are green and waving hymns which whisper Truth!
 Who knows the Aswattha, knows Veds, and all.
 
-Its branches shoot to heaven and sink to earth,[FN#30]
+Its branches shoot to heaven and sink to earth,
 Even as the deeds of men, which take their birth
 From qualities: its silver sprays and blooms,
 And all the eager verdure of its girth,
@@ -2450,17 +2425,17 @@ What its shape saith; and whence it springs; and, then
 How it must end, and all the ills of it,
 The axe of sharp Detachment ye would whet,
 And cleave the clinging snaky roots, and lay
-This Aswattha of sense-life low,--to set
+This Aswattha of sense-life low,—to set
 
-New growths upspringing to that happier sky,--
+New growths upspringing to that happier sky,—
 Which they who reach shall have no day to die,
-Nor fade away, nor fall--to Him, I mean,
+Nor fade away, nor fall—to Him, I mean,
 FATHER and FIRST, Who made the mystery
 
 Of old Creation; for to Him come they
 From passion and from dreams who break away;
 Who part the bonds constraining them to flesh,
-And,--Him, the Highest, worshipping alway--
+And,—Him, the Highest, worshipping alway—
 
 No longer grow at mercy of what breeze
 Of summer pleasure stirs the sleeping trees,
@@ -2468,20 +2443,20 @@ What blast of tempest tears them, bough and stem
 To the eternal world pass such as these!
 
 Another Sun gleams there! another Moon!
-Another Light,--not Dusk, nor Dawn, nor Noon--
+Another Light,—not Dusk, nor Dawn, nor Noon—
 Which they who once behold return no more;
 They have attained My rest, life's Utmost boon!
 
 When, in this world of manifested life,
 The undying Spirit, setting forth from Me,
 Taketh on form, it draweth to itself
-From Being's storehouse,--which containeth all,--
+From Being's storehouse,—which containeth all,—
 Senses and intellect. The Sovereign Soul
 Thus entering the flesh, or quitting it,
 Gathers these up, as the wind gathers scents,
 Blowing above the flower-beds. Ear and Eye,
-And Touch and Taste, and Smelling, these it takes,--
-Yea, and a sentient mind;--linking itself
+And Touch and Taste, and Smelling, these it takes,—
+Yea, and a sentient mind;—linking itself
 To sense-things so.
 
 The unenlightened ones
@@ -2499,12 +2474,12 @@ Shineth the gathered glory of the suns
 Which lighten all the world: from Me the moons
 Draw silvery beams, and fire fierce loveliness.
 I penetrate the clay, and lend all shapes
-Their living force; I glide into the plant--
-Root, leaf, and bloom--to make the woodlands green
+Their living force; I glide into the plant—
+Root, leaf, and bloom—to make the woodlands green
 With springing sap. Becoming vital warmth,
 I glow in glad, respiring frames, and pass,
 With outward and with inward breath, to feed
-The body by all meats.[FN#31]
+The body by all meats.
 
 For in this world
 Being is twofold: the Divided, one;
@@ -2515,8 +2490,8 @@ Are "the Divided." That which sits apart,
 Higher still is He,
 The Highest, holding all, whose Name is LORD,
 The Eternal, Sovereign, First! Who fills all worlds,
-Sustaining them. And--dwelling thus beyond
-Divided Being and Undivided--I
+Sustaining them. And—dwelling thus beyond
+Divided Being and Undivided—I
 Am called of men and Vedas, Life Supreme,
 The PURUSHOTTAMA.
 
@@ -2528,11 +2503,9 @@ Now is the sacred, secret Mystery
 Declared to thee! Who comprehendeth this
 Hath wisdom! He is quit of works in bliss!
 
-Entitled "Purushottamapraptiyog,"
-Or "The Book of Religion by attaining the Supreme."
-
 ## Chapter XVI
-Krishna.
+### the Separateness of the Divine and Undivine
+**Krishna:**
 Fearlessness, singleness of soul, the will
 Always to strive for wisdom; opened hand
 And governed appetites; and piety,
@@ -2547,15 +2520,15 @@ Fluttered by no desires; a bearing mild,
 Modest, and grave, with manhood nobly mixed,
 With patience, fortitude, and purity;
 An unrevengeful spirit, never given
-To rate itself too high;--such be the signs,
+To rate itself too high;—such be the signs,
 O Indian Prince! of him whose feet are set
 On that fair path which leads to heavenly birth!
 
 Deceitfulness, and arrogance, and pride,
 Quickness to anger, harsh and evil speech,
-And ignorance, to its own darkness blind,--
+And ignorance, to its own darkness blind,—
 These be the signs, My Prince! of him whose birth
-Is fated for the regions of the vile.[FN#32]
+Is fated for the regions of the vile.
 
 The Heavenly Birth brings to deliverance,
 So should'st thou know! The birth with Asuras
@@ -2575,14 +2548,14 @@ Hath not a Law, nor Order, nor a Lord,"
 So say they: "nor hath risen up by Cause
 Following on Cause, in perfect purposing,
 But is none other than a House of Lust."
-And, this thing thinking, all those ruined ones--
-Of little wit, dark-minded--give themselves
+And, this thing thinking, all those ruined ones—
+Of little wit, dark-minded—give themselves
 To evil deeds, the curses of their kind.
 Surrendered to desires insatiable,
 Full of deceitfulness, folly, and pride,
 In blindness cleaving to their errors, caught
 Into the sinful course, they trust this lie
-As it were true--this lie which leads to death--
+As it were true—this lie which leads to death—
 Finding in Pleasure all the good which is,
 And crying "Here it finisheth!"
 
@@ -2600,9 +2573,9 @@ Is not our fortune famous, brave, and great?
 Rich are we, proudly born! What other men
 Live like to us? Kill, then, for sacrifice!
 Cast largesse, and be merry!" So they speak
-Darkened by ignorance; and so they fall--
+Darkened by ignorance; and so they fall—
 Tossed to and fro with projects, tricked, and bound
-In net of black delusion, lost in lusts--
+In net of black delusion, lost in lusts—
 Down to foul Naraka. Conceited, fond,
 Stubborn and proud, dead-drunken with the wine
 Of wealth, and reckless, all their offerings
@@ -2614,34 +2587,32 @@ And in the forms they breed, my foemen are,
 Hateful and hating; cruel, evil, vile,
 Lowest and least of men, whom I cast down
 Again, and yet again, at end of lives,
-Into some devilish womb, whence--birth by birth--
+Into some devilish womb, whence—birth by birth—
 The devilish wombs re-spawn them, all beguiled;
 And, till they find and worship Me, sweet Prince!
 Tread they that Nether Road.
 
 The Doors of Hell
-Are threefold, whereby men to ruin pass,--
+Are threefold, whereby men to ruin pass,—
 The door of Lust, the door of Wrath, the door
 Of Avarice. Let a man shun those three!
 He who shall turn aside from entering
 All those three gates of Narak, wendeth straight
 To find his peace, and comes to Swarga's gate.
 
-. . . . . . . . . . . .[FN#33]
-
-Entitled "Daivasarasaupadwibhagayog,"
-Or "The Book of the Separateness of the Divine and Undivine."
+. . . . . . . . . . . .
 
 ## Chapter XVII
-Arjuna.
+### Religion by the Threefold Kinds of Faith
+**Arjuna:**
 If men forsake the holy ordinance,
 Heedless of Shastras, yet keep faith at heart
 And worship, what shall be the state of those,
 Great Krishna! Sattwan, Rajas, Tamas? Say!
 
-Krishna.
+**Krishna:**
 Threefold the faith is of mankind and springs
-From those three qualities,--becoming "true,"
+From those three qualities,—becoming "true,"
 Or "passion-stained," or "dark," as thou shalt hear!
 
 The faith of each believer, Indian Prince!
@@ -2650,14 +2621,14 @@ Where thou shalt see a worshipper, that one
 To what he worships lives assimilate,
 [Such as the shrine, so is the votary,]
 The "soothfast" souls adore true gods; the souls
-Obeying Rajas worship Rakshasas[FN#34]
+Obeying Rajas worship Rakshasas
 Or Yakshas; and the men of Darkness pray
-To Pretas and to Bhutas.[FN#35] Yea, and those
+To Pretas and to Bhutas. Yea, and those
 Who practise bitter penance, not enjoined
-By rightful rule--penance which hath its root
-In self-sufficient, proud hypocrisies--
+By rightful rule—penance which hath its root
+In self-sufficient, proud hypocrisies—
 Those men, passion-beset, violent, wild,
-Torturing--the witless ones--My elements
+Torturing—the witless ones—My elements
 Shut in fair company within their flesh,
 (Nay, Me myself, present within the flesh!)
 Know them to devils devoted, not to Heaven!
@@ -2671,12 +2642,12 @@ The "Soothfast" meat. And there be foods which bring
 Aches and unrests, and burning blood, and grief,
 Being too biting, heating, salt, and sharp,
 And therefore craved by too strong appetite.
-And there is foul food--kept from over-night,[FN#36]
+And there is foul food—kept from over-night,
 Savourless, filthy, which the foul will eat,
 A feast of rottenness, meet for the lips
 Of such as love the "Darkness."
 
-Thus with rites;--
+Thus with rites;—
 A sacrifice not for rewardment made,
 Offered in rightful wise, when he who vows
 Sayeth, with heart devout, "This I should do!"
@@ -2688,23 +2659,23 @@ Offered against the laws, with no due dole
 Of food-giving, with no accompaniment
 Of hallowed hymn, nor largesse to the priests,
 In faithless celebration, call it vile,
-The deed of "Darkness!"--lost!
+The deed of "Darkness!"—lost!
 
 Worship of gods
 Meriting worship; lowly reverence
 Of Twice-borns, Teachers, Elders; Purity,
 Rectitude, and the Brahmacharya's vow,
-And not to injure any helpless thing,--
+And not to injure any helpless thing,—
 These make a true religiousness of Act.
 
 Words causing no man woe, words ever true,
 Gentle and pleasing words, and those ye say
-In murmured reading of a Sacred Writ,--
+In murmured reading of a Sacred Writ,—
 These make the true religiousness of Speech.
 
 Serenity of soul, benignity,
 Sway of the silent Spirit, constant stress
-To sanctify the Nature,--these things make
+To sanctify the Nature,—these things make
 Good rite, and true religiousness of Mind.
 
 Such threefold faith, in highest piety
@@ -2713,11 +2684,11 @@ Is perfect work of Sattwan, true belief.
 
 Religion shown in act of proud display
 To win good entertainment, worship, fame,
-Such--say I--is of Rajas, rash and vain.
+Such—say I—is of Rajas, rash and vain.
 
 Religion followed by a witless will
 To torture self, or come at power to hurt
-Another,--'tis of Tamas, dark and ill.
+Another,—'tis of Tamas, dark and ill.
 
 The gift lovingly given, when one shall say
 "Now must I gladly give!" when he who takes
@@ -2733,19 +2704,16 @@ This is of Rajas, stained with impulse, ill.
 The gift churlishly flung, at evil time,
 In wrongful place, to base recipient,
 Made in disdain or harsh unkindliness,
-Is gift of Tamas, dark; it doth not bless![FN#37]
-
-Entitled "Sraddhatrayavibhagayog,"
-Or "The Book of Religion by the Threefold Kinds of Faith."
+Is gift of Tamas, dark; it doth not bless!
 
 ## Chapter XVIII
-Arjuna.
+**Arjuna:**
 Fain would I better know, Thou Glorious One!
-The very truth--Heart's Lord!--of Sannyas,
+The very truth—Heart's Lord!—of Sannyas,
 Abstention; and enunciation, Lord!
 Tyaga; and what separates these twain!
 
-Krishna.
+**Krishna:**
 The poets rightly teach that Sannyas
 Is the foregoing of all acts which spring
 Out of desire; and their wisest say
@@ -2753,8 +2721,8 @@ Tyaga is renouncing fruit of acts.
 
 There be among the saints some who have held
 All action sinful, and to be renounced;
-And some who answer, "Nay! the goodly acts--
-As worship, penance, alms--must be performed!"
+And some who answer, "Nay! the goodly acts—
+As worship, penance, alms—must be performed!"
 Hear now My sentence, Best of Bharatas!
 
 'Tis well set forth, O Chaser of thy Foes!
@@ -2788,7 +2756,7 @@ Wholly aloof from act; yet, who abstains
 From profit of his acts is abstinent.
 
 The fruit of labours, in the lives to come,
-Is threefold for all men,--Desirable,
+Is threefold for all men,—Desirable,
 And Undesirable, and mixed of both;
 But no fruit is at all where no work was.
 
@@ -2802,8 +2770,8 @@ Of body, mind, or speech, evil or good,
 By these five doth he that. Which being thus,
 Whoso, for lack of knowledge, seeth himself
 As the sole actor, knoweth nought at all
-And seeth nought. Therefore, I say, if one--
-Holding aloof from self--with unstained mind
+And seeth nought. Therefore, I say, if one—
+Holding aloof from self—with unstained mind
 Should slay all yonder host, being bid to slay,
 He doth not slay; he is not bound thereby!
 
@@ -2825,17 +2793,17 @@ There is false Knowledge: that which blindly clings
 To one as if 'twere all, seeking no Cause,
 Deprived of light, narrow, and dull, and "dark."
 
-There is "right" Action: that which being enjoined--
+There is "right" Action: that which being enjoined—
 Is wrought without attachment, passionlessly,
 For duty, not for love, nor hate, nor gain.
 There is "vain" Action: that which men pursue
 Aching to satisfy desires, impelled
 By sense of self, with all-absorbing stress:
-This is of Rajas--passionate and vain.
+This is of Rajas—passionate and vain.
 There is "dark" Action: when one doth a thing
 Heedless of issues, heedless of the hurt
 Or wrong for others, heedless if he harm
-His own soul--'tis of Tamas, black and bad!
+His own soul—'tis of Tamas, black and bad!
 
 There is the "rightful"doer. He who acts
 Free from self-seeking, humble, resolute,
@@ -2847,7 +2815,7 @@ To overcome, unchastened; slave by turns
 Of sorrow and of joy: of Rajas he!
 And there be evil doers; loose of heart,
 Low-minded, stubborn, fraudulent, remiss,
-Dull, slow, despondent--children of the "dark."
+Dull, slow, despondent—children of the "dark."
 
 Hear, too, of Intellect and Steadfastness
 The threefold separation, Conqueror-Prince!
@@ -2880,7 +2848,7 @@ For life's sake, and the love of goods to gain,
 Arjuna! 'tis of Rajas, passion-stamped!
 Sad is the steadfastness wherewith the fool
 Cleaves to his sloth, his sorrow, and his fears,
-His folly and despair. This--Pritha's Son!--
+His folly and despair. This—Pritha's Son!—
 Is born of Tamas, "dark" and miserable!
 
 Hear further, Chief of Bharatas! from Me
@@ -2922,11 +2890,11 @@ Born with his nature, is to till the ground,
 Tend cattle, venture trade. A Sudra's state,
 Suiting his nature, is to minister.
 
-Whoso performeth--diligent, content--
+Whoso performeth—diligent, content—
 The work allotted him, whate'er it be,
 Lays hold of perfectness! Hear how a man
 Findeth perfection, being so content:
-He findeth it through worship--wrought by work--
+He findeth it through worship—wrought by work—
 Of Him that is the Source of all which lives,
 Of HIM by Whom the universe was stretched.
 
@@ -2945,7 +2913,7 @@ Learn from me, Son of Kunti! also this,
 How one, attaining perfect peace, attains
 BRAHM, the supreme, the highest height of all!
 
-Devoted--with a heart grown pure, restrained
+Devoted—with a heart grown pure, restrained
 In lordly self-control, forgoing wiles
 Of song and senses, freed from love and hate,
 Dwelling 'mid solitudes, in diet spare,
@@ -2953,7 +2921,7 @@ With body, speech, and will tamed to obey,
 Ever to holy meditation vowed,
 From passions liberate, quit of the Self,
 Of arrogance, impatience, anger, pride;
-Freed from surroundings, quiet, lacking nought--
+Freed from surroundings, quiet, lacking nought—
 Such an one grows to oneness with the BRAHM;
 Such an one, growing one with BRAHM, serene,
 Sorrows no more, desires no more; his soul,
@@ -2962,8 +2930,8 @@ Me, Who have made them, and attains to Me.
 By this same love and worship doth he know
 Me as I am, how high and wonderful,
 And knowing, straightway enters into Me.
-And whatsoever deeds he doeth--fixed
-In Me, as in his refuge--he hath won
+And whatsoever deeds he doeth—fixed
+In Me, as in his refuge—he hath won
 For ever and for ever by My grace
 Th' Eternal Rest! So win thou! In thy thoughts
 Do all thou dost for Me! Renounce for Me!
@@ -2979,17 +2947,17 @@ Misled by fair illusions, thou wouldst seek
 Against thy will, when the task comes to thee
 Waking the promptings in thy nature set.
 There lives a Master in the hearts of men
-Maketh their deeds, by subtle pulling--strings,
+Maketh their deeds, by subtle pulling—strings,
 Dance to what tune HE will. With all thy soul
 Trust Him, and take Him for thy succour, Prince!
-So--only so, Arjuna!--shalt thou gain--
-By grace of Him--the uttermost repose,
+So—only so, Arjuna!—shalt thou gain—
+By grace of Him—the uttermost repose,
 The Eternal Place!
 
 Thus hath been opened thee
 This Truth of Truths, the Mystery more hid
 Than any secret mystery. Meditate!
-And--as thou wilt--then act!
+And—as thou wilt—then act!
 
 Nay! but once more
 Take My last word, My utmost meaning have!
@@ -3000,7 +2968,7 @@ In faith and love and reverence to Me!
 So shalt thou come to Me! I promise true,
 For thou art sweet to Me!
 
-And let go those--
+And let go those—
 Rites and writ duties! Fly to Me alone!
 Make Me thy single refuge! I will free
 Thy soul from all its sins! Be of good cheer!
@@ -3012,10 +2980,10 @@ Wisdom's teaching when she speaks:
 Hide it from all men who mock;
 But, wherever, 'mid the flock
 Of My lovers, one shall teach
-This divinest, wisest, speech--
+This divinest, wisest, speech—
 Teaching in the faith to bring
 Truth to them, and offering
-Of all honour unto Me--
+Of all honour unto Me—
 Unto Brahma cometh he!
 Nay, and nowhere shall ye find
 Any man of all mankind
@@ -3029,22 +2997,22 @@ He hath paid Me sacrifice!
 (Krishna speaketh in this wise!)
 Yea, and whoso, full of faith,
 Heareth wisely what it saith,
-Heareth meekly,--when he dies,
+Heareth meekly,—when he dies,
 Surely shall his spirit rise
 To those regions where the Blest,
 Free of flesh, in joyance rest.]
 
 Hath this been heard by thee, O Indian Prince!
-With mind intent? hath all the ignorance--
-Which bred thy trouble--vanished, My Arjun?
+With mind intent? hath all the ignorance—
+Which bred thy trouble—vanished, My Arjun?
 
-Arjuna.
+**Arjuna:**
 Trouble and ignorance are gone! the Light
 Hath come unto me, by Thy favour, Lord!
 Now am I fixed! my doubt is fled away!
 According to Thy word, so will I do!
 
-Sanjaya.
+**Sanjaya:**
 Thus gathered I the gracious speech of Krishna, O my King!
 Thus have I told, with heart a-thrill, this wise and wondrous thing
 By great Vyasa's learning writ, how Krishna's self made known
@@ -3058,81 +3026,4 @@ O Krishna, Lord of Yoga! surely there shall not fail
 Blessing, and victory, and power, for Thy most mighty sake,
 Where this song comes of Arjun, and how with God he spake.
 
-HERE ENDS, WITH CHAPTER XVIII.,
-Entitled "Mokshasanyasayog,"
-Or "The Book of Religion by Deliverance and Renunciation,"
-THE BHAGAVAD-GITA.
-
-[FN#1] Some repetitionary lines are here omitted.
-
-[FN#2] Technical phrases of Vedic religion.
-
-[FN#3] The whole of this passage is highly involved and difficult to render.
-
-[FN#4] I feel convinced sankhyanan and yoginan must be transposed here in sense.
-
-[FN#5] I am doubtful of accuracy here.
-
-[FN#6] A name of the sun.
-
-[FN#7] Without desire of fruit.
-
-[FN#8] That is,"joy and sorrow, success and failure, heat and cold,"&c.
-
-[FN#9] i.e., the body.
-
-[FN#10] The Sanskrit has this play on the double meaning of Atman.
-
-[FN#11] So in original.
-
-[FN#12] Beings of low and devilish nature.
-
-[FN#13] Krishna.
-
-[FN#14] I read here janma, "birth;" not jara,"age"
-
-[FN#15] I have discarded ten lines of Sanskrit text here as an undoubted interpolation by some Vedantist
-
-[FN#16] The Sanskrit poem here rises to an elevation of style and manner which I have endeavoured to mark by change of metre.
-
-[FN#17] Ahinsa.
-
-[FN#18] The nectar of immortality.
-
-[FN#19] Called "The Jap."
-
-[FN#20] The compound form of Sanskrit words.
-
-[FN#21] "Kamalapatraksha"
-
-[FN#22] These are all divine or deified orders of the Hindoo Pantheon.
-
-[FN#23] "Hail to Thee, God of Gods! Be favourable!"
-
-[FN#24] The wind.
-
-[FN#25] "Not peering about,"anapeksha.
-
-[FN#26] The Calcutta edition of the Mahabharata has these three opening lines.
-
-[FN#27] This is the nearest possible version of Kshetrakshetrajnayojnanan yat tajnan matan mama.
-
-[FN#28] I omit two lines of the Sanskrit here, evidently interpolated by some Vedantist.
-
-[FN#29] Wombs.
-
-[FN#30] I do not consider the Sanskrit verses here-which are somewhat freely rendered--"an attack on the authority of the Vedas," with Mr Davies, but a beautiful lyrical episode, a new "Parable of the fig-tree."
-
-[FN#31] I omit a verse here, evidently interpolated.
-
-[FN#32] "Of the Asuras," lit.
-
-[FN#33] I omit the ten concluding shlokas, with Mr Davis.
-
-[FN#34] Rakshasas and Yakshas are unembodied but capricious beings of great power, gifts, and beauty, same times also of benignity.
-
-[FN#35] These are spirits of evil wandering ghosts.
-
-[FN#36] Yatayaman, food which has remained after the watches of the night. In India this would probably "go bad."
-
-[FN#37] I omit the concluding shlokas, as of very doubtful authenticity.
+**HERE ENDS THE BHAGAVAD-GITA**
