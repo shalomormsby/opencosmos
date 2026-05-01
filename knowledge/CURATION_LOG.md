@@ -540,3 +540,28 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ---
 
+## 2026-05-01
+
+### Diaries of Court Ladies of Old Japan
+- **Role:** source | **Domain:** literature | **Format:** anthology
+- **Path:** `knowledge/sources/literature-diaries-of-court-ladies-of-old-japan.md`
+- **Curator:** shalom | **Tags:** japanese-literature, court-culture, heian-period, women-writers, diary-literature, cultural-translation
+- **Author:** Izumi Shikibu, Lady Sarashina, and others
+- **Origin:** 10th-11th century (medieval)
+- **Tradition:** heian court literature
+- **Related:** sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-shakespeare-complete-works.md, sources/literature-shakespeare-sonnets.md, sources/literature-steppenwolf.md
+- **Gaps served:** Provides authentic feminine perspectives from classical Japanese court culture, bridging the gap between scholarly historical accounts and lived aristocratic experience.
+- **Graph impact:** Enables cross-cultural dialogue about women's spiritual and literary expression while connecting Buddhist contemplative practices with courtly aesthetic sensibilities.
+
+### Narrative of Sojourner Truth
+- **Role:** source | **Domain:** literature | **Format:** narrative
+- **Path:** `knowledge/sources/literature-narrative-of-sojourner-truth.md`
+- **Curator:** shalom | **Tags:** slavery, abolition, autobiography, african-american, womens-rights, social-justice, memoir
+- **Author:** Sojourner Truth
+- **Origin:** 1850 (modern)
+- **Related:** sources/literature-demian-the-story-of-emil-sinclair-s-youth.md, sources/literature-leaves-of-grass.md, sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md, sources/literature-siddhartha-an-indian-tale.md, sources/literature-steppenwolf.md
+- **Gaps served:** Provides first-person testimony of slavery's dehumanizing effects and one woman's remarkable preservation of dignity and spiritual integrity.
+- **Graph impact:** Connects abolitionist literature with feminist thought and establishes foundational voice in African-American autobiography tradition.
+
+---
+
