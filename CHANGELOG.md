@@ -2,11 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-04-18
+**Last updated:** 2026-05-02
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-05-02 — Knowledge embedding hardening: stable IDs, H4 support, automatic sync
+
+Fixed `400 Bad Request` failures from Upstash Vector when embedding documents with repeated section titles (e.g., Leaves of Grass). Hardened the embedding pipeline with stable IDs, improved hierarchy handling, and automatic stale-vector cleanup.
+
+### Major changes
+- **Stable chunk IDs** — from sequence-prefixed (`path#042-slug`) to slug-based (`path#slug`), with content-hash disambiguation only when collisions occur. This makes IDs deterministic and stable across corpus edits, preparing for Phase 8 citations that reference vectors by slug.
+- **H4 heading support** — `#### Heading` now creates its own vector chunk, nested under the nearest H3 (falling back to H2). Enables three-level document hierarchies (e.g. Book → Poem → Verse in Leaves of Grass).
+- **Stale-vector sync** — `pnpm embed` now reconciles Upstash Vector with the corpus after upsert: any IDs that don't correspond to current chunks are deleted. Handles file deletions, renames, and ID-format migrations automatically. Controlled via `--no-sync` flag.
+- **Reset mode** — `pnpm embed --reset` wipes the index before re-embedding (for major schema changes).
+- **Cross-corpus ID collision guard** — detects duplicate IDs across all chunks before upsert, preventing silent failures.
+
+### Minor
+- Updated `docs/pm.md` Phase 8 citation format note to document both `path#slug` and `path#slug-<hash>` forms.
+- Removed noise comment from tags metadata field.
+- Marked Phase 2 (Split Monoliths) complete in `docs/pm.md`.
 
 ## 2026-04-26 – OpenCosmos home page cleanup
 - Inert text replaced with streaming text greeting
