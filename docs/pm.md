@@ -2,7 +2,7 @@
 
 > Project management hub for all OpenCosmos work. For strategic rationale, see [strategy.md](strategy.md). For infrastructure details, see [architecture.md](architecture.md).
 
-**Updated:** 2026-04-18
+**Updated:** 2026-05-02
 
 ---
 
@@ -306,15 +306,13 @@ type QuoteRecord = {                   // NEW — for knowledge/quotes/*.yaml
 
 `work_type` required on every new/cleaned source doc. Backfill: walk `knowledge/sources/` → `work`, `knowledge/collections/` → `collection`, `knowledge/references/` → `reference`, `knowledge/wiki/` → `wiki`. Human review where ambiguous.
 
-##### 6. Cosmo-in-Knowledge-sidebar (deferred to Phase 9, deliberate)
+##### 6. Cosmo-in-Knowledge-sidebar ✅ Done
 
-Cosmo embedded in the Knowledge route's left sidebar, with duplicate Dialog/Knowledge/Studio nav items removed. Requires:
-- Extract `CosmoChatPanel` from `CosmoChat.tsx`; lift state into `useCosmoSession()`.
-- Add `sidebarContent` slot prop to `AppShell`.
-- Mobile fallback (< 1024px): floating action button with bottom sheet.
-- Grounding: reads `sessionStorage['cosmo_context']` — automatic integration with `current_section` / `current_passage`.
-
-Best done after Phase 5 lands so the constellation-aware experience is present when the sidebar ships.
+Cosmo embedded in the Knowledge route's left sidebar, with duplicate Dialog/Knowledge/Studio nav items removed.
+- Extract `CosmoChatPanel` from `CosmoChat.tsx`; lift state into `useCosmoSession()`. ✅
+- Add `sidebarContent` slot prop to `AppShell`. ✅
+- Mobile fallback (< 1024px): floating action button with bottom sheet. ✅
+- Grounding: reads `sessionStorage['cosmo_context']` — automatic integration with `current_section` / `current_passage`. ✅
 
 #### Phased implementation
 
@@ -389,6 +387,75 @@ Apply to: Shakespeare, Whitman (H2-per-poem, no split), Gibran Forerunner (H2-pe
 **RAG integration:**
 - [apps/web/lib/rag.ts](../apps/web/lib/rag.ts) — quote-specific formatting: `> "text" — Attribution, Source`.
 - Cosmo quote citation token: `[quote: path/to/file.yaml#quote-id]` (distinct from work `[ref: ...]`).
+
+##### Phase 3.1 — Quote provenance validation pipeline (3–5 days, 4 stages)
+
+**Context:** 1,509 quotes in `quotes_normalized.jsonl` (Tier 1 complete: text normalized, authors canonicalized, 14 known misattributions flagged, 16 duplicate groups identified). All marked `provenance.status: "unverified"`. This pipeline moves every quote from `unverified` to one of: `verified` (sourced), `attributed` (credible but unsourced), or `purged` (misattributed/unresolvable).
+
+**Stage 0 — Pre-classify from Tier 1 flags (2 hours, no API calls)**
+
+- Script: `scripts/normalize-quotes/00-convert-to-yaml.ts`
+- Input: `quotes_normalized.jsonl` from `/Users/shalomormsby/Downloads/`.
+- Output: `knowledge/quotes/{author-key}.yaml` files, grouped by author.
+- Logic:
+  - For each author, create a single YAML file with all their quotes.
+  - Initial `provenance.status` assigned from Tier 1 flags:
+    - `suspect_misattribution: true` → `likely_misattributed`
+    - `source` field populated → `attributed`
+    - Everything else → `attributed_unverified`
+  - Expected distribution: ~46 `attributed`, ~14 `likely_misattributed`, ~1,449 `attributed_unverified`.
+- Ship with this status. Cosmo caveats anything below `verified`.
+
+**Stage 1 — Automated Claude validation with web search (background, ~days, ~$30–60)**
+
+- Script: `scripts/normalize-quotes/01-claude-validation.ts`
+- Method: Claude Opus 4.7 with web search, batching quotes 10 at a time. For each quote, check Wikiquote, Quote Investigator, and primary-source evidence.
+- Output per quote: `{ status: "verified|attributed|attributed_unverified|likely_misattributed|apocryphal", confidence: 0.0–1.0, notes: "..." }`
+- Critical constraint: Claude must be **explicitly permitted to say "I don't know"**. `attributed_unverified` at low confidence is the right answer for a Zen proverb. Forbid fabricated citations; if Claude suggests a reattribution, it must come from evidence or widely-known factual record (e.g., "This is Marianne Williamson from *A Return to Love* (1992)").
+- Resumable: checkpointing every 50 records. Retry failed API calls 3 times with exponential backoff.
+- Expected distribution after this pass: ~200 `verified`, ~900 `attributed`, ~300 `attributed_unverified`, ~50–80 `likely_misattributed` / `apocryphal`.
+- Updates YAML files in place.
+
+**Stage 2 — Human review (one session, ~45 min)**
+
+- Output: CSV of all records with `confidence < 0.6` or status `likely_misattributed` / `apocryphal` (probably 80–120 records).
+- Columns: `id, text, author, status, confidence, reasoning, suggested_reattribution, decision (blank)`.
+- Shalom fills in decision column: `keep` / `drop` / `reattribute`.
+  - `keep` → stays in corpus, status locked at `attributed_unverified` with honest Cosmo caveat.
+  - `drop` → moved to `rejected.yaml`, archived (not deleted — audit trail matters).
+  - `reattribute` → corrected author + provenance note, status → `attributed`.
+- After this pass, every record has a deliberate human decision.
+
+**Stage 3 — Selective re-embed + graph refresh (30 min)**
+
+- Only records whose `provenance.status` changed need re-embedding.
+- Run `pnpm embed --filter=quotes` (efficient diff against Upstash).
+- Graph generator rerun includes updated quote nodes with accurate provenance color-coding (`verified` vs. `attributed` vs. caveated).
+
+**YAML schema for quotes (per-author files):**
+
+```yaml
+---
+author: "Albert Einstein"
+author_normalized_key: "albert-einstein"
+tradition: "science"
+era: "modern"
+---
+quotes:
+  - id: "q_0159"
+    text: "Creativity is intelligence having fun."
+    keywords: ["creativity", "intelligence", "joy"]
+    favorite: false
+    source: null
+    context: null
+    provenance:
+      status: "likely_misattributed"  # Updated by Stage 1/2
+      confidence: 0.1
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "No evidence Einstein said this; earliest attributions appear decades after his death."
+  # ... more quotes for this author
+```
 
 ##### Phase 4 — Re-embed and generate initial graph (30 min)
 

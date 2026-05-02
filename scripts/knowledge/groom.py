@@ -800,7 +800,7 @@ FILE_REGISTRY: Dict[str, tuple] = {
     'taoism-tao-te-ching':   ('tao',),
     'buddhism-the-dhammapada': ('scripture', 'The Dhammapada'),
     # Poetry
-    'poetry-leaves-of-grass-walt-whitman': ('poetry', 'Leaves of Grass', 'Walt Whitman'),
+    'literature-leaves-of-grass': ('poetry', 'Leaves of Grass', 'Walt Whitman'),
     'cross-the-prophet':     ('prophet',),
     # Scientific
     'gaia-hypothesis-james-lovelock': ('scientific', 'The Gaia Hypothesis', 'James Lovelock'),
@@ -811,12 +811,12 @@ FILE_REGISTRY: Dict[str, tuple] = {
     # Shakespeare
     'The Complete Works of William Shakespeare': ('shakespeare',),
     # Gibran
-    'The Forerunner, His Parables and Poems by Kahlil Gibran': ('gibran', 'The Forerunner'),
-    'The MadmanHis Parables and PoemsBy Kahlil Gibran':        ('gibran', 'The Madman'),
+    'literature-the-forerunner': ('gibran', 'The Forerunner'),
+    'literature-the-madman':        ('gibran', 'The Madman'),
     # Poetry collections
     'Poems of Nature by Henry David Thoreau':  ('poetry', 'Poems of Nature', 'Henry David Thoreau'),
-    'Rubáiyát of Omar Khayyám, and Salámán and Absál by Omar Khayyam, Emerson, and Jami':
-        ('poetry', 'Rubáiyát of Omar Khayyám, and Salámán and Absál', 'Edward FitzGerald'),
+    'literature-rubaiyat-of-omar-khayyam': ('poetry', 'Rubáiyát of Omar Khayyám', 'Edward FitzGerald'),
+    'literature-salaman-and-absal': ('poetry', 'Salámán and Absál', 'Edward FitzGerald'),
     # Scholarly/scientific
     'The Fairy-Faith in Celtic Countries': ('scientific', 'The Fairy-Faith in Celtic Countries', 'W.Y. Evans-Wentz'),
     # Generic prose — novels, essays, philosophy (registered to suppress warnings)
