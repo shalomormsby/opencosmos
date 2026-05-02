@@ -8,6 +8,20 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-04-26 – OpenCosmos home page cleanup
+- Inert text replaced with streaming text greeting
+- Alignment issue of sphere on home page fixed
+- **New skill:** created: `.claude/skills/split-collection/SKILL.md`. Splits a multi-work file into per-work files + slim collection index.
+  - Applied to: Shakespeare, Whitman, Gibran Forerunner, Khayyám+Salámán, Walden+Civil Disobedience.
+
+## 2026-04-24 – Cosmo-in-Knowledge-sidebar
+
+Cosmo embedded in the Knowledge route's left sidebar, with duplicate Dialog/Knowledge/Studio nav items removed.
+- Extract `CosmoChatPanel` from `CosmoChat.tsx`; lift state into `useCosmoSession()`. 
+- Add `sidebarContent` slot prop to `AppShell`. 
+- Mobile fallback (< 1024px): floating action button with bottom sheet. 
+- Grounding: reads `sessionStorage['cosmo_context']` — automatic integration with `current_section` / `current_passage`. 
+
 ## 2026-04-18 — Cosmo knowledge retrieval: full-section grounding
 
 Fixed a compound bug that prevented Cosmo from accurately quoting

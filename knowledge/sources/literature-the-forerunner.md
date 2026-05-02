@@ -37,6 +37,9 @@ related_docs:
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
 ---
+
+## The Forerunner
+
 *By Kahlil Gibran*
 
 You are your own forerunner, and the towers you have builded are but the foundation of your giant-self. And that self too shall be a foundation.
@@ -57,7 +60,11 @@ And we, sun and earth, are but the beginning of a greater sun and a greater eart
 
 You are your own forerunner, you the stranger passing by the gate of my garden.
 
-And I too am my own forerunner, though I sit in the shadows of my trees and seem motionless.GOD’S FOOL ONCE there came from the desert to the great city of Sharia a man who was a dreamer, and he had naught but his garment and a staff.
+And I too am my own forerunner, though I sit in the shadows of my trees and seem motionless.
+
+### God’s Fool
+
+ONCE there came from the desert to the great city of Sharia a man who was a dreamer, and he had naught but his garment and a staff.
 
 And as he walked through the streets he gazed with awe and wonder at the temples and towers and palaces, for the city of Sharia was of surpassing beauty. And he spoke often to the passersby, questioning them about their city—but they understood not his language, nor he their language.
 
@@ -93,7 +100,15 @@ Now as he rode, he saw among the crowd a man who was from the desert like himsel
 
 “Friend! Friend! Where are we? What city of the heart’s desire is this? What race of lavish hosts?—who feast the chance guest in their palaces, whose princes companion him, whose king hangs a token upon his breast and opens to him the hospitality of a city descended from heaven.”And he who was also of the desert replied not. He only smiled and slightly shook his head. And the procession passed on.
 
-And the dreamer’s face was uplifted and his eyes were overflowing with light.LOVE They say the jackal and the mole Drink from the self-same stream Where the lion comes to drink. And they say the eagle and the vulture Dig their beaks into the same carcass, And are at peace, one with the other, In the presence of the dead thing. O love, whose lordly hand Has bridled my desires, And raised my hunger and my thirst To dignity and pride, Let not the strong in me and the constant Eat the bread or drink the wine That tempt my weaker self. Let me rather starve,And let my heart parch with thirst, And let me die and perish, Ere I stretch my hand To a cup you did not fill, Or a bowl you did not bless. THE KING-HERMIT THEY told me that in a forest among the mountains lives a young man in solitude who once was a king of a vast country beyond the Two Rivers. And they also said that he, of his own will, had left his throne and the land of his glory and come to dwell in the wilderness.
+And the dreamer’s face was uplifted and his eyes were overflowing with light.
+
+### Love
+
+They say the jackal and the mole Drink from the self-same stream Where the lion comes to drink. And they say the eagle and the vulture Dig their beaks into the same carcass, And are at peace, one with the other, In the presence of the dead thing. O love, whose lordly hand Has bridled my desires, And raised my hunger and my thirst To dignity and pride, Let not the strong in me and the constant Eat the bread or drink the wine That tempt my weaker self. Let me rather starve,And let my heart parch with thirst, And let me die and perish, Ere I stretch my hand To a cup you did not fill, Or a bowl you did not bless.
+
+### The King-Hermit
+
+THEY told me that in a forest among the mountains lives a young man in solitude who once was a king of a vast country beyond the Two Rivers. And they also said that he, of his own will, had left his throne and the land of his glory and come to dwell in the wilderness.
 
 And I said, “I would seek that man, and learn the secret of his heart; for he who renounces a kingdom must needs be greater than a kingdom.”
 
@@ -115,7 +130,11 @@ Then rising he leaned upon his reed and said, “Go now to the great city and si
 
 After he had said these things he smiled on me, and there were a thousand dawns upon his lips. Then he turned and walked away into the heart of the forest.
 
-And I returned to the city, and I sat at its gate to watch the passersby even as hehad told me. And from that day to this numberless are the kings whose shadows have passed over me and few are the subjects over whom my shadow has passed.THE LION’S DAUGHTER FOUR slaves stood fanning an old queen who was asleep upon her throne. And she was snoring. And upon the queen’s lap a cat lay purring and gazing lazily at the slaves.
+And I returned to the city, and I sat at its gate to watch the passersby even as hehad told me. And from that day to this numberless are the kings whose shadows have passed over me and few are the subjects over whom my shadow has passed.
+
+### The Lion’s Daughter
+
+FOUR slaves stood fanning an old queen who was asleep upon her throne. And she was snoring. And upon the queen’s lap a cat lay purring and gazing lazily at the slaves.
 
 The first slave spoke, and said, “How ugly this old woman is in her sleep. See her mouth droop; and she breathes as if the devil were choking her.”
 
@@ -155,7 +174,11 @@ Then she closed her eyes and went to sleep again. And she snored. And the four s
 
 “My mate shall come riding on the waves. His thundering roar shall fill the earth with fear, and the flames of his nostrils shall set the sky afire. At the eclipse of the moon we shall be wedded, and at the eclipse of the sun I shall give birth to a Saint George, who shall slay me.”
 
-Thus sings the She-Dragon that guards the seven caves by the sea.THE SAINT IN my youth I once visited a saint in his silent grove beyond the hills; and as we were conversing upon the nature of virtue a brigand came limping wearily up the ridge. When he reached the grove he knelt down before the saint and said, “O saint, I would be comforted! My sins are heavy upon me.”
+Thus sings the She-Dragon that guards the seven caves by the sea.
+
+### The Saint
+
+IN my youth I once visited a saint in his silent grove beyond the hills; and as we were conversing upon the nature of virtue a brigand came limping wearily up the ridge. When he reached the grove he knelt down before the saint and said, “O saint, I would be comforted! My sins are heavy upon me.”
 
 And the saint replied, “My sins, too, are heavy upon me.”
 
@@ -175,7 +198,11 @@ And I turned to the saint and said, “Wherefore did you accuse yourself of unco
 
 And the saint answered, “It is true he no longer believes in me. But he went away much comforted.”
 
-At that moment we heard the brigand singing in the distance, and the echo of his song filled the valley with gladness.THE PLUTOCRAT IN my wanderings I once saw upon an island a man-headed, iron-hoofed monster who ate of the earth and drank of the sea incessantly. And for a long while I watched him. Then I approached him and said, “Have you never enough; is your hunger never satisfied and your thirst never quenched?”
+At that moment we heard the brigand singing in the distance, and the echo of his song filled the valley with gladness.
+
+### The Plutocrat
+
+IN my wanderings I once saw upon an island a man-headed, iron-hoofed monster who ate of the earth and drank of the sea incessantly. And for a long while I watched him. Then I approached him and said, “Have you never enough; is your hunger never satisfied and your thirst never quenched?”
 
 And he answered saying, “Yes, I am satisfied, nay, I am weary of eating and drinking; but I am afraid that tomorrow there will be no more earth to eat and no more sea to drink.”THE GREATER SELF THIS came to pass. After the coronation of Nufsibaäl, King of Byblus, he retired to his bed chamber—the very room which the three hermit-magicians of the mountain had built for him. He took off his crown and his royal raiment, and stood in the centre of the room thinking of himself, now the all-powerful ruler of Byblus.
 
@@ -201,7 +228,11 @@ The naked man looked down upon him. Then he took up the crown and with tendernes
 
 And the naked man, gazing lovingly upon the king, entered into the mirror.
 
-And the king roused, and straightway he looked into the mirror. And he saw there but himself crowned.WAR AND THE SMALL NATIONS ONCE, high above a pasture, where a sheep and a lamb were grazing, an eagle was circling and gazing hungrily down upon the lamb. And as he was about to descend and seize his prey, another eagle appeared and hovered above the sheep and her young with the same hungry intent. Then the two rivals began to fight filling the sky with their fierce cries.
+And the king roused, and straightway he looked into the mirror. And he saw there but himself crowned.
+
+### War And The Small Nations
+
+ONCE, high above a pasture, where a sheep and a lamb were grazing, an eagle was circling and gazing hungrily down upon the lamb. And as he was about to descend and seize his prey, another eagle appeared and hovered above the sheep and her young with the same hungry intent. Then the two rivals began to fight filling the sky with their fierce cries.
 
 The sheep looked up and was much astonished. She turned to the lamb and said,
 
@@ -235,9 +266,17 @@ Then the fourth poet rose and lifted upthe bowl, and he said, “Alas, friends! 
 
 And putting the bowl to his lips, he drank the punch to the very last drop.
 
-The three poets, with their mouths open, looked at him aghast, and there was a thirsty yet unlyrical hatred in their eyes.THE WEATHER-COCK SAID the weather-cock to the wind, “How tedious and monotonous you are! Can you not blow any other way but in my face? You disturb my God-given stability.”
+The three poets, with their mouths open, looked at him aghast, and there was a thirsty yet unlyrical hatred in their eyes.
 
-And the wind did not answer. It only laughed in space.THE KING OF ARADUS ONCE the elders of the city of Aradus presented themselves before the king, and besought of him a decree to forbid to men all wine and all intoxicants within their city.
+### The Weather-Cock
+
+SAID the weather-cock to the wind, “How tedious and monotonous you are! Can you not blow any other way but in my face? You disturb my God-given stability.”
+
+And the wind did not answer. It only laughed in space.
+
+### The King Of Aradus
+
+ONCE the elders of the city of Aradus presented themselves before the king, and besought of him a decree to forbid to men all wine and all intoxicants within their city.
 
 And the king turned his back upon them and went out from them laughing.
 
@@ -299,7 +338,11 @@ Then the strange thing happened. The three frogs got together and pushed the fou
 
 The ink-bottle heard what the paper was saying, and it laughed in its dark heart; but it never dared to approach her. And the multicoloured pencils heard her also, and they too never came near her.
 
-And the snow-white sheet of paper did remain pure and chaste for ever—pure and chaste—and empty.THE SCHOLAR AND THE POET SAID the serpent to the lark, “Thou flyest, yet thou canst not visit the recesses of the earth where the sap of life moveth in perfect silence.”
+And the snow-white sheet of paper did remain pure and chaste for ever—pure and chaste—and empty.
+
+### The Scholar And The Poet
+
+SAID the serpent to the lark, “Thou flyest, yet thou canst not visit the recesses of the earth where the sap of life moveth in perfect silence.”
 
 And the lark answered, “Aye, thou knowest over much, nay thou art wiser than all things wise—pity thou canst not fly.”
 
@@ -351,7 +394,11 @@ And how shall I become my freer self unless I slay my burdened selves, or unless
 
 How shall my leaves fly singing upon the wind unless my roots shall wither in the dark?
 
-How shall the eagle in me soar against the sun until my fledglings leave the nest which I with my own beak have built for them?THE LAST WATCH AT the high-tide of night, when the first breath of dawn came upon the wind, the Forerunner, he who calls himself echo to a voice yet unheard, left his bed-chamber and ascended to the roof of his house. Long he stood and looked down upon the slumbering city. Then he raised his head, and even as if the sleepless spirits of all those asleep had gathered around him, he opened his lips and spoke, and he said:
+How shall the eagle in me soar against the sun until my fledglings leave the nest which I with my own beak have built for them?
+
+### The Last Watch
+
+AT the high-tide of night, when the first breath of dawn came upon the wind, the Forerunner, he who calls himself echo to a voice yet unheard, left his bed-chamber and ascended to the roof of his house. Long he stood and looked down upon the slumbering city. Then he raised his head, and even as if the sleepless spirits of all those asleep had gathered around him, he opened his lips and spoke, and he said:
 
 “My friends and my neighbours and you who daily pass my gate, I would speak to you in your sleep, and in the valley of your dreams I would walk naked and unrestrained; far heedless are your waking hours and deaf are your sound-burdened ears.“Long did I love you and overmuch.
 

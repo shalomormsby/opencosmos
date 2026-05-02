@@ -464,7 +464,7 @@ related_docs:
 
 ### Starting from Paumanok
 
-       1
+#### 1
   Starting from fish-shape Paumanok where I was born,
   Well-begotten, and rais’d by a perfect mother,
   After roaming many lands, lover of populous pavements,
@@ -487,7 +487,7 @@ related_docs:
       swamp-cedars,
   Solitary, singing in the West, I strike up for a New World.
 
-       2
+#### 2
   Victory, union, faith, identity, time,
   The indissoluble compacts, riches, mystery,
   Eternal progress, the kosmos, and the modern reports.
@@ -517,7 +517,7 @@ related_docs:
   With faces turn’d sideways or backward towards me to listen,
   With eyes retrospective towards me.
 
-       3
+#### 3
   Americanos! conquerors! marches humanitarian!
   Foremost! century marches! Libertad! masses!
   For you a programme of chants.
@@ -528,7 +528,7 @@ related_docs:
   Chants going forth from the centre from Kansas, and thence equidistant,
   Shooting in pulses of fire ceaseless to vivify all.
 
-       4
+#### 4
   Take my leaves America, take them South and take them North,
   Make welcome for them everywhere, for they are your own off-spring,
   Surround them East and West, for they would surround you,
@@ -542,7 +542,7 @@ related_docs:
   In the name of these States shall I scorn the antique?
   Why these are the children of the antique to justify it.
 
-       5
+#### 5
   Dead poets, philosophs, priests,
   Martyrs, artists, inventors, governments long since,
   Language-shapers on other shores,
@@ -563,7 +563,7 @@ related_docs:
   The satisfier, after due long-waiting now advancing,
   Yes here comes my mistress the soul.
 
-       6
+#### 6
   The soul,
   Forever and forever—longer than soil is brown and solid—longer
       than water ebbs and flows.
@@ -604,7 +604,7 @@ related_docs:
   For who but I should understand love with all its sorrow and joy?
   And who but I should be the poet of comrades?
 
-       7
+#### 7
   I am the credulous man of qualities, ages, races,
   I advance from the people in their own spirit,
   Here is what sings unrestricted faith.
@@ -636,7 +636,7 @@ related_docs:
   (Nor character nor life worthy the name without religion,
   Nor land nor man or woman without religion.)
 
-       8
+#### 8
   What are you doing young man?
   Are you so earnest, so given up to literature, science, art, amours?
   These ostensible realities, politics, points?
@@ -648,7 +648,7 @@ related_docs:
       life of the earth,
   Any more than such are to religion.
 
-       9
+#### 9
   What do you seek so pensive and silent?
   What do you need camerado?
   Dear son do you think it is love?
@@ -660,7 +660,7 @@ related_docs:
   It, magnificent, beyond materials, with continuous hands sweeps and
       provides for all.
 
-       10
+#### 10
   Know you, solely to drop in the earth the germs of a greater religion,
   The following chants each for its kind I sing.
 
@@ -688,7 +688,7 @@ related_docs:
   I take to your reckless and composite chords, add to them, and
       cheerfully pass them forward.
 
-       11
+#### 11
   As I have walk’d in Alabama my morning walk,
   I have seen where the she-bird the mocking-bird sat on her nest in
       the briers hatching her brood.
@@ -703,7 +703,7 @@ related_docs:
   But subtle, clandestine, away beyond,
   A charge transmitted and gift occult for those being born.
 
-       12
+#### 12
   Democracy! near at hand to you a throat is now inflating itself and
       joyfully singing.
 
@@ -744,7 +744,7 @@ related_docs:
   Because having look’d at the objects of the universe, I find there
       is no one nor any particle of one but has reference to the soul.
 
-       13
+#### 13
   Was somebody asking to see the soul?
   See, your own shape and countenance, persons, substances, beasts,
       the trees, the running rivers, the rocks and sands.
@@ -769,7 +769,7 @@ related_docs:
   Whoever you are, how superb and how divine is your body, or any part
       of it!
 
-       14
+#### 14
   Whoever you are, to you endless announcements!
 
   Daughter of the lands did you wait for your poet?
@@ -826,7 +826,7 @@ related_docs:
       coming personally to you now,
   Enjoining you to acts, characters, spectacles, with me.
 
-       15
+#### 15
   With me with firm holding, yet haste, haste on.
   For your life adhere to me,
   (I may have to be persuaded many times before I consent to give
@@ -838,7 +838,7 @@ related_docs:
   To be wrestled with as I pass for the solid prizes of the universe,
   For such I afford whoever can persevere to win them.
 
-       16
+#### 16
   On my way a moment I pause,
   Here for you! and here for America!
   Still the present I raise aloft, still the future of the States I
@@ -854,7 +854,7 @@ related_docs:
   Leaving such to the States they melt, they depart, charging the
       water and the land with names.
 
-       17
+#### 17
   Expanding and swift, henceforth,
   Elements, breeds, adjustments, turbulent, quick and audacious,
   A world primal again, vistas of glory incessant and branching,
@@ -865,7 +865,7 @@ related_docs:
   You oceans that have been calm within me! how I feel you,
       fathomless, stirring, preparing unprecedented waves and storms.
 
-       18
+#### 18
   See, steamers steaming through my poems,
   See, in my poems immigrants continually coming and landing,
   See, in arriere, the wigwam, the trail, the hunter’s hut, the flat-boat,
@@ -891,7 +891,7 @@ related_docs:
       well-belov’d, close-held by day and night,
   Hear the loud echoes of my songs there—read the hints come at last.
 
-       19
+#### 19
   O camerado close! O you and me at last, and us two only.
   O a word to clear one’s path ahead endlessly!
   O something ecstatic and undemonstrable! O music wild!
@@ -903,7 +903,7 @@ related_docs:
 
 ### Song of Myself
 
-       1
+#### 1
   I celebrate myself, and sing myself,
   And what I assume you shall assume,
   For every atom belonging to me as good belongs to you.
@@ -922,7 +922,7 @@ related_docs:
   I harbor for good or bad, I permit to speak at every hazard,
   Nature without check with original energy.
 
-       2
+#### 2
   Houses and rooms are full of perfumes, the shelves are crowded with
       perfumes,
   I breathe the fragrance myself and know it and like it,
@@ -963,7 +963,7 @@ related_docs:
   You shall not look through my eyes either, nor take things from me,
   You shall listen to all sides and filter them from your self.
 
-       3
+#### 3
   I have heard what the talkers were talking, the talk of the
       beginning and the end,
   But I do not talk of the beginning or the end.
@@ -1009,7 +1009,7 @@ related_docs:
   And forthwith cipher and show me to a cent,
   Exactly the value of one and exactly the value of two, and which is ahead?
 
-       4
+#### 4
   Trippers and askers surround me,
   People I meet, the effect upon me of my early life or the ward and
       city I live in, or the nation,
@@ -1033,7 +1033,7 @@ related_docs:
       linguists and contenders,
   I have no mockings or arguments, I witness and wait.
 
-       5
+#### 5
   I believe in you my soul, the other I am must not abase itself to you,
   And you must not be abased to the other.
 
@@ -1060,7 +1060,7 @@ related_docs:
   And mossy scabs of the worm fence, heap’d stones, elder, mullein and
       poke-weed.
 
-       6
+#### 6
   A child said What is the grass? fetching it to me with full hands;
   How could I answer the child? I do not know what it is any more than he.
 
@@ -1112,7 +1112,7 @@ related_docs:
   All goes onward and outward, nothing collapses,
   And to die is different from what any one supposed, and luckier.
 
-       7
+#### 7
   Has any one supposed it lucky to be born?
   I hasten to inform him or her it is just as lucky to die, and I know it.
 
@@ -1138,7 +1138,7 @@ related_docs:
   I see through the broadcloth and gingham whether or no,
   And am around, tenacious, acquisitive, tireless, and cannot be shaken away.
 
-       8
+#### 8
   The little one sleeps in its cradle,
   I lift the gauze and look a long time, and silently brush away flies
       with my hand.
@@ -1170,7 +1170,7 @@ related_docs:
       rejections with convex lips,
   I mind them or the show or resonance of them—I come and I depart.
 
-       9
+#### 9
   The big doors of the country barn stand open and ready,
   The dried grass of the harvest-time loads the slow-drawn wagon,
   The clear light plays on the brown gray and green intertinged,
@@ -1181,7 +1181,7 @@ related_docs:
   I jump from the cross-beams and seize the clover and timothy,
   And roll head over heels and tangle my hair full of wisps.
 
-       10
+#### 10
   Alone far in the wilds and mountains I hunt,
   Wandering amazed at my own lightness and glee,
   In the late afternoon choosing a safe spot to pass the night,
@@ -1217,7 +1217,7 @@ related_docs:
   He staid with me a week before he was recuperated and pass’d north,
   I had him sit next me at table, my fire-lock lean’d in the corner.
 
-       11
+#### 11
   Twenty-eight young men bathe by the shore,
   Twenty-eight young men and all so friendly;
   Twenty-eight years of womanly life and all so lonesome.
@@ -1245,7 +1245,7 @@ related_docs:
   They do not know who puffs and declines with pendant and bending arch,
   They do not think whom they souse with spray.
 
-       12
+#### 12
   The butcher-boy puts off his killing-clothes, or sharpens his knife
       at the stall in the market,
   I loiter enjoying his repartee and his shuffle and break-down.
@@ -1259,7 +1259,7 @@ related_docs:
   Overhand the hammers swing, overhand so slow, overhand so sure,
   They do not hasten, each man hits in his place.
 
-       13
+#### 13
   The negro holds firmly the reins of his four horses, the block swags
       underneath on its tied-over chain,
   The negro that drives the long dray of the stone-yard, steady and
@@ -1294,7 +1294,7 @@ related_docs:
   And the jay in the woods never studied the gamut, yet trills pretty well to me,
   And the look of the bay mare shames silliness out of me.
 
-       14
+#### 14
   The wild gander leads his flock through the cool night,
   Ya-honk he says, and sounds it down to me like an invitation,
   The pert may suppose it meaningless, but I listening close,
@@ -1321,7 +1321,7 @@ related_docs:
   Not asking the sky to come down to my good will,
   Scattering it freely forever.
 
-       15
+#### 15
   The pure contralto sings in the organ loft,
   The carpenter dresses his plank, the tongue of his foreplane
       whistles its wild ascending lisp,
@@ -1423,7 +1423,7 @@ related_docs:
   And such as it is to be of these more or less I am,
   And of these one and all I weave the song of myself.
 
-       16
+#### 16
   I am of old and young, of the foolish as much as the wise,
   Regardless of others, ever regardful of others,
   Maternal as well as paternal, a child as well as a man,
@@ -1461,7 +1461,7 @@ related_docs:
   The bright suns I see and the dark suns I cannot see are in their place,
   The palpable is in its place and the impalpable is in its place.)
 
-       17
+#### 17
   These are really the thoughts of all men in all ages and lands, they
       are not original with me,
   If they are not yours as much as mine they are nothing, or next to nothing,
@@ -1471,7 +1471,7 @@ related_docs:
   This is the grass that grows wherever the land is and the water is,
   This the common air that bathes the globe.
 
-       18
+#### 18
   With music strong I come, with my cornets and my drums,
   I play not marches for accepted victors only, I play marches for
       conquer’d and slain persons.
@@ -1489,7 +1489,7 @@ related_docs:
   And to all generals that lost engagements, and all overcome heroes!
   And the numberless unknown heroes equal to the greatest heroes known!
 
-       19
+#### 19
   This is the meal equally set, this the meat for natural hunger,
   It is for the wicked just same as the righteous, I make appointments
       with all,
@@ -1515,7 +1515,7 @@ related_docs:
   This hour I tell things in confidence,
   I might not tell everybody, but I will tell you.
 
-       20
+#### 20
   Who goes there? hankering, gross, mystical, nude;
   How is it I extract strength from the beef I eat?
 
@@ -1568,7 +1568,7 @@ related_docs:
   I laugh at what you call dissolution,
   And I know the amplitude of time.
 
-       21
+#### 21
   I am the poet of the Body and I am the poet of the Soul,
   The pleasures of heaven are with me and the pains of hell are with me,
   The first I graft and increase upon myself, the latter I translate
@@ -1608,7 +1608,7 @@ related_docs:
   Thruster holding me tight and that I hold tight!
   We hurt each other as the bridegroom and the bride hurt each other.
 
-       22
+#### 22
   You sea! I resign myself to you also—I guess what you mean,
   I behold from the beach your crooked fingers,
   I believe you refuse to go back without feeling of me,
@@ -1650,7 +1650,7 @@ related_docs:
   What behaved well in the past or behaves well to-day is not such wonder,
   The wonder is always and always how there can be a mean man or an infidel.
 
-       23
+#### 23
   Endless unfolding of words of ages!
   And mine a word of the modern, the word En-Masse.
 
@@ -1682,7 +1682,7 @@ related_docs:
   And beat the gong of revolt, and stop with fugitives and them that
       plot and conspire.
 
-       24
+#### 24
   Walt Whitman, a kosmos, of Manhattan the son,
   Turbulent, fleshy, sensual, eating, drinking and breeding,
   No sentimentalist, no stander above men and women or apart from them,
@@ -1775,7 +1775,7 @@ related_docs:
   The heav’d challenge from the east that moment over my head,
   The mocking taunt, See then whether you shall be master!
 
-       25
+#### 25
   Dazzling and tremendous how quick the sun-rise would kill me,
   If I could not now and always send sun-rise out of me.
 
@@ -1807,7 +1807,7 @@ related_docs:
   I carry the plenum of proof and every thing else in my face,
   With the hush of my lips I wholly confound the skeptic.
 
-       26
+#### 26
   Now I will do nothing but listen,
   To accrue what I hear into this song, to let sounds contribute toward it.
 
@@ -1848,7 +1848,7 @@ related_docs:
   At length let up again to feel the puzzle of puzzles,
   And that we call Being.
 
-       27
+#### 27
   To be in any form, what is that?
   (Round and round we go, all of us, and ever come back thither,)
   If nothing lay more develop’d the quahaug in its callous shell were enough.
@@ -1860,7 +1860,7 @@ related_docs:
   I merely stir, press, feel with my fingers, and am happy,
   To touch my person to some one else’s is about as much as I can stand.
 
-       28
+#### 28
   Is this then a touch? quivering me to a new identity,
   Flames and ether making a rush for my veins,
   Treacherous tip of me reaching and crowding to help them,
@@ -1890,7 +1890,7 @@ related_docs:
   You villain touch! what are you doing? my breath is tight in its throat,
   Unclench your floodgates, you are too much for me.
 
-       29
+#### 29
   Blind loving wrestling touch, sheath’d hooded sharp-tooth’d touch!
   Did it make you ache so, leaving me?
 
@@ -1900,7 +1900,7 @@ related_docs:
   Sprouts take and accumulate, stand by the curb prolific and vital,
   Landscapes projected masculine, full-sized and golden.
 
-       30
+#### 30
   All truths wait in all things,
   They neither hasten their own delivery nor resist it,
   They do not need the obstetric forceps of the surgeon,
@@ -1921,7 +1921,7 @@ related_docs:
       becomes omnific,
   And until one and all shall delight us, and we them.
 
-       31
+#### 31
   I believe a leaf of grass is no less than the journey work of the stars,
   And the pismire is equally perfect, and a grain of sand, and the egg
       of the wren,
@@ -1948,7 +1948,7 @@ related_docs:
   In vain the razor-bill’d auk sails far north to Labrador,
   I follow quickly, I ascend to the nest in the fissure of the cliff.
 
-       32
+#### 32
   I think I could turn and live with animals, they are so placid and
       self-contain’d,
   I stand and look at them long and long.
@@ -1987,7 +1987,7 @@ related_docs:
   Why do I need your paces when I myself out-gallop them?
   Even as I stand or sit passing faster than you.
 
-       33
+#### 33
   Space and Time! now I see it is true, what I guess’d at,
   What I guess’d when I loaf’d on the grass,
   What I guess’d while I lay alone in my bed,
@@ -2227,7 +2227,7 @@ related_docs:
       with his hand,
   He gasps through the clot Mind not me—mind—the entrenchments.
 
-       34
+#### 34
   Now I tell what I knew in Texas in my early youth,
   (I tell not the fall of Alamo,
   Not one escaped to tell the fall of Alamo,
@@ -2267,7 +2267,7 @@ related_docs:
   At eleven o’clock began the burning of the bodies;
   That is the tale of the murder of the four hundred and twelve young men.
 
-       35
+#### 35
   Would you hear of an old-time sea-fight?
   Would you learn who won by the light of the moon and stars?
   List to the yarn, as my grandmother’s father the sailor told it to me.
@@ -2321,7 +2321,7 @@ related_docs:
 
   Toward twelve there in the beams of the moon they surrender to us.
 
-       36
+#### 36
   Stretch’d and still lies the midnight,
   Two great hulls motionless on the breast of the darkness,
   Our vessel riddled and slowly sinking, preparations to pass to the
@@ -2345,7 +2345,7 @@ related_docs:
       dull, tapering groan,
   These so, these irretrievable.
 
-       37
+#### 37
   You laggards there on guard! look to your arms!
   In at the conquer’d doors they crowd! I am possess’d!
   Embody all presences outlaw’d or suffering,
@@ -2369,7 +2369,7 @@ related_docs:
   Askers embody themselves in me and I am embodied in them,
   I project my hat, sit shame-faced, and beg.
 
-       38
+#### 38
   Enough! enough! enough!
   Somehow I have been stunn’d. Stand back!
   Give me a little time beyond my cuff’d head, slumbers, dreams, gaping,
@@ -2395,7 +2395,7 @@ related_docs:
   Eleves, I salute you! come forward!
   Continue your annotations, continue your questionings.
 
-       39
+#### 39
   The friendly and flowing savage, who is he?
   Is he waiting for civilization, or past it and mastering it?
 
@@ -2413,7 +2413,7 @@ related_docs:
   They are wafted with the odor of his body or breath, they fly out of
       the glance of his eyes.
 
-       40
+#### 40
   Flaunt of the sunshine I need not your bask—lie over!
   You light surfaces only, I force surfaces and depths also.
 
@@ -2460,7 +2460,7 @@ related_docs:
   I have embraced you, and henceforth possess you to myself,
   And when you rise in the morning you will find what I tell you is so.
 
-       41
+#### 41
   I am he bringing help for the sick as they pant on their backs,
   And for strong upright men I bring yet more needed help.
 
@@ -2509,7 +2509,7 @@ related_docs:
       best, and be as prodigious;
   By my life-lumps! becoming already a creator,
   Putting myself here and now to the ambush’d womb of the shadows.
-      42
+#### 42
   A call in the midst of the crowd,
   My own voice, orotund sweeping and final.
 
@@ -2575,7 +2575,7 @@ related_docs:
   Sermons, creeds, theology—but the fathomless human brain,
   And what is reason? and what is love? and what is life?
 
-       43
+#### 43
   I do not despise you priests, all time, the world over,
   My faith is the greatest of faiths and the least of faiths,
   Enclosing worship ancient and modern and all between ancient and modern,
@@ -2637,7 +2637,7 @@ related_docs:
       that inhabit them,
   Nor the present, nor the least wisp that is known.
 
-       44
+#### 44
   It is time to explain myself—let us stand up.
 
   What is known I strip away,
@@ -2690,7 +2690,7 @@ related_docs:
 
   All forces have been steadily employ’d to complete and delight me,
   Now on this spot I stand with my robust soul.
-      45
+#### 45
   O span of youth! ever-push’d elasticity!
   O manhood, balanced, florid and full.
 
@@ -2739,7 +2739,7 @@ related_docs:
   The Lord will be there and wait till I come on perfect terms,
   The great Camerado, the lover true for whom I pine will be there.
 
-       46
+#### 46
   I know I have the best of time and space, and was never measured and
       never will be measured.
 
@@ -2791,7 +2791,7 @@ related_docs:
   To jump off in the midst of the sea, rise again, nod to me, shout,
       and laughingly dash with your hair.
 
-       47
+#### 47
   I am the teacher of athletes,
   He that by me spreads a wider breast than my own proves the width of my own,
   He most honors my style who learns under it to destroy the teacher.
@@ -2843,7 +2843,7 @@ related_docs:
   The girl and the wife rest the needle a moment and forget where they are,
   They and all would resume what I have told them.
 
-       48
+#### 48
   I have said that the soul is not more than the body,
   And I have said that the body is not more than the soul,
   And nothing, not God, is greater to one than one’s self is,
@@ -2874,7 +2874,7 @@ related_docs:
   And I leave them where they are, for I know that wheresoe’er I go,
   Others will punctually come for ever and ever.
 
-       49
+#### 49
   And as to you Death, and you bitter hug of mortality, it is idle to
       try to alarm me.
 
@@ -2905,7 +2905,7 @@ related_docs:
   I perceive that the ghastly glimmer is noonday sunbeams reflected,
   And debouch to the steady and central from the offspring great or small.
 
-       50
+#### 50
   There is that in me—I do not know what it is—but I know it is in me.
 
   Wrench’d and sweaty—calm and cool then my body becomes,
@@ -2923,7 +2923,7 @@ related_docs:
   It is not chaos or death—it is form, union, plan—it is eternal
       life—it is Happiness.
 
-       51
+#### 51
   The past and present wilt—I have fill’d them, emptied them.
   And proceed to fill my next fold of the future.
 
@@ -2942,7 +2942,7 @@ related_docs:
 
   Will you speak before I am gone? will you prove already too late?
 
-       52
+#### 52
   The spotted hawk swoops by and accuses me, he complains of my gab
       and my loitering.
 
@@ -3057,7 +3057,7 @@ related_docs:
 
 ### I Sing the Body Electric
 
-       1
+#### 1
   I sing the body electric,
   The armies of those I love engirth me and I engirth them,
   They will not let me off till I go with them, respond to them,
@@ -3068,7 +3068,7 @@ related_docs:
   And if the body does not do fully as much as the soul?
   And if the body were not the soul, what is the soul?
 
-       2
+#### 2
   The love of the body of man or woman balks account, the body itself
       balks account,
   That of the male is perfect, and that of the female is perfect.
@@ -3113,7 +3113,7 @@ related_docs:
   Swim with the swimmers, wrestle with wrestlers, march in line with
       the firemen, and pause, listen, count.
 
-       3
+#### 3
   I knew a man, a common farmer, the father of five sons,
   And in them the fathers of sons, and in them the fathers of sons.
 
@@ -3136,7 +3136,7 @@ related_docs:
   You would wish long and long to be with him, you would wish to sit
       by him in the boat that you and he might touch each other.
 
-       4
+#### 4
   I have perceiv’d that to be with those I like is enough,
   To stop in company with the rest at evening is enough,
   To be surrounded by beautiful, curious, breathing, laughing flesh is enough,
@@ -3148,7 +3148,7 @@ related_docs:
       on them, and in the contact and odor of them, that pleases the soul well,
   All things please the soul, but these please the soul well.
 
-       5
+#### 5
   This is the female form,
   A divine nimbus exhales from it from head to foot,
   It attracts with fierce undeniable attraction,
@@ -3186,7 +3186,7 @@ related_docs:
       sanity, beauty,
   See the bent head and arms folded over the breast, the Female I see.
 
-       6
+#### 6
   The male is not less the soul nor more, he too is in his place,
   He too is all qualities, he is action and power,
   The flush of the known universe is in him,
@@ -3218,7 +3218,7 @@ related_docs:
       the soil is on the surface, and water runs and vegetation sprouts,
   For you only, and not for him and her?
 
-       7
+#### 7
   A man’s body at auction,
   (For before the war I often go to the slave-mart and watch the sale,)
   I help the auctioneer, the sloven does not half know his business.
@@ -3258,7 +3258,7 @@ related_docs:
   (Who might you find you have come from yourself, if you could trace
       back through the centuries?)
 
-       8
+#### 8
   A woman’s body at auction,
   She too is not only herself, she is the teeming mother of mothers,
   She is the bearer of them that shall grow and be mates to the mothers.
@@ -3277,7 +3277,7 @@ related_docs:
       that corrupted her own live body?
   For they do not conceal themselves, and cannot conceal themselves.
 
-       9
+#### 9
   O my body! I dare not desert the likes of you in other men and
       women, nor the likes of the parts of you,
   I believe the likes of you are to stand or fall with the likes of
@@ -4302,7 +4302,7 @@ related_docs:
 
 ### Salut au Monde!
 
-       1
+#### 1
   O take my hand Walt Whitman!
   Such gliding wonders! such sights and sounds!
   Such join’d unended links, each hook’d to the next,
@@ -4319,7 +4319,7 @@ related_docs:
   What are the mountains call’d that rise so high in the mists?
   What myriads of dwellings are they fill’d with dwellers?
 
-       2
+#### 2
   Within me latitude widens, longitude lengthens,
   Asia, Africa, Europe, are to the east—America is provided for in the west,
   Banding the bulge of the earth winds the hot equator,
@@ -4331,7 +4331,7 @@ related_docs:
   Within me zones, seas, cataracts, forests, volcanoes, groups,
   Malaysia, Polynesia, and the great West Indian islands.
 
-       3
+#### 3
   What do you hear Walt Whitman?
 
   I hear the workman singing and the farmer’s wife singing,
@@ -4365,7 +4365,7 @@ related_docs:
       adages, transmitted safely to this day from poets who wrote three
       thousand years ago.
 
-       4
+#### 4
   What do you see Walt Whitman?
   Who are they you salute, and that one after another salute you?
   I see a great round wonder rolling through space,
@@ -4423,7 +4423,7 @@ related_docs:
   Hamburg, Bremen, Bordeaux, the Hague, Copenhagen,
   Wait at Valparaiso, Rio Janeiro, Panama.
 
-       5
+#### 5
   I see the tracks of the railroads of the earth,
   I see them in Great Britain, I see them in Europe,
   I see them in Asia and in Africa.
@@ -4442,7 +4442,7 @@ related_docs:
   I see the Tuscan going down the Arno, and the Venetian along the Po,
   I see the Greek seaman sailing out of Egina bay.
 
-       6
+#### 6
   I see the site of the old empire of Assyria, and that of Persia, and
       that of India,
   I see the falling of the Ganges over the high rim of Saukara.
@@ -4470,7 +4470,7 @@ related_docs:
       country, I now go back there,
   I return to the celestial sphere where every one goes in his turn.
 
-       7
+#### 7
   I see the battle-fields of the earth, grass grows upon them and
       blossoms and corn,
   I see the tracks of ancient and modern expeditions.
@@ -4504,7 +4504,7 @@ related_docs:
       horses with his lasso on his arm,
   I see over the pampas the pursuit of wild cattle for their hides.
 
-       8
+#### 8
   I see the regions of snow and ice,
   I see the sharp-eyed Samoiede and the Finn,
   I see the seal-seeker in his boat poising his lance,
@@ -4525,7 +4525,7 @@ related_docs:
       Stockholm, or in Siberian Irkutsk, or in some street in Iceland,
   I descend upon all those cities, and rise from them again.
 
-       10
+#### 10
   I see vapors exhaling from unexplored countries,
   I see the savage types, the bow and arrow, the poison’d splint, the
       fetich, and the obi.
@@ -4560,7 +4560,7 @@ related_docs:
       mix indiscriminately,
   And I salute all the inhabitants of the earth.
 
-       11
+#### 11
   You whoever you are!
   You daughter or son of England!
   You of the mighty Slavic tribes and empires! you Russ in Russia!
@@ -4608,7 +4608,7 @@ related_docs:
   Each of us allow’d the eternal purports of the earth,
   Each of us here as divinely as any is here.
 
-       12
+#### 12
   You Hottentot with clicking palate! you woolly-hair’d hordes!
   You own’d persons dropping sweat-drops or blood-drops!
   You human forms with the fathomless ever-impressive countenances of brutes!
@@ -4625,7 +4625,7 @@ related_docs:
   I do not say one word against you, away back there where you stand,
   (You will come forward in due time to my side.)
 
-       13
+#### 13
   My spirit has pass’d in compassion and determination around the whole earth,
   I have look’d for equals and lovers and found them ready for me in
       all lands,
@@ -4651,7 +4651,7 @@ related_docs:
 
 ### Song of the Open Road
 
-       1
+#### 1
   Afoot and light-hearted I take to the open road,
   Healthy, free, the world before me,
   The long brown path before me leading wherever I choose.
@@ -4671,7 +4671,7 @@ related_docs:
   I swear it is impossible for me to get rid of them,
   I am fill’d with them, and I will fill them in return.)
 
-       2
+#### 2
   You road I enter upon and look around, I believe you are not all
       that is here,
   I believe that much unseen is also here.
@@ -4687,7 +4687,7 @@ related_docs:
   They pass, I also pass, any thing passes, none can be interdicted,
   None but are accepted, none but shall be dear to me.
 
-       3
+#### 3
   You air that serves me with breath to speak!
   You objects that call from diffusion my meanings and give them shape!
   You light that wraps me and all things in delicate equable showers!
@@ -4707,7 +4707,7 @@ related_docs:
   From the living and the dead you have peopled your impassive surfaces,
       and the spirits thereof would be evident and amicable with me.
 
-       4
+#### 4
   The earth expanding right hand and left hand,
   The picture alive, every part in its best light,
   The music falling in where it is wanted, and stopping where it is
@@ -4730,7 +4730,7 @@ related_docs:
       beholds me shall like me,
   I think whoever I see must be happy.
 
-       5
+#### 5
   From this hour I ordain myself loos’d of limits and imaginary lines,
   Going where I list, my own master total and absolute,
   Listening to others, considering well what they say,
@@ -4753,7 +4753,7 @@ related_docs:
   Whoever denies me it shall not trouble me,
   Whoever accepts me he or she shall be blessed and shall bless me.
 
-       6
+#### 6
   Now if a thousand perfect men were to appear it would not amaze me,
   Now if a thousand beautiful forms of women appear’d it would not
       astonish me.
@@ -4793,7 +4793,7 @@ related_docs:
   Do you know what it is as you pass to be loved by strangers?
   Do you know the talk of those turning eye-balls?
 
-       7
+#### 7
   Here is the efflux of the soul,
   The efflux of the soul comes from within through embower’d gates,
       ever provoking questions,
@@ -4812,7 +4812,7 @@ related_docs:
   What gives me to be free to a woman’s and man’s good-will? what
       gives them to be free to mine?
 
-       8
+#### 8
   The efflux of the soul is happiness, here is happiness,
   I think it pervades the open air, waiting at all times,
   Now it flows unto us, we are rightly charged.
@@ -4829,7 +4829,7 @@ related_docs:
   From it falls distill’d the charm that mocks beauty and attainments,
   Toward it heaves the shuddering longing ache of contact.
 
-       9
+#### 9
   Allons! whoever you are come travel with me!
   Traveling with me you find what never tires.
 
@@ -4847,7 +4847,7 @@ related_docs:
   However welcome the hospitality that surrounds us we are permitted
       to receive it but a little while.
 
-       10
+#### 10
   Allons! the inducements shall be greater,
   We will sail pathless and wild seas,
   We will go where winds blow, waves dash, and the Yankee clipper
@@ -4870,7 +4870,7 @@ related_docs:
   (I and mine do not convince by arguments, similes, rhymes,
   We convince by our presence.)
 
-       11
+#### 11
   Listen! I will be honest with you,
   I do not offer the old smooth prizes, but offer rough new prizes,
   These are the days that must happen to you:
@@ -4886,7 +4886,7 @@ related_docs:
   You shall not allow the hold of those who spread their reach’d hands
       toward you.
 
-       12
+#### 12
   Allons! after the great Companions, and to belong to them!
   They too are on the road—they are the swift and majestic men—they
       are the greatest women,
@@ -4909,7 +4909,7 @@ related_docs:
   Old age, calm, expanded, broad with the haughty breadth of the universe,
   Old age, flowing free with the delicious near-by freedom of death.
 
-       13
+#### 13
   Allons! to that which is endless as it was beginningless,
   To undergo much, tramps of days, rests of nights,
   To merge all in the travel they tend to, and the days and nights
@@ -4975,7 +4975,7 @@ related_docs:
   Keeping fair with the customs, speaking not a syllable of itself,
   Speaking of any thing else but never of itself.
 
-       14
+#### 14
   Allons! through struggles and wars!
   The goal that was named cannot be countermanded.
 
@@ -4990,7 +4990,7 @@ related_docs:
   He going with me goes often with spare diet, poverty, angry enemies,
       desertions.
 
-       15
+#### 15
   Allons! the road is before us!
   It is safe—I have tried it—my own feet have tried it well—be not
       detain’d!
@@ -5011,7 +5011,7 @@ related_docs:
 
 ### Crossing Brooklyn Ferry
 
-       1
+#### 1
   Flood-tide below me! I see you face to face!
   Clouds of the west—sun there half an hour high—I see you also face
       to face.
@@ -5023,7 +5023,7 @@ related_docs:
   And you that shall cross from shore to shore years hence are more
       to me, and more in my meditations, than you might suppose.
 
-       2
+#### 2
   The impalpable sustenance of me from all things at all hours of the day,
   The simple, compact, well-join’d scheme, myself disintegrated, every
       one disintegrated yet part of the scheme,
@@ -5046,7 +5046,7 @@ related_docs:
   Will enjoy the sunset, the pouring-in of the flood-tide, the
       falling-back to the sea of the ebb-tide.
 
-       3
+#### 3
   It avails not, time nor place—distance avails not,
   I am with you, you men and women of a generation, or ever so many
       generations hence,
@@ -5091,7 +5091,7 @@ related_docs:
   Casting their flicker of black contrasted with wild red and yellow
       light over the tops of houses, and down into the clefts of streets.
 
-       4
+#### 4
   These and all else were to me the same as they are to you,
   I loved well those cities, loved well the stately and rapid river,
   The men and women I saw were all near to me,
@@ -5099,7 +5099,7 @@ related_docs:
       to them,
   (The time will come, though I stop here to-day and to-night.)
 
-       5
+#### 5
   What is it then between us?
   What is the count of the scores or hundreds of years between us?
 
@@ -5115,7 +5115,7 @@ related_docs:
   That I was I knew was of my body, and what I should be I knew I
       should be of my body.
 
-       6
+#### 6
   It is not upon you alone the dark patches fall,
   The dark threw its patches down upon me also,
   The best I had done seem’d to me blank and suspicious,
@@ -5142,7 +5142,7 @@ related_docs:
   The same old role, the role that is what we make it, as great as we like,
   Or as small as we like, or both great and small.
 
-       7
+#### 7
   Closer yet I approach you,
   What thought you have of me now, I had as much of you—I laid in my
       stores in advance,
@@ -5153,7 +5153,7 @@ related_docs:
   Who knows, for all the distance, but I am as good as looking at you
       now, for all you cannot see me?
 
-       8
+#### 8
   Ah, what can ever be more stately and admirable to me than
       mast-hemm’d Manhattan?
   River and sunset and scallop-edg’d waves of flood-tide?
@@ -5170,7 +5170,7 @@ related_docs:
   What the study could not teach—what the preaching could not
       accomplish is accomplish’d, is it not?
 
-       9
+#### 9
   Flow on, river! flow with the flood-tide, and ebb with the ebb-tide!
   Frolic on, crested and scallop-edg’d waves!
   Gorgeous clouds of the sunset! drench with your splendor me, or the
@@ -5219,7 +5219,7 @@ related_docs:
 
 ### Song of the Answerer
 
-       1
+#### 1
   Now list to my morning’s romanza, I tell the signs of the Answerer,
   To the cities and farms I sing as they spread in the sunshine before me.
 
@@ -5315,7 +5315,7 @@ related_docs:
       themselves in the ways of him, he strangely transmutes them,
   They are not vile any more, they hardly know themselves they are so grown.
 
-       2
+#### 2
   The indications and tally of time,
   Perfect sanity shows the master among philosophs,
   Time, always without break, indicates itself in parts,
@@ -5795,7 +5795,7 @@ related_docs:
 
 ### Song of the Broad-Axe
 
-       1
+#### 1
   Weapon shapely, naked, wan,
   Head from the mother’s bowels drawn,
   Wooded flesh and metal bone, limb only one and lip only one,
@@ -5808,7 +5808,7 @@ related_docs:
   Long varied train of an emblem, dabs of music,
   Fingers of the organist skipping staccato over the keys of the great organ.
 
-       2
+#### 2
   Welcome are all earth’s lands, each for its kind,
   Welcome are lands of pine and oak,
   Welcome are lands of the lemon and fig,
@@ -5827,7 +5827,7 @@ related_docs:
   Lands of coal, copper, lead, tin, zinc,
   Lands of iron—lands of the make of the axe.
 
-       3
+#### 3
   The log at the wood-pile, the axe supported by it,
   The sylvan hut, the vine over the doorway, the space clear’d for garden,
   The irregular tapping of rain down on the leaves after the storm is lull’d,
@@ -5926,7 +5926,7 @@ related_docs:
   The list of all executive deeds and words just or unjust,
   The power of personality just or unjust.
 
-       4
+#### 4
   Muscle and pluck forever!
   What invigorates life invigorates death,
   And the dead advance as much as the living advance,
@@ -5951,7 +5951,7 @@ related_docs:
   If it be a few ragged huts it is still the greatest city in the
       whole world.
 
-       5
+#### 5
   The place where a great city stands is not the place of stretch’d
       wharves, docks, manufactures, deposits of produce merely,
   Nor the place of ceaseless salutes of new-comers or the
@@ -5989,7 +5989,7 @@ related_docs:
   Where the city of the best-bodied mothers stands,
   There the great city stands.
 
-       6
+#### 6
   How beggarly appear arguments before a defiant deed!
   How the floridness of the materials of cities shrivels before a
       man’s or woman’s look!
@@ -6006,7 +6006,7 @@ related_docs:
   Where are your jibes of being now?
   Where are your cavils about the soul now?
 
-       7
+#### 7
   A sterile landscape covers the ore, there is as good as the best for
       all the forbidding appearance,
   There is the mine, there are the miners,
@@ -6036,7 +6036,7 @@ related_docs:
   For the mediaeval ages and before the mediaeval ages,
   Served not the living only then as now, but served the dead.
 
-       8
+#### 8
   I see the European headsman,
   He stands mask’d, clothed in red, with huge legs and strong naked arms,
   And leans on a ponderous axe.
@@ -6064,7 +6064,7 @@ related_docs:
   I see the mighty and friendly emblem of the power of my own race,
       the newest, largest race.
 
-       9
+#### 9
   (America! I do not vaunt my love for you,
   I have what I have.)
 
@@ -6110,7 +6110,7 @@ related_docs:
   The tools lying around, the great auger and little auger, the adze,
       bolt, line, square, gouge, and bead-plane.
 
-       10
+#### 10
   The shapes arise!
   The shape measur’d, saw’d, jack’d, join’d, stain’d,
   The coffin-shape for the dead to lie within in his shroud,
@@ -6147,7 +6147,7 @@ related_docs:
   The door he enter’d again from a long and scandalous absence,
       diseas’d, broken down, without innocence, without means.
 
-       11
+#### 11
   Her shape arises,
   She less guarded than ever, yet more guarded than ever,
   The gross and soil’d she moves among do not make her gross and soil’d,
@@ -6161,7 +6161,7 @@ related_docs:
   She receives them as the laws of Nature receive them, she is strong,
   She too is a law of Nature—there is no law stronger than she is.
 
-       12
+#### 12
   The main shapes arise!
   Shapes of Democracy total, result of centuries,
   Shapes ever projecting other shapes,
@@ -6173,7 +6173,7 @@ related_docs:
 
 ### Song of the Exposition
 
-       1
+#### 1
   (Ah little recks the laborer,
   How near his work is holding him to God,
   The loving Laborer through space and time.)
@@ -6191,7 +6191,7 @@ related_docs:
   Long and long has the rain been falling,
   Long has the globe been rolling round.
 
-       2
+#### 2
   Come Muse migrate from Greece and Ionia,
   Cross out please those immensely overpaid accounts,
   That matter of Troy and Achilles’ wrath, and AEneas’, Odysseus’ wanderings,
@@ -6203,7 +6203,7 @@ related_docs:
   For know a better, fresher, busier sphere, a wide, untried domain
       awaits, demands you.
 
-       3
+#### 3
   Responsive to our summons,
   Or rather to her long-nurs’d inclination,
   Join’d with an irresistible, natural gravitation,
@@ -6257,7 +6257,7 @@ related_docs:
   Smiling and pleas’d with palpable intent to stay,
   She’s here, install’d amid the kitchen ware!
 
-       4
+#### 4
   But hold—don’t I forget my manners?
   To introduce the stranger, (what else indeed do I live to chant
       for?) to thee Columbia;
@@ -6270,7 +6270,7 @@ related_docs:
   Faces and hearts the same, feelings the same, yearnings the same,
   The same old love, beauty and use the same.
 
-       5
+#### 5
   We do not blame thee elder World, nor really separate ourselves from thee,
   (Would the son separate himself from the father?)
   Looking back on thee, seeing thee to thy duties, grandeurs, through
@@ -6331,7 +6331,7 @@ related_docs:
   Others for other arts—learning, the sciences, shall all be here,
   None shall be slighted, none but shall here be honor’d, help’d, exampled.
 
-       6
+#### 6
   (This, this and these, America, shall be your pyramids and obelisks,
   Your Alexandrian Pharos, gardens of Babylon,
   Your temple at Olympia.)
@@ -6348,7 +6348,7 @@ related_docs:
   Practical, peaceful life, the people’s life, the People themselves,
   Lifted, illumin’d, bathed in peace—elate, secure in peace.
 
-       7
+#### 7
   Away with themes of war! away with war itself!
   Hence from my shuddering sight to never more return that show of
       blacken’d, mutilated corpses!
@@ -6402,7 +6402,7 @@ related_docs:
       threading in every sea,
   Our own rondure, the current globe I bring.
 
-       8
+#### 8
   And thou America,
   Thy offspring towering e’er so high, yet higher Thee above all towering,
   With Victory on thy left, and at thy right hand Law;
@@ -6467,7 +6467,7 @@ related_docs:
   Nor ship, nor mine, nor any here this day secure,
   Nor aught, nor any day secure.
 
-       9
+#### 9
   And thou, the Emblem waving over all!
   Delicate beauty, a word to thee, (it may be salutary,)
   Remember thou hast not always been as here to-day so comfortably
@@ -6505,7 +6505,7 @@ related_docs:
 
 ### Song of the Redwood-Tree
 
-       1
+#### 1
   A California song,
   A prophecy and indirection, a thought impalpable to breathe as air,
   A chorus of dryads, fading, departing, or hamadryads departing,
@@ -6616,7 +6616,7 @@ related_docs:
       settlements, features all,
   In the Mendocino woods I caught.
 
-       2
+#### 2
   The flashing and golden pageant of California,
   The sudden and gorgeous drama, the sunny and ample lands,
   The long and varied stretch from Puget sound to Colorado south,
@@ -6634,7 +6634,7 @@ related_docs:
       the railroads, with many a thrifty farm, with machinery,
   And wool and wheat and the grape, and diggings of yellow gold.
 
-       3
+#### 3
   But more in you than these, lands of the Western shore,
   (These but the means, the implements, the standing-ground,)
   I see in you, certain to come, the promise of thousands of years,
@@ -6655,7 +6655,7 @@ related_docs:
 
 ### A Song for Occupations
 
-       1
+#### 1
   A song for occupations!
   In the labor of engines and trades and the labor of fields I find
       the developments,
@@ -6700,7 +6700,7 @@ related_docs:
       saw your name in print,
   Do you give in that you are any less immortal?)
 
-       2
+#### 2
   Souls of men and women! it is not you I call unseen, unheard,
       untouchable and untouching,
   It is not you I go argue pro and con about, and to settle whether
@@ -6741,7 +6741,7 @@ related_docs:
   Or in the census or revenue returns, prices current, or any accounts
       of stock.
 
-       3
+#### 3
   The sun and stars that float in the open air,
   The apple-shaped earth and we upon it, surely the drift of them is
       something grand,
@@ -6790,7 +6790,7 @@ related_docs:
   Leaves are not more shed from the trees, or trees from the earth,
       than they are shed out of you.
 
-       4
+#### 4
   The sum of all known reverence I add up in you whoever you are,
   The President is there in the White House for you, it is not you who
       are here for him,
@@ -6819,7 +6819,7 @@ related_docs:
       women’s chorus,
   It is nearer and farther than they.
 
-       5
+#### 5
   Will the whole come back then?
   Can each see signs of the best by a look in the looking-glass? is
       there nothing greater or more?
@@ -6895,7 +6895,7 @@ related_docs:
   I do not say leadings you thought great are not great,
   But I say that none lead to greater than these lead to.
 
-       6
+#### 6
   Will you seek afar off? you surely come back at last,
   In things best known to you finding the best, or as good as the best,
   In folks nearest to you finding the sweetest, strongest, lovingest,
@@ -6926,7 +6926,7 @@ related_docs:
 
 ### A Song of the Rolling Earth
 
-       1
+#### 1
   A song of the rolling earth, and of words according,
   Were you thinking that those were the words, those upright lines?
       those curves, angles, dots?
@@ -7034,7 +7034,7 @@ related_docs:
   Of all able and ready at any time to give strict account,
   The divine ship sails the divine sea.
 
-       2
+#### 2
   Whoever you are! motion and reflection are especially for you,
   The divine ship sails the divine sea for you.
 
@@ -7059,7 +7059,7 @@ related_docs:
   And no man understands any greatness or goodness but his own, or
       the indication of his own.
 
-       3
+#### 3
   I swear the earth shall surely be complete to him or her who shall
       be complete,
   The earth remains jagged and broken only to him or her who remains
@@ -7100,7 +7100,7 @@ related_docs:
   No reasoning, no proof has establish’d it,
   Undeniable growth has establish’d it.
 
-       4
+#### 4
   These to echo the tones of souls and the phrases of souls,
   (If they did not echo the phrases of souls what were they then?
   If they had not reference to you in especial what were they then?)
@@ -7138,7 +7138,7 @@ related_docs:
 
 ### Song of the Universal
 
-       1
+#### 1
   Come said the Muse,
   Sing me a song no poet yet has chanted,
   Sing me the universal.
@@ -7151,7 +7151,7 @@ related_docs:
   By every life a share or more or less,
   None born but it is born, conceal’d or unconceal’d the seed is waiting.
 
-       2
+#### 2
   Lo! keen-eyed towering science,
   As from tall peaks the modern overlooking,
   Successive absolute fiats issuing.
@@ -7177,7 +7177,7 @@ related_docs:
   Electric, antiseptic yet, cleaving, suffusing all,
   Only the good is universal.
 
-       3
+#### 3
   Over the mountain-growths disease and sorrow,
   An uncaught bird is ever hovering, hovering,
   High in the purer, happier air.
@@ -7195,7 +7195,7 @@ related_docs:
   That see, that know the guiding thread so fine,
   Along the mighty labyrinth.
 
-       4
+#### 4
   And thou America,
   For the scheme’s culmination, its thought and its reality,
   For these (not for thyself) thou hast arrived.
@@ -7587,7 +7587,7 @@ related_docs:
 
 ### With Antecedents
 
-       1
+#### 1
   With antecedents,
   With my fathers and mothers and the accumulations of past ages,
   With all which, had it not been, I would not now be here, as I am,
@@ -7605,7 +7605,7 @@ related_docs:
   You and me arrived—America arrived and making this year,
   This year! sending itself ahead countless years to come.
 
-       2
+#### 2
   O but it is not the years—it is I, it is You,
   We touch all laws and tally all antecedents,
   We are the skald, the oracle, the monk and the knight, we easily
@@ -7631,7 +7631,7 @@ related_docs:
   And that to-day is what it must be, and that America is,
   And that to-day and America could no-how be better than they are.
 
-       3
+#### 3
   In the name of these States and in your and my name, the Past,
   And in the name of these States and in your and my name, the Present time.
 
@@ -7648,7 +7648,7 @@ related_docs:
 
 ### A Broadway Pageant
 
-       1
+#### 1
   Over the Western sea hither from Niphon come,
   Courteous, the swart-cheek’d two-sworded envoys,
   Leaning back in their open barouches, bare-headed, impassive,
@@ -7680,7 +7680,7 @@ related_docs:
   I too arising, answering, descend to the pavements, merge with the
       crowd, and gaze with them.
 
-       2
+#### 2
   Superb-faced Manhattan!
   Comrade Americanos! to us, then at last the Orient comes.
   To us, my city,
@@ -7746,7 +7746,7 @@ related_docs:
       renew’d as it must be,
   Commencing from this day surrounded by the world.
 
-       3
+#### 3
   And you Libertad of the world!
   You shall sit in the middle well-pois’d thousands and thousands of years,
   As to-day from one side the nobles of Asia come to you,
@@ -8007,7 +8007,7 @@ related_docs:
 
 ### As I Ebb’d with the Ocean of Life
 
-       1
+#### 1
   As I ebb’d with the ocean of life,
   As I wended the shores I know,
   As I walk’d where the ripples continually wash you Paumanok,
@@ -8029,7 +8029,7 @@ related_docs:
   As I wended the shores I know,
   As I walk’d with that electric self seeking types.
 
-       2
+#### 2
   As I wend to the shores I know not,
   As I list to the dirge, the voices of men and women wreck’d,
   As I inhale the impalpable breezes that set in upon me,
@@ -8054,7 +8054,7 @@ related_docs:
       me and sting me,
   Because I have dared to open my mouth to sing at all.
 
-       3
+#### 3
   You oceans both, I close with you,
   We murmur alike reproachfully rolling sands and drift, knowing not why,
   These little shreds indeed standing for you and me and all.
@@ -8077,7 +8077,7 @@ related_docs:
   Touch me with your lips as I touch those I love,
   Breathe to me while I hold you close the secret of the murmuring I envy.
 
-       4
+#### 4
   Ebb, ocean of life, (the flow will return,)
   Cease not your moaning you fierce old mother,
   Endlessly cry for your castaways, but fear not, deny not me,
@@ -8255,7 +8255,7 @@ related_docs:
 
 ### Song for All Seas, All Ships
 
-       1
+#### 1
   To-day a rude brief recitative,
   Of ships sailing the seas, each with its special flag or ship-signal,
   Of unnamed heroes in the ships—of waves spreading and spreading
@@ -8276,7 +8276,7 @@ related_docs:
   Ever the stock preserv’d and never lost, though rare, enough for
       seed preserv’d.)
 
-       2
+#### 2
   Flaunt out O sea your separate flags of nations!
   Flaunt out visible as ever the various ship-signals!
   But do you reserve especially for yourself and for the soul of man
@@ -9095,7 +9095,7 @@ related_docs:
 
 ### Rise O Days from Your Fathomless Deeps
 
-       1
+#### 1
   Rise O days from your fathomless deeps, till you loftier, fiercer sweep,
   Long for my soul hungering gymnastic I devour’d what the earth gave me,
   Long I roam’d amid the woods of the north, long I watch’d Niagara pouring,
@@ -9117,7 +9117,7 @@ related_docs:
   All the menacing might of the globe uprisen around me,
   Yet there with my soul I fed, I fed content, supercilious.
 
-       2
+#### 2
   ’Twas well, O soul—’twas a good preparation you gave me,
   Now we advance our latent and ampler hunger to fill,
   Now we go forth to receive what the earth and the sea never gave us,
@@ -9141,7 +9141,7 @@ related_docs:
   (Yet a mournful wall and low sob I fancied I heard through the dark,
   In a lull of the deafening confusion.)
 
-       3
+#### 3
   Thunder on! stride on, Democracy! strike with vengeful stroke!
   And do you rise higher than ever yet O days, O cities!
   Crash heavier, heavier yet O storms! you have done me good,
@@ -9613,7 +9613,7 @@ related_docs:
 
 ### The Wound-Dresser
 
-       1
+#### 1
   An old man bending I come among new faces,
   Years looking backward resuming in answer to children,
   Come tell us old man, as from young men and maidens that love me,
@@ -9627,7 +9627,7 @@ related_docs:
   What stays with you latest and deepest? of curious panics,
   Of hard-fought engagements or sieges tremendous what deepest remains?
 
-       2
+#### 2
   O maidens and young men I love and that love me,
   What you ask of my days those the strangest and sudden your talking recalls,
   Soldier alert I arrive after a long march cover’d with sweat and dust,
@@ -9661,7 +9661,7 @@ related_docs:
   Yet I think I could not refuse this moment to die for you, if that
       would save you.
 
-       3
+#### 3
   On, on I go, (open doors of time! open hospital doors!)
   The crush’d head I dress, (poor crazed hand tear not the bandage away,)
   The neck of the cavalry-man with the bullet through and through examine,
@@ -9691,7 +9691,7 @@ related_docs:
   These and more I dress with impassive hand, (yet deep in my breast
       a fire, a burning flame.)
 
-       4
+#### 4
   Thus in silence in dreams’ projections,
   Returning, resuming, I thread my way through the hospitals,
   The hurt and wounded I pacify with soothing hand,
@@ -9714,7 +9714,7 @@ related_docs:
 
 ### Give Me the Splendid Silent Sun
 
-       1
+#### 1
   Give me the splendid silent sun with all his beams full-dazzling,
   Give me autumnal fruit ripe and red from the orchard,
   Give me a field where the unmow’d grass grows,
@@ -9742,7 +9742,7 @@ related_docs:
   (O I see what I sought to escape, confronting, reversing my cries,
   see my own soul trampling down what it ask’d for.)
 
-       2
+#### 2
   Keep your splendid silent sun,
   Keep your woods O Nature, and the quiet places by the woods,
   Keep your fields of clover and timothy, and your corn-fields and orchards,
@@ -10147,7 +10147,7 @@ related_docs:
 
 ### When Lilacs Last in the Dooryard Bloom’d
 
-       1
+#### 1
   When lilacs last in the dooryard bloom’d,
   And the great star early droop’d in the western sky in the night,
   I mourn’d, and yet shall mourn with ever-returning spring.
@@ -10156,13 +10156,13 @@ related_docs:
   Lilac blooming perennial and drooping star in the west,
   And thought of him I love.
 
-       2
+#### 2
   O powerful western fallen star!
   O shades of night—O moody, tearful night!
   O great star disappear’d—O the black murk that hides the star!
   O cruel hands that hold me powerless—O helpless soul of me!
   O harsh surrounding cloud that will not free my soul.
-      3
+#### 3
   In the dooryard fronting an old farm-house near the white-wash’d palings,
   Stands the lilac-bush tall-growing with heart-shaped leaves of rich green,
   With many a pointed blossom rising delicate, with the perfume strong I love,
@@ -10170,7 +10170,7 @@ related_docs:
   With delicate-color’d blossoms and heart-shaped leaves of rich green,
   A sprig with its flower I break.
 
-       4
+#### 4
   In the swamp in secluded recesses,
   A shy and hidden bird is warbling a song.
 
@@ -10182,7 +10182,7 @@ related_docs:
   Death’s outlet song of life, (for well dear brother I know,
   If thou wast not granted to sing thou wouldst surely die.)
 
-       5
+#### 5
   Over the breast of the spring, the land, amid cities,
   Amid lanes and through old woods, where lately the violets peep’d
       from the ground, spotting the gray debris,
@@ -10194,7 +10194,7 @@ related_docs:
   Carrying a corpse to where it shall rest in the grave,
   Night and day journeys a coffin.
 
-       6
+#### 6
   Coffin that passes through lanes and streets,
   Through day and night with the great cloud darkening the land,
   With the pomp of the inloop’d flags with the cities draped in black,
@@ -10212,7 +10212,7 @@ related_docs:
   Here, coffin that slowly passes,
   I give you my sprig of lilac.
 
-       7
+#### 7
   (Nor for you, for one alone,
   Blossoms and branches green to coffins all I bring,
   For fresh as the morning, thus would I chant a song for you O sane
@@ -10225,7 +10225,7 @@ related_docs:
   With loaded arms I come, pouring for you,
   For you and the coffins all of you O death.)
 
-       8
+#### 8
   O western orb sailing the heaven,
   Now I know what you must have meant as a month since I walk’d,
   As I walk’d in silence the transparent shadowy night,
@@ -10242,14 +10242,14 @@ related_docs:
   As my soul in its trouble dissatisfied sank, as where you sad orb,
   Concluded, dropt in the night, and was gone.
 
-       9
+#### 9
   Sing on there in the swamp,
   O singer bashful and tender, I hear your notes, I hear your call,
   I hear, I come presently, I understand you,
   But a moment I linger, for the lustrous star has detain’d me,
   The star my departing comrade holds and detains me.
 
-       10
+#### 10
   O how shall I warble myself for the dead one there I loved?
   And how shall I deck my song for the large sweet soul that has gone?
   And what shall my perfume be for the grave of him I love?
@@ -10260,7 +10260,7 @@ related_docs:
   These and with these and the breath of my chant,
   I’ll perfume the grave of him I love.
 
-       11
+#### 11
   O what shall I hang on the chamber walls?
   And what shall the pictures be that I hang on the walls,
   To adorn the burial-house of him I love?
@@ -10278,7 +10278,7 @@ related_docs:
   And all the scenes of life and the workshops, and the workmen
       homeward returning.
 
-       12
+#### 12
   Lo, body and soul—this land,
   My own Manhattan with spires, and the sparkling and hurrying tides,
       and the ships,
@@ -10293,7 +10293,7 @@ related_docs:
   The coming eve delicious, the welcome night and the stars,
   Over my cities shining all, enveloping man and land.
 
-       13
+#### 13
   Sing on, sing on you gray-brown bird,
   Sing from the swamps, the recesses, pour your chant from the bushes,
   Limitless out of the dusk, out of the cedars and pines.
@@ -10306,7 +10306,7 @@ related_docs:
   You only I hear—yet the star holds me, (but will soon depart,)
   Yet the lilac with mastering odor holds me.
 
-       14
+#### 14
   Now while I sat in the day and look’d forth,
   In the close of the day with its light and the fields of spring, and
       the farmers preparing their crops,
@@ -10381,7 +10381,7 @@ related_docs:
   Over the dense-pack’d cities all and the teeming wharves and ways,
   I float this carol with joy, with joy to thee O death.
 
-       15
+#### 15
   To the tally of my soul,
   Loud and strong kept up the gray-brown bird,
   With pure deliberate notes spreading filling the night.
@@ -10409,7 +10409,7 @@ related_docs:
   And the wife and the child and the musing comrade suffer’d,
   And the armies that remain’d suffer’d.
 
-       16
+#### 16
   Passing the visions, passing the night,
   Passing, unloosing the hold of my comrades’ hands,
   Passing the song of the hermit bird and the tallying song of my soul,
@@ -10509,7 +10509,7 @@ related_docs:
   (Democracy, the destin’d conqueror, yet treacherous lip-smiles everywhere,
   And death and infidelity at every step.)
 
-       2
+#### 2
   A Nation announcing itself,
   I myself make the only growth by which I can be appreciated,
   I reject none, accept all, then reproduce all in my own forms.
@@ -10532,7 +10532,7 @@ related_docs:
   If we are lost, no victor else has destroy’d us,
   It is by ourselves we go down to eternal night.)
 
-       3
+#### 3
   Have you thought there could be but a single supreme?
   There can be any number of supremes—one does not countervail
       another any more than one eyesight countervails another, or
@@ -10546,7 +10546,7 @@ related_docs:
 
   Produce great Persons, the rest follows.
 
-       4
+#### 4
   Piety and conformity to them that like,
   Peace, obesity, allegiance, to them that like,
   I am he who tauntingly compels men, women, nations,
@@ -10568,7 +10568,7 @@ related_docs:
   Beware the advancing mortal ripening of Nature,
   Beware what precedes the decay of the ruggedness of states and men.
 
-       5
+#### 5
   Ages, precedents, have long been accumulating undirected materials,
   America brings builders, and brings its own styles.
 
@@ -10602,7 +10602,7 @@ related_docs:
   Here the flowing trains, here the crowds, equality, diversity, the
       soul loves.
 
-       6
+#### 6
   Land of lands and bards to corroborate!
   Of them standing among them, one lifts to the light a west-bred face,
   To him the hereditary countenance bequeath’d both mother’s and father’s,
@@ -10664,7 +10664,7 @@ related_docs:
   On and on to the grapple with it—Assassin! then your life or ours
       be the stake, and respite no more.
 
-       7
+#### 7
   (Lo, high toward heaven, this day,
   Libertad, from the conqueress’ field return’d,
   I mark the new aureola around your head,
@@ -10680,7 +10680,7 @@ related_docs:
   To-day a carrion dead and damn’d, the despised of all the earth,
   An offal rank, to the dunghill maggots spurn’d.)
 
-       8
+#### 8
   Others take finish, but the Republic is ever constructive and ever
       keeps vista,
   Others adorn the past, but you O days of the present, I adorn you,
@@ -10693,7 +10693,7 @@ related_docs:
   But damn that which spends itself with no thought of the stain,
       pains, dismay, feebleness, it is bequeathing.)
 
-       9
+#### 9
   I listened to the Phantom by Ontario’s shore,
   I heard the voice arising demanding bards,
   By them all native and grand, by them alone can these States be
@@ -10712,7 +10712,7 @@ related_docs:
   Eye to pierce the deepest deeps and sweep the world!
   Ah Mother, prolific and full in all besides, yet how long barren, barren?)
 
-       10
+#### 10
   Of these States the poet is the equable man,
   Not in him but off from him things are grotesque, eccentric, fail of
       their full returns,
@@ -10748,7 +10748,7 @@ related_docs:
   (Not for nothing have the indomitable heads of the earth been always
       ready to fall for Liberty.)
 
-       11
+#### 11
   For the great Idea,
   That, O my brethren, that is the mission of poets.
 
@@ -10770,7 +10770,7 @@ related_docs:
   Cold, cold in death, for precious life of you,
   Angry cloth I saw there leaping.)
 
-       12
+#### 12
   Are you he who would assume a place to teach or be a poet here in
       the States?
   The place is august, the terms obdurate.
@@ -10833,7 +10833,7 @@ related_docs:
   The track strew’d with the dust of skeletons,
   By the roadside others disdainfully toss’d.
 
-       13
+#### 13
   Rhymes and rhymers pass away, poems distill’d from poems pass away,
   The swarms of reflectors and the polite pass, and leave ashes,
   Admirers, importers, obedient persons, make but the soil of literature,
@@ -10861,7 +10861,7 @@ related_docs:
   Justice, health, self-esteem, clear the way with irresistible power;
   How dare you place any thing before a man?
 
-       14
+#### 14
   Fall behind me States!
   A man before all—myself, typical, before all.
 
@@ -10889,7 +10889,7 @@ related_docs:
   (Say O Mother, have I not to your thought been faithful?
   Have I not through life kept you and yours before me?)
 
-       15
+#### 15
   I swear I begin to see the meaning of these things,
   It is not the earth, it is not America who is so great,
   It is I who am great or to be great, it is You up there, or any one,
@@ -10906,7 +10906,7 @@ related_docs:
   (Mother! with subtle sense severe, with the naked sword in your hand,
   I saw you at last refuse to treat but directly with individuals.)
 
-       16
+#### 16
   Underneath all, Nativity,
   I swear I will stand by my own nativity, pious or impious so be it;
   I swear I am charm’d with nothing except nativity,
@@ -10927,7 +10927,7 @@ related_docs:
   Underneath all to me is myself, to you yourself, (the same
       monotonous old song.)
 
-       17
+#### 17
   O I see flashing that this America is only you and me,
   Its power, weapons, testimony, are you and me,
   Its crimes, lies, thefts, defections, are you and me,
@@ -10965,7 +10965,7 @@ related_docs:
       your dilating form,
   Saw you with spreading mantle covering the world.)
 
-       18
+#### 18
   I will confront these shows of the day and night,
   I will know if I am to be less than they,
   I will see if I am not as majestic as they,
@@ -10987,7 +10987,7 @@ related_docs:
   I know not fruition’s success, but I know that through war and crime
       your work goes on, and must yet go on.)
 
-       19
+#### 19
   Thus by blue Ontario’s shore,
   While the winds fann’d me and the waves came trooping toward me,
   I thrill’d with the power’s pulsations, and the charm of my theme
@@ -10998,7 +10998,7 @@ related_docs:
   The loftiest bards of past ages strode before me,
   Strange large men, long unwaked, undisclosed, were disclosed to me.
 
-       20
+#### 20
   O my rapt verse, my call, mock me not!
   Not for the bards of the past, not to invoke them have I launch’d
       you forth,
@@ -11074,7 +11074,7 @@ related_docs:
 
 ### The Return of the Heroes
 
-       1
+#### 1
   For the lands and for these passionate days and for myself,
   Now I awhile retire to thee O soil of autumn fields,
   Reclining on thy breast, giving myself to thee,
@@ -11086,7 +11086,7 @@ related_docs:
   O lavish brown parturient earth—O infinite teeming womb,
   A song to narrate thee.
 
-       2
+#### 2
   Ever upon this stage,
   Is acted God’s calm annual drama,
   Gorgeous processions, songs of birds,
@@ -11102,7 +11102,7 @@ related_docs:
   The moving flocks and herds, the plains and emerald meadows,
   The shows of all the varied lands and all the growths and products.
 
-       3
+#### 3
   Fecund America—today,
   Thou art all over set in births and joys!
   Thou groan’st with riches, thy wealth clothes thee as a swathing-garment,
@@ -11121,7 +11121,7 @@ related_docs:
   Thou all-acceptress—thou hospitable, (thou only art hospitable as
       God is hospitable.)
 
-       4
+#### 4
   When late I sang sad was my voice,
   Sad were the shows around me with deafening noises of hatred and
       smoke of war;
@@ -11148,7 +11148,7 @@ related_docs:
       the crutch,
   Lo, your pallid army follows.)
 
-       5
+#### 5
   But on these days of brightness,
   On the far-stretching beauteous landscape, the roads and lanes the
       high-piled farm-wagons, and the fruits and barns,
@@ -11164,7 +11164,7 @@ related_docs:
       like pleasing phantoms,
   Your memories rising glide silently by me.
 
-       6
+#### 6
   I saw the day the return of the heroes,
   (Yet the heroes never surpass’d shall never return,
   Them that day I saw not.)
@@ -11193,7 +11193,7 @@ related_docs:
   Other the arms the fields henceforth for you, or South or North,
   With saner wars, sweet wars, life-giving wars.
 
-       7
+#### 7
   Loud O my throat, and clear O soul!
   The season of thanks and the voice of full-yielding,
   The chant of joy and power for boundless fertility.
@@ -11218,7 +11218,7 @@ related_docs:
   And healthy uplands with herby-perfumed breezes,
   And the good green grass, that delicate miracle the ever-recurring grass.
 
-       8
+#### 8
   Toil on heroes! harvest the products!
   Not alone on those warlike fields the Mother of All,
   With dilated form and lambent eyes watch’d you.
@@ -11374,7 +11374,7 @@ related_docs:
 
 ### This Compost
 
-       1
+#### 1
   Something startles me where I thought I was safest,
   I withdraw from the still woods I loved,
   I will not go now on the pastures to walk,
@@ -11395,7 +11395,7 @@ related_docs:
       the sod and turn it up underneath,
   I am sure I shall expose some of the foul meat.
 
-       2
+#### 2
   Behold this compost! behold it well!
   Perhaps every mite has once form’d part of a sick person—yet behold!
   The grass of spring covers the prairies,
@@ -11649,7 +11649,7 @@ related_docs:
           O sight of pity, shame and dole!
           O fearful thought—a convict soul.
 
-       1
+#### 1
   Rang the refrain along the hall, the prison,
   Rose to the roof, the vaults of heaven above,
   Pouring in floods of melody in tones so pensive sweet and strong the
@@ -11657,7 +11657,7 @@ related_docs:
   Reaching the far-off sentry and the armed guards, who ceas’d their pacing,
   Making the hearer’s pulses stop for ecstasy and awe.
 
-       2
+#### 2
   The sun was low in the west one winter day,
   When down a narrow aisle amid the thieves and outlaws of the land,
   (There by the hundreds seated, sear-faced murderers, wily counterfeiters,
@@ -11691,7 +11691,7 @@ related_docs:
           Convict no more, nor shame, nor dole!
           Depart—a God-enfranchis’d soul!
 
-       3
+#### 3
   The singer ceas’d,
   One glance swept from her clear calm eyes o’er all those upturn’d faces,
   Strange sea of prison faces, a thousand varied, crafty, brutal,
@@ -11752,7 +11752,7 @@ related_docs:
 
 ### Outlines for a Tomb [G. P., Buried 1870]
 
-       1
+#### 1
   What may we chant, O thou within this tomb?
   What tablets, outlines, hang for thee, O millionnaire?
   The life thou lived’st we know not,
@@ -11760,7 +11760,7 @@ related_docs:
       brokers,
   Nor heroism thine, nor war, nor glory.
 
-       2
+#### 2
   Silent, my soul,
   With drooping lids, as waiting, ponder’d,
   Turning from all the samples, monuments of heroes.
@@ -11804,7 +11804,7 @@ related_docs:
   (The intentions perfect and divine,
   The workings, details, haply human.)
 
-       3
+#### 3
   O thou within this tomb,
   From thee such scenes, thou stintless, lavish giver,
   Tallying the gifts of earth, large as the earth,
@@ -11819,7 +11819,7 @@ related_docs:
 
 ### Out from Behind This Mask [To Confront a Portrait]
 
-       1
+#### 1
   Out from behind this bending rough-cut mask,
   These lights and shades, this drama of the whole,
   This common curtain of the face contain’d in me for me, in you for
@@ -11838,7 +11838,7 @@ related_docs:
   To launch and spin through space revolving sideling, from these to emanate,
   To you whoe’er you are—a look.
 
-       2
+#### 2
   A traveler of thoughts and years, of peace and war,
   Of youth long sped and middle age declining,
   (As the first volume of a tale perused and laid away, and this the second,
@@ -11851,7 +11851,7 @@ related_docs:
 
 ### Vocalism
 
-       1
+#### 1
   Vocalism, measure, concentration, determination, and the divine
       power to speak words;
   Are you full-lung’d and limber-lipp’d from long trial? from vigorous
@@ -11875,7 +11875,7 @@ related_docs:
   They debouch as they are wanted to march obediently through the
       mouth of that man or that woman.
 
-       2
+#### 2
   O what is it in me that makes me tremble so at voices?
   Surely whoever speaks to me in the right voice, him or her I shall follow,
   As the water follows the moon, silently, with fluid steps, anywhere
@@ -12395,7 +12395,7 @@ related_docs:
 
 ### Proud Music of the Storm
 
-       1
+#### 1
   Proud music of the storm,
   Blast that careers so free, whistling across the prairies,
   Strong hum of forest tree-tops—wind of the mountains,
@@ -12409,7 +12409,7 @@ related_docs:
   Echoes of camps with all the different bugle-calls,
   Trooping tumultuous, filling the midnight late, bending me powerless,
   Entering my lonesome slumber-chamber, why have you seiz’d me?
-      2
+#### 2
   Come forward O my soul, and let the rest retire,
   Listen, lose not, it is toward thee they tend,
   Parting the midnight, entering my slumber-chamber,
@@ -12467,7 +12467,7 @@ related_docs:
   (I think O tongues ye tell this heart, that cannot tell itself,
   This brooding yearning heart, that cannot tell itself.)
 
-       3
+#### 3
   Ah from a little child,
   Thou knowest soul how to me all sounds became music,
   My mother’s voice in lullaby or hymn,
@@ -12513,7 +12513,7 @@ related_docs:
   The lustrious orb, Venus contralto, the blooming mother,
   Sister of loftiest gods, Alboni’s self I hear.)
 
-       4
+#### 4
   I hear those odes, symphonies, operas,
   I hear in the William Tell the music of an arous’d and angry people,
   I hear Meyerbeer’s Huguenots, the Prophet, or Robert,
@@ -12551,7 +12551,7 @@ related_docs:
   Or to Hindu flutes and the fretting twang of the vina,
   A band of bayaderes.
 
-       5
+#### 5
   Now Asia, Africa leave me, Europe seizing inflates me,
   To organs huge and bands I hear as from vast concourses of voices,
   Luther’s strong hymn Eine feste Burg ist unser Gott,
@@ -12579,7 +12579,7 @@ related_docs:
   The tempests, waters, winds, operas and chants, marches and dances,
   Utter, pour in, for I would take them all!
 
-       6
+#### 6
   Then I woke softly,
   And pausing, questioning awhile the music of my dream,
   And questioning all those reminiscences, the tempest in its fury,
@@ -12610,7 +12610,7 @@ related_docs:
 
 ### Passage to India
 
-       1
+#### 1
   Singing my days,
   Singing the great achievements of the present,
   Singing the strong light works of engineers,
@@ -12628,7 +12628,7 @@ related_docs:
   (As a projectile form’d, impell’d, passing a certain line, still keeps on,
   So the present, utterly form’d, impell’d by the past.)
 
-       2
+#### 2
   Passage O soul to India!
   Eclaircise the myths Asiatic, the primitive fables.
 
@@ -12660,7 +12660,7 @@ related_docs:
   You, not for trade or transportation only,
   But in God’s name, and for thy sake O soul.
 
-       3
+#### 3
   Passage to India!
   Lo soul for thee of tableaus twain,
   I see in one the Suez canal initiated, open’d,
@@ -12698,7 +12698,7 @@ related_docs:
   Centuries after thou art laid in thy grave,
   The shore thou foundest verifies thy dream.)
 
-       4
+#### 4
   Passage to India!
   Struggles of many a captain, tales of many a sailor dead,
   Over my mood stealing and spreading they come,
@@ -12715,7 +12715,7 @@ related_docs:
   For purpose vast, man’s long probation fill’d,
   Thou rondure of the world at last accomplish’d.
 
-       5
+#### 5
   O vast Rondure, swimming in space,
   Cover’d all over with visible power and beauty,
   Alternate light and day and the teeming spiritual darkness,
@@ -12764,7 +12764,7 @@ related_docs:
   Nature and Man shall be disjoin’d and diffused no more,
   The true son of God shall absolutely fuse them.
 
-       6
+#### 6
   Year at whose wide-flung door I sing!
   Year of the purpose accomplish’d!
   Year of the marriage of continents, climates and oceans!
@@ -12823,7 +12823,7 @@ related_docs:
   Uprising in the night, it sprouts, blooms,
   And fills the earth with use and beauty.)
 
-       7
+#### 7
   Passage indeed O soul to primal thought,
   Not lands and seas alone, thy own clear freshness,
   The young maturity of brood and bloom,
@@ -12836,7 +12836,7 @@ related_docs:
   Back, back to wisdom’s birth, to innocent intuitions,
   Again with fair creation.
 
-       8
+#### 8
   O we can wait no longer,
   We too take ship O soul,
   Joyous we too launch out on trackless seas,
@@ -12895,7 +12895,7 @@ related_docs:
   As fill’d with friendship, love complete, the Elder Brother found,
   The Younger melts in fondness in his arms.
 
-       9
+#### 9
   Passage to more than India!
   Are thy wings plumed indeed for such far flights?
   O soul, voyagest thou indeed on voyages like those?
@@ -13022,7 +13022,7 @@ related_docs:
 
 ### The Sleepers
 
-       1
+#### 1
   I wander all night in my vision,
   Stepping with light feet, swiftly and noiselessly stepping and stopping,
   Bending with open eyes over the shut eyes of sleepers,
@@ -13112,7 +13112,7 @@ related_docs:
   I thought my lover had gone, else darkness and he are one,
   I hear the heart-beat, I follow, I fade away.
 
-       2
+#### 2
   I descend my western course, my sinews are flaccid,
   Perfume and youth course through me and I am their wake.
 
@@ -13130,7 +13130,7 @@ related_docs:
   (It seems to me that every thing in the light and air ought to be happy,
   Whoever is not in his coffin and the dark grave let him know he has enough.)
 
-       3
+#### 3
   I see a beautiful gigantic swimmer swimming naked through the eddies
       of the sea,
   His brown hair lies close and even to his head, he strikes out with
@@ -13152,7 +13152,7 @@ related_docs:
       continually bruis’d on rocks,
   Swiftly and ought of sight is borne the brave corpse.
 
-       4
+#### 4
   I turn but do not extricate myself,
   Confused, a past-reading, another, but with darkness yet.
 
@@ -13168,7 +13168,7 @@ related_docs:
   I search with the crowd, not one of the company is wash’d to us alive,
   In the morning I help pick up the dead and lay them in rows in a barn.
 
-       5
+#### 5
   Now of the older war-days, the defeat at Brooklyn,
   Washington stands inside the lines, he stands on the intrench’d
       hills amid a crowd of officers.
@@ -13186,7 +13186,7 @@ related_docs:
   He kisses lightly the wet cheeks one after another, he shakes hands
       and bids good-by to the army.
 
-       6
+#### 6
   Now what my mother told me one day as we sat at dinner together,
   Of when she was a nearly grown girl living home with her parents on
       the old homestead.
@@ -13214,7 +13214,7 @@ related_docs:
   She remember’d her many a winter and many a summer,
   But the red squaw never came nor was heard of there again.
 
-       7
+#### 7
   A show of the summer softness—a contact of something unseen—an
       amour of the light and air,
   I am jealous and overwhelm’d with friendliness,
@@ -13284,7 +13284,7 @@ related_docs:
   The diverse shall be no less diverse, but they shall flow and unite—
       they unite now.
 
-       8
+#### 8
   The sleepers are very beautiful as they lie unclothed,
   They flow hand in hand over the whole earth from east to west as
       they lie unclothed,
@@ -13340,7 +13340,7 @@ related_docs:
 
 ### To Think of Time
 
-      1
+#### 1
   To think of time—of all that retrospection,
   To think of to-day, and the ages continued henceforward.
 
@@ -13356,7 +13356,7 @@ related_docs:
   To think that you and I did not see, feel, think, nor bear our part,
   To think that we are now here and bear our part.
 
-       2
+#### 2
   Not a day passes, not a minute or second without an accouchement,
   Not a day passes, not a minute or second without a corpse.
 
@@ -13378,7 +13378,7 @@ related_docs:
   But without eyesight lingers a different living and looks curiously
       on the corpse.
 
-       3
+#### 3
   To think the thought of death merged in the thought of materials,
   To think of all these wonders of city and country, and others taking
       great interest in them, and we taking no interest in them.
@@ -13394,7 +13394,7 @@ related_docs:
       cease—they are the burial lines,
   He that was President was buried, and he that is now President shall
       surely be buried.
-      4
+#### 4
   A reminiscence of the vulgar fate,
   A frequent sample of the life and death of workmen,
   Each after his kind.
@@ -13430,7 +13430,7 @@ related_docs:
   To think that these are so much and so nigh to other drivers, and he
       there takes no interest in them.
 
-       5
+#### 5
   The markets, the government, the working-man’s wages, to think what
       account they are through our nights and days,
   To think that other working-men will make just as great account of
@@ -13453,7 +13453,7 @@ related_docs:
   To think there will still be farms, profits, crops, yet for you of
       what avail?
 
-       6
+#### 6
   What will be will be well, for what is is well,
   To take interest is well, and not to take interest shall be well.
 
@@ -13469,7 +13469,7 @@ related_docs:
       around yourself,
   Yourself! yourself!. yourself, for ever and ever!
 
-       7
+#### 7
   It is not to diffuse you that you were born of your mother and
       father, it is to identify you,
   It is not that you should be undecided, but that you should be decided,
@@ -13495,7 +13495,7 @@ related_docs:
   The law of drunkards, informers, mean persons, not one iota thereof
       can be eluded.
 
-       8
+#### 8
   Slow moving and black lines go ceaselessly over the earth,
   Northerner goes carried and Southerner goes carried, and they on the
       Atlantic side and they on the Pacific,
@@ -13545,7 +13545,7 @@ related_docs:
   Slowly and surely they have pass’d on to this, and slowly and surely
       they yet pass on.
 
-       9
+#### 9
   I swear I think now that every thing without exception has an eternal soul!
   The trees have, rooted in the ground! the weeds of the sea have! the
       animals!
@@ -13599,7 +13599,7 @@ related_docs:
 
 ### Chanting the Square Deific
 
-       1
+#### 1
   Chanting the square deific, out of the One advancing, out of the sides,
   Out of the old and new, out of the square entirely divine,
   Solid, four-sided, (all the sides needed,) from this side Jehovah am I,
@@ -13615,7 +13615,7 @@ related_docs:
       that forgive not,
   I dispense from this side judgments inexorable without the least remorse.
 
-       2
+#### 2
   Consolator most mild, the promis’d one advancing,
   With gentle hand extended, the mightier God am I,
   Foretold by prophets and poets in their most rapt prophecies and poems,
@@ -13636,7 +13636,7 @@ related_docs:
   But my charity has no death—my wisdom dies not, neither early nor late,
   And my sweet love bequeath’d here and elsewhere never dies.
 
-       3
+#### 3
   Aloof, dissatisfied, plotting revolt,
   Comrade of criminals, brother of slaves,
   Crafty, despised, a drudge, ignorant,
@@ -13651,7 +13651,7 @@ related_docs:
   Permanent here from my side, warlike, equal with any, real as any,
   Nor time nor change shall ever change me or my words.
 
-       4
+#### 4
   Santa Spirita, breather, life,
   Beyond the light, lighter than light,
   Beyond the flames of hell, joyous, leaping easily above hell,
@@ -13915,7 +13915,7 @@ related_docs:
 
 ### Thou Mother with Thy Equal Brood
 
-       1
+#### 1
   Thou Mother with thy equal brood,
   Thou varied chain of different States, yet one identity only,
   A special song before I go I’d sing o’er all the rest,
@@ -13933,7 +13933,7 @@ related_docs:
   But greater still from what is yet to come,
   Out of that formula for thee I sing.
 
-       2
+#### 2
   As a strong bird on pinions free,
   Joyous, the amplest spaces heavenward cleaving,
   Such be the thought I’d think of thee America,
@@ -13962,7 +13962,7 @@ related_docs:
   Through thy idea, lo, the immortal reality!
   Through thy reality, lo, the immortal idea!
 
-       3
+#### 3
   Brain of the New World, what a task is thine,
   To formulate the Modern—out of the peerless grandeur of the modern,
   Out of thyself, comprising science, to recast poems, churches, art,
@@ -13981,7 +13981,7 @@ related_docs:
   Thou but the apples, long, long, long a-growing,
   The fruit of all the Old ripening to-day in thee.
 
-       4
+#### 4
   Sail, sail thy best, ship of Democracy,
   Of value is thy freight, ’tis not the Present only,
   The Past is also stored in thee,
@@ -13998,7 +13998,7 @@ related_docs:
   Venerable priestly Asia sails this day with thee,
   And royal feudal Europe sails with thee.
 
-       5
+#### 5
   Beautiful world of new superber birth that rises to my eyes,
   Like a limitless golden cloud filling the westernr sky,
   Emblem of general maternity lifted above all,
@@ -14059,7 +14059,7 @@ related_docs:
       sacerdotal bards, kosmic savans,
   These! these in thee, (certain to come,) to-day I prophesy.
 
-       6
+#### 6
   Land tolerating all, accepting all, not for the good alone, all good
       for thee,
   Land in the realms of God to be a realm unto thyself,
@@ -14163,7 +14163,7 @@ related_docs:
 
 ### Faces
 
-       1
+#### 1
   Sauntering the pavement or riding the country by-road, faces!
   Faces of friendship, precision, caution, suavity, ideality,
   The spiritual-prescient face, the always welcome common benevolent face,
@@ -14186,7 +14186,7 @@ related_docs:
       and faces and faces,
   I see them and complain not, and am content with all.
 
-       2
+#### 2
   Do you suppose I could be content with all if I thought them their
       own finale?
 
@@ -14216,7 +14216,7 @@ related_docs:
   This face owes to the sexton his dismalest fee,
   An unceasing death-bell tolls there.
 
-       3
+#### 3
   Features of my equals would you trick me with your creas’d and
       cadaverous march?
   Well, you cannot trick me.
@@ -14236,7 +14236,7 @@ related_docs:
   And I shall meet the real landlord perfect and unharm’d, every inch
       as good as myself.
 
-       4
+#### 4
   The Lord advances, and yet advances,
   Always the shadow in front, always the reach’d hand bringing up the
       laggards.
@@ -14268,7 +14268,7 @@ related_docs:
   Fill me with albescent honey, bend down to me,
   Rub to me with your chafing beard, rub to my breast and shoulders.
 
-       5
+#### 5
   The old face of the mother of many children,
   Whist! I am fully content.
 
@@ -14297,7 +14297,7 @@ related_docs:
 
 ### The Mystic Trumpeter
 
-       1
+#### 1
   Hark, some wild trumpeter, some strange musician,
   Hovering unseen in air, vibrates capricious tunes to-night.
 
@@ -14305,7 +14305,7 @@ related_docs:
   Now pouring, whirling like a tempest round me,
   Now low, subdued, now in the distance lost.
 
-       2
+#### 2
   Come nearer bodiless one, haply in thee resounds
   Some dead composer, haply thy pensive life
   Was fill’d with aspirations high, unform’d ideals,
@@ -14314,7 +14314,7 @@ related_docs:
   Gives out to no one’s ears but mine, but freely gives to mine,
   That I may thee translate.
 
-       3
+#### 3
   Blow trumpeter free and clear, I follow thee,
   While at thy liquid prelude, glad, serene,
   The fretting world, the streets, the noisy hours of day withdraw,
@@ -14324,7 +14324,7 @@ related_docs:
   Thy song expands my numb’d imbonded spirit, thou freest, launchest me,
   Floating and basking upon heaven’s lake.
 
-       4
+#### 4
   Blow again trumpeter! and for my sensuous eyes,
   Bring the old pageants, show the feudal world.
 
@@ -14338,7 +14338,7 @@ related_docs:
   I see the Crusaders’ tumultuous armies—hark, how the cymbals clang,
   Lo, where the monks walk in advance, bearing the cross on high.
 
-       5
+#### 5
   Blow again trumpeter! and for thy theme,
   Take now the enclosing theme of all, the solvent and the setting,
   Love, that is pulse of all, the sustenance and the pang,
@@ -14355,7 +14355,7 @@ related_docs:
   Love, that is crimson, sumptuous, sick with perfume,
   No other words but words of love, no other thought but love.
 
-       6
+#### 6
   Blow again trumpeter—conjure war’s alarums.
 
   Swift to thy spell a shuddering hum like distant thunder rolls,
@@ -14369,7 +14369,7 @@ related_docs:
   I see ships foundering at sea, I behold on deck and below deck the
       terrible tableaus.
 
-       7
+#### 7
   O trumpeter, methinks I am myself the instrument thou playest,
   Thou melt’st my heart, my brain—thou movest, drawest, changest
       them at will;
@@ -14384,7 +14384,7 @@ related_docs:
   Utter defeat upon me weighs—all lost—the foe victorious,
   (Yet ’mid the ruins Pride colossal stands unshaken to the last,
   Endurance, resolution to the last.)
-      8
+#### 8
   Now trumpeter for thy close,
   Vouchsafe a higher strain than any yet,
   Sing to my soul, renew its languishing faith and hope,
@@ -14985,7 +14985,7 @@ related_docs:
 
 ### Thoughts
 
-       1
+#### 1
   Of these years I sing,
   How they pass and have pass’d through convuls’d pains, as through
       parturitions,
@@ -15018,7 +15018,7 @@ related_docs:
       serves,
   And how now or at any time each serves the exquisite transition of death.
 
-       2
+#### 2
   Of seeds dropping into the ground, of births,
   Of the steady concentration of America, inland, upward, to
       impregnable and swarming places,
