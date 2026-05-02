@@ -565,3 +565,18 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ---
 
+## 2026-05-02
+
+### Meditations - Book I
+- **Role:** source | **Domain:** stoicism | **Format:** aphorisms
+- **Path:** `knowledge/sources/stoicism-meditations-book-i.md`
+- **Curator:** shalom | **Tags:** gratitude, mentorship, character-development, virtue, philosophical-education, self-reflection
+- **Author:** Marcus Aurelius
+- **Origin:** ~170-180 CE (ancient)
+- **Tradition:** roman-stoicism
+- **Related:** sources/philosophy-gorgias.md, sources/philosophy-meno.md, sources/philosophy-phaedo.md, sources/philosophy-symposium.md, sources/taoism-tao-te-ching.md
+- **Gaps served:** Provides intimate insight into how philosophical character is formed through relationships and mentorship in the Stoic tradition.
+- **Graph impact:** Connects Stoic philosophical practice to gratitude, humility, and the recognition of intellectual debt to teachers and guides.
+
+---
+
