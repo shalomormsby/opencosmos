@@ -1,5 +1,5 @@
 ---
-title: Meditations - Book I
+title: Meditations
 role: source
 work_type: work
 format: aphorisms
