@@ -289,4 +289,14 @@ Conduct me, Zeus, and thou, O Destiny, Wherever your decrees have fixed my lot.
 I follow cheerfully; and, did I not, Wicked and wretched, I must follow still.[8] Who’er yields properly to Fate is deemed Wise among men, and knows the laws of Heaven.[9] And this third: “O Crito, if it thus pleases the gods, thus let it be.”[10] “Anytus and Melitus may kill me indeed; but hurt me they cannot.”[11]
 
 ## Footnotes
-[1] Happiness, the effect of virtue, is the mark which God has set up for us to aim at. Our missing it is no work of His; nor so properly anything real, as a mere negative and failure of our own. [2] Chapter XV of the third book of the Discourses, which, with the exception of some very trifling differences, is the same as chapter XXIX of the Enchiridion. —Ed. [3] Euphrates was a philosopher of Syria, whose character is described, with the highest encomiums, by Pliny the Younger, Letters I. 10. [4] The two inimical sons of Oedipus, who killed each other in battle. —Ed. [5] This refers to an anecdote given in full by Simplicius, in his commentary on this passage, of a man assaulted and killed on his way to consult the oracle, while his companion, deserting him, took refuge in the temple till cast out by the Deity. —Tr. [6] Reference is to Zeno of Cyprus (335-263 B.C.), the founder of the Stoic school. —Ed. [7] Chrysippus (c. 280-207 B.C.) was a Stoic philosopher who became head of the Stoa after Cleanthes. His works, which are lost, were most influential and were generally accepted as the authoritative interpretation of orthodox Stoic philosophy. —Ed. [8] Cleanthes, in Diogenes Laertius, quoted also by Seneca, Epistle 107. [9] Euripides, Fragments. [10] Plato, Crito, Chap. XVII. [11] Plato, Apology, Chap. XVIII.
+[1] Happiness, the effect of virtue, is the mark which God has set up for us to aim at. Our missing it is no work of His; nor so properly anything real, as a mere negative and failure of our own. 
+[2] Chapter XV of the third book of the Discourses, which, with the exception of some very trifling differences, is the same as chapter XXIX of the Enchiridion. —Ed. 
+[3] Euphrates was a philosopher of Syria, whose character is described, with the highest encomiums, by Pliny the Younger, Letters I. 10. 
+[4] The two inimical sons of Oedipus, who killed each other in battle. —Ed. 
+[5] This refers to an anecdote given in full by Simplicius, in his commentary on this passage, of a man assaulted and killed on his way to consult the oracle, while his companion, deserting him, took refuge in the temple till cast out by the Deity. —Tr. 
+[6] Reference is to Zeno of Cyprus (335-263 B.C.), the founder of the Stoic school. —Ed. 
+[7] Chrysippus (c. 280-207 B.C.) was a Stoic philosopher who became head of the Stoa after Cleanthes. His works, which are lost, were most influential and were generally accepted as the authoritative interpretation of orthodox Stoic philosophy. —Ed. 
+[8] Cleanthes, in Diogenes Laertius, quoted also by Seneca, Epistle 107. 
+[9] Euripides, Fragments.
+[10] Plato, Crito, Chap. XVII. 
+[11] Plato, Apology, Chap. XVIII.
