@@ -568,15 +568,26 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 ## 2026-05-02
 
 ### Meditations
-- **Role:** source | **Domain:** stoicism | **Format:** aphorisms
+- **Role:** source | **Domain:** philosophy | **Format:** aphorisms
 - **Path:** `knowledge/sources/stoicism-meditations.md`
-- **Curator:** shalom | **Tags:** gratitude, mentorship, character-development, virtue, philosophical-education, self-reflection
+- **Curator:** shalom | **Tags:** stoicism, gratitude, self-reflection, virtue, ethics, leadership
 - **Author:** Marcus Aurelius
 - **Origin:** ~170-180 CE (ancient)
-- **Tradition:** roman-stoicism
+- **Tradition:** Roman Stoicism
 - **Related:** sources/philosophy-gorgias.md, sources/philosophy-meno.md, sources/philosophy-phaedo.md, sources/philosophy-symposium.md, sources/taoism-tao-te-ching.md
-- **Gaps served:** Provides intimate insight into how philosophical character is formed through relationships and mentorship in the Stoic tradition.
-- **Graph impact:** Connects Stoic philosophical practice to gratitude, humility, and the recognition of intellectual debt to teachers and guides.
+- **Gaps served:** Provides intimate insight into how philosophical character is formed through self-reflection and the application of Stoic reason to daily life.
+- **Graph impact:** Connects Roman Stoic practice to universal ethics, resilience, and the internal struggle for moral consistency in positions of power.
+
+### The Enchiridion
+- **Role:** source | **Domain:** philosophy | **Format:** manual
+- **Path:** `knowledge/sources/stoicism-enchiridion.md`
+- **Curator:** shalom | **Tags:** stoicism, ethics, self-discipline, epictetus, logic
+- **Author:** Epictetus
+- **Origin:** ~125 CE (ancient)
+- **Tradition:** Stoicism
+- **Related:** sources/stoicism-meditations.md, sources/philosophy-crito.md, sources/philosophy-apology.md
+- **Gaps served:** Provides a concise, practical distillation of Stoic ethics focused on the distinction between what is in our power and what is not.
+- **Graph impact:** Serves as the primary bridge between theoretical Stoic physics/logic and the practical "manual" of conduct that influenced centuries of Western moral thought.
 
 ---
 
