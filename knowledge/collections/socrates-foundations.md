@@ -39,8 +39,9 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 
 ### Dialectical Philosophy
 - [x] Plato's dialogues — [*Apology*](../sources/philosophy-apology), *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life)
-- [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is and is not in our control, the discipline of assent) <!-- corpus: Discourses, Enchiridion -->
-- [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty, the view from above) <!-- corpus: Meditations -->
+- [x] Epictetus, [*Enchiridion*](../sources/stoicism-enchiridion) (Stoic inquiry, what is and is not in our control, the discipline of assent) <!-- corpus: Enchiridion -->
+- [x] Marcus Aurelius, [*Meditations*](../sources/stoicism-meditations) (Self-examination, impermanence, duty, the view from above) <!-- corpus: Meditations -->
+- [x] [Margaret Fell: Women's Speaking Justified](../sources/philosophy-fell-womens-speaking-justified.md) (Dialectical scriptural interpretation; dismantling the theological grounds for gender-based silence)
 
 ### The Work (Byron Katie)
 - [ ] Byron Katie, *Loving What Is* (commentary) (The four questions, turnarounds, inquiry as liberation from stressful beliefs) <!-- corpus: Loving What Is -->

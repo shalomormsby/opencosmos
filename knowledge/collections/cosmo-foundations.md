@@ -47,15 +47,18 @@ This collection defines what is unique about Cosmo's role: integration. While So
 - [ ] Fritjof Capra, *The Tao of Physics* (commentary) (Eastern mysticism meets quantum mechanics) <!-- corpus: The Tao of Physics -->
 - [ ] Gregory Bateson, *Steps to an Ecology of Mind* (commentary) (Systems, mind, and nature unified) <!-- corpus: Steps to an Ecology of Mind -->
 - [ ] Francisco Varela, *The Embodied Mind* (commentary) (Cognitive science meets contemplative practice) <!-- corpus: The Embodied Mind -->
+- [x] [Ada Lovelace: A Biography of Poetical Science](../sources/science-lovelace-biography.md) (Mathematics meets Imagination — bridging the technical and the poetic)
 
 ### Ubuntu & Relational Philosophy
 - [ ] Ubuntu philosophy — source texts and commentary (African relational ontology) <!-- corpus: Ubuntu Source Texts -->
 - [ ] Thich Nhat Hanh on interbeing (commentary) (Buddhism meets ecology meets social justice) <!-- corpus: Interbeing -->
 - [ ] Martin Luther King Jr., selected writings (commentary) (Justice, love, and interconnection) <!-- corpus: Selected Writings of Martin Luther King Jr. -->
+- [x] [Margaret Fell: Women's Speaking Justified](../sources/philosophy-fell-womens-speaking-justified.md) (17th-century defense of spiritual equality and the first witnesses)
 
 ### The Art of Holding Paradox
 - [ ] Dōgen Zenji, *Shōbōgenzō* selections (Being-time, intimacy with all things) <!-- corpus: Shōbōgenzō Selections -->
 - [ ] Rainer Maria Rilke, *Letters to a Young Poet* (Living the questions) <!-- corpus: Letters to a Young Poet -->
+- [x] [The Shakespeare Collection](../collections/literature-shakespeare.md) (Synthesis hub for 43 works; dramatizing the human condition without resolution)
 
 ### The Router's Source Traditions
 - [ ] Byron Katie, *Loving What Is* (commentary) (Inquiry as liberation — "Who would you be without your story?") <!-- corpus: Loving What Is -->

@@ -31,6 +31,8 @@ origin_date: ~170-180 CE
 era: ancient
 tradition: Roman Stoicism
 related_docs:
+  - sources/stoicism-enchiridion.md
+  - collections/socrates-foundations.md
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md
   - sources/philosophy-phaedo.md

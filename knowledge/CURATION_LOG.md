@@ -589,5 +589,39 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 - **Gaps served:** Provides a concise, practical distillation of Stoic ethics focused on the distinction between what is in our power and what is not.
 - **Graph impact:** Serves as the primary bridge between theoretical Stoic physics/logic and the practical "manual" of conduct that influenced centuries of Western moral thought.
 
+
+### A Declaration and an Information (Margaret Fell)
+- **Role:** source | **Domain:** philosophy | **Format:** manifesto
+- **Path:** `knowledge/sources/philosophy-fell-quaker-declaration.md`
+- **Curator:** shalom | **Tags:** quakerism, nonviolence, religious-freedom, 17th-century, margaret-fell, george-fox, pacifism
+- **Author:** Margaret Fell (et al.)
+- **Origin:** 1660 (early-modern)
+- **Tradition:** Quakerism
+- **Related:** sources/philosophy-the-journal-of-george-fox.md, sources/literature-narrative-of-sojourner-truth.md, sources/literature-civil-disobedience.md
+- **Gaps served:** Documents the foundational "Peace Testimony" of the Quakers and early-modern arguments for liberty of conscience.
+- **Graph impact:** Strengthens the nonviolence and civil disobedience clusters; bridges Quaker history with the "sovereign conscience" tradition of Thoreau and Tolstoy.
+
+### Women's Speaking Justified (Margaret Fell)
+- **Role:** source | **Domain:** philosophy | **Format:** treatise
+- **Path:** `knowledge/sources/philosophy-fell-womens-speaking-justified.md`
+- **Curator:** shalom | **Tags:** quakerism, feminist-theology, religious-freedom, gender-equality, 17th-century, margaret-fell, biblical-hermeneutics
+- **Author:** Margaret Fell
+- **Origin:** 1666 (early-modern)
+- **Tradition:** Quakerism
+- **Related:** sources/philosophy-fell-quaker-declaration.md, sources/literature-narrative-of-sojourner-truth.md, wiki/entities/margaret-fell.md
+- **Gaps served:** One of the earliest and most influential defenses of women's right to preach; provides a critical counter-interpretation to the Pauline prohibitions.
+- **Graph impact:** Strengthens the gender-equality and religious-freedom clusters; connects Quaker theology to modern feminist and egalitarian movements.
+
+### Ada Lovelace (Biography)
+- **Role:** source | **Domain:** science | **Format:** biography
+- **Path:** `knowledge/sources/science-lovelace-biography.md`
+- **Curator:** shalom | **Tags:** computing, mathematics, ada-lovelace, charles-babbage, 19th-century, feminist-history, technology, algorithms, aviation, neurobiology
+- **Author:** OpenCosmos Editorial
+- **Origin:** 2026-05-02 (modern-synthesis)
+- **Tradition:** History of Computing
+- **Related:** collections/optimus-foundations.md, wiki/entities/ada-lovelace.md
+- **Gaps served:** Provides an enriched, multi-faceted documentation of Lovelace's life, bridging her childhood aviation research with her foundational work on general-purpose computation.
+- **Graph impact:** Strengthens the science and technology nodes; provides a historical anchor for the 'poetical science' philosophy and the development of algorithms.
+
 ---
 

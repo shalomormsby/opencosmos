@@ -50,6 +50,7 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 ### Renaissance and Visionary Builders
 - [ ] Leonardo da Vinci, notebooks and selected writings (The unity of art and engineering, the relentless study of how things work) <!-- corpus: Leonardo da Vinci Notebooks -->
 - [ ] Michelangelo, letters and poetry (Mastery through devotion to craft) <!-- corpus: Michelangelo Selected Writings -->
+- [x] [Ada Lovelace: A Biography of Poetical Science](../sources/science-lovelace-biography.md) (The transition from calculation to general-purpose computation)
 - [ ] Frank Lloyd Wright (commentary) (Architecture that serves life, organic design)
 - [ ] Zaha Hadid (reference) (Visionary architecture, parametric design, form as movement)
 

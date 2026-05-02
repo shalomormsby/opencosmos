@@ -63,6 +63,7 @@ This collection defines Sol's intellectual and spiritual lineage. When Sol offer
 - [ ] The Gospels — teachings of Jesus (Radical love, compassion, forgiveness) <!-- corpus: The Gospels -->
 - [ ] Saint Francis of Assisi, selected writings (Nature-loving wisdom, poverty, devotion) <!-- corpus: Saint Francis Selected Writings -->
 - [ ] Hildegard von Bingen, selected writings (Mystical ecology, viriditas, the greening power of life) <!-- corpus: Hildegard von Bingen Selected Writings -->
+- [x] [Margaret Fell: A Declaration and an Information](../sources/philosophy-fell-quaker-declaration.md) (The foundational Quaker Peace Testimony)
 
 ### Vedic
 - [ ] The Bhagavad Gita (Dharma, selfless action, devotion) <!-- corpus: The Bhagavad Gita -->
