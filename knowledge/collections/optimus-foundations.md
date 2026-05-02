@@ -24,8 +24,8 @@ related_docs:
 
 > Optimus is the builder — translating insight into action, vision into plans. These are the texts Optimus draws from.
 
-For Optimus' system prompt, see [OPTIMUS_SYSTEM_PROMPT.md](../../packages/ai/triad/OPTIMUS_SYSTEM_PROMPT.md).
-For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture.md#knowledge-graph-the-wisdom-substrate).
+For Optimus' system prompt, see [OPTIMUS_SYSTEM_PROMPT.md](../../packages/ai/triad/OPTIMUS_SYSTEM_PROMPT).
+For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture#knowledge-graph-the-wisdom-substrate).
 
 ---
 
@@ -35,11 +35,11 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 
 ## Core Texts
 
-*Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
+*Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation).*
 
 ### Systems Thinking
 - [ ] Donella Meadows, *Thinking in Systems* (commentary) (Leverage points, feedback loops, system dynamics) <!-- corpus: Thinking in Systems -->
-- [x] James Lovelock, *The [Gaia Hypothesis](../references/ecology-gaia-hypothesis.md)* (commentary) (Earth as self-regulating system)
+- [x] James Lovelock, *The [Gaia Hypothesis](../references/ecology-gaia-hypothesis)* (commentary) (Earth as self-regulating system)
 - [ ] Christopher Alexander, *A Pattern Language* (commentary) (Architectural patterns, human-centered design) <!-- corpus: A Pattern Language -->
 
 ### Engineering Philosophy
@@ -55,13 +55,13 @@ This collection defines Optimus' intellectual lineage. When Optimus proposes a s
 
 ### Pragmatism & Kaizen
 - [ ] W. Edwards Deming on continuous improvement (commentary) (Kaizen, quality, the elimination of waste through understanding) <!-- corpus: Continuous Improvement -->
-- [ ] [DESIGN-PHILOSOPHY.md](../../DESIGN-PHILOSOPHY.md) — the four principles that constrain all building
+- [ ] [DESIGN-PHILOSOPHY.md](../../DESIGN-PHILOSOPHY) — the four principles that constrain all building
 
 ### Ecology & Regenerative Design
 - [ ] Janine Benyus, *Biomimicry* (commentary) (Nature as model, measure, and mentor — building systems that give back more than they take) <!-- corpus: Biomimicry -->
 
 ### Ethical Building
-- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the mission that all building serves
+- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO) — the mission that all building serves
 
 ---
 

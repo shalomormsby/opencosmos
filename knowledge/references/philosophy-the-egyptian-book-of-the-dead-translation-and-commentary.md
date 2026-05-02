@@ -3014,7 +3014,7 @@ Rise in Hotep, I arrive in thee, my soul is with me, and my provision is before 
 
 Let my arteries be made fast, and let me have the enjoyment of the Breeze.
 
-Rise in Hotep, blest with the Breeze, I arrive in thee, my head is uncovered: Rā sleepeth, but there waketh for me, and there shineth upon me Hesit [the Cow-goddess](9) who lieth at the confines of Heaven by night.
+Rise in Hotep, blest with the Breeze, I arrive in thee, my head is uncovered: Rā sleepeth, but there waketh for me, and there shineth upon me Hesit [the Cow-goddess] (9) who lieth at the confines of Heaven by night.
 
 He standeth in my way who heapeth against me his own dross.
 

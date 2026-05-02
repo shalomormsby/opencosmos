@@ -835,6 +835,8 @@ FILE_REGISTRY: Dict[str, tuple] = {
     'george-fox-autobiography':                  ('generic',),
     'journal-of-george-fox-vol-1':               ('generic',),
     'journal-of-george-fox-vol-2':               ('generic',),
+    'literature-narrative-of-sojourner-truth':   ('generic',),
+    'literature-diaries-of-court-ladies-of-old-japan': ('generic',),
     # NOTE: 'Autobiography of a Yogi by Paramahansa Yogananda' is intentionally
     # NOT registered — active copyright held by Self-Realization Fellowship (1946).
     # Do not publish this file.

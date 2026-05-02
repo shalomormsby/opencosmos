@@ -70,7 +70,7 @@ A Claude Code skill that prepares raw text files for publication. It adds markdo
 /groom --report                     # Show status of all incoming files
 ```
 
-See the full guide: [Formatting Raw Text for Publication](opencosmos-knowledge-formatting-guide.md)
+See the full guide: [Formatting Raw Text for Publication](opencosmos-knowledge-formatting-guide)
 
 ### `pnpm knowledge:publish` — Publish to the Corpus
 
@@ -89,7 +89,7 @@ Features beyond basic publishing:
 - **Curation log** — auto-appends an entry to `CURATION_LOG.md` with gaps served and graph impact
 - **Collection auto-linking** — if the title matches a foundation collection placeholder, updates the checkbox
 
-See the full guide: [Publishing to the Knowledge Base](opencosmos-knowledge-publish-workflow.md)
+See the full guide: [Publishing to the Knowledge Base](opencosmos-knowledge-publish-workflow)
 
 ### `pnpm knowledge:health` — Corpus Health Report
 
@@ -101,7 +101,7 @@ The overhead map. Shows the current state of the knowledge corpus: how many docu
 pnpm knowledge:health
 ```
 
-See the full guide: [Reading the Corpus Health Report](opencosmos-knowledge-health-report.md)
+See the full guide: [Reading the Corpus Health Report](opencosmos-knowledge-health-report)
 
 ### `pnpm knowledge:sync-dell` — Dell Sovereign Node Sync
 
@@ -114,7 +114,7 @@ pnpm knowledge:sync-dell             # Sync everything
 pnpm knowledge:sync-dell --dry-run   # Preview what would be synced
 ```
 
-See the full guide: [Syncing Knowledge to the Dell Sovereign Node](opencosmos-knowledge-dell-sync.md)
+See the full guide: [Syncing Knowledge to the Dell Sovereign Node](opencosmos-knowledge-dell-sync)
 
 ## Supporting Artifacts
 

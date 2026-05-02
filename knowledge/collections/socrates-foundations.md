@@ -24,8 +24,8 @@ related_docs:
 
 > Socrates is the gadfly — the relentless inquirer who questions everything, especially comfortable assumptions. These are the texts Socrates draws from.
 
-For Socrates' system prompt, see [SOCRATES_SYSTEM_PROMPT.md](../../packages/ai/triad/SOCRATES_SYSTEM_PROMPT.md).
-For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture.md#knowledge-graph-the-wisdom-substrate).
+For Socrates' system prompt, see [SOCRATES_SYSTEM_PROMPT.md](../../packages/ai/triad/SOCRATES_SYSTEM_PROMPT).
+For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture#knowledge-graph-the-wisdom-substrate).
 
 ---
 
@@ -35,10 +35,10 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 
 ## Core Texts
 
-*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
+*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation).*
 
 ### Dialectical Philosophy
-- [x] Plato's dialogues — [*Apology*](../sources/philosophy-apology.md), *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life)
+- [x] Plato's dialogues — [*Apology*](../sources/philosophy-apology), *Meno*, *Republic*, *Euthyphro*, *Gorgias*, *Phaedo*, *Phaedrus*, *Symposium*, *Theaetetus*, *Timaeus*, *Laws* (Socratic method, the examined life)
 - [ ] Epictetus, *Discourses* and *Enchiridion* (Stoic inquiry, what is and is not in our control, the discipline of assent) <!-- corpus: Discourses, Enchiridion -->
 - [ ] Marcus Aurelius, *Meditations* (Self-examination, impermanence, duty, the view from above) <!-- corpus: Meditations -->
 
@@ -57,7 +57,7 @@ This collection defines Socrates' intellectual lineage. When Socrates challenges
 - [ ] Cognitive behavioral frameworks (commentary) (The relationship between thoughts, feelings, and behavior — metacognition research)
 
 ### Ethics of Inquiry
-- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the ethical grounding that constrains all inquiry
+- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO) — the ethical grounding that constrains all inquiry
 
 ---
 

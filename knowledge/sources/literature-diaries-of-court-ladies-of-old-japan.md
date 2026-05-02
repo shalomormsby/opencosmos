@@ -30,7 +30,6 @@ tradition: heian court literature
 related_docs:
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md
-  - sources/literature-shakespeare-complete-works.md
   - sources/literature-shakespeare-sonnets.md
   - sources/literature-steppenwolf.md
 ---

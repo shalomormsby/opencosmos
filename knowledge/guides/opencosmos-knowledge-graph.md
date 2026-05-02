@@ -126,7 +126,7 @@ The graph page will load the SVG skeleton (from Redis preview) immediately, then
 
 ## How New Wiki Articles Appear
 
-1. **Write the article** following the [wiki workflow guide](opencosmos-knowledge-wiki-workflow.md). Place it in `knowledge/wiki/entities/`, `knowledge/wiki/concepts/`, or `knowledge/wiki/connections/`.
+1. **Write the article** following the [wiki workflow guide](opencosmos-knowledge-wiki-workflow). Place it in `knowledge/wiki/entities/`, `knowledge/wiki/concepts/`, or `knowledge/wiki/connections/`.
 
 2. **Include `synthesized_from` frontmatter** — this is what creates edges:
    ```yaml

@@ -76,7 +76,7 @@ The CLI needs a `.md` file with content only — no frontmatter needed. A few gu
 - Keep sections between 200-800 tokens for original writing. For public domain books and source texts with established chapter structures, preserve the original structure as-is — don't break chapters to fit token limits
 - Define terms inline — a retrieved chunk may appear without context. For example, write "eudaimonia (human flourishing)" rather than just "eudaimonia" with the definition in a separate glossary
 
-See the full guidelines in the [knowledge README](../README.md).
+See the full guidelines in the [knowledge README](../README).
 
 ## Running the CLI
 
@@ -181,7 +181,7 @@ knowledge/sources/buddhism-the-dhammapada.md
 
 The CLI appends an entry to `knowledge/CURATION_LOG.md` with the document's metadata, gaps served, and graph impact.
 
-If the document's title matches an unchecked placeholder in a foundation collection (e.g., `- [ ] The Dhammapada` in sol-foundations.md), the CLI updates the checkbox to a link: `- [x] [The Dhammapada](../sources/buddhism-the-dhammapada.md)`.
+If the document's title matches an unchecked placeholder in a foundation collection (e.g., `- [ ] The Dhammapada` in sol-foundations.md), the CLI updates the checkbox to a link: `- [x] [The Dhammapada](../sources/buddhism-the-dhammapada)`.
 
 Both changes are included in the same commit.
 

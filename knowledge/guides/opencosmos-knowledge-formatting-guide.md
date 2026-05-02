@@ -144,4 +144,4 @@ Once a file is formatted, publish it:
 pnpm knowledge:publish knowledge/incoming/euthyphro-plato --role source --domain philosophy
 ```
 
-The publication CLI generates frontmatter, moves the file to its correct location, and handles the git workflow. See the [Publishing Guide](opencosmos-knowledge-publish-workflow.md) for the full workflow.
+The publication CLI generates frontmatter, moves the file to its correct location, and handles the git workflow. See the [Publishing Guide](opencosmos-knowledge-publish-workflow) for the full workflow.

@@ -20,10 +20,10 @@ Four collections define the intellectual foundation for each AI voice in the Tri
 
 | Collection | Voice | Domain |
 |------------|-------|--------|
-| [cosmo-foundations.md](cosmo-foundations.md) | Cosmo | Integrative, cross-tradition texts — the bridges between wisdom traditions |
-| [sol-foundations.md](sol-foundations.md) | Sol | Contemplative and relational wisdom: Buddhism, Sufism, Vedic, ubuntu, indigenous traditions |
-| [socrates-foundations.md](socrates-foundations.md) | Socrates | Dialectical inquiry, epistemology, Stoicism, critical philosophy, science |
-| [optimus-foundations.md](optimus-foundations.md) | Optimus | Systems thinking, engineering, AI, pragmatic philosophy, organizational design |
+| [cosmo-foundations.md](cosmo-foundations) | Cosmo | Integrative, cross-tradition texts — the bridges between wisdom traditions |
+| [sol-foundations.md](sol-foundations) | Sol | Contemplative and relational wisdom: Buddhism, Sufism, Vedic, ubuntu, indigenous traditions |
+| [socrates-foundations.md](socrates-foundations) | Socrates | Dialectical inquiry, epistemology, Stoicism, critical philosophy, science |
+| [optimus-foundations.md](optimus-foundations) | Optimus | Systems thinking, engineering, AI, pragmatic philosophy, organizational design |
 
 When a voice is active in a conversation, its foundation collection is the first-priority region of the knowledge graph to search. Sol responding to a question about grief draws from the Sol foundations. Socrates challenging an assumption draws from the Socrates foundations.
 
@@ -35,9 +35,9 @@ These collections are referenced from within each voice's system prompt and are 
 
 | Collection | What it is |
 |------------|------------|
-| [philosophy-gleanings-from-george-fox.md](philosophy-gleanings-from-george-fox.md) | Curated selections from George Fox's journals — a thematic reading path through his spiritual insights |
-| [literature-poems-of-nature-by-henry-david-thoreau.md](literature-poems-of-nature-by-henry-david-thoreau.md) | Thoreau's nature poetry — a standalone reading collection |
-| [philosophy-essays-by-ralph-waldo-emerson.md](philosophy-essays-by-ralph-waldo-emerson.md) | Emerson's essays — curated reading order through the Transcendentalist canon |
+| [philosophy-gleanings-from-george-fox.md](philosophy-gleanings-from-george-fox) | Curated selections from George Fox's journals — a thematic reading path through his spiritual insights |
+| [literature-poems-of-nature-by-henry-david-thoreau.md](literature-poems-of-nature-by-henry-david-thoreau) | Thoreau's nature poetry — a standalone reading collection |
+| [philosophy-essays-by-ralph-waldo-emerson.md](philosophy-essays-by-ralph-waldo-emerson) | Emerson's essays — curated reading order through the Transcendentalist canon |
 
 ---
 
@@ -58,7 +58,7 @@ The `role: collection` field tells the RAG system and the docs site how to treat
 
 ## Related
 
-- [knowledge/README.md](../README.md) — Full corpus organization and frontmatter schema
+- [knowledge/README.md](../README) — Full corpus organization and frontmatter schema
 - [knowledge/sources/](../sources/) — The source documents collections point to
-- [packages/ai/triad/README.md](../../packages/ai/triad/README.md) — The AI voices these collections ground
-- [knowledge/wiki/index.md](../wiki/index.md) — Synthesized cross-tradition concept pages (the layer above sources)
+- [packages/ai/triad/README.md](../../packages/ai/triad/README) — The AI voices these collections ground
+- [knowledge/wiki/index.md](../wiki/index) — Synthesized cross-tradition concept pages (the layer above sources)
