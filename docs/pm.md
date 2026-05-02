@@ -18,9 +18,6 @@
     - Add graceful error message when tokens are used up, or when there's an API error, or other error states
     - Token gauge: Make the green ∞ display in the sidebar the same size as it displays on the account page
     - Voice UI: Analyze the cost of adding voice using elevenlabs, Flash model. 
-- OpenCosmos Home page: 
-    - Replace inert text with streaming text greeting
-    - Fix alignment issue of sphere on home page
 - Account page: 
     - Enable users to upload profile photos (~5MB max), which, when displayed, show instead of their initials in their account icon.
 
@@ -253,7 +250,7 @@ Corpus
 
 **Rule of thumb:** if a file contains ≥ 2 works that a reader would cite separately, split them.
 
-##### 4. Quote substrate: YAML files in `knowledge/quotes/`
+##### 4. Quote substrate (moved below) YAML files in `knowledge/quotes/`
 
 ~1,800 quotes incoming. A quote has fundamentally different shape from a work (fragment, not whole):
 
@@ -306,14 +303,6 @@ type QuoteRecord = {                   // NEW — for knowledge/quotes/*.yaml
 
 `work_type` required on every new/cleaned source doc. Backfill: walk `knowledge/sources/` → `work`, `knowledge/collections/` → `collection`, `knowledge/references/` → `reference`, `knowledge/wiki/` → `wiki`. Human review where ambiguous.
 
-##### 6. Cosmo-in-Knowledge-sidebar ✅ Done
-
-Cosmo embedded in the Knowledge route's left sidebar, with duplicate Dialog/Knowledge/Studio nav items removed.
-- Extract `CosmoChatPanel` from `CosmoChat.tsx`; lift state into `useCosmoSession()`. ✅
-- Add `sidebarContent` slot prop to `AppShell`. ✅
-- Mobile fallback (< 1024px): floating action button with bottom sheet. ✅
-- Grounding: reads `sessionStorage['cosmo_context']` — automatic integration with `current_section` / `current_passage`. ✅
-
 #### Phased implementation
 
 ##### Phase 0 — Verify + commit quick wins (today, 15 min)
@@ -343,33 +332,7 @@ Already implemented in this session; pending localhost verification:
 
 **Strip the remaining 22 H1-in-body files** as the first corpus-wide application of the patched skill.
 
-##### Phase 2 — Split monoliths (1 day)
-
-**New skill:** `.claude/skills/split-collection/SKILL.md` — splits a multi-work file into per-work files + slim collection index.
-
-**Procedure (Shakespeare):**
-
-1. Parse the 5.3MB file by H2 headings. Each matching H2 is a work boundary.
-2. Map heading title → slug (`Hamlet, Prince of Denmark` → `hamlet`; `Henry IV, Part 1` → `henry-iv-part-1`).
-3. For each work, create `knowledge/sources/shakespeare/{slug}.md`:
-   - Frontmatter: copy from collection file, override `title`, set `work_type: 'work'`, `parent_work: sources/literature-the-complete-works-of-william-shakespeare.md`, infer `format` from heading pattern.
-   - Body: from the H2 to the next H2, downshifted one level.
-4. Sonnets: 154 sonnets become H2 sections within `knowledge/sources/shakespeare/sonnets.md`.
-5. Rewrite original collection file as slim pointer:
-   ```yaml
-   ---
-   title: "The Complete Works of William Shakespeare"
-   role: collection
-   work_type: collection
-   author: William Shakespeare
-   related_docs:
-     - sources/shakespeare/hamlet.md
-     # ... 37 more ...
-   ---
-   ```
-6. Run patched `/standardize-knowledge` on every new per-work file.
-
-Apply to: Shakespeare, Whitman (H2-per-poem, no split), Gibran Forerunner (H2-per-parable, no split), Khayyám+Salámán (two-file split), Walden+Civil Disobedience (extract Walden, deprecate combined).
+##### Phase 2 — Split monoliths (1 day) ✅ Done
 
 ##### Phase 3 — Quote infrastructure (1–2 days)
 
