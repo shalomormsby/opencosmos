@@ -3,7 +3,7 @@ title: Meditations
 work_type: work
 role: source
 format: aphorisms
-domain: philosophy
+domain: stoicism
 tags:
   - stoicism
   - gratitude

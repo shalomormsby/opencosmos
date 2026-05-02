@@ -3,7 +3,7 @@ title: The Enchiridion
 work_type: work
 role: source
 format: manual
-domain: philosophy
+domain: stoicism
 tags:
   - stoicism
   - ethics

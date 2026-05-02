@@ -568,7 +568,7 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 ## 2026-05-02
 
 ### Meditations
-- **Role:** source | **Domain:** philosophy | **Format:** aphorisms
+- **Role:** source | **Domain:** stoicism | **Format:** aphorisms
 - **Path:** `knowledge/sources/stoicism-meditations.md`
 - **Curator:** shalom | **Tags:** stoicism, gratitude, self-reflection, virtue, ethics, leadership
 - **Author:** Marcus Aurelius
@@ -579,7 +579,7 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 - **Graph impact:** Connects Roman Stoic practice to universal ethics, resilience, and the internal struggle for moral consistency in positions of power.
 
 ### The Enchiridion
-- **Role:** source | **Domain:** philosophy | **Format:** manual
+- **Role:** source | **Domain:** stoicism | **Format:** manual
 - **Path:** `knowledge/sources/stoicism-enchiridion.md`
 - **Curator:** shalom | **Tags:** stoicism, ethics, self-discipline, epictetus, logic
 - **Author:** Epictetus
