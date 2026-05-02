@@ -115,13 +115,16 @@ function chunkAtHeadings(body: string): Array<{ heading: string; parentHeading?:
   const markdownH2 = /^## (.+)$/
   // Matches:  ### Heading
   const markdownH3 = /^### (.+)$/
+  // Matches:  #### Heading
+  const markdownH4 = /^#### (.+)$/
   // Matches:  CHAPTER I.  /  CHAPTER IV  /  CHAPTER 3. Some Title
   const chapterHeading = /^(CHAPTER\s+[IVXLCDM\d]+\.?\s*.*)$/i
 
   for (const line of lines) {
     const h2Match = line.match(markdownH2)
     const h3Match = !h2Match ? line.match(markdownH3) : null
-    const chapterMatch = !h2Match && !h3Match ? line.match(chapterHeading) : null
+    const h4Match = !h2Match && !h3Match ? line.match(markdownH4) : null
+    const chapterMatch = !h2Match && !h3Match && !h4Match ? line.match(chapterHeading) : null
 
     if (h2Match || chapterMatch) {
       sections.push({ heading: currentHeading, parentHeading: currentParent, rawLines: currentLines })
@@ -130,10 +133,10 @@ function chunkAtHeadings(body: string): Array<{ heading: string; parentHeading?:
       currentHeading = newHeading
       currentParent = undefined  // H2 has no parent
       currentLines = []
-    } else if (h3Match) {
+    } else if (h3Match || h4Match) {
       sections.push({ heading: currentHeading, parentHeading: currentParent, rawLines: currentLines })
-      currentHeading = h3Match[1].trim()
-      currentParent = lastH2Heading  // H3 belongs to the most recent H2
+      currentHeading = (h3Match?.[1] ?? h4Match?.[1])!.trim()
+      currentParent = lastH2Heading  // Nested sections belong to the most recent H2
       currentLines = []
     } else {
       currentLines.push(line)
@@ -226,13 +229,12 @@ function buildChunks(filePath: string): VectorChunk[] {
 
   return sections
     .filter(s => s.text.length > 80) // skip trivially short chunks
-    .map(s => {
-      // H3 chunks get compound IDs: path#parent-slug/child-slug
-      const parentSlug = s.parentHeading ? slugify(s.parentHeading) : null
+    .map((s, idx) => {
+      // IDs are deterministic: path#sequence-slug
+      // We include a sequence number (chunk index) to guarantee uniqueness within a file,
+      // as some works (like Leaves of Grass) have duplicate poem/section titles.
       const headingSlug = slugify(s.heading)
-      const id = parentSlug
-        ? `${relPath}#${parentSlug}/${headingSlug}`
-        : `${relPath}#${headingSlug}`
+      const id = `${relPath}#${idx.toString().padStart(3, '0')}-${headingSlug}`
 
       // Section label for embedding: "Book II > Chapter III" for nested, "Chapter III" for flat
       const sectionLabel = s.parentHeading
@@ -256,7 +258,7 @@ function buildChunks(filePath: string): VectorChunk[] {
         title,
         domain,
         role,
-        tags,
+        tags, // Upstash Vector supports string arrays
         audience,
         text: storedText,
       }
@@ -302,9 +304,16 @@ async function main() {
   let upserted = 0
   for (let i = 0; i < allChunks.length; i += BATCH_SIZE) {
     const batch = allChunks.slice(i, i + BATCH_SIZE)
-    await index.upsert(batch)
-    upserted += batch.length
-    process.stdout.write(`  ${upserted}/${allChunks.length}\r`)
+    try {
+      await index.upsert(batch)
+      upserted += batch.length
+      process.stdout.write(`  ${upserted}/${allChunks.length}\r`)
+    } catch (err) {
+      console.error(`\n❌ Batch upsert failed at index ${i}:`, err)
+      // Log the first few IDs in the batch to help debug
+      console.error(`   First ID in batch: ${batch[0]?.id}`)
+      throw err // Still fail the CI, but with better info
+    }
   }
 
   console.log(`\n✅ Done — ${allChunks.length} chunks upserted to Upstash Vector`)
