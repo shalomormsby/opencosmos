@@ -1,23 +1,35 @@
 ---
-title: Meditations role: source
-work_type: work format: aphorisms
-domain: stoicism tags:
+title: Meditations
+work_type: work
+role: source
+format: aphorisms
+domain: philosophy
+tags:
+  - stoicism
   - gratitude
-  - mentorship
-  - character-development
+  - self-reflection
   - virtue
-  - philosophical-education
-  - self-reflection audience:
+  - ethics
+  - leadership
+audience:
+  - seeker
+  - leader
   - philosopher
-  - contemplative
-  - general complexity: intermediate
+complexity: intermediate
 summary: >-
-  Marcus Aurelius reflects on the virtues and lessons learned from his teachers, family members, and mentors who shaped his character and philosophical
-  outlook. This opening book of the Meditations serves as a profound expression of gratitude for those who guided his moral and intellectual development.
+  The personal private reflections of the Roman Emperor Marcus Aurelius, 
+  Meditations is a series of spiritual exercises and philosophical reflections
+  composed for his own guidance. It explores themes of duty, impermanence, 
+  rationality, and the pursuit of inner peace within the framework of 
+  Stoic philosophy.
 curated_at: '2026-05-02'
-curator: shalom source: public-domain
-author: Marcus Aurelius origin_date: ~170-180 CE
-era: ancient tradition: roman-stoicism
+curator: shalom
+source: public-domain
+author: Marcus Aurelius
+translator: George Long
+origin_date: ~170-180 CE
+era: ancient
+tradition: Roman Stoicism
 related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md
