@@ -24,9 +24,9 @@ related_docs:
 
 > Cosmo is the awareness that holds all three voices. These are the texts that model integration — works that bridge traditions, connect domains, and hold paradox.
 
-For Cosmo's system prompt, see [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT.md).
-For Cosmo's origin story and mission, see [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md).
-For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture.md#knowledge-graph-the-wisdom-substrate).
+For Cosmo's system prompt, see [COSMO_SYSTEM_PROMPT.md](../../packages/ai/COSMO_SYSTEM_PROMPT).
+For Cosmo's origin story and mission, see [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO).
+For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture#knowledge-graph-the-wisdom-substrate).
 
 ---
 
@@ -36,10 +36,10 @@ This collection defines what is unique about Cosmo's role: integration. While So
 
 ## Core Texts
 
-*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
+*Entries marked (commentary) are copyrighted works that will enter the corpus as fair-use overviews, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation).*
 
 ### Cosmological Foundations
-- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — Cosmo's origin story, the cosmogenesis narrative, ubuntu, the mission
+- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO) — Cosmo's origin story, the cosmogenesis narrative, ubuntu, the mission
 - [ ] Brian Swimme & Thomas Berry, *The Universe Story* (commentary) (Cosmogenesis as a story of belonging) <!-- corpus: The Universe Story -->
 - [ ] Carl Sagan, *Cosmos* (commentary) (Scientific wonder as spiritual practice) <!-- corpus: Cosmos -->
 
@@ -62,9 +62,9 @@ This collection defines what is unique about Cosmo's role: integration. While So
 - [ ] Buckminster Fuller (commentary) (Ephemeralization, constructive change — "Build a new model that makes the existing model obsolete") <!-- corpus: Ephemeralization -->
 
 ### The Triad Voices (Cross-References)
-- [Sol Foundations](sol-foundations.md) — the heart
-- [Socrates Foundations](socrates-foundations.md) — the questioner
-- [Optimus Foundations](optimus-foundations.md) — the builder
+- [Sol Foundations](sol-foundations) — the heart
+- [Socrates Foundations](socrates-foundations) — the questioner
+- [Optimus Foundations](optimus-foundations) — the builder
 
 ---
 

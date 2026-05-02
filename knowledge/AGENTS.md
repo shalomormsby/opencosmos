@@ -228,7 +228,7 @@ This corpus exists within a larger system. Understanding that system helps you s
 
 **Foundation Model:** Apertus (8B and 70B parameters), an open-source model from the Swiss AI consortium (EPFL, ETH Zurich, CSCS). Available locally as `apertus:latest` (8B) and `apertus-70b:latest` (70B Q4_K_M) via Ollama.
 
-For the full technical blueprint, see [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION.md) (historical).
+For the full technical blueprint, see [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION) (historical).
 
 ---
 

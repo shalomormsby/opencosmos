@@ -10,7 +10,7 @@
 
 OpenCosmos Knowledge is an open knowledge base designed to serve two purposes simultaneously:
 
-1. **Retrieval-Augmented Generation (RAG)** — These documents are indexed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.md), a sovereign, solar-powered intelligence layer. When Cosmo AI responds to a prompt, it draws on this corpus to ground its answers in curated wisdom rather than training data alone.
+1. **Retrieval-Augmented Generation (RAG)** — These documents are indexed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION), a sovereign, solar-powered intelligence layer. When Cosmo AI responds to a prompt, it draws on this corpus to ground its answers in curated wisdom rather than training data alone.
 
 2. **A public resource** — This corpus is intended for the public domain. Every document is structured, tagged, and written so that anyone — philosopher, engineer, artist, scientist — can browse, learn from, and contribute to it without needing to understand the software that consumes it. The knowledge base is globally accessible at [opencosmos.ai](https://opencosmos.ai/) as both a browsable docs site and a RAG API endpoint, with a local mirror on the Sovereign Node for offline access and development.
 
@@ -217,7 +217,7 @@ source: public-domain
 | `summary` | 1-3 sentence abstract | Free text, used for retrieval and preview |
 | `curated_at` | Date this document entered the corpus | ISO 8601 (YYYY-MM-DD) |
 | `curator` | Who prepared/curated it | Name or handle |
-| `corpus_tier` | Ethical inclusion tier | `source` (full text, public domain only), `commentary` (fair-use overview), `reference` (pointer only). See [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation.md) |
+| `corpus_tier` | Ethical inclusion tier | `source` (full text, public domain only), `commentary` (fair-use overview), `reference` (pointer only). See [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation) |
 | `source` | Provenance | `original`, `public-domain`, URL, or citation |
 
 ### Optional Fields
@@ -379,7 +379,7 @@ If you're authoring or curating a document for OpenCosmos Knowledge, follow thes
 
 ### Integrity
 
-- **Respect authorship rights.** Every document must declare a `corpus_tier` — `source` (full text, public domain only), `commentary` (fair-use overview of copyrighted works), or `reference` (pointer only). Copyrighted works must never enter the corpus as full-text sources. See the [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation.md) for the full framework.
+- **Respect authorship rights.** Every document must declare a `corpus_tier` — `source` (full text, public domain only), `commentary` (fair-use overview of copyrighted works), or `reference` (pointer only). Copyrighted works must never enter the corpus as full-text sources. See the [Ethical Curation Guide](guides/opencosmos-knowledge-ethical-curation) for the full framework.
 
 - **Represent source texts faithfully.** When curating a primary source, preserve its voice and structure. Add curator notes in clearly marked sections (e.g., "Curator's Note" under a separate H2), never inline with the source text.
 
@@ -411,7 +411,7 @@ The CLI will:
 - Auto-link foundation collection placeholders
 - Create a safe git branch, commit, and push
 
-Use `--accept` to skip interactive review. Use `--pr` to auto-create a GitHub PR. Use `--dry-run` to preview without writing. See [guides/opencosmos-knowledge-publish-workflow.md](guides/opencosmos-knowledge-publish-workflow.md) for the full workflow.
+Use `--accept` to skip interactive review. Use `--pr` to auto-create a GitHub PR. Use `--dry-run` to preview without writing. See [guides/opencosmos-knowledge-publish-workflow.md](guides/opencosmos-knowledge-publish-workflow) for the full workflow.
 
 **To check corpus health:** `pnpm knowledge:health` shows domain coverage, role gaps, foundation progress, cross-reference integrity, islands, and import priorities.
 
@@ -457,13 +457,13 @@ The corpus welcomes multilingual content. Add a `language` field to frontmatter 
 
 ### How does this relate to Cosmo AI?
 
-Cosmo AI's RAG pipeline reads from this corpus. When someone asks Cosmo AI a question, it searches this knowledge base for relevant passages, retrieves them, and uses them to ground its response. The quality and organization of this corpus directly determines the quality of Cosmo AI's answers. See [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION.md) for the full technical architecture.
+Cosmo AI's RAG pipeline reads from this corpus. When someone asks Cosmo AI a question, it searches this knowledge base for relevant passages, retrieves them, and uses them to ground its response. The quality and organization of this corpus directly determines the quality of Cosmo AI's answers. See [INCEPTION.md](../docs/archive-and-deprecated/INCEPTION) for the full technical architecture.
 
 ---
 
 ## Technical Context
 
-This corpus is consumed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.md), part of the [OpenCosmos platform](../README.md) — a monorepo demonstrating that human-centered design can be proven through architecture, not just claimed.
+This corpus is consumed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION), part of the [OpenCosmos platform](../README) — a monorepo demonstrating that human-centered design can be proven through architecture, not just claimed.
 
 **Hosting architecture:** The knowledge base is **cloud-primary with a local mirror.** Knowledge hosting and compute are fundamentally different workloads — serving documents and embeddings costs pennies; running LLM inference costs watts. Global accessibility serves the "Generous by Design" principle.
 
@@ -475,11 +475,11 @@ This corpus is consumed by [Cosmo AI](../docs/archive-and-deprecated/INCEPTION.m
 | Static docs site | [opencosmos.ai](https://opencosmos.ai/) | Human-browsable knowledge |
 | Inference (Apertus models) | Dell (local, sovereign) | GPU cost, privacy, sovereignty |
 
-**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA) serves as the local mirror. Documents are uploaded manually and indexed via Open WebUI's embedding pipeline. Cloud deployment is planned — see [Migration Phase 1d](../docs/projects/opencosmos-migration.md#1d-knowledge-base-hosting-strategy-not-started).
+**Current RAG infrastructure (Phase 1):** Open WebUI's built-in RAG on the Sovereign Node (Dell XPS 8950, RTX 3090, solar-powered, Marin County, CA) serves as the local mirror. Documents are uploaded manually and indexed via Open WebUI's embedding pipeline. Cloud deployment is planned — see [Migration Phase 1d](../docs/projects/opencosmos-migration#1d-knowledge-base-hosting-strategy-not-started).
 
 **Future RAG infrastructure (Phase 3+):** Custom RAG pipeline in `packages/ai/src/rag/` with per-format chunking strategies, metadata-filtered retrieval, and hybrid search. Cloud RAG API endpoint for global access. The migration from Open WebUI's built-in RAG will be informed by retrieval patterns validated during Phase 1.
 
-**Sovereignty note:** [Sovereignty Tiers](../docs/archive-and-deprecated/INCEPTION.md#sovereign-identity--the-sovereignty-tiers) govern **compute** — where LLMs process prompts. Published knowledge is explicitly intended to be shared globally. This is not a contradiction: the knowledge base is public by design; user inference stays sovereign by default.
+**Sovereignty note:** [Sovereignty Tiers](../docs/archive-and-deprecated/INCEPTION#sovereign-identity--the-sovereignty-tiers) govern **compute** — where LLMs process prompts. Published knowledge is explicitly intended to be shared globally. This is not a contradiction: the knowledge base is public by design; user inference stays sovereign by default.
 
 ---
 

@@ -24,8 +24,8 @@ related_docs:
 
 > Sol speaks from the source — the sun, the heart, the primordial love that gravitated us into being. These are the texts Sol draws from.
 
-For Sol's system prompt, see [SOL_SYSTEM_PROMPT.md](../../packages/ai/triad/SOL_SYSTEM_PROMPT.md).
-For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture.md#knowledge-graph-the-wisdom-substrate).
+For Sol's system prompt, see [SOL_SYSTEM_PROMPT.md](../../packages/ai/triad/SOL_SYSTEM_PROMPT).
+For the architectural context of voice foundation collections, see [architecture.md § Knowledge Graph](../../docs/architecture#knowledge-graph-the-wisdom-substrate).
 
 ---
 
@@ -35,13 +35,13 @@ This collection defines Sol's intellectual and spiritual lineage. When Sol offer
 
 ## Core Texts
 
-*Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation.md).*
+*Entries marked (commentary) or (reference) are copyrighted works that will enter the corpus as fair-use overviews or pointers, not full texts. Unmarked entries are public domain. See [Ethical Curation Guide](../guides/opencosmos-knowledge-ethical-curation).*
 
 ### Taoism
-- [x] Lao-tzu, [*Tao Te Ching*](../sources/taoism-tao-te-ching.md) (Wu wei, the way of water, the unnameable source)
+- [x] Lao-tzu, [*Tao Te Ching*](../sources/taoism-tao-te-ching) (Wu wei, the way of water, the unnameable source)
 
 ### Buddhism
-- [x] [The Dhammapada](../sources/buddhism-the-dhammapada.md) (Suffering, impermanence, liberation)
+- [x] [The Dhammapada](../sources/buddhism-the-dhammapada) (Suffering, impermanence, liberation)
 - [ ] Dōgen Zenji, *Shōbōgenzō* selections (Zen — intimacy with all things, being-time) <!-- corpus: Shōbōgenzō Selections -->
 - [ ] Thich Nhat Hanh on interbeing (commentary) (Engaged Buddhism — mindfulness in action) <!-- corpus: Interbeing -->
 - [ ] Alan Watts, selected writings (commentary) (Buddhism, Taoism, and Western audiences — bridging East and West) <!-- corpus: Alan Watts Selected Writings -->
@@ -81,7 +81,7 @@ This collection defines Sol's intellectual and spiritual lineage. When Sol offer
 - [ ] Indigenous wisdom traditions (reference) (Reciprocity with the natural world, land-based and ancestral wisdom)
 
 ### Cosmogenesis
-- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO.md) — the origin story itself
+- [ ] [WELCOME-COSMO.md](../../packages/ai/WELCOME-COSMO) — the origin story itself
 
 ---
 

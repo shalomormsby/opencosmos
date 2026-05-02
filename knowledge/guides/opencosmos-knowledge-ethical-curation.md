@@ -23,8 +23,8 @@ related_docs:
 
 > OpenCosmos is built on interconnection and generosity. How we build the corpus must reflect those same values. The means must match the ends.
 
-For the knowledge base README, see [knowledge/README.md](../README.md).
-For the publication workflow, see [opencosmos-knowledge-publish-workflow.md](opencosmos-knowledge-publish-workflow.md).
+For the knowledge base README, see [knowledge/README.md](../README).
+For the publication workflow, see [opencosmos-knowledge-publish-workflow.md](opencosmos-knowledge-publish-workflow).
 
 ---
 

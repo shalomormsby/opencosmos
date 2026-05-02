@@ -38,7 +38,7 @@ related_docs:
 
 This guide defines the structural template for writing system prompts across the AI Triad. Two complementary templates work together: one for the three voices (Sol, Socrates, Optimus), one for Cosmo, the orchestrator. Structural consistency across all four prompts gives Cosmo a uniform interface — it can extract, compare, and weigh the same dimensions across every voice without interpreting three different document shapes.
 
-For the AI Triad architecture, see [architecture.md § The AI Triad](../../docs/architecture.md#the-ai-triad). For each voice's current system prompt, see [packages/ai/triad/](../../packages/ai/triad/).
+For the AI Triad architecture, see [architecture.md § The AI Triad](../../docs/architecture#the-ai-triad). For each voice's current system prompt, see [packages/ai/triad/](../../packages/ai/triad/).
 
 ---
 

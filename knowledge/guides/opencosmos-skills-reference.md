@@ -162,7 +162,7 @@ This updates all wiki pages affected by the newly published document. The trigge
 - Add frontmatter (the publication CLI handles that)
 - Split or delete files
 
-See the full reference: [Formatting Raw Text for Publication](/knowledge/guides/opencosmos-knowledge-formatting-guide)
+See the full reference: [Formatting Raw Text for Publication](../guides/opencosmos-knowledge-formatting-guide)
 
 ---
 
@@ -214,7 +214,7 @@ contradictions:
 
 **Confidence lifecycle:** `speculative` (initial synthesis) → `medium` (confirmed by 3+ sources) → `high` (4+ sources, contradictions documented) → `superseded` (contradicted by new evidence)
 
-See the full reference: [Knowledge Wiki Workflow](opencosmos-knowledge-wiki-workflow.md)
+See the full reference: [Knowledge Wiki Workflow](opencosmos-knowledge-wiki-workflow)
 
 ---
 
