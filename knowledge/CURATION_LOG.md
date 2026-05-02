@@ -567,9 +567,9 @@ A living record of what was added to the knowledge corpus, when, and why it matt
 
 ## 2026-05-02
 
-### Meditations - Book I
+### Meditations
 - **Role:** source | **Domain:** stoicism | **Format:** aphorisms
-- **Path:** `knowledge/sources/stoicism-meditations-book-i.md`
+- **Path:** `knowledge/sources/stoicism-meditations.md`
 - **Curator:** shalom | **Tags:** gratitude, mentorship, character-development, virtue, philosophical-education, self-reflection
 - **Author:** Marcus Aurelius
 - **Origin:** ~170-180 CE (ancient)
