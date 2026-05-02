@@ -28,6 +28,11 @@ author: Epictetus
 translator: Elizabeth Carter (Revised)
 origin_date: ~125 CE
 era: ancient
+related_docs:
+  - sources/stoicism-meditations.md
+  - collections/socrates-foundations.md
+  - sources/philosophy-crito.md
+  - sources/philosophy-apology.md
 ---
 
 # The Enchiridion

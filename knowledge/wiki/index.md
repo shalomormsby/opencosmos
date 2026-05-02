@@ -2,7 +2,7 @@
 
 > LLM-synthesized concept pages, entity summaries, and cross-tradition connections. Updated by `/knowledge-compile`. Always loaded in Claude's context via `@knowledge/wiki/index.md` in `.claude/CLAUDE.md`.
 
-**Last updated:** 2026-05-01
+**Last updated:** 2026-05-02
 
 ---
 
@@ -20,12 +20,16 @@
 | [entities/spinoza-baruch.md](entities/spinoza-baruch) | Dutch-Jewish philosopher (1632–1677); The Ethics; God = Nature, the conatus, freedom through understanding, amor intellectualis Dei |
 | [entities/tolstoy-leo.md](entities/tolstoy-leo) | Russian novelist and Christian anarchist (1828–1910); The Kingdom of God Is Within You; absolute nonviolence, the state as organized violence, direct influence on Gandhi |
 | [entities/george-fox.md](entities/george-fox) | English founder of the Quakers (1624–1691); 4 sources; the Inner Light, direct experience, radical equality, peace testimony |
+| [entities/margaret-fell.md](entities/margaret-fell) | "Mother of Quakerism" (1614–1702); Declaration and an Information + Women's Speaking Justified; foundational Peace Testimony, feminist theology, and gender equality |
+| [entities/ada-lovelace.md](entities/ada-lovelace) | "Enchantress of Number" (1815–1852); Note G + Flyology; first computer programmer, poetical science, and visionary of general-purpose computation |
 | [entities/gibran-kahlil.md](entities/gibran-kahlil) | Lebanese-American poet (1883–1931); The Forerunner, The Madman; social masks, the madman as liberated self, pain as transformation |
 | [entities/omar-khayyam.md](entities/omar-khayyam) | Persian polymath and poet (1048–1131); Rubáiyát; agnostic carpe diem, failure of religious epistemology, the present as the only certain good |
 | [entities/shakespeare-william.md](entities/shakespeare-william) | English playwright (1564–1616); works in the corpus split into 43 individual documents; Hamlet, Lear, The Tempest, Sonnets — dramatizes self, mortality, power, and justice without resolving them |
 | [entities/bhagavad-gita.md](entities/bhagavad-gita) | Hindu scripture (traditional); dharma, atman, karma yoga, bhakti yoga; Arjuna's dilemma as the paradigm case of civic duty and nonviolence in tension |
 | [entities/heian-court-literature.md](entities/heian-court-literature) | Classical Japanese women's writing (10th-11th century); Izumi Shikibu, Lady Sarashina; aesthetic sensitivity ("mono no aware") as a path to spiritual and philosophical insight |
 | [entities/truth-sojourner.md](entities/truth-sojourner) | American abolitionist and activist (c. 1797–1883); Narrative; embodied justice, spiritual integrity under oppression, intersectionality of race and gender |
+| [entities/epictetus.md](entities/epictetus) | Greek Stoic philosopher (c. 50–135 CE); Enchiridion; dichotomy of control, sovereign will, and the discipline of assent |
+| [entities/marcus-aurelius.md](entities/marcus-aurelius) | Roman Emperor (161–180 CE); Meditations; the inner citadel, amor fati, and the practical application of Stoicism to leadership |
 
 ---
 
