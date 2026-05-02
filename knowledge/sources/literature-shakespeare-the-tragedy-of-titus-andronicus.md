@@ -25,35 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Rome. Before the Capitol
-
-### Act II
- Scene I. Rome. Before the palace
- Scene II. A Forest near Rome; a Lodge seen at a distance. Horns and cry of hounds heard
- Scene III. A lonely part of the Forest
- Scene IV. Another part of the Forest
-
-### Act III
- Scene I. Rome. A street
- Scene II. Rome. A Room in Titus’s House. A banquet set out
-
-### Act IV
- Scene I. Rome. Before Titus’s House
- Scene II. Rome. A Room in the Palace
- Scene III. Rome. A public Place
- Scene IV. Rome. Before the Palace
-
-### Act V
- Scene I. Plains near Rome
- Scene II. Rome. Before Titus’s House
- Scene III. Rome. A Pavilion in Titus’s Gardens, with tables, &c.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 SATURNINUS, elder son to the late Emperor of Rome, afterwards Emperor
 BASSIANUS, brother to Saturninus
@@ -90,7 +62,7 @@ Goths and Romans
 
 Tribunes, Senators, Officers, Soldiers, and Attendants
 
-SCENE: Rome, and the Country near it
+**SCENE:** Rome, and the Country near it
 
 
 

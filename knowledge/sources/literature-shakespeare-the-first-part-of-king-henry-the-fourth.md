@@ -25,40 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. London. A Room in the Palace.
-Scene II. The same. An Apartment of Prince Henry’s.
-Scene III. The Same. A Room in the Palace.
-
-### Act II
-Scene I. Rochester. An Inn-Yard.
-Scene II. The Road by Gads-hill.
-Scene III. Warkworth. A Room in the Castle.
-Scene IV. Eastcheap. A Room in the Boar’s Head Tavern.
-
-### Act III
-Scene I. Bangor. A Room in the Archdeacon’s House.
-Scene II. London. A Room in the Palace.
-Scene III. Eastcheap. A Room in the Boar’s Head Tavern.
-
-### Act IV
-Scene I. The Rebel Camp near Shrewsbury.
-Scene II. A public Road near Coventry.
-Scene III. The Rebel Camp near Shrewsbury.
-Scene IV. York. A Room in the Archbishop’s Palace.
-
-### Act V
-Scene I. The King’s Camp near Shrewsbury.
-Scene II. The Rebel Camp.
-Scene III. Plain between the Camps.
-Scene IV. Another Part of the Field.
-Scene V. Another Part of the Field.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY the Fourth.
 HENRY, PRINCE of Wales, son to the King.
@@ -85,7 +52,7 @@ Mrs. Quickly, Hostess in Eastcheap.
 Lords, Officers, Sheriff, Vintner, Chamberlain, Drawers, Carriers,
 Ostler, Messengers, Servant, Travellers and Attendants.
 
-SCENE. England and Wales.
+**SCENE:** England and Wales.
 
 
 

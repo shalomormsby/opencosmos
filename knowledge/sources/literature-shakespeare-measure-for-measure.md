@@ -25,38 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. An apartment in the Duke’s palace
- Scene II. A street
- Scene III. A monastery
- Scene IV. A nunnery
-
-### Act II
- Scene I. A hall in Angelo’s house
- Scene II. Another room in the same
- Scene III. A room in a prison
- Scene IV. A room in Angelo’s house
-
-### Act III
- Scene I. A room in the prison
- Scene II. The street before the prisons
-
-### Act IV
- Scene I. A room in Mariana’s house
- Scene II. A room in the prison
- Scene III. Another room in the same
- Scene IV. A room in Angelo’s house
- Scene V. Fields without the town
- Scene VI. Street near the city gate
-
-### Act V
- Scene I. A public place near the city gate
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 Vincentio, DUKE of Vienna
 ESCALUS, an ancient Lord
@@ -90,7 +59,7 @@ BARNARDINE, a dissolute prisoner
 
 Lords, Officers, Servants, Citizens and Attendants
 
-SCENE: Vienna
+**SCENE:** Vienna
 
 
 

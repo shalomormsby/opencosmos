@@ -25,39 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Athens. A hall in Timon’s house
- Scene II. The Same. A room of state in Timon’s house
-
-### Act II
- Scene I. Athens. A room in a senator’s house
- Scene II. The same. A hall in Timon’s house
-
-### Act III
- Scene I. Athens. A room in Lucullus’ house
- Scene II. A public place
- Scene III. The same. A room in Sempronius’ house
- Scene IV. A hall in Timon’s house
- Scene V. The same. The senate house
- Scene VI. A room of state in Timon’s house
-
-### Act IV
- Scene I. Without the walls of Athens
- Scene II. Athens. A room in Timon’s house
- Scene III. Woods and caves near the sea-shore
-
-### Act V
- Scene I. The woods. Before Timon’s cave
- Scene III. The same
- Scene III. Before the walls of Athens
- Scene IV. The woods. Timon’s cave, and a rude tomb seen
- Scene V. Before the walls of Athens
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 TIMON, a noble Athenian
 FLAVIUS, steward to Timon
@@ -99,7 +67,7 @@ BANDITTI
 
 Officers, Soldiers, Servants, Thieves, Messengers and Attendants
 
-SCENE. Athens, and the neighbouring woods
+**SCENE:** Athens, and the neighbouring woods
 
 
 

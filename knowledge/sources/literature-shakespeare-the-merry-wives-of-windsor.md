@@ -25,44 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Windsor. Before Page’s house
- Scene II. The same
- Scene III. A room in the Garter Inn
- Scene IV. A room in Doctor Caius’s house
-
-### Act II
- Scene I. Before Page’s house
- Scene II. A room in the Garter Inn
- Scene III. A field near Windsor
-
-### Act III
- Scene I. A field near Frogmore
- Scene II. A street in Windsor
- Scene III. A room in Ford’s house
- Scene IV. A room in Page’s house
- Scene V. A room in the Garter Inn
-
-### Act IV
- Scene I. The street
- Scene II. A room in Ford’s house
- Scene III. A room in the Garter Inn
- Scene IV. A room in Ford’s house
- Scene V. A room in the Garter Inn
- Scene VI. Another room in the Garter Inn
-
-### Act V
- Scene I. A room in the Garter Inn
- Scene II. Windsor Park
- Scene III. The street in Windsor
- Scene IV. Windsor Park
- Scene V. Another part of the Park
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 HOST of the Garter Inn
 SIR JOHN FALSTAFF
@@ -93,7 +56,7 @@ John RUGBY, servant to Doctor Caius
 
 SERVANTS to Page, &c.
 
-SCENE: Windsor and the neighbourhood
+**SCENE:** Windsor and the neighbourhood
 
 
 

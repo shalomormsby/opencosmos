@@ -5,8 +5,51 @@ domain: literature
 confidence: medium
 status: active
 synthesizes:
-  - sources/literature-the-complete-works-of-william-shakespeare.md
-last_reviewed: 2026-04-11
+  - sources/literature-shakespeare-a-lover-s-complaint.md
+  - sources/literature-shakespeare-a-midsummer-night-s-dream.md
+  - sources/literature-shakespeare-all-s-well-that-ends-well.md
+  - sources/literature-shakespeare-as-you-like-it.md
+  - sources/literature-shakespeare-cymbeline.md
+  - sources/literature-shakespeare-king-henry-the-eighth.md
+  - sources/literature-shakespeare-king-richard-the-second.md
+  - sources/literature-shakespeare-king-richard-the-third.md
+  - sources/literature-shakespeare-love-s-labour-s-lost.md
+  - sources/literature-shakespeare-measure-for-measure.md
+  - sources/literature-shakespeare-much-ado-about-nothing.md
+  - sources/literature-shakespeare-pericles-prince-of-tyre.md
+  - sources/literature-shakespeare-sonnets.md
+  - sources/literature-shakespeare-the-comedy-of-errors.md
+  - sources/literature-shakespeare-the-first-part-of-henry-the-sixth.md
+  - sources/literature-shakespeare-the-first-part-of-king-henry-the-fourth.md
+  - sources/literature-shakespeare-the-life-and-death-of-king-john.md
+  - sources/literature-shakespeare-the-life-of-king-henry-the-fifth.md
+  - sources/literature-shakespeare-the-life-of-timon-of-athens.md
+  - sources/literature-shakespeare-the-merchant-of-venice.md
+  - sources/literature-shakespeare-the-merry-wives-of-windsor.md
+  - sources/literature-shakespeare-the-passionate-pilgrim.md
+  - sources/literature-shakespeare-the-phoenix-and-the-turtle.md
+  - sources/literature-shakespeare-the-rape-of-lucrece.md
+  - sources/literature-shakespeare-the-second-part-of-king-henry-the-fourth.md
+  - sources/literature-shakespeare-the-second-part-of-king-henry-the-sixth.md
+  - sources/literature-shakespeare-the-taming-of-the-shrew.md
+  - sources/literature-shakespeare-the-tempest.md
+  - sources/literature-shakespeare-the-third-part-of-king-henry-the-sixth.md
+  - sources/literature-shakespeare-the-tragedy-of-antony-and-cleopatra.md
+  - sources/literature-shakespeare-the-tragedy-of-coriolanus.md
+  - sources/literature-shakespeare-the-tragedy-of-hamlet-prince-of-denmark.md
+  - sources/literature-shakespeare-the-tragedy-of-julius-caesar.md
+  - sources/literature-shakespeare-the-tragedy-of-king-lear.md
+  - sources/literature-shakespeare-the-tragedy-of-macbeth.md
+  - sources/literature-shakespeare-the-tragedy-of-othello-the-moor-of-venice.md
+  - sources/literature-shakespeare-the-tragedy-of-romeo-and-juliet.md
+  - sources/literature-shakespeare-the-tragedy-of-titus-andronicus.md
+  - sources/literature-shakespeare-the-two-gentlemen-of-verona.md
+  - sources/literature-shakespeare-the-two-noble-kinsmen.md
+  - sources/literature-shakespeare-the-winter-s-tale.md
+  - sources/literature-shakespeare-troilus-and-cressida.md
+  - sources/literature-shakespeare-twelfth-night-or-what-you-will.md
+  - sources/literature-shakespeare-venus-and-adonis.md
+last_reviewed: 2026-05-01
 tags: [shakespeare, hamlet, lear, tempest, sonnets, mortality, identity, justice, power, theater, english-literature]
 open_questions:
   - Shakespeare does not advance a systematic philosophy — do his plays constitute a philosophy, or do they simply dramatize philosophical tensions without resolving them?
@@ -18,7 +61,7 @@ open_questions:
 
 ## Summary
 
-William Shakespeare (1564–1616) is the canonical English-language writer and his *Complete Works* in the corpus represents the largest single text by volume. Shakespeare does not advance a doctrine; instead, he is an incomparable dramatist of philosophical questions — staging the tensions between duty and desire, mortality and meaning, justice and power, identity and performance, more vividly than almost any treatise. His contribution to the knowledge corpus is not a set of positions to be endorsed or refuted but a set of thought experiments in dramatic form: what happens when these questions are lived by characters with full interiority, in real stakes? The plays are among the most sophisticated instruments ever created for exploring the space between philosophical abstractions and human experience.
+William Shakespeare (1564–1616) is the canonical English-language writer whose works in the corpus, split across 43 individual plays and poems, represent a foundational literary layer of the knowledge base. Shakespeare does not advance a doctrine; instead, he is an incomparable dramatist of philosophical questions — staging the tensions between duty and desire, mortality and meaning, justice and power, identity and performance, more vividly than almost any treatise. His contribution to the knowledge corpus is not a set of positions to be endorsed or refuted but a set of thought experiments in dramatic form: what happens when these questions are lived by characters with full interiority, in real stakes? The plays are among the most sophisticated instruments ever created for exploring the space between philosophical abstractions and human experience.
 
 ## Key Claims (by work)
 

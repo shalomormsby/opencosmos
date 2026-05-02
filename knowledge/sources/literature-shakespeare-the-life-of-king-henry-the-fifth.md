@@ -25,48 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Prologue.
-Scene I. London. An ante-chamber in the King’s palace.
-Scene II. The same. The presence chamber.
-
-### Act II
-Chorus.
-Scene I. London. A street.
-Scene II. Southampton. A council-chamber.
-Scene III. London. Before a tavern.
-Scene IV. France. The King’s palace.
-
-### Act III
-Chorus.
-Scene I. France. Before Harfleur.
-Scene II. The same.
-Scene III. Before the gates.
-Scene IV. The French King’s palace.
-Scene V. The same.
-Scene VI. The English camp in Picardy.
-Scene VII. The French camp, near Agincourt.
-
-### Act IV
-Chorus.
-Scene I. The English camp at Agincourt.
-Scene II. The French camp.
-Scene III. The English camp.
-Scene IV. The field of battle.
-Scene V. Another part of the field.
-Scene VI. Another part of the field.
-Scene VII. Another part of the field.
-Scene VIII. Before King Henry’s pavilion.
-
-### Act V
-Chorus.
-Scene I. France. The English camp.
-Scene II. France. A royal palace.
-Epilogue.
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY V.
 DUKE OF CLARENCE, brother to the King.
@@ -122,7 +81,7 @@ CHORUS.
 Lords, Ladies, Officers, Soldiers, Citizens, Messengers, and
 Attendants.
 
-SCENE: England; afterwards France.
+**SCENE:** England; afterwards France.
 
 
 

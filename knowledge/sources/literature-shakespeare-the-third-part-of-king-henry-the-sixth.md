@@ -25,49 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. London. The Parliament House
- Scene II. Sandal Castle
- Scene III. Plains near Sandal Castle
- Scene IV. The Same
-
-### Act II
- Scene I. A plain near Mortimer’s Cross in Herefordshire
- Scene II. Before York
- Scene III. A field of battle between Towton and Saxton, in Yorkshire
- Scene IV. Another Part of the Field
- Scene V. Another Part of the Field
- Scene VI. Another Part of the Field
-
-### Act III
- Scene I. A Forest in the North of England
- Scene II. The Palace
- Scene III. France. The King’s Palace
-
-### Act IV
- Scene I. London. The Palace
- Scene II. A Plain in Warwickshire
- Scene III. Edward’s Camp near Warwick
- Scene IV. London. The Palace
- Scene V. A park near Middleham Castle in Yorkshire
- Scene VI. London. The Tower
- Scene VII. Before York
- Scene VIII. London. The Palace
-
-### Act V
- Scene I. Coventry
- Scene II. A Field of Battle near Barnet
- Scene III. Another Part of the Field
- Scene IV. Plains near Tewkesbury
- Scene V. Another part of the Field
- Scene VI. London. The Tower
- Scene VII. London. The Palace
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY the Sixth
 QUEEN MARGARET
@@ -110,7 +68,7 @@ A Father that has killed his son
 
 Soldiers, Attendants, Messengers, Watchmen, etc.
 
-SCENE: England and France
+**SCENE:** England and France
 
 
 

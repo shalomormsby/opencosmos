@@ -25,30 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. The King of Navarre’s park
- Scene II. The park
-
-### Act II
- Scene I. The King of Navarre’s park. A pavilion and tents at a distance
-
-### Act III
- Scene I. The King of Navarre’s park
-
-### Act IV
- Scene I. The King of Navarre’s park
- Scene II. The same
- Scene III. The same
-
-### Act V
- Scene I. The King of Navarre’s park
- Scene II. The same. Before the Princess’s pavilion
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING of Navarre, also known as Ferdinand
 
@@ -76,7 +53,7 @@ MARCADÉ, a messenger from France
 Lords, Blackamoors, Officers and Others, Attendants on the King and
 Princess.
 
-SCENE: Navarre
+**SCENE:** Navarre
 
 
 

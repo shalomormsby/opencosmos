@@ -25,45 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. London. The palace
- Scene II. The Duke of Gloucester’s House
- Scene III. London. The palace
- Scene IV. Gloucester’s Garden
-
-### Act II
-#### Scene I. Saint Albans
-#### Scene II. London. The Duke of York’s Garden
-#### Scene III. A Hall of Justice
-#### Scene IV. A Street
-
-### Act III
-#### Scene I. The Abbey at Bury St. Edmund’s
-#### Scene II. Bury St. Edmund’s. A Room of State
-#### Scene III. A Bedchamber
-
-### Act IV
-#### Scene I. The Coast of Kent
-#### Scene II. Blackheath
-#### Scene III. Another part of Blackheath
-#### Scene IV. London. The Palace
-#### Scene V. London. The Tower
-#### Scene Vi. London. Cannon Street
-#### Scene Vii. London. Smithfield
-#### Scene Viii. Southwark
-#### Scene IX. Kenilworth Castle
-#### Scene X. Kent. Iden’s Garden
-
-### Act V
-#### Scene I. Fields between Dartford and Blackheath
-#### Scene II. Saint Albans
-#### Scene III. Fields near Saint Albans
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY THE SIXTH
 MARGARET, Queen to King Henry
@@ -120,7 +82,7 @@ Soldiers, Messengers, &c.
 
 A Spirit
 
-SCENE: England.
+**SCENE:** England.
 
 
 

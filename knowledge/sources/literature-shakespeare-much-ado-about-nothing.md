@@ -25,72 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-
-Scene I.
-Before Leonato’s House.
-
-Scene II.
-A room in Leonato’s house.
-
-Scene III.
-Another room in Leonato’s house.
-
-### Act II
-
-Scene I.
-A hall in Leonato’s house.
-
-Scene II.
-Another room in Leonato’s house.
-
-Scene III.
-Leonato’s Garden.
-
-### Act III
-
-Scene I.
-Leonato’s Garden.
-
-Scene II.
-A Room in Leonato’s House.
-
-Scene III.
-A Street.
-
-Scene IV.
-A Room in Leonato’s House.
-
-Scene V.
-Another Room in Leonato’s House.
-
-### Act IV
-
-Scene I.
-The Inside of a Church.
-
-Scene II.
-A Prison.
-
-### Act V
-
-Scene I.
-Before Leonato’s House.
-
-Scene II.
-Leonato’s Garden.
-
-Scene III.
-The Inside of a Church.
-
-Scene IV.
-A Room in Leonato’s House.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 DON PEDRO, Prince of Arragon.
 DON JOHN, his bastard Brother.
@@ -114,7 +49,7 @@ URSULA, Waiting gentlewoman attending on Hero.
 
 Messengers, Watch, Attendants, &c.
 
-SCENE. Messina.
+**SCENE:** Messina.
 
 
 

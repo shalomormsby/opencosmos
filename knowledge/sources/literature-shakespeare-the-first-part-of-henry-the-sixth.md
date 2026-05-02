@@ -25,48 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Westminster Abbey
- Scene II. France. Before Orleans
- Scene III. London. Before the Tower
- Scene IV. Orleans
- Scene V. Before Orleans
- Scene VI. Orleans
-
-### Act II
-#### Scene I. Before Orleans
-#### Scene II. Orleans. Within the town
-#### Scene III. Auvergne. The Countess’s castle
-#### Scene IV. London. The Temple Garden
-#### Scene V. The Tower of London
-
-### Act III
-#### Scene I. London. The Parliament House
-#### Scene II. France. Before Rouen
-#### Scene III. The plains near Rouen
-#### Scene IV. Paris. The Palace
-
-### Act IV
-#### Scene I. Paris. The Palace
-#### Scene II. Before Bordeaux
-#### Scene III. Plains in Gascony
-#### Scene IV. Other plains in Gascony
-#### Scene V. The English camp near Bordeaux
-#### Scene Vi. A field of battle
-#### Scene Vii. Another part of the field
-
-### Act V
-#### Scene I. London. The Palace
-#### Scene II. France. Plains in Anjou
-#### Scene III. Before Angiers
-#### Scene IV. Camp of the Duke of York in Anjou
-#### Scene V. London. The royal palace
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY the Sixth
 DUKE OF GLOUCESTER, uncle to the King, and Protector
@@ -115,7 +74,7 @@ and Attendants.
 
 Fiends appearing to Joan la Pucelle
 
-SCENE: Partly in England and partly in France
+**SCENE:** Partly in England and partly in France
 
 
 

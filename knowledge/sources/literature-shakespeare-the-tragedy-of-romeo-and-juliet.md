@@ -25,48 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-THE PROLOGUE.
-
-### Act I
-Scene I. A public place.
-Scene II. A Street.
-Scene III. Room in Capulet’s House.
-Scene IV. A Street.
-Scene V. A Hall in Capulet’s House.
-
-### Act II
-CHORUS.
-Scene I. An open place adjoining Capulet’s Garden.
-Scene II. Capulet’s Garden.
-Scene III. Friar Lawrence’s Cell.
-Scene IV. A Street.
-Scene V. Capulet’s Garden.
-Scene VI. Friar Lawrence’s Cell.
-
-### Act III
-Scene I. A public Place.
-Scene II. A Room in Capulet’s House.
-Scene III. Friar Lawrence’s cell.
-Scene IV. A Room in Capulet’s House.
-Scene V. An open Gallery to Juliet’s Chamber, overlooking the Garden.
-
-### Act IV
-Scene I. Friar Lawrence’s Cell.
-Scene II. Hall in Capulet’s House.
-Scene III. Juliet’s Chamber.
-Scene IV. Hall in Capulet’s House.
-Scene V. Juliet’s Chamber; Juliet on the bed.
-
-### Act V
-Scene I. Mantua. A Street.
-Scene II. Friar Lawrence’s Cell.
-Scene III. A churchyard; in it a Monument belonging to the Capulets.
-
-
-
-
- Dramatis Personæ
+## Dramatis Personæ
 
 ESCALUS, Prince of Verona.
 MERCUTIO, kinsman to the Prince, and friend to Romeo.
@@ -100,7 +59,7 @@ An Officer.
 Citizens of Verona; several Men and Women, relations to both houses;
 Maskers, Guards, Watchmen and Attendants.
 
-SCENE. During the greater part of the Play in Verona; once, in the
+**SCENE:** During the greater part of the Play in Verona; once, in the
 Fifth Act, at Mantua.
 
 

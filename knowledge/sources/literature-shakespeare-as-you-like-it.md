@@ -25,42 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. An Orchard near Oliver’s house
- Scene II. A Lawn before the Duke’s Palace
- Scene III. A Room in the Palace
-
-### Act II
- Scene I. The Forest of Arden
- Scene II. A Room in the Palace
- Scene III. Before Oliver’s House
- Scene IV. The Forest of Arden
- Scene V. Another part of the Forest
- Scene VI. Another part of the Forest
- Scene VII. Another part of the Forest
-
-### Act III
- Scene I. A Room in the Palace
- Scene II. The Forest of Arden
- Scene III. Another part of the Forest
- Scene IV. Another part of the Forest. Before a Cottage
- Scene V. Another part of the Forest
-
-### Act IV
- Scene I. The Forest of Arden
- Scene II. Another part of the Forest
- Scene III. Another part of the Forest
-
-### Act V
- Scene I. The Forest of Arden
- Scene II. Another part of the Forest
- Scene III. Another part of the Forest
- Scene IV. Another part of the Forest
- Epilogue
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 ORLANDO, youngest son of Sir Rowland de Boys
 OLIVER, eldest son of Sir Rowland de Boys

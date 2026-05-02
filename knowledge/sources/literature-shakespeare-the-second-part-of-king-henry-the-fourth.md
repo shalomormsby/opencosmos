@@ -25,44 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
- INDUCTION
-
-### Act I
- Scene I. The same.
- Scene II. London. A street.
- Scene III. York. The Archbishop’s palace.
-
-### Act II
- Scene I. London. A street.
- Scene II. London. Another street.
- Scene III. Warkworth. Before the castle.
- Scene IV. The Boar’s head Tavern in Eastcheap.
-
-### Act III
- Scene I. Westminster. The palace.
- Scene II. Gloucestershire. Before Justice Shallow’s house.
-
-### Act IV
- Scene I. Yorkshire. Gaultree Forest.
- Scene II. Another part of the forest.
- Scene III. Another part of the forest.
- Scene IV. Westminster. The Jerusalem Chamber.
- Scene V. Another chamber.
-
-### Act V
- Scene I. Gloucestershire. Shallow’s house.
- Scene II. Westminster. The palace.
- Scene III. Gloucestershire. Shallow’s orchard.
- Scene IV. London. A street.
- Scene V. A public place near Westminster Abbey.
-
- EPILOGUE
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 RUMOUR, the Presenter.
 KING HENRY the Fourth.
@@ -105,7 +68,7 @@ Lords and Attendants; Porter, Drawers, Musicians, Beadles, Grooms, etc.
 
 A Dancer, speaker of the epilogue.
 
-SCENE: England.
+**SCENE:** England.
 
 
 

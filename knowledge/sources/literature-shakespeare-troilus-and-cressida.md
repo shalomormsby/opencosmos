@@ -25,71 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-
-Prologue.
-Scene I.
-Troy. Before Priam’s palace.
-Scene II.
-Troy. A street.
-Scene III.
-The Grecian camp. Before Agamemnon’s tent.
-
-### Act II
-Scene I.
-The Grecian camp.
-Scene II.
-Troy. Priam’s palace.
-Scene III.
-The Grecian camp. Before the tent of Achilles.
-
-### Act III
-Scene I.
-Troy. Priam’s palace.
-Scene II.
-Troy. Pandarus’ orchard.
-Scene III.
-The Greek camp.
-
-### Act IV
-Scene I.
-Troy. A street.
-Scene II.
-Troy. The court of Pandarus’ house.
-Scene III.
-Troy. A street before Pandarus’ house.
-Scene IV.
-Troy. Pandarus’ house.
-Scene V.
-The Grecian camp. Lists set out.
-
-### Act V
-Scene I.
-The Grecian camp. Before the tent of Achilles.
-Scene II.
-The Grecian camp. Before Calchas’ tent.
-Scene III.
-Troy. Before Priam’s palace.
-Scene IV.
-The plain between Troy and the Grecian camp.
-Scene V.
-Another part of the plain.
-Scene VI.
-Another part of the plain.
-Scene VII.
-Another part of the plain.
-Scene VIII.
-Another part of the plain.
-Scene IX.
-Another part of the plain.
-Scene X.
-Another part of the plain.
-
-
-
-
- Dramatis Personæ
+## Dramatis Personæ
 
 PRIAM, King of Troy
 
@@ -130,7 +66,7 @@ CRESSIDA, daughter to Calchas
 
 Trojan and Greek Soldiers, and Attendants
 
-SCENE: Troy and the Greek camp before it
+**SCENE:** Troy and the Greek camp before it
 
 
 

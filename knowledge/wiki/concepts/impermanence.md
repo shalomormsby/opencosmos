@@ -11,7 +11,8 @@ synthesizes:
   - sources/buddhism-heart-sutra.md
   - sources/philosophy-the-joyful-wisdom-la-gaya-scienza.md
   - sources/philosophy-nature.md
-last_reviewed: 2026-04-11
+  - sources/literature-diaries-of-court-ladies-of-old-japan.md
+last_reviewed: 2026-05-01
 tags: [impermanence, anicca, change, flux, taoism, buddhism, whitman, transience, cycles, nietzsche, eternal-recurrence, emerson]
 ---
 
@@ -30,6 +31,7 @@ Three traditions in the corpus — Buddhism, Taoism, and Whitman's transcendenta
 
 - **Nietzsche's eternal recurrence as counter-response:** Rather than accepting that things pass (Buddhist), flowing with the Tao, or celebrating cosmic return (Whitman), Nietzsche poses the ultimate test: "What if this life — every joy, every pain — recurred infinitely?" To say yes to this thought is the highest form of life-affirmation (*amor fati*). Eternal recurrence does not deny impermanence — it asks whether you can *will* the endless return of everything, including what is most painful. This is a different relationship to impermanence than acceptance or flow: it is radical affirmation. (*Joyful Wisdom*)
 - **Emerson's compensating cycles:** "For everything you have missed, you have gained something else; and for every thing you gain, you lose something." (*Essays: Compensation*) — impermanence is always compensated; the universe is morally self-balancing. This is an optimistic impermanence closer to Whitman than to Buddhism, but grounded in a moral framework the others lack.
+- **Heian "mono no aware":** The Japanese aesthetic tradition in the corpus (*Diaries of Court Ladies of Old Japan*) introduces the "pathos of things" — a refined sadness at the beauty of what is fleeting. Unlike the Buddhist goal of detachment from transience, *mono no aware* is a deep, emotional *engagement* with it. Beauty is seen as inextricably linked to its passing.
 
 ## Connections
 
@@ -38,6 +40,7 @@ Three traditions in the corpus — Buddhism, Taoism, and Whitman's transcendenta
 - [[entities/plato.md]] — Counter-tradition: Plato's Forms are *eternally* unchanging. The particular world is impermanent, but the Forms are not. This is the major divergence from Buddhist and Taoist thought.
 - [[entities/nietzsche-friedrich.md]] — Eternal recurrence as the most demanding possible response to impermanence: not acceptance but infinite affirmation
 - [[entities/emerson-ralph-waldo.md]] — Compensation as a morally optimistic impermanence
+- [[entities/heian-court-literature.md]] — The aesthetic/emotional expression of transience through *mono no aware*
 - [[concepts/the-self.md]] — Impermanence applies to the self: is there a permanent self that persists through change, or is the self itself impermanent?
 
 ## Contradictions
