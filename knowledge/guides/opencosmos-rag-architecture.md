@@ -63,36 +63,46 @@ Document (frontmatter title — not a heading in the body)
 │   ├── ### Sub-division           H3 — secondary chunk boundary
 │   │   (Chapter / Act / Scene group / named section)
 │   │   │
-│   │   └── #### Minor break       H4 — in-chunk organisation, no split
-│   │       (Scene / subsection / verse group)
+│   │   └── #### Minor break       H4 — tertiary chunk boundary
+│   │       (Scene / subsection / verse / numbered stanza)
 │   │
 │   └── ### Sub-division
 │
 └── ## Major Division
 ```
 
-**Why this matters:** If a document has no subheadings, the entire body becomes one chunk. For a 50-page text, that chunk will be truncated at 2000 characters — which means Cosmo sees only the first two paragraphs, never the rest. Every H2 section is a separate vector; every H3 section (nested under an H2) is its own vector with the parent H2 as context. More headings = more retrieval surface area = Cosmo can find any part of the document.
+**Why this matters:** If a document has no subheadings, the entire body becomes one chunk. For a 50-page text, that chunk will be truncated at 2000 characters — which means Cosmo sees only the first two paragraphs, never the rest. Every H2 section is a separate vector; every H3 section (nested under an H2) is its own vector with the parent H2 as context; every H4 section (nested under an H3 or H2) is its own vector with its nearest ancestor as context. More headings = more retrieval surface area = Cosmo can find any part of the document.
+
+**H4 nesting:** H4 chunks prefer their nearest H3 ancestor as the `parent_heading` context. When an H4 appears outside any H3 scope (e.g., directly under H2), it uses the H2 as parent. This preserves semantic hierarchy — e.g., "Song of Myself > 1" (poem > verse) rather than "Leaves of Grass > 1" (book > verse).
 
 ### Chunk IDs
 
-Chunk IDs are deterministic, based on the file path and heading text:
+Chunk IDs are deterministic and stable, based on the file path and heading slug. When multiple sections within the same file share a heading, a content-hash suffix disambiguates:
 
 ```
-knowledge/sources/foo.md#summary              ← H2 chunk
-knowledge/sources/foo.md#part-i/chapter-iii   ← H3 chunk (parent H2 / child H3)
+knowledge/sources/foo.md#summary              ← H2 chunk (unique slug)
+knowledge/sources/foo.md#chapter-iii          ← H3 chunk (unique slug)
+knowledge/sources/whitman.md#thought          ← H2 chunk (unique slug)
+knowledge/sources/whitman.md#thought-a1b2c3d4 ← H2 chunk (duplicate slug, hash suffix)
+knowledge/sources/whitman.md#thought-x9y8z7w6 ← H2 chunk (another duplicate, different hash)
 ```
 
-Re-running `pnpm embed` is safe — existing vectors are updated, never duplicated.
+The hash suffix derives from the section's opening text, so it's:
+- **Stable across re-runs** — the same content always gets the same hash
+- **Stable across insertions** — adding a new section elsewhere in the file doesn't change the ID of unrelated sections
+- **Minimal** — only colliding slugs get hash suffixes; most chunks stay clean and citation-friendly
+
+Re-running `pnpm embed` is safe — existing vectors are updated, never duplicated. After upsert, any IDs that no longer correspond to current chunks are automatically deleted (unless `--no-sync` is used).
 
 ### What Gets Stored per Chunk
 
 Each chunk stores:
-- `id` — deterministic path + heading slug
+- `id` — deterministic path + heading slug (with optional content-hash suffix on collision)
 - `data` — enriched text passed to Upstash for embedding (title + author + domain + section label + body, capped at 3000 chars)
 - `metadata` — what Cosmo reads in its context window:
   - `source` — relative path (e.g. `knowledge/sources/philosophy-george-fox-an-autobiography.md`)
-  - `heading` — section heading text
-  - `parent_heading` — H2 parent for H3-level chunks
+  - `heading` — section heading text (H2, H3, or H4)
+  - `parent_heading` — immediate ancestor context: H2 parent for H3-level chunks; nearest H3 (or H2 if no H3) for H4-level chunks
   - `title`, `author`, `tradition`, `domain`, `role`, `tags`, `audience`
   - `text` — the passage body (capped at 2000 chars)
 
@@ -174,6 +184,26 @@ Content...
 
 H3 chunks inherit their parent H2 as context in the embedding — "Book I > Chapter I" — so Cosmo can answer questions about both the part and the chapter.
 
+### Use H4 for three-level hierarchies (optional)
+
+For documents with even deeper structure (e.g., Book → Poem → Verse in Leaves of Grass), add H4 headings:
+
+```markdown
+## Book I: Inscriptions
+
+### Song of Myself
+
+#### 1
+
+Content...
+
+#### 2
+
+Content...
+```
+
+H4 chunks nest under their nearest H3 ancestor, providing precise context: "Song of Myself > 1" instead of "Book I > 1". H4 is optional — use only when the document has explicit sub-structure that matters for retrieval.
+
 ### Keep sections at 200–800 words
 
 Shorter than 200 words → the chunk may not be semantically rich enough to retrieve reliably. Longer than 800 words → the stored text gets truncated at 2000 chars; Cosmo sees only the beginning.
@@ -186,7 +216,7 @@ The heading appears in the chunk's embedding context and in Cosmo's citation. "C
 
 ### Don't skip heading levels
 
-A H3 immediately under the body text (no parent H2) will be treated as a top-level chunk with no parent context. Use H2 first, then H3 inside it.
+A H3 immediately under the body text (no parent H2) will be treated as a top-level chunk with no parent context. A H4 without a parent H2/H3 is similarly rootless. Use H2 first, then H3 inside it, and H4 inside H3 (or H2) only if the document structure requires it.
 
 ### Non-standard headings need standardization
 
@@ -223,6 +253,15 @@ After editing knowledge documents (whether standardizing headings or editing con
 pnpm embed
 ```
 
-This rebuilds all chunks from scratch and upserts to Upstash Vector. Re-runs are idempotent — safe to run as many times as needed.
+This rebuilds all chunks from scratch and upserts to Upstash Vector. After upsert, the script automatically:
+- **Reconciles the index with the corpus** — lists all existing vector IDs and deletes any that no longer correspond to current chunks. Handles file deletions, renames, and chunk reorganizations automatically.
+- Re-runs are idempotent — safe to run as many times as needed.
 
-CI also runs `pnpm embed` automatically on every push to `main` that includes `knowledge/**` changes.
+### Options
+
+```bash
+pnpm embed --reset        # Wipe the entire index before re-embedding (for major schema changes)
+pnpm embed --no-sync      # Upsert chunks but skip stale-ID cleanup (escape hatch)
+```
+
+**CI behavior:** `pnpm embed` runs automatically on every push to `main` that includes `knowledge/**` changes, using the default (sync enabled) behavior.
