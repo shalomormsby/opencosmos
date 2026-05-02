@@ -25,44 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. Venice. A street.
-Scene II. Belmont. A room in Portia’s house.
-Scene III. Venice. A public place.
-
-
-### Act II
-Scene I. Belmont. A room in Portia’s house.
-Scene II. Venice. A street.
-Scene III. The same. A room in Shylock’s house.
-Scene IV. The same. A street.
-Scene V. The same. Before Shylock’s house.
-Scene VI. The same.
-Scene VII. Belmont. A room in Portia’s house.
-Scene VIII. Venice. A street.
-Scene IX. Belmont. A room in Portia’s house.
-
-
-### Act III
-Scene I. Venice. A street.
-Scene II. Belmont. A room in Portia’s house.
-Scene III. Venice. A street.
-Scene IV. Belmont. A room in Portia’s house.
-Scene V. The same. A garden.
-
-
-### Act IV
-Scene I. Venice. A court of justice.
-Scene II. The same. A street.
-
-
-### Act V
-Scene I. Belmont. The avenue to Portia’s house.
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 THE DUKE OF VENICE
 THE PRINCE OF MOROCCO, suitor to Portia
@@ -89,7 +52,7 @@ JESSICA, daughter to Shylock
 Magnificoes of Venice, Officers of the Court of Justice, a Gaoler,
 Servants and other Attendants
 
-SCENE: Partly at Venice, and partly at Belmont, the seat of Portia on
+**SCENE:** Partly at Venice, and partly at Belmont, the seat of Portia on
 the Continent
 
 

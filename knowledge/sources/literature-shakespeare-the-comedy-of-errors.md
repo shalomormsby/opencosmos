@@ -25,32 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. A hall in the Duke’s palace
-Scene II. A public place
-
-### Act II
-Scene I. A public place
-Scene II. The same
-
-### Act III
-Scene I. The same
-Scene II. The same
-
-### Act IV
-Scene I. The same
-Scene II. The same
-Scene III. The same
-Scene IV. The same
-
-### Act V
-Scene I. The same
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 SOLINUS, Duke of Ephesus.
 EGEON, a Merchant of Syracuse.
@@ -72,7 +47,7 @@ LUCE, her Servant.
 A COURTESAN
 Messenger, Jailer, Officers, Attendants
 
-SCENE: Ephesus
+**SCENE:** Ephesus
 
 
 ### Act I

@@ -25,33 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. Sicilia. An Antechamber in Leontes’ Palace.
-Scene II. The same. A Room of State in the Palace.
-
-### Act II
-Scene I. Sicilia. A Room in the Palace.
-Scene II. The same. The outer Room of a Prison.
-Scene III. The same. A Room in the Palace.
-
-### Act III
-Scene I. Sicilia. A Street in some Town.
-Scene II. The same. A Court of Justice.
-Scene III. Bohemia. A desert Country near the Sea.
-
-### Act IV
-Scene I. Prologue.
-Scene II. Bohemia. A Room in the palace of Polixenes.
-Scene III. The same. A Road near the Shepherd’s cottage.
-Scene IV. The same. A Shepherd’s Cottage.
-
-### Act V
-Scene I. Sicilia. A Room in the palace of Leontes.
-Scene II. The same. Before the Palace.
-Scene III. The same. A Room in Paulina’s house.
-
-Dramatis Personæ
+## Dramatis Personæ
 
 LEONTES, King of Sicilia
 MAMILLIUS, his son
@@ -85,7 +59,7 @@ Shepherdesses, Guards, &c.
 
 TIME, as Chorus
 
-Scene: Sometimes in Sicilia; sometimes in Bohemia.
+**SCENE:** Sometimes in Sicilia; sometimes in Bohemia.
 
 
 

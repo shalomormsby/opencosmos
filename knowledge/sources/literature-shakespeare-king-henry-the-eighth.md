@@ -25,39 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Prologue.
- Scene I. London. An ante-chamber in the palace
- Scene II. The same. The council-chamber
- Scene III. An ante-chamber in the palace
- Scene IV. A Hall in York Place
-
-### Act II
- Scene I. Westminster. A street
- Scene II. An ante-chamber in the palace
- Scene III. An ante-chamber of the Queen’s apartments
- Scene IV. A hall in Blackfriars
-
-### Act III
- Scene I. London. The Queen’s apartments
- Scene II. Ante-chamber to the King’s apartment
-
-### Act IV
- Scene I. A street in Westminster
- Scene II. Kimbolton
-
-### Act V
- Scene I. A gallery in the palace
- Scene II. Lobby before the council-chamber
- Scene III. The palace yard
- Scene IV. The palace
- Epilogue
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING HENRY THE EIGHTH
 
@@ -108,7 +76,7 @@ EPILOGUE
 Spirits, Several Lords and Ladies in the Dumb Shows; Women attending
 upon the Queen; Scribes, Officers, Guards, and other Attendants
 
-SCENE: London; Westminster; Kimbolton
+**SCENE:** London; Westminster; Kimbolton
 
 
 

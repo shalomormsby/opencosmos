@@ -25,32 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. On a ship at sea; a tempestuous noise of thunder and lightning
-heard.
-Scene II. The Island. Before the cell of Prospero.
-
-### Act II
-Scene I. Another part of the island.
-Scene II. Another part of the island.
-
-### Act III
-Scene I. Before Prospero’s cell.
-Scene II. Another part of the island.
-Scene III. Another part of the island.
-
-### Act IV
-Scene I. Before Prospero’s cell.
-
-### Act V
-Scene I. Before the cell of Prospero.
-Epilogue.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 ALONSO, King of Naples
 SEBASTIAN, his brother
@@ -79,7 +54,7 @@ REAPERS, presented by Spirits
 
 Other Spirits attending on Prospero
 
-SCENE: The sea, with a Ship; afterwards an Island.
+**SCENE:** The sea, with a Ship; afterwards an Island.
 
 
 

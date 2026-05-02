@@ -25,41 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Elsinore. A platform before the Castle
- Scene II. Elsinore. A room of state in the Castle
- Scene III. A room in Polonius’s house
- Scene IV. The platform
- Scene V. A more remote part of the Castle
-
-### Act II
- Scene I. A room in Polonius’s house
- Scene II. A room in the Castle
-
-### Act III
- Scene I. A room in the Castle
- Scene II. A hall in the Castle
- Scene III. A room in the Castle
- Scene IV. Another room in the Castle
-
-### Act IV
- Scene I. A room in the Castle
- Scene II. Another room in the Castle
- Scene III. Another room in the Castle
- Scene IV. A plain in Denmark
- Scene V. Elsinore. A room in the Castle
- Scene VI. Another room in the Castle
- Scene VII. Another room in the Castle
-
-### Act V
- Scene I. A churchyard
- Scene II. A hall in the Castle
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 HAMLET, Prince of Denmark
 CLAUDIUS, King of Denmark, Hamlet’s uncle
@@ -87,7 +53,7 @@ A Captain
 English Ambassadors.
 Lords, Ladies, Officers, Soldiers, Sailors, Messengers, and Attendants
 
-SCENE. Elsinore.
+**SCENE:** Elsinore.
 
 
 

@@ -25,47 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. A Room of State in King Lear’s Palace
-Scene II. A Hall in the Earl of Gloucester’s Castle
-Scene III. A Room in the Duke of Albany’s Palace
-Scene IV. A Hall in Albany’s Palace
-Scene V. Court before the Duke of Albany’s Palace
-
-### Act II
-Scene I. A court within the Castle of the Earl of Gloucester
-Scene II. Before Gloucester’s Castle
-Scene III. The open Country
-Scene IV. Before Gloucester’s Castle
-
-### Act III
-Scene I. A Heath
-Scene II. Another part of the heath
-Scene III. A Room in Gloucester’s Castle
-Scene IV. A part of the Heath with a Hovel
-Scene V. A Room in Gloucester’s Castle
-Scene VI. A Chamber in a Farmhouse adjoining the Castle
-Scene VII. A Room in Gloucester’s Castle
-
-### Act IV
-Scene I. The heath
-Scene II. Before the Duke of Albany’s Palace
-Scene III. The French camp near Dover
-Scene IV. The French camp. A Tent
-Scene V. A Room in Gloucester’s Castle
-Scene VI. The country near Dover
-Scene VII. A Tent in the French Camp
-
-### Act V
-Scene I. The Camp of the British Forces near Dover
-Scene II. A field between the two Camps
-Scene III. The British Camp near Dover
-
-
-
-
- Dramatis Personæ 
+## Dramatis Personæ 
 
 LEAR, King of Britain.
 GONERIL, eldest daughter to Lear.
@@ -92,7 +52,7 @@ Servants to Cornwall.
 Knights attending on the King, Officers, Messengers, Soldiers and
 Attendants.
 
-SCENE: Britain
+**SCENE:** Britain
 
 
 

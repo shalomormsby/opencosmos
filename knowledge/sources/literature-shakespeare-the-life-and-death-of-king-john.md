@@ -25,37 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Northampton. A Room of State in the Palace.
-
-### Act II
- Scene I. France. Before the walls of Angiers.
-
-### Act III
- Scene I. France. The French King’s tent.
- Scene II. The same. Plains near Angiers
- Scene III. The same.
- Scene IV. The same. The French King’s tent.
-
-### Act IV
- Scene I. Northampton. A Room in the Castle.
- Scene II. The same. A Room of State in the Palace.
- Scene III. The same. Before the castle.
-
-### Act V
- Scene I. Northampton. A Room in the Palace.
- Scene II. Near Saint Edmundsbury. The French Camp.
- Scene III. The same. The Field of Battle.
- Scene IV. The same. Another part of the same.
- Scene V. The same. The French camp.
- Scene VI. An open place in the neighborhood of Swinstead Abbey.
- Scene VII. The orchard of Swinstead Abbey.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 KING JOHN.
 PRINCE HENRY, son to King John; afterwards KING HENRY III.
@@ -87,7 +57,7 @@ LADY FAULCONBRIDGE, Mother to the Bastard and Robert Faulconbridge.
 Lords, Citizens of Angiers, Sheriff, Heralds, Officers, Soldiers,
 Executioners, Messengers and other Attendants.
 
-SCENE: Sometimes in England, and sometimes in France.
+**SCENE:** Sometimes in England, and sometimes in France.
 
 
 

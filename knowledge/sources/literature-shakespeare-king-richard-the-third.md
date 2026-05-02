@@ -25,46 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. London. A street
- Scene II. London. Another street
- Scene III. London. A Room in the Palace
- Scene IV. London. A Room in the Tower
-
-### Act II
- Scene I. London. A Room in the palace
- Scene II. Another Room in the palace
- Scene III. London. A street
- Scene IV. London. A Room in the Palace
-
-### Act III
- Scene I. London. A street
- Scene II. Before Lord Hastings’ house
- Scene III. Pomfret. Before the Castle
- Scene IV. London. A Room in the Tower
- Scene V. London. The Tower Walls
- Scene VI. London. A street
- Scene VII. London. Court of Baynard’s Castle
-
-### Act IV
- Scene I. London. Before the Tower
- Scene II. London. A Room of State in the Palace
- Scene III. London. Another Room in the Palace
- Scene IV. London. Before the Palace
- Scene V. A Room in Lord Stanley’s house
-
-### Act V
- Scene I. Salisbury. An open place
- Scene II. Plain near Tamworth
- Scene III. Bosworth Field
- Scene IV. Another part of the Field
- Scene V. Another part of the Field
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 
 RICHARD, DUKE OF GLOUCESTER, afterwards KING RICHARD III.
@@ -115,7 +76,7 @@ SHERIFF OF WILTSHIRE
 Lords, and other Attendants; two Gentlemen, a Pursuivant, Scrivener,
 Citizens, Murderers, Messengers, Ghosts, Soldiers, &c.
 
-SCENE: England
+**SCENE:** England
 
 
 

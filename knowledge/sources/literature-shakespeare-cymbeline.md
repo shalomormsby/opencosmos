@@ -25,53 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. Britain. The garden of Cymbeline’s palace.
-Scene II. The same.
-Scene III. Britain. A public place.
-Scene IV. Britain. Cymbeline’s palace.
-Scene V. Rome. Philario’s house.
-Scene VI. Britain. Cymbeline’s palace.
-Scene VII. Britain. The palace.
-
-### Act II
-Scene I. Britain. Before Cymbeline’s palace.
-Scene II. Britain. Imogen’s bedchamber in Cymbeline’s palace; a trunk
-in one corner.
-Scene III. Cymbeline’s palace. An ante-chamber adjoining Imogen’s
-apartments.
-Scene IV. Rome. Philario’s house.
-Scene V. Rome. Another room in Philario’s house.
-
-### Act III
-Scene I. Britain. A hall in Cymbeline’s palace.
-Scene II. Britain. Another room in Cymbeline’s palace.
-Scene III. Wales. A mountainous country with a cave.
-Scene IV. Wales, near Milford Haven.
-Scene V. Britain. Cymbeline’s palace.
-Scene VI. Wales. Before the cave of Belarius.
-Scene VII. The same.
-Scene VIII. Rome. A public place.
-
-### Act IV
-Scene I. Wales. Near the cave of Belarius.
-Scene II. Wales. Before the cave of Belarius.
-Scene III. Britain. Cymbeline’s palace.
-Scene IV. Wales. Before the cave of Belarius.
-
-### Act V
-Scene I. Britain. The Roman camp.
-Scene II. Britain. A field of battle between the British and Roman
-camps.
-Scene III. Another part of the field.
-Scene IV. Britain. A prison.
-Scene V. Britain. Cymbeline’s tent.
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 CYMBELINE, King of Britain
 CLOTEN, son to the Queen by a former husband
@@ -102,7 +56,7 @@ Lords, Ladies, Roman Senators, Tribunes, a Dutch Gentleman, a Spanish
 Gentleman, Musicians, Officers, Captains, Soldiers, Messengers, and
 Attendants
 
-SCENE: Britain; Italy.
+**SCENE:** Britain; Italy.
 
 
 

@@ -25,50 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Rome. A street
- Scene II. Corioles. The Senate House
- Scene III. Rome. An apartment in Martius’ house
- Scene IV. Before Corioles
- Scene V. Within Corioles. A street
- Scene VI. Near the camp of Cominius
- Scene VII. The gates of Corioles
- Scene VIII. A field of battle between the Roman and the Volscian camps
- Scene IX. The Roman camp
- Scene X. The camp of the Volsces
-
-### Act II
- Scene I. Rome. A public place
- Scene II. Rome. The Capitol
- Scene III. Rome. The Forum
-
-### Act III
- Scene I. Rome. A street
- Scene II. Rome. A room in Coriolanus’s house
- Scene III. Rome. The Forum
-
-### Act IV
- Scene I. Rome. Before a gate of the city
- Scene II. Rome. A street near the gate
- Scene III. A highway between Rome and Antium
- Scene IV. Antium. Before Aufidius’s house
- Scene V. Antium. A hall in Aufidius’s house
- Scene VI. Rome. A public place
- Scene VII. A camp at a short distance from Rome
-
-### Act V
- Scene I. Rome. A public place
- Scene II. An Advanced post of the Volscian camp before Rome.
- Scene III. The tent of Coriolanus
- Scene IV. Rome. A public place
- Scene V. Rome. A street near the gate
- Scene VI. Antium. A public place
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 CAIUS MARTIUS CORIOLANUS, a noble Roman
 VOLUMNIA, his mother
@@ -93,7 +50,7 @@ TWO VOLSCIAN GUARDS
 Roman and Volscian Senators, Patricians, Aediles, Lictors, Soldiers,
 Citizens, Messengers, Servants to Aufidius, and other Attendants
 
-SCENE: Partly in Rome, and partly in the territories of the Volscians
+**SCENE:** Partly in Rome, and partly in the territories of the Volscians
 and Antiates.
 
 

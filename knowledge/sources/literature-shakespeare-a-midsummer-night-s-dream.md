@@ -24,41 +24,7 @@ origin_date: 1590s-1616
 era: early-modern
 tradition: elizabethan
 ---
-
-
-### Act I
-Scene I.
-Athens. A room in the Palace of Theseus
-Scene II.
-The Same. A Room in a Cottage
-
-### Act II
-Scene I.
-A wood near Athens
-Scene II.
-Another part of the wood
-
-### Act III
-Scene I.
-The Wood.
-Scene II.
-Another part of the wood
-
-### Act IV
-Scene I.
-The Wood
-Scene II.
-Athens. A Room in Quince’s House
-
-### Act V
-Scene I.
-Athens. An Apartment in the Palace of Theseus
-
-
-
-
-Dramatis Personæ
-
+## Dramatis Personæ
 
 THESEUS, Duke of Athens
 HIPPOLYTA, Queen of the Amazons, bethrothed to Theseus
@@ -90,8 +56,7 @@ performed by the Clowns
 Other Fairies attending their King and Queen
 Attendants on Theseus and Hippolyta
 
-SCENE: Athens, and a wood not far from it
-
+**SCENE:** Athens, and a wood not far from it
 
 
 

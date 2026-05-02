@@ -9,7 +9,8 @@ synthesizes:
   - sources/philosophy-walden-and-on-the-duty-of-civil-disobedience.md
   - sources/philosophy-the-kingdom-of-god-is-within-you.md
   - sources/philosophy-crito.md
-last_reviewed: 2026-04-11
+  - sources/literature-narrative-of-sojourner-truth.md
+last_reviewed: 2026-05-01
 tags: [civil-disobedience, conscience, noncooperation, thoreau, tolstoy, socrates, gandhi, resistance, justice, law, authority]
 open_questions:
   - Is the right to civil disobedience universal, or does it require specific conditions (democratic participation, systemic injustice, available legal remedy) to be justified?
@@ -32,6 +33,7 @@ Civil disobedience is the deliberate, nonviolent refusal to obey a law on ground
 - **Noncooperation, not violence:** The method is withdrawal, not attack. Thoreau refuses to pay taxes; Gandhi refuses to buy British salt; King refuses to sit at the back of the bus. The refusal to participate exposes the injustice and forces it to sustain itself through naked coercion.
 - **Willingness to accept consequences:** Thoreau goes to jail; this is not accidental. Accepting the legal consequence distinguishes civil disobedience from mere lawlessness and makes the moral argument legible: "I am not breaking the law because I am above it; I am accepting its punishment to demonstrate that the law itself is wrong."
 - **Tolstoy's absolutism:** Where Thoreau resists specific injustices, Tolstoy extends the argument to all state violence. The state is organized coercion; to participate in any of it — as soldier, judge, tax-payer — is complicity. Universal conscientious objection is the only coherent response. (*Kingdom of God Is Within You*)
+- **Sojourner Truth's embodied justice:** Truth's life in the corpus (*Narrative of Sojourner Truth*) demonstrates a lived civil disobedience. By walking away from her master before the legal manumission date, she claimed a moral law higher than the state's legal code. Her resistance was not just symbolic (like Thoreau's tax refusal) but an absolute claim to her own personhood against a system that legally denied it.
 - **The Gandhian synthesis:** Gandhi acknowledged both Thoreau and Tolstoy as direct influences on satyagraha. The synthesis: Thoreau's targeted noncooperation + Tolstoy's absolute nonviolence + Hindu karma yoga (action without attachment to outcome) = a comprehensive political strategy of principled suffering that transforms both resisters and opponents.
 
 ## Connections
@@ -41,6 +43,7 @@ Civil disobedience is the deliberate, nonviolent refusal to obey a law on ground
 - [[entities/tolstoy-leo.md]] — Tolstoy extends Thoreau's argument to its logical limit: all state violence, not merely specific injustices
 - [[entities/george-fox.md]] — Quaker testimony (refusal of military service, refusal of oaths) anticipates the civil disobedience tradition by 200 years; Fox's Inner Light is the theological form of Thoreau's conscience
 - [[entities/bhagavad-gita.md]] — The counter-position within the same tradition: Arjuna refuses to fight (a civil-disobedience-adjacent response to a moral crisis); Krishna overrules him. The Gita's dharmic warrior ethics are in direct tension with Thoreau and Tolstoy
+- [[entities/truth-sojourner.md]] — Embodied civil disobedience: the claim to personhood as the ultimate act of resistance
 - [[concepts/nonviolence.md]] — Civil disobedience and nonviolence are often combined but are conceptually distinct; Thoreau does not require absolute pacifism, only that resistance take nonviolent, conscience-driven form
 
 ## Contradictions

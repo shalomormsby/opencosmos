@@ -2,7 +2,7 @@
 
 > LLM-synthesized concept pages, entity summaries, and cross-tradition connections. Updated by `/knowledge-compile`. Always loaded in Claude's context via `@knowledge/wiki/index.md` in `.claude/CLAUDE.md`.
 
-**Last updated:** 2026-04-11
+**Last updated:** 2026-05-01
 
 ---
 
@@ -22,8 +22,10 @@
 | [entities/george-fox.md](entities/george-fox) | English founder of the Quakers (1624–1691); 4 sources; the Inner Light, direct experience, radical equality, peace testimony |
 | [entities/gibran-kahlil.md](entities/gibran-kahlil) | Lebanese-American poet (1883–1931); The Forerunner, The Madman; social masks, the madman as liberated self, pain as transformation |
 | [entities/omar-khayyam.md](entities/omar-khayyam) | Persian polymath and poet (1048–1131); Rubáiyát; agnostic carpe diem, failure of religious epistemology, the present as the only certain good |
-| [entities/shakespeare-william.md](entities/shakespeare-william) | English playwright (1564–1616); Complete Works; Hamlet, Lear, The Tempest, Sonnets — dramatizes self, mortality, power, and justice without resolving them |
+| [entities/shakespeare-william.md](entities/shakespeare-william) | English playwright (1564–1616); works in the corpus split into 43 individual documents; Hamlet, Lear, The Tempest, Sonnets — dramatizes self, mortality, power, and justice without resolving them |
 | [entities/bhagavad-gita.md](entities/bhagavad-gita) | Hindu scripture (traditional); dharma, atman, karma yoga, bhakti yoga; Arjuna's dilemma as the paradigm case of civic duty and nonviolence in tension |
+| [entities/heian-court-literature.md](entities/heian-court-literature) | Classical Japanese women's writing (10th-11th century); Izumi Shikibu, Lady Sarashina; aesthetic sensitivity ("mono no aware") as a path to spiritual and philosophical insight |
+| [entities/truth-sojourner.md](entities/truth-sojourner) | American abolitionist and activist (c. 1797–1883); Narrative; embodied justice, spiritual integrity under oppression, intersectionality of race and gender |
 
 ---
 
@@ -54,7 +56,7 @@
 
 ## Navigation
 
-- **Source texts:** [knowledge/sources/](../sources/) — 15 primary works
+- **Source texts:** [knowledge/sources/](../sources/) — 79 primary works
 - **Guides:** [knowledge/guides/](../guides/) — operational how-to
 - **Collections:** [knowledge/collections/](../collections/) — AI Triad foundation reading lists
 - **Wiki edit log:** [wiki/log.md](log) — append-only history of wiki changes

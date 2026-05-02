@@ -25,36 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Venice. A street
- Scene II. Venice. Another street
- Scene III. Venice. A council chamber
-
-### Act II
- Scene I. A seaport in Cyprus. A Platform
- Scene II. A street
- Scene III. A Hall in the Castle
-
-### Act III
- Scene I. Cyprus. Before the Castle
- Scene II. Cyprus. A Room in the Castle
- Scene III. Cyprus. The Garden of the Castle
- Scene IV. Cyprus. Before the Castle
-
-### Act IV
- Scene I. Cyprus. Before the Castle
- Scene II. Cyprus. A Room in the Castle
- Scene III. Cyprus. Another Room in the Castle
-
-### Act V
- Scene I. Cyprus. A Street
- Scene II. Cyprus. A Bedchamber in the castle
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 DUKE OF VENICE
 BRABANTIO, a Senator of Venice and Desdemona’s father
@@ -75,7 +46,7 @@ BIANCA, Mistress to Cassio
 Officers, Gentlemen, Messenger, Musicians, Herald, Sailor, Attendants,
 &c.
 
-SCENE: The First Act in Venice; during the rest of the Play at a
+**SCENE:** The First Act in Venice; during the rest of the Play at a
 Seaport in Cyprus.
 
 

@@ -25,41 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Verona. An open place
- Scene II. The same. The garden of Julia’s house
- Scene III. The same. A room in Antonio’s house
-
-### Act II
- Scene I. Milan. A room in the Duke’s palace
- Scene II. Verona. A room in Julia’s house
- Scene III. The same. A street
- Scene IV. Milan. A room in the Duke’s palace
- Scene V. The same. A street
- Scene VI. The same. The Duke’s palace
- Scene VII. Verona. A room in Julia’s house
-
-### Act III
- Scene I. Milan. An anteroom in the Duke’s palace
- Scene II. The same. A room in the Duke’s palace
-
-### Act IV
- Scene I. A forest between Milan and Verona
- Scene II. Milan. The court of the Duke’s palace
- Scene III. The same
- Scene IV. The same
-
-### Act V
- Scene I. Milan. An abbey
- Scene II. The same. A room in the Duke’s palace
- Scene III. Frontiers of Mantua. The forest
- Scene IV. Another part of the forest
-
-
-
-
-Dramatis Personæ
+## Dramatis Personæ
 
 DUKE OF MILAN, father to Silvia
 VALENTINE, one of the two gentlemen
@@ -79,7 +45,7 @@ LUCETTA, waiting-woman to Julia
 
 Servants, Musicians
 
-SCENE: Verona; Milan; the frontiers of Mantua
+**SCENE:** Verona; Milan; the frontiers of Mantua
 
 
 

@@ -832,6 +832,7 @@ FILE_REGISTRY: Dict[str, tuple] = {
     'The Joyful Wisdom-Friedrich Wilhelm Nietzsche': ('generic',),
     'The Kingdom of God Is Within You-Tolstoy':  ('generic',),
     'Walden by Henry David Thoreau':             ('generic',),
+    'meditations-marcus-aurelius':               ('generic',),
     'george-fox-autobiography':                  ('generic',),
     'journal-of-george-fox-vol-1':               ('generic',),
     'journal-of-george-fox-vol-2':               ('generic',),

@@ -25,43 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
-Scene I. An Apartment in the Duke’s Palace.
-Scene II. The sea-coast.
-Scene III. A Room in Olivia’s House.
-Scene IV. A Room in the Duke’s Palace.
-Scene V. A Room in Olivia’s House.
-
-
-### Act II
-Scene I. The sea-coast.
-Scene II. A street.
-Scene III. A Room in Olivia’s House.
-Scene IV. A Room in the Duke’s Palace.
-Scene V. Olivia’s garden.
-
-
-### Act III
-Scene I. Olivia’s garden.
-Scene II. A Room in Olivia’s House.
-Scene III. A street.
-Scene IV. Olivia’s garden.
-
-
-### Act IV
-Scene I. The Street before Olivia’s House.
-Scene II. A Room in Olivia’s House.
-Scene III. Olivia’s Garden.
-
-
-### Act V
-Scene I. The Street before Olivia’s House.
-
-
-
-
- Dramatis Personæ
+## Dramatis Personæ
 
 ORSINO, Duke of Illyria.
 VALENTINE, Gentleman attending on the Duke
@@ -80,7 +44,7 @@ CLOWN, Servant to Olivia.
 PRIEST
 Lords, Sailors, Officers, Musicians, and other Attendants.
 
-SCENE: A City in Illyria; and the Sea-coast near it.
+**SCENE:** A City in Illyria; and the Sea-coast near it.
 
 
 

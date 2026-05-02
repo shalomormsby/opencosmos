@@ -25,39 +25,7 @@ era: early-modern
 tradition: elizabethan
 ---
 
-
-### Act I
- Scene I. Rome. A street
- Scene II. The same. A public place
- Scene III. The same. A street
-
-### Act II
- Scene I. Rome. Brutus’ orchard
- Scene II. A room in Caesar’s palace
- Scene III. A street near the Capitol
- Scene IV. Another part of the same street, before the house of Brutus
-
-### Act III
- Scene I. Rome. Before the Capitol; the Senate sitting
- Scene II. The same. The Forum
- Scene III. The same. A street
-
-### Act IV
- Scene I. A room in Antony’s house
- Scene II. Before Brutus’ tent, in the camp near Sardis
- Scene III. Within the tent of Brutus
-
-### Act V
- Scene I. The plains of Philippi
- Scene II. The same. The field of battle
- Scene III. Another part of the field
- Scene IV. Another part of the field
- Scene V. Another part of the field
-
-
-
-
- Dramatis Personæ
+## Dramatis Personæ
 
 
 JULIUS CAESAR
@@ -91,7 +59,7 @@ The Ghost of Caesar
 
 Senators, Citizens, Soldiers, Commoners, Messengers, and Servants.
 
-SCENE: Rome, the conspirators’ camp near Sardis, and the plains of
+**SCENE:** Rome, the conspirators’ camp near Sardis, and the plains of
 Philippi.
 
 
