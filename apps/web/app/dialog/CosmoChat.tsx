@@ -12,6 +12,18 @@ import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
 import { DialogHistoryPanel } from './DialogHistoryPanel'
 
+// Quote citation tokens emitted by Cosmo: [quote: knowledge/quotes/{author}.yaml#{quote-id}]
+// Pre-processed into markdown links with hrefs starting "knowledge/quotes/" so the
+// `a` component override below renders them as small superscript indicators rather
+// than inline links — keeps Cosmo's prose flowing while marking each citation.
+const QUOTE_TOKEN_RE = /\[quote:\s*([^\]]+?)\]/g
+
+function preprocessQuoteCitations(content: string): string {
+  return content.replace(QUOTE_TOKEN_RE, (_match, ref: string) => {
+    return `[↗](${ref.trim()})`
+  })
+}
+
 // Tighter scale than DocViewer — chat bubbles use text-sm and shouldn't have
 // the article-style vertical rhythm. last:mb-0 prevents trailing whitespace
 // in the bubble.
@@ -19,16 +31,31 @@ const chatMarkdownComponents: Components = {
   p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
   strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
   em: ({ children }) => <em className="italic">{children}</em>,
-  a: ({ href, children }) => (
-    <a
-      href={href}
-      target={href?.startsWith('http') ? '_blank' : undefined}
-      rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-      className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
-    >
-      {children}
-    </a>
-  ),
+  a: ({ href, children }) => {
+    // Quote citation marker — pre-processed from [quote: knowledge/quotes/...] tokens.
+    // Rendered as a subtle superscript with the citation visible on hover; not yet
+    // navigable (Phase 1.8 wires up a quote viewer route).
+    if (href?.startsWith('knowledge/quotes/')) {
+      return (
+        <sup
+          className="ml-0.5 text-foreground/35 text-xs cursor-help"
+          title={href}
+        >
+          {children}
+        </sup>
+      )
+    }
+    return (
+      <a
+        href={href}
+        target={href?.startsWith('http') ? '_blank' : undefined}
+        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
+        className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
+      >
+        {children}
+      </a>
+    )
+  },
   ul: ({ children }) => <ul className="list-disc list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ul>,
   ol: ({ children }) => <ol className="list-decimal list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ol>,
   li: ({ children }) => <li>{children}</li>,
@@ -235,7 +262,7 @@ export function CosmoChat() {
                 >
                   {msg.role === 'assistant' ? (
                     <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents}>
-                      {msg.content}
+                      {preprocessQuoteCitations(msg.content)}
                     </ReactMarkdown>
                   ) : (
                     msg.content

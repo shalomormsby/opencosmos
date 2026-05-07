@@ -32,6 +32,7 @@ import { fileURLToPath } from 'node:url'
 import { createHash } from 'node:crypto'
 import matter from 'gray-matter'
 import { Index } from '@upstash/vector'
+import { parseYamlFile, COLLECTIVE_BUCKETS, EMBEDDABLE_STATUSES, type JsonlRecord } from '../normalize-quotes/shared.js'
 
 // ─── Path setup + .env loading ────────────────────────────────────────────────
 
@@ -65,6 +66,15 @@ type ChunkMetadata = {
   author?: string
   tradition?: string
   wiki_path?: string       // set for wiki pages only
+
+  // Quote-specific (set only when chunk_type === 'quote')
+  chunk_type?: 'quote'
+  quote_id?: string                  // canonical id, e.g. "q_0159"
+  category?: string
+  provenance_status?: string         // verified | attributed | …
+  provenance_confidence?: number     // 0.0–1.0
+  source_work?: string
+  source_section?: string
 }
 
 type VectorChunk = {
@@ -204,12 +214,27 @@ function walkMd(dir: string): string[] {
     const full = join(dir, entry)
     const stat = statSync(full)
     if (stat.isDirectory()) {
+      // Skip the quotes substrate — handled by walkQuotes() with a different chunker
+      if (full === resolve(KNOWLEDGE_DIR, 'quotes')) continue
       results.push(...walkMd(full))
     } else if (entry.endsWith('.md') && !SKIP_FILES.has(entry)) {
       results.push(full)
     }
   }
   return results
+}
+
+/**
+ * Top-level *.yaml files in knowledge/quotes/. Skips _source/, _review/,
+ * _archive/ subdirectories (those hold raw jsonl, review CSVs, and the
+ * tombstone for rejected records).
+ */
+function walkQuotes(): string[] {
+  const dir = resolve(KNOWLEDGE_DIR, 'quotes')
+  if (!existsSync(dir)) return []
+  return readdirSync(dir)
+    .filter((f) => f.endsWith('.yaml'))
+    .map((f) => join(dir, f))
 }
 
 // ─── Chunk builder ────────────────────────────────────────────────────────────
@@ -319,6 +344,84 @@ function buildChunks(filePath: string): VectorChunk[] {
   })
 }
 
+// ─── Quote chunk builder ──────────────────────────────────────────────────────
+
+/**
+ * Each quote in knowledge/quotes/*.yaml becomes one Upstash chunk:
+ *   id: knowledge/quotes/{file}.yaml#{quote.id}     e.g. knowledge/quotes/albert-einstein.yaml#q_0159
+ *   data: enriched text including author + tradition for embedding
+ *   metadata.chunk_type: 'quote' (lets RAG distinguish from passage chunks)
+ *
+ * Records with provenance.status outside EMBEDDABLE_STATUSES are skipped —
+ * the pending pool lives in data/quotes-pending/ and isn't indexed.
+ */
+function buildQuoteChunks(filePath: string): VectorChunk[] {
+  const filename = filePath.split('/').pop() ?? ''
+  const bucket = filename.replace(/\.yaml$/, '')
+  const relPath = relative(ROOT_DIR, filePath)
+
+  let parsed
+  try {
+    parsed = parseYamlFile(filePath, bucket)
+  } catch (err) {
+    console.warn(`  ⚠️  Skipping ${relPath} — yaml parse failed: ${(err as Error).message.split('\n')[0]}`)
+    return []
+  }
+
+  const chunks: VectorChunk[] = []
+  for (const r of parsed.records) {
+    const status = r.provenance?.status
+    if (!status || !EMBEDDABLE_STATUSES.has(status)) continue
+
+    const author = r.author
+    const tradition = r.tradition as string | undefined ?? undefined
+    const category = r.category
+    const text = r.text
+
+    if (!text || !author) continue
+
+    // Embedding text: enrich with author + tradition + category so semantic
+    // retrieval surfaces by topical resonance, not just textual overlap.
+    const dataLines = [
+      `Quote by: ${author}`,
+      tradition ? `Tradition: ${tradition}` : null,
+      category ? `Category: ${category}` : null,
+      Array.isArray(r.keywords) && r.keywords.length > 0 ? `Keywords: ${r.keywords.join(', ')}` : null,
+      '',
+      `"${text}"`,
+    ].filter((l) => l !== null) as string[]
+    const data = dataLines.join('\n')
+
+    const metadata: ChunkMetadata = {
+      source: relPath,
+      heading: r.id,                       // quote id doubles as heading for compatibility
+      title: `Quote — ${author}`,
+      domain: tradition ?? 'unknown',
+      role: 'quote',
+      tags: Array.isArray(r.keywords) ? (r.keywords as string[]) : [],
+      audience: [],
+      text,                                // raw quote text — what Cosmo sees in RAG context
+      author,
+      chunk_type: 'quote',
+      quote_id: r.id,
+      provenance_status: status,
+    }
+    if (tradition) metadata.tradition = tradition
+    if (category) metadata.category = category
+    if (typeof r.provenance?.confidence === 'number') metadata.provenance_confidence = r.provenance.confidence
+    if (r.source_work) metadata.source_work = r.source_work as string
+    if (r.source_section) metadata.source_section = r.source_section as string
+
+    chunks.push({
+      id: `${relPath}#${r.id}`,
+      data,
+      metadata,
+    })
+  }
+
+  return chunks
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────────
 
 const BATCH_SIZE = 100
@@ -360,7 +463,8 @@ async function main() {
   }
 
   const files = walkMd(KNOWLEDGE_DIR)
-  console.log(`Found ${files.length} markdown files in knowledge/`)
+  const quoteFiles = walkQuotes()
+  console.log(`Found ${files.length} markdown files + ${quoteFiles.length} quote yaml files in knowledge/`)
 
   const allChunks: VectorChunk[] = []
   for (const file of files) {
@@ -368,6 +472,13 @@ async function main() {
     allChunks.push(...chunks)
     if (chunks.length > 0) {
       console.log(`  ${relative(ROOT_DIR, file)} → ${chunks.length} chunks`)
+    }
+  }
+  for (const file of quoteFiles) {
+    const chunks = buildQuoteChunks(file)
+    allChunks.push(...chunks)
+    if (chunks.length > 0) {
+      console.log(`  ${relative(ROOT_DIR, file)} → ${chunks.length} quote chunks`)
     }
   }
 
