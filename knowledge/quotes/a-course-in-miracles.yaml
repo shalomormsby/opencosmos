@@ -1,0 +1,22 @@
+author: A Course in Miracles
+author_normalized_key: a-course-in-miracles
+tradition: null
+era: null
+gender: null
+quotes:
+  - id: q_0008
+    slug: null
+    text: My safety lies in my defenselessness.
+    category: relationships
+    keywords: [conflict, conflict resolution, peace, harmony, wisdom, insight]
+    context: "Christian, Mystic"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Workbook for Students, Lesson 153"
+      notes: null
+      reviewed_by_human: false

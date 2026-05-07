@@ -1,0 +1,22 @@
+author: Alla Kholmatova
+author_normalized_key: alla-kholmatova
+tradition: engineering
+era: null
+gender: F
+quotes:
+  - id: q_0171
+    slug: null
+    text: "Once you name an object, you shape its future."
+    category: insight
+    keywords: [perception, naming, labeling, understanding]
+    context: Product Design
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://alistapart.com/article/language-of-modular-design/"
+      notes: null
+      reviewed_by_human: false

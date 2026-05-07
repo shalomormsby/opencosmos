@@ -1,0 +1,22 @@
+author: (Attributed to) Abraham Lincoln
+author_normalized_key: attributed-to-abraham-lincoln
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0233
+    slug: null
+    text: "If I had eight hours to chop down a tree, I’d spend the first six of them sharpening my axe."
+    category: business
+    keywords: [preparation, tree]
+    context: Political Leader
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.goodreads.com/quotes/7890929-if-i-had-eight-hours-to-chop-down-a-tree"
+      notes: null
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Socrates
+author_normalized_key: socrates
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0082
+    slug: null
+    text: "I am the wisest man alive, for I know one thing, and that is that I know nothing."
+    category: insight
+    keywords: [not knowing]
+    context: "Philosophy, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "The Republic – https://www.goodreads.com/quotes/534070-i-am-the-wisest-man-alive-for-i-know-one"
+      notes: null
+      reviewed_by_human: false

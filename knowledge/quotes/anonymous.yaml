@@ -1,0 +1,24 @@
+collective: anonymous
+description: Quotes whose author is unknown. Partial info preserved per-quote where available.
+quotes:
+  - id: q_0393
+    slug: null
+    text: Your work is to discover your work and then with all your heart to give yourself to it completely.
+    author: Unknown (falsely attributed to Budda)
+    author_normalized_key: unknown-falsely-attributed-to-budda
+    tradition: buddhism
+    era: null
+    gender: M
+    category: business
+    keywords: [discover, work, devotion, heart]
+    context: Buddhist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Dhammapada, verse 166"
+      notes: null
+      reviewed_by_human: false

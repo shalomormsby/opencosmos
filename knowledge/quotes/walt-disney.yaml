@@ -1,0 +1,22 @@
+author: Walt Disney
+author_normalized_key: walt-disney
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0157
+    slug: null
+    text: I would rather entertain and hope that people learned something than educate people and hope they were entertained.
+    category: creativity
+    keywords: [entertainment, education, play]
+    context: Entrepreneur
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.azquotes.com/quote/79177?ref=entertainment"
+      notes: null
+      reviewed_by_human: false

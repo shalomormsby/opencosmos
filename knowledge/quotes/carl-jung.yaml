@@ -1,0 +1,22 @@
+author: Carl Jung
+author_normalized_key: carl-jung
+tradition: psychology
+era: null
+gender: M
+quotes:
+  - id: q_0025
+    slug: null
+    text: Knowing your own darkness is the best method for dealing with the darknesses of other people.
+    category: insight
+    keywords: [ego, shadow, pain body]
+    context: Psychology
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Letters of C. G. Jung: Volume I, 1906-1950 (p. 237)"
+      notes: null
+      reviewed_by_human: false

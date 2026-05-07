@@ -1,0 +1,22 @@
+author: Plutarch
+author_normalized_key: plutarch
+tradition: stoicism
+era: null
+gender: M
+quotes:
+  - id: q_0068
+    slug: null
+    text: "The correct analogy for the mind is not a vessel that needs filling, but wood that needs igniting."
+    category: spirit
+    keywords: [mind, vessel, fire, ignite]
+    context: "Ancient Greek, Philosophy, Stoic"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "“On Listening” (paraphrased as, \"The mind is not a vessel to be filled, but a fire to be ignited.\")"
+      notes: null
+      reviewed_by_human: false

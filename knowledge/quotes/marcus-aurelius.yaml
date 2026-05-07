@@ -1,0 +1,86 @@
+author: Marcus Aurelius
+author_normalized_key: marcus-aurelius
+tradition: stoicism
+era: null
+gender: M
+quotes:
+  - id: q_0035
+    slug: null
+    text: Truly love the people with whom destiny has surrounded you.
+    category: relationships
+    keywords: [friendship]
+    context: "Philosophy, Stoic, Greek, Wisdom, Ancient"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Meditations (Book 1, 17)"
+      notes: null
+      reviewed_by_human: false
+  - id: q_0095
+    slug: null
+    text: "You always own the option of having no opinion. There is never any need to get worked up or to trouble your soul about things you can't control. These things are not asking to be judged by you. Leave them alone."
+    category: insight
+    keywords: []
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Meditations
+      notes: null
+      reviewed_by_human: false
+  - id: q_0096
+    slug: null
+    text: "I walk in Nature's way until I shall lie down and rest."
+    category: insight
+    keywords: []
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Meditations
+      notes: null
+      reviewed_by_human: false
+  - id: q_0098
+    slug: null
+    text: "Remember through how many thing you have already passed, and how many you have been able to endure."
+    category: insight
+    keywords: []
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Meditations
+      notes: null
+      reviewed_by_human: false
+  - id: q_0101
+    slug: null
+    text: "Do not act as if you were going to live ten thousand years. Death hangs over you. While you live, while it is in your power, be good."
+    category: insight
+    keywords: []
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Meditations
+      notes: null
+      reviewed_by_human: false

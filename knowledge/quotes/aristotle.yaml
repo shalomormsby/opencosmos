@@ -1,0 +1,22 @@
+author: Aristotle
+author_normalized_key: aristotle
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0090
+    slug: null
+    text: "What is a friend? A single soul dwelling in two bodies."
+    category: null
+    keywords: [friendship]
+    context: "Philosophy, Ancient Greek, Wisdom"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Nicomachean Ethics, Books VIII and IX"
+      notes: null
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Coco Chanel
+author_normalized_key: coco-chanel
+tradition: engineering
+era: null
+gender: F
+quotes:
+  - id: q_0062
+    slug: null
+    text: Beauty begins the moment you decide to be yourself.
+    category: insight
+    keywords: []
+    context: "Fashion designer, French"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.goodreads.com/quotes/7121021-beauty-begins-the-moment-you-decide-to-be-yourself"
+      notes: null
+      reviewed_by_human: false

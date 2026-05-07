@@ -1,0 +1,22 @@
+author: Dostoyevsky
+author_normalized_key: dostoyevsky
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0538
+    slug: null
+    text: "If everything in the universe were sensible, nothing would happen."
+    category: insight
+    keywords: [universe, rational, nothing]
+    context: "Author, Russian"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: “The Brothers Karamazov” (1880)
+      notes: null
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Henry David Thoreau
+author_normalized_key: henry-david-thoreau
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0077
+    slug: null
+    text: "Nature is full of genius, full of the divinity; so that not a snowflake escapes its fashioning hand."
+    category: insight
+    keywords: []
+    context: "Philosopher, Naturalist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Thoreau's Journal, February 1, 1852"
+      notes: null
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Ralph Waldo Emerson
+author_normalized_key: ralph-waldo-emerson
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_1179
+    slug: null
+    text: The reward of a thing well done is to have done it.
+    category: business
+    keywords: [action, work, reward, satisfaction]
+    context: "Author, Poet, Philosopher, Transcendentalist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"New England Reformers\""
+      notes: null
+      reviewed_by_human: false
