@@ -10,12 +10,18 @@
         "knowledge:sync-dell": "tsx scripts/sync-dell.ts",
         "knowledge:health": "tsx scripts/knowledge-health.ts",
         "graph": "tsx scripts/knowledge/generate-wiki-graph.ts",
-        "embed": "tsx scripts/knowledge/embed-knowledge.ts"
+        "embed": "tsx scripts/knowledge/embed-knowledge.ts",
+        "quotes:normalize": "tsx scripts/normalize-quotes/01-jsonl-to-yaml.ts",
+        "quotes:lint": "tsx scripts/normalize-quotes/lint.ts",
+        "quotes:export-csv": "tsx scripts/normalize-quotes/06-export-pending-csv.ts",
+        "quotes:promote": "tsx scripts/normalize-quotes/07-promote-verified.ts"
     },
     "devDependencies": {
         "@inquirer/prompts": "^8.3.0",
+        "@types/js-yaml": "^4.0.9",
         "graphology": "^0.26.0",
         "graphology-layout-forceatlas2": "^0.10.1",
+        "js-yaml": "^4.1.1",
         "tsx": "^4.21.0",
         "turbo": "latest"
     },

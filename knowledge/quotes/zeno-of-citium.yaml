@@ -1,0 +1,22 @@
+author: Zeno of Citium
+author_normalized_key: zeno-of-citium
+tradition: stoicism
+era: null
+gender: M
+quotes:
+  - id: q_0106
+    slug: null
+    text: "Well-being is realized by small steps, but is truly no small thing."
+    category: insight
+    keywords: [wellness, emotional health]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Quoted by Diogenes Laertius, Lives of the Eminent Philosophers 7.1.261"
+      notes: null
+      reviewed_by_human: false

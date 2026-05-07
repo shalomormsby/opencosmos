@@ -1,0 +1,22 @@
+author: Rita Mae Brown
+author_normalized_key: rita-mae-brown
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0162
+    slug: null
+    text: "Art is moral passion married to entertainment. Moral passion without entertainment is propaganda, and entertainment without moral passion is television."
+    category: creativity
+    keywords: [entertainment, play]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.azquotes.com/quote/38487?ref=entertainment"
+      notes: null
+      reviewed_by_human: false

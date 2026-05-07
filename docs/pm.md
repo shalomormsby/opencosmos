@@ -2,7 +2,7 @@
 
 > Project management hub for all OpenCosmos work. For strategic rationale, see [strategy.md](strategy.md). For infrastructure details, see [architecture.md](architecture.md).
 
-**Updated:** 2026-05-02
+**Updated:** 2026-05-07
 
 ---
 
@@ -27,15 +27,13 @@
 
 | Area | Phase / Task | Status | Priority | Next step |
 |------|--------------|--------|----------|-----------|
-| **Cosmo** (`apps/web`) | [Phase 1: Constellation § Phase 0](#phase-0--verify--commit-quick-wins) — H1 strips, Cosmo context, paint-safe | 🟢 Done & live on prod | P1 | Merge `fix/knowledge-graph-prep` → main; test on prod |
-| Cosmo | [Phase 1: Constellation § Phase 1](#phase-1--standardize-the-standardization-skill) — patch standardize-knowledge, strip 22 H1 files | 🟢 Done & live on prod | P1 | Review + merge `feat/constellation-phase-1` → main |
-| Cosmo | [Phase 1: Constellation § Phase 2](#phase-2--split-monoliths) — `/split-collection` skill + Shakespeare split | ⚪ Planned | P1 | Follows Phase 1 |
-| Cosmo | [Phase 1: Constellation § Phase 3](#phase-3--quote-infrastructure) — quote YAML substrate, embed pipeline | ⚪ Planned | P1 | Awaiting sample quote data from Shalom |
-| Cosmo | [Phase 1: Constellation § Phase 5](#phase-5--build-opencosmosconstellation) — `@opencosmos/constellation` package | ⚪ Planned | P1 | Built in `opencosmos-ui` repo |
-| Cosmo | [Phase 1: Constellation § Phases 6–9](#phase-6--opencosmos-consumes-opencosmosconstellation) — consume, semantic edges, citations, sidebar | ⚪ Planned | P1 | Sequential after Phase 5 ships |
-| Cosmo | [Phase 1: Constellation § Phase 10–11](#phase-10--community-contribution-pathway) — contribution pathway, wiki lint | ⚪ Planned | P2 | After Phase 9 |
-| Cosmo | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
-| Cosmo | [Phase 1b residuals](#phase-1b-subscriptions--infrastructure-preserved-ui-superseded) — Stripe webhook, privacy policy, TOS, Fix 7 | ⚪ Planned | P1 | External actions (Stripe, legal) |
+| **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
+| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟢 Active | P1 | Stage 1 ✅ done; Stage 2 (embed wiring) next |
+| Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | After 1.3 |
+| Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | ⚪ Planned | P1 | Cross-repo work in `opencosmos-ui` |
+| Cosmo | [Phase 1.6–1.9: Consume, edges, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | ⚪ Planned | P1 | Sequential after 1.5 ships |
+| Cosmo | [Phase 1.10–1.11: Community contribution + wiki lint](#phase-110--community-contribution-pathway-planned) | ⚪ Planned | P2 | After 1.9 |
+| Cosmo | [Phase 1b residuals](#phase-1b--subscription-infrastructure-prs-8591-infra-shipped-residuals-pending) — Stripe webhook, privacy policy, TOS, Fix 7 | ⚪ Planned | P1 | External actions (Stripe, legal) |
 | Cosmo | [Phase 3: Conversation polish](#phase-3-conversation-polish) — mobile, accessibility, voice | ⚪ Planned | P2 | — |
 | Cosmo | [Phase 4: Cosmo as PM](#phase-4-cosmo-as-pm) — publish PM doc to corpus | ⚪ Planned | P2 | Natural consequence of Phase 1 RAG |
 | **@opencosmos/ai** (`packages/ai`) | [Phase 5: Package foundation](#phase-5-opencosmosai-package-foundation) | ⚪ Planned | P2 | After Constellation ships |
@@ -47,6 +45,8 @@
 | **Stocks** (`apps/stocks`) | TBD | ⚪ Planned | P3 | No active sprint |
 | **Turnstile** | Verify free-tier activation on Vercel | 🔵 Blocked | P2 | Nothing in logs — needs investigation |
 
+> Shipped sub-phases (1.0–1.2) and historical workstreams (Phase 1a Voice, Phase 1b Subscriptions, Brand Architecture Pivot) live in [Done](#done). Deprecated work (Phase 1c+ sigma.js graph) lives in [Paused / Deprecated](#paused--deprecated).
+
 
 ---
 
@@ -54,134 +54,11 @@
 
 Conversation interface at opencosmos.ai. Organized by phase.
 
-### Phase 1a: Voice ✅ — Closed 2026-03-29
 
-Cosmo's voice validated on first contact. See [Chronicle Chapter 7](chronicle.md#2026-03-29--first-contact). AI Triad system prompts (Sol, Socrates, Optimus) written but deferred until post-launch.
-
-### Phase 1b: Subscriptions — Infrastructure Preserved, UI Superseded
-
-> **2026-04-16 Brand Architecture Pivot:** OpenCosmos no longer offers subscription tiers. The account page shows only: BYOK (unlimited), free 20K token quota, and a CP community invitation. All paid Cosmo access moves to Creative Powerup memberships. The Stripe infrastructure (checkout, portal, webhooks, benefit provisioning) remains intact for existing subscribers to manage billing — no new checkout flows belong on opencosmos.ai. See [strategy.md § Brand Architecture](strategy.md).
-
-Three tiers (Spark $5, Flame $10, Hearth $50), Stripe billing, WorkOS auth, usage tracking (microdollar counters), TokenGauge UI, BYOK path, and bot protection (Fixes 1–6) are all shipped. Subscription UI removed in PRs #112–#113.
-
-**Still needed:**
-- [ ] Register `https://opencosmos.ai/api/webhooks/stripe` in Stripe Dashboard — events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted` *(required for existing subscribers to cancel/update billing — no new subscriptions, but webhook is still needed)*
-- [ ] **Privacy policy** — required before Stripe processes real payments. Must cover: usage metrics collected, BYOK key non-storage, Stripe data handling, retention period, user rights.
-- [ ] **Terms of service** — usage limits, acceptable use, subscription terms
-- [ ] Fix 7 — Monitoring & anomaly alerts (post-launch; see [architecture.md § Bot Protection](architecture.md#bot-protection-design))
-
-**Superseded (no action required):**
-- ~~Hearth tier: automatically provision full CP membership on subscribe, revoke on cancel~~ — no new Hearth subscriptions on opencosmos.ai
-- ~~Existing CP members: offer migration path to Hearth~~ — moot; CP membership stays in Creative Powerup
-- ~~Substack partner API~~ — no Flame/Hearth tiers to provision
-
-### Phase 2: CP Member Token Access & Top-up
-
-**Status:** Planning — architectural questions require Shalom's decisions before implementation begins.
-
-**Why this exists:** The brand architecture pivot closes the OpenCosmos subscription path but opens a new obligation: CP members need managed Cosmo access (no API key required). This project builds that path cleanly, reusing the Phase 1b infrastructure rather than replacing it.
-
----
-
-#### What already works
-
-**Case 1 — Free visitor quota:** Already complete. The 20K token session budget, account page quota card, and `isLimited` state in CosmoChat (which shows the API key entry form + CP invitation when quota is exhausted) are all intact and functioning. No action required for Case 1.
-
-**Case 2 — CP member token access:** Requires implementation. See below.
-
----
-
-#### Case 2: CP Member Token Tracking + Buy-More
-
-CP members should receive a token allotment per tier, tracked against their usage. When the allotment is exhausted, they can purchase additional tokens at cost. Purchased tokens are non-expiring while CP membership is active.
-
-**Existing infrastructure that can be reused (nothing needs rebuilding):**
-
-| File | What it does |
-|------|-------------|
-| `apps/web/lib/subscription.ts` | `getSubscription()`, `incrementUsage()`, `isWithinBudget()`, `monthlyUsagePercent()`, `getByokFlag()`, `markByok()` — all Redis-backed. Needs a `bonusTokens` counter added. |
-| `apps/web/lib/stripe.ts` | `TIERS` config with `monthlyBudgetMicrodollars` per tier; checkout and portal session creation. TIERS config needs updating for CP allotments; checkout needs a `token_pack` product type. |
-| `apps/web/lib/benefits.ts` | Circle member provisioning for Hearth tier — the Circle API connection pattern already exists here. **Invert it:** instead of provisioning Circle from Cosmo, receive Circle events to provision Cosmo from CP. |
-| `apps/web/app/api/subscription/route.ts` | Returns `hasByok` + subscription usage data. Already the source of truth for sidebar and account page usage display. |
-| `apps/web/app/api/stripe/checkout/route.ts` | Stripe checkout session creation. Intact and UI-hidden. Re-expose for token top-up purchases. |
-| `apps/web/app/api/webhooks/stripe/route.ts` | Handles `checkout.session.completed`, `customer.subscription.updated/deleted`. Extend to handle token pack purchases. |
-
-**Token economics reference:**
-- Input: 3 µ$/token · Output: 15 µ$/token
-- Typical conversation: ~20K tokens ≈ $0.30 cost
-- Old tier budgets for reference: 152K tokens ≈ $1/month cost; 313K ≈ $2/month; 637K ≈ $4/month
-
----
-
-#### Open questions — requires Shalom's decisions
-
-**Q1 — How is CP membership verified from OpenCosmos?**
-
-This is the critical architectural question. Three options:
-
-*Option A — Circle webhook (recommended):* When someone joins CP on Circle, a webhook fires. A new `/api/webhooks/circle` route receives it, matches the member's email against the authenticated WorkOS user, and writes `cp_member: true` + `cp_tier: entry|full|hearth` to Redis with their token allotment. This is an inversion of the existing `benefits.ts` Circle pattern — exactly the right reuse. Requires: Circle webhook secret env var, a mapping from Circle "space" or membership level to tier name.
-
-*Option B — Stripe webhook from CP:* If CP uses its own Stripe account, a shared webhook route can receive CP subscription events. Requires coordinating webhook secrets between two Stripe accounts.
-
-*Option C — Manual admin flag:* A private `POST /api/admin/cp-member` endpoint sets the Redis flag manually. Not scalable, but viable for low membership counts during initial rollout while webhook integration is being built.
-
-**Decision needed:** Which verification path? If Option A, does Circle support webhooks on membership join/level changes? What's the CP Circle community ID?
-
----
-
-**Q2 — What are the CP tier token allotments?**
-
-The old Spark/Flame/Hearth allotments (152K/313K/637K tokens/month) were designed for standalone $5/$10/$50 Cosmo subscriptions. CP tiers have different pricing and different value propositions. New allotments are needed.
-
-Suggested approach: anchor allotments to CP membership cost, not the old tier math. At ~$0.30/10K tokens cost, 100K tokens costs ~$3 — a meaningful fraction of a $X/month CP membership. Shalom should decide: what fraction of each CP tier's monthly fee covers Cosmo usage? That fraction divided by $0.30/10K gives the monthly allotment.
-
-**Decision needed:** Monthly token allotment for each CP tier (entry, full, hearth).
-
----
-
-**Q3 — "Buy more tokens at cost" mechanic:**
-
-When a CP member exhausts their monthly allotment, they purchase additional tokens at cost (no markup).
-
-*Suggested pack sizes:* $3 for 100K tokens · $9 for 350K tokens · $25 for 1M tokens. These are at-cost rates; Shalom confirms final pack sizes and prices.
-
-*Implementation:* A one-time Stripe payment (not a subscription) with `metadata.token_pack = '100k'|'350k'|'1m'`. The webhook handler receives `checkout.session.completed`, identifies it as a token pack via metadata, and calls `addBonusTokens(userId, packSize)` in `subscription.ts`. Bonus tokens are stored in a separate Redis counter (`cosmo:bonus_tokens:{userId}`), distinct from the monthly allotment. `isWithinBudget()` checks monthly allotment first; when exhausted, deducts from bonus balance. Bonus tokens do not expire on monthly reset — only when consumed or CP membership lapses.
-
-**Decision needed:** Confirm pack sizes and prices. Any objection to the non-expiring bonus mechanic?
-
----
-
-**Q4 — Where does the "buy more" UI live?**
-
-*Option A — Account page inline (recommended for MVP):* When a CP member is near or at limit, the account page token gauge shows a "Top up" button alongside the usage meter. One click opens Stripe checkout for token packs. No new pages, minimum surface area.
-
-*Option B — Modal on quota exhaustion in CosmoChat:* When `isLimited` fires for a CP member (distinct from free-tier exhaustion, which shows the API key form), a CP-specific modal appears offering token top-up. Better UX — catches the user at the moment of need. Requires detecting CP member status in the `isLimited` check.
-
-*Option C — Dedicated `/account/tokens` page:* Room for usage history, pack comparisons. A later-iteration refinement.
-
-Recommended path: build Option A first; add Option B as a UX enhancement once the plumbing works.
-
-**Decision needed:** Confirm Option A as the starting point, or preference for Option B.
-
----
-
-#### Implementation sequence (after decisions above)
-
-1. Implement CP membership verification per Q1 decision
-2. Update `TIERS` config in `subscription.ts` / `stripe.ts` with new CP allotments (Q2)
-3. Add `bonusTokens` Redis counter to `subscription.ts`; update `isWithinBudget()` to deduct bonus after monthly allotment
-4. Add `addBonusTokens(userId, packSize)` function to `subscription.ts`
-5. Create Stripe one-time token pack products; wire `POST /api/stripe/checkout` to support `type: 'token_pack'`
-6. Extend webhook handler to identify and handle token pack `checkout.session.completed` events
-7. Update account page: CP member state shows tier allotment usage + "Top up" button (Q4)
-8. Update CosmoChat `isLimited` state: CP member → "Top up" flow vs. free tier → "Enter API key + visit CP"
-9. Register Stripe webhook for token pack product events
-
----
 
 ### Phase 1: Constellation — Corpus Standardization → Living Knowledge Graph [P1]
 
-**Status as of 2026-04-18:** Active. Phase 0 (foundational cleanup) verified on localhost and PR-ready. Supersedes the sigma.js WebGL approach in [Phase 1c+ (deprecated)](#phase-1c-deprecated-knowledge-graph--opencosmosaiknowledgegraph-p1) paused 2026-04-12. Consolidates three previously-separate workstreams (Cloud RAG, Knowledge Intelligence Layer, Constellation) into one coherent plan.
+**Status as of 2026-05-07:** Active. Phases 1.0–1.2 complete and shipped. Phase 1.3 (quote substrate + provenance) is the active next step. Supersedes the sigma.js WebGL approach in [Phase 1c+ (deprecated)](#phase-1c-deprecated-custom-knowledge-graph) paused 2026-04-12. Consolidates three previously-separate workstreams (Cloud RAG, Knowledge Intelligence Layer, Constellation) into one coherent plan.
 
 #### Context
 
@@ -189,10 +66,10 @@ OpenCosmos wants a **dynamic, interactive knowledge graph** that renders the ent
 
 This project delivers that vision in six connected workstreams:
 
-1. **Foundational cleanup** — strip H1 drift across the corpus, extend Cosmo reading context, fix first-paint light-mode flash and sidebar infinity parity (Phase 0 implemented, PR-ready).
+1. **Foundational cleanup** — strip H1 drift across the corpus, extend Cosmo reading context, fix first-paint light-mode flash and sidebar infinity parity (Phase 1.0 ✅ done).
 2. **Cloud RAG retrieval** — Upstash Vector + `fetchRagContext()` wired into Cosmo's conversation flow. Embed pipeline complete, 893 chunks upserted; RAG API endpoint and citation formatting live (see [Done](#done) for what shipped as part of the former Phase 1c / Phase 1d §§1–3).
 3. **Standardization skill hardening** — patch `/standardize-knowledge` so it's safe corpus-wide, and extend the frontmatter schema with fields the graph needs (`work_type`, `parent_work`).
-4. **Corpus restructuring** — physically split monoliths (Shakespeare, Khayyám, Walden) into per-work files; add a quote substrate (`knowledge/quotes/`) for ~1,800 attributed passages.
+4. **Corpus restructuring** — physically split monoliths (Shakespeare, Khayyám, Walden) into per-work files; add a quote substrate (`knowledge/quotes/`) for the 1,509 normalized passages from Tier 1.
 5. **Visualization** — build `@opencosmos/constellation`: an open-source React component in `opencosmos-ui` built on `@cosmos.gl/graph` (MIT, same engine as Cosmograph). OpenCosmos dogfoods it; the wider community gets it as a gift.
 6. **Cosmo in the Knowledge sidebar + community pathways** — companion chat grounded in the reading view; community contribution form; scheduled wiki-lint action (rebuilt atop the now-landed RAG infrastructure; formerly Phase 1d §§4–7).
 
@@ -228,57 +105,9 @@ Corpus
 
 **Density philosophy — the whole constellation, always visible.** The full graph (all ~3,000+ nodes) renders simultaneously as the landing-page experience — a gently animated starfield of the entire corpus, every tradition, work, section, and quote present at once. What zoom controls is not *presence* but *resolution*: node size, label visibility, edge opacity, and label culling. Far-out, the graph reads as constellations of light; zoomed in, individual stars (quotes, sections) become named and interactive. LOD is a visual-weight system, not a visibility gate.
 
-##### 3. Shakespeare and other monoliths: physical split into per-work files
 
-**Physical split, not vector-index-only.** Reasons, in order of importance:
 
-1. **Graph clarity.** Nodes = files. Every work gets its own node; every node has a file.
-2. **URL cleanliness.** `/knowledge/shakespeare/hamlet` beats `/knowledge/shakespeare/collected-works#hamlet`. Better for sharing, better for Cosmo citations (clickable deep links).
-3. **RAG precision.** Retrieval for "Hamlet's soliloquy" should rank Hamlet's chunks highest. With per-work files, Upstash Vector's `source` metadata does this natively.
-4. **Frontmatter per work.** Each play has distinct `tradition` nuance (history vs tragedy vs comedy) and `related_docs`.
-5. **Authoring ergonomics.** Editing a 5.3MB file is painful; editing `hamlet.md` (~200KB) is fine.
-
-**Collections survive as slim index files** with frontmatter only: `literature-the-complete-works-of-william-shakespeare.md` becomes ~30 lines of frontmatter + `related_docs` listing the 38 per-play files.
-
-**Targets for splitting (priority order):**
-- `literature-the-complete-works-of-william-shakespeare.md` — 38 plays + 1 sonnets file (the 154 sonnets become H2 sections within one `shakespeare-sonnets.md`).
-- `literature-leaves-of-grass.md` (Whitman) — H2-per-poem, keep as one file.
-- `literature-the-forerunner.md` (Gibran) — H2-per-parable, keep as one file.
-- `literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md` — two distinct works → two files.
-- `philosophy-walden-and-on-the-duty-of-civil-disobedience.md` — two distinct works → split (extract Walden; deprecate combined file, keep standalone civil-disobedience).
-- `philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md` (757 KB) — keep as one file; ensure H2 chapters are clean.
-
-**Rule of thumb:** if a file contains ≥ 2 works that a reader would cite separately, split them.
-
-##### 4. Quote substrate (moved below) YAML files in `knowledge/quotes/`
-
-~1,800 quotes incoming. A quote has fundamentally different shape from a work (fragment, not whole):
-
-- **Format:** YAML, not Markdown. Quotes are structured (author, source, theme, text), not narrative.
-- **File organization:** `knowledge/quotes/{author-or-source-slug}.yaml`. E.g. `quotes/shakespeare.yaml`, `quotes/rumi.yaml`, `quotes/proverbs.yaml`.
-- **Why not one-big-quotes.yaml:** future editing (add/remove per author), meaningful diffs, parallel attribution to source works.
-- **Why not per-quote .md files:** 1,800 files is noise; quotes don't need TOC or pages. They're graph citizens, not library items.
-
-Example `knowledge/quotes/shakespeare.yaml`:
-```yaml
-attribution_default:
-  author: William Shakespeare
-  tradition: literature
-  era: early-modern
-quotes:
-  - id: hamlet-act3-to-be-or-not-to-be
-    source_work: sources/literature/shakespeare-hamlet.md
-    source_section: "Act III, Scene I"
-    text: "To be, or not to be, that is the question…"
-    themes: [existence, mortality, doubt]
-```
-
-**Embed pipeline additions:**
-- New file-type handler in `scripts/knowledge/embed-knowledge.ts`: YAML files produce one chunk per quote (not per heading).
-- Chunk metadata: `chunk_type: 'quote'`, `source_work`, `source_section`, `themes`, `attribution`.
-- Chunk ID format: `knowledge/quotes/shakespeare.yaml#hamlet-act3-to-be-or-not-to-be`.
-
-##### 5. Frontmatter schema additions
+##### 3. Frontmatter schema additions
 
 Extend `Frontmatter` in [scripts/knowledge/shared.ts](../scripts/knowledge/shared.ts) and [apps/web/lib/knowledge.ts](../apps/web/lib/knowledge.ts):
 
@@ -289,138 +118,226 @@ type Frontmatter = {
   parent_work?: string                                       // NEW, optional
 }
 
-type QuoteRecord = {                   // NEW — for knowledge/quotes/*.yaml
-  id: string
-  source_work?: string
-  source_section?: string
-  text: string
-  themes?: string[]
-  author?: string
-  tradition?: string
-  era?: string
-}
+// NEW — for knowledge/quotes/*.yaml. Canonical shape lives in Phase 3
+// (see "Canonical schema" subsection); the actual TypeScript type lives
+// in scripts/knowledge/shared.ts and is imported by the embed pipeline.
 ```
 
 `work_type` required on every new/cleaned source doc. Backfill: walk `knowledge/sources/` → `work`, `knowledge/collections/` → `collection`, `knowledge/references/` → `reference`, `knowledge/wiki/` → `wiki`. Human review where ambiguous.
 
 #### Phased implementation
 
-##### Phase 0 — Verify + commit quick wins (today, 15 min)
+##### Phase 1.0 — Foundational cleanup ✅ Done
 
-Already implemented in this session; pending localhost verification:
+Shipped: H1-in-body strips across the corpus; Cosmo reading-context extension (TTL 5min → 30min, current passage capture); paint-safe layout (no light-mode flash on first paint); dialog sidebar infinity parity with Knowledge. Detail in [Done § Phase 1.0](#phase-10--foundational-cleanup).
 
-- [ ] `pnpm dev` → verify:
-  - Knowledge docs render; TOC active-section tracking works.
-  - Dialog sidebar infinity is green + `text-sm` (matches Knowledge).
-  - First page load shows black, not white flash.
-  - Scroll through a knowledge doc, then open `/dialog` and ask a question — Cosmo's response references the passage.
-- [ ] Commit: `fix(knowledge): standardize body H1, enrich Cosmo context, paint-safe layout`
+##### Phase 1.1 — Standardize the standardization skill ✅ Done
 
-##### Phase 1 — Standardize the standardization skill (1–2 hours)
+Shipped: `/standardize-knowledge` patched (frontmatter `work_type` enrichment, H1-in-body strip step, required-field verification, Shakespeare special case routes to `/split-collection`, env-var footer). 22 remaining H1-in-body files stripped. Detail in [Done § Phase 1.1](#phase-11--standardize-the-standardization-skill).
 
-**Files:**
-- [.claude/skills/standardize-knowledge/SKILL.md](../.claude/skills/standardize-knowledge/SKILL.md)
+##### Phase 1.2 — Split monoliths ✅ Done
 
-**Changes:**
+Shipped: `/split-collection` skill; Shakespeare → per-play files; Khayyám/Salámán split; Whitman/Gibran standardized.
 
-1. **Add Step 0.5 — frontmatter enrichment check.** Verify `work_type`; infer from path if missing. Flag ambiguous cases for manual review.
-2. **Add Step 2b — strip H1-in-body.** Any `^# ` line before the first `^## ` is an H1-in-body and is deleted along with the trailing blank line. Frontmatter `title` is authoritative.
-3. **Extend Step 1 grep** to include `knowledge/references/`.
-4. **Rewrite Shakespeare special case (Step 2)** to reference a new auxiliary skill `/split-collection`: "If this is a multi-work file, invoke `/split-collection` first, then re-run."
-5. **Add Step 5b — required-field verification.** Fail the file if after cleanup `work_type` is unset or `title` is missing.
-6. **Step 6 footer — list required env vars** for `pnpm embed` to prevent silent re-index failure.
+##### Phase 1.3 — Quote substrate + provenance pipeline (5–7 days wall, mostly background API) 🟢 Active
 
-**Strip the remaining 22 H1-in-body files** as the first corpus-wide application of the patched skill.
+**Goal.** Land the 1,509 normalized quotes from `quotes_normalized.jsonl` into the corpus as embedded, addressable, citation-ready graph nodes — with honest provenance signals so Cosmo never launders a misattribution.
 
-##### Phase 2 — Split monoliths (1 day) ✅ Done
+**Depends on:** Phase 1.1 (skill hardening) and Phase 1.2 (monolith splits) complete ✅, so quotes can reference stable section anchors in `knowledge/sources/`.
 
-##### Phase 3 — Quote infrastructure (1–2 days)
+**Output of this phase:** every quote either (a) embedded in Upstash with `chunk_type: 'quote'`, addressable as `[quote: knowledge/quotes/{author-key}.yaml#{quote-id}]`, with a `provenance` block carrying status + confidence; or (b) moved to `_archive/rejected.yaml` with notes and a deliberate human decision behind it. The graph (Phase 1.6) then renders quote nodes color-coded by provenance.
 
-**Files:**
-- New: `knowledge/quotes/README.md`, `knowledge/quotes/{author}.yaml` × many.
-- Modify: [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — add YAML handler, `chunk_type: 'quote'` branch.
-- Modify: [scripts/knowledge/shared.ts](../scripts/knowledge/shared.ts) — add `QuoteRecord` type + parse helper.
+**Status check (updated 2026-05-07):**
+- ✅ Tier 1 normalization — text cleaned, authors canonicalized, 14 misattributions flagged, 16 duplicate groups identified. Source-of-truth now versioned at `knowledge/quotes/_source/quotes_normalized.jsonl` (1,509 records).
+- ✅ Stage 1 (split source jsonl into embeddable + pending pools) shipped 2026-05-07. See [Two-pool architecture](#two-pool-architecture-decided-2026-05-07) below.
+- ⚪ Stage 2 (embed pipeline + Cosmo `[quote: …]` wiring) — pending; runs against the embeddable pool only.
+- ⚪ Stage 3 (Claude + web search validation) — pending; mutates the pending pool, promotes eligible records to embeddable.
 
-**Changes:**
+**Why not the obvious alternatives:**
+- *One big `quotes.yaml`?* Diffs become opaque and per-author edits collide.
+- *One `.md` per quote?* 1,500+ files is noise; quotes don't have TOCs or page-views. They're graph citizens, not library items.
+- *Skip provenance entirely and ship the 1,509?* Half the corpus is "Einstein said" quotes Einstein never said. Shipping unverified is a betrayal of Cosmo's voice — flourishing isn't built on misattribution.
 
-- Detect `.yaml` / `.yml` files in `knowledge/quotes/`. Parse with `js-yaml`.
-- For each quote, emit chunk with `id: knowledge/quotes/{file}.yaml#{quote.id}`, `metadata.chunk_type: 'quote'`, text (≤2000 chars), `source_work`, `source_section`, `themes`, `attribution`, inherited `domain`.
-- Quotes use no overlap (atomic chunks).
+---
 
-**RAG integration:**
-- [apps/web/lib/rag.ts](../apps/web/lib/rag.ts) — quote-specific formatting: `> "text" — Attribution, Source`.
-- Cosmo quote citation token: `[quote: path/to/file.yaml#quote-id]` (distinct from work `[ref: ...]`).
+**Decisions (approved 2026-05-07):**
 
-##### Phase 3.1 — Quote provenance validation pipeline (3–5 days, 4 stages)
+1. **ID strategy:** `q_NNNN` from jsonl is canonical `id`; optional `slug` field for human-readable URLs.
+   *Why:* IDs must be stable across re-imports and across Stage 4 reattributions. Semantic slugs collide ("on-love" appears across many authors) and renames break citations Cosmo has already emitted into conversation history.
+2. **Anonymous / collective sources:** Three files — `proverbs.yaml` (traditional sayings), `attributed-collectives.yaml` (e.g. "Delphic maxim"), `anonymous.yaml` (unknown).
+   *Why:* preserves the tradition signal the graph wants in its clusters ("Zen proverb" ≠ "Delphic maxim" ≠ unknown). Trivial to merge later if any of the three turns out redundant.
+3. **Status vocabulary:** Five buckets pipeline-internal — `verified` / `attributed` / `attributed_unverified` / `likely_misattributed` / `apocryphal` — with `rejected` as the terminal state for anything dropped in Stage 4.
+   *Why:* Stage 3 needs the resolution to distinguish "unsourced old saying" from "Einstein definitely didn't say this." Consumer side only checks `status !== 'verified'` to soften attribution language, so the five buckets cost is paid once in validation and renderer complexity stays flat.
+4. **`category` field:** Keep as single-valued taxonomic tag, separate from multi-valued `keywords`.
+   *Why:* maps cleanly onto graph node coloring in Phase 1.6; mirrors the `tradition` (one) vs `keywords` (many) shape already used elsewhere in the corpus.
 
-**Context:** 1,509 quotes in `quotes_normalized.jsonl` (Tier 1 complete: text normalized, authors canonicalized, 14 known misattributions flagged, 16 duplicate groups identified). All marked `provenance.status: "unverified"`. This pipeline moves every quote from `unverified` to one of: `verified` (sourced), `attributed` (credible but unsourced), or `purged` (misattributed/unresolvable).
+---
 
-**Stage 0 — Pre-classify from Tier 1 flags (2 hours, no API calls)**
-
-- Script: `scripts/normalize-quotes/00-convert-to-yaml.ts`
-- Input: `quotes_normalized.jsonl` from `/Users/shalomormsby/Downloads/`.
-- Output: `knowledge/quotes/{author-key}.yaml` files, grouped by author.
-- Logic:
-  - For each author, create a single YAML file with all their quotes.
-  - Initial `provenance.status` assigned from Tier 1 flags:
-    - `suspect_misattribution: true` → `likely_misattributed`
-    - `source` field populated → `attributed`
-    - Everything else → `attributed_unverified`
-  - Expected distribution: ~46 `attributed`, ~14 `likely_misattributed`, ~1,449 `attributed_unverified`.
-- Ship with this status. Cosmo caveats anything below `verified`.
-
-**Stage 1 — Automated Claude validation with web search (background, ~days, ~$30–60)**
-
-- Script: `scripts/normalize-quotes/01-claude-validation.ts`
-- Method: Claude Opus 4.7 with web search, batching quotes 10 at a time. For each quote, check Wikiquote, Quote Investigator, and primary-source evidence.
-- Output per quote: `{ status: "verified|attributed|attributed_unverified|likely_misattributed|apocryphal", confidence: 0.0–1.0, notes: "..." }`
-- Critical constraint: Claude must be **explicitly permitted to say "I don't know"**. `attributed_unverified` at low confidence is the right answer for a Zen proverb. Forbid fabricated citations; if Claude suggests a reattribution, it must come from evidence or widely-known factual record (e.g., "This is Marianne Williamson from *A Return to Love* (1992)").
-- Resumable: checkpointing every 50 records. Retry failed API calls 3 times with exponential backoff.
-- Expected distribution after this pass: ~200 `verified`, ~900 `attributed`, ~300 `attributed_unverified`, ~50–80 `likely_misattributed` / `apocryphal`.
-- Updates YAML files in place.
-
-**Stage 2 — Human review (one session, ~45 min)**
-
-- Output: CSV of all records with `confidence < 0.6` or status `likely_misattributed` / `apocryphal` (probably 80–120 records).
-- Columns: `id, text, author, status, confidence, reasoning, suggested_reattribution, decision (blank)`.
-- Shalom fills in decision column: `keep` / `drop` / `reattribute`.
-  - `keep` → stays in corpus, status locked at `attributed_unverified` with honest Cosmo caveat.
-  - `drop` → moved to `rejected.yaml`, archived (not deleted — audit trail matters).
-  - `reattribute` → corrected author + provenance note, status → `attributed`.
-- After this pass, every record has a deliberate human decision.
-
-**Stage 3 — Selective re-embed + graph refresh (30 min)**
-
-- Only records whose `provenance.status` changed need re-embedding.
-- Run `pnpm embed --filter=quotes` (efficient diff against Upstash).
-- Graph generator rerun includes updated quote nodes with accurate provenance color-coding (`verified` vs. `attributed` vs. caveated).
-
-**YAML schema for quotes (per-author files):**
+**Canonical schema** (one file per author, lives in `knowledge/quotes/{author-key}.yaml`). This is the source of truth — supersedes the draft `QuoteRecord` referenced in Key decisions §3.
 
 ```yaml
 ---
 author: "Albert Einstein"
 author_normalized_key: "albert-einstein"
-tradition: "science"
-era: "modern"
+tradition: "science"          # synthesized; required for graph clustering
+era: "modern"                 # ancient | classical | medieval | early-modern | modern | contemporary
+gender: "M"                   # carried from jsonl; null if unknown
 ---
 quotes:
-  - id: "q_0159"
+  - id: "q_0159"                              # canonical, stable across re-imports
+    slug: "creativity-intelligence-fun"       # optional, human-readable
     text: "Creativity is intelligence having fun."
-    keywords: ["creativity", "intelligence", "joy"]
+    category: "insight"                       # taxonomic (single-valued)
+    keywords: ["creativity", "intelligence", "joy"]   # topical (multi-valued)
+    context: "Often-quoted aphorism"          # editorial note, not a citation
     favorite: false
-    source: null
-    context: null
+    source_work: null                         # path into knowledge/sources/ if traceable
+    source_section: null                      # heading slug within source_work
     provenance:
-      status: "likely_misattributed"  # Updated by Stage 1/2
-      confidence: 0.1
+      status: "likely_misattributed"          # see Decision 3
+      confidence: 0.1                         # 0.0–1.0, set by Stage 3
       wikiquote_url: null
       earliest_print_source: null
-      notes: "No evidence Einstein said this; earliest attributions appear decades after his death."
-  # ... more quotes for this author
+      notes: "No evidence Einstein said this; earliest attributions decades after his death."
+      reviewed_by_human: false                # flips true after Stage 4
 ```
 
-##### Phase 4 — Re-embed and generate initial graph (30 min)
+---
+
+**Stage 1 — split source jsonl into two pools (½ day, no API calls) ✅ Done 2026-05-07**
+
+Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (versioned; future re-imports diff against this). The split happens via `pnpm quotes:normalize`:
+
+- Records with status ∈ {`verified`, `attributed`} → `knowledge/quotes/{bucket}.yaml` (embeddable pool).
+- Records with status ∈ {`attributed_unverified`, `likely_misattributed`, `apocryphal`} → `data/quotes-pending/pending.jsonl` (pending pool).
+- `pending.csv` auto-regenerated from JSONL for spreadsheet inspection.
+- Idempotent — re-runs wipe both pools and rebuild from source.
+
+**Initial state after Stage 1 (verified 2026-05-07):**
+- Embeddable: **46 quotes across 34 yaml files** (the records carrying a `source` field from Tier 1).
+- Pending: **1,463 records** (1,449 `attributed_unverified` + 14 `likely_misattributed`).
+- Cross-pool ID uniqueness verified; total = 1,509.
+
+**Scripts shipped:**
+- `scripts/normalize-quotes/shared.ts` — types, routing, tradition synthesis, YAML emit + read (via js-yaml), CSV emit.
+- `scripts/normalize-quotes/01-jsonl-to-yaml.ts` — split source → both pools.
+- `scripts/normalize-quotes/lint.ts` — validates both pools + cross-pool integrity (ID uniqueness, total count, status vocabulary, embeddable/pending status partition).
+- `scripts/normalize-quotes/06-export-pending-csv.ts` — regenerate `pending.csv` from `pending.jsonl` on demand.
+- `scripts/normalize-quotes/07-promote-verified.ts` — migrate eligible pending records into embeddable yaml. `--dry` previews.
+- pnpm wrappers: `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote`.
+
+##### Two-pool architecture (decided 2026-05-07)
+
+The original pm.md plan was to embed all 1,509 records with provenance metadata and let Cosmo soften language for unverified entries. Pivoted to a **verification-first** model:
+
+- `knowledge/quotes/` holds *only* embeddable records (status ∈ {`verified`, `attributed`}).
+- `data/quotes-pending/` holds records awaiting validation, in a working CSV/JSONL table.
+- Stage 3 mutates the pending pool; Stage 4 confirms human decisions; `pnpm quotes:promote` migrates eligible records into the embeddable pool.
+- The embed pipeline only ever sees verified content — Cosmo cannot cite an unverified quote even with caveats.
+
+**Promotion eligibility:** `status` ∈ {`verified`, `attributed`} AND (`provenance.confidence` ≥ 0.8 OR `provenance.reviewed_by_human` = true). Records below the bar stay in pending until Stage 4.
+
+**Tradeoff accepted:** loses pm.md's original Stage 2 dogfooding (where embedding all 1,509 lets Stages 3–5 iterate against a populated index). Stage 2 now embeds ~46 records initially and grows continuously as validation promotes records. Net effect: integrity over velocity.
+
+See [`knowledge/quotes/README.md`](../knowledge/quotes/README.md) and [`data/quotes-pending/README.md`](../data/quotes-pending/README.md) for the operational workflow.
+
+**Stage 2 — Embed pipeline + RAG + Cosmo citation wiring (½ day)**
+
+This is the *infrastructure* work — landing it before validation runs lets Stages 3–5 dogfood the embedding loop.
+
+- Reuse types + parser from [scripts/normalize-quotes/shared.ts](../scripts/normalize-quotes/shared.ts) — `JsonlRecord`, `parseYamlFile()`, `withPreclassifiedProvenance()` already shipped in Stage 1.
+- [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — add a YAML branch alongside `chunkAtHeadings()` ([scripts/knowledge/embed-knowledge.ts:82-157](../scripts/knowledge/embed-knowledge.ts#L82-L157)). For files under `knowledge/quotes/*.yaml`:
+  - One chunk per quote (atomic; no overlap).
+  - Chunk id: `knowledge/quotes/{file}.yaml#{quote.id}` (e.g. `knowledge/quotes/albert-einstein.yaml#q_0159`).
+  - Chunk metadata: `chunk_type: 'quote'`, `author`, `author_normalized_key`, `tradition`, `era`, `category`, `keywords`, `source_work`, `source_section`, `provenance.status`, `provenance.confidence`.
+  - Skip embedding for `provenance.status: 'rejected'` — tombstoned, not indexed.
+- [apps/web/lib/rag.ts](../apps/web/lib/rag.ts) — when retriever returns `chunk_type: 'quote'`, format with provenance line so Cosmo can self-caveat:
+  ```
+  > "{text}"
+  > — {author}{ source_work ? ', ' + source_work + '#' + source_section : '' }
+  > [provenance: {status} · confidence {confidence}]
+  ```
+- [packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — add quote citation rule:
+  > Cite quotes as `[quote: knowledge/quotes/{author-key}.yaml#{quote-id}]` (distinct from work citations, which use `[ref: …]`). When the chunk's `provenance.status` is anything other than `verified`, soften attribution: prefer "attributed to X" or "popularly attributed to X" over a bare "X said". Never present a quote whose status is `likely_misattributed` or `apocryphal` without flagging the doubt.
+- [apps/web/app/dialog/CosmoChat.tsx](../apps/web/app/dialog/CosmoChat.tsx) — extend the existing `[ref: …]` token parser to also recognize `[quote: …]`; render as a `<blockquote>` linking to the quote's `source_work` (if any) or the author's yaml file.
+- **Acceptance:** `pnpm embed` completes; Upstash shows new chunks with `chunk_type: 'quote'` matching the current embeddable yaml count (46 initially, growing as Stage 3 promotes records); ask Cosmo "give me a quote on impermanence" via `/dialog` and verify it returns a quote with a correct `[quote: …]` token. (Until Stage 3 runs, the verified pool is small — Cosmo may have to say "I don't have a verified quote on that yet.")
+
+**Stage 3 — Automated provenance validation (background, ~2 days wall, ~$50–150 API)**
+
+- New script: `scripts/normalize-quotes/02-validate-provenance.ts`
+- Method: Claude Opus 4.7 with web search, **10 quotes per request** (one Claude call evaluates 10 records, returns structured JSON for each — ~151 calls total).
+- Prompt design constraints:
+  - **Explicit "I don't know" license.** `attributed_unverified` at low confidence is the right answer for an old Zen proverb.
+  - **Forbid fabricated citations.** Reattributions must cite evidence (Wikiquote, Quote Investigator, primary source).
+  - Per-quote response shape: `{ id, status, confidence, wikiquote_url, earliest_print_source, notes, suggested_reattribution? }`.
+- Resilience: checkpoint after each batch into `knowledge/quotes/_source/validation-progress.jsonl`; resume from last checkpoint on restart; 3-retry exponential backoff per call.
+- **Pilot first.** Run on 50 records (5 batches), compare outcomes to a known set (the 14 flagged misattributions + a handful of clearly-verified canonical quotes), tune the prompt, then run the rest.
+- New script: `scripts/normalize-quotes/03-merge-validation.ts` — separate "fetch" from "write" so a bad merge can re-run without re-spending API.
+- Expected post-pass distribution (rough): ~200 `verified`, ~900 `attributed`, ~300 `attributed_unverified`, ~50–80 `likely_misattributed`/`apocryphal`.
+- **Acceptance:** every record has non-null `provenance.confidence`; the 14 known misattributions all land in `likely_misattributed` or `apocryphal`; actual API spend tracked + reported.
+
+**Stage 4 — Human review of low-confidence + flagged (one ~45 min session)**
+
+- New script: `scripts/normalize-quotes/04-export-review-csv.ts` → emits `knowledge/quotes/_review/pending-{date}.csv` for all records where `confidence < 0.6` OR `status ∈ {likely_misattributed, apocryphal}` (estimate: 80–120 rows).
+- CSV columns: `id, author, text, status, confidence, notes, suggested_reattribution, decision`.
+- Shalom fills `decision`: `keep | drop | reattribute`.
+- New script: `scripts/normalize-quotes/05-apply-review.ts` reads the CSV and:
+  - `keep` → `provenance.reviewed_by_human: true`, status locked at current value.
+  - `drop` → record moved to `knowledge/quotes/_archive/rejected.yaml`, `status: rejected` (audit trail; never deleted).
+  - `reattribute` → record moved to the new author's yaml, `status: attributed`, original author preserved in `provenance.notes`.
+- **Acceptance:** zero records remain with `confidence < 0.6` AND `reviewed_by_human: false`.
+
+**Stage 5 — Re-embed delta + hand off to Phase 1.4 (30 min)**
+
+- `pnpm embed` (existing diff logic re-embeds only chunks whose content or metadata changed).
+- Graph color-coding (rendered later in Phase 1.6):
+  - `verified` → full opacity, primary palette.
+  - `attributed` → 80% opacity.
+  - `attributed_unverified` → 60% opacity, italic label.
+  - `likely_misattributed`/`apocryphal` not in graph; `rejected` not in index.
+- **Acceptance:** Upstash chunk count for `chunk_type: 'quote'` matches `non-rejected count` in yaml; Phase 1.4 (full corpus re-embed + initial graph generation) can run.
+
+---
+
+**Files**
+
+New (✅ shipped 2026-05-07):
+- `knowledge/quotes/README.md`, `_source/quotes_normalized.jsonl`, `_review/`, `_archive/`
+- `knowledge/quotes/{author-key}.yaml` × 32, `proverbs.yaml`, `attributed-collectives.yaml` (initial: 46 records across 34 files)
+- `data/quotes-pending/README.md`, `pending.jsonl`, `pending.csv` (1,463 records)
+- `scripts/normalize-quotes/shared.ts`
+- `scripts/normalize-quotes/01-jsonl-to-yaml.ts`
+- `scripts/normalize-quotes/lint.ts`
+- `scripts/normalize-quotes/06-export-pending-csv.ts`
+- `scripts/normalize-quotes/07-promote-verified.ts`
+
+New (planned):
+- `knowledge/quotes/_source/validation-progress.jsonl` (Stage 3 checkpoint)
+- `knowledge/quotes/_review/pending-{date}.csv` (Stage 4 review export)
+- `knowledge/quotes/_archive/rejected.yaml` (Stage 4 audit trail)
+- `scripts/normalize-quotes/02-validate-provenance.ts`
+- `scripts/normalize-quotes/03-merge-validation.ts`
+- `scripts/normalize-quotes/04-export-review-csv.ts`
+- `scripts/normalize-quotes/05-apply-review.ts`
+
+Modified (✅ shipped 2026-05-07):
+- [package.json](../package.json) — `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote` scripts; `js-yaml` + `@types/js-yaml` devDependencies
+
+Modified (planned, Stage 2):
+- [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — YAML branch for `knowledge/quotes/*.yaml` (reuse `parseYamlFile` from scripts/normalize-quotes/shared.ts)
+- [apps/web/lib/rag.ts](../apps/web/lib/rag.ts) — quote-aware formatting with provenance line
+- [packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — `[quote: …]` citation rule + provenance-aware language
+- [apps/web/app/dialog/CosmoChat.tsx](../apps/web/app/dialog/CosmoChat.tsx) — `[quote: …]` token parser
+
+---
+
+**Open questions (settle in flight, don't block Stage 1):**
+
+- Does `tradition` need a controlled vocabulary, or can authors freely declare? Currently free-text in jsonl `context` field — Stage 1 needs a synthesis rule.
+- Promotion path from `attributed_unverified` → `attributed` outside the validation pipeline — e.g., when Shalom encounters source evidence while reading. If yes, add a `/promote-quote` skill in Phase 1.10.
+- `_source/`, `_review/`, `_archive/` — `.gitignore` or versioned? *Default:* versioned (auditability over repo size; ~10MB of yaml is fine).
+
+##### Phase 1.4 — Re-embed and generate initial graph (30 min) ⚪ Planned
 
 ```bash
 pnpm embed
@@ -428,7 +345,7 @@ pnpm graph
 curl localhost:3000/api/knowledge/graph
 ```
 
-##### Phase 5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo)
+##### Phase 1.5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo) ⚪ Planned
 
 **Repo:** `/Users/shalomormsby/Developer/opencosmos-ui`
 **New package:** `packages/constellation/`
@@ -507,7 +424,7 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 
 **Publish:** `@opencosmos/constellation@0.1.0` to npm.
 
-##### Phase 6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days)
+##### Phase 1.6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days) ⚪ Planned
 
 **Files:**
 - Modify: [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts) — emit hierarchical node set (tradition + work + section + quote) with `tier` field.
@@ -532,7 +449,7 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 }
 ```
 
-##### Phase 7 — Semantic edges (1 day)
+##### Phase 1.7 — Semantic edges (1 day) ⚪ Planned
 
 **File:** [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts)
 
@@ -542,7 +459,7 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 - Cache similarity matrix in Redis under `graph:semantic:v1:{corpus_hash}`.
 - In `@opencosmos/constellation`, `type: 'semantic'` edges render at 30% opacity and thinner; curated edges render at 100% opacity and thicker.
 
-##### Phase 8 — Cosmo citations + bidirectional links (2–3 days)
+##### Phase 1.8 — Cosmo citations + bidirectional links (2–3 days) ⚪ Planned
 
 **Files:**
 - [packages/ai/COSMO_SYSTEM_PROMPT.md](../packages/ai/COSMO_SYSTEM_PROMPT.md) — citation format: "Cite sources as `[ref: path/to/file.md#section-slug]` for works or `[quote: path/to/file.yaml#quote-id]` for quotes. Inline within your sentence." Note: `section-slug` matches the chunk ID emitted by `scripts/knowledge/embed-knowledge.ts` — usually `slugify(heading)`, but may include an 8-char hash suffix (`#slug-a1b2c3d4`) when multiple sections within the same file share a heading (e.g. seven poems titled "Thought" in Leaves of Grass). The citation parser must accept both forms.
@@ -552,7 +469,7 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 
 **Cosmo's "visible reasoning":** when Cosmo emits a citation mid-response, the passage viewer (if open) briefly pulses the active section; the graph (if open) pulses the cited node. User sees Cosmo's journey, not just its destination.
 
-##### Phase 9 — Cosmo-in-Knowledge-sidebar (2–3 days, done last)
+##### Phase 1.9 — Cosmo-in-Knowledge-sidebar (2–3 days) ⚪ Planned
 
 **Files:**
 - New: `apps/web/app/dialog/useCosmoSession.ts` — hook that owns messages/apiKey/tokens/PM state.
@@ -560,9 +477,9 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 - Modify: [apps/web/app/AppShell.tsx](../apps/web/app/AppShell.tsx) — add `sidebarContent?: ReactNode` prop.
 - Modify: [apps/web/app/knowledge/[...slug]/page.tsx](../apps/web/app/knowledge/[...slug]/page.tsx) — pass `<CosmoChatPanel variant="sidebar" />` as `sidebarContent`.
 - Modify: [apps/web/app/knowledge/page.tsx](../apps/web/app/knowledge/page.tsx) — same for the library index.
-- Mobile: below `lg`, revert to current nav; floating action button planned for Phase 10.
+- Mobile: below `lg`, revert to current nav; floating action button planned for Phase 1.11.
 
-##### Phase 10 — Community contribution pathway
+##### Phase 1.10 — Community contribution pathway ⚪ Planned
 
 Absorbed from the former Phase 1d §6. Opens a path for the community to add to the corpus — human-curated, not auto-accepted.
 
@@ -570,7 +487,7 @@ Absorbed from the former Phase 1d §6. Opens a path for the community to add to 
 - [ ] `apps/web/app/api/knowledge/contribute/route.ts` — creates a GitHub issue via `GITHUB_ISSUES_PAT`; labels `knowledge-contribution`; returns issue URL
 - [ ] Contribution UI also calls `detectTentativeEdges()` client-side, passing the pending node + tentative links into `<KnowledgeGraph pendingNodes>` for optimistic injection (dashed ring, `confidence: "pending"`). After merge + revalidation the canonical node replaces it.
 
-##### Phase 11 — Wiki lint + graph metadata unification
+##### Phase 1.11 — Wiki lint + graph metadata unification ⚪ Planned
 
 Absorbed from the former Phase 1d §§5, 7.
 
@@ -579,26 +496,15 @@ Absorbed from the former Phase 1d §§5, 7.
 - [ ] Extend `fetchRagContext()` to surface degree-1 graph neighbors as lower-priority context — cross-tradition connections become structural, not coincidental.
 - [ ] Stretch: retrieved nodes highlighted in real time in the constellation while Cosmo responds (see [knowledge-intelligence-layer.md § Stretch Goals](knowledge-intelligence-layer.md#stretch-goals)).
 
-#### Files touched
+#### Files touched (planned, by sub-phase)
 
-**This session (already edited, pending commit):**
-- `knowledge/sources/philosophy-nature.md`, `philosophy-the-kingdom-of-god-is-within-you.md`, `philosophy-on-the-duty-of-civil-disobedience.md`, `knowledge/references/philosophy-the-egyptian-book-of-the-dead-translation-and-commentary.md` — H1 strips
-- `apps/web/app/dialog/CosmoChat.tsx` — TTL 5min → 30min; pass `current_passage`
-- `apps/web/app/knowledge/[...slug]/TableOfContents.tsx` — capture current passage
-- `apps/web/app/knowledge/[...slug]/DocViewer.tsx` — `data-doc-content` wrapper
-- `apps/web/app/api/chat/route.ts` — extended `CurrentSection`, richer system block
-- `apps/web/app/layout.tsx` — inline `#000` + `color-scheme: dark`
-- `apps/web/components/TokenGauge.tsx` — compact+unlimited → green + `text-sm`
+**Phase 1.3:** New `knowledge/quotes/{_source,_review,_archive,README.md,*.yaml}` and `scripts/normalize-quotes/{01-jsonl-to-yaml,02-validate-provenance,03-merge-validation,04-export-review-csv,05-apply-review,lint}.ts`. Modify `scripts/knowledge/{shared,embed-knowledge}.ts`, `apps/web/lib/rag.ts`, `packages/ai/COSMO_SYSTEM_PROMPT.md`, `apps/web/app/dialog/CosmoChat.tsx`. Full breakdown lives in the Phase 1.3 Files block above.
 
-**Phase 1:** `.claude/skills/standardize-knowledge/SKILL.md`, `scripts/knowledge/shared.ts` (+ `work_type`, `parent_work`), `apps/web/lib/knowledge.ts` (+ `work_type`, `parent_work`), 22 `knowledge/sources/*.md` (strip H1).
+**Phase 1.5 (opencosmos-ui repo):** New `packages/constellation/*`.
 
-**Phase 2:** New `.claude/skills/split-collection/SKILL.md`, Shakespeare split → `knowledge/sources/shakespeare/*.md`, other monoliths.
+**Phases 1.6–1.10 (opencosmos repo):** `scripts/knowledge/generate-wiki-graph.ts`, `apps/web/app/knowledge/graph/GraphPageClient.tsx`, `packages/ai/COSMO_SYSTEM_PROMPT.md`, `apps/web/app/dialog/CosmoChat.tsx`, `apps/web/app/AppShell.tsx`, `apps/web/app/knowledge/[...slug]/*`.
 
-**Phase 3:** New `knowledge/quotes/README.md` + `.yaml` data, `scripts/knowledge/embed-knowledge.ts`, `scripts/knowledge/shared.ts`, `apps/web/lib/rag.ts`.
-
-**Phase 5 (opencosmos-ui repo):** New `packages/constellation/*`.
-
-**Phases 6–9 (opencosmos repo):** `scripts/knowledge/generate-wiki-graph.ts`, `apps/web/app/knowledge/graph/GraphPageClient.tsx`, `packages/ai/COSMO_SYSTEM_PROMPT.md`, `apps/web/app/dialog/CosmoChat.tsx`, `apps/web/app/AppShell.tsx`, `apps/web/app/knowledge/[...slug]/*`.
+For shipped sub-phase file lists (1.0–1.2), see [Done § Phase 1.0–1.2](#phase-1-constellation--shipped-sub-phases).
 
 #### Existing utilities to reuse (do not re-invent)
 
@@ -610,76 +516,155 @@ Absorbed from the former Phase 1d §§5, 7.
 - **Sidebar slot pattern:** [apps/web/app/AppShell.tsx](../apps/web/app/AppShell.tsx) already accepts `bottomItems` + `footer` — add `sidebarContent` in the same spirit.
 - **Cosmo context transmission:** `sessionStorage['cosmo_context']` + `current_section` payload — already end-to-end; the new `current_passage` field rides the same channel.
 
-#### Verification (end-to-end)
+#### Verification (end-to-end, by upcoming sub-phase)
 
-**Phase 0 (today):**
-1. `pnpm dev` in `apps/web`.
-2. Open `localhost:3000/knowledge/sources/philosophy-nature` — page loads, no body H1 visible, TOC works.
-3. Scroll into middle of a section — active heading highlights in TOC.
-4. Open `/dialog` — sidebar infinity is green + matches Knowledge.
-5. Reload `/` — no white flash; page paints black.
-6. Ask Cosmo about the passage you scrolled through — response references the specific paragraph, not just chapter.
-
-**Phase 1–2:**
-1. `/standardize-knowledge all` runs cleanly: no H1-in-body remains, all docs have `work_type`.
-2. `git status` shows 22 modified files; diffs are purely H1 deletions.
-3. Shakespeare split produces ~38 per-play files; `pnpm build` passes.
-4. `curl localhost:3000/knowledge/sources/shakespeare/hamlet` → Hamlet renders.
-
-**Phase 3–4:**
+**Phase 1.3 (quotes):**
 1. Add 5 test quotes to `knowledge/quotes/test.yaml`.
 2. `pnpm embed` succeeds; Upstash Vector shows new chunks with `chunk_type: 'quote'`.
-3. Ask Cosmo about a quote's theme — response retrieves + attributes correctly.
+3. Ask Cosmo about a quote's theme — response retrieves + attributes correctly with `[quote: ...]` token; unverified records carry an honest caveat.
 
-**Phase 5:**
+**Phase 1.4 (re-embed + initial graph):**
+1. `pnpm embed && pnpm graph` complete cleanly.
+2. `curl localhost:3000/api/knowledge/graph` returns hierarchical JSON with tradition + work + section + quote tiers.
+
+**Phase 1.5 (build constellation package):**
 1. `pnpm --filter @opencosmos/constellation test` passes.
 2. Storybook shows `<KnowledgeGraph>` rendering sample data.
 3. `pnpm --filter @opencosmos/constellation publish --dry-run` produces expected tarball.
 
-**Phase 6–7:**
-1. `pnpm graph` → Redis contains new hierarchical JSON.
-2. `/knowledge/graph` renders the **entire corpus at once** at landing zoom — traditions as bright anchors, works as mid-tier lights, sections and quotes as fine dust. No tier hidden.
-3. Ambient drift is visible: nodes breathe slightly.
-4. After ~2–3 seconds with no interaction, camera gently tweens toward the focus target.
-5. Any scroll/drag/click during intro immediately cancels the tween.
-6. Zooming in manually causes nearby labels to fade in; zooming out causes them to cull back to tradition-tier.
-7. `prefers-reduced-motion` disables ambient drift and replaces intro tween with instant jump.
-8. Hovering a node shows label; clicking navigates to the work.
-9. Semantic edges visible as thin translucent connectors; curated edges prominent.
+**Phase 1.6–1.7 (consume + semantic edges):**
+1. `/knowledge/graph` renders the **entire corpus at once** at landing zoom — traditions as bright anchors, works as mid-tier lights, sections and quotes as fine dust. No tier hidden.
+2. Ambient drift is visible: nodes breathe slightly.
+3. After ~2–3 seconds with no interaction, camera gently tweens toward the focus target.
+4. Any scroll/drag/click during intro immediately cancels the tween.
+5. Zooming in manually causes nearby labels to fade in; zooming out causes them to cull back to tradition-tier.
+6. `prefers-reduced-motion` disables ambient drift and replaces intro tween with instant jump.
+7. Hovering a node shows label; clicking navigates to the work.
+8. Semantic edges visible as thin translucent connectors; curated edges prominent.
 
-**Phase 8:**
-1. Ask Cosmo: "What does Tolstoy say about non-violence?" — response contains `[ref: ...]` tokens rendered as clickable links.
+**Phase 1.8 (citations + bidirectional links):**
+1. Ask Cosmo: "What does Tolstoy say about non-violence?" — response contains `[ref: ...]` and `[quote: ...]` tokens rendered as clickable links.
 2. Click citation → navigates to doc + scrolls to section.
 3. From TOC, click "See in graph" → graph centers on node, 1-hop neighbors highlighted.
 
-**Phase 9:**
+**Phase 1.9 (sidebar):**
 1. `/knowledge/sources/philosophy-apology` loads with Cosmo chat panel in left sidebar.
 2. Duplicate Dialog/Knowledge/Studio nav links are gone.
 3. Question in panel grounds in currently-open document.
-4. On mobile (< 1024px), sidebar chat reverts to nav; floating action button (Phase 10) TBD.
+4. On mobile (< 1024px), sidebar chat reverts to nav; floating action button (Phase 1.11) TBD.
 
-#### Timeline
+#### Timeline (remaining work)
 
-- Phase 0: today (15 min).
-- Phase 1: 1 half-day.
-- Phase 2: 1 day.
-- Phase 3: 1–2 days.
-- Phase 4: 30 minutes.
-- Phase 5: 3–5 days (cross-repo; longest).
-- Phase 6: 1 day.
-- Phase 7: 1 day.
-- Phase 8: 2–3 days.
-- Phase 9: 2–3 days.
+- Phase 1.0: ✅ Done.
+- Phase 1.1: ✅ Done.
+- Phase 1.2: ✅ Done.
+- Phase 1.3: 5–7 days wall (mostly background API).
+- Phase 1.4: 30 minutes.
+- Phase 1.5: 3–5 days (cross-repo; longest).
+- Phase 1.6: 1–2 days.
+- Phase 1.7: 1 day.
+- Phase 1.8: 2–3 days.
+- Phase 1.9: 2–3 days.
+- Phase 1.10: 2–3 days.
+- Phase 1.11: 1–2 days.
 
-**Total:** ~3 weeks focused work. Phases parallelizable where independent (quotes/split; constellation/corpus).
+**Total remaining:** ~3.5 weeks focused work. Sub-phases parallelizable where independent (quotes/constellation-build; sidebar/community).
 
 #### Open questions
 
 1. **Tradition palette.** 12-color palette from `@opencosmos/tokens`, mapped alphabetically by default, frontmatter override. Can land with defaults and tune later.
 2. **Constellation name.** `@opencosmos/constellation` fits the brand. Alternatives: `@opencosmos/atlas`, `@opencosmos/starfield`. Not plan-blocking.
 3. **Community resource scope.** Minimal v0.1.0 README; invest in docs when API is proven by real OpenCosmos use.
-4. **Walden extraction.** Confirm: extract Walden into own file, deprecate combined file, civil-disobedience stays standalone.
-5. **Quote ingestion format.** User has 1,800 quotes — current format? (CSV? Notes? Doc?) Sample unblocks YAML schema.
+
+---
+
+### Phase 2: CP Member Token Access & Top-up [P0] 🔵 Blocked
+
+**Status:** Blocked on Shalom decisions Q1–Q4 below. P0 once unblocked.
+
+**Why this exists:** The brand architecture pivot closes the OpenCosmos subscription path but opens a new obligation: CP members need managed Cosmo access (no API key required). This project builds that path cleanly, reusing the [Phase 1b](#phase-1b--subscription-infrastructure-prs-8591-infra-shipped-residuals-pending) infrastructure rather than replacing it.
+
+#### What already works
+
+**Case 1 — Free visitor quota:** Already complete. The 20K token session budget, account page quota card, and `isLimited` state in CosmoChat (which shows the API key entry form + CP invitation when quota is exhausted) are all intact and functioning. No action required for Case 1.
+
+**Case 2 — CP member token access:** Requires implementation. See below.
+
+#### Case 2: CP Member Token Tracking + Buy-More
+
+CP members should receive a token allotment per tier, tracked against their usage. When the allotment is exhausted, they can purchase additional tokens at cost. Purchased tokens are non-expiring while CP membership is active.
+
+**Existing infrastructure that can be reused (nothing needs rebuilding):**
+
+| File | What it does |
+|------|-------------|
+| `apps/web/lib/subscription.ts` | `getSubscription()`, `incrementUsage()`, `isWithinBudget()`, `monthlyUsagePercent()`, `getByokFlag()`, `markByok()` — all Redis-backed. Needs a `bonusTokens` counter added. |
+| `apps/web/lib/stripe.ts` | `TIERS` config with `monthlyBudgetMicrodollars` per tier; checkout and portal session creation. TIERS config needs updating for CP allotments; checkout needs a `token_pack` product type. |
+| `apps/web/lib/benefits.ts` | Circle member provisioning for Hearth tier — the Circle API connection pattern already exists here. **Invert it:** instead of provisioning Circle from Cosmo, receive Circle events to provision Cosmo from CP. |
+| `apps/web/app/api/subscription/route.ts` | Returns `hasByok` + subscription usage data. Already the source of truth for sidebar and account page usage display. |
+| `apps/web/app/api/stripe/checkout/route.ts` | Stripe checkout session creation. Intact and UI-hidden. Re-expose for token top-up purchases. |
+| `apps/web/app/api/webhooks/stripe/route.ts` | Handles `checkout.session.completed`, `customer.subscription.updated/deleted`. Extend to handle token pack purchases. |
+
+**Token economics reference:**
+- Input: 3 µ$/token · Output: 15 µ$/token
+- Typical conversation: ~20K tokens ≈ $0.30 cost
+- Old tier budgets for reference: 152K tokens ≈ $1/month cost; 313K ≈ $2/month; 637K ≈ $4/month
+
+#### Open questions — requires Shalom's decisions
+
+**Q1 — How is CP membership verified from OpenCosmos?**
+
+This is the critical architectural question. Three options:
+
+*Option A — Circle webhook (recommended):* When someone joins CP on Circle, a webhook fires. A new `/api/webhooks/circle` route receives it, matches the member's email against the authenticated WorkOS user, and writes `cp_member: true` + `cp_tier: entry|full|hearth` to Redis with their token allotment. This is an inversion of the existing `benefits.ts` Circle pattern — exactly the right reuse. Requires: Circle webhook secret env var, a mapping from Circle "space" or membership level to tier name.
+
+*Option B — Stripe webhook from CP:* If CP uses its own Stripe account, a shared webhook route can receive CP subscription events. Requires coordinating webhook secrets between two Stripe accounts.
+
+*Option C — Manual admin flag:* A private `POST /api/admin/cp-member` endpoint sets the Redis flag manually. Not scalable, but viable for low membership counts during initial rollout while webhook integration is being built.
+
+**Decision needed:** Which verification path? If Option A, does Circle support webhooks on membership join/level changes? What's the CP Circle community ID?
+
+**Q2 — What are the CP tier token allotments?**
+
+The old Spark/Flame/Hearth allotments (152K/313K/637K tokens/month) were designed for standalone $5/$10/$50 Cosmo subscriptions. CP tiers have different pricing and different value propositions. New allotments are needed.
+
+Suggested approach: anchor allotments to CP membership cost, not the old tier math. At ~$0.30/10K tokens cost, 100K tokens costs ~$3 — a meaningful fraction of a $X/month CP membership. Shalom should decide: what fraction of each CP tier's monthly fee covers Cosmo usage? That fraction divided by $0.30/10K gives the monthly allotment.
+
+**Decision needed:** Monthly token allotment for each CP tier (entry, full, hearth).
+
+**Q3 — "Buy more tokens at cost" mechanic:**
+
+When a CP member exhausts their monthly allotment, they purchase additional tokens at cost (no markup).
+
+*Suggested pack sizes:* $3 for 100K tokens · $9 for 350K tokens · $25 for 1M tokens. These are at-cost rates; Shalom confirms final pack sizes and prices.
+
+*Implementation:* A one-time Stripe payment (not a subscription) with `metadata.token_pack = '100k'|'350k'|'1m'`. The webhook handler receives `checkout.session.completed`, identifies it as a token pack via metadata, and calls `addBonusTokens(userId, packSize)` in `subscription.ts`. Bonus tokens are stored in a separate Redis counter (`cosmo:bonus_tokens:{userId}`), distinct from the monthly allotment. `isWithinBudget()` checks monthly allotment first; when exhausted, deducts from bonus balance. Bonus tokens do not expire on monthly reset — only when consumed or CP membership lapses.
+
+**Decision needed:** Confirm pack sizes and prices. Any objection to the non-expiring bonus mechanic?
+
+**Q4 — Where does the "buy more" UI live?**
+
+*Option A — Account page inline (recommended for MVP):* When a CP member is near or at limit, the account page token gauge shows a "Top up" button alongside the usage meter. One click opens Stripe checkout for token packs. No new pages, minimum surface area.
+
+*Option B — Modal on quota exhaustion in CosmoChat:* When `isLimited` fires for a CP member (distinct from free-tier exhaustion, which shows the API key form), a CP-specific modal appears offering token top-up. Better UX — catches the user at the moment of need. Requires detecting CP member status in the `isLimited` check.
+
+*Option C — Dedicated `/account/tokens` page:* Room for usage history, pack comparisons. A later-iteration refinement.
+
+Recommended path: build Option A first; add Option B as a UX enhancement once the plumbing works.
+
+**Decision needed:** Confirm Option A as the starting point, or preference for Option B.
+
+#### Implementation sequence (after decisions above)
+
+1. Implement CP membership verification per Q1 decision
+2. Update `TIERS` config in `subscription.ts` / `stripe.ts` with new CP allotments (Q2)
+3. Add `bonusTokens` Redis counter to `subscription.ts`; update `isWithinBudget()` to deduct bonus after monthly allotment
+4. Add `addBonusTokens(userId, packSize)` function to `subscription.ts`
+5. Create Stripe one-time token pack products; wire `POST /api/stripe/checkout` to support `type: 'token_pack'`
+6. Extend webhook handler to identify and handle token pack `checkout.session.completed` events
+7. Update account page: CP member state shows tier allotment usage + "Top up" button (Q4)
+8. Update CosmoChat `isLimited` state: CP member → "Top up" flow vs. free tier → "Enter API key + visit CP"
+9. Register Stripe webhook for token pack product events
 
 ---
 
@@ -727,11 +712,67 @@ Extract Cosmo patterns into a reusable, model-agnostic developer package.
 - [ ] Guided inquiry sessions using the sacred rhythm (attune → inquire → offer)
 - [ ] Practice templates: daily contemplation, creative inquiry, philosophical dialogue
 - [ ] Living Memory protocol: community wisdom feeds back into corpus (with curation gates)
-- [ ] Hearth tier members receive full CP membership (infrastructure in Phase 1b, CP integration here — note: Hearth is superseded; see [Phase 1b](#phase-1b-subscriptions--infrastructure-preserved-ui-superseded) for brand architecture pivot)
+- [ ] Hearth tier members receive full CP membership (infrastructure in Phase 1b, CP integration here — note: Hearth is superseded; see [Phase 1b](#phase-1b--subscription-infrastructure-prs-8591-infra-shipped-residuals-pending) for brand architecture pivot)
 
 ---
 
-## Completed Work
+## Site Architecture
+
+```
+opencosmos.ai/
+├── /              → Home (four-pillars intro — needs graduation from placeholder)
+├── /chat          → Conversation with Cosmo
+├── /knowledge     → Knowledge corpus browser (live ✅)
+├── /studio        → Design system docs (proxied from opencosmos-ui via Vercel rewrites)
+└── /community     → Creative Powerup (redirect for now; deep integration Phase 7)
+```
+
+Key: `/studio` maps via Vercel rewrites to the `opencosmos-ui` repo's deployed docs site — unified domain, independent codebases.
+
+---
+
+## @opencosmos/ui — Separate Repo
+
+Design system published to npm as `@opencosmos/ui`. Maintained in the [opencosmos-ui repo](https://github.com/shalomormsby/opencosmos-ui).
+
+**Current tasks:** Ongoing maintenance. No blocking items. Update in this repo with `pnpm update @opencosmos/ui`.
+
+---
+
+## @opencosmos/ai — `packages/ai`
+
+Sovereign AI layer — WIP. Tasks tracked under [Cosmo § Phase 5](#phase-5-opencosmosai-package-foundation) above.
+
+License: RAIL (not MIT).
+
+---
+
+## Portfolio — `apps/portfolio`
+
+Production at [shalomormsby.com](https://www.shalomormsby.com/).
+
+**Open tasks:**
+- [ ] Case studies from CP work and OpenCosmos
+- [ ] Consulting offerings documented and priced
+- [ ] Design consulting pipeline (Phase 3 of the strategy)
+
+---
+
+## Creative Powerup — `apps/creative-powerup`
+
+Community platform. In development at ecosystem-creative-powerup.vercel.app. This is where paid Cosmo access lives (no API key required for members). See [strategy.md § Brand Architecture](strategy.md) for the OpenCosmos / CP split.
+
+**Open tasks:**
+- [ ] CP member token access on OpenCosmos — see [Phase 2](#phase-2-cp-member-token-access--top-up) above; requires Circle webhook or equivalent membership verification
+- [ ] Cosmo integration for structured CP programs (Phase 7)
+
+---
+
+## Stocks — `apps/stocks`
+
+AI-powered investment intelligence. In development. No active sprint items.
+
+---
 
 ## Environment Setup — Done ✅
 
@@ -745,10 +786,82 @@ All set up in `.env.local` / Vercel / GitHub Secrets:
 ---
 
 
-## Blocked or Deprecated Projects 
-This plans in this section are provided for reference, as examples of plans that did not work and ideas and strategies to not repeat. 
+## Related Documents
 
-### Phase 1c+ (Deprecated): Knowledge Graph — `opencosmos.ai/knowledge/graph` [P1]
+- [strategy.md](strategy.md) — Three Futures, business model, open questions
+- [architecture.md](architecture.md) — Infrastructure, service map, data flow, token economics
+- [chronicle.md](chronicle.md) — The story behind the decisions
+- [projects/opencosmos-migration.md](projects/opencosmos-migration.md) — Active rename migration (independent workstream)
+- [projects/cosmo-voice-research.md](projects/cosmo-voice-research.md) — Voice provider comparison and decision guide
+- [projects/tech-research.md](projects/tech-research.md) — Hardware research (Dell, M5 Max/Ultra)
+- [WELCOME.md](../WELCOME.md) — The front door
+- [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
+
+---
+
+## Done
+
+### Brand Architecture Pivot (2026-04-16) — PRs #112–#113
+
+- ✅ Strategic decision: OpenCosmos stays purely open (BYOK + free quota + corpus); all paid Cosmo access moves to Creative Powerup memberships. Full rationale in [strategy.md § Brand Architecture](strategy.md).
+- ✅ Account page: removed all subscription UI (tier cards, active subscription card, portal/upgrade links) for all user states
+- ✅ Account page: BYOK-connected state shows clean green indicator + masked key + unlimited TokenGauge; no form
+- ✅ Account page: free visitor state shows 20K quota meter + CP community invitation tile (links to creativepowerup.com)
+- ✅ Sidebar: BYOK users see ∞ immediately (localStorage-first check; no longer depends on server `hasByok` timing)
+- ✅ CosmoChat: removed "or subscribe" link from `isLimited` exhaustion message
+
+### Phase 1b — Subscription Infrastructure (PRs #85–#91, infra shipped, residuals pending)
+
+> **2026-04-16 Brand Architecture Pivot:** OpenCosmos no longer offers subscription tiers. The account page shows only: BYOK (unlimited), free 20K token quota, and a CP community invitation. All paid Cosmo access moves to Creative Powerup memberships. The Stripe infrastructure (checkout, portal, webhooks, benefit provisioning) remains intact for existing subscribers to manage billing — no new checkout flows belong on opencosmos.ai. See [strategy.md § Brand Architecture](strategy.md).
+
+**✅ Shipped:**
+- Stripe billing — Spark/Flame/Hearth tiers, checkout, webhook, portal, tier config with token budgets
+- WorkOS auth integration — AuthKit, session refresh, OAuth callback
+- Usage tracking — microdollar counters in Redis (`input × 3 + output × 15 µ$/token`), weekly + monthly sub-limits
+- TokenGauge UI — Sidebar (∞ for BYOK, gauge for subscribers/free), Account page (exact tokens remaining)
+- Subscription benefit provisioning — Substack (free newsletter via public endpoint) + Circle (member API)
+- Account page — subscription display, tier cards, BYOK detection *(UI superseded by brand architecture pivot; infrastructure preserved)*
+- BYOK cross-device detection — `hasByok` flag set via `POST /api/byok` on key save and dialog auth (PR #90)
+- Security: input size limits (Fix 1), session hardening (Fix 2), token-based monthly cap (Fix 3), structured logging (Fix 4)
+- Fix 5: Anthropic Console spend limit — external action, verified
+- Fix 6: Cloudflare Turnstile bot prevention — invisible challenge on free-tier path (PR #91, pending merge)
+- Prompt caching — `cache_control: ephemeral` on system prompt, ~76% input cost reduction
+
+**⚪ Residuals — still needed:**
+- [ ] Register `https://opencosmos.ai/api/webhooks/stripe` in Stripe Dashboard — events: `checkout.session.completed`, `customer.subscription.updated`, `customer.subscription.deleted` *(required for existing subscribers to cancel/update billing — no new subscriptions, but webhook is still needed)*
+- [ ] **Privacy policy** — required before Stripe processes real payments. Must cover: usage metrics collected, BYOK key non-storage, Stripe data handling, retention period, user rights.
+- [ ] **Terms of service** — usage limits, acceptable use, subscription terms
+- [ ] Fix 7 — Monitoring & anomaly alerts (post-launch; see [architecture.md § Bot Protection](architecture.md#bot-protection-design))
+
+**~~Superseded — no action required:~~**
+- ~~Hearth tier: automatically provision full CP membership on subscribe, revoke on cancel~~ — no new Hearth subscriptions on opencosmos.ai
+- ~~Existing CP members: offer migration path to Hearth~~ — moot; CP membership stays in Creative Powerup
+- ~~Substack partner API~~ — no Flame/Hearth tiers to provision
+
+### Phase 1a — Voice & PM Mode
+
+- ✅ Cosmo voice validation — first contact 2026-03-29
+- ✅ AI Triad system prompts written (Sol, Socrates, Optimus, Cosmo)
+- ✅ Shalom-mode PM — admin context injection from cosmo-context repo (Redis-cached, 1hr TTL)
+
+### Foundation (pre-Constellation)
+
+- ✅ OpenCosmos identity (name, philosophy, WELCOME.md, COSMO_SYSTEM_PROMPT.md, Chronicle)
+- ✅ Repository renamed (ecosystem → opencosmos)
+- ✅ Dell Sovereign Node operational (Ubuntu, Ollama, Open WebUI, Tailscale, RTX 3090)
+- ✅ Knowledge corpus schema + publication CLI
+- ✅ `@opencosmos/ui` published to npm
+- ✅ Creative Powerup active with paying members
+- ✅ `apps/web` created as opencosmos.ai shell
+- ✅ IP rate limiting + session binding + monthly spend cap (initial bot protection)
+
+---
+
+## Paused / Deprecated
+
+> Plans in this section are preserved for reference — approaches that did not work, kept as a record of what was tried and what was learned. Active work lives under [Cosmo](#cosmo--appsweb) above.
+
+### Phase 1c+ (Deprecated): Custom Knowledge Graph
 
 **Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/knowledge/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
 
@@ -1610,121 +1723,6 @@ The component and the generator have zero dependency on each other. Consumers of
 - The component is open-source and reusable by any graph-structured knowledge product
 
 
-
-### Site Architecture: opencosmos.ai
-
-```
-opencosmos.ai/
-├── /              → Home (four-pillars intro — needs graduation from placeholder)
-├── /chat          → Conversation with Cosmo
-├── /knowledge     → Knowledge corpus browser (live ✅)
-├── /studio        → Design system docs (proxied from opencosmos-ui via Vercel rewrites)
-└── /community     → Creative Powerup (redirect for now; deep integration Phase 7)
-```
-
-Key: `/studio` maps via Vercel rewrites to the `opencosmos-ui` repo's deployed docs site — unified domain, independent codebases.
-
----
-
-## @opencosmos/ui — Separate Repo
-
-Design system published to npm as `@opencosmos/ui`. Maintained in the [opencosmos-ui repo](https://github.com/shalomormsby/opencosmos-ui).
-
-**Current tasks:** Ongoing maintenance. No blocking items. Update in this repo with `pnpm update @opencosmos/ui`.
-
----
-
-## @opencosmos/ai — `packages/ai`
-
-Sovereign AI layer — WIP. Tasks tracked under [Cosmo § Phase 5](#phase-5-opencosmosai-package-foundation) above.
-
-License: RAIL (not MIT).
-
----
-
-## Portfolio — `apps/portfolio`
-
-Production at [shalomormsby.com](https://www.shalomormsby.com/).
-
-**Open tasks:**
-- [ ] Case studies from CP work and OpenCosmos
-- [ ] Consulting offerings documented and priced
-- [ ] Design consulting pipeline (Phase 3 of the strategy)
-
----
-
-## Creative Powerup — `apps/creative-powerup`
-
-Community platform. In development at ecosystem-creative-powerup.vercel.app. This is where paid Cosmo access lives (no API key required for members). See [strategy.md § Brand Architecture](strategy.md) for the OpenCosmos / CP split.
-
-**Open tasks:**
-- [ ] CP member token access on OpenCosmos — see [Phase 2](#phase-2-cp-member-token-access--top-up) above; requires Circle webhook or equivalent membership verification
-- [ ] Cosmo integration for structured CP programs (Phase 7)
-
----
-
-## Stocks — `apps/stocks`
-
-AI-powered investment intelligence. In development. No active sprint items.
-
----
-
-## Related Documents
-
-- [strategy.md](strategy.md) — Three Futures, business model, open questions
-- [architecture.md](architecture.md) — Infrastructure, service map, data flow, token economics
-- [chronicle.md](chronicle.md) — The story behind the decisions
-- [projects/opencosmos-migration.md](projects/opencosmos-migration.md) — Active rename migration (independent workstream)
-- [projects/cosmo-voice-research.md](projects/cosmo-voice-research.md) — Voice provider comparison and decision guide
-- [projects/tech-research.md](projects/tech-research.md) — Hardware research (Dell, M5 Max/Ultra)
-- [WELCOME.md](../WELCOME.md) — The front door
-- [DESIGN-PHILOSOPHY.md](../DESIGN-PHILOSOPHY.md) — The four principles
-
----
-
-## Done
-
-### Brand Architecture Pivot (2026-04-16) — PRs #112–#113
-
-- ✅ Strategic decision: OpenCosmos stays purely open (BYOK + free quota + corpus); all paid Cosmo access moves to Creative Powerup memberships. Full rationale in [strategy.md § Brand Architecture](strategy.md).
-- ✅ Account page: removed all subscription UI (tier cards, active subscription card, portal/upgrade links) for all user states
-- ✅ Account page: BYOK-connected state shows clean green indicator + masked key + unlimited TokenGauge; no form
-- ✅ Account page: free visitor state shows 20K quota meter + CP community invitation tile (links to creativepowerup.com)
-- ✅ Sidebar: BYOK users see ∞ immediately (localStorage-first check; no longer depends on server `hasByok` timing)
-- ✅ CosmoChat: removed "or subscribe" link from `isLimited` exhaustion message
-
-### Phase 1b — Subscription Infrastructure (PRs #85–#91)
-
-- ✅ Stripe billing — Spark/Flame/Hearth tiers, checkout, webhook, portal, tier config with token budgets
-- ✅ WorkOS auth integration — AuthKit, session refresh, OAuth callback
-- ✅ Usage tracking — microdollar counters in Redis (`input × 3 + output × 15 µ$/token`), weekly + monthly sub-limits
-- ✅ TokenGauge UI — Sidebar (∞ for BYOK, gauge for subscribers/free), Account page (exact tokens remaining)
-- ✅ Subscription benefit provisioning — Substack (free newsletter via public endpoint) + Circle (member API)
-- ✅ Account page — subscription display, tier cards, BYOK detection *(UI superseded by brand architecture pivot; infrastructure preserved)*
-- ✅ BYOK cross-device detection — `hasByok` flag set via `POST /api/byok` on key save and dialog auth (PR #90)
-- ✅ Security: input size limits (Fix 1), session hardening (Fix 2), token-based monthly cap (Fix 3), structured logging (Fix 4)
-- ✅ Fix 5: Anthropic Console spend limit — external action, verified
-- ✅ Fix 6: Cloudflare Turnstile bot prevention — invisible challenge on free-tier path (PR #91, pending merge)
-- ✅ Prompt caching — `cache_control: ephemeral` on system prompt, ~76% input cost reduction
-
-### Phase 1a — Voice & PM Mode
-
-- ✅ Cosmo voice validation — first contact 2026-03-29
-- ✅ AI Triad system prompts written (Sol, Socrates, Optimus, Cosmo)
-- ✅ Shalom-mode PM — admin context injection from cosmo-context repo (Redis-cached, 1hr TTL)
-
-### Phase 0 — Foundation
-
-- ✅ OpenCosmos identity (name, philosophy, WELCOME.md, COSMO_SYSTEM_PROMPT.md, Chronicle)
-- ✅ Repository renamed (ecosystem → opencosmos)
-- ✅ Dell Sovereign Node operational (Ubuntu, Ollama, Open WebUI, Tailscale, RTX 3090)
-- ✅ Knowledge corpus schema + publication CLI
-- ✅ `@opencosmos/ui` published to npm
-- ✅ Creative Powerup active with paying members
-- ✅ `apps/web` created as opencosmos.ai shell
-- ✅ IP rate limiting + session binding + monthly spend cap (initial bot protection)
-
----
 
 ## Appendix: Incident Log
 

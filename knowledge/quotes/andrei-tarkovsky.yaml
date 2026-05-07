@@ -1,0 +1,22 @@
+author: Andrei Tarkovsky
+author_normalized_key: andrei-tarkovsky
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0161
+    slug: null
+    text: "When I speak of poetry I am not thinking of it as a genre. Poetry is an awareness of the world, a particular way of relating to reality."
+    category: creativity
+    keywords: []
+    context: "Director, Screenwriter"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://substack.com/@poeticoutlaws/note/c-68660757"
+      notes: null
+      reviewed_by_human: false

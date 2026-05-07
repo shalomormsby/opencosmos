@@ -1,0 +1,54 @@
+author: Friedrich Nietzsche
+author_normalized_key: friedrich-nietzsche
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0040
+    slug: null
+    text: "One must have chaos in one's self in order to give birth to a dancing star."
+    category: creativity
+    keywords: [chaos, self, star, dance, birth, art]
+    context: "Philosopher, German"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"Thus Spoke Zarathustra\""
+      notes: null
+      reviewed_by_human: false
+  - id: q_0041
+    slug: null
+    text: There is more wisdom in your body than in your deepest philosophies.
+    category: null
+    keywords: []
+    context: "Philosopher, German"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Thus Spoke Zarathustra
+      notes: null
+      reviewed_by_human: false
+  - id: q_0063
+    slug: null
+    text: "Today as always, men fall into two groups: slaves and free men. Whoever does not have two-thirds of his day for himself, is a slave, whatever he may be: a statesman, a businessman, an official, or a scholar."
+    category: null
+    keywords: [work, vocation, freedon]
+    context: Philosopher
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "“Human, All Too Human”"
+      notes: null
+      reviewed_by_human: false

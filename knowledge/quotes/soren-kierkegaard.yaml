@@ -1,0 +1,22 @@
+author: Soren Kierkegaard
+author_normalized_key: soren-kierkegaard
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_1289
+    slug: null
+    text: "The function of prayer is not to influence God, but rather to change the nature of the one who prays."
+    category: spirit
+    keywords: [god, prayer, influence, change]
+    context: "Philosopher, Danish"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"Purity of Heart Is to Will One Thing\""
+      notes: null
+      reviewed_by_human: false

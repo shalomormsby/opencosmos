@@ -1,0 +1,24 @@
+collective: attributed-collectives
+description: "Quotes attributed to a named collective source (Delphic maxim, Yoga Sutras, …). Author preserved per-quote."
+quotes:
+  - id: q_0001
+    slug: null
+    text: Know thyself.
+    author: Delphic maxim
+    author_normalized_key: delphic-maxim
+    tradition: philosophy
+    era: null
+    gender: null
+    category: insight
+    keywords: [self-knowledge, self-inquiry, self-awareness]
+    context: "Ancient Greek, Philosophy"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Inscribed at the Temple of Apollo at Delphi
+      notes: null
+      reviewed_by_human: false

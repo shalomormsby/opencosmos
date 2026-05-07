@@ -1,0 +1,22 @@
+author: Grace Fisher
+author_normalized_key: grace-fisher
+tradition: buddhism
+era: null
+gender: F
+quotes:
+  - id: q_0176
+    slug: null
+    text: Mindfulness teaches us to identify when we become entangled in our own thoughts.
+    category: insight
+    keywords: [perception, thinking]
+    context: Buddhism
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://twitter.com/Spirit_Rock/status/1729930458300084332/photo/1"
+      notes: null
+      reviewed_by_human: false

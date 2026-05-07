@@ -1,0 +1,22 @@
+author: Denis Diderot
+author_normalized_key: denis-diderot
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0055
+    slug: null
+    text: Happiest are the people who give most happiness to others.
+    category: insight
+    keywords: [generosity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://substack.com/@philosophors/note/c-67814381?r=hzvm2&utm_medium=ios&utm_source=notes-share-action"
+      notes: null
+      reviewed_by_human: false

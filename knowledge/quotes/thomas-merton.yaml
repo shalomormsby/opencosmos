@@ -1,0 +1,38 @@
+author: Thomas Merton
+author_normalized_key: thomas-merton
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0029
+    slug: null
+    text: Art enables us to find ourselves and lose ourselves at the same time.
+    category: creativity
+    keywords: [self-discovery]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"No Man Is an Island\""
+      notes: null
+      reviewed_by_human: false
+  - id: q_0030
+    slug: null
+    text: "True happiness is found in unselfish love, a love which increases in proportion as it is shared. There is no end to the sharing of love, and, therefore, the potential happiness of such love is with out limit."
+    category: insight
+    keywords: [happiness, generosity]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"No Man Is an Island\""
+      notes: null
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Buddha
+author_normalized_key: buddha
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_0392
+    slug: null
+    text: "Your worst enemy cannot harm you as much as your own worst thoughts, unguarded. But once mastered, no one can help you as much, not even your father or your mother."
+    category: insight
+    keywords: [thought, help, harm, obstacles, mastery, support]
+    context: Buddhist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "Dhammapada, verses 42 & 43"
+      notes: null
+      reviewed_by_human: false

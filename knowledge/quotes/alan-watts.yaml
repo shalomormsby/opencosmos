@@ -1,0 +1,22 @@
+author: Alan Watts
+author_normalized_key: alan-watts
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_0139
+    slug: null
+    text: Man suffers only becacuse he takes seriously what the gods made for fun.
+    category: insight
+    keywords: [suffering, identification]
+    context: "Buddhism, Zen, Nondual"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.goodreads.com/quotes/321794-man-suffers-only-because-he-takes-seriously-what-the-gods"
+      notes: null
+      reviewed_by_human: false

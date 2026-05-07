@@ -1,0 +1,38 @@
+author: Thich Nhat Hanh
+author_normalized_key: thich-nhat-hanh
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_0043
+    slug: null
+    text: "Breath is the bridge which connects life to consciousness, which unites your body to your thoughts. Whenever your mind becomes scattered, use your breath as the means to take hold of your mind again."
+    category: spirit
+    keywords: [mindfulness, breath awareness, meditation]
+    context: "Buddhist, Zen, Vietnamese"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"The Miracle of Mindfulness: An Introduction to the Practice of Meditation.\""
+      notes: null
+      reviewed_by_human: false
+  - id: q_1333
+    slug: null
+    text: "The source of love is deep in us, and we can help others realize a lot of happiness. One word, one action, one thought can reduce another person's suffering and bring that person joy."
+    category: insight
+    keywords: [love, happiness, realization, action, suffering, joy]
+    context: "Buddhist, Zen, Vietnamese"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"Peace Is Every Step: The Path of Mindfulness in Everyday Life.\""
+      notes: null
+      reviewed_by_human: false

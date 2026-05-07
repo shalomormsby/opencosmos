@@ -1,0 +1,22 @@
+author: Mother Teresa
+author_normalized_key: mother-teresa
+tradition: null
+era: null
+gender: null
+quotes:
+  - id: q_0137
+    slug: null
+    text: "Seeking the face of God in everything, everyone, all the time, and his hand in every happening; This is what it means to be contemplative in the heart of the world. Seeing and adoring the presence of Jesus, especially in the lowly appearance of bread, and in the distressing disguise of the poor."
+    category: null
+    keywords: []
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "https://www.goodreads.com/quotes/252963-seeking-the-face-of-god-in-everything-everyone-all-the"
+      notes: null
+      reviewed_by_human: false

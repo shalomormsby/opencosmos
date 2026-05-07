@@ -1,0 +1,38 @@
+author: Seneca
+author_normalized_key: seneca
+tradition: stoicism
+era: null
+gender: M
+quotes:
+  - id: q_0100
+    slug: null
+    text: "[We] think too little of wasting time, the one thing about which we should all be the toughest misers."
+    category: insight
+    keywords: [memento mori]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: "\"On the Shortness of Life\""
+      notes: null
+      reviewed_by_human: false
+  - id: q_0102
+    slug: null
+    text: "Anger, if not restrained, is frequently more hurtful to us than the injury that provokes it."
+    category: insight
+    keywords: []
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: Di Ira
+      notes: null
+      reviewed_by_human: false

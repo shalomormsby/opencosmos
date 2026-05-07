@@ -1,0 +1,54 @@
+author: Michel de Montaigne
+author_normalized_key: michel-de-montaigne
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0172
+    slug: null
+    text: "He who fears he shall suffer, already suffers what he fears."
+    category: insight
+    keywords: [suffering, apprehension, anxiety]
+    context: Philosophy
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: The Essays of Michel de Montaigne
+      notes: null
+      reviewed_by_human: false
+  - id: q_0173
+    slug: null
+    text: "Not being able to govern events, I govern myself, and apply myself to them, if they will not apply themselves to me."
+    category: insight
+    keywords: [focus, determination, perseverence, willpower]
+    context: Philosophy
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: The Essays of Michel de Montaigne
+      notes: null
+      reviewed_by_human: false
+  - id: q_0174
+    slug: null
+    text: There are defeats more triumphant than victories.
+    category: insight
+    keywords: [defeat, failure]
+    context: Philosophy
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: null
+      wikiquote_url: null
+      earliest_print_source: The Essays of Michel de Montaigne
+      notes: null
+      reviewed_by_human: false
