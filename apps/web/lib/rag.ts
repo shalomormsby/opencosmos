@@ -22,6 +22,14 @@ export type RagChunk = {
   domain: string
   author?: string
   tradition?: string
+  // Quote-specific (set only when chunk_type === 'quote')
+  chunk_type?: 'quote'
+  quote_id?: string
+  category?: string
+  provenance_status?: string
+  provenance_confidence?: number
+  source_work?: string
+  source_section?: string
 }
 
 export type RagResult = {
@@ -78,32 +86,54 @@ function buildContextualQuery(
 /**
  * Format retrieved chunks as a clearly cited context block for injection
  * into Cosmo's system prompt. Each chunk is labeled with its source.
+ *
+ * Quote chunks (chunk_type === 'quote') get a structured block carrying
+ * provenance status + confidence so Cosmo can self-caveat unverified
+ * attributions ("popularly attributed to X" rather than "X said").
  */
 export function formatRagChunks(chunks: RagChunk[]): string {
   if (chunks.length === 0) return ''
 
   const sections = chunks.map(c => {
-    const attribution = [
-      c.author,
-      c.tradition,
-    ].filter(Boolean).join(', ')
-
-    const header = attribution
-      ? `**${c.title}** (${attribution})`
-      : `**${c.title}**`
-
-    const sourceLabel = c.source !== 'current_document'
-      ? `Source: ${c.source}`
-      : 'Source: current document'
-
-    return `${header}\n${sourceLabel}\n\n${c.text}`
+    if (c.chunk_type === 'quote') return formatQuoteChunk(c)
+    return formatPassageChunk(c)
   })
 
-  const preamble = `The following passages were retrieved from the OpenCosmos knowledge corpus based on the current conversation. These are real source documents — treat them as grounding material.
+  const preamble = `The following passages and quotes were retrieved from the OpenCosmos knowledge corpus based on the current conversation. These are real source documents — treat them as grounding material.
 
-When drawing from these passages: cite the title and author. If quoting directly, use the exact words from the passage and attribute them — do not paraphrase and present it as a quote. Never fabricate or reconstruct a quotation that is not present in the retrieved text. If you cannot find the precise words, paraphrase clearly and say so. Precision and honesty in citation are non-negotiable.`
+When drawing from these passages: cite the title and author. If quoting directly, use the exact words from the passage and attribute them — do not paraphrase and present it as a quote. Never fabricate or reconstruct a quotation that is not present in the retrieved text. If you cannot find the precise words, paraphrase clearly and say so. Precision and honesty in citation are non-negotiable.
+
+When citing a quote from the corpus, append a structured citation token in the form \`[quote: knowledge/quotes/{author-key}.yaml#{quote-id}]\` immediately after the attribution. If a quote's provenance status is anything other than \`verified\`, soften your attribution language ("attributed to X", "popularly attributed to X") rather than asserting "X said". Never present a quote whose status is \`likely_misattributed\` or \`apocryphal\` without flagging the doubt.`
 
   return `## Retrieved Passages\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
+}
+
+function formatPassageChunk(c: RagChunk): string {
+  const attribution = [c.author, c.tradition].filter(Boolean).join(', ')
+  const header = attribution ? `**${c.title}** (${attribution})` : `**${c.title}**`
+  const sourceLabel = c.source !== 'current_document'
+    ? `Source: ${c.source}`
+    : 'Source: current document'
+  return `${header}\n${sourceLabel}\n\n${c.text}`
+}
+
+function formatQuoteChunk(c: RagChunk): string {
+  const author = c.author ?? 'Unknown'
+  const tradition = c.tradition ? `, ${c.tradition}` : ''
+  const sourceWork = c.source_work
+    ? `, ${c.source_work}${c.source_section ? '#' + c.source_section : ''}`
+    : ''
+  const status = c.provenance_status ?? 'attributed_unverified'
+  const confidenceLine = typeof c.provenance_confidence === 'number'
+    ? ` · confidence ${c.provenance_confidence.toFixed(2)}`
+    : ''
+  const citation = `[quote: ${c.source}#${c.quote_id ?? c.heading}]`
+
+  return `> "${c.text}"
+> — ${author}${tradition}${sourceWork}
+> [provenance: ${status}${confidenceLine}]
+>
+> Cite as: ${citation}`
 }
 
 // ─── Main export ──────────────────────────────────────────────────────────────
@@ -149,6 +179,13 @@ export async function fetchRagContext(
       }
       if (meta.author) chunk.author = meta.author as string
       if (meta.tradition) chunk.tradition = meta.tradition as string
+      if (meta.chunk_type === 'quote') chunk.chunk_type = 'quote'
+      if (meta.quote_id) chunk.quote_id = meta.quote_id as string
+      if (meta.category) chunk.category = meta.category as string
+      if (meta.provenance_status) chunk.provenance_status = meta.provenance_status as string
+      if (typeof meta.provenance_confidence === 'number') chunk.provenance_confidence = meta.provenance_confidence
+      if (meta.source_work) chunk.source_work = meta.source_work as string
+      if (meta.source_section) chunk.source_section = meta.source_section as string
       return chunk
     })
     .filter(c => c.text.length > 0)
