@@ -3,7 +3,6 @@ title: Leaves of Grass
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - american-poetry
   - transcendentalism

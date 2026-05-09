@@ -3,7 +3,7 @@ title: The Prophet
 work_type: work
 role: source
 format: poetry
-domain: cross
+tradition: sufism
 tags:
   - wisdom-literature
   - spiritual-guidance

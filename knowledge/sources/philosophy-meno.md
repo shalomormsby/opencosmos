@@ -3,7 +3,6 @@ title: Meno
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - virtue
   - knowledge
@@ -30,7 +29,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~380 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-euthyphro.md
   - sources/philosophy-gorgias.md

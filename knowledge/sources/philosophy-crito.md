@@ -3,7 +3,6 @@ title: Crito
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - socrates
   - civil-disobedience
@@ -28,7 +27,7 @@ source: public-domain
 author: Plato
 origin_date: ~380 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-apology.md
   - sources/philosophy-euthyphro.md

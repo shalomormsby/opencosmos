@@ -3,7 +3,6 @@ title: Tao Te Ching
 work_type: work
 role: source
 format: scripture
-domain: taoism
 tags:
   - tao
   - wu-wei
@@ -30,7 +29,7 @@ corpus_tier: source
 author: Lao Tzu
 origin_date: ~6th century BCE
 era: ancient
-tradition: taoist
+tradition: taoism
 related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md

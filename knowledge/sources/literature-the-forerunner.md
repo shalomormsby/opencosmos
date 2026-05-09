@@ -3,7 +3,6 @@ title: The Forerunner
 work_type: work
 role: source
 format: anthology
-domain: literature
 tags:
   - mysticism
   - spiritual-journey
@@ -29,7 +28,7 @@ source: public-domain
 author: Kahlil Gibran
 origin_date: '1920'
 era: modern
-tradition: sufi-influenced mysticism
+tradition: sufism
 related_docs:
   - sources/literature-siddhartha-an-indian-tale.md
   - sources/literature-steppenwolf.md

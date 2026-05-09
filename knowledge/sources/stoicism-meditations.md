@@ -3,7 +3,6 @@ title: Meditations
 work_type: work
 role: source
 format: aphorisms
-domain: stoicism
 tags:
   - stoicism
   - gratitude
@@ -29,7 +28,7 @@ author: Marcus Aurelius
 translator: George Long
 origin_date: ~170-180 CE
 era: ancient
-tradition: Roman Stoicism
+tradition: stoicism
 related_docs:
   - sources/stoicism-enchiridion.md
   - collections/socrates-foundations.md

@@ -3,7 +3,6 @@ title: A MIDSUMMER NIGHT’S DREAM
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

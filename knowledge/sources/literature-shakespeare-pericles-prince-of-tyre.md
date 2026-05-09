@@ -3,7 +3,6 @@ title: PERICLES, PRINCE OF TYRE
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

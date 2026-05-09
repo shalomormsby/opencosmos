@@ -3,7 +3,6 @@ title: Phaedrus
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - love
   - rhetoric
@@ -28,7 +27,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~370 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-apology.md

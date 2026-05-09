@@ -10,8 +10,10 @@ synthesizes:
   - sources/philosophy-symposium.md
   - sources/philosophy-meno.md
   - sources/taoism-tao-te-ching.md
-last_reviewed: 2026-04-10
-tags: [the-good, agathon, plato, virtue, forms, taoism, te, ethics, metaphysics]
+  - sources/stoicism-meditations.md
+  - sources/stoicism-enchiridion.md
+last_reviewed: 2026-05-08
+tags: [the-good, agathon, plato, virtue, forms, taoism, te, ethics, metaphysics, stoicism, marcus-aurelius, epictetus]
 ---
 
 # The Good — Plato's Agathon and Cross-Tradition Parallels

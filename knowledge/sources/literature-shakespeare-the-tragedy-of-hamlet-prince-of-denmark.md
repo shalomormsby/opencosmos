@@ -3,7 +3,6 @@ title: THE TRAGEDY OF HAMLET, PRINCE OF DENMARK
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

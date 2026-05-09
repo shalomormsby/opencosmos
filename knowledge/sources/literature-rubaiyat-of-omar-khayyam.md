@@ -3,7 +3,6 @@ title: Rubáiyát of Omar Khayyám
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - persian-poetry
   - translation

@@ -3,7 +3,6 @@ title: Timaeus
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - cosmology
   - natural-philosophy

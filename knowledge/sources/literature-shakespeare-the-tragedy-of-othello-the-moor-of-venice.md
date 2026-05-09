@@ -3,7 +3,6 @@ title: THE TRAGEDY OF OTHELLO, THE MOOR OF VENICE
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

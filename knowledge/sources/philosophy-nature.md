@@ -2,7 +2,6 @@
 title: Nature
 role: source
 format: treatise
-domain: philosophy
 tags:
   - transcendentalism
   - nature-philosophy

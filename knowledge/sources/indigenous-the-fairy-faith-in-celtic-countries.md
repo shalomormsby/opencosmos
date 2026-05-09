@@ -3,7 +3,6 @@ title: The Fairy-Faith in Celtic Countries
 work_type: work
 role: source
 format: treatise
-domain: indigenous
 tags:
   - celtic-mythology
   - fairy-faith

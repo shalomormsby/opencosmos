@@ -2,7 +2,6 @@
 title: On the Duty of Civil Disobedience
 role: source
 format: essay
-domain: philosophy
 tags:
   - civil-disobedience
   - government

@@ -2,7 +2,6 @@
 title: The Ethics
 role: source
 format: treatise
-domain: philosophy
 tags:
   - metaphysics
   - substance

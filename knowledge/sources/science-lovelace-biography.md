@@ -3,7 +3,6 @@ title: "Ada Lovelace (1815–1852): A Biography of Poetical Science"
 work_type: work
 role: source
 format: biography
-domain: science
 tags:
   - computing
   - mathematics
@@ -33,7 +32,7 @@ source: Combined Historical Records (Wikipedia, Quaker Heritage, Wolfram)
 author: OpenCosmos Editorial
 origin_date: 2026-05-02
 era: modern-synthesis
-tradition: History of Computing
+tradition: history-of-computing
 related_docs:
   - collections/optimus-foundations.md
   - wiki/entities/ada-lovelace.md

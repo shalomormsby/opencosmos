@@ -3,7 +3,6 @@ title: Gorgias
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - rhetoric
   - dialectic
@@ -30,7 +29,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~380 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-apology.md
   - sources/philosophy-euthyphro.md

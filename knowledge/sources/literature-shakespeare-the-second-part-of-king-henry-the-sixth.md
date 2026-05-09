@@ -3,7 +3,6 @@ title: THE SECOND PART OF KING HENRY THE SIXTH
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

@@ -3,7 +3,6 @@ title: KING HENRY THE EIGHTH
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

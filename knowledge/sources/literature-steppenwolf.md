@@ -2,7 +2,6 @@
 title: Steppenwolf
 role: source
 format: narrative
-domain: literature
 tags:
   - alienation
   - dual-nature

@@ -3,7 +3,7 @@ title: Narrative of Sojourner Truth
 role: source
 work_type: work
 format: narrative
-domain: literature
+tradition: christian-anarchism
 tags:
   - slavery
   - abolition

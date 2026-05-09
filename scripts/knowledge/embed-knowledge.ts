@@ -33,6 +33,7 @@ import { createHash } from 'node:crypto'
 import matter from 'gray-matter'
 import { Index } from '@upstash/vector'
 import { parseYamlFile, COLLECTIVE_BUCKETS, EMBEDDABLE_STATUSES, type JsonlRecord } from '../normalize-quotes/shared.js'
+import { resolveDomainForTradition } from './tradition-domain.js'
 
 // ─── Path setup + .env loading ────────────────────────────────────────────────
 
@@ -260,12 +261,19 @@ function buildChunks(filePath: string): VectorChunk[] {
   const isWiki = relPath.startsWith('knowledge/wiki/')
 
   const title: string = fm.title ?? relPath
-  const domain: string = fm.domain ?? 'unknown'
   const role: string = fm.role ?? 'source'
   const author: string | undefined = fm.author
   const tradition: string | undefined = fm.tradition
   const tags: string[] = Array.isArray(fm.tags) ? fm.tags : []
   const audience: string[] = Array.isArray(fm.audience) ? fm.audience : []
+  // Domain is derived from tradition via the shared config (the source-file
+  // `domain:` frontmatter field has been retired; tradition is the single
+  // source of truth for placement in the constellation hierarchy). Wiki
+  // pages don't always have a `tradition:` field and may carry their own
+  // `domain:`, so honor that fallback for wiki only.
+  const domain: string = tradition
+    ? resolveDomainForTradition(tradition)
+    : (isWiki && typeof fm.domain === 'string' ? fm.domain : 'uncategorized')
 
   // Context prefix improves embedding relevance by grounding each chunk in its source
   const contextLines = [
@@ -396,7 +404,7 @@ function buildQuoteChunks(filePath: string): VectorChunk[] {
       source: relPath,
       heading: r.id,                       // quote id doubles as heading for compatibility
       title: `Quote — ${author}`,
-      domain: tradition ?? 'unknown',
+      domain: resolveDomainForTradition(tradition ?? ''),
       role: 'quote',
       tags: Array.isArray(r.keywords) ? (r.keywords as string[]) : [],
       audience: [],

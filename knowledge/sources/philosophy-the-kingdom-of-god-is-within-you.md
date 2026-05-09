@@ -2,7 +2,6 @@
 title: The Kingdom of God Is Within You
 role: source
 format: treatise
-domain: philosophy
 tags:
   - non-resistance
   - christian-ethics

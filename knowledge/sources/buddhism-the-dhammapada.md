@@ -3,7 +3,7 @@ title: The Dhammapada
 work_type: work
 role: source
 format: scripture
-domain: buddhism
+tradition: buddhism
 tags:
   - dhammapada
   - buddhist

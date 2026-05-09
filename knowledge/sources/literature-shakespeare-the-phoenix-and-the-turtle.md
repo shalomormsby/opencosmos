@@ -3,7 +3,6 @@ title: THE PHOENIX AND THE TURTLE
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - shakespeare
   - renaissance

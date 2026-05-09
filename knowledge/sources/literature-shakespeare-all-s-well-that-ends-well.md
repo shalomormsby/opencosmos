@@ -3,7 +3,6 @@ title: ALL’S WELL THAT ENDS WELL
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance
