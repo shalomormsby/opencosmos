@@ -28,10 +28,10 @@
 | Area | Phase / Task | Status | Priority | Next step |
 |------|--------------|--------|----------|-----------|
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
-| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟢 Active | P1 | Stage 1 ✅ done; Stage 2 (embed wiring) next |
-| Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | After 1.3 |
-| Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | ⚪ Planned | P1 | Cross-repo work in `opencosmos-ui` |
-| Cosmo | [Phase 1.6–1.9: Consume, edges, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | ⚪ Planned | P1 | Sequential after 1.5 ships |
+| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Mostly done | P1 | Stages 1+2 ✅; Stage 3 ⏸ paused (verification-first deferred until graph ships) |
+| Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |
+| Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | 🟢 Active | P1 | Cross-repo work in `opencosmos-ui`; data-shape generator landing in this repo first |
+| Cosmo | [Phase 1.6–1.9: Consume, edges, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | 🟢 Active | P1 | Constellation generator + `/api/knowledge/constellation` route shipping ahead of the visualizer |
 | Cosmo | [Phase 1.10–1.11: Community contribution + wiki lint](#phase-110--community-contribution-pathway-planned) | ⚪ Planned | P2 | After 1.9 |
 | Cosmo | [Phase 1b residuals](#phase-1b--subscription-infrastructure-prs-8591-infra-shipped-residuals-pending) — Stripe webhook, privacy policy, TOS, Fix 7 | ⚪ Planned | P1 | External actions (Stripe, legal) |
 | Cosmo | [Phase 3: Conversation polish](#phase-3-conversation-polish) — mobile, accessibility, voice | ⚪ Planned | P2 | — |
@@ -150,8 +150,8 @@ Shipped: `/split-collection` skill; Shakespeare → per-play files; Khayyám/Sal
 **Status check (updated 2026-05-07):**
 - ✅ Tier 1 normalization — text cleaned, authors canonicalized, 14 misattributions flagged, 16 duplicate groups identified. Source-of-truth now versioned at `knowledge/quotes/_source/quotes_normalized.jsonl` (1,509 records).
 - ✅ Stage 1 (split source jsonl into embeddable + pending pools) shipped 2026-05-07. See [Two-pool architecture](#two-pool-architecture-decided-2026-05-07) below.
-- ⚪ Stage 2 (embed pipeline + Cosmo `[quote: …]` wiring) — pending; runs against the embeddable pool only.
-- ⚪ Stage 3 (Claude + web search validation) — pending; mutates the pending pool, promotes eligible records to embeddable.
+- ✅ Stage 2 (embed pipeline + Cosmo `[quote: …]` wiring) shipped 2026-05-07 in PR #139. 46 verified quotes embedded; CosmoChat renders `[quote: …]` tokens as superscript citations linking to the source yaml on GitHub.
+- ⏸ Stage 3 (automated provenance validation) — **paused**. Pipeline built (`02-validate-provenance.ts` + `03-merge-validation.ts`), but initial pilot run burned ~$20 on 10 quotes due to web search + high effort compounding costs. Web search removed; next attempt will use model training knowledge only with `effort: medium`. **Resumes after the constellation visualizer is rendering** — verification ramps up against a working graph rather than ahead of one.
 
 **Why not the obvious alternatives:**
 - *One big `quotes.yaml`?* Diffs become opaque and per-author edits collide.
@@ -345,10 +345,25 @@ pnpm graph
 curl localhost:3000/api/knowledge/graph
 ```
 
-##### Phase 1.5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo) ⚪ Planned
+##### Phase 1.5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo) 🟢 Active
 
 **Repo:** `/Users/shalomormsby/Developer/opencosmos-ui`
 **New package:** `packages/constellation/`
+**Branch (uncommitted):** `feat/constellation-package`
+
+**What's shipped on the branch:**
+- v0.1.0-alpha minimal renderer: `<KnowledgeGraph>` mounts `@cosmos.gl/graph@3.0.0-beta.9`, prepares Float32 arrays, tier-aware default colors + sizes, `onNodeClick(id)`, `fitView()` after ready.
+- Label overlay + tier-aware LOD: HTML `LabelLayer` driven by `getSampledPoints()`, default thresholds `tradition: 0`, `work: 1.5×`, `section: 3×`, `quote: 6×`.
+- Focus targeting: `focus`/`focusRadius`/`focusDuration` props; BFS in JS to expand multi-hop neighborhoods (cosmos.gl's `getNeighboringPointIndices` is single-hop).
+- Studio demo at `apps/web/app/constellation/page.tsx` consuming a snapshot of the live `/api/knowledge/constellation` payload (670 nodes, 644 edges).
+
+**🐛 Known issue — Ambient drift not visible (P2, deferred).**
+- Symptom: with `ambientDrift={true}` and the checkbox on, the field doesn't visibly breathe even after a hard refresh. Two structural fixes already applied (set `transitionDuration: 0` so per-frame `setPointPositions` doesn't queue 800ms tweens that get clobbered; call `graph.create()` after each position write to flush WebGL; switch to bbox-relative amplitude so it survives cosmos's auto-rescale) — and it still isn't moving.
+- Hypotheses to test on resume: (a) `dontRescale: true` may not be honored if `config.rescalePositions` is undefined and simulation is off (cosmos auto-rescales every call regardless); (b) `create()` may not be the right flush API at v3.0-beta.9 — try `render()` instead and time it; (c) cosmos may snapshot positions internally and ignore subsequent updates after the first ready cycle — would need to call `setConfigPartial({ enableSimulation: true })` briefly to wake the renderer; (d) the rAF loop may be running but the visual delta is genuinely too small at the rescale factor — instrument by logging `getPointPositions()[0]` over time to confirm the buffer is actually changing.
+- Decision: parked behind edge-density work. Drift is polish; visible cross-tradition linkages are core to the constellation reading as "a living map" rather than 26 isolated stars. Resume after wiki bridges + semantic edges land.
+
+**Open question raised by the corpus visual:**
+The current graph emits only vertical edges (`hierarchy`, `contains`, `member_of`). With no lateral connections, works appear as 26 isolated star clusters — beautiful but not yet a *constellation*. Path forward (decided 2026-05-07): **(1) wiki bridges first** — pull `knowledge/wiki/{entities,concepts,connections}/*.md` into the generator as a 5th tier (`synthesis`) emitting `synthesizes` edges to every source they reference. **(2) Semantic edges next** (Phase 1.7 below) — top-3 cosine-similarity neighbors per work/section, rendered at lower opacity. Wiki bridges are explainable per-edge ("synthesized by [concept]"); semantic edges are the "and there are also resonances" stratum beneath.
 
 ```
 packages/constellation/
@@ -424,13 +439,21 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 
 **Publish:** `@opencosmos/constellation@0.1.0` to npm.
 
-##### Phase 1.6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days) ⚪ Planned
+##### Phase 1.6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days) 🟢 Active
+
+**Approach (decided 2026-05-07):** the data-shape work lands first as a *parallel* generator + endpoint so the legacy sigma renderer at `/knowledge/graph` keeps working until the constellation package is ready. Once `@opencosmos/constellation` ships from `opencosmos-ui`, `GraphPageClient.tsx` swaps from `knowledge:graph` → `knowledge:constellation` and the wiki generator can be retired.
 
 **Files:**
-- Modify: [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts) — emit hierarchical node set (tradition + work + section + quote) with `tier` field.
-- Modify: [apps/web/app/knowledge/graph/GraphPageClient.tsx](../apps/web/app/knowledge/graph/GraphPageClient.tsx) — replace sigma.js with `<KnowledgeGraph>` from `@opencosmos/constellation`. Wire landing-page intro: read `sessionStorage['cosmo_context']`, honor `?focus=`, fall back to "today's invitation". Pass `ambientMotion={{ enabled: true }}`, `focus={resolvedFocusId}`. Entire corpus always rendered.
+- ✅ New: [scripts/knowledge/generate-constellation-graph.ts](../scripts/knowledge/generate-constellation-graph.ts) — emits hierarchical node set (tradition + work + section + quote) with `tier` field. Run via `pnpm graph:constellation`. Writes `knowledge:constellation` (gzipped, full payload) and `knowledge:constellation:preview` (top 40 by degree) to Upstash Redis. Initial run: 26 traditions, 84 works, 514 sections, 46 quotes — 670 nodes, 644 edges, 49 KB compressed.
+- ✅ New: [apps/web/app/api/knowledge/constellation/route.ts](../apps/web/app/api/knowledge/constellation/route.ts) — mirrors the existing graph route, reads `knowledge:constellation`. ISR revalidate=3600.
+- Modify (later): [apps/web/app/knowledge/graph/GraphPageClient.tsx](../apps/web/app/knowledge/graph/GraphPageClient.tsx) — replace sigma.js with `<KnowledgeGraph>` from `@opencosmos/constellation`. Wire landing-page intro: read `sessionStorage['cosmo_context']`, honor `?focus=`, fall back to "today's invitation". Pass `ambientMotion={{ enabled: true }}`, `focus={resolvedFocusId}`. Entire corpus always rendered.
 - Delete (opencosmos-ui historical location): `packages/ui/src/components/data-display/knowledge-graph/` (retire sigma.js).
-- Modify: [apps/web/app/api/knowledge/graph/route.ts](../apps/web/app/api/knowledge/graph/route.ts) — JSON shape stays similar. **Performance note:** verify payload ≤ ~2MB gzipped with full corpus (~3k nodes + 10k edges). If larger, stream or paginate quotes behind a second fetch that hydrates after first paint.
+- Retire (later): [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts) and [apps/web/app/api/knowledge/graph/route.ts](../apps/web/app/api/knowledge/graph/route.ts) — once consumers point at `knowledge:constellation`, the wiki-only graph + endpoint go away. **Performance note:** verify payload ≤ ~2MB gzipped with full corpus (~3k nodes + 10k edges). At 670 nodes / 644 edges the constellation payload is 49 KB — comfortably under budget; quote-tier growth post-Stage-3 will push toward ~1,500 quotes.
+
+**Known gaps to fix in flight (not blocking the visualizer):**
+- Section IDs use indexed disambiguation (`slug-2`, `slug-3`) for collisions; embed-knowledge.ts uses content-hash disambiguation (`slug-{8-char-hash}`). Sync these in Phase 1.7 so semantic edges can join.
+- Only H2 sections rendered; H3/H4 (e.g. Leaves of Grass verse-level) are skipped to keep landing density manageable. Re-evaluate after first visualizer run.
+- Quote→work `cites` edges are absent in the initial run because every embeddable quote currently has `source_work: null`. As source attribution gets populated, these edges appear automatically.
 
 **New graph generator output:**
 ```json

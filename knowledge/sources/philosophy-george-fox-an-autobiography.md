@@ -2,7 +2,6 @@
 title: 'George Fox: An Autobiography'
 role: source
 format: narrative
-domain: philosophy
 tags:
   - quakerism
   - spiritual-autobiography

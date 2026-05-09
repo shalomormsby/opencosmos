@@ -3,7 +3,6 @@ title: "Women's Speaking Justified, Proved, and Allowed of by the Scriptures"
 work_type: work
 role: source
 format: treatise
-domain: philosophy
 tags:
   - quakerism
   - feminist-theology
@@ -31,7 +30,7 @@ source: UPenn Digital Library / Quaker Heritage Press
 author: Margaret Fell
 origin_date: 1666
 era: early-modern
-tradition: Quakerism
+tradition: quakerism
 related_docs:
   - sources/philosophy-fell-quaker-declaration.md
   - sources/literature-narrative-of-sojourner-truth.md

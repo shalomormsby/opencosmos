@@ -3,7 +3,6 @@ title: TWELFTH NIGHT; OR, WHAT YOU WILL
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

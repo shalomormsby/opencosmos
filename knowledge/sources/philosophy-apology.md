@@ -3,7 +3,6 @@ title: Apology
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - socrates
   - virtue-ethics
@@ -28,7 +27,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~399 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - collections/socrates-foundations.md
   - sources/cross-the-prophet.md

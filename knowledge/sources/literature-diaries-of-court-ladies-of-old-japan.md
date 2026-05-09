@@ -3,7 +3,6 @@ title: Diaries of Court Ladies of Old Japan
 role: source
 work_type: work
 format: anthology
-domain: literature
 tags:
   - japanese-literature
   - court-culture
@@ -26,7 +25,7 @@ source: public-domain
 author: 'Izumi Shikibu, Lady Sarashina, and others'
 origin_date: 10th-11th century
 era: medieval
-tradition: heian court literature
+tradition: heian-court-literature
 related_docs:
   - sources/literature-leaves-of-grass.md
   - sources/literature-rub-iy-t-of-omar-khayy-m-and-sal-m-n-and-abs-l.md

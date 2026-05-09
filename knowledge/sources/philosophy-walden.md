@@ -2,7 +2,6 @@
 title: 'Walden, and On The Duty Of Civil Disobedience'
 role: source
 format: essay
-domain: philosophy
 tags:
   - simple-living
   - nature

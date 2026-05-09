@@ -3,7 +3,6 @@ title: The Madman
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - mysticism
   - spiritual-awakening
@@ -28,7 +27,7 @@ source: public-domain
 author: Kahlil Gibran
 origin_date: '1918'
 era: modern
-tradition: romantic mysticism
+tradition: romantic-mysticism
 related_docs:
   - sources/literature-the-forerunner.md
   - collections/literature-poems-of-nature-by-henry-david-thoreau.md

@@ -7,6 +7,9 @@ status: active
 synthesizes:
   - sources/philosophy-george-fox-an-autobiography.md
   - sources/philosophy-the-journal-of-george-fox.md
+  - sources/philosophy-the-journal-of-george-fox-volume-ii.md
+  - sources/philosophy-fell-quaker-declaration.md
+  - sources/philosophy-fell-womens-speaking-justified.md
   - collections/philosophy-gleanings-from-george-fox.md
   - collections/philosophy-essays-by-ralph-waldo-emerson.md
   - sources/philosophy-nature.md

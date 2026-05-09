@@ -2,7 +2,6 @@
 title: The Joyful Wisdom (La Gaya Scienza)
 role: source
 format: treatise
-domain: philosophy
 tags:
   - joyful-wisdom
   - life-affirmation

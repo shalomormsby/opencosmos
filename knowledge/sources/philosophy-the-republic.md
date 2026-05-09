@@ -3,7 +3,6 @@ title: The Republic
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - political-philosophy
   - metaphysics

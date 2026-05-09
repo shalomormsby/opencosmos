@@ -3,7 +3,6 @@ title: THE TRAGEDY OF TITUS ANDRONICUS
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

@@ -2,7 +2,6 @@
 title: The Journal of George Fox
 role: source
 format: narrative
-domain: philosophy
 tags:
   - quakerism
   - religious-experience

@@ -271,6 +271,10 @@ export function parseYamlFile(path: string, bucket: string): ParsedYamlFile {
       author: parsed.author,
       author_normalized_key: parsed.author_normalized_key,
       gender: parsed.gender,
+      // Inject the file-level tradition so downstream (constellation generator,
+      // embed pipeline) sees each quote in its author's tradition rather than
+      // falling back to 'uncategorized'.
+      tradition: parsed.tradition,
     } as JsonlRecord
   })
 

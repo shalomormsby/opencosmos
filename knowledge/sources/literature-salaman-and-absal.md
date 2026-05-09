@@ -3,7 +3,6 @@ title: Salámán and Absál
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - persian-poetry
   - translation

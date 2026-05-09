@@ -3,7 +3,6 @@ title: Shakespeare's Sonnets
 work_type: collection
 role: source
 format: poetry
-domain: literature
 tags:
   - poetry
   - sonnets

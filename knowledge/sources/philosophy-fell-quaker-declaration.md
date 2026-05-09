@@ -3,7 +3,6 @@ title: "A Declaration and an Information from us the People of God called Quaker
 work_type: work
 role: source
 format: manifesto
-domain: philosophy
 tags:
   - quakerism
   - nonviolence
@@ -29,7 +28,7 @@ source: public-domain
 author: Margaret Fell (et al.)
 origin_date: 1660
 era: early-modern
-tradition: Quakerism
+tradition: quakerism
 related_docs:
   - sources/philosophy-the-journal-of-george-fox.md
   - sources/literature-narrative-of-sojourner-truth.md

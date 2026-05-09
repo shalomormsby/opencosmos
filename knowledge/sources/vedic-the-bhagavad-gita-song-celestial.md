@@ -3,7 +3,6 @@ title: The Bhagavad-Gita (Song Celestial)
 work_type: work
 role: source
 format: scripture
-domain: vedic
 tags:
   - dharma
   - yoga

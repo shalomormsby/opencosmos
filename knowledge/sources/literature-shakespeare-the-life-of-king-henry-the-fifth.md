@@ -3,7 +3,6 @@ title: THE LIFE OF KING HENRY THE FIFTH
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

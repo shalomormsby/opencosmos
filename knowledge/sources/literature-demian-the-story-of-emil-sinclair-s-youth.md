@@ -2,7 +2,6 @@
 title: 'Demian: The Story of Emil Sinclair''s Youth'
 role: source
 format: narrative
-domain: literature
 tags:
   - coming-of-age
   - self-realization
@@ -26,7 +25,7 @@ source: public-domain
 author: Hermann Hesse
 origin_date: '1919'
 era: modern
-tradition: psychological realism
+tradition: psychological-realism
 related_docs:
   - sources/vedic-the-bhagavad-gita-song-celestial.md
   - sources/literature-leaves-of-grass.md

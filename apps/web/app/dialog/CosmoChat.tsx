@@ -33,15 +33,22 @@ const chatMarkdownComponents: Components = {
   em: ({ children }) => <em className="italic">{children}</em>,
   a: ({ href, children }) => {
     // Quote citation marker — pre-processed from [quote: knowledge/quotes/...] tokens.
-    // Rendered as a subtle superscript with the citation visible on hover; not yet
-    // navigable (Phase 1.8 wires up a quote viewer route).
+    // Renders as a clickable superscript that opens the source yaml on GitHub.
+    // (Phase 1.8 will replace this with an internal quote viewer route.)
     if (href?.startsWith('knowledge/quotes/')) {
+      const filePath = href.split('#')[0]
+      const githubUrl = `https://github.com/shalomormsby/opencosmos/blob/main/${filePath}`
       return (
-        <sup
-          className="ml-0.5 text-foreground/35 text-xs cursor-help"
-          title={href}
-        >
-          {children}
+        <sup>
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            title={href}
+            className="ml-0.5 text-foreground/40 text-xs hover:text-foreground/70 transition-colors"
+          >
+            {children}
+          </a>
         </sup>
       )
     }

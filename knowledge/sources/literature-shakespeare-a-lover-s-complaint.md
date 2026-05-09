@@ -3,7 +3,6 @@ title: A LOVER’S COMPLAINT
 work_type: work
 role: source
 format: poetry
-domain: literature
 tags:
   - shakespeare
   - renaissance

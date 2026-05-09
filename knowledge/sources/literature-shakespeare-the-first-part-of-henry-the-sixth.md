@@ -3,7 +3,6 @@ title: THE FIRST PART OF HENRY THE SIXTH
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

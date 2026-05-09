@@ -3,7 +3,6 @@ title: THE COMEDY OF ERRORS
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

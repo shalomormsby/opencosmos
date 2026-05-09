@@ -3,7 +3,6 @@ title: THE TAMING OF THE SHREW
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

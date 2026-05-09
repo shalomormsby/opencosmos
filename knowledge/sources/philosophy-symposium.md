@@ -3,7 +3,6 @@ title: Symposium
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - love
   - eros
@@ -28,7 +27,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~385 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-phaedrus.md
   - sources/philosophy-gorgias.md

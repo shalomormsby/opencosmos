@@ -3,7 +3,6 @@ title: The Enchiridion
 work_type: work
 role: source
 format: manual
-domain: stoicism
 tags:
   - stoicism
   - ethics
@@ -28,6 +27,7 @@ author: Epictetus
 translator: Elizabeth Carter (Revised)
 origin_date: ~125 CE
 era: ancient
+tradition: stoicism
 related_docs:
   - sources/stoicism-meditations.md
   - collections/socrates-foundations.md

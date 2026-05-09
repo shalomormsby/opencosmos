@@ -2,7 +2,6 @@
 title: 'Siddhartha: An Indian Tale'
 role: source
 format: narrative
-domain: literature
 tags:
   - spiritual-journey
   - self-discovery

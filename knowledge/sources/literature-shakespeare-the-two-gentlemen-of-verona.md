@@ -3,7 +3,6 @@ title: THE TWO GENTLEMEN OF VERONA
 work_type: work
 role: source
 format: play
-domain: literature
 tags:
   - shakespeare
   - renaissance

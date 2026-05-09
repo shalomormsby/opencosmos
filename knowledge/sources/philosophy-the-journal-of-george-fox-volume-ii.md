@@ -2,7 +2,6 @@
 title: 'The Journal of George Fox, Volume II'
 role: source
 format: narrative
-domain: philosophy
 tags:
   - quaker-spirituality
   - religious-persecution

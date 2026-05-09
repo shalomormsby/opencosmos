@@ -3,7 +3,6 @@ title: Phaedo
 work_type: work
 role: source
 format: dialogue
-domain: philosophy
 tags:
   - death
   - soul-body-separation
@@ -29,7 +28,7 @@ corpus_tier: source
 author: Plato
 origin_date: ~380 BCE
 era: ancient
-tradition: platonic
+tradition: platonism
 related_docs:
   - sources/philosophy-gorgias.md
   - sources/philosophy-meno.md
