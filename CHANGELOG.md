@@ -2,11 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-05-02
+**Last updated:** 2026-05-17
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-05-17 — Dialog UX fixes: glass flicker, scroll hijack, truncated responses
+
+Three independent issues on the `/dialog` page, all surfaced by the same flow (streaming a Cosmo response).
+
+### Fixes
+- **Header/footer glass flicker.** The sticky/fixed glass surfaces use `backdrop-filter` over only a 50% surface tint. During streaming, ReactMarkdown re-renders + repeated `scrollIntoView` repaints invalidated the compositor's backdrop-filter pass intermittently, leaving only the translucent tint behind and exposing underlying text for a frame. Promoted the glass elements to their own compositor layer (`isolate` + `transform-gpu`) so the filter pass is cached, and bumped fallback opacity (`/60 → /85` base, `/50 → /65` with `backdrop-filter`) so a dropped frame still masks content.
+- **Scroll hijack while reading a streaming response.** `bottomRef.current?.scrollIntoView({ behavior: 'smooth' })` was running on every messages-array update — i.e., every streamed token — making it impossible to scroll up and re-read while a response was still writing. Replaced with a sticky-bottom pattern: track whether the user is within 80px of the bottom; auto-follow the stream only when they are. A new user-sent message always re-anchors to the bottom. Also switched from `smooth` to `auto` to remove the self-interrupting smooth-scroll churn.
+- **Long responses truncated mid-thought.** `max_tokens: 1024` in the chat route was the per-response output ceiling (separate from `FREE_TOKEN_BUDGET` / `MAX_CHARS_*`, which are budget/anti-abuse caps). Raised to 8192 — comfortably above the longest considered Cosmo responses, well under Sonnet 4.6's hard limit.
 
 ## 2026-05-02 — Knowledge embedding hardening: stable IDs, H4 support, automatic sync
 

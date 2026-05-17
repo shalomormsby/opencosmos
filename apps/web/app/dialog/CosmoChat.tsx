@@ -88,8 +88,13 @@ const chatMarkdownComponents: Components = {
   hr: () => <hr className="my-4 border-foreground/10" />,
 }
 
-// Shared liquid glass style — matches the header's always-on glass
-const glass = 'backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50'
+// Shared liquid glass style — matches the header's always-on glass.
+// `isolate` + `transform-gpu` promote the element to its own compositor layer so
+// the backdrop-filter pass is cached and isn't invalidated when the message list
+// below repaints heavily during streaming (previously caused the blur to drop
+// for a frame, exposing the text underneath). Fallback opacity is high enough
+// that a missed filter frame still masks the content.
+const glass = 'isolate transform-gpu backdrop-blur-3xl bg-[var(--color-surface)]/85 supports-[backdrop-filter]:bg-[var(--color-surface)]/65'
 
 function ContextAwareFooter() {
   const { isOpen } = useAppSidebar()
@@ -150,6 +155,11 @@ export function CosmoChat() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const initialQueryHandledRef = useRef(false)
+  // Sticky-bottom scroll: only auto-follow the stream when the user is already
+  // near the bottom. If they scroll up to re-read while streaming, we leave
+  // their position alone instead of yanking them back down on every token.
+  const isAtBottomRef = useRef(true)
+  const prevMessageCountRef = useRef(0)
 
   // Handoff from the landing page: ?q=… seeds and auto-sends a single message.
   // Strips the param afterwards so a refresh won't re-send.
@@ -165,7 +175,24 @@ export function CosmoChat() {
   }, [searchParams, send, router])
 
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+    const handleScroll = () => {
+      const distanceFromBottom =
+        document.documentElement.scrollHeight - window.scrollY - window.innerHeight
+      isAtBottomRef.current = distanceFromBottom < 80
+    }
+    window.addEventListener('scroll', handleScroll, { passive: true })
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  useEffect(() => {
+    const grew = messages.length > prevMessageCountRef.current
+    prevMessageCountRef.current = messages.length
+    const lastMsg = messages[messages.length - 1]
+    // A brand-new user turn always re-anchors to the bottom; otherwise only
+    // follow the stream if the user hasn't scrolled away.
+    if (grew && lastMsg?.role === 'user') isAtBottomRef.current = true
+    if (!isAtBottomRef.current) return
+    bottomRef.current?.scrollIntoView({ behavior: 'auto', block: 'end' })
   }, [messages])
 
   useEffect(() => {
@@ -199,7 +226,7 @@ export function CosmoChat() {
         <Header
           sticky={false}
           glassOnScroll={false}
-          className="sticky top-0 z-40 backdrop-blur-3xl bg-[var(--color-surface)]/60 supports-[backdrop-filter]:bg-[var(--color-surface)]/50"
+          className="sticky top-0 z-40 isolate transform-gpu backdrop-blur-3xl bg-[var(--color-surface)]/85 supports-[backdrop-filter]:bg-[var(--color-surface)]/65"
           logo={
             <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
               OpenCosmos

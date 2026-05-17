@@ -570,7 +570,10 @@ export async function POST(req: NextRequest) {
 
     const stream = client.messages.stream({
       model: 'claude-sonnet-4-6',
-      max_tokens: 1024,
+      // Per-response output cap. 1024 was truncating Cosmo mid-thought on long
+      // dialogues. 8192 ≈ ~6k words — comfortably above the longest considered
+      // responses we've observed, still well under Sonnet 4.6's hard limit.
+      max_tokens: 8192,
       system: systemContent,
       messages: cachedMessages,
     })
