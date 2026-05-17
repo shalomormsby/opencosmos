@@ -89,12 +89,15 @@ const chatMarkdownComponents: Components = {
 }
 
 // Shared liquid glass style — matches the header's always-on glass.
-// `isolate` + `transform-gpu` promote the element to its own compositor layer so
-// the backdrop-filter pass is cached and isn't invalidated when the message list
-// below repaints heavily during streaming (previously caused the blur to drop
-// for a frame, exposing the text underneath). Fallback opacity is high enough
-// that a missed filter frame still masks the content.
-const glass = 'isolate transform-gpu backdrop-blur-3xl bg-[var(--color-surface)]/85 supports-[backdrop-filter]:bg-[var(--color-surface)]/65'
+// The `!` modifier is load-bearing on the Header element: @opencosmos/ui's
+// <Header glassOnScroll={false}> hard-codes `bg-transparent backdrop-blur-xl`
+// internally, and those classes are defined *later* in Tailwind v4's CSS source
+// order than `bg-[var(--color-surface)]/*` and `backdrop-blur-3xl` — so without
+// `!important` the Header's transparent bg wins over whatever className we pass.
+// Fallback opacity is set high enough that even if the compositor briefly drops
+// the backdrop-filter pass during streaming repaints, underlying text stays
+// masked rather than flashing through.
+const glass = 'backdrop-blur-3xl! bg-[var(--color-surface)]/90! supports-[backdrop-filter]:bg-[var(--color-surface)]/75!'
 
 function ContextAwareFooter() {
   const { isOpen } = useAppSidebar()
@@ -155,10 +158,11 @@ export function CosmoChat() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const initialQueryHandledRef = useRef(false)
-  // Sticky-bottom scroll: only auto-follow the stream when the user is already
-  // near the bottom. If they scroll up to re-read while streaming, we leave
-  // their position alone instead of yanking them back down on every token.
-  const isAtBottomRef = useRef(true)
+  // Sticky-bottom scroll. Default to auto-following the stream; if the user
+  // scrolls UP while streaming, mark them as "interrupted" and stop yanking
+  // them back. Resume auto-follow when they scroll back down far enough for
+  // bottomRef to re-enter the viewport, or when they send a new message.
+  const userInterruptedRef = useRef(false)
   const prevMessageCountRef = useRef(0)
 
   // Handoff from the landing page: ?q=… seeds and auto-sends a single message.
@@ -175,23 +179,41 @@ export function CosmoChat() {
   }, [searchParams, send, router])
 
   useEffect(() => {
-    const handleScroll = () => {
-      const distanceFromBottom =
-        document.documentElement.scrollHeight - window.scrollY - window.innerHeight
-      isAtBottomRef.current = distanceFromBottom < 80
+    // Any upward scroll = user-initiated interruption. Programmatic auto-scroll
+    // during streaming always scrolls downward as content grows, so it can't
+    // false-trigger this.
+    let lastY = window.scrollY
+    const onScroll = () => {
+      const y = window.scrollY
+      if (y < lastY - 4) userInterruptedRef.current = true
+      lastY = y
     }
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    // bottomRef back in viewport (user scrolled down to the live edge) =
+    // resume auto-follow. IntersectionObserver fires asynchronously and is
+    // independent of the scroll handler, so the two signals can't deadlock.
+    const ref = bottomRef.current
+    if (!ref) return
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0]?.isIntersecting) userInterruptedRef.current = false
+      },
+      { rootMargin: '0px 0px 200px 0px' },
+    )
+    observer.observe(ref)
+    return () => observer.disconnect()
   }, [])
 
   useEffect(() => {
     const grew = messages.length > prevMessageCountRef.current
     prevMessageCountRef.current = messages.length
     const lastMsg = messages[messages.length - 1]
-    // A brand-new user turn always re-anchors to the bottom; otherwise only
-    // follow the stream if the user hasn't scrolled away.
-    if (grew && lastMsg?.role === 'user') isAtBottomRef.current = true
-    if (!isAtBottomRef.current) return
+    if (grew && lastMsg?.role === 'user') userInterruptedRef.current = false
+    if (userInterruptedRef.current) return
     bottomRef.current?.scrollIntoView({ behavior: 'auto', block: 'end' })
   }, [messages])
 
@@ -226,7 +248,7 @@ export function CosmoChat() {
         <Header
           sticky={false}
           glassOnScroll={false}
-          className="sticky top-0 z-40 isolate transform-gpu backdrop-blur-3xl bg-[var(--color-surface)]/85 supports-[backdrop-filter]:bg-[var(--color-surface)]/65"
+          className="sticky top-0 z-40 backdrop-blur-3xl! bg-[var(--color-surface)]/90! supports-[backdrop-filter]:bg-[var(--color-surface)]/75!"
           logo={
             <Link href="/" className="text-xl font-bold tracking-tight text-foreground">
               OpenCosmos
