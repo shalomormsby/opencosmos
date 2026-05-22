@@ -2,9 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-05-17
+**Last updated:** 2026-05-22
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
+
+---
+
+## 2026-05-22 — Fix: "Verification failed" on landing-page handoff
+
+The first message typed into the landing-page hero input was reliably returning *"Verification failed — please refresh the page and try again."* when the user was logged out. Root cause was a client-side race between two effects that fire on the same render tick when `/` redirects to `/dialog?q=<input>`:
+
+1. `CosmoSessionProvider` schedules `hydrate()`, which eventually sets `mounted = true` and conditionally mounts the invisible Turnstile widget.
+2. `CosmoChat`'s `?q=…` effect calls `send()` immediately on first render.
+
+By the time `send()` posts to `/api/chat`, the Turnstile widget has not yet mounted, so `turnstileRef.current` is null and `turnstileToken` is still `''`. The server's `verifyTurnstile('', ip)` correctly rejects the empty token with 403 → the error bubble appears.
+
+### Fix
+In [apps/web/app/dialog/useCosmoSession.tsx](apps/web/app/dialog/useCosmoSession.tsx), `send()` now awaits a real Turnstile token on the free-tier path before posting: it polls for `turnstileRef.current` (50 ms intervals, 10 s ceiling) and then calls `getResponsePromise()`, which resolves once Cloudflare has solved the challenge. The user's message bubble and streaming cursor are already on screen, so the wait reads as a brief "thinking" pause instead of an error. BYOK, subscriber, and admin paths are unaffected — they skip Turnstile entirely.
+
+The same race could surface on `/dialog` if a user typed a first message faster than Turnstile resolved; the landing-page handoff just made it deterministic.
+
+### Verified
+- Site key (`0x4AAAAAA…` — real key, not Cloudflare's test prefix) and secret key set in [.env.local](apps/web/.env.local) and declared in [turbo.json](turbo.json) globalEnv.
+- Secret accepted by `https://challenges.cloudflare.com/turnstile/v0/siteverify` (`invalid-input-response` vs `invalid-input-secret`).
+- Production env vars present on Vercel: `POST https://opencosmos.ai/api/chat` with no token returns `403 {"error":"bot_suspected"}`, confirming the verifier is live.
+- Typecheck clean.
 
 ---
 
