@@ -222,13 +222,36 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       }
 
       const isFreeTier = !apiKey && !pmMode
+
+      // Wait for Turnstile to produce a token before posting on the free-tier
+      // path. Without this, the landing-page handoff (`/dialog?q=…` auto-send)
+      // fires before the invisible widget has finished its Cloudflare round-
+      // trip — the request goes out with an empty token, the server rejects
+      // with 403, and the user sees "Verification failed".
+      let resolvedTurnstileToken = turnstileToken
+      if (isFreeTier && !resolvedTurnstileToken) {
+        const start = Date.now()
+        while (Date.now() - start < 10_000) {
+          if (turnstileRef.current) {
+            try {
+              resolvedTurnstileToken = await turnstileRef.current.getResponsePromise()
+            } catch {
+              // getResponsePromise rejects on timeout — leave token empty and
+              // let the server's response drive the error message.
+            }
+            break
+          }
+          await new Promise((r) => setTimeout(r, 50))
+        }
+      }
+
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           messages: newMessages,
           apiKey: apiKey || undefined,
-          turnstileToken: isFreeTier ? turnstileToken : undefined,
+          turnstileToken: isFreeTier ? resolvedTurnstileToken : undefined,
           current_section: currentSection,
           doc_changed: docChanged || undefined,
         }),
