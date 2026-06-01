@@ -7,6 +7,8 @@ user-invocable: true
 
 # /create — Build with @opencosmos/ui
 
+<!-- Canonical source: opencosmos-ui/.claude/skills/create/SKILL.md (ships in the @opencosmos/ui npm package under .claude/). Consuming repos carry a copy for skill discovery — when you edit this file, propagate the change to those copies. -->
+
 You are building UI for the OpenCosmos platform. **Always reach for `@opencosmos/ui` components first.** Never write custom HTML elements, custom CSS, or bespoke JSX when a component in this library covers the use case.
 
 `$ARGUMENTS` describes what to build. Read it, identify which components to use from this reference, then build.
