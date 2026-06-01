@@ -38,15 +38,16 @@ When something needs to change — a color, spacing, motion curve, button shape,
 
 ## Setting Up a New App — Do This First
 
-When adding `@opencosmos/ui` to any app in this monorepo, complete these three steps **before writing any component code**. Skipping them will produce broken, unstyled components with no useful error message.
+When adding `@opencosmos/ui` to a new app, set up styling **before writing any component code**. It's now a single step: import the package's CSS, in order.
 
 ### Step 1 — CSS imports in `globals.css`
 
 ```css
 /* app/globals.css */
-@import "tailwindcss";
-@import "@opencosmos/ui/theme.css";
-@import "@opencosmos/ui/globals.css";
+@import "tailwindcss";                 /* your app's own utilities */
+@import "@opencosmos/ui/theme.css";    /* design tokens + custom utilities */
+@import "@opencosmos/ui/globals.css";  /* default token VALUES (:root) */
+@import "@opencosmos/ui/styles.css";   /* precompiled component styles */
 
 @layer base {
   body {
@@ -61,154 +62,22 @@ When adding `@opencosmos/ui` to any app in this monorepo, complete these three s
 import './globals.css'
 ```
 
-**Why this matters:** In Tailwind v4, `@theme` blocks must be processed in the same Tailwind context as `@import "tailwindcss"`. Separate `import` statements in `layout.tsx` don't guarantee this. Using CSS `@import` chains ensures they're all processed together.
+**Why this works:**
+- `@opencosmos/ui/styles.css` is a **precompiled stylesheet** shipped in the package containing every Tailwind class the components use (responsive variants included). So you do **not** add `@opencosmos/ui` to a Tailwind `content`/`@source` glob, and you do **not** maintain a safelist. (Tailwind v4 + Turbopack silently ignores `node_modules` symlink scans — that's the trap this avoids.)
+- **Order matters:** `styles.css` comes *after* `globals.css`. It references token values but emits no `:root` vars, so it never clobbers them.
+- In Tailwind v4, `@theme` must be processed in the same context as `@import "tailwindcss"`, which the CSS `@import` chain guarantees.
 
-### Step 2 — Create `app/_ui-safelist.ts`
+That's the whole setup. No `_ui-safelist.ts`, no post-load grep gate.
 
-**This is mandatory.** Without it, component layouts will appear broken even though the code is correct.
+> **Upgrading `@opencosmos/ui`:** nothing to regenerate — new component classes ship inside `styles.css`. Just bump the version. (If you maintain an app that predates this, delete its `app/_ui-safelist.ts` and any `@source ".../@opencosmos/ui"` line once you've added the `styles.css` import.)
 
-**Why:** Tailwind v4 + Turbopack does not follow pnpm symlinks. `node_modules/@opencosmos/ui` is a symlink to pnpm's content-addressed store — Tailwind never scans it, so component-internal classes (`lg:hidden`, `lg:flex`, `inline-flex`, etc.) are never generated. This was confirmed empirically: `@source` with every possible glob pattern resolves correctly in fast-glob but is silently ignored by Turbopack. The only reliable fix is a safelist file in the app source, which Tailwind always scans.
+> **Troubleshooting missing component styles:** confirm `globals.css` imports `@opencosmos/ui/styles.css` *after* `globals.css`; in this monorepo, confirm the library is built (`pnpm --filter @opencosmos/ui build`) so `dist/styles.css` is current.
 
-Copy this file verbatim into `app/_ui-safelist.ts`:
+---
 
-```ts
-/**
- * Tailwind CSS safelist for @opencosmos/ui components.
- * Required because Tailwind v4 + Turbopack does not follow pnpm symlinks,
- * so @source cannot scan @opencosmos/ui. This file forces Tailwind to
- * generate all classes used internally by @opencosmos/ui components.
- *
- * Update when upgrading @opencosmos/ui — see extraction script below.
- */
+## Contributing to `@opencosmos/ui`: never interpolate Tailwind classes
 
-// prettier-ignore
-export const _safelist = [
-
-  // ── Header layout ────────────────────────────────────────────────────────
-  'fixed sticky relative top-0 left-0 right-0 z-50',
-  'transition-all backdrop-blur-xl backdrop-blur-3xl',
-  'bg-transparent border-b border-transparent',
-  'supports-[backdrop-filter]:bg-[var(--color-surface)]/50',
-  'bg-[var(--color-surface)]/60',
-  'max-w-7xl max-w-[1440px] max-w-4xl mx-auto px-4 sm:px-6 lg:px-8',
-  'flex items-center justify-between h-16 lg:h-20 relative',
-  'flex-shrink-0 z-10',
-  'hidden lg:flex items-center gap-8',
-  'ml-8 mr-auto ml-auto mr-8',
-  'absolute left-1/2 -translate-x-1/2',
-  'hidden lg:flex items-center gap-4 z-10',
-  'lg:hidden p-2 rounded-lg transition-colors',
-  'hover:bg-[var(--color-surface)]',
-  'fixed inset-0 z-[100] lg:hidden',
-  'opacity-0 opacity-100 pointer-events-none pointer-events-auto',
-  'absolute inset-0 bg-[var(--color-background)]',
-  'flex flex-col items-center justify-center h-full gap-8 px-4',
-  'relative group',
-  'absolute top-full left-1/2 -translate-x-1/2 mt-2 min-w-[200px] z-50',
-  'bg-[var(--color-surface)] border border-[var(--color-border)]',
-  'rounded-lg shadow-xl py-1 p-1',
-  'backdrop-blur-3xl bg-[var(--color-surface)]/95',
-  'animate-fade-in rotate-180 transition-transform',
-  'w-full w-[200px] max-w-xs w-3 w-6 h-2 h-3 h-6',
-  'mt-2 mt-4 mt-8 top-full',
-  'text-3xl text-xl text-center flex-col gap-3',
-
-  // ── NavLink ──────────────────────────────────────────────────────────────
-  'group inline-flex items-center gap-2',
-  'text-sm text-base text-lg font-medium',
-  'transition-all transition-colors duration-200',
-  'cursor-pointer relative pb-1 rounded-xs w-full',
-  'focus-visible:outline-none focus-visible:outline focus-visible:outline-2',
-  'focus-visible:outline-offset-2 focus-visible:outline-offset-4',
-  'focus-visible:outline-[var(--color-focus)]',
-  'focus-visible:ring-1 focus-visible:ring-2',
-  'focus-visible:ring-[var(--color-focus)] focus-visible:ring-ring',
-  'text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)]',
-  'text-[var(--color-text-primary)] hover:text-[var(--color-primary)]',
-  'text-primary hover:underline underline-offset-4',
-  'px-3 py-2 rounded-md hover:bg-[var(--color-surface)]',
-  'font-semibold text-[var(--color-primary)]',
-
-  // ── Button ───────────────────────────────────────────────────────────────
-  'inline-flex items-center justify-center font-medium',
-  'transition-colors focus-visible:outline-none',
-  'disabled:pointer-events-none disabled:opacity-50',
-  'sage-interactive',
-  '[&_svg]:transition-transform [&_svg]:duration-300 hover:[&_svg]:translate-x-1',
-  'bg-primary text-primary-foreground hover:bg-primary/90',
-  'bg-destructive text-destructive-foreground hover:bg-destructive/90',
-  'border border-input bg-transparent shadow-xs hover:bg-primary hover:text-primary-foreground hover:border-primary',
-  'bg-[var(--color-surface)] border border-[var(--color-border)]',
-  'hover:bg-[var(--color-surface)] hover:text-[var(--color-text-primary)]',
-  'hover:underline text-[var(--color-text-secondary)]',
-  'h-9 rounded-md px-4 py-2 text-sm',
-  'h-10 rounded-md px-8',
-  'h-8 rounded-md px-3 text-xs',
-  'h-9 w-9',
-  'dark:bg-white/10 dark:border-white/10 dark:hover:bg-primary dark:hover:text-primary-foreground',
-
-  // ── Slide-in panel (sidebars, history drawers) ────────────────────────
-  'fixed inset-y-0 left-0 z-50 w-72 border-r',
-  '-translate-x-full translate-x-0',
-  'transition-transform duration-200 ease-in-out',
-
-  // ── Shared utilities ──────────────────────────────────────────────────
-  'gap-1 gap-2 gap-3 gap-4 gap-8',
-  'px-4 px-6 py-3 py-4',
-  'shadow-sm shadow-xs shadow-xl',
-  'z-20 z-40',
-  'border-border border-foreground/10',
-  'h-4 w-4 h-full w-full',
-  'bg-background text-foreground',
-
-].join(' ')
-```
-
-### Step 3 — Verify before writing any component code
-
-Run the dev server, load the page, and confirm the safelist is being scanned:
-
-```bash
-pnpm dev --filter <app-name>
-# In another terminal, after loading the page:
-grep -c "lg:flex\|inline-flex\|lg:hidden" apps/<app-name>/.next/dev/static/chunks/*.css
-```
-
-**Expected: non-zero.** If zero — the `_ui-safelist.ts` file is not in the `app/` directory or isn't being picked up. Do not proceed until this passes.
-
-**Never commit or push UI code without confirming this check passes on localhost.** Pushing broken code to CI is expensive — both in compute and in time.
-
-### When upgrading `@opencosmos/ui`
-
-If a new version adds new components or classes, regenerate the safelist entries:
-
-```bash
-python3 << 'EOF'
-import re, sys
-
-# Add paths for any component you're using
-files = [
-    'apps/web/node_modules/@opencosmos/ui/src/components/layout/Header/Header.tsx',
-    'apps/web/node_modules/@opencosmos/ui/src/components/navigation/NavLink.tsx',
-    'apps/web/node_modules/@opencosmos/ui/src/components/actions/Button.tsx',
-]
-
-words = set()
-for path in files:
-    with open(path) as f:
-        content = f.read()
-    for m in re.finditer(r'["`\']([\s\S]*?)["`\']', content):
-        for w in m.group(1).split():
-            w = w.strip().rstrip(',')
-            if w and not w.startswith('$') and not w.startswith('{') and len(w) < 80:
-                words.add(w)
-
-tailwind = sorted(w for w in words if re.match(r'^[a-z@\[&][-a-z0-9/:[\]_.()%+*#@&,\'"!=]+$', w) and len(w) > 1)
-print(' '.join(tailwind))
-EOF
-```
-
-Then diff the output against the current safelist, add new classes, verify with the grep check above.
+If you add or edit a component **in the library**, never build a class name by interpolation — `` `gap-${n}` `` or `` `md:${cls}` ``. Tailwind only generates CSS for class names it sees as complete static literals, so interpolated classes silently never get emitted (this caused a real `Grid`/`Stack` bug). Use the static maps in `packages/ui/src/lib/responsive-classes.ts`. The `no-dynamic-classes` test enforces this in CI.
 
 ---
 
@@ -514,14 +383,13 @@ const { shouldAnimate, scale } = useMotionPreference()
 
 Before writing any UI code:
 
-1. `globals.css` has the three `@import` lines? (`tailwindcss` → `theme.css` → `globals.css`)
-2. `app/_ui-safelist.ts` exists and contains the full safelist?
-3. Safelist verified: `grep -c "lg:flex\|inline-flex" .next/dev/static/chunks/*.css` returns non-zero?
-4. All colors from tokens — no hardcoded hex, rgb, or Tailwind palette classes?
-5. All components from `@opencosmos/ui` — no custom buttons, inputs, or scroll containers?
-6. Missing component? → Declare it, ask first. Don't build bespoke.
-7. Motion gated by `useMotionPreference`?
-8. Links using `asChild` pattern — not nested `<a>` inside `<button>`?
-9. `cn()` for all conditional classNames?
+1. `globals.css` has the four `@import` lines, in order? (`tailwindcss` → `theme.css` → `globals.css` → `styles.css`)
+2. All colors from tokens — no hardcoded hex, rgb, or Tailwind palette classes?
+3. All components from `@opencosmos/ui` — no custom buttons, inputs, or scroll containers?
+4. Missing component? → Declare it, ask first. Don't build bespoke.
+5. Motion gated by `useMotionPreference`?
+6. Links using `asChild` pattern — not nested `<a>` inside `<button>`?
+7. `cn()` for all conditional classNames?
+8. *(Library contributors only)* No interpolated Tailwind classes — use `responsive-classes.ts`.
 
-**Step 3 is a gate, not a suggestion.** If it fails, fix it before writing component code. If you push without checking it, you will push broken UI.
+**Item 1 is the gate.** Missing or mis-ordered CSS imports produce unstyled components with no error. The `styles.css` import is what makes component classes appear — without it, layouts look broken even though the code is correct.
