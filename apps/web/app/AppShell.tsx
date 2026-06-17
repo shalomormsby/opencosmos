@@ -1,7 +1,7 @@
 'use client'
 
 import { AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar } from '@opencosmos/ui'
-import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
+import { MessageSquare, BookOpen, ExternalLink, Sparkles } from 'lucide-react'
 import { SidebarAvatar } from './SidebarAvatar'
 import { SidebarUsage } from './SidebarUsage'
 
@@ -47,6 +47,12 @@ export function AppShell({
             label: 'Studio',
             href: 'https://studio.opencosmos.ai/docs/getting-started',
             external: true,
+          },
+          {
+            icon: <Sparkles className="w-4 h-4" />,
+            label: 'Inception',
+            href: '/inception',
+            active: activePath === '/inception',
           },
         ]}
         footer={<ShellFooter />}

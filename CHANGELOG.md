@@ -8,6 +8,16 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-06-17 — Feature: Inception — bring a personal agent into being
+
+Added **Inception**, the fourth nav item (Dialog · Knowledge · Studio · Inception) at `/inception`. Cosmo interviews a member to co-create a personal AI agent — its identity, goals/teachers, voice — with a live, editable blueprint assembling beside the conversation. The finished agent is then exported home (primarily a free Gemini Gem; or a Maker folder / BYOK) — opencosmos.ai is the *place of origin, not residence*. It even ships a Day-0 origin log entry so the agent arrives home already knowing how it came to be.
+
+- **Established sidebar pattern.** Cosmo lives in the same collapsible, drag-to-resize left sidebar as the Knowledge page (`InceptionShell` mirrors `KnowledgeShell`), with the blueprint in the Inset. The dialog UI was factored into a shared `ChatPanel` now used by `/dialog`, `/knowledge`, and `/inception`.
+- **Two axes, presented as questions, cells unnamed (build-in-public):** "What is this agent for?" → Agent / Catalyst · "How do you want to build?" → No-code / Maker.
+- **The interview UX.** Path-tailored, write-on greetings from Cosmo; the blueprint is paginated one section per page (Back · Reset-with-confirmation · Next at the foot of the form); fields auto-fill from the conversation via a structured synthesize pass, and any manual edit wins.
+- **Cost model:** the interview runs on Haiku via the existing free-tier guard (100k budget + Turnstile + monthly cap) with a BYOK fallback. Running the agent lives in the user's own free/sovereign home — never subsidized unboundedly. No subscriptions (those remain legacy — see `lib/stripe.ts`).
+- New: `app/inception/*`, `app/api/inception/route.ts`, `lib/inception/*`, `app/dialog/ChatPanel.tsx`; kit content relocated to `public/inception/` (verbatim delivery) + `content/inception/` (template source).
+
 ## 2026-05-22 — Fix: "Verification failed" on landing-page handoff
 
 The first message typed into the landing-page hero input was reliably returning *"Verification failed — please refresh the page and try again."* when the user was logged out. Root cause was a client-side race between two effects that fire on the same render tick when `/` redirects to `/dialog?q=<input>`:

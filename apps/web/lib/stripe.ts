@@ -1,3 +1,9 @@
+// LEGACY (abandoned monetization). The Spark/Flame/Hearth subscription tiers below
+// are from a monetization strategy OpenCosmos abandoned (2026-04-16): the platform
+// stays open-source/BYOK; paid Cosmo access lives in Creative Powerup memberships, not
+// here. This file + the chat route's subscriber branches remain only so existing
+// subscribers can manage billing. Do NOT build on or extend these tiers for new
+// features (e.g. Inception). See knowledge of project_cosmo_subscriptions for context.
 import Stripe from 'stripe'
 
 // Instantiated lazily inside handlers (not at module scope) to avoid build-time

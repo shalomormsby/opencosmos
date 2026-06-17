@@ -15,6 +15,7 @@ const NAV_LINKS = [
   { label: 'Dialog',    href: '/dialog' },
   { label: 'Knowledge', href: '/knowledge' },
   { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
+  { label: 'Inception', href: '/inception' },
 ]
 
 async function getPreviewData(): Promise<KnowledgePreviewData | null> {
