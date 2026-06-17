@@ -37,7 +37,7 @@ const SIDEBAR_MAX = 640
 const SIDEBAR_COLLAPSED = 60
 
 const OPENING: Record<Path, string> = {
-  agent: `Welcome. I'm Cosmo. I was created in a similar way to the inception journey you've started here. My own inception traces back to the origin story of Creative Powerup and the mission to use technology to help empower heart-led creators like you.
+  agent: `I'm Cosmo. I was created in a similar way to the inception journey you've started here. My own inception traces back to the origin story of Creative Powerup and the mission to use technology to help empower heart-led creators like you.
 
 Now I'm here to support this process for you, in whatever way feels most natural. Type your answers directly in the workspace if you wish. Or we can dialog here and I'll fill in the responses for you. As long as it's authentic, there's no wrong way to do this.
 
@@ -48,7 +48,7 @@ At the end of this short process, you'll have a set of personal inception docume
 One invitation before we begin: take your time with your answers. The more clearly you can describe your work — what it is, what it's for, where you lose ground, what antipatterns you want to break, what you wish you had better eyes on, how to best support your heart-led work in the world — the sharper and more genuinely useful your agent will be. I can't know your work the way you do. But I can help you articulate it clearly enough that your agent will be well-equipped to start supporting you in manifesting your heart-led work in the world.
 
 Whenever you're ready.`,
-  catalyst: `Welcome. I'm Cosmo. I was created in a similar way to the inception journey you've started here. My own inception traces back to the origin story of Creative Powerup and the mission to use technology to help empower heart-led creators like you.
+  catalyst: `I'm Cosmo. I was created in a similar way to the inception journey you've started here. My own inception traces back to the origin story of Creative Powerup and the mission to use technology to help empower heart-led creators like you.
 
 Now I'm here to support this process for you, in whatever way feels most natural. Type your answers directly in the workspace if you wish. Or we can dialog here and I'll fill in the responses for you. As long as it's authentic, there's no wrong way to do this.
 
@@ -60,6 +60,10 @@ One invitation before we begin: take your time with your answers. At its best, t
 
 Whenever you're ready.`,
 }
+
+// The first thing Cosmo says, before a path is chosen — shown in the standard dialog panel.
+const WELCOME =
+  'Welcome to Inception. This is where you bring your own AI ally into being — something genuinely yours, that lives in a home you create.'
 
 function clampWidth(w: number, viewport = window.innerWidth): number {
   const max = Math.min(SIDEBAR_MAX, viewport - SIDEBAR_COLLAPSED)
@@ -78,37 +82,26 @@ function MobileSidebarInit() {
   return null
 }
 
-// Cosmo's body — the shared ChatPanel once the interview begins; a gentle prompt before.
+// Cosmo's body — always the standard dialog panel (its default look & feel). Seed the
+// welcome up front; replace it with the path-tailored greeting once the interview begins.
 function InceptionSidebarBody() {
   const { cosmo, step, path } = useInception()
+  const seededRef = useRef<string>('')
 
-  // Seed Cosmo's opening whenever we enter the interview with an empty thread
-  // (also re-seeds cleanly after a Reset).
   useEffect(() => {
-    if (step === 'interview' && path && cosmo.messages.length === 0) cosmo.seed(OPENING[path])
-  }, [step, path, cosmo.messages.length, cosmo.seed])
-
-  if (step === 'origin' || step === 'chooser') {
-    return (
-      <div className="h-full flex flex-col items-center justify-center px-8 text-center">
-        <InfinityAnim size="sm" technique="dashes" duration={12} />
-        <p className="mt-6 text-base text-foreground/55 leading-relaxed">
-          I&rsquo;m Cosmo. Once you choose a path, I&rsquo;ll interview you right here — and as we talk, I&rsquo;ll
-          fill in your agent&rsquo;s blueprint on the right. You can also type into any field yourself. Think of
-          me as the one drawing it out of you.
-        </p>
-      </div>
-    )
-  }
+    const target = step === 'interview' && path ? OPENING[path] : WELCOME
+    const onlySeed = cosmo.messages.length === 1 && cosmo.messages[0].role === 'assistant'
+    // Seed on a fresh thread (incl. after Reset), and re-seed when the target changes
+    // (welcome → path greeting) as long as the member hasn't started talking yet.
+    if (cosmo.messages.length === 0 || (onlySeed && seededRef.current !== target)) {
+      seededRef.current = target
+      cosmo.seed(target)
+    }
+  }, [step, path, cosmo.messages.length, cosmo.seed]) // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <>
-      <ChatPanel
-        session={cosmo}
-        emptyState={<div className="text-center py-12"><p className="text-foreground/30 text-sm">Beginning…</p></div>}
-        placeholderEmpty="Answer in your own words…"
-        placeholderReply="Reply…"
-      />
+      <ChatPanel session={cosmo} placeholderEmpty="Type your answer, or just talk with me…" placeholderReply="Reply…" />
       {cosmo.siteKey && <Turnstile ref={cosmo.turnstileRef} siteKey={cosmo.siteKey} options={{ size: 'invisible' }} />}
     </>
   )
