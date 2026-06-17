@@ -29,6 +29,7 @@ const NAV_LINKS: HeaderNavLink[] = [
   { label: 'Dialog',    href: '/dialog' },
   { label: 'Knowledge', href: '/knowledge' },
   { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
+  { label: 'Inception', href: '/inception' },
 ]
 
 const STORAGE_KEY = 'appsidebar:knowledge'

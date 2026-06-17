@@ -21,6 +21,7 @@ export default function Home() {
             { label: 'Dialog', href: '/dialog' },
             { label: 'Knowledge', href: '/knowledge' },
             { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
+            { label: 'Inception', href: '/inception' },
           ]}
           actions={<AuthButton />}
         />

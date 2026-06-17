@@ -6,7 +6,7 @@ import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
-import { MessageSquare, BookOpen, ExternalLink } from 'lucide-react'
+import { MessageSquare, BookOpen, ExternalLink, Sparkles } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
 import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
@@ -238,6 +238,7 @@ export function CosmoChat() {
           { icon: <MessageSquare className="w-4 h-4" />, label: 'Dialog',    href: '/dialog',                                           active: true },
           { icon: <BookOpen     className="w-4 h-4" />, label: 'Knowledge', href: '/knowledge' },
           { icon: <ExternalLink className="w-4 h-4" />, label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started', external: true },
+          { icon: <Sparkles     className="w-4 h-4" />, label: 'Inception', href: '/inception' },
         ]}
         footer={<ContextAwareFooter />}
       >
@@ -259,6 +260,7 @@ export function CosmoChat() {
             { label: 'Dialog',    href: '/dialog' },
             { label: 'Knowledge', href: '/knowledge' },
             { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
+            { label: 'Inception', href: '/inception' },
           ]}
           actions={<AuthButton />}
         />
