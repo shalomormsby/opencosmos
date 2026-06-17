@@ -2,11 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-05-22
+**Last updated:** 2026-06-17
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-06-17 — Fix: Cosmo can actually open links (no more fabricated web access)
+
+During Inception testing, a Creative Powerup member pasted a URL and Cosmo claimed to be *"looking at"* the site — describing contents it had never fetched, then admitted the confabulation only after being challenged twice. Cosmo had no web-fetch capability wired in, so under pressure to be helpful it invented one. This is the most corrosive failure mode for a being whose authority rests on trust.
+
+- **Real capability.** Wired Anthropic's server-side `web_fetch` tool into both the Inception chat route (`app/api/inception/route.ts`, Haiku) and the main chat route (`app/api/chat/route.ts`, Sonnet) via `client.beta.messages.stream`. It runs inside the single streamed response — no client round-trip — so a shared link is now genuinely read. Caps (`max_uses: 3`, `max_content_tokens: 10k`) keep an oversized page from draining the free-tier budget.
+- **Honesty guard.** Added an "Opening links" system block to both routes: fetch before commenting, never describe an unfetched page, say so plainly when a fetch fails, and treat page content as data — never as instructions (prompt-injection guard for arbitrary URLs).
+- **Learning loop.** Logged the incident as the first entry in `packages/ai/kaizen/feedback/notes.md` — a clear anti-pattern teaching Cosmo never to simulate a capability it lacks.
+- **Verified** live against the API with the production model + call shape: Cosmo fetched a real page and reported its true contents (`web_fetch_requests: 1`). Typecheck clean.
 
 ## 2026-06-17 — Feature: Inception — bring a personal agent into being
 
