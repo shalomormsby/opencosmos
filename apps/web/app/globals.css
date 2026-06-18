@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@opencosmos/ui/theme.css";
 @import "@opencosmos/ui/globals.css";
+@import "@opencosmos/ui/styles.css";   /* precompiled component classes — replaces the hand-written safelist */
 
 /* OpenCosmos is always dark. Override the Studio Light defaults that
    @opencosmos/ui/globals.css puts on :root so server-rendered paint
