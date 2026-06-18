@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@import "@opencosmos/ui/styles.css";   /* precompiled @opencosmos/ui component classes (resolve against this app's own tokens below) */
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {

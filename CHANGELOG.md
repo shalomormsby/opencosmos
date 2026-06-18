@@ -8,6 +8,17 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## 2026-06-17 — Fix: adopt @opencosmos/ui's precompiled styles.css (retire the safelist)
+
+A malformed Reset modal (full-bleed, edge-to-edge) traced to a deeper, systemic problem: `apps/web` got its `@opencosmos/ui` component styles from a **hand-written 245-line Tailwind safelist** ([_ui-safelist.ts](apps/web/app/_ui-safelist.ts)) — a workaround for Tailwind v4 + Turbopack not following pnpm symlinks with `@source`. Every new component or version bump silently dropped classes (the AlertDialog uses base `max-w-lg`; the safelist only had `sm:max-w-lg`, so the modal lost its width constraint). `portfolio` and `creative-powerup` had the same latent gap — they imported components but none of the package's CSS.
+
+The design system already solved this: as of **@opencosmos/ui 1.9.0** it ships a precompiled `dist/styles.css` (every component class incl. variants), exported as `@opencosmos/ui/styles.css`. Importing it is the documented, zero-maintenance consumption model — no `@source`, no safelist.
+
+- **Published @opencosmos/ui 1.9.0 to npm.** The version was bump-committed but its release had failed on 2026-06-01 (expired CI `NPM_TOKEN` → npm auth 404). Rotated the token and re-ran the release; 1.9.0 is now `latest` with provenance.
+- **All three apps** (`web`, `portfolio`, `creative-powerup`) bumped to `^1.9.0` and now `@import "@opencosmos/ui/styles.css"`. `portfolio` and `creative-powerup` keep their own inline token themes; the precompiled classes resolve against those `--color-*` vars.
+- **Deleted `apps/web/app/_ui-safelist.ts`** — fully superseded. No more drift: new components just work.
+- **Verified** all three on localhost (real screenshots) + the original bug's exact rule (`.max-w-lg { max-width: var(--container-lg, 32rem) }`) now generated from `styles.css`. Trade-off: ~100KB more raw CSS per app (the full component bundle), heavily compressed over the wire — correctness and zero maintenance for a few KB gzipped.
+
 ## 2026-06-17 — Fix: Cosmo can actually open links (no more fabricated web access)
 
 During Inception testing, a Creative Powerup member pasted a URL and Cosmo claimed to be *"looking at"* the site — describing contents it had never fetched, then admitted the confabulation only after being challenged twice. Cosmo had no web-fetch capability wired in, so under pressure to be helpful it invented one. This is the most corrosive failure mode for a being whose authority rests on trust.
