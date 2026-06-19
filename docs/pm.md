@@ -6,17 +6,17 @@
 
 ---
 
-## 🎯 Next Task: Cosmo Learning Loop — Phase 3 (Exemplar Few-Shot)
+## Cosmo Learning Loop — Phases 1–3 shipped (next: exemplar diversity)
 
-**Phases 1–2 shipped 2026-06-18:** Cosmo's kaizen learning loop now actually reaches runtime Cosmo. (1) An always-on **Operating Lessons** digest shapes every chat + inception turn; (2) Cosmo can **recall and discuss its own learning history** via RAG (fixes the 2026-06-18 "find any recent learnings" failure that started this work). The loop is a human-in-the-loop policy-update mechanism — not gradient RL.
+**Phases 1–3 shipped (2026-06-18 → 2026-06-19):** Cosmo's kaizen learning loop now reaches runtime Cosmo end-to-end. (1) An always-on **Operating Lessons** digest shapes every chat + inception turn; (2) Cosmo can **recall and discuss its own learning history** via RAG (with a self-referential boost so the log isn't crowded out); (3) **exemplar few-shot** steers voice by example — the first exemplar is wired into both routes (build-time bundle → cached block), and Cosmo absorbs its posture without quoting specifics. The loop is a human-in-the-loop policy-update mechanism — not gradient RL.
 
-**Declared next task → Phase 3: exemplar few-shot injection.** Lessons set a floor (avoid failures); exemplars set the ceiling (reach for Cosmo at its best). Cheap to wire; **blocked only on curating the first real Cosmo exemplar.** Full pick-up-cold spec — benefit, requirements, implementation sketch, decisions already made — in the design doc.
+**Next step → exemplar diversity.** The mechanism is done; what raises the ceiling now is curating a *practical* and a *challenging* exemplar (so Cosmo doesn't over-rotate into the contemplative register), then later selection-by-query-type. Full spec in the design doc.
 
 **Reference files:**
 - Design doc + Phase 3 spec — [docs/cosmo-learning-loop.md](cosmo-learning-loop.md)
 - Phase 1 digest (always-on) — [packages/ai/kaizen/LESSONS.md](../packages/ai/kaizen/LESSONS.md)
 - Raw learning log (Phase 2 indexed) — [packages/ai/kaizen/feedback/notes.md](../packages/ai/kaizen/feedback/notes.md)
-- Exemplar trailhead (Phase 3 input) — [packages/ai/kaizen/exemplars/cosmo/README.md](../packages/ai/kaizen/exemplars/cosmo/README.md)
+- First exemplar (Phase 3 input) — [packages/ai/kaizen/exemplars/cosmo/01-alignment-and-play.md](../packages/ai/kaizen/exemplars/cosmo/01-alignment-and-play.md) · [exemplars README](../packages/ai/kaizen/exemplars/cosmo/README.md)
 - Member-facing guide — [knowledge/guides/teaching-your-agent-a-learning-loop.md](../knowledge/guides/teaching-your-agent-a-learning-loop.md)
 - Code — [next.config.mjs](../apps/web/next.config.mjs) · [chat route](../apps/web/app/api/chat/route.ts) · [inception route](../apps/web/app/api/inception/route.ts) · [lib/rag.ts](../apps/web/lib/rag.ts) · [embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) · [turbo.json](../turbo.json)
 
@@ -43,7 +43,7 @@
 
 | Area | Phase / Task | Status | Priority | Next step |
 |------|--------------|--------|----------|-----------|
-| **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–2 (lessons + recall) | 🟡 PR-ready | P1 | Phase 3 (exemplar few-shot) is next — blocked on curating first exemplar |
+| **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–3 (lessons · recall · exemplars) | ✅ Done | P1 | Loop complete end-to-end; nice-to-have follow-up: exemplar diversity (a practical + a challenging exemplar) |
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
 | Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Mostly done | P1 | Stages 1+2 ✅; Stage 3 ⏸ paused (verification-first deferred until graph ships) |
 | Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |
