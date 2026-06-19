@@ -40,6 +40,10 @@ import { resolveDomainForTradition } from './tradition-domain.js'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT_DIR = resolve(__dirname, '..', '..')
 const KNOWLEDGE_DIR = resolve(ROOT_DIR, 'knowledge')
+// Cosmo's kaizen practice (learning log + exemplars). Indexed alongside the
+// corpus so Cosmo can recall and discuss its own learning history. Tagged
+// role:'kaizen' so rag.ts frames it as the learning log — never as corpus to cite.
+const KAIZEN_DIR = resolve(ROOT_DIR, 'packages', 'ai', 'kaizen')
 
 function loadEnv(envPath: string) {
   if (!existsSync(envPath)) return
@@ -206,8 +210,10 @@ function chunkAtHeadings(body: string): Array<{ heading: string; parentHeading?:
 
 // ─── File discovery ───────────────────────────────────────────────────────────
 
-// Skip meta-files that aren't knowledge content
-const SKIP_FILES = new Set(['index.md', 'log.md', 'README.md'])
+// Skip meta-files that aren't knowledge content.
+// LESSONS.md is the always-injected Operating Lessons digest (it's in Cosmo's
+// context every turn already), so indexing it would only duplicate tokens.
+const SKIP_FILES = new Set(['index.md', 'log.md', 'README.md', 'LESSONS.md'])
 
 function walkMd(dir: string): string[] {
   const results: string[] = []
@@ -352,6 +358,37 @@ function buildChunks(filePath: string): VectorChunk[] {
   })
 }
 
+// ─── Kaizen chunk builder ─────────────────────────────────────────────────────
+
+/**
+ * Kaizen files (packages/ai/kaizen) — the feedback/notes.md learning log and any
+ * exemplars — are chunked exactly like corpus docs, then tagged role:'kaizen' so
+ * rag.ts renders them under "Your Learning Log" instead of "Retrieved Passages".
+ * This keeps Cosmo's own incident log and exemplars out of the wisdom-corpus
+ * citation path while still making them semantically retrievable for recall.
+ */
+function buildKaizenChunks(filePath: string): VectorChunk[] {
+  const chunks = buildChunks(filePath)
+  const rel = relative(ROOT_DIR, filePath)
+  const isExemplar = rel.includes(`${'/'}exemplars${'/'}`)
+  const title = isExemplar ? 'Cosmo Exemplar' : 'Cosmo Learning Log'
+  // Embedding enrichment: the raw entries read as topic-specific incidents (e.g.
+  // "fabricated web access"), so a generic recall query like "what have you
+  // learned recently?" wouldn't surface them. Prepending a kaizen-meta line to
+  // the EMBEDDING input (data) — not the displayed text — lets those meta-queries
+  // match, without changing what Cosmo actually reads.
+  const metaCue = isExemplar
+    ? 'Cosmo kaizen exemplar — a model example of Cosmo at its best, curated for continuous improvement.'
+    : 'Cosmo kaizen learning log — a record of recent learnings, lessons learned from experience, anti-patterns noticed, and how Cosmo has grown over time (continuous improvement / 改善).'
+  for (const c of chunks) {
+    c.metadata.role = 'kaizen'
+    c.metadata.title = title
+    c.metadata.domain = 'kaizen'
+    c.data = `${metaCue}\n\n${c.data}`
+  }
+  return chunks
+}
+
 // ─── Quote chunk builder ──────────────────────────────────────────────────────
 
 /**
@@ -472,7 +509,11 @@ async function main() {
 
   const files = walkMd(KNOWLEDGE_DIR)
   const quoteFiles = walkQuotes()
-  console.log(`Found ${files.length} markdown files + ${quoteFiles.length} quote yaml files in knowledge/`)
+  const kaizenFiles = existsSync(KAIZEN_DIR) ? walkMd(KAIZEN_DIR) : []
+  console.log(
+    `Found ${files.length} markdown files + ${quoteFiles.length} quote yaml files in knowledge/` +
+      `, ${kaizenFiles.length} kaizen file(s)`
+  )
 
   const allChunks: VectorChunk[] = []
   for (const file of files) {
@@ -480,6 +521,13 @@ async function main() {
     allChunks.push(...chunks)
     if (chunks.length > 0) {
       console.log(`  ${relative(ROOT_DIR, file)} → ${chunks.length} chunks`)
+    }
+  }
+  for (const file of kaizenFiles) {
+    const chunks = buildKaizenChunks(file)
+    allChunks.push(...chunks)
+    if (chunks.length > 0) {
+      console.log(`  ${relative(ROOT_DIR, file)} → ${chunks.length} kaizen chunks`)
     }
   }
   for (const file of quoteFiles) {

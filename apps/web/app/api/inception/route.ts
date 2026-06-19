@@ -14,6 +14,9 @@ import { Redis } from '@upstash/redis'
 // (tool-use → structured blueprint fields + a Day-0 origin log entry).
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT ?? ''
+// Curated Operating Lessons digest (kaizen/LESSONS.md), baked in at build time.
+// Always-injected so distilled lessons shape every turn here too.
+const LESSONS = process.env.COSMO_LESSONS ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const SESSION_TTL = 604800 // 7 days
@@ -156,6 +159,9 @@ function statePreamble(path: Path, build: Build, step: string | undefined, answe
 function buildSystem(path: Path, build: Build, step: string | undefined, answersSoFar: unknown): Anthropic.TextBlockParam[] {
   const blocks: Anthropic.TextBlockParam[] = []
   if (SYSTEM_PROMPT) blocks.push({ type: 'text', text: SYSTEM_PROMPT, cache_control: { type: 'ephemeral' } })
+  // No cache_control: the catalyst path already uses all 4 prompt-cache
+  // breakpoints. This block is still cached inside the next breakpoint's prefix.
+  if (LESSONS.trim()) blocks.push({ type: 'text', text: LESSONS })
   blocks.push({ type: 'text', text: INCEPTION_GUIDANCE, cache_control: { type: 'ephemeral' } })
   blocks.push({ type: 'text', text: WEB_ACCESS, cache_control: { type: 'ephemeral' } })
   if (path === 'catalyst') blocks.push({ type: 'text', text: CATALYST_SPIRIT, cache_control: { type: 'ephemeral' } })

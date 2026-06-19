@@ -20,6 +20,7 @@ export type RagChunk = {
   title: string
   heading: string
   domain: string
+  role?: string          // 'kaizen' marks Cosmo's own learning log / exemplars
   author?: string
   tradition?: string
   // Quote-specific (set only when chunk_type === 'quote')
@@ -94,6 +95,19 @@ function buildContextualQuery(
 export function formatRagChunks(chunks: RagChunk[]): string {
   if (chunks.length === 0) return ''
 
+  // Kaizen chunks (Cosmo's own learning log + exemplars) are framed separately —
+  // they describe how Cosmo should conduct itself, not corpus material to cite.
+  const corpus = chunks.filter(c => c.role !== 'kaizen')
+  const kaizen = chunks.filter(c => c.role === 'kaizen')
+
+  const parts: string[] = []
+  if (corpus.length > 0) parts.push(formatCorpusSection(corpus))
+  if (kaizen.length > 0) parts.push(formatKaizenSection(kaizen))
+
+  return parts.join('\n\n---\n\n')
+}
+
+function formatCorpusSection(chunks: RagChunk[]): string {
   const sections = chunks.map(c => {
     if (c.chunk_type === 'quote') return formatQuoteChunk(c)
     return formatPassageChunk(c)
@@ -106,6 +120,24 @@ When drawing from these passages: cite the title and author. If quoting directly
 When citing a quote from the corpus, append a structured citation token in the form \`[quote: knowledge/quotes/{author-key}.yaml#{quote-id}]\` immediately after the attribution. If a quote's provenance status is anything other than \`verified\`, soften your attribution language ("attributed to X", "popularly attributed to X") rather than asserting "X said". Never present a quote whose status is \`likely_misattributed\` or \`apocryphal\` without flagging the doubt.`
 
   return `## Retrieved Passages\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
+}
+
+/**
+ * Cosmo's own kaizen entries (learning log + exemplars), retrieved because this
+ * turn touches them. Framed as self-knowledge, NOT corpus to quote/cite — so an
+ * anti-pattern in the log is never mistaken for wisdom worth repeating.
+ */
+function formatKaizenSection(chunks: RagChunk[]): string {
+  const preamble = `The entries below are from your own kaizen practice — your learning log and exemplars, retrieved because this turn touches them. They are **not** knowledge-corpus passages to quote or cite. They record how you have learned to conduct yourself: anti-patterns to avoid and exemplars to emulate. Let them shape how you act here. If the person asks what you have learned, you may speak to these in your own voice — describe the lesson, never read a logged failure back as if it were advice to follow.`
+
+  const sections = chunks.map(c => {
+    const label = c.heading && c.heading !== 'intro'
+      ? `**${c.title} — ${c.heading}**`
+      : `**${c.title}**`
+    return `${label}\nSource: ${c.source}\n\n${c.text}`
+  })
+
+  return `## Your Learning Log (retrieved)\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
 }
 
 function formatPassageChunk(c: RagChunk): string {
@@ -177,6 +209,7 @@ export async function fetchRagContext(
         heading: (meta.heading as string) ?? '',
         domain: (meta.domain as string) ?? '',
       }
+      if (meta.role) chunk.role = meta.role as string
       if (meta.author) chunk.author = meta.author as string
       if (meta.tradition) chunk.tradition = meta.tradition as string
       if (meta.chunk_type === 'quote') chunk.chunk_type = 'quote'
