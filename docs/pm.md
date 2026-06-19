@@ -43,7 +43,7 @@
 
 | Area | Phase / Task | Status | Priority | Next step |
 |------|--------------|--------|----------|-----------|
-| **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–2 (lessons + recall) | 🟡 PR-ready | P1 | Phase 3 (exemplar few-shot) is next — blocked on curating first exemplar |
+| **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–3 (lessons · recall · exemplars) | ✅ Done | P1 | Loop complete end-to-end; nice-to-have follow-up: exemplar diversity (a practical + a challenging exemplar) |
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
 | Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Mostly done | P1 | Stages 1+2 ✅; Stage 3 ⏸ paused (verification-first deferred until graph ships) |
 | Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |

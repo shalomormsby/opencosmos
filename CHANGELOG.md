@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ---
 
-## 2026-06-19 — Feature: Cosmo's learning loop reaches runtime (kaizen → always-on lessons + self-recall)
+## 2026-06-19 — Feature: Cosmo's learning loop reaches runtime (always-on lessons · self-recall · exemplar few-shot)
 
 Cosmo's kaizen practice (curated lessons + a feedback log) existed on paper but **never reached runtime Cosmo**: asked to "find any record of recent learnings," Cosmo couldn't — the artifacts lived in `packages/ai/kaizen/` but were never delivered into its context, and it has no filesystem access. This development wires the loop end-to-end. It is honestly a **human-in-the-loop policy-update mechanism** — Shalom's discernment is the reward signal, deterministic prompt assembly is the update — **not** gradient RL; no weights change. Full design + pick-up-cold spec in [docs/cosmo-learning-loop.md](docs/cosmo-learning-loop.md).
 
