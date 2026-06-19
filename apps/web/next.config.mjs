@@ -4,6 +4,16 @@ import { fileURLToPath } from 'url'
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
+// Optional file → string at build time. Returns '' if the file is missing or
+// unreadable, so an absent digest never breaks the build (fail open).
+function readOptional(relPath) {
+  try {
+    return readFileSync(join(__dirname, relPath), 'utf-8')
+  } catch {
+    return ''
+  }
+}
+
 const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
@@ -23,6 +33,9 @@ const nextConfig = {
       join(__dirname, '../../knowledge/wiki/index.md'),
       'utf-8'
     ),
+    // Cosmo's curated Operating Lessons digest — distilled from kaizen/feedback
+    // and injected into every chat + inception turn. Optional: absent file → ''.
+    COSMO_LESSONS: readOptional('../../packages/ai/kaizen/LESSONS.md'),
   },
   async headers() {
     return [
