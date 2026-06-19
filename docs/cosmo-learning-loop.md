@@ -111,7 +111,7 @@ The routes read `COSMO_SYSTEM_PROMPT` from an env var and have no repo filesyste
 |-------|-----------|--------|--------|----------|
 | 1 | **A — Operating Lessons digest** | Small | ✅ **Built 2026-06-18** | Lessons shape behavior every turn; immediate value from the one lesson already captured |
 | 2 | **C — Kaizen indexing + safe framing** | Small–Med | ✅ **Built 2026-06-18** | Cosmo can introspect its learning history (fixes the 2026-06-18 failure directly) |
-| 3 | **B — Exemplar few-shot** | Med | ⏳ **Pending — see § Phase 3 below** | Positive reinforcement; requires curating the first exemplar |
+| 3 | **B — Exemplar few-shot** | Med | ✅ **Built 2026-06-19** | Positive reinforcement; first exemplar curated + injection wired into both routes |
 
 Phase 1 delivers the most behavior change for the least code. Phase 2 delivers the specific introspection Shalom asked for. Phase 3 depends on having exemplars to inject.
 
@@ -139,7 +139,7 @@ This is a **human-in-the-loop policy-update mechanism**, not reinforcement learn
 
 ## Phase 3 — Exemplar few-shot (pick-up-cold spec)
 
-> **Status:** Pending. Mechanism is easy; it is blocked on exactly one thing — **curating the first exemplar.** Everything needed to resume with zero prior context is below.
+> **Status:** ✅ Built 2026-06-19. The first exemplar (`exemplars/cosmo/01-alignment-and-play.md`) is curated and the injection is wired into both routes (build-time bundle → `COSMO_EXEMPLARS` → cached block, frontmatter stripped). Verified: Cosmo absorbs the exemplar's posture without quoting its specifics. The spec below remains the reference for adding more exemplars; the open work now is **diversity** (a practical and a challenging exemplar) and, later, selection-by-query-type.
 
 ### Why this phase exists (the benefit)
 

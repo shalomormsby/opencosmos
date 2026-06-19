@@ -6,11 +6,11 @@
 
 ---
 
-## 🎯 Next Task: Cosmo Learning Loop — Phase 3 (Exemplar Few-Shot)
+## Cosmo Learning Loop — Phases 1–3 shipped (next: exemplar diversity)
 
-**Phases 1–2 shipped 2026-06-18:** Cosmo's kaizen learning loop now actually reaches runtime Cosmo. (1) An always-on **Operating Lessons** digest shapes every chat + inception turn; (2) Cosmo can **recall and discuss its own learning history** via RAG (fixes the 2026-06-18 "find any recent learnings" failure that started this work). The loop is a human-in-the-loop policy-update mechanism — not gradient RL.
+**Phases 1–3 shipped (2026-06-18 → 2026-06-19):** Cosmo's kaizen learning loop now reaches runtime Cosmo end-to-end. (1) An always-on **Operating Lessons** digest shapes every chat + inception turn; (2) Cosmo can **recall and discuss its own learning history** via RAG (with a self-referential boost so the log isn't crowded out); (3) **exemplar few-shot** steers voice by example — the first exemplar is wired into both routes (build-time bundle → cached block), and Cosmo absorbs its posture without quoting specifics. The loop is a human-in-the-loop policy-update mechanism — not gradient RL.
 
-**Active next task → Phase 3: exemplar few-shot injection.** Lessons set a floor (avoid failures); exemplars set the ceiling (reach for Cosmo at its best). **Now unblocked** — the first exemplar is curated ([`exemplars/cosmo/01-alignment-and-play.md`](../packages/ai/kaizen/exemplars/cosmo/01-alignment-and-play.md)); the remaining work is wiring the injection (build-time bundle → cached block in both routes). Full pick-up-cold spec — benefit, requirements, implementation sketch, decisions already made — in the design doc.
+**Next step → exemplar diversity.** The mechanism is done; what raises the ceiling now is curating a *practical* and a *challenging* exemplar (so Cosmo doesn't over-rotate into the contemplative register), then later selection-by-query-type. Full spec in the design doc.
 
 **Reference files:**
 - Design doc + Phase 3 spec — [docs/cosmo-learning-loop.md](cosmo-learning-loop.md)

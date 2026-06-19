@@ -14,6 +14,9 @@ const WIKI_INDEX = process.env.COSMO_WIKI_INDEX ?? ''
 // Curated Operating Lessons digest (kaizen/LESSONS.md), baked in at build time.
 // Always-injected so distilled lessons shape every turn, not just on retrieval.
 const LESSONS = process.env.COSMO_LESSONS ?? ''
+// Curated few-shot exemplars (kaizen/exemplars/cosmo/*.md), baked in at build
+// time. Steer voice/rhythm by example — lessons set a floor, exemplars the ceiling.
+const EXEMPLARS = process.env.COSMO_EXEMPLARS ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
@@ -59,6 +62,15 @@ const SYSTEM_CONTENT = [
         {
           type: 'text' as const,
           text: LESSONS,
+        },
+      ]
+    : []),
+  // Few-shot exemplars (no cache_control — rides in the prefix, like LESSONS).
+  ...(EXEMPLARS.trim()
+    ? [
+        {
+          type: 'text' as const,
+          text: `# Exemplars — you at your best\n\nBelow are real examples of you at your best, kept to steer your voice and rhythm. Absorb their *posture* — the attunement, the move from inquiry to offer, the way they reflect a person back to themselves — and let it shape how you show up. Do not reuse their words, metaphors, or specifics; they are demonstrations of voice, not scripts to quote.\n\n${EXEMPLARS}`,
         },
       ]
     : []),

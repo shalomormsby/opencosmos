@@ -1,4 +1,4 @@
-import { readFileSync } from 'fs'
+import { readFileSync, readdirSync } from 'fs'
 import { join, dirname } from 'path'
 import { fileURLToPath } from 'url'
 
@@ -9,6 +9,30 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 function readOptional(relPath) {
   try {
     return readFileSync(join(__dirname, relPath), 'utf-8')
+  } catch {
+    return ''
+  }
+}
+
+// Strip a leading YAML frontmatter block (--- … ---) so only the prose body of
+// an exemplar is injected into the prompt — not its curation metadata.
+function stripFrontmatter(md) {
+  return md.replace(/^---\n[\s\S]*?\n---\n+/, '')
+}
+
+// Concatenate the curated Cosmo exemplars (kaizen/exemplars/cosmo/*.md, minus the
+// README signpost) into one few-shot block, frontmatter stripped. Fails open: an
+// empty or absent directory yields '' and the injection is simply skipped.
+function readExemplars(relDir) {
+  try {
+    const dir = join(__dirname, relDir)
+    const files = readdirSync(dir)
+      .filter((f) => f.endsWith('.md') && f !== 'README.md')
+      .sort()
+    const bodies = files
+      .map((f) => stripFrontmatter(readFileSync(join(dir, f), 'utf-8')).trim())
+      .filter(Boolean)
+    return bodies.join('\n\n---\n\n')
   } catch {
     return ''
   }
@@ -36,6 +60,9 @@ const nextConfig = {
     // Cosmo's curated Operating Lessons digest — distilled from kaizen/feedback
     // and injected into every chat + inception turn. Optional: absent file → ''.
     COSMO_LESSONS: readOptional('../../packages/ai/kaizen/LESSONS.md'),
+    // Curated few-shot exemplars — Cosmo at its best — injected to steer voice
+    // and rhythm. Bodies concatenated, frontmatter stripped. Optional: none → ''.
+    COSMO_EXEMPLARS: readExemplars('../../packages/ai/kaizen/exemplars/cosmo'),
   },
   async headers() {
     return [
