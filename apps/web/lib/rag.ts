@@ -168,6 +168,61 @@ function formatQuoteChunk(c: RagChunk): string {
 > Cite as: ${citation}`
 }
 
+// ─── Retrieval helpers ────────────────────────────────────────────────────────
+
+type QueryHit = { metadata?: Record<string, unknown> }
+
+// Map one Upstash query hit → RagChunk (null if it carries no usable text).
+function mapResultToChunk(r: QueryHit): RagChunk | null {
+  const meta = r.metadata
+  if (!meta || !meta.source) return null
+  const chunk: RagChunk = {
+    text: (meta.text as string) ?? '',
+    source: (meta.source as string) ?? '',
+    title: (meta.title as string) ?? '',
+    heading: (meta.heading as string) ?? '',
+    domain: (meta.domain as string) ?? '',
+  }
+  if (meta.role) chunk.role = meta.role as string
+  if (meta.author) chunk.author = meta.author as string
+  if (meta.tradition) chunk.tradition = meta.tradition as string
+  if (meta.chunk_type === 'quote') chunk.chunk_type = 'quote'
+  if (meta.quote_id) chunk.quote_id = meta.quote_id as string
+  if (meta.category) chunk.category = meta.category as string
+  if (meta.provenance_status) chunk.provenance_status = meta.provenance_status as string
+  if (typeof meta.provenance_confidence === 'number') chunk.provenance_confidence = meta.provenance_confidence
+  if (meta.source_work) chunk.source_work = meta.source_work as string
+  if (meta.source_section) chunk.source_section = meta.source_section as string
+  return chunk.text.length > 0 ? chunk : null
+}
+
+// Run one Upstash query → chunks. `filter` is an optional metadata filter
+// (e.g. "role = 'kaizen'"). Errors propagate to the caller.
+async function queryChunks(data: string, topK: number, filter?: string): Promise<RagChunk[]> {
+  const index = getIndex()
+  const results = (await index.query<Record<string, unknown>>({
+    data,
+    topK,
+    includeMetadata: true,
+    includeData: false,
+    ...(filter ? { filter } : {}),
+  })) as QueryHit[]
+  return results.map(mapResultToChunk).filter((c): c is RagChunk => c !== null)
+}
+
+// True when the person is asking about Cosmo's OWN learning/lessons. Such queries
+// are otherwise crowded out of retrieval by topically-similar corpus docs (e.g.
+// the member-facing learning-loop guide), so we guarantee the kaizen log with a
+// dedicated filtered pass.
+function isSelfReferentialLearningQuery(query: string): boolean {
+  const s = query.toLowerCase()
+  const aboutLearning = /\b(learn|learned|learning|learnings|lesson|lessons|kaizen|mistake|mistakes|improve|improved|grow|grown|growth|feedback|exemplar)\b/.test(s)
+  const aboutSelf = /\b(you|your|yours|yourself|you've|cosmo)\b/.test(s)
+  return aboutLearning && aboutSelf
+}
+
+const KAIZEN_BOOST_TOPK = 3
+
 // ─── Main export ──────────────────────────────────────────────────────────────
 
 /**
@@ -190,38 +245,22 @@ export async function fetchRagContext(
 ): Promise<RagResult> {
   const contextualQuery = buildContextualQuery(query, history, docChanged)
 
-  const index = getIndex()
-  const results = await index.query<Record<string, unknown>>({
-    data: contextualQuery,
-    topK: 8,
-    includeMetadata: true,
-    includeData: false,
-  })
+  // Main semantic retrieval. For questions about Cosmo's own learning, also run a
+  // parallel kaizen-only pass so the learning log is guaranteed to surface even
+  // when topically-similar corpus docs outrank it. The kaizen pass fails soft — a
+  // filter error must never break ordinary retrieval.
+  const wantsKaizen = isSelfReferentialLearningQuery(query)
+  const [mainChunks, kaizenChunks] = await Promise.all([
+    queryChunks(contextualQuery, 8),
+    wantsKaizen
+      ? queryChunks(contextualQuery, KAIZEN_BOOST_TOPK, "role = 'kaizen'").catch(() => [] as RagChunk[])
+      : Promise.resolve([] as RagChunk[]),
+  ])
 
-  const chunks: RagChunk[] = results
-    .filter(r => r.metadata && (r.metadata as Record<string, unknown>).source)
-    .map(r => {
-      const meta = r.metadata as Record<string, unknown>
-      const chunk: RagChunk = {
-        text: (meta.text as string) ?? '',
-        source: (meta.source as string) ?? '',
-        title: (meta.title as string) ?? '',
-        heading: (meta.heading as string) ?? '',
-        domain: (meta.domain as string) ?? '',
-      }
-      if (meta.role) chunk.role = meta.role as string
-      if (meta.author) chunk.author = meta.author as string
-      if (meta.tradition) chunk.tradition = meta.tradition as string
-      if (meta.chunk_type === 'quote') chunk.chunk_type = 'quote'
-      if (meta.quote_id) chunk.quote_id = meta.quote_id as string
-      if (meta.category) chunk.category = meta.category as string
-      if (meta.provenance_status) chunk.provenance_status = meta.provenance_status as string
-      if (typeof meta.provenance_confidence === 'number') chunk.provenance_confidence = meta.provenance_confidence
-      if (meta.source_work) chunk.source_work = meta.source_work as string
-      if (meta.source_section) chunk.source_section = meta.source_section as string
-      return chunk
-    })
-    .filter(c => c.text.length > 0)
+  // Prepend kaizen chunks not already present (dedupe by source + heading).
+  const seen = new Set(mainChunks.map(c => `${c.source}#${c.heading}`))
+  const freshKaizen = kaizenChunks.filter(c => !seen.has(`${c.source}#${c.heading}`))
+  const chunks: RagChunk[] = [...freshKaizen, ...mainChunks]
 
   // The document the person is actively reading always leads the context.
   // It is the ground of this conversation — no similarity threshold applies.

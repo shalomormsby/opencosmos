@@ -2,11 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-06-17
+**Last updated:** 2026-06-19
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-06-19 — Feature: Cosmo's learning loop reaches runtime (kaizen → always-on lessons + self-recall)
+
+Cosmo's kaizen practice (curated lessons + a feedback log) existed on paper but **never reached runtime Cosmo**: asked to "find any record of recent learnings," Cosmo couldn't — the artifacts lived in `packages/ai/kaizen/` but were never delivered into its context, and it has no filesystem access. This development wires the loop end-to-end. It is honestly a **human-in-the-loop policy-update mechanism** — Shalom's discernment is the reward signal, deterministic prompt assembly is the update — **not** gradient RL; no weights change. Full design + pick-up-cold spec in [docs/cosmo-learning-loop.md](docs/cosmo-learning-loop.md).
+
+- **Phase 1 — behavior (always-on lessons).** New curated digest [`packages/ai/kaizen/LESSONS.md`](packages/ai/kaizen/LESSONS.md), read at build time by [`next.config.mjs`](apps/web/next.config.mjs) into `COSMO_LESSONS` and injected as an always-present system block in **both** the chat and inception routes — so distilled lessons shape every turn, not just on retrieval. Teaching Cosmo a lesson is now: converse → Claude appends the raw incident to `feedback/notes.md` and proposes a distilled line → Shalom approves → deploy bakes it in.
+- **Prompt-cache fix (uncovered while wiring Phase 1).** Anthropic caps prompt-caching at **4 `cache_control` breakpoints** and the chat route sat exactly at the ceiling; the new block pushed it over. Consolidated the static blocks from **4 breakpoints → 2** (system prompt + final static block) — caches the same content, **fixed a pre-existing admin-mode 400** (PM context had silently overflowed the cap), and freed 2 slots for future few-shot exemplars.
+- **Phase 2 — recall (introspection).** [`embed-knowledge.ts`](scripts/knowledge/embed-knowledge.ts) now indexes `packages/ai/kaizen/` as `role: 'kaizen'`; [`rag.ts`](apps/web/lib/rag.ts) renders those chunks under a separate **"Your Learning Log"** heading with anti-citation framing (a logged anti-pattern is never read back as wisdom). Kaizen entries are embedding-enriched with a learning-meta cue so generic "what have you learned?" queries surface specific incidents. The original failing question now retrieves the log and Cosmo discusses it truthfully.
+- **Anti-confabulation guard.** Testing surfaced Cosmo reporting a phantom "JSON function-call formatting" lesson — it was mistaking **Anthropic's injected tool-use instruction** (present whenever `web_fetch` is passed) for a kaizen entry. Added a scoping clause to the always-on lessons framing: Cosmo's learning record is *only* its Operating Lessons + any retrieved "Your Learning Log" passages; tool-use/JSON-formatting instructions are not lessons; if the log wasn't retrieved, say so rather than guess.
+- **Self-referential retrieval boost.** Questions about Cosmo's *own* learning were being crowded out of retrieval by topically-similar corpus docs (notably the member guide on learning). `fetchRagContext` now detects self-referential learning queries and runs a parallel `role = 'kaizen'`-filtered query, guaranteeing the actual log surfaces even when corpus docs outrank it.
+- **Member-facing guide.** [`knowledge/guides/teaching-your-agent-a-learning-loop.md`](knowledge/guides/teaching-your-agent-a-learning-loop.md) — a from-scratch guide for Creative Powerup members to build the same loop for their own Agents/Catalysts (No-code Gem and Maker paths), including the digest-vs-recall distinction and the framing/enrichment details.
+- **Incident recorded.** The confabulation above is logged as the second entry in [`packages/ai/kaizen/feedback/notes.md`](packages/ai/kaizen/feedback/notes.md) — the same root failure as the 2026-06-17 web-fetch incident (speculation-as-fact to seem more capable), now on the surface of self-knowledge. The loop catching a confabulation *within the loop itself* is the practice validating its own discipline.
+- **First exemplar curated → Phase 3 unblocked.** Added [`packages/ai/kaizen/exemplars/cosmo/01-alignment-and-play.md`](packages/ai/kaizen/exemplars/cosmo/01-alignment-and-play.md) — a real (lightly anonymized) session showing Cosmo at its best as a solo companion: attuning before advising, reflecting the person's own words back, grounding insight in cosmology, and handing agency back. This is the positive counterpart to the lessons (which set a floor; exemplars set the ceiling) and the one prerequisite Phase 3 was waiting on.
+- **Verified** on localhost against the live API (BYOK + admin): chat/inception 200, `web_fetch` intact, Cosmo quotes its real lesson verbatim and no longer fabricates one, and self-referential queries retrieve the kaizen log. **Phase 3 (exemplar few-shot injection) is now unblocked** — the first exemplar exists; wiring the injection is the next step.
 
 ## 2026-06-17 — Fix: adopt @opencosmos/ui's precompiled styles.css (retire the safelist)
 
