@@ -104,7 +104,11 @@ export function ShareDialog({ open, onOpenChange, snapshot }: ShareDialogProps) 
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-md">
+      {/* `sm:max-w-md!` (important), not plain `sm:max-w-md`: @opencosmos/ui ships
+          its CSS unlayered, so the lib's base `max-w-[calc(100%-2rem)]` outranks an
+          app utility in @layer utilities and the modal stretched ~full width. The
+          important modifier wins on THIS element only — no global cascade changes. */}
+      <DialogContent className="sm:max-w-md!">
         <DialogHeader>
           <DialogTitle>Share this conversation</DialogTitle>
           <DialogDescription>
