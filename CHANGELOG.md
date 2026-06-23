@@ -2,11 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-06-19
+**Last updated:** 2026-06-23
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-06-23 — Fix: sidebar no longer squeezes page content on mobile
+
+On narrow viewports, opening the left sidebar pushed the page content aside by the full sidebar width, collapsing it into an unusable sliver. The root cause was in the design system: `@opencosmos/ui`'s `AppSidebar`/`AppSidebarInset` used a fixed-width *push* layout (`margin-left: 280px`) with no responsive breakpoint, and the custom `/knowledge` and `/inception` shells reimplemented the same pattern (with a `clampWidth` floor that forced ≥400px even on a 375px screen).
+
+- **Design-system fix → [`@opencosmos/ui@1.10.0`](https://github.com/shalomormsby/opencosmos-ui).** Below `768px` the sidebar now *overlays* content over a tap/Escape-dismiss scrim instead of pushing it; content never offsets past the 60px rail. New `useIsMobile()`, `APP_SIDEBAR_MOBILE_BREAKPOINT`, and `APP_SIDEBAR_WIDTH_MOBILE` exports. Fixes `/dialog` (which consumes `AppSidebar` directly) for free.
+- **Custom shells.** [`KnowledgeShell`](apps/web/app/knowledge/KnowledgeShell.tsx) and [`InceptionShell`](apps/web/app/inception/InceptionShell.tsx) adopt the same overlay pattern by reusing the new `useIsMobile()`: on mobile the open sidebar floats over a scrim, content stays at the rail, and width-drag is disabled. Desktop push/resize behavior unchanged.
+- **Verified** on localhost via headless Chrome against the published 1.10.0 — `/dialog`, `/knowledge`, `/inception` at mobile (390px) and desktop (1280px) widths: open sidebar overlays without squeezing content; closed shows the 60px rail; desktop push layout intact.
 
 ## 2026-06-19 — Feature: Cosmo's learning loop reaches runtime (always-on lessons · self-recall · exemplar few-shot)
 

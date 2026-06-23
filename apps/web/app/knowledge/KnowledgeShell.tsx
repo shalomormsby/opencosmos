@@ -17,6 +17,7 @@ import {
   InfinityAnim,
   AppSidebarProvider,
   useAppSidebar,
+  useIsMobile,
   useMotionPreference,
   cn,
   type HeaderNavLink,
@@ -39,6 +40,10 @@ const SIDEBAR_DEFAULT = 500
 const SIDEBAR_MIN = 400
 const SIDEBAR_MAX = 720
 const SIDEBAR_COLLAPSED = 60
+// On narrow viewports the sidebar overlays content (rather than pushing it), so
+// the open width is capped to a comfortable reading width with a scrim strip
+// left visible to tap-dismiss. Mirrors the design system's AppSidebar.
+const SIDEBAR_MOBILE_OPEN = 'min(88vw, 420px)'
 
 // Cap to viewport so a remembered width can't exceed available space.
 function clampWidth(w: number, viewport = window.innerWidth): number {
@@ -72,10 +77,21 @@ function MobileSidebarInit() {
 }
 
 function ChatSidebar() {
-  const { isOpen, toggle } = useAppSidebar()
+  const { isOpen, toggle, close } = useAppSidebar()
+  const isMobile = useIsMobile()
   const { width, setWidth, isDragging, setIsDragging } = useContext(SidebarWidthContext)
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
+
+  // In overlay mode (mobile) the sidebar floats above content; closing it on
+  // Escape and on backdrop tap matches the standard mobile-drawer affordance.
+  const overlayOpen = isMobile && isOpen
+  useEffect(() => {
+    if (!overlayOpen) return
+    const onKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [overlayOpen, close])
 
   const onDragStart = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
@@ -123,18 +139,40 @@ function ChatSidebar() {
       ? 'none'
       : `width ${duration}ms ease-out, background-color ${duration}ms ease-out`
 
+  // Mobile open → overlay at a capped width; otherwise the desktop resizable
+  // push widths (user width / rail) are unchanged.
+  const sidebarWidth = isMobile
+    ? isOpen
+      ? SIDEBAR_MOBILE_OPEN
+      : SIDEBAR_COLLAPSED
+    : isOpen
+      ? width
+      : SIDEBAR_COLLAPSED
+
   return (
-    <aside
-      className={cn(
-        'fixed left-0 top-0 bottom-0 z-40 flex flex-col',
-        'border-r border-foreground/8 overflow-hidden',
+    <>
+      {/* Backdrop scrim — only in overlay mode while open. Tap to dismiss. */}
+      {overlayOpen && (
+        <div
+          aria-hidden="true"
+          onClick={toggle}
+          className="fixed inset-0 z-40 bg-black/50"
+          style={{ transition: shouldAnimate ? `opacity ${duration}ms ease-out` : 'none' }}
+        />
       )}
-      style={{
-        width: isOpen ? width : SIDEBAR_COLLAPSED,
-        backgroundColor: isOpen ? 'var(--color-surface)' : '#000000',
-        transition: sidebarTransition,
-      }}
-    >
+      <aside
+        className={cn(
+          'fixed left-0 top-0 bottom-0 flex flex-col',
+          'border-r border-foreground/8 overflow-hidden',
+          // Raise above the scrim (and sticky header) when overlaying.
+          overlayOpen ? 'z-50' : 'z-40',
+        )}
+        style={{
+          width: sidebarWidth,
+          backgroundColor: isOpen ? 'var(--color-surface)' : '#000000',
+          transition: sidebarTransition,
+        }}
+      >
       {/* Top bar — logo button + collapse button. Mirrors AppSidebar layout. */}
       <div className="flex items-center h-16 px-[10px] shrink-0">
         <button
@@ -192,8 +230,10 @@ function ChatSidebar() {
       </div>
 
       {/* Drag handle — 6px hit target on the right edge. The 1px visible bar
-          sits flush with the existing border-r and lights up on hover/drag. */}
-      {isOpen && (
+          sits flush with the existing border-r and lights up on hover/drag.
+          Hidden in overlay mode: width-dragging is meaningless when the sidebar
+          floats over content rather than pushing it. */}
+      {isOpen && !isMobile && (
         <div
           onPointerDown={onDragStart}
           role="separator"
@@ -210,12 +250,14 @@ function ChatSidebar() {
           />
         </div>
       )}
-    </aside>
+      </aside>
+    </>
   )
 }
 
 function Inset({ children }: { children: React.ReactNode }) {
   const { isOpen } = useAppSidebar()
+  const isMobile = useIsMobile()
   const { width, isDragging } = useContext(SidebarWidthContext)
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
@@ -223,11 +265,19 @@ function Inset({ children }: { children: React.ReactNode }) {
   const transition =
     isDragging || !shouldAnimate ? 'none' : `margin-left ${duration}ms ease-out`
 
+  // On mobile the open sidebar overlays content, so the inset is never pushed
+  // beyond the collapsed rail — this prevents the squeeze on narrow viewports.
+  const marginLeft = isMobile
+    ? SIDEBAR_COLLAPSED
+    : isOpen
+      ? width
+      : SIDEBAR_COLLAPSED
+
   return (
     <div
       className="min-h-screen bg-background"
       style={{
-        marginLeft: isOpen ? width : SIDEBAR_COLLAPSED,
+        marginLeft,
         transition,
       }}
     >

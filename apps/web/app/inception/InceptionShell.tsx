@@ -10,6 +10,7 @@ import {
   InfinityAnim,
   AppSidebarProvider,
   useAppSidebar,
+  useIsMobile,
   useMotionPreference,
   cn,
   type HeaderNavLink,
@@ -35,6 +36,8 @@ const SIDEBAR_DEFAULT = 460
 const SIDEBAR_MIN = 380
 const SIDEBAR_MAX = 640
 const SIDEBAR_COLLAPSED = 60
+// Mobile overlay width — see KnowledgeShell / AppSidebar for rationale.
+const SIDEBAR_MOBILE_OPEN = 'min(88vw, 420px)'
 
 const OPENING: Record<Path, string> = {
   agent: `I'm Cosmo. I was created in a similar way to the inception journey you've started here. My own inception traces back to the origin story of Creative Powerup and the mission to use technology to help empower heart-led creators like you.
@@ -108,10 +111,21 @@ function InceptionSidebarBody() {
 }
 
 function ChatSidebar() {
-  const { isOpen, toggle } = useAppSidebar()
+  const { isOpen, toggle, close } = useAppSidebar()
+  const isMobile = useIsMobile()
   const { width, setWidth, isDragging, setIsDragging } = useContext(SidebarWidthContext)
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
+
+  // In overlay mode (mobile) the sidebar floats above content; close on Escape /
+  // backdrop tap, matching the standard mobile-drawer affordance.
+  const overlayOpen = isMobile && isOpen
+  useEffect(() => {
+    if (!overlayOpen) return
+    const onKeyDown = (e: KeyboardEvent) => { if (e.key === 'Escape') close() }
+    document.addEventListener('keydown', onKeyDown)
+    return () => document.removeEventListener('keydown', onKeyDown)
+  }, [overlayOpen, close])
 
   const onDragStart = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
@@ -150,11 +164,32 @@ function ChatSidebar() {
   const sidebarTransition =
     isDragging || !shouldAnimate ? 'none' : `width ${duration}ms ease-out, background-color ${duration}ms ease-out`
 
+  const sidebarWidth = isMobile
+    ? isOpen
+      ? SIDEBAR_MOBILE_OPEN
+      : SIDEBAR_COLLAPSED
+    : isOpen
+      ? width
+      : SIDEBAR_COLLAPSED
+
   return (
-    <aside
-      className={cn('fixed left-0 top-0 bottom-0 z-40 flex flex-col', 'border-r border-foreground/8 overflow-hidden')}
-      style={{ width: isOpen ? width : SIDEBAR_COLLAPSED, backgroundColor: isOpen ? 'var(--color-surface)' : '#000000', transition: sidebarTransition }}
-    >
+    <>
+      {overlayOpen && (
+        <div
+          aria-hidden="true"
+          onClick={toggle}
+          className="fixed inset-0 z-40 bg-black/50"
+          style={{ transition: shouldAnimate ? `opacity ${duration}ms ease-out` : 'none' }}
+        />
+      )}
+      <aside
+        className={cn(
+          'fixed left-0 top-0 bottom-0 flex flex-col',
+          'border-r border-foreground/8 overflow-hidden',
+          overlayOpen ? 'z-50' : 'z-40',
+        )}
+        style={{ width: sidebarWidth, backgroundColor: isOpen ? 'var(--color-surface)' : '#000000', transition: sidebarTransition }}
+      >
       <div className="flex items-center h-16 px-[10px] shrink-0">
         <button
           onClick={toggle}
@@ -184,24 +219,29 @@ function ChatSidebar() {
         <SidebarFooterContent compact={!isOpen} />
       </div>
 
-      {isOpen && (
+      {isOpen && !isMobile && (
         <div onPointerDown={onDragStart} role="separator" aria-orientation="vertical" aria-label="Resize sidebar" className="group absolute top-0 right-0 bottom-0 w-1.5 cursor-ew-resize z-50">
           <span className={cn('absolute top-0 right-0 bottom-0 w-px transition-colors', 'group-hover:bg-primary', isDragging && 'bg-primary')} />
         </div>
       )}
-    </aside>
+      </aside>
+    </>
   )
 }
 
 function Inset({ children }: { children: React.ReactNode }) {
   const { isOpen } = useAppSidebar()
+  const isMobile = useIsMobile()
   const { width, isDragging } = useContext(SidebarWidthContext)
   const { shouldAnimate, scale } = useMotionPreference()
   const duration = shouldAnimate ? Math.round(300 * (5 / Math.max(scale, 0.1))) : 0
   const transition = isDragging || !shouldAnimate ? 'none' : `margin-left ${duration}ms ease-out`
 
+  // On mobile the open sidebar overlays content, so never push past the rail.
+  const marginLeft = isMobile ? SIDEBAR_COLLAPSED : isOpen ? width : SIDEBAR_COLLAPSED
+
   return (
-    <div className="min-h-screen bg-background flex flex-col" style={{ marginLeft: isOpen ? width : SIDEBAR_COLLAPSED, transition }}>
+    <div className="min-h-screen bg-background flex flex-col" style={{ marginLeft, transition }}>
       {children}
     </div>
   )
