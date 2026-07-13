@@ -450,7 +450,7 @@ export async function POST(req: NextRequest) {
 
     const isAdmin =
       req.cookies.get('cosmo_admin')?.value === '1' ||
-      (!!ADMIN_EMAIL && authenticatedUser?.email === ADMIN_EMAIL)
+      (!!ADMIN_EMAIL && authenticatedUser?.email?.toLowerCase() === ADMIN_EMAIL.toLowerCase())
 
     // BYOK + logged-in user: mark them server-side so the account page knows.
     // Fire-and-forget — never blocks the response.
