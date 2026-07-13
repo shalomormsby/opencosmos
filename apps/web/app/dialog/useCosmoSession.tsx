@@ -2,7 +2,6 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
-import { useSearchParams } from 'next/navigation'
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile'
 
 type Message = { role: 'user' | 'assistant'; content: string }
@@ -96,8 +95,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
   const [pmMode, setPmMode] = useState(false)
   const [showPmInput, setShowPmInput] = useState(false)
   const [pmSecret, setPmSecret] = useState('')
-  const searchParams = useSearchParams()
-  const creativeMode = searchParams.get('creative') === '1'
+  const [creativeMode, setCreativeMode] = useState(false)
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [turnstileToken, setTurnstileToken] = useState('')
@@ -113,6 +111,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     if (hydratedRef.current) return
     hydratedRef.current = true
 
+    setCreativeMode(new URLSearchParams(window.location.search).get('creative') === '1')
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
