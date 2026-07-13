@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState } from 'react'
 import type { ReactNode } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { Turnstile, type TurnstileInstance } from '@marsidev/react-turnstile'
 
 type Message = { role: 'user' | 'assistant'; content: string }
@@ -56,6 +57,7 @@ type CosmoSession = {
   showPmInput: boolean
   pmSecret: string
   pmError: string
+  creativeMode: boolean
   isAuthenticated: boolean
   isLimited: boolean
 
@@ -94,6 +96,8 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
   const [pmMode, setPmMode] = useState(false)
   const [showPmInput, setShowPmInput] = useState(false)
   const [pmSecret, setPmSecret] = useState('')
+  const searchParams = useSearchParams()
+  const creativeMode = searchParams.get('creative') === '1'
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [turnstileToken, setTurnstileToken] = useState('')
@@ -254,6 +258,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
           turnstileToken: isFreeTier ? resolvedTurnstileToken : undefined,
           current_section: currentSection,
           doc_changed: docChanged || undefined,
+          creativeMode: pmMode && creativeMode ? true : undefined,
         }),
       })
 
@@ -351,6 +356,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     messages,
     apiKey,
     pmMode,
+    creativeMode,
     currentId,
     refreshConversations,
     isAuthenticated,
@@ -426,6 +432,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       showPmInput,
       pmSecret,
       pmError,
+      creativeMode,
       isAuthenticated,
       isLimited,
       setInput,
@@ -456,6 +463,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       showPmInput,
       pmSecret,
       pmError,
+      creativeMode,
       isAuthenticated,
       isLimited,
       send,
