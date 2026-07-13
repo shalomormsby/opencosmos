@@ -56,6 +56,7 @@ type CosmoSession = {
   showPmInput: boolean
   pmSecret: string
   pmError: string
+  creativeMode: boolean
   isAuthenticated: boolean
   isLimited: boolean
 
@@ -94,6 +95,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
   const [pmMode, setPmMode] = useState(false)
   const [showPmInput, setShowPmInput] = useState(false)
   const [pmSecret, setPmSecret] = useState('')
+  const [creativeMode, setCreativeMode] = useState(false)
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [turnstileToken, setTurnstileToken] = useState('')
@@ -109,6 +111,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     if (hydratedRef.current) return
     hydratedRef.current = true
 
+    setCreativeMode(new URLSearchParams(window.location.search).get('creative') === '1')
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
@@ -254,6 +257,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
           turnstileToken: isFreeTier ? resolvedTurnstileToken : undefined,
           current_section: currentSection,
           doc_changed: docChanged || undefined,
+          creativeMode: pmMode && creativeMode ? true : undefined,
         }),
       })
 
@@ -351,6 +355,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     messages,
     apiKey,
     pmMode,
+    creativeMode,
     currentId,
     refreshConversations,
     isAuthenticated,
@@ -426,6 +431,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       showPmInput,
       pmSecret,
       pmError,
+      creativeMode,
       isAuthenticated,
       isLimited,
       setInput,
@@ -456,6 +462,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       showPmInput,
       pmSecret,
       pmError,
+      creativeMode,
       isAuthenticated,
       isLimited,
       send,

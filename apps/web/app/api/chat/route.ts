@@ -21,8 +21,13 @@ const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
 const GITHUB_PM_PAT = process.env.GITHUB_PM_PAT ?? ''
+// Logging in as this WorkOS account grants admin access automatically —
+// no separate PM-unlock secret required.
+const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? ''
 const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
+const CREATIVE_CACHE_KEY = 'cosmo_creative_context:v1'
+const CREATIVE_CACHE_TTL = 3600 // 1 hour
 const SESSION_TTL = 604800 // 7 days
 
 // Free-tier token budget: 100k tokens ≈ 15–20 substantive exchanges with Cosmo.
@@ -146,6 +151,52 @@ async function fetchPmContext(): Promise<string | null> {
     if (!context) return null
 
     await redis.set(PM_CACHE_KEY, context, { ex: PM_CACHE_TTL })
+    return context
+  } catch {
+    return null // fail open
+  }
+}
+
+// Fetches all .md files from the private cosmo-context repo's creative/ subfolder
+// (source material for personal creative work, e.g. daymoondreams) and concatenates
+// them into a single context string. Only called when a creative session is
+// explicitly requested (?creative=1) — kept separate from fetchPmContext so this
+// large, mostly-irrelevant-to-PM content doesn't ride along on every admin chat.
+// Caches in Redis for 1 hour. Fails open — returns null on any error.
+async function fetchCreativeContext(): Promise<string | null> {
+  try {
+    const cached = await redis.get<string>(CREATIVE_CACHE_KEY)
+    if (cached) return cached
+
+    const headers = {
+      Authorization: `Bearer ${GITHUB_PM_PAT}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+    }
+
+    const listRes = await fetch(`https://api.github.com/repos/${GITHUB_PM_REPO}/contents/creative`, { headers })
+    if (!listRes.ok) return null
+
+    const files = (await listRes.json()) as Array<{ name: string; path: string; type: string }>
+    const mdFiles = files.filter((f) => f.type === 'file' && f.name.endsWith('.md'))
+
+    const parts = await Promise.all(
+      mdFiles.map(async (f) => {
+        const res = await fetch(
+          `https://api.github.com/repos/${GITHUB_PM_REPO}/contents/${f.path}`,
+          { headers }
+        )
+        if (!res.ok) return null
+        const data = (await res.json()) as { content: string; encoding: string }
+        const content = Buffer.from(data.content, 'base64').toString('utf-8')
+        return `## ${f.name}\n\n${content}`
+      })
+    )
+
+    const context = parts.filter(Boolean).join('\n\n---\n\n')
+    if (!context) return null
+
+    await redis.set(CREATIVE_CACHE_KEY, context, { ex: CREATIVE_CACHE_TTL })
     return context
   } catch {
     return null // fail open
@@ -333,12 +384,13 @@ type CurrentSection = {
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages, apiKey, turnstileToken, current_section, doc_changed } = await req.json() as {
+    const { messages, apiKey, turnstileToken, current_section, doc_changed, creativeMode } = await req.json() as {
       messages: Message[]
       apiKey?: string
       turnstileToken?: string
       current_section?: CurrentSection
       doc_changed?: boolean
+      creativeMode?: boolean
     }
 
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -375,7 +427,6 @@ export async function POST(req: NextRequest) {
     )
     const tokenEstimate = Math.ceil(totalChars / 4)
 
-    const isAdmin = req.cookies.get('cosmo_admin')?.value === '1'
     const ip = getClientIp(req)
     let newSessionCookie: string | null = null
     let freeTierSessionId: string | null = null
@@ -391,12 +442,15 @@ export async function POST(req: NextRequest) {
     let subscribedUserId: string | null = null
     let subscriberTier: import('@/lib/stripe').Tier | null = null
 
-    // Resolve the authenticated user for all non-admin paths.
+    // Resolve the authenticated user up front — also used to recognize the
+    // admin by email (ADMIN_EMAIL) so no separate PM-unlock secret is needed.
     // For BYOK requests we still need the userId to record server-side BYOK status
     // (so the account page can show "API connection" regardless of browser/device).
-    const authenticatedUser = !isAdmin
-      ? await withAuth({ ensureSignedIn: false }).then(a => a.user).catch(() => null)
-      : null
+    const authenticatedUser = await withAuth({ ensureSignedIn: false }).then(a => a.user).catch(() => null)
+
+    const isAdmin =
+      req.cookies.get('cosmo_admin')?.value === '1' ||
+      (!!ADMIN_EMAIL && authenticatedUser?.email === ADMIN_EMAIL)
 
     // BYOK + logged-in user: mark them server-side so the account page knows.
     // Fire-and-forget — never blocks the response.
@@ -529,6 +583,20 @@ export async function POST(req: NextRequest) {
         systemContent.push({
           type: 'text' as const,
           text: `# Private Project Context\n\nThe following is Shalom's private project management context. Use it to answer questions about his projects, current status, priorities, and decisions.\n\n${pmContext}`,
+          cache_control: { type: 'ephemeral' as const },
+        })
+      }
+    }
+
+    // Creative session: only fetched when explicitly requested (?creative=1 on
+    // /dialog), so this large personal source material never rides along on
+    // routine admin/PM chats.
+    if (isAdmin && creativeMode && GITHUB_PM_REPO && GITHUB_PM_PAT) {
+      const creativeContext = await fetchCreativeContext()
+      if (creativeContext) {
+        systemContent.push({
+          type: 'text' as const,
+          text: `# Private Creative Source Material\n\nThe following is Shalom's private creative writing — personal source material he is drawing on as inspiration for new work. Do not treat it as corpus to cite publicly; it is for this creative dialogue only.\n\n${creativeContext}`,
           cache_control: { type: 'ephemeral' as const },
         })
       }
