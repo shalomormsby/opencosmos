@@ -2,11 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
-**Last updated:** 2026-06-23
+**Last updated:** 2026-07-13
 
 > For the story behind the decisions, see [docs/chronicle.md](docs/chronicle.md).
 
 ---
+
+## 2026-07-13 — Feature: admin auto-recognition + opt-in creative context for Cosmo
+
+Unlocking Cosmo's admin/PM mode required manually re-entering a secret Shalom kept forgetting. Separately, wanted a private place to give Cosmo source material for personal creative work (starting with "daymoondreams," a poem/rhapsody written in Varanasi, 1991–92) without adding it to the public, RAG-indexed `knowledge/` corpus.
+
+- **Admin auto-recognition.** [`apps/web/app/api/chat/route.ts`](apps/web/app/api/chat/route.ts) now resolves the WorkOS-authenticated user *before* deciding `isAdmin`, and grants admin if the user's email matches the new `ADMIN_EMAIL` env var — no PM secret needed when logged in as Shalom. The `cosmo_admin` cookie path still works as a fallback.
+- **Private creative source material.** Added `creative/` to the private `cosmo-context` repo (kept out of its repo-root `fetchPmContext()` fetch on purpose, since that concatenates every root file into *every* admin chat — daymoondreams alone is ~35–40k tokens and would bloat routine PM conversations). A new `fetchCreativeContext()` fetches that subfolder instead, injected only when a session explicitly opts in.
+- **Opt-in via `?creative=1`.** Visiting `/dialog?creative=1` while logged in as admin surfaces the creative context for that session; a plain `/dialog` admin session is unaffected. The flag is read client-side from `window.location.search` inside `useCosmoSession`'s existing hydration effect (not `next/navigation`'s `useSearchParams()` — that hook broke static prerendering for unrelated routes like `/knowledge/[...slug]`, since `CosmoSessionProvider` mounts at the root layout, outside any route-local `Suspense` boundary).
+- **Verified** via a full `next build` (all 138 static pages, including `/knowledge/[...slug]`) after the `useSearchParams` fix, plus a green CI `build` check on [PR #154](https://github.com/shalomormsby/opencosmos/pull/154).
 
 ## 2026-06-23 — Fix: sidebar no longer squeezes page content on mobile
 
