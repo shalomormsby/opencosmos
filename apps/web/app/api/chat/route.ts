@@ -24,9 +24,9 @@ const GITHUB_PM_PAT = process.env.GITHUB_PM_PAT ?? ''
 // Logging in as this WorkOS account grants admin access automatically —
 // no separate PM-unlock secret required.
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? ''
-// General audience gets Sonnet 5; Shalom's admin sessions get Fable 5.
+// General audience gets Sonnet 5; Shalom's admin sessions get Opus 4.8.
 const MODEL_GENERAL = 'claude-sonnet-5'
-const MODEL_ADMIN = 'claude-fable-5'
+const MODEL_ADMIN = 'claude-opus-4-8'
 const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
 const CREATIVE_CACHE_KEY = 'cosmo_creative_context:v1'
