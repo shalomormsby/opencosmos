@@ -24,6 +24,9 @@ const GITHUB_PM_PAT = process.env.GITHUB_PM_PAT ?? ''
 // Logging in as this WorkOS account grants admin access automatically —
 // no separate PM-unlock secret required.
 const ADMIN_EMAIL = process.env.ADMIN_EMAIL ?? ''
+// General audience gets Sonnet 5; Shalom's admin sessions get Fable 5.
+const MODEL_GENERAL = 'claude-sonnet-5'
+const MODEL_ADMIN = 'claude-fable-5'
 const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
 const CREATIVE_CACHE_KEY = 'cosmo_creative_context:v1'
@@ -683,10 +686,10 @@ export async function POST(req: NextRequest) {
     const cachedMessages = subscribedUserId ? withHistoryCaching(messages) : messages
 
     const stream = client.beta.messages.stream({
-      model: 'claude-sonnet-4-6',
+      model: isAdmin ? MODEL_ADMIN : MODEL_GENERAL,
       // Per-response output cap. 1024 was truncating Cosmo mid-thought on long
       // dialogues. 8192 ≈ ~6k words — comfortably above the longest considered
-      // responses we've observed, still well under Sonnet 4.6's hard limit.
+      // responses we've observed, still well under the model's hard limit.
       max_tokens: 8192,
       system: systemContent,
       messages: cachedMessages,
