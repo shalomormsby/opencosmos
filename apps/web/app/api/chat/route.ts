@@ -34,6 +34,7 @@ const MODEL_ADMIN = 'claude-opus-4-8'
 const PM_CACHE_KEY = 'cosmo_pm_context:v1'
 const PM_CACHE_TTL = 3600 // 1 hour
 const CREATIVE_CACHE_KEY = 'cosmo_creative_context:v1'
+const CREATIVE_MANIFEST_CACHE_KEY = 'cosmo_creative_manifest:v1'
 const CREATIVE_CACHE_TTL = 3600 // 1 hour
 const SESSION_TTL = 604800 // 7 days
 
@@ -205,6 +206,40 @@ async function fetchCreativeContext(): Promise<string | null> {
 
     await redis.set(CREATIVE_CACHE_KEY, context, { ex: CREATIVE_CACHE_TTL })
     return context
+  } catch {
+    return null // fail open
+  }
+}
+
+// Lists (titles only, no content) the private cosmo-context repo's creative/
+// subfolder. Unlike fetchCreativeContext, this is cheap enough to inject into
+// every admin session regardless of creativeMode — so Cosmo always knows what's
+// in the archive and can name it or suggest ?creative=1 for full text, rather
+// than staying silent or inventing content it has never actually read.
+// Caches in Redis for 1 hour. Fails open — returns null on any error.
+async function fetchCreativeManifest(): Promise<string | null> {
+  try {
+    const cached = await redis.get<string>(CREATIVE_MANIFEST_CACHE_KEY)
+    if (cached) return cached
+
+    const headers = {
+      Authorization: `Bearer ${GITHUB_PM_PAT}`,
+      Accept: 'application/vnd.github+json',
+      'X-GitHub-Api-Version': '2022-11-28',
+    }
+
+    const listRes = await fetch(`https://api.github.com/repos/${GITHUB_PM_REPO}/contents/creative`, { headers })
+    if (!listRes.ok) return null
+
+    const files = (await listRes.json()) as Array<{ name: string; type: string }>
+    const titles = files
+      .filter((f) => f.type === 'file' && f.name.endsWith('.md'))
+      .map((f) => `- ${f.name}`)
+      .join('\n')
+    if (!titles) return null
+
+    await redis.set(CREATIVE_MANIFEST_CACHE_KEY, titles, { ex: CREATIVE_CACHE_TTL })
+    return titles
   } catch {
     return null // fail open
   }
@@ -589,6 +624,19 @@ export async function POST(req: NextRequest) {
         type: 'text' as const,
         text: SHALOM_CONTEXT,
       })
+    }
+    // Titles-only manifest of the creative archive, always visible in admin
+    // sessions (cheap — just filenames) so Cosmo can name what's there and
+    // suggest ?creative=1 rather than confabulate. Skipped when creativeMode
+    // is already on, since the full-text block below covers the same ground.
+    if (isAdmin && !creativeMode && GITHUB_PM_REPO && GITHUB_PM_PAT) {
+      const manifest = await fetchCreativeManifest()
+      if (manifest) {
+        systemContent.push({
+          type: 'text' as const,
+          text: `# Creative Archive — titles only\n\nThe following are the current filenames in Shalom's private creative archive (cosmo-context/creative/). You do not have their content in this session — only the titles. If Shalom wants you to draw on one, tell him what you see here and ask him to add ?creative=1 to the /dialog URL so the full text loads.\n\n${manifest}`,
+        })
+      }
     }
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
