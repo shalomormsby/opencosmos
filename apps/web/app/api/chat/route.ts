@@ -17,6 +17,10 @@ const LESSONS = process.env.COSMO_LESSONS ?? ''
 // Curated few-shot exemplars (kaizen/exemplars/cosmo/*.md), baked in at build
 // time. Steer voice/rhythm by example — lessons set a floor, exemplars the ceiling.
 const EXEMPLARS = process.env.COSMO_EXEMPLARS ?? ''
+// Shalom-specific relational context (the Daily Mystic posture), baked in at
+// build time. Injected only into admin sessions — see isAdmin below — never
+// the base prompt, so it never reaches a general-audience conversation.
+const SHALOM_CONTEXT = process.env.COSMO_SHALOM_CONTEXT ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
@@ -580,6 +584,12 @@ export async function POST(req: NextRequest) {
     // Typed as TextBlockParam[] so dynamic pushes (RAG, PM context) without
     // cache_control are valid — cache_control is optional in the SDK type.
     const systemContent: Anthropic.TextBlockParam[] = [...SYSTEM_CONTENT]
+    if (isAdmin && SHALOM_CONTEXT.trim()) {
+      systemContent.push({
+        type: 'text' as const,
+        text: SHALOM_CONTEXT,
+      })
+    }
     if (isAdmin && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const pmContext = await fetchPmContext()
       if (pmContext) {

@@ -63,6 +63,9 @@ const nextConfig = {
     // Curated few-shot exemplars — Cosmo at its best — injected to steer voice
     // and rhythm. Bodies concatenated, frontmatter stripped. Optional: none → ''.
     COSMO_EXEMPLARS: readExemplars('../../packages/ai/kaizen/exemplars/cosmo'),
+    // Shalom-specific relational context (the Daily Mystic posture) — injected
+    // only into admin sessions, never the base prompt. Optional: absent file → ''.
+    COSMO_SHALOM_CONTEXT: readOptional('../../packages/ai/COSMO_SHALOM_CONTEXT.md'),
   },
   async headers() {
     return [
