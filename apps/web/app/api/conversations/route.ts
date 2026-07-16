@@ -56,3 +56,22 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: 'failed' }, { status: 500 })
   }
 }
+
+// DELETE /api/conversations?id=... — removes a single conversation for the authenticated user
+export async function DELETE(req: NextRequest) {
+  const { user } = await withAuth({ ensureSignedIn: false })
+  if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 })
+
+  const id = req.nextUrl.searchParams.get('id')
+  if (!id) return NextResponse.json({ error: 'invalid' }, { status: 400 })
+
+  try {
+    const key = storageKey(user.id)
+    const existing = (await redis.get<Record<string, Conversation>>(key)) ?? {}
+    delete existing[id]
+    await redis.set(key, existing, { ex: TTL })
+    return NextResponse.json({ ok: true })
+  } catch {
+    return NextResponse.json({ error: 'failed' }, { status: 500 })
+  }
+}

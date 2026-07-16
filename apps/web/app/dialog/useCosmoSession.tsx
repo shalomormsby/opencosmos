@@ -33,6 +33,12 @@ function persist(conv: Conversation) {
   localStorage.setItem(KEY_CONVERSATIONS, JSON.stringify(all))
 }
 
+function remove(id: string) {
+  const all = loadAll()
+  delete all[id]
+  localStorage.setItem(KEY_CONVERSATIONS, JSON.stringify(all))
+}
+
 function toTitle(messages: Message[]): string {
   const first = messages.find((m) => m.role === 'user')
   if (!first) return 'New conversation'
@@ -70,6 +76,8 @@ type CosmoSession = {
   send: (override?: string) => Promise<void>
   startNew: () => void
   openConversation: (conv: Conversation) => void
+  renameConversation: (id: string, title: string) => void
+  deleteConversation: (id: string) => void
   saveKey: () => void
   activatePm: () => Promise<void>
   deactivatePm: () => Promise<void>
@@ -414,6 +422,38 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     setMessages(conv.messages)
   }, [])
 
+  const renameConversation = useCallback((id: string, title: string) => {
+    const trimmed = title.trim()
+    if (!trimmed) return
+    const all = loadAll()
+    const existing = all[id]
+    if (!existing) return
+    const updated: Conversation = { ...existing, title: trimmed }
+    persist(updated)
+    refreshConversations()
+    if (isAuthenticated) {
+      fetch('/api/conversations', {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ conversation: updated }),
+      }).catch(() => {})
+    }
+  }, [refreshConversations, isAuthenticated])
+
+  const deleteConversation = useCallback((id: string) => {
+    remove(id)
+    refreshConversations()
+    if (id === currentId) {
+      const newId = crypto.randomUUID()
+      localStorage.setItem(KEY_CURRENT_ID, newId)
+      setCurrentId(newId)
+      setMessages([])
+    }
+    if (isAuthenticated) {
+      fetch(`/api/conversations?id=${encodeURIComponent(id)}`, { method: 'DELETE' }).catch(() => {})
+    }
+  }, [refreshConversations, isAuthenticated, currentId])
+
   const value = useMemo<CosmoSession>(
     () => ({
       mounted,
@@ -441,6 +481,8 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       send,
       startNew,
       openConversation,
+      renameConversation,
+      deleteConversation,
       saveKey,
       activatePm,
       deactivatePm,
@@ -468,6 +510,8 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       send,
       startNew,
       openConversation,
+      renameConversation,
+      deleteConversation,
       saveKey,
       activatePm,
       deactivatePm,
