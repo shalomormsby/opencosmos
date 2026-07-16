@@ -4,7 +4,7 @@ import { useEffect, useRef } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
 import ReactMarkdown, { type Components } from 'react-markdown'
 import remarkGfm from 'remark-gfm'
-import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, useMotionPreference } from '@opencosmos/ui'
+import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, APP_SIDEBAR_MOBILE_BREAKPOINT, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
 import { MessageSquare, BookOpen, ExternalLink, Sparkles } from 'lucide-react'
 import { AuthButton } from '../AuthButton'
@@ -123,12 +123,13 @@ function BottomBarWrapper({ children, className }: { children: React.ReactNode; 
 
 // Closes the sidebar on first visit to narrow viewports so the content area
 // stays usable. If the user has previously set an explicit preference, it's
-// respected and this does nothing.
+// respected and this does nothing. Matches AppSidebar's own overlay breakpoint
+// so a first-time visitor never loads with the overlay stuck open.
 function MobileSidebarInit({ storageKey }: { storageKey: string }) {
   const { close } = useAppSidebar()
   useEffect(() => {
     const stored = localStorage.getItem(storageKey)
-    if (stored === null && window.innerWidth < 640) close()
+    if (stored === null && window.innerWidth < APP_SIDEBAR_MOBILE_BREAKPOINT) close()
   }, [close, storageKey])
   return null
 }
