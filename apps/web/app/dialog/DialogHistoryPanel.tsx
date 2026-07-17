@@ -20,7 +20,7 @@ import {
   AlertDialogAction,
   buttonVariants,
 } from '@opencosmos/ui'
-import { MoreHorizontal, Share2, Pencil, Trash2 } from 'lucide-react'
+import { MoreVertical, Share2, Pencil, Trash2 } from 'lucide-react'
 import { useCosmoSession, type Conversation } from './useCosmoSession'
 import { ShareButton } from './ShareButton'
 import { ShareDialog } from './ShareDialog'
@@ -125,13 +125,25 @@ export function DialogHistoryPanel({ showNewButton = true, onOpen, onNew }: Prop
                   <button
                     onClick={() => handleOpen(conv)}
                     className={cn(
-                      'w-full text-left px-5 py-2.5 pr-10 hover:bg-foreground/5 transition-colors',
-                      conv.id === currentId && 'bg-foreground/5'
+                      'w-full text-left px-5 py-2.5 pr-10 hover:bg-foreground/10 transition-colors',
+                      conv.id === currentId && 'bg-foreground/10'
                     )}
                   >
                     <p className="text-sm text-foreground/75 truncate">{conv.title}</p>
                     <p className="text-xs text-foreground/30 mt-0.5">{timeAgo(conv.updatedAt)}</p>
                   </button>
+
+                  {/* Solid backdrop behind the trigger + an 8px feather where it meets the
+                      truncated title, so the title's ellipsis never visually collides with
+                      the trigger icon. Same color/visibility as the row's own hover state. */}
+                  <div
+                    aria-hidden
+                    className="absolute right-0 top-0 bottom-0 w-9 bg-foreground/10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute right-9 top-0 bottom-0 w-2 bg-gradient-to-r from-transparent to-foreground/10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none"
+                  />
 
                   <div className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                     <DropdownMenu>
@@ -143,7 +155,7 @@ export function DialogHistoryPanel({ showNewButton = true, onOpen, onNew }: Prop
                           aria-label={`Options for ${conv.title}`}
                           onClick={(e) => e.stopPropagation()}
                         >
-                          <MoreHorizontal className="w-4 h-4" />
+                          <MoreVertical className="w-4 h-4" />
                         </Button>
                       </DropdownMenuTrigger>
                       <DropdownMenuContent align="end" className="min-w-[160px]">

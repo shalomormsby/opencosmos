@@ -3,6 +3,7 @@ import Anthropic from '@anthropic-ai/sdk'
 import { randomUUID } from 'crypto'
 import { Ratelimit } from '@upstash/ratelimit'
 import { Redis } from '@upstash/redis'
+import { MODEL_INCEPTION as MODEL } from '@/lib/ai-models'
 
 // Inception route — Cosmo as the one who draws a personal agent out of a person.
 //
@@ -22,7 +23,6 @@ const EXEMPLARS = process.env.COSMO_EXEMPLARS ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const SESSION_TTL = 604800 // 7 days
-const MODEL = 'claude-haiku-4-5-20251001'
 
 // Shared with the chat route's free tier (same Redis keys → one allotment per visitor).
 const FREE_TOKEN_BUDGET = 100_000
