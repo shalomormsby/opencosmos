@@ -122,6 +122,12 @@ export function DialogHistoryPanel({ showNewButton = true, onOpen, onNew }: Prop
                 </div>
               ) : (
                 <div key={conv.id} className="group relative">
+                  {/* w-full so this single hover layer already spans the entire row,
+                      including behind the trigger below — nothing else should paint
+                      its own background on top of it, or the two layers compound into
+                      a visibly different (darker) shade in that zone. pr-10 reserves
+                      the trigger's footprint (right-2 + w-7 = 36px) plus a 4px gap, so
+                      the truncated title's ellipsis can never reach under it. */}
                   <button
                     onClick={() => handleOpen(conv)}
                     className={cn(
@@ -133,25 +139,17 @@ export function DialogHistoryPanel({ showNewButton = true, onOpen, onNew }: Prop
                     <p className="text-xs text-foreground/30 mt-0.5">{timeAgo(conv.updatedAt)}</p>
                   </button>
 
-                  {/* Solid backdrop behind the trigger + an 8px feather where it meets the
-                      truncated title, so the title's ellipsis never visually collides with
-                      the trigger icon. Same color/visibility as the row's own hover state. */}
-                  <div
-                    aria-hidden
-                    className="absolute right-0 top-0 bottom-0 w-9 bg-foreground/10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none"
-                  />
-                  <div
-                    aria-hidden
-                    className="absolute right-9 top-0 bottom-0 w-2 bg-gradient-to-r from-transparent to-foreground/10 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity pointer-events-none"
-                  />
-
                   <div className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 transition-opacity">
                     <DropdownMenu>
                       <DropdownMenuTrigger asChild>
+                        {/* No background of its own in any state (hover/focus/open) — it
+                            sits directly on the row's single hover tint above so the icon's
+                            color and the row's shade both stay constant regardless of exact
+                            cursor position. */}
                         <Button
                           variant="ghost"
                           size="icon"
-                          className="h-7 w-7"
+                          className="h-7 w-7 text-foreground/60 hover:bg-transparent hover:text-foreground/60 focus-visible:bg-transparent data-[state=open]:bg-transparent data-[state=open]:text-foreground/60"
                           aria-label={`Options for ${conv.title}`}
                           onClick={(e) => e.stopPropagation()}
                         >
