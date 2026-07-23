@@ -272,13 +272,13 @@ Use instead of `overflow-y-auto` on any scrollable container.
 // app/layout.tsx
 import { ThemeProvider } from '@opencosmos/ui'
 
-<ThemeProvider defaultTheme="studio" defaultMode="system">
+<ThemeProvider defaultTheme="studio" defaultMode="dark">
   {children}
 </ThemeProvider>
 ```
 
 `defaultTheme`: `'studio'` | `'terra'` | `'volt'`
-`defaultMode`: `'light'` | `'dark'` | `'system'`
+`defaultMode`: `'light'` | `'dark'`
 
 ---
 
