@@ -82,7 +82,20 @@ export default function XensoFrontDoor() {
                 <Button size="lg" asChild>
                   <Link href="/dialog?xenso=1">Begin</Link>
                 </Button>
-                <Button variant="ghost" size="lg" asChild>
+                {/* The ghost variant is `hover:text-accent-foreground` with no
+                    hover background, and this theme's accent-foreground is
+                    #000000 — the same as the page background, so an unstyled
+                    ghost button turns invisible on hover. Until that is fixed in
+                    @opencosmos/ui, hover to a primary outline and primary text.
+                    The transparent border is there by default so gaining one on
+                    hover doesn't shift the row; the `!` is required because the
+                    package ships unlayered CSS that outranks app classes. */}
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  asChild
+                  className="border border-transparent hover:border-[var(--color-primary)] hover:text-[var(--color-primary)]!"
+                >
                   <a href="/api/auth/signin">Sign in</a>
                 </Button>
               </div>
