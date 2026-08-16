@@ -11,7 +11,7 @@ import { AuthButton } from '../AuthButton'
 import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
 import { DialogHistoryPanel } from './DialogHistoryPanel'
-import { chatMarkdownComponents, preprocessCitations } from './citations'
+import { chatMarkdownComponents, citationUrlTransform, preprocessCitations } from './citations'
 
 // Shared liquid glass style — matches the header's always-on glass.
 // The `!` modifier is load-bearing on the Header element: @opencosmos/ui's
@@ -70,10 +70,12 @@ export function CosmoChat() {
     pmSecret,
     pmError,
     isLimited,
+    xensoMode,
     setInput,
     setApiKeyDraft,
     setShowPmInput,
     setPmSecret,
+    applyXensoMode,
     send,
     saveKey,
     activatePm,
@@ -90,6 +92,17 @@ export function CosmoChat() {
   // bottomRef to re-enter the viewport, or when they send a new message.
   const userInterruptedRef = useRef(false)
   const prevMessageCountRef = useRef(0)
+
+  // Xensō mode, synced from the URL on every navigation rather than once at
+  // session hydration. The provider is mounted globally and hydrates on its
+  // first consumer, which may be /knowledge or /inception — so reading the
+  // param only there missed it entirely for anyone who arrived by a soft
+  // navigation, with no visible sign that it had. `?xenso=0` turns it off.
+  useEffect(() => {
+    const v = searchParams.get('xenso')
+    if (v === '1') applyXensoMode(true)
+    else if (v === '0') applyXensoMode(false)
+  }, [searchParams, applyXensoMode])
 
   // Handoff from the landing page: ?q=… seeds and auto-sends a single message.
   // Strips the param afterwards so a refresh won't re-send.
@@ -191,6 +204,24 @@ export function CosmoChat() {
           actions={<AuthButton />}
         />
 
+        {/* Xensō is a prompt-layer mode with no surface of its own yet, so without
+            a marker there is no way to tell it apart from an ordinary dialog —
+            which is exactly how the mode silently failing went unnoticed. Quiet
+            by design: the game asks nothing of you, and neither should this. */}
+        {xensoMode && (
+          <div className="border-b border-foreground/10 px-6 py-2">
+            <div className="max-w-2xl mx-auto flex items-center justify-between gap-3">
+              <span className="text-xs uppercase tracking-widest text-foreground/40">Xensō</span>
+              <Link
+                href="/dialog?xenso=0"
+                className="text-xs text-foreground/30 hover:text-foreground/60 transition-colors"
+              >
+                leave
+              </Link>
+            </div>
+          </div>
+        )}
+
         {showPmInput && !pmMode && (
           <div className="border-b border-foreground/10 px-6 py-3">
             <div className="max-w-2xl mx-auto flex gap-2 items-center">
@@ -245,7 +276,7 @@ export function CosmoChat() {
                   )}
                 >
                   {msg.role === 'assistant' ? (
-                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents}>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents} urlTransform={citationUrlTransform}>
                       {preprocessCitations(msg.content)}
                     </ReactMarkdown>
                   ) : (
