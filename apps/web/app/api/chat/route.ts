@@ -40,6 +40,18 @@ const SESSION_TTL = 604800 // 7 days
 // Free-tier token budget: 100k tokens ≈ 15–20 substantive exchanges with Cosmo.
 export const FREE_TOKEN_BUDGET = 100_000
 
+// Xensō runs long on purpose: defining one quest is a 15–20 minute conversation,
+// and the testing cadence is 2–3 sessions across a week — all against a single
+// 7-day session budget, not a per-conversation one. At the general ceiling a
+// first-time player gets roughly a dozen turns for the entire week and then
+// meets the bring-your-own-key dock, which is exactly the paywall between a
+// stuck person and the Catch that the design forbids.
+//
+// The bigger win is not this number but history caching below: cached reads do
+// not count here at all, so the two together move a session from "cut off
+// mid-quest" to "comfortably finishes", while costing less per turn than before.
+export const FREE_TOKEN_BUDGET_XENSO = 300_000
+
 // Monthly cap denominated in estimated tokens (not requests).
 // Default: 50M tokens/month ≈ $15 at current rates. One 1.79M-token crafted
 // request incremented the old request counter by 1 — this closes that gap.
@@ -634,7 +646,7 @@ export async function POST(req: NextRequest) {
         freeTierSessionId = sessionId
 
         const tokensUsed = await getFreeTokenUsage(sessionId)
-        if (tokensUsed >= FREE_TOKEN_BUDGET) {
+        if (tokensUsed >= (xensoMode ? FREE_TOKEN_BUDGET_XENSO : FREE_TOKEN_BUDGET)) {
           return NextResponse.json(
             { error: 'free_limit_reached', remaining: 0 },
             { status: 429 }
@@ -860,9 +872,28 @@ export async function POST(req: NextRequest) {
     // static block, creative context) + this one = 4, the hard cap — safe.
     // Xensō adds no breakpoints of its own and forces creativeMode off, so
     // admin+xenso spends 3. The cap holds on every path.
+    // Free-tier xenso gets history caching too, which the general free tier does
+    // not. Two reasons, and the second is the important one.
+    //
+    // Cost: without it every turn re-sends the whole conversation as fresh input,
+    // so spend grows with the square of session length — the opposite of what a
+    // deliberately long, slow conversation wants.
+    //
+    // Reach: cached reads land in cache_read_input_tokens, which is not what
+    // getFreeTokenUsage counts. So caching does not merely make turns cheaper, it
+    // stops the conversation's own history from eating the player's budget. That
+    // is worth several times the raised ceiling above.
+    //
+    // 1h TTL, for the same reason admin gets it: quests have real thinking gaps
+    // between turns — the whole design sends people away to act — and the 5m
+    // default would force a full rewrite on most messages. withHistoryCaching
+    // no-ops below two messages, so a one-turn visitor pays no write at all.
+    //
+    // Breakpoints on this path: 2 static + this one = 3, under the cap of 4.
     const cachedMessages =
       subscribedUserId ? withHistoryCaching(messages)
       : isAdmin ? withHistoryCaching(messages, '1h')
+      : xensoMode ? withHistoryCaching(messages, '1h')
       : messages
 
     const stream = client.beta.messages.stream({

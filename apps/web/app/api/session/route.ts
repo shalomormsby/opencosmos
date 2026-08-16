@@ -1,10 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { randomUUID } from 'crypto'
-import { FREE_TOKEN_BUDGET } from '@/app/api/chat/route'
+import { FREE_TOKEN_BUDGET, FREE_TOKEN_BUDGET_XENSO } from '@/app/api/chat/route'
 
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const SESSION_TTL = 604800 // 7 days
+
+// The client derives isLimited from the budget this route reports, so it has to
+// agree with the ceiling /api/chat actually enforces. Reporting the general
+// budget during a xenso session would dock the composer while the server was
+// still happily answering — a limit that exists only in the UI.
+function budgetFor(req: NextRequest): number {
+  return req.nextUrl.searchParams.get('xenso') === '1'
+    ? FREE_TOKEN_BUDGET_XENSO
+    : FREE_TOKEN_BUDGET
+}
 
 function freeTokenKey(sessionId: string) {
   return `cosmo_free_tokens:v1:${sessionId}`
@@ -43,11 +53,12 @@ async function getTokenData(sessionId: string): Promise<{ tokensUsed: number; tt
 // GET /api/session — returns token quota status for the current session
 export async function GET(req: NextRequest) {
   const sessionId = req.cookies.get('cosmo_session')?.value
+  const tokenBudget = budgetFor(req)
 
   if (!sessionId) {
     return NextResponse.json({
       tokensUsed: 0,
-      tokenBudget: FREE_TOKEN_BUDGET,
+      tokenBudget,
       sessionExpiresAt: Math.floor(Date.now() / 1000) + SESSION_TTL,
     })
   }
@@ -55,13 +66,13 @@ export async function GET(req: NextRequest) {
   const { tokensUsed, ttl } = await getTokenData(sessionId)
   return NextResponse.json({
     tokensUsed,
-    tokenBudget: FREE_TOKEN_BUDGET,
+    tokenBudget,
     sessionExpiresAt: Math.floor(Date.now() / 1000) + ttl,
   })
 }
 
 // POST /api/session — creates a new anonymous session
-export async function POST() {
+export async function POST(req: NextRequest) {
   const sessionId = randomUUID()
 
   // Initialize token counter key (SET NX so it doesn't overwrite an existing key)
@@ -83,7 +94,7 @@ export async function POST() {
 
   const res = NextResponse.json({
     tokensUsed: 0,
-    tokenBudget: FREE_TOKEN_BUDGET,
+    tokenBudget: budgetFor(req),
     sessionExpiresAt: Math.floor(Date.now() / 1000) + SESSION_TTL,
   })
   res.headers.set('Set-Cookie', sessionCookie(sessionId))

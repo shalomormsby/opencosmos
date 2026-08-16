@@ -144,11 +144,11 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     // The param wins when present; otherwise fall back to what was persisted,
     // so a reload or a hard navigation inside /dialog stays in the game.
     const xensoParam = params.get('xenso')
-    setXensoMode(
+    const xensoOn =
       xensoParam === '1' ? true
       : xensoParam === '0' ? false
       : sessionStorage.getItem(KEY_XENSO) === '1'
-    )
+    setXensoMode(xensoOn)
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
@@ -166,7 +166,10 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     setCurrentId(id)
     setConversations(Object.values(all).sort((a, b) => b.updatedAt - a.updatedAt))
 
-    fetch('/api/session')
+    // Pass the mode: /api/session reports the ceiling the chat route will
+    // actually enforce, and xenso runs against a larger one. Use the local
+    // value, not state — setXensoMode above has not flushed yet.
+    fetch(`/api/session${xensoOn ? '?xenso=1' : ''}`)
       .then((r) => r.json())
       .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
         setTokensUsed(data.tokensUsed)
@@ -350,7 +353,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       }
 
       if (!apiKey) {
-        fetch('/api/session')
+        fetch(`/api/session${xensoMode ? '?xenso=1' : ''}`)
           .then((r) => r.json())
           .then((data: { tokensUsed: number; tokenBudget: number; sessionExpiresAt: number }) => {
             setTokensUsed(data.tokensUsed)
