@@ -648,26 +648,16 @@ export async function POST(req: NextRequest) {
     // cache_control are valid — cache_control is optional in the SDK type.
     const systemContent: Anthropic.TextBlockParam[] = [...SYSTEM_CONTENT]
 
-    // Xensō quest-guide module. Appended AFTER the last static block, and with no
-    // cache_control of its own — both deliberate.
-    //
-    // Position: SYSTEM_CONTENT's byte sequence is left untouched, so a xenso request
-    // still reads /dialog's warm cache entry (lookup walks backward from a breakpoint)
-    // and writes only this ~3k-token tail. Inserting it mid-stack instead would change
-    // the prefix at that offset and force a full ~15k rewrite on every cold turn.
-    //
-    // No breakpoint: `[...SYSTEM_CONTENT]` is a SHALLOW copy of module-scope block
-    // objects that outlive the request. Moving or stripping a cache_control to build
-    // a xenso variant would mutate the blocks /dialog is still using and silently
-    // break its caching for the life of the serverless instance — a ~10x input-cost
-    // regression on the highest-volume surface, with no error and no failing test.
-    // Measured, the caching this forgoes is worth ~$0.15 per 20-turn session. Revisit
-    // only with cache_read/cache_creation numbers from real traffic in hand.
-    if (xensoMode && XENSO_MODULE.trim()) {
-      systemContent.push({ type: 'text' as const, text: XENSO_MODULE })
-    }
-
-    if (isAdmin && SHALOM_CONTEXT.trim()) {
+    // Shalom's relational context — the jazz-improv posture. Deliberately NOT
+    // loaded in xenso mode. It tells Cosmo the two of them trade the lead like
+    // improvising musicians and to pull melodies from the creative archive for
+    // inspiration, which is lovely on /dialog and is the precise opposite of
+    // what Xensō asks: the player leads, always, and Cosmo is mirror and light,
+    // never author. With it loaded, an open prompt like "where do we start?"
+    // produced a riff about records spinning instead of the Catch — the module
+    // was not being ignored, it was being outvoted by a later, louder block.
+    // In Xensō, Shalom is a player, not a collaborator.
+    if (isAdmin && !xensoMode && SHALOM_CONTEXT.trim()) {
       systemContent.push({
         type: 'text' as const,
         text: SHALOM_CONTEXT,
@@ -677,7 +667,13 @@ export async function POST(req: NextRequest) {
     // sessions (cheap — just filenames) so Cosmo can name what's there and
     // suggest ?creative=1 rather than confabulate. Skipped when creativeMode
     // is already on, since the full-text block below covers the same ground.
-    if (isAdmin && !creativeMode && GITHUB_PM_REPO && GITHUB_PM_PAT) {
+    //
+    // Also skipped in xenso mode, and note the trap: the condition is
+    // `!creativeMode`, so forcing creativeMode off for xenso (below) turned this
+    // block ON for every quest. Cosmo duly recited the archive titles and offered
+    // ?creative=1 mid-session. Suppressing creative context without suppressing
+    // its manifest achieved the opposite of the intended separation.
+    if (isAdmin && !creativeMode && !xensoMode && GITHUB_PM_REPO && GITHUB_PM_PAT) {
       const manifest = await fetchCreativeManifest()
       if (manifest) {
         systemContent.push({
@@ -776,6 +772,25 @@ export async function POST(req: NextRequest) {
         type: 'text' as const,
         text: '[RAG_TIMEOUT: knowledge corpus retrieval did not complete in time. Acknowledge this honestly if asked about specific texts — say you are having trouble accessing the specific passages right now, then respond from what you do hold. Do not hallucinate specific quotations.]',
       })
+    }
+
+    // Xensō quest-guide module — the last word on behavior, deliberately.
+    //
+    // It began life immediately after the static prefix, which buried it under
+    // every admin block that follows. Order is not neutral in a system prompt:
+    // the module has to govern, so it goes last, after anything that might
+    // contradict it and before only the volatile treasury data below.
+    //
+    // No cache_control of its own. `[...SYSTEM_CONTENT]` is a SHALLOW copy of
+    // module-scope block objects that outlive the request, so moving or stripping
+    // a breakpoint to build a "xenso variant" would mutate the blocks /dialog is
+    // still using and break its caching for the life of the serverless instance —
+    // a ~10x input-cost regression on the highest-volume surface, silently. The
+    // caching forgone is worth ~$0.15 per 20-turn session; the shared prefix is
+    // still read in full (cacheRead stays at its usual figure), because appending
+    // after the last static block leaves that prefix byte-identical.
+    if (xensoMode && XENSO_MODULE.trim()) {
+      systemContent.push({ type: 'text' as const, text: XENSO_MODULE })
     }
 
     // The player's treasury goes last: it is the most volatile block in the stack,
