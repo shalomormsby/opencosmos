@@ -32,4 +32,24 @@ jobs:
         run: pnpm install --frozen-lockfile
 
       - name: Build All Apps
+        # Concurrency is capped because the default lets turbo start all four
+        # app builds at once, and a standard runner cannot hold four Next.js
+        # Turbopack builds each spawning its own TypeScript pass. The failure is
+        # nasty precisely because it does not look like a resource problem: the
+        # app compiles fine, prints "Running TypeScript ...", then dies with a
+        # bare ELIFECYCLE and no error text at all. A real type error prints the
+        # error; a process killed for memory prints nothing. It failed that way
+        # twice — on main at 2e284ea and on PR #172 — and passed on re-run of
+        # the identical commit both times, which is the signature of a resource
+        # race rather than a code fault.
+        #
+        # Two at a time costs roughly half a minute of wall clock and buys a
+        # build that does not flip a coin. Raise it only if runners grow.
+        #
+        # Set through the environment rather than as an argument: `pnpm build --
+        # --concurrency=2` forwards the flag past turbo to the task commands, so
+        # every app runs `next build --concurrency=2` and fails on the unknown
+        # option. TURBO_CONCURRENCY has no such ambiguity.
+        env:
+          TURBO_CONCURRENCY: 2
         run: pnpm build

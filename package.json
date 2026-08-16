@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "turbo run dev --concurrency 20 --filter=!@opencosmos/stocks",
-        "build": "turbo run build",
+        "build": "turbo run build --filter=!@opencosmos/stocks",
         "lint": "turbo run lint",
         "knowledge:publish": "tsx scripts/publish-knowledge.ts",
         "knowledge:sync-dell": "tsx scripts/sync-dell.ts",

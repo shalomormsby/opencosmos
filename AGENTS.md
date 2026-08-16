@@ -79,7 +79,8 @@ opencosmos/
 
 ### Stocks (`apps/stocks/`)
 - **Purpose:** AI-powered investment intelligence
-- **Status:** Active
+- **Status:** Dormant — not in use, Vercel deployment disconnected 2026-03-09. The code is preserved deliberately; resume when there's a clear publishing plan.
+- **Not built.** Excluded from both `pnpm dev` and `pnpm build`, so it is not compiled in CI and its `engines: node 20.x` pin no longer produces a warning on every build. That pin stays: this app runs `vercel dev` and Vercel reads `engines.node` to choose the serverless runtime, so it is load-bearing if the app is ever revived. Build it directly with `pnpm --filter @opencosmos/stocks build`.
 
 ### cosmOS (`apps/cosmos/`)
 - **Purpose:** Personal operating system
