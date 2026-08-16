@@ -51,6 +51,7 @@ export default async function AccountPage() {
             { label: 'Knowledge', href: '/knowledge' },
             { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
             { label: 'Inception', href: '/inception' },
+            { label: 'Xensō', href: '/xenso' },
           ]}
           actions={
             <Button variant="outline" size="sm" asChild>

@@ -57,6 +57,7 @@ export default function XensoFrontDoor() {
             { label: 'Knowledge', href: '/knowledge' },
             { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
             { label: 'Inception', href: '/inception' },
+            { label: 'Xensō', href: '/xenso' },
           ]}
           actions={<AuthButton />}
         />

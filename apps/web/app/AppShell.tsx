@@ -1,7 +1,7 @@
 'use client'
 
 import { AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar } from '@opencosmos/ui'
-import { MessageSquare, BookOpen, ExternalLink, Sparkles } from 'lucide-react'
+import { MessageSquare, BookOpen, ExternalLink, Sparkles, CircleDashed } from 'lucide-react'
 import { SidebarAvatar } from './SidebarAvatar'
 import { SidebarUsage } from './SidebarUsage'
 
@@ -53,6 +53,12 @@ export function AppShell({
             label: 'Inception',
             href: '/inception',
             active: activePath === '/inception',
+          },
+          {
+            icon: <CircleDashed className="w-4 h-4" />,
+            label: 'Xensō',
+            href: '/xenso',
+            active: activePath === '/xenso',
           },
         ]}
         footer={<ShellFooter />}
