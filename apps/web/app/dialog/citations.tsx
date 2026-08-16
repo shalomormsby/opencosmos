@@ -1,6 +1,6 @@
 'use client'
 
-import type { Components } from 'react-markdown'
+import { defaultUrlTransform, type Components } from 'react-markdown'
 import { cn } from '@opencosmos/ui'
 
 /**
@@ -25,6 +25,24 @@ const REF_TOKEN_RE   = /\[ref:\s*([^\]]+?)\]/g
 
 /** Marks a pre-processed `[ref:]` link so the renderer can tell it from prose. */
 const REF_SCHEME = 'cosmo-ref:'
+
+/**
+ * react-markdown sanitizes hrefs through `defaultUrlTransform`, which allows
+ * only http, https, irc, ircs, mailto and xmpp — anything else with a scheme is
+ * rewritten to the empty string. `cosmo-ref:` is not on that list, so without
+ * this the marker below was silently erased before `citationAnchor` ever saw it,
+ * the scheme test failed, and every passage citation rendered as `<a href="">`
+ * — which the browser resolves to the current page. Citations appeared to work
+ * and quietly reloaded /dialog instead of opening the passage.
+ *
+ * Quote tokens were unaffected: they carry a relative path with no scheme.
+ *
+ * Pass this to every <ReactMarkdown> that uses `chatMarkdownComponents`.
+ */
+export function citationUrlTransform(url: string): string {
+  if (url.startsWith(REF_SCHEME)) return url
+  return defaultUrlTransform(url)
+}
 
 const GITHUB_BLOB = 'https://github.com/shalomormsby/opencosmos/blob/main'
 

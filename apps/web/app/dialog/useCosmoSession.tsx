@@ -18,6 +18,10 @@ const DEFAULT_TOKEN_BUDGET = 20_000
 const KEY_API_KEY = 'cosmo_api_key'
 const KEY_CONVERSATIONS = 'cosmo_conversations'
 const KEY_CURRENT_ID = 'cosmo_current_id'
+// sessionStorage, not localStorage: staying in Xensō across a reload and a
+// "New dialog" is the point, but it should not silently still be on in a new
+// tab next week. `?xenso=0` turns it off explicitly.
+const KEY_XENSO = 'cosmo_xenso'
 
 function loadAll(): Record<string, Conversation> {
   try {
@@ -63,12 +67,15 @@ type CosmoSession = {
   pmSecret: string
   pmError: string
   creativeMode: boolean
+  xensoMode: boolean
   isAuthenticated: boolean
   isLimited: boolean
 
   // Setters
   setInput: (v: string) => void
   setApiKeyDraft: (v: string) => void
+  /** Turn Xensō mode on or off and persist the choice for this browser session. */
+  applyXensoMode: (on: boolean) => void
   setShowPmInput: (v: boolean) => void
   setPmSecret: (v: string) => void
 
@@ -107,6 +114,15 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
   // Temporary scaffolding: ?xenso=1 loads the Xensō quest-guide module onto this
   // surface so the game is playable — with real persistence, since Dialog
   // conversations already save — before /xenso exists. Retire once it does.
+  //
+  // Persisted, unlike creativeMode, and re-read on every navigation (see the
+  // sync effect in CosmoChat). The first version read the URL exactly once, in
+  // hydrate() — which runs on the FIRST consumer of this globally-mounted
+  // provider, not on arrival at /dialog. Reaching /dialog?xenso=1 by a soft
+  // navigation from /knowledge or /inception, both of which mount consumers,
+  // meant hydrate had already run against a URL with no xenso param, and the
+  // flag stayed false for the rest of the SPA session. Nothing surfaced that,
+  // so it looked exactly like the feature not working.
   const [xensoMode, setXensoMode] = useState(false)
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
@@ -125,7 +141,14 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
 
     const params = new URLSearchParams(window.location.search)
     setCreativeMode(params.get('creative') === '1')
-    setXensoMode(params.get('xenso') === '1')
+    // The param wins when present; otherwise fall back to what was persisted,
+    // so a reload or a hard navigation inside /dialog stays in the game.
+    const xensoParam = params.get('xenso')
+    setXensoMode(
+      xensoParam === '1' ? true
+      : xensoParam === '0' ? false
+      : sessionStorage.getItem(KEY_XENSO) === '1'
+    )
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
@@ -420,6 +443,20 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     setPmError('')
   }, [])
 
+  // Called by the /dialog surface on every navigation, so ?xenso=1 takes effect
+  // whenever it appears — not only if it happened to be present the one time
+  // hydrate() ran. Persisted so it survives reload and "New dialog".
+  const applyXensoMode = useCallback((on: boolean) => {
+    setXensoMode(on)
+    try {
+      if (on) sessionStorage.setItem(KEY_XENSO, '1')
+      else sessionStorage.removeItem(KEY_XENSO)
+    } catch {
+      // Private-mode storage failures must not break the session; the flag
+      // still works for this page view, it just will not survive a reload.
+    }
+  }, [])
+
   const startNew = useCallback(() => {
     const id = crypto.randomUUID()
     localStorage.setItem(KEY_CURRENT_ID, id)
@@ -483,12 +520,14 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       pmSecret,
       pmError,
       creativeMode,
+      xensoMode,
       isAuthenticated,
       isLimited,
       setInput,
       setApiKeyDraft,
       setShowPmInput,
       setPmSecret: setPmSecretWithClear,
+      applyXensoMode,
       send,
       startNew,
       openConversation,
@@ -516,8 +555,10 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
       pmSecret,
       pmError,
       creativeMode,
+      xensoMode,
       isAuthenticated,
       isLimited,
+      applyXensoMode,
       send,
       startNew,
       openConversation,
