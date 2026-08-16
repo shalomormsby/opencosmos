@@ -299,6 +299,12 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
           // this flag is that testers can be handed a link. The route forces
           // creativeMode off when this is set.
           xensoMode: xensoMode ? true : undefined,
+          // Zone only, never the clock — the server keeps the time and uses this
+          // to say it in the right place. Without it Cosmo invents the hour, and
+          // was cheerfully calling a late morning "tonight".
+          timeZone: (() => {
+            try { return Intl.DateTimeFormat().resolvedOptions().timeZone || undefined } catch { return undefined }
+          })(),
         }),
       })
 

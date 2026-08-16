@@ -402,6 +402,45 @@ type XensoContext = {
   keeps?: Array<{ excerpt: string; title?: string }>
 }
 
+/**
+ * What time it is where the person actually is.
+ *
+ * Cosmo was previously told nothing about the date or time — the only Date in
+ * this route builds a Redis key — so any reference to "tonight", "this morning",
+ * "Thursday", or "two weeks from now" was invention. It reads as a small thing
+ * until a Xensō quest sets a two-week container and there is no today to count
+ * from, or the sanctuary offers rest at 11am because it assumed evening.
+ *
+ * The split that matters: take the CLOCK from the server and the ZONE from the
+ * client. A browser's clock can be skewed or deliberately wrong; its IANA zone
+ * is simply where the person has told their own machine they are. Falling back
+ * to Vercel's IP-derived zone covers a client that sends nothing, and is only a
+ * fallback because it is wrong behind a VPN and absent in local development.
+ *
+ * An invalid zone throws inside toLocaleString, so the whole thing is guarded:
+ * this is client-supplied input reaching a formatter.
+ */
+function formatLocalTime(clientZone: string | undefined, headerZone: string | null): string | null {
+  for (const zone of [clientZone, headerZone, 'UTC']) {
+    // Length bound before the formatter: this is unauthenticated client input.
+    if (!zone || zone.length > 64) continue
+    try {
+      const now = new Date().toLocaleString('en-US', {
+        timeZone: zone,
+        weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
+        hour: 'numeric', minute: '2-digit', timeZoneName: 'short',
+      })
+      const located = zone === 'UTC' && !clientZone && !headerZone
+        ? 'Their local timezone is unknown, so this is UTC and may be hours off for them — do not state the time of day as fact.'
+        : `Timezone: ${zone}.`
+      return `# Current date and time\n\nIt is currently **${now}** where this person is. ${located}\n\nUse this for any temporal reasoning — what "today" and "tomorrow" mean, how far away a date is, whether it is morning or night for them. Do not announce the time unprompted; just stop guessing at it.`
+    } catch {
+      // Invalid IANA zone — fall through to the next candidate.
+    }
+  }
+  return null
+}
+
 // Render the player's context as a system block. Caps are defensive: this is
 // client-supplied and lands in the prompt, so it is bounded here rather than trusted.
 function formatXensoContext(ctx: XensoContext): string | null {
@@ -438,7 +477,7 @@ export async function POST(req: NextRequest) {
   try {
     const {
       messages, apiKey, turnstileToken, current_section, doc_changed,
-      creativeMode: creativeModeRaw, xensoMode, xensoContext,
+      creativeMode: creativeModeRaw, xensoMode, xensoContext, timeZone,
     } = await req.json() as {
       messages: Message[]
       apiKey?: string
@@ -448,6 +487,8 @@ export async function POST(req: NextRequest) {
       creativeMode?: boolean
       xensoMode?: boolean
       xensoContext?: XensoContext
+      /** IANA zone from the browser, e.g. "America/Los_Angeles". Zone only — the clock comes from the server. */
+      timeZone?: string
     }
 
     if (!Array.isArray(messages) || messages.length === 0) {
@@ -772,6 +813,14 @@ export async function POST(req: NextRequest) {
         type: 'text' as const,
         text: '[RAG_TIMEOUT: knowledge corpus retrieval did not complete in time. Acknowledge this honestly if asked about specific texts — say you are having trouble accessing the specific passages right now, then respond from what you do hold. Do not hallucinate specific quotations.]',
       })
+    }
+
+    // Current date and time. Placed after every cached block — it changes on
+    // each request, so anything with a cache_control above it stays valid and
+    // nothing below it was cached anyway.
+    const localTime = formatLocalTime(timeZone, req.headers.get('x-vercel-ip-timezone'))
+    if (localTime) {
+      systemContent.push({ type: 'text' as const, text: localTime })
     }
 
     // Xensō quest-guide module — the last word on behavior, deliberately.

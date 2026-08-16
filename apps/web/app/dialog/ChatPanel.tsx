@@ -5,6 +5,7 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Button, Input, cn } from '@opencosmos/ui'
 import { chatMarkdownComponents, citationUrlTransform, preprocessCitations } from './citations'
+import { stripXensoState } from './xenso-state'
 
 // Shared presentational chat panel — the single Cosmo dialog surface used by
 // /dialog, /knowledge, and /inception. It renders a message list + a floating
@@ -83,7 +84,7 @@ export function ChatPanel({
                 msg.content
               ) : (
                 <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents} urlTransform={citationUrlTransform}>
-                  {preprocessCitations(msg.content)}
+                  {preprocessCitations(stripXensoState(msg.content))}
                 </ReactMarkdown>
               )}
               {isStreaming && i === messages.length - 1 && msg.role === 'assistant' && !msg.content && (

@@ -11,6 +11,7 @@ import type { ShareConversationSnapshot } from '../../../lib/share'
 // as literal "[ref: knowledge/sources/…]" text in the prose, on the one surface
 // that is public. Importing the shared map keeps every renderer honest.
 import { chatMarkdownComponents, citationUrlTransform, preprocessCitations } from '../../dialog/citations'
+import { stripXensoState } from '../../dialog/xenso-state'
 
 interface SharedChatViewProps {
   snapshot: ShareConversationSnapshot
@@ -68,7 +69,7 @@ export function SharedChatView({ snapshot, visibility, isOwner }: SharedChatView
               >
                 {msg.role === 'assistant' ? (
                   <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents} urlTransform={citationUrlTransform}>
-                    {preprocessCitations(msg.content)}
+                    {preprocessCitations(stripXensoState(msg.content))}
                   </ReactMarkdown>
                 ) : (
                   msg.content

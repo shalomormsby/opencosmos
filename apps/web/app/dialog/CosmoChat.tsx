@@ -12,6 +12,7 @@ import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
 import { DialogHistoryPanel } from './DialogHistoryPanel'
 import { chatMarkdownComponents, citationUrlTransform, preprocessCitations } from './citations'
+import { stripXensoState } from './xenso-state'
 
 // Shared liquid glass style — matches the header's always-on glass.
 // The `!` modifier is load-bearing on the Header element: @opencosmos/ui's
@@ -277,7 +278,7 @@ export function CosmoChat() {
                 >
                   {msg.role === 'assistant' ? (
                     <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents} urlTransform={citationUrlTransform}>
-                      {preprocessCitations(msg.content)}
+                      {preprocessCitations(stripXensoState(msg.content))}
                     </ReactMarkdown>
                   ) : (
                     msg.content
