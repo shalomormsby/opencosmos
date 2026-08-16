@@ -17,6 +17,13 @@ import { Index } from '@upstash/vector'
 export type RagChunk = {
   text: string
   source: string
+  /**
+   * The vector's own id — `{path}#{heading-slug}`, with an 8-char hash suffix
+   * when several sections in a file share a heading. Carried through verbatim
+   * so the `[ref:]` citation Cosmo emits addresses the exact chunk it read,
+   * rather than a slug re-derived (and possibly mis-derived) from the heading.
+   */
+  chunk_id?: string
   title: string
   heading: string
   domain: string
@@ -117,6 +124,8 @@ function formatCorpusSection(chunks: RagChunk[]): string {
 
 When drawing from these passages: cite the title and author. If quoting directly, use the exact words from the passage and attribute them — do not paraphrase and present it as a quote. Never fabricate or reconstruct a quotation that is not present in the retrieved text. If you cannot find the precise words, paraphrase clearly and say so. Precision and honesty in citation are non-negotiable.
 
+Each passage carries a "Cite as" line. When you draw on a passage, append its token — \`[ref: knowledge/sources/{work}.md#{section-slug}]\` — immediately after the claim it supports. Use the token exactly as given; never invent one for a passage that wasn't retrieved. These citations are load-bearing: they let a reader open the exact passage you read, and they light up the corresponding node when the constellation is on screen.
+
 When citing a quote from the corpus, append a structured citation token in the form \`[quote: knowledge/quotes/{author-key}.yaml#{quote-id}]\` immediately after the attribution. If a quote's provenance status is anything other than \`verified\`, soften your attribution language ("attributed to X", "popularly attributed to X") rather than asserting "X said". Never present a quote whose status is \`likely_misattributed\` or \`apocryphal\` without flagging the doubt.`
 
   return `## Retrieved Passages\n\n${preamble}\n\n---\n\n${sections.join('\n\n---\n\n')}`
@@ -146,7 +155,12 @@ function formatPassageChunk(c: RagChunk): string {
   const sourceLabel = c.source !== 'current_document'
     ? `Source: ${c.source}`
     : 'Source: current document'
-  return `${header}\n${sourceLabel}\n\n${c.text}`
+  // Hand Cosmo the exact token rather than asking it to assemble one — the
+  // chunk id already encodes the heading slug and any hash disambiguator.
+  const citeLine = c.chunk_id && c.source !== 'current_document'
+    ? `\n> Cite as: [ref: ${c.chunk_id}]`
+    : ''
+  return `${header}\n${sourceLabel}${citeLine}\n\n${c.text}`
 }
 
 function formatQuoteChunk(c: RagChunk): string {
@@ -170,7 +184,7 @@ function formatQuoteChunk(c: RagChunk): string {
 
 // ─── Retrieval helpers ────────────────────────────────────────────────────────
 
-type QueryHit = { metadata?: Record<string, unknown> }
+type QueryHit = { id?: string | number; metadata?: Record<string, unknown> }
 
 // Map one Upstash query hit → RagChunk (null if it carries no usable text).
 function mapResultToChunk(r: QueryHit): RagChunk | null {
@@ -183,6 +197,7 @@ function mapResultToChunk(r: QueryHit): RagChunk | null {
     heading: (meta.heading as string) ?? '',
     domain: (meta.domain as string) ?? '',
   }
+  if (r.id !== undefined) chunk.chunk_id = String(r.id)
   if (meta.role) chunk.role = meta.role as string
   if (meta.author) chunk.author = meta.author as string
   if (meta.tradition) chunk.tradition = meta.tradition as string

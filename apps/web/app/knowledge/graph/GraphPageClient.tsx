@@ -25,6 +25,7 @@ import {
 } from '@opencosmos/constellation'
 import { DOMAIN_COLORS } from './domain-colors'
 import { nodeHref, nodeIdFromDocPath } from './nodeHref'
+import { onCosmoEvent } from '@/lib/cosmo-events'
 
 // Dynamic import lives in the Client Component — Next.js App Router rule:
 // component functions cannot be passed as props from Server → Client components.
@@ -79,6 +80,7 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
   const [containerReady, setContainerReady] = useState(false)
   const [error, setError]                   = useState<string | null>(null)
   const [focus, setFocus]                   = useState<string | null>(null)
+  const [highlighted, setHighlighted]       = useState<string[]>([])
 
   const prefersReducedMotion = usePrefersReducedMotion()
 
@@ -97,6 +99,11 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
         setTimeout(() => setShowSkeleton(false), 100)
       }
     }
+
+    // Without this the page sits on the skeleton forever when the worker fails
+    // to construct or throws before its own try/catch — a silent stall that
+    // looks exactly like a slow network.
+    worker.onerror = (e) => setError(e.message || 'Graph worker failed to start')
 
     worker.postMessage({ origin: location.origin })
 
@@ -164,6 +171,28 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
     return map
   }, [graphData])
 
+  // Parents, for resolving a citation that names a section we can't match.
+  const parentOf = useMemo(() => {
+    const map = new Map<string, string | undefined>()
+    graphData?.nodes.forEach((n) => map.set(n.id, n.parent))
+    return map
+  }, [graphData])
+
+  // ─── Cosmo's reasoning, made visible ────────────────────────────────────────
+  // A finished response announces what it drew on; those nodes light up here.
+  // The camera moves only to the first — highlighting the whole set is alive,
+  // panning to each in turn would be motion sickness.
+  useEffect(() => {
+    if (!graphData) return
+    return onCosmoEvent('highlight-nodes', ({ node_ids }) => {
+      const resolved = node_ids
+        .map((id) => resolveCitationToNode(id, tierOf, parentOf))
+        .filter((id): id is string => id !== null)
+      setHighlighted(resolved)
+      if (resolved[0]) setFocus(resolved[0])
+    })
+  }, [graphData, tierOf, parentOf])
+
   const handleNodeClick = useCallback((nodeId: string) => {
     const tier = tierOf.get(nodeId)
     if (!tier) return
@@ -178,7 +207,11 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
   }, [router, tierOf])
 
   return (
-    <div ref={containerRef} className="relative w-full h-full">
+    // `absolute inset-0`, not `h-full`: the parent is a flex item sized by
+    // `flex-1` under a `min-h-screen` column, so its computed height is `auto`
+    // and a percentage height resolves to zero — which silently collapses the
+    // canvas and leaves the skeleton showing forever.
+    <div ref={containerRef} className="absolute inset-0">
       {/* SVG skeleton — visible immediately from SSR preview data */}
       {preview && (
         <div
@@ -201,7 +234,14 @@ export function GraphPageClient({ preview }: GraphPageClientProps) {
             tierColors={DEFAULT_TIER_COLORS}
             focus={focus}
             focusRadius={1}
-            ambientDrift
+            highlightedNodeIds={highlighted}
+            // Drift and highlight both write point data and call render() each
+            // frame, and cosmos.gl commits only the most recent write — with
+            // both live, drift wins and the highlight never reaches the canvas
+            // (8.9% mean-luminance drop with drift off, 0.0% with it on).
+            // constellation 0.2.1 suspends drift internally; holding it here
+            // too keeps this correct on 0.2.0 and costs nothing after.
+            ambientDrift={highlighted.length === 0}
             className="w-full h-full"
           />
         </div>
@@ -307,4 +347,36 @@ function SkeletonGraph({ preview }: { preview: ConstellationPreview }) {
  */
 function safeGradientId(id: string): string {
   return id.replace(/[^a-zA-Z0-9_-]/g, '-')
+}
+
+/**
+ * A citation target (a vector chunk id or quote id) → the node that should light
+ * up, or null if nothing in the graph corresponds.
+ *
+ * Section ids don't always agree between the two pipelines: the constellation
+ * generator disambiguates repeated headings positionally (`slug-2`), while the
+ * embed pipeline uses a content hash (`slug-a1b2c3d4`). So an exact match is
+ * tried first, then the work the section belongs to — better to light the work
+ * than to drop the citation. (Reconciling the two schemes is tracked in pm.md
+ * under Phase 1.7.)
+ */
+function resolveCitationToNode(
+  target: string,
+  tierOf: Map<string, ConstellationNode['tier']>,
+  parentOf: Map<string, string | undefined>,
+): string | null {
+  if (tierOf.has(target)) return target
+
+  const hash = target.indexOf('#')
+  if (hash === -1) return null
+
+  // Fall back from `knowledge/sources/x.md#some-section` to the work node,
+  // whose id is the bare `sources/x`.
+  const path = target.slice(0, hash)
+  const work = path.replace(/^knowledge\//, '').replace(/\.md$/, '')
+  if (tierOf.get(work) === 'work') return work
+
+  // A quote whose exact record isn't a node: light the work it cites, if known.
+  const parent = parentOf.get(target)
+  return parent && tierOf.has(parent) ? parent : null
 }
