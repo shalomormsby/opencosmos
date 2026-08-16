@@ -20,7 +20,7 @@ Three possible futures for OpenCosmos, understood not as choices but as **concen
 
 ## The Strategic Shift
 
-**Sovereignty redefined.** The founding vision placed sovereignty in hardware — local inference, solar-powered, off-grid. The reality of unusably slow 70B inference on the Dell forced a reckoning. Sovereignty now means controlling the **voice, values, corpus, and constitution** — not the silicon. BYOK with Claude API is the primary inference path. The Dell remains a development lab and local experimentation server.
+**Sovereignty redefined.** The founding vision placed sovereignty in hardware — local inference, solar-powered, off-grid. The reality of unusably slow 70B inference on the Dell forced a reckoning. Sovereignty now expresses through the **voice, values, corpus, and constitution**, not the silicon. BYOK with Claude API is the primary inference path. [The Dell remains a development lab and local experimentation server.]
 
 ---
 
@@ -47,7 +47,7 @@ The clean split:
 
 **The Hearth tier already pointed here.** At $50/mo, Hearth bundled CP membership with Cosmo access. Spark and Flame were just Hearth without the honest framing. When every paid tier is understood as "CP membership that includes Cosmo access," the architecture becomes coherent — not three separate tiers on a separate platform, but one community with different levels of engagement.
 
-**Brand coherence compounds.** "OpenCosmos is open source" is an asset that's easy to spend and hard to earn back. It attracts developers, educators, and practitioners who become natural evangelists. Open source credibility is the long-game differentiator in a world full of AI products that claim to serve people while harvesting them.
+**Brand coherence compounds.** "OpenCosmos is open source" is an asset that's easy to spend and hard to earn back. It attracts developers, educators, and practitioners who become natural evangelists. Open source credibility is the long-game differentiator in a world full of AI products that claim to serve people while actually harvesting their data.
 
 ### The CMO Perspective: Organic Growth Through Radical Openness
 
