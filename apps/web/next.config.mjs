@@ -66,6 +66,10 @@ const nextConfig = {
     // Shalom-specific relational context (the Daily Mystic posture) — injected
     // only into admin sessions, never the base prompt. Optional: absent file → ''.
     COSMO_SHALOM_CONTEXT: readOptional('../../packages/ai/COSMO_SHALOM_CONTEXT.md'),
+    // Xensō quest-guide module — injected only when a request arrives with
+    // xensoMode: true. Adds the authorship rule, the five-question spine, the
+    // three safety tiers, and the xenso-state protocol. Optional: absent → ''.
+    XENSO_MODULE: readOptional('../../packages/ai/xenso/XENSO_MODULE.md'),
   },
   async headers() {
     return [
