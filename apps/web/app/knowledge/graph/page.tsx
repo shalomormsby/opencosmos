@@ -3,8 +3,7 @@ import Link from 'next/link'
 import { Redis } from '@upstash/redis'
 import { Header, Button, GitHubIcon } from '@opencosmos/ui'
 import { AppShell } from '@/app/AppShell'
-import type { KnowledgePreviewData } from '@opencosmos/ui/knowledge-graph'
-import { GraphPageClient } from './GraphPageClient'
+import { GraphPageClient, type ConstellationPreview } from './GraphPageClient'
 
 export const metadata: Metadata = {
   title: 'Knowledge Graph — OpenCosmos',
@@ -18,13 +17,13 @@ const NAV_LINKS = [
   { label: 'Inception', href: '/inception' },
 ]
 
-async function getPreviewData(): Promise<KnowledgePreviewData | null> {
+async function getPreviewData(): Promise<ConstellationPreview | null> {
   try {
     const redis = new Redis({
       url:   process.env.UPSTASH_REDIS_REST_URL!,
       token: process.env.UPSTASH_REDIS_REST_TOKEN!,
     })
-    return await redis.get<KnowledgePreviewData>('knowledge:graph:preview')
+    return await redis.get<ConstellationPreview>('knowledge:constellation:preview')
   } catch {
     return null
   }

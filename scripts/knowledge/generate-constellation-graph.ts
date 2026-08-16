@@ -799,11 +799,14 @@ async function main() {
   const compressed = gzipSync(Buffer.from(fullPayload)).toString('base64')
   await redis.set('knowledge:constellation', compressed)
 
-  // Preview key — top 40 nodes by degree, stripped fields, < 5KB
+  // Preview key — top 40 nodes by degree, stripped fields, < 5KB.
+  // `domain` is carried so the SSR skeleton can color nodes identically to the
+  // live renderer; without it the first paint would flash a different palette
+  // than the graph that replaces it.
   const previewNodes = [...outputNodes]
     .sort((a, b) => b.degree - a.degree)
     .slice(0, 40)
-    .map(({ id, x, y, degree, tier, tradition }) => ({ id, x, y, degree, tier, tradition }))
+    .map(({ id, x, y, degree, tier, tradition, domain }) => ({ id, x, y, degree, tier, tradition, domain }))
 
   await redis.set('knowledge:constellation:preview', JSON.stringify({ nodes: previewNodes, generatedAt }))
 
