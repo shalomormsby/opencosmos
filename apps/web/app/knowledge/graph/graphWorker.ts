@@ -16,7 +16,7 @@
 self.onmessage = async (e: MessageEvent<{ origin: string }>) => {
   try {
     const origin = e.data?.origin ?? self.location.origin
-    const res  = await fetch(`${origin}/api/knowledge/graph`)
+    const res  = await fetch(`${origin}/api/knowledge/constellation`)
 
     if (!res.ok) {
       self.postMessage({ error: `Graph API returned ${res.status}` })

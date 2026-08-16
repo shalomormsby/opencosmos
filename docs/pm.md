@@ -2,7 +2,7 @@
 
 > Project management hub for all OpenCosmos work. For strategic rationale, see [strategy.md](strategy.md). For infrastructure details, see [architecture.md](architecture.md).
 
-**Updated:** 2026-06-18
+**Updated:** 2026-08-15
 
 ---
 
@@ -47,8 +47,9 @@
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
 | Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Mostly done | P1 | Stages 1+2 ✅; Stage 3 ⏸ paused (verification-first deferred until graph ships) |
 | Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |
-| Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | 🟢 Active | P1 | Cross-repo work in `opencosmos-ui`; data-shape generator landing in this repo first |
-| Cosmo | [Phase 1.6–1.9: Consume, edges, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | 🟢 Active | P1 | Constellation generator + `/api/knowledge/constellation` route shipping ahead of the visualizer |
+| Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | ✅ Done | P1 | `@opencosmos/constellation@0.1.0` published to npm; Studio demo live at `/constellation` |
+| Cosmo | [Phase 1.6 + 1.8 + 1.9: Consume, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | 🟢 Active | P1 | Swapping `/knowledge/graph` off sigma.js onto the published package, then wiring Cosmo's citations to pulse nodes |
+| Cosmo | [Phase 1.7: Semantic edges](#phase-17--semantic-edges-1-day-planned) | 🟡 Half done | P2 | Generator already emits 135 semantic edges; the differentiated *rendering* (thinner, ~30% opacity) is a package change deferred until after 1.8 |
 | Cosmo | [Phase 1.10–1.11: Community contribution + wiki lint](#phase-110--community-contribution-pathway-planned) | ⚪ Planned | P2 | After 1.9 |
 | Cosmo | [Phase 1b residuals](#phase-1b--subscription-infrastructure-prs-8591-infra-shipped-residuals-pending) — Stripe webhook, privacy policy, TOS, Fix 7 | ⚪ Planned | P1 | External actions (Stripe, legal) |
 | Cosmo | [Phase 3: Conversation polish](#phase-3-conversation-polish) — mobile, accessibility, voice | ⚪ Planned | P2 | — |
@@ -362,13 +363,12 @@ pnpm graph
 curl localhost:3000/api/knowledge/graph
 ```
 
-##### Phase 1.5 — Build `@opencosmos/constellation` (3–5 days, in `opencosmos-ui` repo) 🟢 Active
+##### Phase 1.5 — Build `@opencosmos/constellation` ✅ Done
 
 **Repo:** `/Users/shalomormsby/Developer/opencosmos-ui`
-**New package:** `packages/constellation/`
-**Branch (uncommitted):** `feat/constellation-package`
+**Package:** `packages/constellation/` — **published as `@opencosmos/constellation@0.1.0`** (MIT, on npm).
 
-**What's shipped on the branch:**
+**What shipped in 0.1.0:**
 - v0.1.0-alpha minimal renderer: `<KnowledgeGraph>` mounts `@cosmos.gl/graph@3.0.0-beta.9`, prepares Float32 arrays, tier-aware default colors + sizes, `onNodeClick(id)`, `fitView()` after ready.
 - Label overlay + tier-aware LOD: HTML `LabelLayer` driven by `getSampledPoints()`, default thresholds `tradition: 0`, `work: 1.5×`, `section: 3×`, `quote: 6×`.
 - Focus targeting: `focus`/`focusRadius`/`focusDuration` props; BFS in JS to expand multi-hop neighborhoods (cosmos.gl's `getNeighboringPointIndices` is single-hop).
@@ -458,6 +458,8 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 
 ##### Phase 1.6 — OpenCosmos consumes `@opencosmos/constellation` (1–2 days) 🟢 Active
 
+> **Unblocked 2026-08-15.** 0.1.0 is on npm, so the swap below is no longer waiting on anything. Being done together with 1.8 (citations pulse nodes) and 1.9 (Cosmo in the sidebar) as one arc — a prettier renderer alone doesn't earn the page; the graph lighting up along Cosmo's reasoning does.
+
 **Approach (decided 2026-05-07):** the data-shape work lands first as a *parallel* generator + endpoint so the legacy sigma renderer at `/knowledge/graph` keeps working until the constellation package is ready. Once `@opencosmos/constellation` ships from `opencosmos-ui`, `GraphPageClient.tsx` swaps from `knowledge:graph` → `knowledge:constellation` and the wiki generator can be retired.
 
 **Files:**
@@ -489,7 +491,9 @@ This "gentle starfield that zooms into your corner" feel is also the pattern any
 }
 ```
 
-##### Phase 1.7 — Semantic edges (1 day) ⚪ Planned
+##### Phase 1.7 — Semantic edges (1 day) ⚪ Deferred
+
+> **Status correction (2026-08-15):** the *data* half already shipped inside `generate-constellation-graph.ts` — the 2026-08-15 run emits **135 semantic edges** alongside 785 structural ones (700 nodes / 920 edges total). What remains is the *rendering* treatment: `type: 'semantic'` edges drawn thinner and at ~30% opacity so they read as resonance beneath the curated structure. Deferred until after 1.8 — `@opencosmos/constellation@0.1.0` draws all edge types identically, so differentiating them is a package change, and it's worth knowing what the graph is *for* before tuning how it looks.
 
 **File:** [scripts/knowledge/generate-wiki-graph.ts](../scripts/knowledge/generate-wiki-graph.ts)
 

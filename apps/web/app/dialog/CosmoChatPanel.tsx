@@ -1,11 +1,12 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Button } from '@opencosmos/ui'
 import { Sparkles } from 'lucide-react'
 import { useCosmoSession } from './useCosmoSession'
 import { ChatPanel } from './ChatPanel'
-import { onCosmoEvent, type CosmoEventPayload } from '@/lib/cosmo-events'
+import { extractCitationTargets } from './citations'
+import { emitCosmoEvent, onCosmoEvent, type CosmoEventPayload } from '@/lib/cosmo-events'
 
 type ContextSnapshot = CosmoEventPayload<'selected-section'> | null
 
@@ -58,6 +59,20 @@ export function CosmoChatPanel() {
     setCtx(readInitialContext())
     return onCosmoEvent('selected-section', (payload) => setCtx(payload))
   }, [])
+
+  // Announce what the finished response drew on, so a graph on the same surface
+  // can light those nodes. Deliberately on completion, not mid-stream: watching
+  // nodes light up as a thought lands is alive; watching them flicker on every
+  // token is noise. An empty list clears the previous response's highlights.
+  const lastAnnounced = useRef<string | null>(null)
+  useEffect(() => {
+    if (isStreaming) return
+    const last = messages[messages.length - 1]
+    if (!last || last.role !== 'assistant') return
+    if (lastAnnounced.current === last.content) return
+    lastAnnounced.current = last.content
+    emitCosmoEvent('highlight-nodes', { node_ids: extractCitationTargets(last.content) })
+  }, [messages, isStreaming])
 
   const dockSlot = (
     <>

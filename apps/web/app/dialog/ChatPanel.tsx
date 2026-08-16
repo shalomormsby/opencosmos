@@ -1,7 +1,10 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { Button, Input, cn } from '@opencosmos/ui'
+import { chatMarkdownComponents, preprocessCitations } from './citations'
 
 // Shared presentational chat panel — the single Cosmo dialog surface used by
 // /dialog, /knowledge, and /inception. It renders a message list + a floating
@@ -67,11 +70,22 @@ export function ChatPanel({
             <span className="text-[10px] uppercase tracking-widest text-foreground/25 px-1">{msg.role === 'user' ? 'You' : 'Cosmo'}</span>
             <div
               className={cn(
-                'rounded-2xl px-4 py-3 text-sm leading-relaxed whitespace-pre-wrap max-w-full',
-                msg.role === 'user' ? 'bg-surface text-foreground' : 'bg-black border border-foreground/10 text-foreground',
+                'rounded-2xl px-4 py-3 text-sm leading-relaxed max-w-full',
+                // The user's own text is never markdown; preserve their line
+                // breaks. Cosmo's is rendered, so `whitespace-pre-wrap` would
+                // double the spacing the component map already applies.
+                msg.role === 'user'
+                  ? 'bg-surface text-foreground whitespace-pre-wrap'
+                  : 'bg-black border border-foreground/10 text-foreground',
               )}
             >
-              {msg.content}
+              {msg.role === 'user' ? (
+                msg.content
+              ) : (
+                <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents}>
+                  {preprocessCitations(msg.content)}
+                </ReactMarkdown>
+              )}
               {isStreaming && i === messages.length - 1 && msg.role === 'assistant' && !msg.content && (
                 <span className="inline-block w-1.5 h-3.5 bg-foreground/30 animate-pulse align-middle" />
               )}

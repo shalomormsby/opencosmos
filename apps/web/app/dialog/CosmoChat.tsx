@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import { useRouter, useSearchParams } from 'next/navigation'
-import ReactMarkdown, { type Components } from 'react-markdown'
+import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { Header, Button, Input, cn, AppSidebar, AppSidebarProvider, AppSidebarInset, InfinityAnim, useAppSidebar, APP_SIDEBAR_WIDTH, APP_SIDEBAR_WIDTH_COLLAPSED, APP_SIDEBAR_MOBILE_BREAKPOINT, useMotionPreference } from '@opencosmos/ui'
 import Link from 'next/link'
@@ -11,82 +11,7 @@ import { AuthButton } from '../AuthButton'
 import { useCosmoSession } from './useCosmoSession'
 import { SidebarFooterContent } from './SidebarFooterContent'
 import { DialogHistoryPanel } from './DialogHistoryPanel'
-
-// Quote citation tokens emitted by Cosmo: [quote: knowledge/quotes/{author}.yaml#{quote-id}]
-// Pre-processed into markdown links with hrefs starting "knowledge/quotes/" so the
-// `a` component override below renders them as small superscript indicators rather
-// than inline links — keeps Cosmo's prose flowing while marking each citation.
-const QUOTE_TOKEN_RE = /\[quote:\s*([^\]]+?)\]/g
-
-function preprocessQuoteCitations(content: string): string {
-  return content.replace(QUOTE_TOKEN_RE, (_match, ref: string) => {
-    return `[↗](${ref.trim()})`
-  })
-}
-
-// Tighter scale than DocViewer — chat bubbles use text-sm and shouldn't have
-// the article-style vertical rhythm. last:mb-0 prevents trailing whitespace
-// in the bubble.
-const chatMarkdownComponents: Components = {
-  p: ({ children }) => <p className="mb-3 last:mb-0">{children}</p>,
-  strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
-  em: ({ children }) => <em className="italic">{children}</em>,
-  a: ({ href, children }) => {
-    // Quote citation marker — pre-processed from [quote: knowledge/quotes/...] tokens.
-    // Renders as a clickable superscript that opens the source yaml on GitHub.
-    // (Phase 1.8 will replace this with an internal quote viewer route.)
-    if (href?.startsWith('knowledge/quotes/')) {
-      const filePath = href.split('#')[0]
-      const githubUrl = `https://github.com/shalomormsby/opencosmos/blob/main/${filePath}`
-      return (
-        <sup>
-          <a
-            href={githubUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            title={href}
-            className="ml-0.5 text-foreground/40 text-xs hover:text-foreground/70 transition-colors"
-          >
-            {children}
-          </a>
-        </sup>
-      )
-    }
-    return (
-      <a
-        href={href}
-        target={href?.startsWith('http') ? '_blank' : undefined}
-        rel={href?.startsWith('http') ? 'noopener noreferrer' : undefined}
-        className="underline underline-offset-2 hover:text-foreground/60 transition-colors"
-      >
-        {children}
-      </a>
-    )
-  },
-  ul: ({ children }) => <ul className="list-disc list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ul>,
-  ol: ({ children }) => <ol className="list-decimal list-outside pl-5 mb-3 last:mb-0 space-y-1">{children}</ol>,
-  li: ({ children }) => <li>{children}</li>,
-  blockquote: ({ children }) => (
-    <blockquote className="border-l-2 border-foreground/20 pl-4 my-3 text-foreground/70 italic">
-      {children}
-    </blockquote>
-  ),
-  code: ({ className, children }) => {
-    const isBlock = Boolean(className?.startsWith('language-'))
-    return (
-      <code className={cn('font-mono', isBlock ? className : 'px-1 py-0.5 rounded text-xs bg-foreground/5')}>
-        {children}
-      </code>
-    )
-  },
-  pre: ({ children }) => (
-    <pre className="bg-foreground/5 rounded-lg p-3 overflow-x-auto mb-3 last:mb-0 text-xs">{children}</pre>
-  ),
-  h1: ({ children }) => <h1 className="text-base font-semibold mt-3 mb-2 first:mt-0">{children}</h1>,
-  h2: ({ children }) => <h2 className="text-sm font-semibold mt-3 mb-2 first:mt-0">{children}</h2>,
-  h3: ({ children }) => <h3 className="text-sm font-medium mt-2 mb-1 first:mt-0">{children}</h3>,
-  hr: () => <hr className="my-4 border-foreground/10" />,
-}
+import { chatMarkdownComponents, preprocessCitations } from './citations'
 
 // Shared liquid glass style — matches the header's always-on glass.
 // The `!` modifier is load-bearing on the Header element: @opencosmos/ui's
@@ -321,7 +246,7 @@ export function CosmoChat() {
                 >
                   {msg.role === 'assistant' ? (
                     <ReactMarkdown remarkPlugins={[remarkGfm]} components={chatMarkdownComponents}>
-                      {preprocessQuoteCitations(msg.content)}
+                      {preprocessCitations(msg.content)}
                     </ReactMarkdown>
                   ) : (
                     msg.content

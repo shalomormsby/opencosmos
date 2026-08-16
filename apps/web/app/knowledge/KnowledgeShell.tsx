@@ -274,8 +274,12 @@ function Inset({ children }: { children: React.ReactNode }) {
       : SIDEBAR_COLLAPSED
 
   return (
+    // `flex flex-col` (matching InceptionShell) so a child can claim the space
+    // below the header with `flex-1 min-h-0` — the graph canvas needs to fill
+    // the viewport exactly, not overflow it. Block-level children of a column
+    // flex container still stack full-width, so the library pages are unaffected.
     <div
-      className="min-h-screen bg-background"
+      className="min-h-screen bg-background flex flex-col"
       style={{
         marginLeft,
         transition,
