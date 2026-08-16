@@ -104,6 +104,10 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
   const [showPmInput, setShowPmInput] = useState(false)
   const [pmSecret, setPmSecret] = useState('')
   const [creativeMode, setCreativeMode] = useState(false)
+  // Temporary scaffolding: ?xenso=1 loads the Xensō quest-guide module onto this
+  // surface so the game is playable — with real persistence, since Dialog
+  // conversations already save — before /xenso exists. Retire once it does.
+  const [xensoMode, setXensoMode] = useState(false)
   const [pmError, setPmError] = useState('')
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [turnstileToken, setTurnstileToken] = useState('')
@@ -119,7 +123,9 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     if (hydratedRef.current) return
     hydratedRef.current = true
 
-    setCreativeMode(new URLSearchParams(window.location.search).get('creative') === '1')
+    const params = new URLSearchParams(window.location.search)
+    setCreativeMode(params.get('creative') === '1')
+    setXensoMode(params.get('xenso') === '1')
     setApiKey(localStorage.getItem(KEY_API_KEY) || '')
 
     const savedId = localStorage.getItem(KEY_CURRENT_ID)
@@ -266,6 +272,10 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
           current_section: currentSection,
           doc_changed: docChanged || undefined,
           creativeMode: pmMode && creativeMode ? true : undefined,
+          // Not gated on pmMode: the module is the game, and the whole point of
+          // this flag is that testers can be handed a link. The route forces
+          // creativeMode off when this is set.
+          xensoMode: xensoMode ? true : undefined,
         }),
       })
 
@@ -364,6 +374,7 @@ export function CosmoSessionProvider({ children }: { children: ReactNode }) {
     apiKey,
     pmMode,
     creativeMode,
+    xensoMode,
     currentId,
     refreshConversations,
     isAuthenticated,

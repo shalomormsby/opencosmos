@@ -22,6 +22,9 @@ const EXEMPLARS = process.env.COSMO_EXEMPLARS ?? ''
 // build time. Injected only into admin sessions — see isAdmin below — never
 // the base prompt, so it never reaches a general-audience conversation.
 const SHALOM_CONTEXT = process.env.COSMO_SHALOM_CONTEXT ?? ''
+// Xensō quest-guide module (packages/ai/xenso/XENSO_MODULE.md), baked in at
+// build time. Injected only when a request carries xensoMode — see below.
+const XENSO_MODULE = process.env.XENSO_MODULE ?? ''
 const REDIS_URL = process.env.UPSTASH_REDIS_REST_URL!
 const REDIS_TOKEN = process.env.UPSTASH_REDIS_REST_TOKEN!
 const GITHUB_PM_REPO = process.env.GITHUB_PM_REPO ?? ''
@@ -50,6 +53,13 @@ const MAX_MESSAGES_FREE = 10
 const MAX_MESSAGES_SUBSCRIBER = 100
 const MAX_CHARS_FREE = 40_000      // ~10k tokens
 const MAX_CHARS_SUBSCRIBER = 400_000 // ~100k tokens
+// Xensō is a guided interview, not a Q&A: defining one quest runs 15–20 minutes,
+// which the free cap of 10 messages cuts off after five player turns. /api/inception
+// raised its own cap to 60 for the same reason. Note the free caps are skipped for
+// admin, so this ceiling is invisible to Player Zero and hit by everyone else —
+// the reason it is raised here before the first tester session rather than after.
+const MAX_MESSAGES_XENSO = 60
+const MAX_CHARS_XENSO = 120_000
 
 // Prompt-cache breakpoint budget (Anthropic allows at most 4 cache_control
 // breakpoints per request). These static blocks never change between requests,
@@ -382,20 +392,73 @@ type CurrentSection = {
   doc_path: string
 }
 
+// The player's own treasury and open quests, sent by the Xensō client each turn.
+// Without this Cosmo cannot offer a gem "at the moment of relevance" (it would not
+// know any exist), and cannot open a new quest with "you've solved something like
+// this before" — which the design calls its retention engine.
+type XensoContext = {
+  gems?: Array<{ text: string; context?: string; questObjective?: string | null }>
+  openQuests?: Array<{ objective: string; status: string; nextAct?: string }>
+  keeps?: Array<{ excerpt: string; title?: string }>
+}
+
+// Render the player's context as a system block. Caps are defensive: this is
+// client-supplied and lands in the prompt, so it is bounded here rather than trusted.
+function formatXensoContext(ctx: XensoContext): string | null {
+  const gems = (ctx.gems ?? []).slice(0, 60)
+  const quests = (ctx.openQuests ?? []).slice(0, 20)
+  const keeps = (ctx.keeps ?? []).slice(0, 40)
+  if (!gems.length && !quests.length && !keeps.length) return null
+
+  const clip = (s: unknown, n = 500) => String(s ?? '').slice(0, n)
+  const parts: string[] = [
+    '# This player\'s own treasury\n\nTheir memory, not a menu. Offer one thing at the moment it serves — never a list, and never all of it at once.',
+  ]
+  if (gems.length) {
+    parts.push(`## Gems (${gems.length})\n\n` + gems.map(g => {
+      const origin = g.questObjective ? ` — from "${clip(g.questObjective, 120)}"` : ''
+      const how = g.context ? ` [${clip(g.context, 24)}]` : ''
+      return `- "${clip(g.text)}"${origin}${how}`
+    }).join('\n'))
+  }
+  if (quests.length) {
+    parts.push(`## Open quests (${quests.length})\n\n` + quests.map(q =>
+      `- "${clip(q.objective, 300)}" (${clip(q.status, 24)})${q.nextAct ? ` — next act: ${clip(q.nextAct, 300)}` : ''}`
+    ).join('\n'))
+  }
+  if (keeps.length) {
+    parts.push(`## Passages they've kept (${keeps.length})\n\n` + keeps.map(k =>
+      `- "${clip(k.excerpt, 400)}"${k.title ? ` — ${clip(k.title, 120)}` : ''}`
+    ).join('\n'))
+  }
+  return parts.join('\n\n')
+}
+
 export async function POST(req: NextRequest) {
   try {
-    const { messages, apiKey, turnstileToken, current_section, doc_changed, creativeMode } = await req.json() as {
+    const {
+      messages, apiKey, turnstileToken, current_section, doc_changed,
+      creativeMode: creativeModeRaw, xensoMode, xensoContext,
+    } = await req.json() as {
       messages: Message[]
       apiKey?: string
       turnstileToken?: string
       current_section?: CurrentSection
       doc_changed?: boolean
       creativeMode?: boolean
+      xensoMode?: boolean
+      xensoContext?: XensoContext
     }
 
     if (!Array.isArray(messages) || messages.length === 0) {
       return NextResponse.json({ error: 'messages required' }, { status: 400 })
     }
+
+    // Mutually exclusive by construction. Both flags are client-supplied, and
+    // admin+creative already spends all 4 cache_control breakpoints — letting
+    // the two combine would make a 5th reachable and hard-fail every request.
+    // They are also different games; there is no session that wants both.
+    const creativeMode = xensoMode ? false : creativeModeRaw
 
     // Fire RAG fetch immediately — runs concurrently with auth checks below.
     // Resolved via Promise.race with a 4s timeout before the Anthropic call.
@@ -411,7 +474,14 @@ export async function POST(req: NextRequest) {
               .join(''))
       : ''
 
-    const ragPromise: Promise<RagResult> = lastUserText
+    // Xensō skips ambient retrieval. Top-8 similarity injection on every turn is
+    // precisely the "menu" its resource discipline forbids — one resource, at the
+    // moment of relevance, never a list — and it would drop Tao Te Ching passages
+    // into a conversation about someone's mother. Cosmo still knows the corpus's
+    // shape from the wiki index in the static prefix, and the Knowledge Retrieval
+    // block already handles the no-passages case. Deliberate retrieval returns
+    // later as a tool the module can call when a resource is actually called for.
+    const ragPromise: Promise<RagResult> = lastUserText && !xensoMode
       ? fetchRagContext(lastUserText, messages.slice(-6), undefined, doc_changed).catch((err) => {
           console.error('[rag] fetchRagContext failed:', err?.message ?? err)
           return { chunks: [], timedOut: false } satisfies RagResult
@@ -545,8 +615,8 @@ export async function POST(req: NextRequest) {
     // Admin and BYOK are exempt (admin is you; BYOK users pay their own costs).
     // ------------------------------------------------------------------
     if (!isAdmin && !apiKey) {
-      const maxMessages = subscribedUserId ? MAX_MESSAGES_SUBSCRIBER : MAX_MESSAGES_FREE
-      const maxChars = subscribedUserId ? MAX_CHARS_SUBSCRIBER : MAX_CHARS_FREE
+      const maxMessages = subscribedUserId ? MAX_MESSAGES_SUBSCRIBER : xensoMode ? MAX_MESSAGES_XENSO : MAX_MESSAGES_FREE
+      const maxChars = subscribedUserId ? MAX_CHARS_SUBSCRIBER : xensoMode ? MAX_CHARS_XENSO : MAX_CHARS_FREE
 
       if (messages.length > maxMessages) {
         return NextResponse.json({ error: 'too_many_messages' }, { status: 400 })
@@ -577,6 +647,26 @@ export async function POST(req: NextRequest) {
     // Typed as TextBlockParam[] so dynamic pushes (RAG, creative context) without
     // cache_control are valid — cache_control is optional in the SDK type.
     const systemContent: Anthropic.TextBlockParam[] = [...SYSTEM_CONTENT]
+
+    // Xensō quest-guide module. Appended AFTER the last static block, and with no
+    // cache_control of its own — both deliberate.
+    //
+    // Position: SYSTEM_CONTENT's byte sequence is left untouched, so a xenso request
+    // still reads /dialog's warm cache entry (lookup walks backward from a breakpoint)
+    // and writes only this ~3k-token tail. Inserting it mid-stack instead would change
+    // the prefix at that offset and force a full ~15k rewrite on every cold turn.
+    //
+    // No breakpoint: `[...SYSTEM_CONTENT]` is a SHALLOW copy of module-scope block
+    // objects that outlive the request. Moving or stripping a cache_control to build
+    // a xenso variant would mutate the blocks /dialog is still using and silently
+    // break its caching for the life of the serverless instance — a ~10x input-cost
+    // regression on the highest-volume surface, with no error and no failing test.
+    // Measured, the caching this forgoes is worth ~$0.15 per 20-turn session. Revisit
+    // only with cache_read/cache_creation numbers from real traffic in hand.
+    if (xensoMode && XENSO_MODULE.trim()) {
+      systemContent.push({ type: 'text' as const, text: XENSO_MODULE })
+    }
+
     if (isAdmin && SHALOM_CONTEXT.trim()) {
       systemContent.push({
         type: 'text' as const,
@@ -688,6 +778,15 @@ export async function POST(req: NextRequest) {
       })
     }
 
+    // The player's treasury goes last: it is the most volatile block in the stack,
+    // changing whenever a gem is harvested, so anything cached must sit above it.
+    if (xensoMode && xensoContext) {
+      const playerContext = formatXensoContext(xensoContext)
+      if (playerContext) {
+        systemContent.push({ type: 'text' as const, text: playerContext })
+      }
+    }
+
     // Apply conversation history caching for subscribers and admin (reduces costs
     // ~40-50% on long conversations). Free-tier requests are short-lived sessions
     // where caching has minimal benefit. Admin gets the 1h TTL — creative/admin
@@ -695,6 +794,8 @@ export async function POST(req: NextRequest) {
     // back-and-forth), well past the 5m default, so 1h captures far more reuse.
     // Breakpoint budget check: admin now uses at most 3 (system prompt, final
     // static block, creative context) + this one = 4, the hard cap — safe.
+    // Xensō adds no breakpoints of its own and forces creativeMode off, so
+    // admin+xenso spends 3. The cap holds on every path.
     const cachedMessages =
       subscribedUserId ? withHistoryCaching(messages)
       : isAdmin ? withHistoryCaching(messages, '1h')
@@ -727,6 +828,33 @@ export async function POST(req: NextRequest) {
           }
           // Track token usage after stream completes. Fire-and-forget — never blocks the response.
           stream.finalMessage().then((msg) => {
+            // Only text_delta events reach the client, so stop_reason is otherwise
+            // discarded. It matters for Xensō: a reply truncated at max_tokens cuts
+            // the trailing xenso-state block mid-JSON, and on the client that is
+            // indistinguishable from a turn that legitimately emitted no state.
+            // Logging it here is the only way that failure is ever visible.
+            if (msg.stop_reason === 'max_tokens') {
+              console.log(JSON.stringify({
+                event: 'chat_truncated',
+                ts: new Date().toISOString(),
+                xensoMode: Boolean(xensoMode),
+                outputTokens: msg.usage.output_tokens,
+              }))
+            }
+            // Cache accounting. The whole argument for appending the Xensō module
+            // after the static prefix rather than inside it is that a xenso request
+            // still READS /dialog's warm entry and only writes its own tail — but
+            // nothing surfaced the numbers to check that, or to notice the day a
+            // reordering silently turns every request into a full rewrite.
+            console.log(JSON.stringify({
+              event: 'chat_usage',
+              ts: new Date().toISOString(),
+              mode: xensoMode ? 'xenso' : creativeMode ? 'creative' : 'dialog',
+              cacheRead: msg.usage.cache_read_input_tokens ?? 0,
+              cacheWrite: msg.usage.cache_creation_input_tokens ?? 0,
+              input: msg.usage.input_tokens,
+              output: msg.usage.output_tokens,
+            }))
             if (subscribedUserId && subscriberTier) {
               incrementUsage(
                 subscribedUserId!,
