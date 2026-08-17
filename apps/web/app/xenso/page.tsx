@@ -40,6 +40,40 @@ const STEPS = [
   },
 ]
 
+// Drawn from the vows in CONCEPT.md § Not this. Each line is a commitment the
+// design actually enforces, not a marketing posture — which is why they are
+// stated as flatly as they are.
+const NOT_THIS = [
+  {
+    title: 'Not therapy.',
+    body: 'This is play, and play is a different medicine. Some things deserve a trained human being rather than a game, and when one of those shows up, Cosmo will say so plainly instead of quietly trying to handle it.',
+  },
+  {
+    title: 'Not medical, legal, or financial advice.',
+    body: 'Those need someone qualified and accountable. You will get an honest handoff rather than an improvisation dressed up as help.',
+  },
+  {
+    title: 'Not a data extraction device.',
+    body: 'What you write here is never sold, never shared with a third party, and never mined to advertise anything to you. You can take all of it with you, and you can delete all of it, for real.',
+  },
+  {
+    title: 'Not a slot machine.',
+    body: 'No points, no streaks, no badges, no notifications, no nudges — nothing engineered to pull you back. Go a month without opening this and nothing here will punish you for it.',
+  },
+  {
+    title: 'Not a leaderboard.',
+    body: 'Nothing compares you to anyone. Your gems are countable the way a library is countable, never the way a score is, and they cannot be spent, ranked, or shown off.',
+  },
+  {
+    title: 'Not a coach with a plan for you.',
+    body: 'Cosmo will not name your objective, define what success means, or write your quest. Those words stay yours — a quest built in someone else’s language will not hold three weeks later, when you are tired and it is hard.',
+  },
+  {
+    title: 'Not something you are the product of.',
+    body: 'The game is free and it stays free. There is never a paywall between a stuck person and the first question.',
+  },
+]
+
 export default function XensoFrontDoor() {
   return (
     <AppShell activePath="/xenso">
@@ -114,9 +148,7 @@ export default function XensoFrontDoor() {
             <Separator />
 
             <div className="space-y-3">
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                How it goes
-              </h2>
+              <h2 className="text-2xl font-semibold text-foreground">About Xensō</h2>
               <p className="text-lg text-foreground leading-relaxed">
                 A difficulty arrives formless, and it is the formlessness — not the difficulty —
                 that stops people. Xensō gives it edges, so there is somewhere to put your hands.
@@ -134,17 +166,22 @@ export default function XensoFrontDoor() {
 
             <Separator />
 
-            <div className="space-y-3">
-              <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
-                What it is not
-              </h2>
+            <div className="space-y-6">
+              <h2 className="text-2xl font-semibold text-foreground">What Xensō is not</h2>
+
+              <ul className="space-y-4 list-disc pl-5 marker:text-muted-foreground/50">
+                {NOT_THIS.map((item) => (
+                  <li key={item.title} className="pl-1">
+                    <span className="text-base font-semibold text-foreground">{item.title}</span>{' '}
+                    <span className="text-base text-muted-foreground leading-relaxed">
+                      {item.body}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+
               <p className="text-base text-muted-foreground leading-relaxed">
-                No points, no streaks, no badges, no notifications, and nothing anywhere designed to
-                pull you back. Nothing to buy, and nothing sold — what you write here is not a
-                product. The game is free, and it stays free.
-              </p>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Not every quest is meant to be finished, either. Letting one go is an honored ending
+                And not every quest is meant to be finished. Letting one go is an honored ending
                 here, and it can still leave you with something worth keeping.
               </p>
             </div>
@@ -162,9 +199,8 @@ export default function XensoFrontDoor() {
             </blockquote>
 
             <p className="text-xs text-muted-foreground leading-relaxed">
-              Xensō is a game, and not a substitute for therapy or for medical, legal, or financial
-              advice. If you are in crisis: in the US, call or text 988, the Suicide &amp; Crisis
-              Lifeline, any hour. Anywhere else,{' '}
+              If you are in crisis: in the US, call or text 988, the Suicide &amp; Crisis Lifeline,
+              any hour. Anywhere else,{' '}
               <a
                 href="https://findahelpline.com/"
                 target="_blank"
