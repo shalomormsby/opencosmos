@@ -203,19 +203,7 @@ export default function XensoFrontDoor() {
               <footer className="text-sm text-muted-foreground not-italic">&ndash; Shalom</footer>
             </blockquote>
 
-            <p className="text-xs text-muted-foreground leading-relaxed">
-              If you are in crisis: in the US, call or text 988, the Suicide &amp; Crisis Lifeline,
-              any hour. Anywhere else,{' '}
-              <a
-                href="https://findahelpline.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline underline-offset-4 hover:text-foreground transition-colors"
-              >
-                findahelpline.com
-              </a>{' '}
-              will point you to a vetted line where you are.
-            </p>
+            <Separator />
           </div>
         </section>
       </main>
