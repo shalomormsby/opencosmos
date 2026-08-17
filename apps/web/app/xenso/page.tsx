@@ -147,8 +147,10 @@ export default function XensoFrontDoor() {
           <div className="max-w-2xl mx-auto space-y-12">
             <Separator />
 
-            <div className="space-y-3">
-              <h2 className="text-2xl font-semibold text-foreground">About Xensō</h2>
+            <div className="space-y-5">
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+                About Xensō
+              </h2>
               <p className="text-lg text-foreground leading-relaxed">
                 A difficulty arrives formless, and it is the formlessness — not the difficulty —
                 that stops people. Xensō gives it edges, so there is somewhere to put your hands.
@@ -167,7 +169,9 @@ export default function XensoFrontDoor() {
             <Separator />
 
             <div className="space-y-6">
-              <h2 className="text-2xl font-semibold text-foreground">What Xensō is not</h2>
+              <h2 className="text-3xl sm:text-4xl font-semibold tracking-tight text-foreground">
+                What Xensō is not
+              </h2>
 
               <ul className="space-y-4 list-disc pl-5 marker:text-muted-foreground/50">
                 {NOT_THIS.map((item) => (
@@ -190,10 +194,11 @@ export default function XensoFrontDoor() {
 
             {/* The letter that closes CONCEPT.md, in Shalom's words and over his name. */}
             <blockquote className="space-y-3 border-l-2 border-border pl-6">
+              <p className="text-base text-foreground leading-relaxed italic">Dear player,</p>
               <p className="text-base text-foreground leading-relaxed italic">
-                Dear player: I may not know you, but I love you. That&rsquo;s why I created this
-                game, to express this love in action. How can I love you without knowing you?
-                Let&rsquo;s play and find out&hellip;
+                I may not know you, but I love you. That&rsquo;s why I created this game, to express
+                this love in action. How can I love you without knowing you? Let&rsquo;s play and
+                find out&hellip;
               </p>
               <footer className="text-sm text-muted-foreground not-italic">&ndash; Shalom</footer>
             </blockquote>
