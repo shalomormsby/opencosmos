@@ -5,10 +5,28 @@ import { AuthButton } from '../AuthButton'
 import { AppShell } from '../AppShell'
 import { ReadMore } from './ReadMore'
 
+const TITLE = 'Xensō — a game you play as yourself'
+const DESCRIPTION =
+  'The challenges are the real ones of your life. The prize is liberation. Free to play, no account needed.'
+
 export const metadata: Metadata = {
-  title: 'Xensō — a game you play as yourself',
-  description:
-    'The challenges are the real ones of your life. The prize is liberation. Free to play, no account needed.',
+  title: TITLE,
+  description: DESCRIPTION,
+  // The image itself comes from opengraph-image.tsx alongside this file; Next
+  // wires it into both cards. twitter needs the card type named explicitly or
+  // it renders as a thumbnail rather than the full-width preview.
+  openGraph: {
+    title: TITLE,
+    description: DESCRIPTION,
+    url: '/xenso',
+    siteName: 'OpenCosmos',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: TITLE,
+    description: DESCRIPTION,
+  },
 }
 
 // The front door. Build slice 2 of the Xensō plan: an orientation that can be
