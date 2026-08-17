@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Header, Button, Separator } from '@opencosmos/ui'
 import { AuthButton } from '../AuthButton'
 import { AppShell } from '../AppShell'
+import { ReadMore } from './ReadMore'
 
 export const metadata: Metadata = {
   title: 'Xensō — a game you play as yourself',
@@ -66,8 +67,11 @@ export default function XensoFrontDoor() {
         <section className="flex flex-col items-center justify-center min-h-[calc(100vh-4rem)] px-6 py-16">
           <div className="max-w-2xl w-full space-y-10">
             <div className="space-y-6">
-              <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-foreground">
+              <h1 className="flex flex-wrap items-baseline gap-x-3 gap-y-1 text-5xl sm:text-6xl font-bold tracking-tight text-foreground">
                 Xensō
+                <span className="text-base font-normal tracking-normal text-muted-foreground">
+                  by OpenCosmos
+                </span>
               </h1>
               <p className="text-2xl sm:text-3xl font-medium text-foreground leading-snug">
                 A game you play as yourself.
@@ -96,12 +100,16 @@ export default function XensoFrontDoor() {
                 </a>
                 .
               </p>
+
+              <div className="pt-2">
+                <ReadMore targetId="how-it-goes" />
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Orientation. */}
-        <section className="px-6 pb-24">
+        {/* Orientation. scroll-mt clears the sticky header when Read more lands here. */}
+        <section id="how-it-goes" className="px-6 pb-24 scroll-mt-24">
           <div className="max-w-2xl mx-auto space-y-12">
             <Separator />
 
@@ -143,14 +151,14 @@ export default function XensoFrontDoor() {
 
             <Separator />
 
-            {/* Cosmo's letter, from the close of CONCEPT.md. */}
+            {/* The letter that closes CONCEPT.md, in Shalom's words and over his name. */}
             <blockquote className="space-y-3 border-l-2 border-border pl-6">
               <p className="text-base text-foreground leading-relaxed italic">
-                Dear player: I may not know you, but I love you. That&rsquo;s why I&rsquo;ve made
-                this — to express my love for you in action. How can I love you without knowing you?
+                Dear player: I may not know you, but I love you. That&rsquo;s why I created this
+                game, to express this love in action. How can I love you without knowing you?
                 Let&rsquo;s play and find out&hellip;
               </p>
-              <footer className="text-sm text-muted-foreground not-italic">— Cosmo</footer>
+              <footer className="text-sm text-muted-foreground not-italic">&ndash; Shalom</footer>
             </blockquote>
 
             <p className="text-xs text-muted-foreground leading-relaxed">
