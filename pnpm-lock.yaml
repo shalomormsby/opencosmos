@@ -238,8 +238,8 @@ importers:
         specifier: 0.2.0
         version: 0.2.0(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@opencosmos/ui':
-        specifier: ^1.10.0
-        version: 1.10.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
+        specifier: ^1.10.3
+        version: 1.10.3(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)
       '@react-sigma/core':
         specifier: ^5.0.6
         version: 5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))
@@ -1552,8 +1552,11 @@ packages:
       react: ^19.2.1
       react-dom: ^19.2.1
 
-  '@opencosmos/ui@1.10.0':
-    resolution: {integrity: sha512-Ys6P/l4U3yqFp4Tm2Bi4JgUskqO8oL0cRiX49jg0VAwx8bEpAqMWNErDRFCAAoiD7v0txX+M25l80sF0vgDQJg==}
+  '@opencosmos/tokens@1.0.1':
+    resolution: {integrity: sha512-AHQ4WlmN7mkfa4R2gU3Gvp1L4z6mOiPVrsJA+BskXbjfIHFNjonDXmIq91tiXviDZp/890vgQOr+Y1HA3j2l1A==}
+
+  '@opencosmos/ui@1.10.3':
+    resolution: {integrity: sha512-GT5phk5+kovnqo2KLOpVnDjIx8UZSYdI1ZodaXVtaBnPQGHGup5RT1ucn5+0inR3erOAVSyxdcCN3J0Is6Z/Pw==}
     hasBin: true
     peerDependencies:
       '@dnd-kit/core': ^6.3.1
@@ -1571,25 +1574,11 @@ packages:
       sigma: ^3.0.2
       zod: ^3.24.1
     peerDependenciesMeta:
-      '@dnd-kit/core':
-        optional: true
-      '@dnd-kit/sortable':
-        optional: true
-      '@dnd-kit/utilities':
-        optional: true
       '@hookform/resolvers':
         optional: true
       '@react-sigma/core':
         optional: true
-      '@tanstack/react-table':
-        optional: true
-      date-fns:
-        optional: true
       graphology:
-        optional: true
-      react-day-picker:
-        optional: true
-      react-hook-form:
         optional: true
       sigma:
         optional: true
@@ -6689,14 +6678,12 @@ snapshots:
     dependencies:
       '@jridgewell/trace-mapping': 0.3.9
 
-  '@date-fns/tz@1.5.0':
-    optional: true
+  '@date-fns/tz@1.5.0': {}
 
   '@dnd-kit/accessibility@3.1.1(react@19.2.3)':
     dependencies:
       react: 19.2.3
       tslib: 2.8.1
-    optional: true
 
   '@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -6705,7 +6692,6 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
       tslib: 2.8.1
-    optional: true
 
   '@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)':
     dependencies:
@@ -6713,13 +6699,11 @@ snapshots:
       '@dnd-kit/utilities': 3.2.2(react@19.2.3)
       react: 19.2.3
       tslib: 2.8.1
-    optional: true
 
   '@dnd-kit/utilities@3.2.2(react@19.2.3)':
     dependencies:
       react: 19.2.3
       tslib: 2.8.1
-    optional: true
 
   '@edge-runtime/format@2.2.1': {}
 
@@ -7605,8 +7589,14 @@ snapshots:
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
 
-  '@opencosmos/ui@1.10.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)':
+  '@opencosmos/tokens@1.0.1': {}
+
+  '@opencosmos/ui@1.10.3(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@dnd-kit/sortable@10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3))(@dnd-kit/utilities@3.2.2(react@19.2.3))(@hookform/resolvers@3.10.0(react-hook-form@7.70.0(react@19.2.3)))(@react-sigma/core@5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8)))(@tanstack/react-table@8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(date-fns@4.1.0)(framer-motion@12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(graphology@0.26.0(graphology-types@0.24.8))(immer@11.1.3)(react-day-picker@9.13.0(react@19.2.3))(react-dom@19.2.3(react@19.2.3))(react-hook-form@7.70.0(react@19.2.3))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))(use-sync-external-store@1.6.0(react@19.2.3))(zod@3.25.76)':
     dependencies:
+      '@dnd-kit/core': 6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
+      '@dnd-kit/utilities': 3.2.2(react@19.2.3)
+      '@opencosmos/tokens': 1.0.1
       '@radix-ui/react-accordion': 1.2.14(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-alert-dialog': 1.1.17(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-aspect-ratio': 1.1.10(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
@@ -7633,31 +7623,28 @@ snapshots:
       '@radix-ui/react-toggle': 1.1.12(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-toggle-group': 1.1.13(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       '@radix-ui/react-tooltip': 1.2.10(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      '@tanstack/react-table': 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       class-variance-authority: 0.7.1
       clsx: 2.1.1
       cmdk: 1.1.1(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
+      date-fns: 4.1.0
       embla-carousel-react: 8.6.0(react@19.2.3)
       framer-motion: 12.23.26(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       input-otp: 1.4.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       lucide-react: 0.562.0(react@19.2.3)
       react: 19.2.3
+      react-day-picker: 9.13.0(react@19.2.3)
       react-dropzone: 15.0.0(react@19.2.3)
+      react-hook-form: 7.70.0(react@19.2.3)
       react-resizable-panels: 4.11.2(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       sonner: 2.0.7(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       tailwind-merge: 3.6.0
       vaul: 1.1.2(@types/react-dom@19.2.3(@types/react@19.2.13))(@types/react@19.2.13)(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
       zustand: 5.0.9(@types/react@19.2.13)(immer@11.1.3)(react@19.2.3)(use-sync-external-store@1.6.0(react@19.2.3))
     optionalDependencies:
-      '@dnd-kit/core': 6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      '@dnd-kit/sortable': 10.0.0(@dnd-kit/core@6.3.1(react-dom@19.2.3(react@19.2.3))(react@19.2.3))(react@19.2.3)
-      '@dnd-kit/utilities': 3.2.2(react@19.2.3)
       '@hookform/resolvers': 3.10.0(react-hook-form@7.70.0(react@19.2.3))
       '@react-sigma/core': 5.0.6(graphology@0.26.0(graphology-types@0.24.8))(react@19.2.3)(sigma@3.0.2(graphology-types@0.24.8))
-      '@tanstack/react-table': 8.21.3(react-dom@19.2.3(react@19.2.3))(react@19.2.3)
-      date-fns: 4.1.0
       graphology: 0.26.0(graphology-types@0.24.8)
-      react-day-picker: 9.13.0(react@19.2.3)
-      react-hook-form: 7.70.0(react@19.2.3)
       sigma: 3.0.2(graphology-types@0.24.8)
       zod: 3.25.76
     transitivePeerDependencies:
@@ -8609,10 +8596,8 @@ snapshots:
       '@tanstack/table-core': 8.21.3
       react: 19.2.3
       react-dom: 19.2.3(react@19.2.3)
-    optional: true
 
-  '@tanstack/table-core@8.21.3':
-    optional: true
+  '@tanstack/table-core@8.21.3': {}
 
   '@tootallnate/once@2.0.0': {}
 
@@ -9761,11 +9746,9 @@ snapshots:
       es-errors: 1.3.0
       is-data-view: 1.0.2
 
-  date-fns-jalali@4.1.0-0:
-    optional: true
+  date-fns-jalali@4.1.0-0: {}
 
-  date-fns@4.1.0:
-    optional: true
+  date-fns@4.1.0: {}
 
   debug@3.2.7:
     dependencies:
@@ -12443,7 +12426,6 @@ snapshots:
       date-fns: 4.1.0
       date-fns-jalali: 4.1.0-0
       react: 19.2.3
-    optional: true
 
   react-dom@19.2.3(react@19.2.3):
     dependencies:
@@ -12460,7 +12442,6 @@ snapshots:
   react-hook-form@7.70.0(react@19.2.3):
     dependencies:
       react: 19.2.3
-    optional: true
 
   react-is@16.13.1: {}
 
