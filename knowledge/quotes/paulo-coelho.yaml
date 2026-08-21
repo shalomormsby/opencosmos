@@ -1,0 +1,38 @@
+author: Paulo Coelho
+author_normalized_key: paulo-coelho
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1132
+    slug: null
+    text: "Before a dream is realized, the Soul of the World tests everything that was learned along the way. It does this not because it is evil, but so that we can, in addition to realizing our dreams, master the lessons we've learned as we've moved towards that dream. That's the point at which most people give up. Every search begins with beginner's luck. And every search ends with the victor's being severely tested. The darkest hour of the night come just before the dawn."
+    category: insight
+    keywords: [darkness, dawn, test dream, world, soul, perseverance, search, victor, night]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Paulo_Coelho"
+      earliest_print_source: "O Alquimista (The Alchemist), Paulo Coelho, 1988"
+      notes: "This is from 'The Alchemist'. The vocabulary is internal to that novel — 'the Soul of the World' is the book's own term, and the beginner's-luck / severe-testing motif is stated by the alchemist to Santiago near the end of the journey. The final sentence ('the darkest hour of the night comes just before the dawn') also appears in the novel. Quoted here with a minor grammatical slip ('come' for 'comes') relative to the standard English translation."
+      reviewed_by_human: false
+  - id: q_1133
+    slug: null
+    text: It’s the possibility of having a dream come true that makes life interesting.
+    category: creativity
+    keywords: [dream, possibility, life]
+    context: "Author,"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Paulo_Coelho"
+      earliest_print_source: "O Alquimista (The Alchemist), Paulo Coelho, 1988"
+      notes: "A well-known line from 'The Alchemist', spoken by Melchizedek, the old king of Salem, early in the novel. Attribution is uncontested and the line is traceable to the text itself rather than only to quote collections."
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Samuel Johnson
+author_normalized_key: samuel-johnson
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1244
+    slug: null
+    text: Pleasure is very seldom found where it is sought; our brightest blazes of gladness are commonly kindled by unexpected sparks.
+    category: insight
+    keywords: [pleasure, light]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: null
+      earliest_print_source: "The Idler, No. 58, Samuel Johnson, 1759"
+      notes: "Genuine Johnson, from The Idler essay on the disappointment of anticipated pleasures. The original punctuates it as two sentences ('Pleasure is very seldom found where it is sought. Our brightest blazes of gladness are commonly kindled by unexpected sparks.'); the corpus joins them with a semicolon. I am confident of the essay and confident of Johnson; the 1759 date follows the Idler's run in the Universal Chronicle."
+      reviewed_by_human: false

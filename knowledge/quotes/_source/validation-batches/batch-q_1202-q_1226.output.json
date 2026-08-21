@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1202",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Richard Schechner is a real and well-documented performance studies theorist (Environmental Theater, Performance Theory, Between Theater and Anthropology), but I cannot place this specific sentence in any of his writings. The register is more aphoristic than Schechner's usual analytic prose, which makes me mildly suspicious that it entered quote collections secondhand. No source located; not fabricating one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1203",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent in voice and content with Robert A. Johnson's Jungian writing on love, most plausibly 'We: Understanding the Psychology of Romantic Love' (1983), which argues precisely this distinction between love as a doing and love as a state of being. I have a genuine but not firm recollection of the passage from that book, and cannot confirm chapter or page, so I am leaving the print source null rather than asserting a citation I cannot stand behind. Attribution to Johnson itself is plausible and consistently reported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1204",
+    "status": "attributed",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Robert G. Allen, the real-estate and 'Multiple Streams of Income' author, across business quote collections. The sentiment matches his investing rhetoric. However, every occurrence I know of is a quote-collection citation with no book or page, so this is secondary evidence only. Note the ambiguity of the bare name 'Robert Allen' — the corpus should probably disambiguate to Robert G. Allen.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1205",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this line in Robert G. Allen's published work. It circulates in motivational-quote lists with the bare name 'Robert Allen' attached. Generic enough in phrasing that it could belong to any number of sales/persistence writers. No traceable source; honest answer is that I do not know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1206",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a composite passage, not a single quote, and that matters. The inner quotation is credited in the text itself to Herb True (the Notre Dame marketing professor), and the 'more failures than failures do' line is indeed the one commonly attributed to him. The closing 'You don't drown by falling in the water. You drown by staying there' is widely attributed elsewhere to Edwin Louis Cole. The framing prose is plausibly Robert G. Allen quoting both, likely in one of his books, but I cannot confirm which. Recommend the corpus either drop this entry or split it, since attributing the whole block to Allen misrepresents two embedded attributions.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1207",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely attributed to Robert Browning in nineteenth- and twentieth-century quote anthologies, but I cannot locate it in any specific poem or letter of his, and Browning's actual verse rarely reduces to a clean epigram like this. The same line also circulates attributed to Samuel Johnson in some collections, which is a classic signature of an unsourced anthology quote drifting between famous names. Attribution unresolved.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1208",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Robert_F._Kennedy",
+    "earliest_print_source": null,
+    "notes": "I recall this line, usually punctuated as three sentences ('Progress is a nice word. But change is its motivator. And change has its enemies.'), from Robert F. Kennedy's Day of Affirmation Address at the University of Cape Town, 6 June 1966 — the same speech as the 'ripple of hope' passage. The attribution to RFK is consistent and I consider it sound. I am withholding the speech as a formal print source because I cannot confirm the exact verbatim placement from memory, which is the difference between 'attributed' and 'verified' here.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1209",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Robert_Frost",
+    "earliest_print_source": "A Witness Tree, Robert Frost, 1942",
+    "notes": "This is not merely a line by Frost — it is the title of his poem 'Happiness Makes Up in Height for What It Lacks in Length,' collected in A Witness Tree (1942), the volume that won him his fourth Pulitzer. Attribution is secure and the source is a published primary text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1210",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Robert_Frost",
+    "earliest_print_source": "North of Boston, Robert Frost, 1914 (poem: 'A Servant to Servants')",
+    "notes": "From the dramatic monologue 'A Servant to Servants' in North of Boston (1914), where the speaker reports her husband's saying: 'He says the best way out is always through.' Worth noting for corpus honesty that in context the line is a character quoting another character, not Frost speaking in his own voice — but the wording and the source are secure.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1211",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The plainspoken, self-deprecating voice is very much Robert Fulghum's, and the content fits his essay collections (All I Really Need to Know I Learned in Kindergarten, From Beginning to End, Words I Wish I Wrote). But I cannot place the passage in a specific book, and it reads like it may come from an interview rather than a book. Plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1212",
+    "status": "attributed",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Squarely in the idiom of Robert H. Schuller's 'possibility thinking' and consistently attributed to him in inspirational collections; the sentence is essentially a compressed statement of his central theme (cf. 'Tough Times Never Last, But Tough People Do!'). No specific book, sermon, or Hour of Power broadcast identified, so this rests on secondary evidence only.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1213",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Robert_Henri",
+    "earliest_print_source": "The Art Spirit, Robert Henri (compiled by Margery Ryerson), 1923",
+    "notes": "A well-established line from The Art Spirit (1923), the collection of Henri's teaching notes and letters assembled by his student Margery Ryerson. Usually quoted as 'The object isn't to make art, it's to be in that wonderful state which makes art inevitable.' The submitted text substitutes 'the' for 'that,' a trivial variant. Attribution and source are solid; I hold at 0.85 rather than higher only because I cannot cite the page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1214",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Robert L. Peters is a real Canadian graphic designer and past president of Icograda, and this three-clause line is his best-known statement — it is quoted consistently under his name throughout design literature and conference material, and he has spoken about it publicly as his own. I have no single originating publication or talk to cite, so it stays at 'attributed' rather than 'verified,' but the attribution itself is unusually stable for a design aphorism.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1215",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely attributed to Robert Louis Stevenson (usually as 'Saints are sinners who kept on going'), but I cannot locate it in any of his essays, novels, letters, or prayers. Its circulation pattern — heavy in devotional and recovery literature, absent from Stevenson scholarship — is characteristic of an unsourced attribution attached to a famous literary name. I do not know a true origin, so I am not proposing a reattribution, but the Stevenson claim should be treated as doubtful.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1216",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance",
+    "earliest_print_source": "Zen and the Art of Motorcycle Maintenance: An Inquiry into Values, Robert M. Pirsig, 1974",
+    "notes": "A genuine and well-known line from Zen and the Art of Motorcycle Maintenance (1974), from the mountain-climbing passages in which the narrator reflects on Chris and on the futility of treating the summit as the point. Attribution and source both secure.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1217",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The 'grain of sand in your shoe' image is attributed to the Yukon poet Robert W. Service in many quote collections, but I cannot find it in his verse or his memoirs, and the surrounding sentence ('Be master of your petty annoyances...') reads like self-help prose rather than Service. A near-identical formulation is widely credited to Muhammad Ali ('It isn't the mountains ahead to climb that wear you out; it's the pebble in your shoe'), which suggests a floating aphorism rather than a fixed authorship. Origin genuinely unclear; not proposing Ali either, since his version is also unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1218",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of Roberta Sage Hamilton as a writer and can find no work of hers in my training. The passage appears to live entirely inside inspirational quote collections and greeting-card style compilations. The name may be real but obscure, or may itself be a corruption. No verification possible; this is an honest 'I do not know.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1219",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Histoire amoureuse des Gaules, Roger de Rabutin, Comte de Bussy, 1665",
+    "notes": "A genuine and long-established maxim of Bussy-Rabutin — 'L'absence est à l'amour ce qu'est au feu le vent: il éteint le petit, il allume le grand' — standardly cited to Histoire amoureuse des Gaules (1665). One housekeeping note for the corpus: the author name should be 'Roger de Bussy-Rabutin' or, more properly, 'Roger de Rabutin, Comte de Bussy'; the submitted 'Roger DeBussy-Rabutin' garbles the particle and should be corrected.",
+    "suggested_reattribution": "Roger de Rabutin, Comte de Bussy (Bussy-Rabutin)"
+  },
+  {
+    "id": "q_1220",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Roger Williams' is ambiguous and none of the candidates resolve it. The seventeenth-century founder of Rhode Island would not have written in this idiom of self-actualization; the biochemist Roger J. Williams and the pianist Roger Williams are both possible but I have no evidence for either. The vocabulary ('developing your potential') places the line in twentieth-century human-potential writing. Untraceable as given.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1221",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ron Rathbun is a real author — 'The Way Is Within: A Spiritual Journey' (1995) and related meditation writing — and this line is attributed to him with reasonable consistency in quote collections. I cannot confirm it against the book itself, and the sentiment is generic enough to have multiple independent origins. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1222",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same author and same situation as the preceding entry: consistently attributed to Ron Rathbun in quote compilations, consistent with the plain instructional voice of 'The Way Is Within,' but with no source I can confirm. Weak evidence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1223",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Rosemary Fillmore Rhea is a real figure — granddaughter of Unity's founders Charles and Myrtle Fillmore, and a Unity broadcaster and author — and the New Thought vocabulary of 'collective consciousness' fits Unity writing closely. But I cannot place this sentence in any of her books or broadcasts. Attribution plausible on stylistic grounds only.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1224",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Rousseau in quote collections, but I cannot locate it in the Discourses, Émile, the Social Contract, or the Reveries. Two warning signs: the English is awkward in the way that anthology-chain translations tend to be (the missing comma before 'is in us' is present in most circulating copies, indicating they all descend from one source), and the bare author name 'Rousseau' with no first name is typical of unsourced compilation entries. The sentiment is broadly Rousseauian, which is exactly what makes a misattribution easy. I do not know the true origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1225",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "A House with Four Rooms, Rumer Godden, 1989",
+    "notes": "This passage is securely associated with the novelist Rumer Godden, who grew up in India; she used the four-rooms image as the epigraph and title source of 'A House with Four Rooms' (1989), the second volume of her autobiography. Note that Godden is relaying a belief she attributes to an Indian source rather than claiming the thought as her own, so the corpus should present her as the one who recorded it. Attribution to Godden is strong; I hold just at the promotion threshold because I cannot confirm the exact wording against the printed epigraph.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1226",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Rumi is one of the strongest misattribution magnets in circulation, and the English Rumi corpus is dominated by Coleman Barks's loose renderings, which are not translations and often have no close counterpart in the Persian. I cannot match this line to any passage of the Masnavi or the Divan-e Shams that I know. The bread-and-hunger image is genuinely Rumi-adjacent in theme, which is not evidence. Treat as unverified pending a check against a scholarly translation (Nicholson or Arberry) with a book-and-line reference.",
+    "suggested_reattribution": null
+  }
+]

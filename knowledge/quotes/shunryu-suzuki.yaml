@@ -1,0 +1,54 @@
+author: Shunryu Suzuki
+author_normalized_key: shunryu-suzuki
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_1273
+    slug: null
+    text: "In the beginner's mind there are many possibilities, but in the expert's mind there are few."
+    category: spirit
+    keywords: [zen, beginner, expert, possibility, mind, learning]
+    context: "Buddhist, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Shunryu_Suzuki"
+      earliest_print_source: "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970 (Prologue)"
+      notes: "The single most famous line in the book, from the Prologue titled 'Beginner's Mind.' One wording note: the original reads 'but in the expert's there are few' — the corpus text adds a second 'mind' ('in the expert's mind there are few'). It is a common and harmless variant, but if the corpus aims at exact quotation the shorter form is the published one."
+      reviewed_by_human: false
+  - id: q_1274
+    slug: null
+    text: "Zen is not some kind of excitement, but merely concentration on our usual everyday routine."
+    category: spirit
+    keywords: [zen, concentration, ordinary, routine]
+    context: "Buddhist, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Shunryu_Suzuki"
+      earliest_print_source: "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970"
+      notes: "Genuine Suzuki from Zen Mind, Beginner's Mind; I recall it from the 'Right Practice / Right Attitude' material but cannot pin the exact chapter. The published wording is 'Zen is not some kind of excitement, but concentration on our usual everyday routine' — the corpus text inserts 'merely' before 'concentration.' Minor variant worth normalizing."
+      reviewed_by_human: false
+  - id: q_1275
+    slug: null
+    text: The world is its own magic.
+    category: spirit
+    keywords: [world, magic]
+    context: "Buddhist, Zen"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Shunryu_Suzuki"
+      earliest_print_source: "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970"
+      notes: "I recall this as the closing sentence of Zen Mind, Beginner's Mind, in the final section on Zen mind, and the wording is short and exact enough that it is unlikely to be a paraphrase. Confidence is held at 0.80 rather than higher because I am relying on recall of placement within the book rather than a checked page."
+      reviewed_by_human: false

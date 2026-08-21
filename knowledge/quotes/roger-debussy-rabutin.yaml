@@ -1,0 +1,22 @@
+author: Roger DeBussy-Rabutin
+author_normalized_key: roger-debussy-rabutin
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1219
+    slug: null
+    text: "Absence is to love what wind is to a fire; it puts out the little, it kindles the great."
+    category: relationships
+    keywords: [love, wind, fire, great, absence]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Histoire amoureuse des Gaules, Roger de Rabutin, Comte de Bussy, 1665"
+      notes: "A genuine and long-established maxim of Bussy-Rabutin — 'L'absence est à l'amour ce qu'est au feu le vent: il éteint le petit, il allume le grand' — standardly cited to Histoire amoureuse des Gaules (1665). One housekeeping note for the corpus: the author name should be 'Roger de Bussy-Rabutin' or, more properly, 'Roger de Rabutin, Comte de Bussy'; the submitted 'Roger DeBussy-Rabutin' garbles the particle and should be corrected. | Suggested reattribution: Roger de Rabutin, Comte de Bussy (Bussy-Rabutin)"
+      reviewed_by_human: false

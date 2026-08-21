@@ -1,0 +1,22 @@
+author: Sir Ken Robinson
+author_normalized_key: sir-ken-robinson
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1282
+    slug: null
+    text: "If you’re not prepared to be wrong, you’ll never come up with anything original."
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "\"Do Schools Kill Creativity?\", TED talk, Ken Robinson, February 2006"
+      notes: "A well-known line from Robinson's February 2006 TED talk 'Do Schools Kill Creativity?', in the passage arguing that children will take a chance and are not frightened of being wrong. The same argument appears in his book 'Out of Our Minds: Learning to Be Creative'. Wording in the talk is 'If you're not prepared to be wrong, you'll never come up with anything original' — matches the corpus text."
+      reviewed_by_human: false

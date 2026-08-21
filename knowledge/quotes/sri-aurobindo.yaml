@@ -1,0 +1,22 @@
+author: Sri Aurobindo
+author_normalized_key: sri-aurobindo
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1290
+    slug: null
+    text: "Money is the visible sign of a universal force, and this force in its manifestation on earth works on the vital and physical planes and is indispensable to the fullness of the outer life. In its origin and its true action it belongs to the Divine."
+    category: business
+    keywords: [money, force, universal, physical, outer, action, divine]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Sri_Aurobindo"
+      earliest_print_source: "The Mother, Sri Aurobindo, 1928"
+      notes: "This is the opening of the well-known passage on money in Sri Aurobindo's short book 'The Mother' (1928), in the section treating money as one of the powers to be conquered and returned to the Divine. The wording matches the standard Sri Aurobindo Ashram edition as I know it. Confident in book and passage; slightly short of 0.9 only because I cannot confirm the section numbering."
+      reviewed_by_human: false

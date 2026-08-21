@@ -1,0 +1,70 @@
+author: "Seng T'san, Third Zen Patriarch"
+author_normalized_key: seng-tsan-third-zen-patriarch
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_1259
+    slug: null
+    text: "When the mind exists undisturbed in the Way, nothing in the world can offend, and when a thing can no longer offend, it ceases to exist in the old way... If you wish to move in the One Way do not dislike even the world of senses and ideas. Indeed, to accept them fully is identical with true Enlightenment."
+    category: spirit
+    keywords: [enlightenment, "true", self, mind, world, offend, existence, dislike, senses, ideas, thoughts, acceptance, zen, buddhism]
+    context: "Buddhism, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation"
+      notes: "Both halves are from the Hsin Hsin Ming, and the phrasing matches the Richard B. Clarke translation, which is the version that dominates English circulation. The traditional ascription to Sengcan, the Third Chan/Zen Patriarch, is standard but scholarly consensus doubts he actually wrote it — the text is generally dated after his lifetime. So: the document is real and the quote is genuinely in it; the named author is traditional rather than established. The two sentences are also non-adjacent in the poem and have been stitched with an ellipsis."
+      reviewed_by_human: false
+  - id: q_1260
+    slug: null
+    text: "To set up what you like against what you don't like - this is the disease of the mind."
+    category: spirit
+    keywords: [zen, disease, mind, preferences]
+    context: "Buddhism, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation"
+      notes: "From the opening passage of the Hsin Hsin Ming, following 'The Great Way is not difficult for those who have no preferences' and 'If you wish to see the truth then hold no opinions for or against anything.' The line renders the Chinese 違順相爭 是為心病. Same caveat as q_1259: authorship by Sengcan is the traditional ascription, not a scholarly one."
+      reviewed_by_human: false
+  - id: q_1261
+    slug: null
+    text: "No yesterday, no tomorrow, and no today."
+    category: spirit
+    keywords: [zen, time, now, past, future]
+    context: "Buddhism, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation"
+      notes: "The closing lines of the Hsin Hsin Ming in Clarke's translation run 'Words! The Way is beyond language, for in it there is no yesterday, no tomorrow, no today.' The quote is that ending stripped of its frame, which makes it read as a standalone aphorism rather than the conclusion of an argument about the limits of language. Source is solid; the isolation changes the sense somewhat. Traditional-ascription caveat applies as in q_1259."
+      reviewed_by_human: false
+  - id: q_1262
+    slug: null
+    text: "Don't seek reality, just put an end to opinions."
+    category: spirit
+    keywords: [zen, opinion, reality, end]
+    context: "Buddhism, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century"
+      notes: "A well-known line of the Hsin Hsin Ming. Clarke renders it 'Do not search for the truth; only cease to cherish opinions'; the 'Don't seek reality, just put an end to opinions' wording comes from a different English translation of the same passage, which I cannot pin to a specific translator from memory. The underlying text and the ascription are the same as for q_1259 through q_1261."
+      reviewed_by_human: false

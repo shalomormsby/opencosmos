@@ -1,0 +1,22 @@
+author: "Russell Schweickart, Astronaut"
+author_normalized_key: russell-schweickart-astronaut
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1239
+    slug: null
+    text: "You realize that on that small spot, that little blue and white thing, is everything that means anything to you - all of history and music and poetry and art and death and birth and love, tears, joy, games, all of it on that little spot out there... You recognize that you are a piece of this total life... And when you come back there is a difference in that world now. There is a difference in that relationship between you and that planet and you and all those other forms of life on that planet, because you've had that kind of experience."
+    category: relationships
+    keywords: [earth, planet, history, music, poetry, art, death, birth, love, tears, joy, recognize, life, world, relationship, experience, mystical, oneness]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "\"No Frames, No Boundaries,\" Russell Schweickart, address to the Lindisfarne Association, July 1974"
+      notes: "This is the well-documented passage from Apollo 9 astronaut Rusty Schweickart's 1974 Lindisfarne talk 'No Frames, No Boundaries,' delivered in the second person as he recounts his EVA and the view of Earth. It has been reprinted many times, including in Lindisfarne conference collections and in Kevin Kelley's photo-and-text anthology The Home Planet (1988). I am confident of the speaker and the talk; I am less certain of which reprint carries this exact excerpt, so I have cited the original address rather than a page. Note the corpus author field carries the redundant title suffix 'Astronaut'."
+      reviewed_by_human: false

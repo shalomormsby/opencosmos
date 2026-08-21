@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1101",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": null,
+    "notes": "Circulates in 20th-century quote compilations under Wilde's name, but I cannot place it in any Wilde play, essay, novel, or letter I know. The epigrammatic balance is Wilde-like, which is exactly what makes aphorisms stick to him. No source; treating as unverified rather than assuming the collections are right.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1102",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": null,
+    "notes": "Very widely attributed to Wilde and one of the most-reprinted 'Wilde' lines, but to my knowledge it sits in the unsourced/attributed section of the Wilde record rather than in any of his published works. Consistent attribution, zero primary evidence. (Input text has a typo: 'you enemies' should read 'your enemies'.)",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1103",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": "The Picture of Dorian Gray, Oscar Wilde, 1890/1891",
+    "notes": "Genuine Wilde, spoken by Lord Henry Wotton in Chapter 2. The canonical wording runs '...nothing can cure the soul but the senses, just as nothing can cure the senses but the soul.' The record here reverses the clauses and substitutes 'there is nothing that will cure' — same sentence, loosely requoted. Recommend restoring Wilde's wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1104",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": null,
+    "notes": "A well-known false Wilde. It appears nowhere in his works and the Wilde attribution is a late-20th-century development; earlier circulation of the sentiment is anonymous aphorism/greeting-card material. Classic misattribution-magnet behaviour. No credible author is identifiable, so apocryphal rather than likely_misattributed. (Input also misspells 'everone'.)",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1105",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": "The Picture of Dorian Gray, Oscar Wilde, 1890/1891; Lady Windermere's Fan, Oscar Wilde, 1892",
+    "notes": "Both halves are authentically Wilde but they are two separate quotations welded together. 'The only way to get rid of a temptation is to yield to it' is Lord Henry in Dorian Gray ch. 2; 'I can resist everything except temptation' is Lord Darlington in Lady Windermere's Fan, Act I. The record also corrupts the second line to 'buy temptation'. Recommend splitting into two records and fixing the typo.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1106",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Osho",
+    "earliest_print_source": null,
+    "notes": "Diction, cadence, and subject are strongly consistent with Osho's transcribed discourses, and the line circulates under his name. But his corpus is thousands of transcribed talks compiled into hundreds of volumes, and I cannot name the specific discourse or book. Plausible author, unlocatable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1107",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Osho",
+    "earliest_print_source": null,
+    "notes": "The 'masters only show the way, nobody can walk for you' theme is a recurring Osho motif and the phrasing reads as a genuine discourse transcript. I cannot identify which talk or published volume it comes from. Attribution plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1108",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Osho",
+    "earliest_print_source": null,
+    "notes": "Widely circulated as Osho and consistent with his teaching on uniqueness, acceptance, and love. I have a vague sense it appears in one of the compiled volumes on love or courage, but I cannot confirm which, and I will not guess a title. Unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1109",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Long associated with P. T. Barnum and often described as his motto; it recurs in circus histories and Barnum memorial contexts. I cannot place it in his autobiography or his published writings, and I do not know the earliest printing. Consistent attribution to a non-magnet figure is mild positive evidence, but not enough for 'attributed'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1110",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is dialogue written for the fictionalised Barnum in the 2017 film The Greatest Showman, not a saying of the historical showman. The phrasing is modern-motivational and unlike 19th-century Barnum's prose. A large wave of pseudo-Barnum quotes entered circulation after that film. Reattribution is to the film's screenwriters; I am confident about the film origin but will not name individual credits from memory.",
+    "suggested_reattribution": "The Greatest Showman (2017 film) — dialogue written for the P. T. Barnum character"
+  },
+  {
+    "id": "q_1111",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "One of the most-reprinted 'Picasso' lines, consistently attributed to him across mid-20th-century onward compilations, but I know of no primary source — no interview, letter, or recorded conversation I can point to. Picasso is a moderate misattribution magnet for aphorisms about art. Attribution plausible, evidence weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1112",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "Widely quoted as Picasso in compilations and business/creativity literature; I cannot locate it in Brassaï's or Gilot's recorded conversations or any interview I know. No primary source, and the sentiment is generic enough to have drifted onto him.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1113",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "The lump-of-sugar image is distinctive and specific rather than generic-inspirational, which argues for a real recorded remark, and my sense is that it comes from one of the memoir-conversation books about Picasso (Gilot or Brassaï). I cannot confirm which, so I am not citing one. Attribution likely correct, source unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1114",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "Circulates under Picasso's name in creativity anthologies. Possibly a condensation of remarks recorded in the conversation memoirs, but I cannot place it and the flat phrasing reads like a compilation paraphrase rather than a transcribed utterance. Unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1115",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "No evidence Picasso ever said this. The attribution was massively amplified by Steve Jobs quoting it in the 1990s/2000s. The documented antecedents belong to the literary-criticism tradition: W. H. Davenport Adams (1892) on poets who 'imitate and improve' versus those who 'steal and spoil', and T. S. Eliot in The Sacred Wood (1920), 'Immature poets imitate; mature poets steal.' Those are ancestors, not the same sentence, so I am not naming a single true author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1116",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Pablo_Picasso",
+    "earliest_print_source": null,
+    "notes": "There is a real documented root: Herbert Read reported Picasso's remark on seeing an exhibition of children's drawings, roughly 'When I was as old as these children I could draw like Raphael; it took me many years to learn how to draw like these children' (reported in the British press in the mid-1950s). The version here — 'four years to paint like Raphael, but a lifetime to paint like a child' — is a later mutation with no documented basis. Kernel genuine, this wording not. (Input also has a typo: 'I took me'.)",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1117",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of Pamela Harper as a quoted author and cannot place this passage. The register — mantra, divine opportunities, prosperity — suggests a contributor piece in a prosperity or affirmation anthology. Nothing traceable in my training knowledge; honest answer is that I do not know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1118",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Paulo_Coelho",
+    "earliest_print_source": "The Alchemist (O Alquimista), Paulo Coelho, 1988",
+    "notes": "A genuine line from The Alchemist, part of the book's central 'where your heart is, there your treasure is' motif spoken to Santiago (itself echoing Matthew 6:21). English wording varies slightly by translation/edition. Note the author name is misspelled in the record: 'Paolo Coelho' should be 'Paulo Coelho'.",
+    "suggested_reattribution": "Paulo Coelho (spelling correction only)"
+  },
+  {
+    "id": "q_1119",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Papaji's (H. W. L. Poonja's) satsang idiom, and his recorded corpus is largely transcribed dialogues compiled by students, which makes any single aphorism hard to source. I cannot place this line in any specific compilation. Low confidence, no source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1120",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Paramahansa_Yogananda",
+    "earliest_print_source": null,
+    "notes": "Thoroughly characteristic of Yogananda's voice and doctrine ('soul-reflections of the one God', 'One Spirit'), and likely drawn from the Self-Realization Fellowship collections of his talks (Man's Eternal Quest, The Divine Romance, or similar). I cannot confirm which volume, so I am not citing one. Attribution plausible, source unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1121",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Patanjali",
+    "earliest_print_source": null,
+    "notes": "This passage does not appear in the Yoga Sutras in any translation I know. The Sutras are terse aphorisms in Sanskrit; this is expansive 20th-century motivational English ('dormant forces, faculties and talents'). It spread widely through Western business-creativity and New Thought literature in the 1980s-90s while carrying a 'Patanjali' label. Not Patanjali; I cannot identify the actual modern author, so no reattribution is offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1122",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Patricia Monighan Nourot was a scholar of children's play and a co-author in that literature, so the work/play distinction here is topically apt for her. But I cannot place the sentence in any of her publications, and lines like this in play scholarship are often quoted from a child rather than authored by the researcher. Weak evidence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1123",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Paul Boese across decades of quote collections, with circulation traceable to 1960s-era newspaper quote columns/fillers. The attribution's stability to an otherwise obscure name is itself decent evidence — misattributions drift toward famous people, not away from them. I do not know the exact original printing, so I am leaving the citation null rather than guessing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1124",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Paul Ferrini is a real author in the Course-in-Miracles-adjacent tradition (Love Without Conditions and related titles), and this passage matches his register closely. I cannot identify the specific book or article. Plausible author, no locatable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1125",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Strongly consistent with Paul Hawken's thinking on inquiry-driven enterprise, and my impression is that it comes from Growing a Business (1987), whose argument leans on questions over expertise. I am not confident enough to enter that as a citation, so the source field stays null. Attribution likely correct, source unconfirmed.",
+    "suggested_reattribution": null
+  }
+]

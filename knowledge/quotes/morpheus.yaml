@@ -1,0 +1,22 @@
+author: Morpheus
+author_normalized_key: morpheus
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1046
+    slug: null
+    text: "The Matrix is everywhere. It is all around us, even now in this very room."
+    category: spirit
+    keywords: [matrix, illusion, truth]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/The_Matrix"
+      earliest_print_source: "The Matrix (screenplay/film), written and directed by Lana and Lilly Wachowski, Warner Bros., 1999"
+      notes: "A genuine and famous line of Morpheus's dialogue from The Matrix (1999), spoken to Neo in the construct/chair scene. Source is confirmed and dated. One caveat for the corpus: 'Morpheus' is a fictional character, not an author — if the corpus distinguishes speaker from author, the writing credit belongs to the Wachowskis and the character should be recorded as the speaker. | Suggested reattribution: Lana and Lilly Wachowski (writers); Morpheus is the fictional speaker"
+      reviewed_by_human: false

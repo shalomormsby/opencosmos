@@ -1,0 +1,22 @@
+author: Robert M. Pirsig
+author_normalized_key: robert-m-pirsig
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1216
+    slug: null
+    text: The only Zen you find on the tops of mountains is the Zen you bring up there.
+    category: spirit
+    keywords: [zen, mountain, discover, self]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Zen_and_the_Art_of_Motorcycle_Maintenance"
+      earliest_print_source: "Zen and the Art of Motorcycle Maintenance: An Inquiry into Values, Robert M. Pirsig, 1974"
+      notes: "A genuine and well-known line from Zen and the Art of Motorcycle Maintenance (1974), from the mountain-climbing passages in which the narrator reflects on Chris and on the futility of treating the summit as the point. Attribution and source both secure."
+      reviewed_by_human: false

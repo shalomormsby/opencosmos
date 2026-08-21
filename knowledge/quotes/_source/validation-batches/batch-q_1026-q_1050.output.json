@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1026",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Eckhart and consonant with his German sermons on detachment and poverty of spirit; the fuller form usually runs 'As long as I am this or that, or have this or that, I am not all things and I have not all things.' It circulates through 20th-century English translations (Blakney 1941 and later Matthew Fox anthologies), but I cannot name the specific sermon with confidence from training knowledge, so I am leaving the print source null rather than guessing a sermon number.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1027",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The thought is unmistakably Eckhart's central Christmas-sermon theme — the eternal birth of the Word in the soul, and his repeated challenge 'what good is it to me that this birth is always happening, if it does not happen in me?' The wording here reads as a modern loose rendering (of the sort found in devotional anthologies such as Matthew Fox's Meditations with Meister Eckhart) rather than a scholarly translation. Authentic in substance, uncertain as an exact quotation, so I am holding it below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1028",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Prologus generalis in Opus tripartitum (Opus Propositionum), Meister Eckhart, c. 1305-1311",
+    "notes": "'Esse est Deus' is the first proposition of the general prologue to Eckhart's unfinished Opus tripartitum, one of the best-documented lines in his Latin corpus and a standard reference point in Eckhart scholarship (McGinn and others discuss it at length). Confidence is 0.85 rather than higher only because the English three-word form is a translation of the Latin proposition, not an independently attested sentence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1029",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Language of Letting Go, Melody Beattie, 1990",
+    "notes": "Genuinely Beattie's, from her codependency-recovery daily-meditation writing; the attribution is consistent everywhere it appears and the voice matches her published work. The book citation is the one given in most reputable secondary sources, but I cannot confirm the page or rule out an earlier appearance in Beyond Codependency (1989), so treat the title as probable rather than confirmed. Note that q_1030 is a verbatim duplicate of this entry and should be deduplicated upstream.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1030",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Language of Letting Go, Melody Beattie, 1990",
+    "notes": "Verbatim duplicate of q_1029 — same verdict. Genuinely Beattie's; the book citation is the standard one but unconfirmed at page level, and an earlier appearance in Beyond Codependency (1989) cannot be excluded. Recommend deduplicating against q_1029.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1031",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The author's name is almost certainly Meredith L. Young-Sowers (Agartha, Angelic Messenger Cards, Spiritual Crisis), not 'Young-Sower' — worth correcting in the corpus. I have no independent knowledge of this passage in her published work; it circulates on gratitude and healing quote sites without a source. Honest answer is that I cannot place it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1032",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Uniformly attributed to Michael Altshuler, an American motivational speaker, and I know of no competing claimant — but the attribution rests entirely on quote aggregators and graduation-speech roundups, not on a book, talk transcript, or dated first appearance I can point to. Plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1033",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Confidence reflects the strength of the Gerber attribution, which is weak. This is a floating proverb that long predates Michael Gerber; it is the popular paraphrase of the Cheshire Cat exchange in Alice's Adventures in Wonderland (1865) — 'if you don't much care where you want to get to, then it doesn't matter which way you go' — and also circulates in Yogi Berra's form ('you'll end up someplace else'). Gerber may well have used it in E-Myth-era writing, but quoting is not coining. No original-author claim should be recorded for him.",
+    "suggested_reattribution": "Popular paraphrase of Lewis Carroll's Cheshire Cat passage, Alice's Adventures in Wonderland (1865); not original to Michael Gerber"
+  },
+  {
+    "id": "q_1034",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": "Lucky Man: A Memoir, Michael J. Fox, 2002",
+    "notes": "This is one of Fox's signature lines and matches the register of his Parkinson's-era memoir; my recollection places it in Lucky Man (2002), which is also the citation given in most secondary sources. I cannot confirm the page, and Fox has repeated the line in interviews, so the memoir may be a repetition rather than the first appearance. Strong on authorship, softer on the exact source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1035",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The name is misspelled — the author credited is Michael LeBoeuf (Working Smart; The Greatest Management Principle in the World; How to Win Customers and Keep Them for Life). The passage is consistently attributed to him on quote sites but I cannot place it in any of his books, and the text as given is garbled ('what you attract with your thoughts think, act and talk negatively'), which is a common signature of aggregator-copied material. Unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1036",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Michael Levy is a contemporary inspirational poet and author (Point of Life), and the style here matches that body of work, so the attribution is plausible. But I have no knowledge of the specific book or poem it comes from, and a living aggregator-circulated author of this kind is exactly the case where I should not manufacture a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1037",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mignon_McLaughlin",
+    "earliest_print_source": "The Neurotic's Notebook, Mignon McLaughlin, 1963",
+    "notes": "A characteristic McLaughlin epigram and well documented as hers; her Wikiquote page is built largely from the two Notebook volumes. The one residual uncertainty is which volume — The Neurotic's Notebook (1963) or The Second Neurotic's Notebook (1966) — so the year should be checked against a print copy before the citation is treated as final.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1038",
+    "status": "attributed",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mignon_McLaughlin",
+    "earliest_print_source": "The Neurotic's Notebook, Mignon McLaughlin, 1963",
+    "notes": "McLaughlin's single most-quoted aphorism, securely hers and reliably sourced to The Neurotic's Notebook (1963) in Wikiquote and in aphorism anthologies. Occasionally seen floating without attribution or wrongly credited to Germaine Greer, but the McLaughlin attribution is the well-evidenced one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1039",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and traditionally ascribed to Milarepa (11th-century Tibetan yogi), and entirely in keeping with the counsel in the Mila Grubum (The Hundred Thousand Songs of Milarepa). But I cannot identify which song or which translation this English wording comes from, and Tibetan devotional sayings are heavily paraphrased in circulation. Plausible attribution, unlocated text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1040",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Wisdom of the Heart ('Reflections on Writing'), Henry Miller, 1941",
+    "notes": "The bare author field 'Miller' should be expanded to Henry Miller. I recognize this passage from his essay 'Reflections on Writing,' collected in The Wisdom of the Heart (New Directions, 1941), and the argument — art as a means to the life more abundant, defeating itself when made an end — is a recurring Miller theme in that essay. Confident on authorship; the essay/volume citation is from recall rather than a checked page.",
+    "suggested_reattribution": "Henry Miller"
+  },
+  {
+    "id": "q_1041",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": "Tropic of Cancer, Henry Miller, 1934",
+    "notes": "Confidence refers to the recorded attribution to 'Milton,' which appears to be a parsing error rather than a real claim about John Milton. The line is Henry Miller's, from the celebrated passage in Tropic of Cancer (1934): 'I love everything that flows...' — and Miller's own sentence contains the phrase 'said the great blind Milton of our times,' his epithet for James Joyce. Almost certainly the corpus captured the word 'Milton' out of that clause. Note this sits adjacent to q_1040, also a Miller entry with a truncated author field, which supports the parsing-error reading.",
+    "suggested_reattribution": "Henry Miller"
+  },
+  {
+    "id": "q_1042",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Thematically very Glaser — the art/design relationship was a lifelong preoccupation of his, running through Art Is Work (2000) and his lectures and essays — but I cannot match this exact sentence to any of his published writing or talks. The formulation 'independent coordinates' is distinctive enough that I would expect to recall it if it were a well-known Glaser line. Plausible, unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1043",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is the famous Sufi maxim 'man arafa nafsahu faqad arafa rabbahu' — 'he who knows himself knows his Lord' — widely quoted in Sufi literature (Ibn Arabi among many others) and often presented as a hadith. Classical hadith scholars rejected it: it appears in none of the canonical collections, and al-Nawawi, Ibn Taymiyya and al-Zarkashi among others judged it not established as a saying of the Prophet. It is sometimes ascribed instead to the early Sufi Yahya ibn Mu'adh al-Razi. Attributing it flatly to Muhammad is not defensible.",
+    "suggested_reattribution": "Sufi maxim of uncertain origin, sometimes ascribed to Yahya ibn Mu'adh al-Razi; not a canonical hadith"
+  },
+  {
+    "id": "q_1044",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The name should be Muhammad Ali. Ali did use this line and it appears on materials associated with him, but he did not originate it — 'service is the rent you pay for your room on this earth' is an older circulating aphorism with earlier claimants including Shirley Chisholm and Marian Wright Edelman ('service is the rent we pay for living'), and earlier still it has been credited to the missionary physician Wilfred Grenfell. I do not know the true earliest instance well enough to name one, so I am leaving the reattribution null and flagging Ali as popularizer rather than author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1045",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost certainly not Gandhi. The register is late-20th-century American self-help — the escalating 'never / never / never' construction and especially the closing promise 'and your success is guaranteed' are wholly foreign to Gandhi, who framed ahimsa as a discipline and a truth-practice, not as a technique with a guaranteed payoff. I know of no passage resembling this in the Collected Works or in his letters and speeches. Gandhi is one of the strongest misattribution magnets in the corpus, and this has the hallmarks of a seminar handout attributed to him for authority. No true origin identifiable, so no reattribution offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1046",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/The_Matrix",
+    "earliest_print_source": "The Matrix (screenplay/film), written and directed by Lana and Lilly Wachowski, Warner Bros., 1999",
+    "notes": "A genuine and famous line of Morpheus's dialogue from The Matrix (1999), spoken to Neo in the construct/chair scene. Source is confirmed and dated. One caveat for the corpus: 'Morpheus' is a fictional character, not an author — if the corpus distinguishes speaker from author, the writing credit belongs to the Wachowskis and the character should be recorded as the speaker.",
+    "suggested_reattribution": "Lana and Lilly Wachowski (writers); Morpheus is the fictional speaker"
+  },
+  {
+    "id": "q_1047",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Shoes of the Fisherman, Morris L. West, 1963",
+    "notes": "I recognize this as West's, and my recollection places it in The Shoes of the Fisherman (1963), where it belongs to a longer reflective passage that continues into a statement about accepting every consequence of living and dying. The attribution to West is consistent wherever the line appears. Holding at 0.7 because I am working from recall of the novel rather than a checked page, and West reused similar material across his fiction and essays.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1048",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Mother Teresa and fully in keeping with how she spoke about the Missionaries of Charity's work — joy as the surprising thing, not the labor. But I cannot locate it in a specific address, interview, or book; it circulates through devotional collections and secondhand quotation. Plausible and in-voice, but unsourced, so it stays below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1049",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mother_Teresa",
+    "earliest_print_source": "The Silent Revolution: Dynamic Leadership in the Student Council, Kent M. Keith, 1968",
+    "notes": "This is one of the best-documented misattributions in circulation. The text is an adapted version of 'The Paradoxical Commandments,' written by Kent M. Keith in 1968 while he was a Harvard undergraduate, published in his booklet The Silent Revolution: Dynamic Leadership in the Student Council. A shortened version titled 'Anyway' was posted on the wall of Mother Teresa's children's home in Calcutta, which is how her name became attached; it was later reprinted in books about her, cementing the error. The closing 'it is between you and God' line is part of that Calcutta adaptation. Keith's authorship is well established and he has written about it publicly.",
+    "suggested_reattribution": "Kent M. Keith"
+  },
+  {
+    "id": "q_1050",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The idiom is authentically hers — 'Jesus in his distressing disguise' was a formula Mother Teresa used repeatedly about the poor and the dying, and the sentence structure matches her spoken English. I cannot, however, tie this exact sentence to a dated address, interview, or book, and the wording varies across versions. Note also that the corpus text carries dated and dehumanizing phrasing ('the cripple, the mental') that may be a transcription of her idiom or an aggregator's corruption; worth a human editorial decision independent of the provenance question.",
+    "suggested_reattribution": null
+  }
+]

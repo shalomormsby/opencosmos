@@ -1,0 +1,22 @@
+author: Rumer Godden
+author_normalized_key: rumer-godden
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1225
+    slug: null
+    text: "There is an Indian belief that everyone is in a house of four rooms: A physical, a mental, an emotional and a spiritual. Most of us tend to live in one room most of the time, but unless we go into every room everyday, even if only to keep it aired, we are not complete."
+    category: insight
+    keywords: [belief, spirit]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "A House with Four Rooms, Rumer Godden, 1989"
+      notes: "This passage is securely associated with the novelist Rumer Godden, who grew up in India; she used the four-rooms image as the epigraph and title source of 'A House with Four Rooms' (1989), the second volume of her autobiography. Note that Godden is relaying a belief she attributes to an Indian source rather than claiming the thought as her own, so the corpus should present her as the one who recorded it. Attribution to Godden is strong; I hold just at the promotion threshold because I cannot confirm the exact wording against the printed epigraph."
+      reviewed_by_human: false

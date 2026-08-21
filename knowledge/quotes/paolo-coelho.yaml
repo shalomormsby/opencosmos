@@ -1,0 +1,22 @@
+author: Paolo Coelho
+author_normalized_key: paolo-coelho
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1118
+    slug: null
+    text: "Remember that wherever your heart is, there you will find your treasure."
+    category: insight
+    keywords: [purpose, authenticity, love]
+    context: Author
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Paulo_Coelho"
+      earliest_print_source: "The Alchemist (O Alquimista), Paulo Coelho, 1988"
+      notes: "A genuine line from The Alchemist, part of the book's central 'where your heart is, there your treasure is' motif spoken to Santiago (itself echoing Matthew 6:21). English wording varies slightly by translation/edition. Note the author name is misspelled in the record: 'Paolo Coelho' should be 'Paulo Coelho'. | Suggested reattribution: Paulo Coelho (spelling correction only)"
+      reviewed_by_human: false

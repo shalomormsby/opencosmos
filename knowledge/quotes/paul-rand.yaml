@@ -1,0 +1,54 @@
+author: Paul Rand
+author_normalized_key: paul-rand
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1127
+    slug: null
+    text: Simplicity is not the goal. It is the by-product of a good idea and modest expectations.
+    category: design
+    keywords: [simplicity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "A well-known Paul Rand aphorism, quoted consistently in design literature and in collections of his remarks on logo and identity work, with no competing attribution that I am aware of. I believe it comes from his own writing (most likely 'Design, Form, and Chaos', 1993, or a late interview), but I cannot confirm the specific volume or page from memory, so I am leaving the print source null rather than guessing."
+      reviewed_by_human: false
+  - id: q_1128
+    slug: null
+    text: Design is so simple. That’s why it’s so complicated.
+    category: design
+    keywords: [simplicity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "One of the most frequently repeated Paul Rand lines, attributed to him uniformly across design writing, interviews, and obituary coverage. I know of no rival claimant and no reason to doubt it. I cannot name the first printed appearance, so the source field is left null."
+      reviewed_by_human: false
+  - id: q_1129
+    slug: null
+    text: "To design is much more than simply to assemble, to order, or even to edit: it is to add value and meaning, to illuminate, to simplify, to clarify, to modify, to dignify, to dramatize, to persuade, and perhaps even to amuse. To design is to transform prose into poetry."
+    category: design
+    keywords: [creativity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Design, Form, and Chaos, Paul Rand, 1993 (commonly cited; page not confirmed)"
+      notes: "This passage is distinctly Rand's prose and is quoted at length in design literature, consistently sourced to 'Design, Form, and Chaos' (Yale University Press, 1993). I am confident in the author; I am moderately but not fully confident in the book, and I have not confirmed a page, so the source is recorded as commonly-cited rather than verified. Note that the closing sentence ('To design is to transform prose into poetry') is sometimes quoted separately from the rest."
+      reviewed_by_human: false
