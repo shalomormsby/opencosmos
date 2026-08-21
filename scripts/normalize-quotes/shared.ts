@@ -138,7 +138,10 @@ export function routeAuthor(author: string, normalizedKey: string): { bucket: st
   if (/^(anonymous|unknown)\b/i.test(a)) return { bucket: 'anonymous', isCollective: true }
   if (/\b(proverbs?|sayings?|aphorisms?)\b/i.test(a)) return { bucket: 'proverbs', isCollective: true }
   if (/\b(maxims?|sutras?|edicts?|hadiths?|inscriptions?|adages?|vedas?|upanishads?|gita|dhammapada|gospels?|bible|psalms?|sermons?|qur.?an|torah|talmud|tao te|i ching)\b/i.test(a)) return { bucket: 'attributed-collectives', isCollective: true }
-  return { bucket: normalizedKey, isCollective: false }
+  // The bucket becomes a filename and a URL segment, so it must be ASCII-safe.
+  // Tier 1 left diacritics in some keys (andré-breton, pema-chödrön), which
+  // produced quote pages that couldn't be linked to. Always re-derive.
+  return { bucket: normalizeAuthorKey(normalizedKey) || normalizeAuthorKey(a), isCollective: false }
 }
 
 /**
@@ -246,7 +249,7 @@ export function emitQuoteBlock(record: JsonlRecord, includeAuthor: boolean): str
   lines.push(`    text: ${yamlScalar(enriched.text)}`)
   if (includeAuthor) {
     lines.push(`    author: ${yamlScalar(enriched.author)}`)
-    lines.push(`    author_normalized_key: ${yamlScalar(enriched.author_normalized_key)}`)
+    lines.push(`    author_normalized_key: ${yamlScalar(normalizeAuthorKey(enriched.author_normalized_key || enriched.author))}`)
     lines.push(`    tradition: ${yamlScalar(synthesizeTradition(enriched.context))}`)
     lines.push(`    era: null`)
     lines.push(`    gender: ${yamlScalar(enriched.gender)}`)
@@ -272,7 +275,7 @@ export function emitPersonFile(records: JsonlRecord[]): string {
   const sample = sorted[0]
   const lines: string[] = []
   lines.push(`author: ${yamlScalar(sample.author)}`)
-  lines.push(`author_normalized_key: ${yamlScalar(sample.author_normalized_key)}`)
+  lines.push(`author_normalized_key: ${yamlScalar(normalizeAuthorKey(sample.author_normalized_key || sample.author))}`)
   lines.push(`tradition: ${yamlScalar(synthesizeTradition(sample.context))}`)
   lines.push(`era: null`)
   lines.push(`gender: ${yamlScalar(sample.gender)}`)
