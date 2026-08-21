@@ -1,0 +1,22 @@
+author: Logan Pearsall Smith
+author_normalized_key: logan-pearsall-smith
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0911
+    slug: null
+    text: "There are two things to aim at in life; first to get what you want, and after that to enjoy it. Only the wisest of humankind has achieved the second."
+    category: insight
+    keywords: [life, enjoyment, wisdom]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Logan_Pearsall_Smith"
+      earliest_print_source: "Afterthoughts, Logan Pearsall Smith, 1931"
+      notes: "Genuine and well sourced. From Smith's aphorism collection 'Afterthoughts' (1931), in the 'Life and Human Nature' section. The original reads 'There are two things to aim at in life: first, to get what you want; and, after that, to enjoy it. Only the wisest of mankind achieve the second.' Two alterations in the corpus text: 'mankind' has been changed to 'humankind', and 'achieve' to 'has achieved'. Recommend restoring the original wording, since a modernized quotation that is still presented as a quotation is a small falsification."
+      reviewed_by_human: false

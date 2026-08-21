@@ -1,0 +1,38 @@
+author: Helen Keller
+author_normalized_key: helen-keller
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0701
+    slug: null
+    text: "When one door of happiness closes, another opens; but often we look so long at the closed door that we do not see the one which has opened for us."
+    category: insight
+    keywords: [opportunity, perception, door, look, open]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Helen_Keller"
+      earliest_print_source: "We Bereaved, Helen Keller, 1929"
+      notes: "I recall this being sourced on Wikiquote's Helen Keller page to her 1929 book We Bereaved, with the original reading '...the one which has been opened for us.' The bare proverb 'when one door closes, another opens' is older and is often credited to Alexander Graham Bell (Keller's friend); Keller's contribution is the second clause about staring at the closed door. Confident in Keller as author, moderately confident in the 1929 book as the print locus."
+      reviewed_by_human: false
+  - id: q_0702
+    slug: null
+    text: Security is mostly a superstition. It does not exist in nature... life is either a daring adventure or it is nothing at all.
+    category: insight
+    keywords: [security, superstition, nature, adventure, nothing, life]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Helen_Keller"
+      earliest_print_source: "The Open Door, Helen Keller, 1957"
+      notes: "Genuinely Keller. The full passage runs 'Security is mostly a superstition. It does not exist in nature, nor do the children of men as a whole experience it. Avoiding danger is no safer in the long run than outright exposure. Life is either a daring adventure or nothing.' Standard citation is The Open Door (1957); some sources instead point to Let Us Have Faith (1940). Author attribution is solid; I am less certain which of the two volumes is the first printing, so I am holding below verified."
+      reviewed_by_human: false

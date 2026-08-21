@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0876",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Enormously widespread attribution to J. Krishnamurti, and consistent with his recurring theme that conformity to a diseased society is not sanity. However, I cannot place this exact sentence in any of his published books or transcribed talks. The wording has the compressed, aphoristic feel of a later condensation of a longer passage rather than a verbatim line. Some circulating versions cite 'Commentaries on Living' but the passages there differ. Honest verdict: attribution is plausible and near-universal, verbatim sourcing is absent from my knowledge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0877",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this five-word line anywhere in Krishnamurti's corpus. It gestures at a real Krishnamurti theme (judgment/evaluation as an obstacle to seeing, cf. his 'observing without evaluating' formulations), but the phrasing is not one I recognize from his talks or books. Reads like a social-media compression of his ideas. No traceable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0878",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a genuine and central Krishnamurti formulation, not a paraphrase. 'The thinker is the thought' belongs to his signature family of identity statements alongside 'the observer is the observed' and 'the experiencer is the experience,' and it recurs across his 1950s-era writing and talks (it is discussed at length in works of that period such as 'The First and Last Freedom' and the 'Commentaries on Living' series). I am confident in the attribution but am not able to confirm a specific page or dated talk from memory, so I leave the print field null rather than guess a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0879",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Krishnamurti prose in both cadence and vocabulary ('this extraordinary thing called love'; 'the world is transformed'), and my recollection places it in his discussion of love in 'Freedom from the Known' (1969). I am confident enough in the attribution to Krishnamurti to sit at 0.80, but not confident enough in the exact book and chapter to record a print citation, so that field stays null. Circulating versions vary slightly in punctuation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0880",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": "Land of the Spotted Eagle, Luther Standing Bear, 1933",
+    "notes": "Not an anonymous proverb. This is a lightly reworded line from Luther Standing Bear (Oglala Lakota), whose 'Land of the Spotted Eagle' (1933) contains the passage rendered as 'Man's heart, away from nature, becomes hard.' The 'Lakota proverb' label is the usual folk-anonymization of a named Native author, which strips him of credit. Confidence figure reflects the weak 'Lakota proverb' attribution; my confidence in the Standing Bear reattribution is considerably higher (~0.7), though the corpus wording is a paraphrase rather than his exact sentence.",
+    "suggested_reattribution": "Luther Standing Bear"
+  },
+  {
+    "id": "q_0881",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Lama Surya Das is a real American Dzogchen teacher and author ('Awakening the Buddha Within,' 1997), and the sentiment fits his register, but I cannot locate this four-word aphorism in any of his books or talks that I know. It is also generic enough to have many independent authors. No traceable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0882",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Lance Secretan is a real leadership author ('Reclaiming Higher Ground,' 1997; 'Inspirational Leadership,' 1999) and this passage matches his documented thesis that leadership is an inspirational and heart-centered human activity rather than a technique or process. The length and paragraph structure suggest it was excerpted from one of his books, which raises my confidence in the attribution above the floor. But I cannot identify which book or confirm the wording, so no citation is recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0883",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"Dreams,\" Langston Hughes, first published 1922; collected in The Dream Keeper and Other Poems, 1932",
+    "notes": "From Langston Hughes's short poem 'Dreams.' The verse lines read: 'Hold fast to dreams / For if dreams die / Life is a broken-winged bird / That cannot fly.' The corpus entry runs the lines together as prose and adds a comma after 'dreams' and drops the hyphen in 'broken-winged'; consider restoring the line breaks and the hyphen if the corpus preserves verse formatting. Attribution itself is certain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0884",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Does not correspond to any chapter of the Tao Te Ching in the standard translations I know (Legge, Waley, Feng/English, Mitchell, Lau, Addiss/Lombardo). The English is modern and idiomatic ('flow as life flows'), characteristic of the large body of free-floating pseudo-Lao Tzu circulating online. It may be a loose New Age rendering distantly inspired by the water imagery of ch. 8 or ch. 78, but I cannot connect it to a source text or a named translator.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0885",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Tao Te Ching, ch. 48 (traditionally attributed to Laozi, c. 4th century BCE)",
+    "notes": "A genuine, if loose, English rendering of Tao Te Ching ch. 48: 為學日益，為道日損 — 'in the pursuit of learning, every day something is gained; in the pursuit of the Way, every day something is dropped.' The paraphrase substitutes 'wisdom' for the Tao and 'remove things' for the subtractive 損, so it is not a scholarly translation, but the thought and structure are authentically from the text. Standard caveat: Laozi's historical existence and sole authorship of the Tao Te Ching are traditional rather than established.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0886",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not in the Tao Te Ching. No chapter treats time as a 'created thing,' and the register — a self-help reframe about scheduling and willingness, complete with quoted colloquial speech ('I don't have time') — is unmistakably modern American. This circulates heavily in productivity writing as Lao Tzu, which is a textbook case of a modern maxim borrowing an ancient name for authority. I do not know who actually wrote it, so I offer no reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0887",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": null,
+    "earliest_print_source": "Tao Te Ching, ch. 64 (traditionally attributed to Laozi, c. 4th century BCE)",
+    "notes": "Genuine. Tao Te Ching ch. 64: 千里之行，始於足下, literally 'a journey of a thousand li begins beneath one's feet.' 'With a single step' is a translator's idiomatic choice rather than the literal sense, and the shift is worth noting because the Chinese emphasizes where one already stands rather than the act of stepping. The attribution to the Tao Te Ching is not in doubt; Laozi's historical authorship is traditional.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0888",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Tao Te Ching, ch. 17 (traditionally attributed to Laozi, c. 4th century BCE)",
+    "notes": "A modern managerial paraphrase built on genuine material. Tao Te Ching ch. 17 ranks rulers — the best barely known, then loved and praised, then feared, then despised — and closes 功成事遂，百姓皆謂我自然, commonly rendered 'when the work is done, the people say we did it ourselves.' The corpus wording compresses and reorders that into a three-tier leadership maxim; this formulation is popular in leadership literature (John Heider's 'The Tao of Leadership,' 1985, is one well-known vehicle for such renderings) and is not a translation. Holding at 0.70 rather than higher because the source thought is authentic but the sentence is not Lao Tzu's.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0889",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": "Mrs. Dymond, Anne Isabella Ritchie, 1885",
+    "notes": "Not Lao Tzu, and not a Chinese proverb. Nothing resembling it appears in the Tao Te Ching. The earliest known form traced by quotation researchers is in Anne Isabella Ritchie's novel 'Mrs. Dymond' (1885): 'if you give a man a fish he is hungry again in an hour; if you teach him to catch a fish you do him a good turn.' The saying has since been variously credited to Lao Tzu, Maimonides, and Confucius, all without support. Confidence value reflects the Lao Tzu attribution, which I regard as clearly wrong; my confidence in the Ritchie origin is high (~0.8).",
+    "suggested_reattribution": "Anne Isabella Ritchie (Mrs. Thackeray Ritchie), Mrs. Dymond, 1885"
+  },
+  {
+    "id": "q_0890",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot match this triad to any chapter of the Tao Te Ching. Its parallel structure faintly echoes ch. 8, which lists virtues by domain ('in dwelling, be close to the land; in dealing with others, be gentle and kind; in speech, be true...'), but that passage does not repeat 'kindness' and does not produce 'confidence,' 'profoundness,' or 'love' as outcomes. 'Profoundness' in particular is not a word that appears in any translation I know. Most likely a modern reworking that drifted far enough from ch. 8 to count as a separate composition. Attribution to Lao Tzu is weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0891",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in the Tao Te Ching or in the Zhuangzi. The sentiment is broadly Daoist in flavor (equanimity toward fortune and misfortune, cf. the reversals of ch. 58), but the archaic-sounding English construction 'Seek not... and be not' suggests a paraphraser imitating scriptural diction rather than a translation of a specific line. No traceable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0892",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not in the Tao Te Ching. This is one of the most heavily circulated pseudo-Lao Tzu lines on the internet, and the usual form is 'Being deeply loved by someone gives you strength, while loving someone deeply gives you courage' — note that the corpus version has the two clauses swapped, so it is a garbled variant of an already baseless attribution. Even the standard form has no identified author. Recommend removal or reattribution to 'Anonymous' if kept.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0893",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot find this sentence in Tao Te Ching translations. There is a real thematic neighbor in ch. 52, 見小曰明 ('seeing the small is called clarity/insight'), and ch. 64's counsel to deal with things while they are still latent, so a very free paraphrase is conceivable. But 'genius' is a European category alien to the text's vocabulary, which argues for a Western aphorist's composition later hung on Lao Tzu's name. Weak attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0894",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Larry Eisenberg across quotation collections, and the attribution has been stable long enough that it is unlikely to be pure invention. Complicating factor: at least two public figures share the name (the science-fiction writer and short-story author, and a clergyman), and I cannot determine which is meant or identify an originating publication. Attribution plausible, sourcing absent.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0895",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely attributed to Lena Horne, often loosely to an interview in her later career, and the attribution is stable and specific enough to take seriously. However, I cannot confirm a primary source, and proverbial formulations of the same idea (it is not the burden but the manner of carrying it) circulated before her. Plausible that she said it and gave it currency rather than originated it. Below the promotion bar until a primary source is found.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0896",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and specifically credited to Leo Burnett throughout advertising literature, where his speeches and internal memos are unusually well preserved and were collected posthumously (notably in '100 LEO's: Wit and Wisdom from Leo Burnett,' 1995). The hedged, conversational phrasing — 'I think,' 'is still' — reads like transcribed speech rather than a manufactured aphorism, which supports authenticity. I cannot confirm the specific speech or page, so no citation is recorded and this sits just below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0897",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Matches Leo Buscaglia's documented themes and first-person-plural style, and my sense is that it comes from his writing on self-determination, plausibly 'Personhood' (1978). Attribution is widespread and I have no reason to doubt it, but I cannot identify the book or confirm the wording, and Buscaglia's popularity means his name attracts unsourced uplift. Recording as unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0898",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Buscaglia's central subject and voice; likely from 'Love' (1972) or 'Living, Loving and Learning' (1982), but I cannot confirm which or verify the wording. Attribution is widespread and plausible rather than evidenced. Same caveat as q_0897: his name is a magnet for unsourced sentiment about love.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0899",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Marketing Imagination, Theodore Levitt, 1983 (quoting Leo McGinneva)",
+    "notes": "The attribution is correct and unusually well documented for a line of this kind. Theodore Levitt credited Leo McGinneva by name for this formulation in 'The Marketing Imagination' (1983), where it appears in his discussion of what customers actually buy; Levitt's own better-known paraphrase is 'people don't want a quarter-inch drill, they want a quarter-inch hole.' So McGinneva is the originator and Levitt the transmitter — this corpus entry has it right, which is worth noting since the line is far more often credited to Levitt. Note the text uses a typographic apostrophe in 'don't'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0900",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Tolstoy almost universally and for a long time, which gives it more weight than a recent internet attribution, but I cannot locate it in his works. It is not a line I can place in 'What Is Art?' (1897), his major statement on the subject, and it may originate in a letter, a diary entry, a recorded conversation, or a secondary account — or in a translator's compression of a longer passage. Also note the author name is spelled 'Leo Tolstoi'; the corpus should probably normalize to the standard 'Leo Tolstoy.' Attribution plausible, sourcing unconfirmed.",
+    "suggested_reattribution": null
+  }
+]

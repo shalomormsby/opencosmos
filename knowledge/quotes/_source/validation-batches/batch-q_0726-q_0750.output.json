@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0726",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A standard Henny Youngman one-liner, consistently attributed to him across joke anthologies and obituary-era retrospectives; no competing attribution that I know of. I cannot place its first print appearance or a specific routine. Note the author field is misspelled: the comedian is Henny Youngman (1906-1998), not 'Henry'.",
+    "suggested_reattribution": "Henny Youngman (spelling correction, same person)"
+  },
+  {
+    "id": "q_0727",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I know of no Heraclitus fragment resembling this. The surviving fragments (Diels-Kranz) concern logos, flux, fire, opposites, and the soul's depth - not 'personality', which is a post-classical and largely modern psychological concept. The vocabulary and the transcend/descend construction read as 20th-century spiritual writing. I cannot identify the real author, so I am not offering a reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0728",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitously attributed to Herm Albright, usually with the dates 1876-1944 and sometimes with a credit to The Saturday Evening Post or Reader's Digest. I am not aware of anyone having located the line in a text Albright actually wrote, and Albright himself is an obscure figure (a German-American engraver) whose name appears in circulation almost solely as the tag on this one quote - a pattern typical of quote-anthology attributions that were never sourced. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0729",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": null,
+    "earliest_print_source": "Siddhartha, Hermann Hesse, 1922 (English: Hilda Rosner trans., New Directions, 1951)",
+    "notes": "Genuine Hesse. This is from Siddhartha, in the closing conversation where Siddhartha speaks to Govinda by the river; the Rosner translation runs close to 'the world is not imperfect or slowly evolving along a long path to perfection... it is perfect at every moment; every sin already carries grace within it.' Exact wording varies by translation. Author field should read 'Hermann Hesse' (two n's).",
+    "suggested_reattribution": "Hermann Hesse (spelling correction, same person)"
+  },
+  {
+    "id": "q_0730",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": null,
+    "earliest_print_source": "Demian, Hermann Hesse, 1919",
+    "notes": "Abraxas is the central symbol of Demian, and this is Pistorius speaking to Sinclair about the dreams one must not betray - 'you aren't allowed to be afraid of anything, you can't consider prohibited anything the soul desires.' I am confident of the work; the exact wording depends on translation, and the quote as stored is elided (leading ellipsis) and carries a stray closing quotation mark at the end that should be cleaned up.",
+    "suggested_reattribution": "Hermann Hesse (spelling correction, same person)"
+  },
+  {
+    "id": "q_0731",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as authentic Hesse and is consistently attributed to him with no competing author. My recollection places it in the Narcissus and Goldmund / aphorism-collection territory (the English Reflections, ed. Volker Michels, gathers many such lines), but I cannot confirm the work, so I am not naming one. Attribution to Hesse is solid; the source is not.",
+    "suggested_reattribution": "Hermann Hesse (spelling correction, same person)"
+  },
+  {
+    "id": "q_0732",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in any Hesse work I know. The theological framing (self-affirmation as a precondition for affirming God) is compatible with Hesse's post-Demian thought but is also standard 20th-century Protestant-existentialist phrasing, so the resemblance is weak evidence. Short aphorisms of this shape circulate under Hesse's name from the Reflections compilation without individual sourcing. Honest answer: I do not know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0733",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this line in Hesse. The hedonist-to-mystic idea is thematically at home in Steppenwolf and Narcissus and Goldmund, but thematic fit is not evidence of authorship, and the epigrammatic English phrasing does not match any passage I can recall. Possible it derives from a compiler's condensation of a longer Hesse passage rather than a sentence he wrote. Unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0734",
+    "status": "attributed",
+    "confidence": 0.62,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A long translated passage rather than an aphorism, which itself argues for authenticity - fabricated quotes are rarely this extended or this specific ('the blessed hermits... in their oasis among the deer'; 'in the pictures of a good painter, every tree and every mountain prays'). The voice and imagery are strongly Hesse. I believe it is genuine but I cannot identify which work it comes from, so I am leaving the source null rather than guessing between Narcissus and Goldmund, Wandering, and the essays.",
+    "suggested_reattribution": "Hermann Hesse (spelling correction, same person)"
+  },
+  {
+    "id": "q_0735",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The language is anachronistic for a 12th-century abbess. 'Creation... its endangerment' frames an ecological crisis that has no 12th-century counterpart, and 'rise vigorously toward justice' reads as modern social-justice idiom. Lines of this kind entered circulation through the Matthew Fox creation-spirituality treatments of Hildegard in the 1980s, which are loose renderings and adaptations rather than translations. I am fairly confident this is not a faithful Hildegard text, but I cannot pin the specific modern author or book, so I am not naming Fox as the source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0736",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Folk-proverbial with no traceable source. Near-identical formulations appear across several traditions - a hadith qudsi ('if he draws near to Me a hand's span, I draw near to him an arm's length; if he comes to Me walking, I come to him running'), a Talmudic version, and Sufi and Sikh retellings - which is the signature of a migrating saying rather than a fixed Hindu text. I know of no Sanskrit scriptural locus for the 'one step / seven steps' form.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0737",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot trace this to any Hindu source. It resembles a widely retold parable in which the gods hide divinity inside the human being as the last place anyone would look - a story usually presented as 'Hindu legend' in Western popular writing but with no scriptural citation I know of. The epigram itself reads as a modern English formulation. Also note the typo in the stored text: 'chose' should be 'choose'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0738",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A well-documented misattribution. The line does not appear in the Hippocratic Corpus; the standard reference on this is Diana Cardenas's 2013 paper in e-SPEN Journal, 'Let not thy food be confused with thy medicine: The Hippocratic misquotation', which searched the corpus and found no such statement, and which traces the saying's spread to 20th-century nutrition and natural-health writing. The Hippocratic texts do discuss diet as part of regimen, but that is a general theme, not this sentence. Treat any 'Hippocrates' tag on this as false; the true originator is not identifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0739",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attribution to Hodding Carter Jr. (1907-1972) is near-universal, but as far as I know nobody has located the sentence in anything Carter wrote or in a dated speech. Quote Investigator's work on 'roots and wings' found earlier and anonymous variants circulating before the Carter tag became standard, which suggests he popularized rather than coined it. The saying is also sometimes given as a 'Chinese proverb' or attributed to Goethe, both without support. Plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0740",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Horace, Epistles I.2, line 40 (c. 20 BCE): 'Dimidium facti, qui coepit, habet'",
+    "notes": "The Horatian line is genuine and is the usual ancestor cited for this English proverb, but it literally says 'he who has begun has half the deed done' - the 'well begun' element is the English proverb's addition. The same idea is older and Greek-proverbial (Hesiod's 'the beginning is half of the whole'; Aristotle quotes the proverb in the Politics and Nicomachean Ethics), so 'Well begun is half done' is better described as a proverb with a Horatian pedigree than as a Horace quotation. Attribution defensible, exact wording not his.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0741",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Hubert Selby Jr. with no competing author, and the cadence and preoccupations match him closely. My recollection is that it comes from a late-career interview or from the documentary material about him rather than from a novel, but I cannot pin a specific interview, publication, or date, so I am leaving the source null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0742",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Selby and stylistically unmistakable - the vernacular register ('it's no big deal', 'worth the price of admission') alongside the life/death framing is his. Its length and specificity argue against fabrication. I recall it as coming from Selby's own prose or an interview about the work, but I cannot identify the piece, so no source is claimed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0743",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as authentic Huston Smith - 'relativized against this one absolute' is his comparative-religion register, and the primacy of astonishment over other marks of realization is a recurring Smith theme. I have a weak recollection of the phrasing but cannot place the book (Why Religion Matters, The Way Things Are, and Cleansing the Doors of Perception are all plausible and I will not guess among them). Attribution likely correct, source unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0744",
+    "status": "attributed",
+    "confidence": 0.62,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A genuine IDEO maxim, closely associated with David Kelley and with the firm's design-thinking teaching materials; it circulates widely in innovation literature with the attribution to IDEO-as-organization held stable. I believe it appears in the Kelley brothers' published work on IDEO's method but I cannot confirm which book or page, so I am not citing one. Attributing to an organization rather than a person is itself appropriate here.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0745",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed on quote aggregators to Ifeanyi Enoch Onuoha, a contemporary Nigerian author and speaker, but I know of no book, talk, or dated publication where it appears - aggregator-only attributions of this kind are weak evidence. The line is also a close derivative of the widely circulated Andrew Carnegie teamwork quotation ('the fuel that allows common people to attain uncommon results'), which is itself of doubtful Carnegie provenance. Possible restatement rather than original coinage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0746",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A signature Imogen Cunningham line, given in interviews in her last years and repeated in profiles and documentary material about her; the attribution is stable and I am not aware of it being claimed for any other photographer. I cannot cite the specific interview or its date, so the source stays null, but the attribution itself is strong.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0747",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Untraceable and multiply claimed. The same saying circulates as an 'Indian proverb', a 'Native American proverb' (often tagged to a 'White Elk', a figure of doubtful historicity), a 'Cherokee saying', and in Persian and Islamic devotional forms. That spread across unrelated traditions is characteristic of a modern inspirational composition retrofitted with an exotic attribution. I know of no Sanskrit or other original text for it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0748",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Indira Gandhi and internally coherent - her grandfather was Motilal Nehru, so the framing device fits her biography rather than being generic. It appears in political-quotation collections with the attribution stable. Note this is Indira Gandhi, not Mohandas Gandhi, so the usual Gandhi misattribution magnet does not apply here. I cannot cite the speech or interview of origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0749",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The attribution to an inscription at St Paul's Monastery on Mount Athos comes largely from Eckhart Tolle, who cites it that way in The Power of Now (1997). I am not aware of any independent documentation that the inscription exists or of a transcription by anyone who visited. The underlying formula is old and widespread - the Sufi and hadith-derived 'die before you die', and the Christian ascetic tradition of dying to self - so the sentiment is genuinely ancient even if this English epigram and its Athos provenance are not confirmable. Source claim unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0750",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot trace this to any proverb collection I know. Generic 'Irish proverb' tags are among the least reliable in quotation corpora - they are frequently applied to modern greeting-card sentiments and to translations of sayings from other traditions. The give-with-one-hand / gather-with-two structure is a common proverbial shape without a fixed home. No traceable source; honest answer is that I do not know.",
+    "suggested_reattribution": null
+  }
+]

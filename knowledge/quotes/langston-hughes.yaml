@@ -1,0 +1,22 @@
+author: Langston Hughes
+author_normalized_key: langston-hughes
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0883
+    slug: null
+    text: "Hold fast to dreams, for if dreams die, life is a broken winged bird that cannot fly."
+    category: creativity
+    keywords: [dreams, death, broken, bird, wing, fly, life]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: null
+      earliest_print_source: "\"Dreams,\" Langston Hughes, first published 1922; collected in The Dream Keeper and Other Poems, 1932"
+      notes: "From Langston Hughes's short poem 'Dreams.' The verse lines read: 'Hold fast to dreams / For if dreams die / Life is a broken-winged bird / That cannot fly.' The corpus entry runs the lines together as prose and adds a comma after 'dreams' and drops the hyphen in 'broken-winged'; consider restoring the line breaks and the hyphen if the corpus preserves verse formatting. Attribution itself is certain."
+      reviewed_by_human: false

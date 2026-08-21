@@ -1,0 +1,22 @@
+author: Mark Weiser
+author_normalized_key: mark-weiser
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0991
+    slug: null
+    text: The most profound technologies are those that disappear. They weave themselves into the fabric of everyday life until they are indistinguishable from it.
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: null
+      earliest_print_source: "\"The Computer for the 21st Century\", Mark Weiser, Scientific American, September 1991"
+      notes: "These are the opening two sentences of Weiser's ubiquitous-computing paper, quoted verbatim and correctly. One of the best-documented attributions in computing; the text matches the published article word for word."
+      reviewed_by_human: false

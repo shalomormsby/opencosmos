@@ -1,0 +1,22 @@
+author: Martha Graham
+author_normalized_key: martha-graham
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0999
+    slug: null
+    text: "There is a vitality, a life force, a quickening that is translated through you into action, and because there is only one of you in all time, this expression in unique. If you block it, it will never exist through any other medium and be lost. The world will not have it. It is not your business to determine how good it is; nor how valuable it is; nor how it compares with other expressions. It is your business to keep it yours, clearly and directly, to keep the channel open. You do not even have to believe in yourself or your work. You have to keep open and aware directly to the urges that motivate you. Keep the channel open. No artist is pleased. There is no satisfaction whatever at any time. There is only a queer, divine dissatisfaction; a blessed unrest that keeps us marching and makes us more alive than the others."
+    category: creativity
+    keywords: [vitality, life, force, action, time, expression, unique, block, exist, lost, world, good, judgment, self, open, believe, work, awareness, motivation, artist, satisfaction, divine, alive, inspiration]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martha_Graham"
+      earliest_print_source: "Martha: The Life and Work of Martha Graham, Agnes de Mille, Random House, 1991"
+      notes: "The famous 'keep the channel open' passage, spoken by Graham to Agnes de Mille and recorded by de Mille in her Graham biography. Important caveat for the corpus: this is de Mille's written recollection of Graham's spoken words, not text Graham published, and the widely circulated version has drifted slightly from de Mille's page. Also note the typo carried in this record: 'this expression in unique' should read 'is unique'."
+      reviewed_by_human: false

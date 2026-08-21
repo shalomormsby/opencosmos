@@ -1,0 +1,22 @@
+author: Leonardo Da Vinci
+author_normalized_key: leonardo-da-vinci
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0905
+    slug: null
+    text: "Every now and then go away, have a little relaxation, for when you come back to your work your judgment will be surer since to remain constantly at work will cause you to lose power of judgment. Go some distance away because then the work appears smaller, and more of it can be taken in at a glance, and a lack of harmony or portion is more readily seen."
+    category: creativity
+    keywords: [relaxation, judgment, work, action, distance, small, harmony, perception, rest, lack]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Leonardo_da_Vinci"
+      earliest_print_source: "The Notebooks of Leonardo da Vinci / Trattato della Pittura; English ed. Jean Paul Richter, 1883"
+      notes: "This is genuine Leonardo, from the painting precepts collected in the Trattato della Pittura and reproduced in the standard notebook editions (Richter 1883; MacCurdy 1938). It appears among his instructions to painters on stepping back from work to judge it — the passage advising the painter to withdraw, since distance shrinks the work and makes disharmony of proportion visible at a glance. Translations vary in wording, and 'a lack of harmony or portion' in the corpus text looks like a corruption of 'proportion'. I am confident in the attribution but not in the precise translation lineage of this rendering, so I am holding just at the promotion bar rather than claiming primary verification."
+      reviewed_by_human: false

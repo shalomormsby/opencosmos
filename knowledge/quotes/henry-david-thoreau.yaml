@@ -84,3 +84,51 @@ quotes:
       earliest_print_source: "Walden; or, Life in the Woods, Henry David Thoreau, 1854, ch. 2 (\"Where I Lived, and What I Lived For\")"
       notes: "Both fragments are genuine and come from the same famous passage in Walden ch. 2, but the ellipsis compresses several sentences. Thoreau's text runs: 'Our life is frittered away by detail... Simplicity, simplicity, simplicity! I say, let your affairs be as two or three... Simplify, simplify.' The condensation is faithful in sense but is not a contiguous quotation; if the corpus wants an exact citation, either restore the full passage or quote 'Simplify, simplify' on its own."
       reviewed_by_human: false
+  - id: q_0707
+    slug: null
+    text: All change is a miracle to contemplate; but it is a miracle which is taking place every second.
+    category: insight
+    keywords: [change, miracle, time]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_David_Thoreau"
+      earliest_print_source: "Walden, Henry David Thoreau, 1854 (chapter 'Higher Laws')"
+      notes: "Genuine Thoreau, from the 'Higher Laws' chapter of Walden. The original reads 'a miracle which is taking place every instant' — the corpus text substitutes 'every second,' a common circulating variant. Recommend restoring 'instant' if the corpus prefers original wording."
+      reviewed_by_human: false
+  - id: q_0709
+    slug: null
+    text: Money is not required to buy one necessity of the soul.
+    category: business
+    keywords: [money, soul]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_David_Thoreau"
+      earliest_print_source: "Walden, Henry David Thoreau, 1854 (chapter 'Conclusion')"
+      notes: "Verbatim Thoreau from the 'Conclusion' of Walden. Short, exact, and correctly attributed."
+      reviewed_by_human: false
+  - id: q_0710
+    slug: null
+    text: "If you advance confidently in the direction of your dreams, and endeavor to live the life you have imagined, you will meet with a success unexpected in common hours. You will pass an invisible boundary: new, universal and more liberal laws will begin to establish themselves around and within you and you will live with a higher order of beings. If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundation under them."
+    category: creativity
+    keywords: [direction, dreams, live, life, common, success, invisible, boundary, universal, laws within, self, higher, being, castles, air, work, lost, foundation, artist]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_David_Thoreau"
+      earliest_print_source: "Walden, Henry David Thoreau, 1854 (chapter 'Conclusion')"
+      notes: "Both halves are genuine Walden, from 'Conclusion,' but the corpus text is the popular second-person paraphrase. Thoreau wrote in the third person: 'I learned this, at least, by my experiment: that if one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.' The passage also compresses the original ('he will put some things behind, will pass an invisible boundary'; 'he will live with the license of a higher order of beings') and the castles line ends 'Now put the foundations under them,' plural. Source certain; wording modernized."
+      reviewed_by_human: false

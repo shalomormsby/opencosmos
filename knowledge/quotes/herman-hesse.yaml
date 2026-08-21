@@ -1,0 +1,38 @@
+author: Herman Hesse
+author_normalized_key: herman-hesse
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0729
+    slug: null
+    text: "The world is not imperfect or slowly evolving along a path to perfection. No, it is perfect every moment. Every sin already carries grace in it."
+    category: spirit
+    keywords: [world, perfection, imperfect, evolution, moment, sin, grace]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Siddhartha, Hermann Hesse, 1922 (English: Hilda Rosner trans., New Directions, 1951)"
+      notes: "Genuine Hesse. This is from Siddhartha, in the closing conversation where Siddhartha speaks to Govinda by the river; the Rosner translation runs close to 'the world is not imperfect or slowly evolving along a long path to perfection... it is perfect at every moment; every sin already carries grace within it.' Exact wording varies by translation. Author field should read 'Hermann Hesse' (two n's). | Suggested reattribution: Hermann Hesse (spelling correction, same person)"
+      reviewed_by_human: false
+  - id: q_0730
+    slug: null
+    text: "I lost a great deal... violating those dreams of love. One shouldn’t do that. When you know something about Abraxas, you cannot do this any longer. You aren’t allowed to be afraid of anything, you can’t consider prohibited anything that the soul desires.”"
+    category: spirit
+    keywords: [loss, soul, god, fear, desire]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: null
+      earliest_print_source: "Demian, Hermann Hesse, 1919"
+      notes: "Abraxas is the central symbol of Demian, and this is Pistorius speaking to Sinclair about the dreams one must not betray - 'you aren't allowed to be afraid of anything, you can't consider prohibited anything the soul desires.' I am confident of the work; the exact wording depends on translation, and the quote as stored is elided (leading ellipsis) and carries a stray closing quotation mark at the end that should be cleaned up. | Suggested reattribution: Hermann Hesse (spelling correction, same person)"
+      reviewed_by_human: false

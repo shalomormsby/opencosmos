@@ -1,0 +1,22 @@
+author: Jorge Luis Borges
+author_normalized_key: jorge-luis-borges
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0838
+    slug: null
+    text: "Even in the human languages there is no proposition that does not imply the entire universe; to say the tiger is to say the tigers that begot it, the deer and turtles devoured by it, the grass on which the deer fed, the earth that was mother to the grass, the heaven that gave birth to the earth."
+    category: spirit
+    keywords: [language, human, universe, unity, oneness, nature, animals, grass, earth, mother, heaven]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Jorge_Luis_Borges"
+      earliest_print_source: "\"The Writing of the God\" (\"La escritura del dios\"), in El Aleph, Jorge Luis Borges, 1949"
+      notes: "From the imprisoned magician Tzinacan's meditation in 'The Writing of the God', collected in El Aleph (1949). The tiger-implies-the-universe passage is one of the story's best-known moments and the English wording here matches the standard translation closely. Note it is spoken by a character within the fiction, which is worth keeping in mind for how it is framed."
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: Lord Byron
+author_normalized_key: lord-byron
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0912
+    slug: null
+    text: "In her first passion woman loves her lover, in all the others she loves love."
+    category: insight
+    keywords: [passion, love, woman]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Lord_Byron"
+      earliest_print_source: "Don Juan, Canto III, stanza 3, Lord Byron, 1821"
+      notes: "Genuine Byron, from Don Juan, Canto III, stanza 3. The verse line is 'In her first passion woman loves her lover, / In all the others all she loves is love'. The corpus text flattens the second line to 'she loves love', losing both the meter and the point of the antithesis. Recommend restoring the original couplet."
+      reviewed_by_human: false

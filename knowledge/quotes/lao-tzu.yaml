@@ -1,0 +1,38 @@
+author: Lao Tzu
+author_normalized_key: lao-tzu
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0885
+    slug: null
+    text: "To attain knowledge, add things every day. To attain wisdom, remove things every day."
+    category: insight
+    keywords: [wisdom, time, taoism]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Tao Te Ching, ch. 48 (traditionally attributed to Laozi, c. 4th century BCE)"
+      notes: "A genuine, if loose, English rendering of Tao Te Ching ch. 48: 為學日益，為道日損 — 'in the pursuit of learning, every day something is gained; in the pursuit of the Way, every day something is dropped.' The paraphrase substitutes 'wisdom' for the Tao and 'remove things' for the subtractive 損, so it is not a scholarly translation, but the thought and structure are authentically from the text. Standard caveat: Laozi's historical existence and sole authorship of the Tao Te Ching are traditional rather than established."
+      reviewed_by_human: false
+  - id: q_0887
+    slug: null
+    text: A journey of a thousand miles begins with a single step.
+    category: insight
+    keywords: [journey, path, step, taoism]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Tao Te Ching, ch. 64 (traditionally attributed to Laozi, c. 4th century BCE)"
+      notes: "Genuine. Tao Te Ching ch. 64: 千里之行，始於足下, literally 'a journey of a thousand li begins beneath one's feet.' 'With a single step' is a translator's idiomatic choice rather than the literal sense, and the shift is worth noting because the Chinese emphasizes where one already stands rather than the act of stepping. The attribution to the Tao Te Ching is not in doubt; Laozi's historical authorship is traditional."
+      reviewed_by_human: false
