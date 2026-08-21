@@ -1,0 +1,22 @@
+author: Dr. David Schwartz
+author_normalized_key: dr-david-schwartz
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0546
+    slug: null
+    text: "Believe it can be done. When you believe something can be done, really believe, your mind will find the ways to do it. Believing a solution paves the way to solution."
+    category: insight
+    keywords: [belief, action, mind]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "The Magic of Thinking Big, David J. Schwartz, 1959"
+      notes: "This is Schwartz's thesis statement from the opening chapter of The Magic of Thinking Big (1959) — 'Believe it can be done' is the book's framing formula and the 'believing a solution paves the way to solution' line is quoted from it routinely. Confident in book and date; page not verified. Note the byline should be David J. Schwartz, not 'Dr. David Schwartz'."
+      reviewed_by_human: false

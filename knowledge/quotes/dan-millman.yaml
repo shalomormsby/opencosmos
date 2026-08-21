@@ -4,6 +4,22 @@ tradition: null
 era: null
 gender: M
 quotes:
+  - id: q_0499
+    slug: null
+    text: There are no ordinary moments.
+    category: insight
+    keywords: [time, perception, ordinary]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Way of the Peaceful Warrior: A Book That Changes Lives, Dan Millman, 1980"
+      notes: "The signature line of Millman's Way of the Peaceful Warrior, spoken by the Socrates character, and the book's central teaching. It later titled his 1992 follow-up No Ordinary Moments and served as the tagline for the 2006 film adaptation, Peaceful Warrior. Attribution and source work are both solid; I have not verified a page number."
+      reviewed_by_human: false
   - id: q_1285
     slug: null
     text: "The secret of change is to focus all of your energy not on fighting the old, but on building the new."

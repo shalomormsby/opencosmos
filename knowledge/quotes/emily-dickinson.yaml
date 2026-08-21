@@ -1,0 +1,22 @@
+author: Emily Dickinson
+author_normalized_key: emily-dickinson
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0603
+    slug: null
+    text: "Unable are the loved to die, for love is immortality."
+    category: relationships
+    keywords: [death, life, love]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Emily_Dickinson"
+      earliest_print_source: "Poem 'Unable are the Loved to die' (Johnson 809 / Franklin 951), Emily Dickinson, written c. 1864"
+      notes: "Genuine Dickinson. The poem opens 'Unable are the Loved to die / For Love is Immortality, / Nay, it is Deity —'. The quoted form flattens the line break and capitalization but is faithful to the text. Catalogued as J809 in Thomas H. Johnson's edition and Fr951 in R. W. Franklin's."
+      reviewed_by_human: false

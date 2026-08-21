@@ -1,0 +1,22 @@
+author: Goya
+author_normalized_key: goya
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0679
+    slug: null
+    text: "Fantasy abandoned by reason produces impossible monsters. United with her, she is the mother of the arts and the origin of their marvels."
+    category: creativity
+    keywords: [fantasy, reason, monster, mother, art, origin, unite]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Los Caprichos, plate 43 ('El sueno de la razon produce monstruos'), Francisco Goya, 1799 — author's explanatory commentary (Prado manuscript)"
+      notes: "This is Goya's own gloss on Capricho No. 43. The manuscript commentaries to Los Caprichos (the Prado set) explain plate 43 with essentially this text: imagination abandoned by reason produces impossible monsters; united with reason it is the mother of the arts and the source of their wonders. The line is Goya's, tied to a specific dated work. Slight variance across English translations ('fantasy'/'imagination', 'marvels'/'wonders') is translation drift, not attribution doubt. Confidence held just below 0.9 because the commentary survives in manuscript and its precise wording varies by edition."
+      reviewed_by_human: false

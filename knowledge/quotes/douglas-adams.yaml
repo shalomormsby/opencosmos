@@ -1,0 +1,38 @@
+author: Douglas Adams
+author_normalized_key: douglas-adams
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0542
+    slug: null
+    text: I love deadlines. I like the whooshing sound they make as they fly by.
+    category: humor
+    keywords: [creative process]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Douglas_Adams"
+      earliest_print_source: "The Salmon of Doubt: Hitchhiking the Galaxy One Last Time, Douglas Adams, 2002 (posthumous)"
+      notes: "Genuinely Adams — he used the line repeatedly in life and it appears in the posthumous Salmon of Doubt. The canonical wording is 'I love deadlines. I love the whooshing noise they make as they go by.' The version here ('I like the whooshing sound... as they fly by') is the common corrupted variant. Recommend restoring the canonical wording before promotion."
+      reviewed_by_human: false
+  - id: q_0543
+    slug: null
+    text: "Man has always assumed that he was more intelligent than dolphins because he had achieved so much - the wheel, New York, wars and so on - while all the dolphins had ever done was muck about in the water having a good time. But conversely, the dolphins had always believed that they were far more intelligent than man – for precisely the same reason."
+    category: humor
+    keywords: [people, dolphins, intelligence, war, water, enjoyment, belief]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Douglas_Adams"
+      earliest_print_source: "The Hitchhiker's Guide to the Galaxy, Douglas Adams, 1979, ch. 23"
+      notes: "The dolphin passage from the Hitchhiker's Guide novel (1979), also present in the radio series material. Text matches the published wording closely. Attribution certain."
+      reviewed_by_human: false

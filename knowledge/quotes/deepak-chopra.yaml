@@ -1,0 +1,38 @@
+author: Deepak Chopra
+author_normalized_key: deepak-chopra
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0512
+    slug: null
+    text: "Conscious change is brought about by the two qualities inherent in consciousness: attention and intention. Attention energizes, and intention transforms. Whatever you put your attention on will grow stronger in your life. Whatever you take your attention away from will wither, disintegrate, and disappear. Intention, on the other hand, triggers transformation of energy and information. Intention organizes its own fulfillment."
+    category: insight
+    keywords: [intention, attention, organization, fulfillment, life, change, conscious, energy, transformation, information]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "The Seven Spiritual Laws of Success, Deepak Chopra, 1994 — Law of Intention and Desire chapter (page unverified)"
+      notes: "A well-known passage from the Law of Intention and Desire chapter; 'attention energizes, and intention transforms' and 'intention organizes its own fulfillment' are Chopra's exact formulations from that book. Strong attribution; I have not confirmed the page, so I am not claiming primary-source verification."
+      reviewed_by_human: false
+  - id: q_0513
+    slug: null
+    text: "Everyone has a purpose in life... a unique or special talent to give to others. And when we blend this unique talent with service to others, we experience the ecstasy and exultation of our own spirit, which is the ultimate goal of all goals."
+    category: business
+    keywords: [goal, purpose, service, people, ecstasy, spirit]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "The Seven Spiritual Laws of Success, Deepak Chopra, 1994 — Law of Dharma chapter (page unverified)"
+      notes: "This is essentially the opening statement of the Law of Dharma chapter, where Chopra states that everyone has a purpose and a unique talent, and that blending that talent with service to others is the goal of goals. Attribution and book are secure in my knowledge; the ellipsis suggests light editing from the original sentence."
+      reviewed_by_human: false

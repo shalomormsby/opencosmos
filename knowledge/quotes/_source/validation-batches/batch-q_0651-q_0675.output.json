@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0651",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates almost exclusively on quotation aggregator sites credited to 'Geoffrey F. Abert', a name I cannot connect to any book, article, or biography in my training knowledge. No context, no date, no work. This pattern — a memorable aphorism bound to an otherwise undocumented name — usually means the attribution was copied from one quote list to the next without a source. I cannot confirm the person exists as an author, and I cannot place the line anywhere else.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0652",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": null,
+    "notes": "Consistently and, I believe, correctly attributed to Shaw; the diction and the argumentative turn ('in the sense of phenomena we cannot explain') are characteristically his, and it appears in Shaw quotation collections rather than in the generic misattribution churn. My recollection places it in the long Preface to 'Back to Methuselah' (1921), where Shaw discusses miracles and creative evolution, but I am not confident enough in that placement to record it as a citation, so I have left the print source null. Shaw authorship: likely. Exact work: unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0653",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": "Man and Superman, George Bernard Shaw, 1903 (Epistle Dedicatory to Arthur Bingham Walkley)",
+    "notes": "Genuine Shaw, from the Epistle Dedicatory prefacing 'Man and Superman' (1903). The surrounding passage runs: 'This is the true joy in life, the being used for a purpose recognized by yourself as a mighty one... I want to be thoroughly used up when I die, for the harder I work, the more I live. I rejoice in life for its own sake. Life is no brief candle to me. It is a sort of splendid torch which I have got hold of for the moment, and I want to make it burn as brightly as possible before handing it on to future generations.' Wording note for the corpus: the original reads 'which I have got hold of for the moment', not 'which I have got to hold up for the moment'. Recommend correcting the text to match the source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0654",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": "Man and Superman, George Bernard Shaw, 1903 (Epistle Dedicatory to Arthur Bingham Walkley)",
+    "notes": "Same passage as q_0653 — the two records are adjacent sentences from the Epistle Dedicatory to 'Man and Superman' (1903). Important wording note: Shaw wrote 'for the harder I work, the more I LIVE', not 'the more I love'. The corpus text carries a corrupted variant that inverts the sense of the line (Shaw's point is vitality, not affection). Attribution verified; text should be corrected. Consider also whether q_0653 and q_0654 should be merged into the single passage they came from.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0655",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely credited to Shaw and epigrammatic in his manner, but I cannot place it in any Shaw play, preface, essay, or in the 'Maxims for Revolutionists' appended to Man and Superman, which is where his freestanding aphorisms usually live. Absent a work I can name, and given how readily unsourced epigrams attach themselves to Shaw, I am treating the attribution as plausible but unsupported rather than strong.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0656",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": "Back to Methuselah, George Bernard Shaw, 1921 (Part I, Act I)",
+    "notes": "Genuine Shaw. Spoken by the Serpent to Eve in Part I ('In the Beginning') of 'Back to Methuselah' (1921). Widely known in Robert F. Kennedy's paraphrase — 'Some men see things as they are and say why; I dream things that never were and say why not' — which RFK used in his 1968 campaign and which is sometimes mistaken for the original; Kennedy credited Shaw. The text as recorded here matches Shaw's wording. Note the corpus text carries stray wrapping double quotes around the whole line that should probably be stripped.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0657",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": null,
+    "notes": "The pre-flag is correct: there is no Shaw source for this, and it appears in the misattributed section of Shaw quotation references. The saying circulated in the early twentieth century in the form 'Men do not quit playing because they grow old; they grow old because they quit playing', where it was credited to Oliver Wendell Holmes (Sr.). The Shaw credit, and the separate Satchel Paige credit, both appear to be later reassignments to more famous names. I am confident the Shaw attribution is wrong; I am only moderately confident in the Holmes origin, and the earliest instances may well be anonymous.",
+    "suggested_reattribution": "Oliver Wendell Holmes Sr. (earliest common attribution; possibly anonymous in origin) — not Shaw"
+  },
+  {
+    "id": "q_0658",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": "Muriel Strode, 'Wind-Wafted Wild Flowers', The Open Court, 1903",
+    "notes": "Not Shaw. This line is one of the most heavily reassigned aphorisms in circulation — most often pinned on Emerson, sometimes on Shaw, occasionally on Thoreau, with no support for any of them. The earliest known form is by the American poet Muriel Strode, published in 1903: 'I will not follow where the path may lead, but I will go where there is no path, and I will leave a trail.' The familiar imperative phrasing here is a later condensation of Strode's first-person original. I am confident the Shaw credit is wrong and reasonably confident in the Strode origin, though I am recalling the 1903 Open Court citation from memory and it should be spot-checked before the corpus leans on it.",
+    "suggested_reattribution": "Muriel Strode"
+  },
+  {
+    "id": "q_0659",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Bernard_Shaw",
+    "earliest_print_source": "Annajanska, the Bolshevik Empress, George Bernard Shaw, 1918",
+    "notes": "Genuine Shaw, from the one-act 'Annajanska, the Bolshevik Empress' (first performed 1918, published shortly after). Correct wording is 'All great truths begin as blasphemies' — the corpus text reads 'Al great truths', a clear typo that should be fixed. Attribution itself is solid and consistently sourced to this play.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0660",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The joke is real but the ownership is contested and older than Burns. The underlying gag — 'The secret of success is sincerity; once you can fake that you've got it made' — is credited in several quotation dictionaries to Jean Giraudoux, and has also been pinned on Sam Goldwyn, Daniel Schorr, and others. The acting-specific variant given here is very commonly hung on George Burns, but I know of no interview, book, or routine of his where it can be located. Burns may well have used it; he did not originate it. I cannot establish who did, so I am leaving the reattribution null rather than guessing between the claimants.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0661",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as authentic George Eliot — the cadence, the moral vocabulary ('trust and reverence'), and the aphoristic narrator's voice all fit her novels, and it is consistently attributed to her with no rival claimant. My impression is that it comes from 'Romola' (1863), but I cannot fix the chapter or confirm the novel, so I have left the print source null rather than record a guess as a citation. Eliot authorship: likely. Work: unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0662",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost certainly genuine George Eliot; this is narrative commentary of exactly the kind her novels carry, and it is quoted with consistent attribution. My recollection places it in 'Adam Bede' (1859), in the aftermath of Hetty's catastrophe, but I am not confident enough in the chapter or even the novel to record it as a citation. Attribution to Eliot: strong. Specific source: unconfirmed, and should be located in the text before this is promoted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0663",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Plausibly George Lucas and consistent with how he has talked about the making of the first Star Wars film, but the wording is conversational, which suggests an interview or a documentary rather than a written source. I cannot identify which interview, publication, or year, and unsourced interview quotes drift easily. Attribution is credible but unsupported by anything I can name.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0664",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates in design literature and Herman Miller-adjacent material credited to George Nelson, and the sentiment matches his writing on process (notably 'How to See' and his collected essays). I regard the attribution as credible but I cannot locate the sentence in a specific essay, lecture, or book, and design-world aphorisms are frequently paraphrased into tighter form than the original. Holding below the promotion bar until a text can be cited.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0665",
+    "status": "attributed",
+    "confidence": 0.78,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Richest Man in Babylon, George S. Clason, 1926",
+    "notes": "The author name in the record is misspelled: it should be George S. CLASON, not 'Claso'. The line belongs to Clason's parable collection 'The Richest Man in Babylon' (assembled from pamphlets of the early 1920s, published as a book in 1926), whose deliberately archaic maxim style — 'a lean purse' — this matches exactly. I am recalling the placement rather than reading it, so the citation is offered with that caveat, but the pairing of phrasing and author is distinctive enough that I do not consider it a guess. Fix the surname before promoting.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0666",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Washington_Carver",
+    "earliest_print_source": null,
+    "notes": "Very widely and consistently attributed to Carver, with no competing claimant, and it appears in Carver-specific material rather than only in general quote lists. I cannot connect it to a particular letter, address, or Tuskegee publication, and Carver's popular quotations are often transmitted through biographies and memorials rather than primary documents. Credible attribution, unconfirmed source; deliberately held below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0667",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/George_Washington_Carver",
+    "earliest_print_source": null,
+    "notes": "One of the most durable Carver sayings, transmitted through his advice to Tuskegee students and reproduced in Carver biographies and at the Carver National Monument. Attribution is consistent and I have no reason to doubt it; what I lack is a datable primary document — a letter, a speech text, or a published address — that fixes it. Somewhat better evidenced than q_0666 but still short of a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0668",
+    "status": "attributed",
+    "confidence": 0.68,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Georgia_O%27Keeffe",
+    "earliest_print_source": null,
+    "notes": "Genuine O'Keeffe in substance — this is a documented position of hers from the 1920s, when she was arguing that women artists had territory of their own to work, and the phrasing appears in O'Keeffe letters-and-writings collections rather than only in quote aggregators. I believe it originates in her correspondence (the Anita Pollitzer letters are the likeliest home) or in a statement to the press around her early exhibitions, but I cannot pin the letter or the date, so no citation is recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0669",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Gerald Jampolsky's attitudinal-healing writing and consistently credited to him; the likeliest home is 'Love Is Letting Go of Fear' (1979) or 'Teach Only Love' (1983). I cannot confirm which, and self-help aphorisms are frequently condensed by readers into tighter form than the published sentence, so the wording may be a paraphrase even if the thought is his. Attribution credible, source unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0670",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Gertrude_Stein",
+    "earliest_print_source": null,
+    "notes": "The repetition-and-qualification rhythm ('doing nothing, really doing nothing') is unmistakably Stein, and the attribution is consistent. My recollection places it in 'The Autobiography of Alice B. Toklas' (1933), where Stein-as-Toklas comments on Stein's working habits, but I cannot confirm the page or rule out 'Everybody's Autobiography'. Stein authorship: strong. Work: unconfirmed, so no citation recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0671",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Gertrude_Stein",
+    "earliest_print_source": "Everybody's Autobiography, Gertrude Stein, 1937",
+    "notes": "The thought is verified Stein — from 'Everybody's Autobiography' (1937), where she describes returning to Oakland to find her childhood home gone: '...there is no there there.' The wording in this record is NOT hers. 'When you get there, there isn't any there there' is a loose popular restatement; the canonical line is 'there is no there there'. Attribution to Stein is solid, so I have not marked it misattributed, but the text should be corrected to the published wording (and ideally given its Oakland context) before promotion — as it stands the corpus would be quoting the paraphrase, not the source. The 'spirit' category also misreads the line, which is about a vanished place, not transcendence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0672",
+    "status": "attributed_unverified",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Glenda Cloud' is a name that exists, so far as I can tell, only as an attribution line on quotation sites — I can connect it to no book, article, speech, or biography. The aphorism itself is a compact motivational formula of the kind that circulates anonymously and then acquires a plausible-sounding name. Honest answer: origin unknown, and I have no basis for either confirming or reassigning it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0673",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Glenn Clark (1882-1956) was a real author in the American devotional and prayer tradition — 'The Man Who Talks with the Flowers', 'How to Find Health through Prayer' — and the sentiment and register fit his work well, so the attribution is at least plausible rather than arbitrary. But I cannot locate the sentence in any of his books, and the 'travel light' framing is common enough in inspirational writing that convergence is possible. Plausible attribution, no source I can name.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0674",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Gloria_Steinem",
+    "earliest_print_source": null,
+    "notes": "Steinem is the standard credit and she has used the line in talks, so this is not a case of a name attached at random. But it is a variant of an older saying rather than an original coinage: forms such as 'The truth will set you free, but first it will make you miserable' were in circulation well before her, sometimes credited to James A. Garfield. Steinem's contribution is the sharpened profanity, and even that I cannot fix to a datable speech, essay, or interview. Best read as popularized-by rather than originated-by; holding well below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0675",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Johann_Wolfgang_von_Goethe",
+    "earliest_print_source": null,
+    "notes": "This is a translation of the German 'Nichts ist mehr wert als dieser Tag', which I believe to be genuine Goethe, most likely from his gnomic verse or aphorism collections ('Sprichwortlich' or the 'Maximen und Reflexionen'). I cannot fix the collection or the year, so no citation is recorded. Worth flagging that Goethe is a heavy misattribution magnet in English — the famous 'Whatever you can do or dream you can, begin it' is a John Anster paraphrase of Faust filtered through W.H. Murray and is not Goethe's — but this short line does not fit that pattern and I have no evidence against it. Also note the author field should probably read 'Johann Wolfgang von Goethe'.",
+    "suggested_reattribution": null
+  }
+]

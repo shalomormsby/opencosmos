@@ -1,0 +1,22 @@
+author: D. H. Lawrence
+author_normalized_key: d-h-lawrence
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0479
+    slug: null
+    text: The human soul needs actual beauty more than bread.
+    category: creativity
+    keywords: [soul, beauty, need]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "\"Nottingham and the Mining Countryside\", D. H. Lawrence, Architectural Review, 1930 (collected in Phoenix: The Posthumous Papers of D. H. Lawrence, 1936)"
+      notes: "Genuine Lawrence, from his late essay on the ugliness of the English mining towns. Note the wording: Lawrence wrote 'The human soul needs actual beauty even more than bread.' The corpus text drops 'even'. Recommend restoring the original word before promotion."
+      reviewed_by_human: false

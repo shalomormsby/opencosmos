@@ -132,3 +132,19 @@ quotes:
       earliest_print_source: "'The Most Durable Power,' Martin Luther King Jr., The Christian Century, 1957 (from a sermon delivered at Dexter Avenue Baptist Church, Montgomery, November 1956)"
       notes: "This is King's own language from the sermon/essay 'The Most Durable Power,' delivered at Dexter Avenue Baptist Church during the closing weeks of the Montgomery bus boycott and excerpted in The Christian Century in 1957; it is indexed in The Papers of Martin Luther King, Jr. and reprinted in A Testament of Hope. The wording here (durable power / creative force / exemplified in the life of our Christ / quest for peace and security) matches the published text. I am confident in the sermon and the Christian Century publication; I am not certain of the exact issue date, so treat the year rather than a day as the firm part of the citation."
       reviewed_by_human: false
+  - id: q_0552
+    slug: null
+    text: "Cowardice asks the question: is it safe? Expediency asks the question: is it politic? Vanity asks the question: is it popular? But conscience asks the question: is it right? And there comes a time when one must take a position that is neither safe, nor politic, nor popular - but one must take it simply because it is right."
+    category: insight
+    keywords: [right, conscience, popular, question]
+    context: "Christian, Civil Rights Leader"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "A Proper Sense of Priorities (address, Washington, D.C., February 6, 1968), Martin Luther King Jr."
+      notes: "Authentically King. He used this 'cowardice / expediency / vanity / conscience' construction more than once; the citation most commonly given is the February 1968 'A Proper Sense of Priorities' address, and closely related wording appears in his sermon material of the same period. Because King reworked the passage across sermons and speeches, I am confident in the author but not in which occurrence is earliest, so I stop short of 'verified'."
+      reviewed_by_human: false

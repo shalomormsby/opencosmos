@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0576",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Time magazine, \"The Maturing Modern\" (cover story on Eero Saarinen), July 2, 1956",
+    "notes": "This is one of the best-documented Saarinen lines and is consistently traced to the July 2, 1956 Time cover story on him; the wording circulates with only trivial variation (\"a house in an environment, an environment in a city plan\"). I recall the Time 1956 attribution clearly but cannot confirm page number or exact in-article phrasing from memory, so I am not claiming primary verification. The input text has a typo, \"a environment\", which is not in the standard wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0577",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Schiele in exhibition catalogues and art literature, rendered from his German writings (the line is usually given as \"Kunst kann nicht modern sein; Kunst ist urewig\"). The German original is well attested as Schiele's, so the attribution itself is solid, but I cannot place which letter, statement, or manuscript it comes from, nor date it, so no print source is claimed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0578",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as authentic Easwaran and is consistently attributed to him wherever it appears; the theme (thought as the seed of action) is central to his \"Conquest of Mind\" and the Nilgiri Press Thought for the Day material. I cannot identify the specific book or page, and Easwaran quotes circulate largely through undated devotional excerpts, so this stays below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0579",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Easwaran and consistent with his Gandhi-derived teaching on the three levels of violence (deed, word, thought). Note the text is an ellipsed composite of two passages, which makes exact sourcing harder. Easwaran is himself restating a Gandhian formulation here, but the wording appears to be his. No specific book identified; possibly from his Gandhi writings or a meditation commentary, but I will not guess.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0580",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Easwaran, and idiomatic to him (\"genuine use to others\" is his register). No competing attribution that I know of. I cannot place the source text, so no citation is claimed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0581",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a distinctive Easwaran passage: the self-examination checklist (\"Am I more loving? Is my judgment sounder?\") is one of his signature teachings on measuring progress in meditation, and I associate it strongly with his meditation manual, published by Nilgiri Press as \"Meditation\" and later as \"Passage Meditation\". I am confident in the attribution but not confident enough in the edition/page to record a print citation, so the field stays null. The text is ellipsed from a longer passage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0582",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The \"starve the ego of attention until it is a thin ghost of its former self\" image is characteristic Easwaran, and the attribution is consistent wherever the line appears. It is an ellipsed composite. No source text identified; Easwaran material of this kind usually surfaces via Nilgiri Press daily-reading collections, which are themselves excerpts, so tracing it further is not something I can do from memory.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0583",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Plausibly Easwaran on de-conditioning the mind, a theme of \"Conquest of Mind\", and I know of no competing attribution. But I do not specifically recognize this wording, and \"pure, unconditioned awareness\" is common enough phrasing across contemplative writers that I cannot rule out a quote-site drift. Honest verdict: attribution likely correct, evidence weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0584",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely circulated with consistent attribution to Easwaran; the sandpaper-and-relationships image matches his teaching that intimate relationships are the field of spiritual practice. No source text identified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0585",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Long passage, consistently attributed to Easwaran, and the vocabulary (\"native wisdom\", \"dexterously\", love as knowing and acting) is idiomatic to his commentaries; I would guess his Bhagavad Gita commentary or \"Original Goodness\", but a guess is not a citation, so the source field is null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0586",
+    "status": "likely_misattributed",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"What Constitutes Success?\" (contest-winning definition), Bessie Anderson Stanley, 1904/1905",
+    "notes": "This is a variant of the widely circulated \"Success\" passage whose documented origin is Bessie Anderson Stanley's 1904 prize-winning entry, published 1905: \"He has achieved success who has lived well, laughed often, and loved much...\" The phrase \"laughed often, and loved much\" here is verbatim Stanley; \"worked well\" is the drifted opening. This text is most famously misattributed to Emerson, and secondarily to Elbert Hubbard. I hold the Stanley origin with reasonable confidence, but I cannot rule out that Hubbard separately published a variant of his own in The Philistine or his epigram collections, which would make this a genuine-Hubbard rewording rather than a clean misattribution. Flagging for human review rather than asserting either way at high confidence.",
+    "suggested_reattribution": "Bessie Anderson Stanley"
+  },
+  {
+    "id": "q_0587",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Eleanor_Roosevelt",
+    "earliest_print_source": null,
+    "notes": "One of the most-repeated Eleanor Roosevelt lines and one of the least supported. It does not appear in her books, her \"My Day\" columns, or her speeches as far as I know, and researchers who have gone looking (Wikiquote's disputed/misattributed section, Quote Investigator) place the earliest attributions decades after her 1962 death. I have no identifiable true author, so I am not offering a reattribution. Should not be promoted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0588",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Eleanor_Roosevelt",
+    "earliest_print_source": "Reader's Digest, September 1940 (quoted as Eleanor Roosevelt)",
+    "notes": "Better supported than most ER attributions but still not primary. The standard earliest citation is a 1940 Reader's Digest quotation credited to her during her lifetime, which she is not known to have disputed; her 1937 autobiography \"This Is My Story\" contains related material about inferiority but not this sentence. So: attributed in her lifetime, never located in her own writing. I am fairly but not fully confident of the Reader's Digest 1940 detail. The \"Remember\" at the start of the input text is an addition to the standard wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0589",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Eleanor_Roosevelt",
+    "earliest_print_source": "You Learn by Living, Eleanor Roosevelt, 1960",
+    "notes": "Genuine and sourced. From the chapter on fear in \"You Learn by Living\" (1960): \"You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face... You must do the thing you think you cannot do.\" This is the rare ER quotation with a real primary source in her own book.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0590",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Eleanor Roosevelt, and the sentiment and cadence fit her late writing on human rights; I associate it loosely with her \"My Day\" columns or the posthumous \"Tomorrow Is Now\" (1963), but I cannot confirm either, so no citation is recorded. Attribution plausible and uncontested; documentation absent.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0591",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as a genuine Canetti aphorism and is consistently attributed to him. I associate it with his notebooks, published as \"Die Provinz des Menschen\" / \"The Human Province\" (1973), which is where most of his short animal-and-human aphorisms come from, but I cannot confirm the volume or year for this specific entry, and translation wording varies. No citation claimed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0592",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Has the texture of a spoken interview answer rather than Wiesel's published prose, and it is consistently attributed to him in quotation collections. Wiesel did speak often about Hasidic mysticism versus philosophy, so the content is in character. But I cannot identify the interview, date, or publication, and unattributed interview fragments are exactly where quote-collection drift happens. Honest uncertainty.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0593",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Eliza Tabor (Eliza Tabor Stephenson, Victorian novelist) in nineteenth- and twentieth-century quotation dictionaries, which is itself the only evidence I have; such dictionaries copy from one another. Presumably from one of her novels, but I cannot name it or a date. The attribution is uncontested rather than supported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0594",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to the novelist Elizabeth Berg, and the subject matter (finding the courage to make your own art in your own voice) matches her nonfiction on writing, \"Escaping into the Open\". I do not specifically recognize the sentence or know which book it comes from, so no citation. No competing attribution known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0595",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Elizabeth J. Canham is a real author of Christian contemplative works, and the line circulates in devotional and retreat material credited to her. I do not recognize the specific sentence or its source, and quotes of this kind are frequently lifted from anthologies without citation. Weak evidence; attribution plausible.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0596",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuinely Kübler-Ross as far as I know; the passage is standardly cited to \"Death: The Final Stage of Growth\" (1975). I hold that attribution with reasonable confidence but not enough to record it as a verified primary citation, so the source field is null pending a human check against the book. Note the author name in the input is missing its diacritics and the standard first-name spelling (Elisabeth Kübler-Ross); worth normalizing. The full passage usually ends \"...Beautiful people do not just happen.\"",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0597",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Kübler-Ross, commonly cited to \"Death: The Final Stage of Growth\" (1975), though I cannot confirm the book from memory. The stained-glass image is strongly associated with her. Attribution solid enough to keep; citation unproven. Author-name spelling should be normalized to Elisabeth Kübler-Ross.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0598",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with the central argument of her work on dying as a teacher of living, and uniformly attributed to her; usually cited to \"On Death and Dying\" (1969) or \"Death: The Final Stage of Growth\" (1975), and I cannot tell which, which is itself a sign the citation chain is weak. Attribution accepted, source not claimed. The trailing \"as if it was the only one we had\" varies across versions.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0599",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I recall this as a real Musk line, made in the context of Tesla product and software design (the idea that a manual is evidence of a design failure), circulating from roughly the early-to-mid 2010s. I cannot pin it to a specific tweet, interview, or internal email, and contemporary-figure quotes without a dated source are easy to get wrong, so the citation stays null and confidence stays below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0600",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/E._B._White",
+    "earliest_print_source": "The New York Times, interview with E. B. White by Israel Shenker, July 11, 1969",
+    "notes": "Genuine White, from the 1969 New York Times interview by Israel Shenker. The original reads \"...torn between a desire to improve (or save) the world and a desire to enjoy (or savor) the world. This makes it hard to plan the day.\" The input drops the parentheticals, which is the common short form, so the text is accurate but slightly abridged; consider restoring the parentheses. Author name should be normalized to E. B. White rather than \"Elwyn Brooks White\".",
+    "suggested_reattribution": null
+  }
+]

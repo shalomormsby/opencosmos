@@ -1,0 +1,22 @@
+author: Don Norman
+author_normalized_key: don-norman
+tradition: engineering
+era: null
+gender: M
+quotes:
+  - id: q_0535
+    slug: null
+    text: "It is not enough that we build products that function, that are understandable and usable, we also need to build products that bring joy and excitement, pleasure and fun, and, yes, beauty to people’s lives."
+    category: design
+    keywords: [ux]
+    context: Designer
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Emotional Design: Why We Love (or Hate) Everyday Things, Donald A. Norman, 2004"
+      notes: "This is Norman's own summary of the turn he made from The Design of Everyday Things to Emotional Design, and I recall it from the front matter of Emotional Design (2004); closely related phrasing appears in his 2002 Interactions essay 'Emotion and Design: Attractive Things Work Better'. Confident in author and book; page not verified, and it is possible the earliest print instance is the 2002 essay rather than the book."
+      reviewed_by_human: false

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0676",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Johann_Wolfgang_von_Goethe",
+    "earliest_print_source": "The Scottish Himalayan Expedition, W. H. Murray, 1951",
+    "notes": "One of the best-documented Goethe misattributions. The prose passage ('Until one is committed... a whole stream of events issues from the decision') is W. H. Murray, from the opening of The Scottish Himalayan Expedition (1951). Murray closed the passage by quoting a couplet he credited to Goethe; that couplet ('Whatever you can do, or dream you can, begin it. Boldness has genius, power, and magic in it.') is in fact John Anster's very loose 1835 verse rendering of a passage in the 'Vorspiel auf dem Theater' of Faust, not a literal Goethe line. The Goethe Society of North America has publicly addressed this attribution. Nothing in the paragraph is Goethe's own prose.",
+    "suggested_reattribution": "W. H. Murray (prose); closing couplet is John Anster's 1835 loose translation of Goethe's Faust"
+  },
+  {
+    "id": "q_0677",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A German original circulates ('Je alter ich werde, desto mehr vertraue ich auf das Gesetz, wonach die Rose und die Lilie bluhen'), and the sentiment and diction are consistent with late Goethe, which raises my prior that it is genuine rather than invented. But I cannot place it in a specific work, letter, or conversation from what I know, and Goethe is a heavily aggregated quote-collection author. Honest verdict: plausible but unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0678",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Golda Meir across quotation collections, and the sentiment fits her documented working style, but I cannot place it in her memoir My Life (1975), in a speech, or in a contemporaneous interview. No competing attribution known to me. Attribution is stable but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0679",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Los Caprichos, plate 43 ('El sueno de la razon produce monstruos'), Francisco Goya, 1799 — author's explanatory commentary (Prado manuscript)",
+    "notes": "This is Goya's own gloss on Capricho No. 43. The manuscript commentaries to Los Caprichos (the Prado set) explain plate 43 with essentially this text: imagination abandoned by reason produces impossible monsters; united with reason it is the mother of the arts and the source of their wonders. The line is Goya's, tied to a specific dated work. Slight variance across English translations ('fantasy'/'imagination', 'marvels'/'wonders') is translation drift, not attribution doubt. Confidence held just below 0.9 because the commentary survives in manuscript and its precise wording varies by edition.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0680",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Grace Lichtenstein is a real American journalist and author (New York Times reporter; wrote on women in sport and the American West), so the attribution is not to a fictitious person. But I cannot place this line in any of her books or articles. It reads like an anthology extract, possibly from an adventure- or women's-outdoors collection. Unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0681",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Greg Anderson is a real wellness author (The 22 Non-Negotiable Laws of Wellness, 1995; The Cancer Conqueror), and this line is routinely credited to him in quotation databases, but I cannot confirm which book it comes from or that it originates with him rather than with a compiler. Common-name risk as well: several authors named Greg Anderson exist. Unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0682",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I recognize this as a line from Shantaram (Gregory David Roberts, 2003) — it belongs to the Khaderbhai passages on good, evil, and the universe tending toward complexity and God. I am confident about the novel; I cannot cite chapter or page, and the circulating version may be lightly compressed from the original paragraph. Note it is dialogue spoken by a character, which is worth flagging if the corpus distinguishes author voice from character voice.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0683",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Groucho Marx is a first-rank misattribution magnet — a large share of quips credited to him were written by his screenwriters, said by other comedians, or attached to his name later. I cannot place this line in a film, a Groucho book (Groucho and Me, Memoirs of a Mangy Lover), or a documented broadcast. The construction is stylistically plausible for him, which is precisely the weakest kind of evidence. Treat as unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0684",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The vocabulary is authentically Gurdjieffian — 'real love' as objective rather than subjective, and 'crystallize' as a technical term in the Fourth Way system — so this is unlikely to be a wholesale invention. Gurdjieff's talks reach us mostly through pupils' transcriptions (Views from the Real World, Ouspensky's In Search of the Miraculous), so wording is inherently secondhand. I cannot place this specific sentence in a particular talk or transcript.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0685",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reported of Flaubert by Guy de Maupassant, who in his essay-preface to Pierre et Jean (1887-88) recounts Flaubert's instruction to him that talent is a long patience ('Le talent est une longue patience'). So the attribution rests on a strong, named, contemporaneous witness rather than on Flaubert's own pen. Also worth flagging a precursor: Buffon is credited with 'Le genie n'est qu'une plus grande aptitude a la patience,' and the two sayings are frequently conflated. Kept below the promotion bar because the line is a pupil's report of speech, not a Flaubert text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0686",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely circulated over H. G. Wells's name in inspirational collections, but I cannot place it in his novels, essays, journalism, or the Experiment in Autobiography. The register is warmer and more devotional than Wells's characteristic prose, which mildly argues against it. No alternative author known to me. Unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0687",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a genuine and much-repeated Tenzin Gyatso formulation — the 'necessities, not luxuries' framing of compassion recurs across his public teaching and writing. I have a moderate recollection that it appears in the vicinity of his 1989 Nobel Peace Prize lecture in Oslo and in later compassion-focused books, but I am not confident enough in the specific venue to record it as a citation, so earliest_print_source is left null rather than guessed. Attribution to the Dalai Lama itself is solid; the sourcing is not.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0688",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/H._L._Mencken",
+    "earliest_print_source": "'The Divine Afflatus', H. L. Mencken, New York Evening Mail, 16 November 1917; collected in Prejudices: Second Series, 1920",
+    "notes": "The idea is authentically Mencken's but the wording here is a later paraphrase. Mencken's actual sentence is: 'there is always a well-known solution to every human problem — neat, plausible, and wrong.' The circulating 'For every complex problem there is an answer that is clear, simple, and wrong' is a rewrite that swaps his adjectives and adds 'complex'. Author is right; text is not his. Recommend replacing the text with Mencken's original wording, at which point this becomes a clean verified entry.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0689",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Gift: Poems by Hafiz the Great Sufi Master, Daniel Ladinsky, 1999",
+    "notes": "This is Daniel Ladinsky's poem 'Pulling Out the Chair', not a translation of the 14th-century Persian poet Hafez of Shiraz. Ladinsky has stated that his 'Hafiz' books are not translations from Persian — he does not read Persian — and scholars of Persian literature (Omid Safi among others) have documented that these poems have no counterparts in the Divan. The overwhelming majority of English 'Hafiz' quotations in circulation are Ladinsky originals, this one included.",
+    "suggested_reattribution": "Daniel Ladinsky"
+  },
+  {
+    "id": "q_0690",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same problem as the preceding Hafiz entry. The diction — 'knee-deep in ecstasy', 'all your talents to love' — is characteristic of Daniel Ladinsky's English compositions (The Gift, 1999; I Heard God Laughing, 1996), which are presented as Hafiz but have no basis in the Persian Divan. I cannot name the specific Ladinsky poem, so the reattribution is a strong inference from provenance patterns and style rather than a placed citation; earliest_print_source left null accordingly. What I am confident of is the negative: this is not a rendering of Hafez of Shiraz.",
+    "suggested_reattribution": "Daniel Ladinsky (probable — his 'Hafiz' poems are original English works, not translations)"
+  },
+  {
+    "id": "q_0691",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and, I believe, correctly credited to the painter and teacher Hans Hofmann; my recollection associates it with his essay collection Search for the Real and Other Essays (1948), which is where his aphoristic statements on pictorial means are gathered. I am not confident enough of that placement to record it as a citation. The line is a staple of design literature, so anthology-drift is possible in the wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0692",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The author name in the record is a well-known corruption. There is no 'Harold Thurman Whitman'; the name is a mangling of Howard Thurman (1899-1981), the African-American theologian and mentor to civil rights leaders. The attribution chain runs through Gil Bailie, who in Violence Unveiled (1995) reports this as spoken advice Thurman gave him. It has not been located in Thurman's own published writings, so even under the corrected name it is a secondhand report of speech rather than a sourced text. At minimum the author field should be fixed to Howard Thurman; the quote should not be promoted as verified.",
+    "suggested_reattribution": "Howard Thurman"
+  },
+  {
+    "id": "q_0693",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Long-standing and stable attribution to Harriet Beecher Stowe, appearing in quotation collections well back into the 20th century, which argues against recent invention. I cannot place it in Uncle Tom's Cabin, Oldtown Folks, her letters, or her domestic essays, and I do not know whether it is authorial prose or a line given to a character. Plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0694",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Harriet_Tubman",
+    "earliest_print_source": null,
+    "notes": "A modern motivational composition attached to Harriet Tubman; it appears in the misattributed section of her Wikiquote page. Tubman did not read or write, and her documented words reach us through Sarah Bradford's Scenes in the Life of Harriet Tubman (1869) and a small number of interviews and dictated letters — none of which contain anything like this. The register ('reach for the stars to change the world') is late-20th-century inspirational English, not 19th-century speech. No true author known to me, hence apocryphal rather than a reattribution. Recommend rejection rather than correction.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0695",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Credited to Harry Emerson Fosdick, the liberal Protestant preacher of Riverside Church, and the theme — faith enlarged rather than threatened by mystery — is squarely his. Fosdick preached and published prolifically (The Meaning of Faith, On Being a Real Person, decades of sermons), so a genuine origin is quite possible, but I cannot place the sentence in a specific sermon or book. Fosdick is not a misattribution magnet, which slightly raises confidence, but the source is unfound.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0696",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely credited to Helen Keller and consistent with her published voice; she wrote a great deal (The Story of My Life, Optimism, Out of the Dark, My Religion, extensive correspondence), so many Keller quotations are genuine. I cannot place this particular sentence in a specific work. Plausible, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0697",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I am reasonably confident this is genuine Keller and associate it with her essay Optimism (1903), though not confidently enough to record that as a citation. Important textual note: the standard wording is 'sailed to an uncharted land, or opened a new doorway for the human spirit.' The record here reads 'an enchanted land' and 'to the human spirit' — 'enchanted' is a common corruption of 'uncharted' and should be corrected before the quote is used. Confidence held at 0.6 because the text as stored is drifted even though the attribution looks sound.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0698",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A very widely circulated Keller line with a stable attribution going back decades, and thematically continuous with her writing on optimism and adversity. My recollection associates it loosely with her letters or her essay writing rather than with a book I can name, so I will not record a source. Attribution more likely genuine than not, but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0699",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Helen Keller; the phrasing ('fidelity to a worthy purpose') has an early-20th-century cast that fits her period and prose, unlike the modern-sounding lines often invented for her. I cannot place it in a specific essay, book, or letter. Plausible, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0700",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This one deserves skepticism despite its fame. It circulates in several mutually inconsistent forms — 'The greatest tragedy in life is people who have sight but no vision', 'The only thing worse than being blind is having sight but no vision', 'Worse than being blind is to see and have no vision' — and variant proliferation with no fixed wording is a classic signature of apocrypha. I cannot place any version in Keller's substantial published corpus, and the epigram has the shape of a line composed for her because she was blind. Not called outright apocryphal only because her writings are extensive enough that I cannot exclude an origin I simply do not recall. Do not promote.",
+    "suggested_reattribution": null
+  }
+]

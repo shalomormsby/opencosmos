@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0626",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and exclusively attributed to Frank Lloyd Wright across quotation collections, and it matches his documented pantheism (he repeatedly described Nature as the only body of God he would ever see). I have a moderate recollection that he said a version of this in the Mike Wallace television interview of 1957, but I cannot confirm the exact wording or setting from memory, so I am not asserting that as a citation. Attribution direction is not in doubt; the source is.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0627",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates in several variant forms ('the architect's two most important tools are the eraser in the drawing room and the sledgehammer on the job site'), always credited to Wright. Variant instability of this kind usually signals oral transmission rather than a printed original. Note that Wright's genuinely sourced architect aphorism is a different one — 'The physician can bury his mistakes, but the architect can only advise his client to plant vines' (New York Times Magazine, 4 October 1953) — and the two are sometimes conflated. I cannot place this sledgehammer line in any Wright text or interview.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0628",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently credited to Wright, with no competing claimant that I know of. The sentiment and the doubled-clause construction are characteristic of his lecture and interview speech. I cannot locate a specific book, lecture, or interview, so I am holding this below the promotion bar rather than citing a source I cannot support.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0629",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Franklin P. Jones was a Philadelphia newspaperman and gag writer whose one-liners ran in the Saturday Evening Post and Quote magazine in the 1940s-1950s, and this is one of his best-known. Attribution is stable across quotation dictionaries with no rival claimant. I have an impression the earliest printing was in the Saturday Evening Post in the early 1950s but cannot confirm the year or issue, so I leave the citation field empty rather than guess. Kept just under 0.80 for want of a locatable first printing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0630",
+    "status": "likely_misattributed",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The author name looks corrupted. This aphorism is standardly credited to Frank A. Clark, the American columnist and cartoonist behind 'The Country Parson' panel, whose short moral epigrams were widely syndicated and heavily anthologised. I know of no writer named 'Fred A. Clark' associated with it, and 'Fred' for 'Frank' is the kind of drift that propagates through quote databases. Recommend correcting the name; the underlying Frank A. Clark attribution is itself secondary, not primary-sourced. Also note the text is missing its apostrophe ('Its' should be \"It's\") and uses a hyphen where an em dash belongs.",
+    "suggested_reattribution": "Frank A. Clark"
+  },
+  {
+    "id": "q_0631",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The baseball metaphor ('you can't steal second base and keep your foot on first') circulated anonymously in American sermons, sales talks, and newspaper filler well before it was ever pinned to a named author. 'Frederick B. Wilcox' is a name that appears in quotation books attached to this line and essentially nowhere else — no biography, no other works, no primary text — which is the classic signature of a phantom attribution. The 'Progress always involves risk' opening clause also looks like a later prefix welded onto the older saying. Treat the named author as unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0632",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A traditional proverb of the 'no pillow so soft as a clear conscience' family, which appears in English, French, and other European collections; French forms along the lines of 'il n'est point de plus doux oreiller qu'une bonne conscience' exist. Proverbs of this kind have no author and no fixable first printing, and the 'French Proverb' label is a convention rather than a provenance claim. 'I don't know' is the honest verdict.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0633",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The thought and the diction are genuinely Schleiermacher's, and I believe this is from the opening of the Monologen (Soliloquies, 1800), whose prefatory passage turns on the idea that the most precious thing one person can offer another is the record of the spirit's communion with itself. English wording would then come from a translation, most likely Horace Leland Friess's. I am confident enough in the author to call this attributed, but not confident enough in the work or the translator to enter a citation, so the source field stays empty.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0634",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in any Dostoyevsky novel, notebook, or letter that I know. The sentence is also internally odd in English — 'only occasionally, for a moment, but forever' reads like a mangled or over-compressed translation rather than a rendering of a real passage. Dostoyevsky's genuine love aphorisms (from The Brothers Karamazov and The Idiot) are quite differently shaped. Possibly a corrupted paraphrase; possibly not his at all. No basis for a reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0635",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Maps to Ecstasy: Teachings of an Urban Shaman, Gabrielle Roth, 1989",
+    "notes": "I recognise this passage from Gabrielle Roth's Maps to Ecstasy, where she writes that the body is the ground metaphor of one's life and closes with the line about the marriage of flesh and spirit admitting no divorce. Note the corpus text reads 'the ground and metaphor'; my recollection of the original is 'the ground metaphor', so the wording here may carry an inserted 'and'. I am confident in the book but have not verified page or edition, hence 0.70 rather than higher.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0636",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Stable attribution to Gail Sheehy with no competing claimant, and the theme — crisis as the engine of adult development — is the central argument of her work. Quotation collections generally source it to Passages: Predictable Crises of Adult Life (1976), which is plausible, but I cannot confirm that placement from my own knowledge of the text, so I am leaving the citation field empty rather than repeating an unverified secondary claim.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0637",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Duplicate in substance of q_0639, in a degraded form: 'You can't teach an man anything' contains a typo ('an man'). The saying is universally attached to Galileo but is at best a loose modern paraphrase, sometimes said to condense Salviati's remarks on Socratic drawing-out in the Dialogue Concerning the Two Chief World Systems (1632). I cannot point to a passage in Galileo that says this, and the aphorism's clean modern English is characteristic of a self-help-era restatement rather than a translation. Recommend deduplicating against q_0639 and keeping the cleaner text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0638",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "One of the standard doubtful Galileo lines. It is quoted constantly — often in wine and gratitude contexts — but I am not aware of any passage in Galileo's letters or published works that contains it, and I recall it being treated as unsourced in discussions of misattributed Galileo material. The sentimental framing sits oddly against Galileo's actual prose. Galileo is a lesser-known misattribution magnet in the same family as Einstein and Twain. No credible alternative author known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0639",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same saying as q_0637, in cleaner wording. Attribution to Galileo is ubiquitous but unsupported by any passage I can identify; it is generally described as a paraphrase, sometimes linked to the Socratic-method discussion in the Dialogue Concerning the Two Chief World Systems (1632), sometimes floated free with no source at all. Consistent attribution across sources is not evidence here, since they all appear to copy one another. Honest verdict is an unverified attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0640",
+    "status": "likely_misattributed",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Twilight Hours: A Legacy of Verse, Sarah Williams, 1868",
+    "notes": "This is not Galileo. The line is from the Victorian poem 'The Old Astronomer' (often given as 'The Old Astronomer to His Pupil') by the English poet Sarah Williams, who wrote under the name 'Sadie'; it appeared in her posthumous collection Twilight Hours: A Legacy of Verse (1868). The couplet runs 'Though my soul may set in darkness, it will rise in perfect light; / I have loved the stars too fondly to be fearful of the night.' The Galileo attribution is a modern internet accretion, presumably because the poem's speaker is a dying astronomer. This is a solid reattribution, not a guess.",
+    "suggested_reattribution": "Sarah Williams"
+  },
+  {
+    "id": "q_0641",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item one of the 'Seven Social Sins'. Gandhi published the list in his weekly Young India in October 1925, but he explicitly presented it as sent to him by a correspondent rather than as his own composition; the list is traced to a sermon preached at Westminster Abbey in March 1925 by the Anglican priest Frederick Lewis Donaldson. So Gandhi is the populariser, not the author. Separately, this entry is a three-word fragment of a seven-item list and does not stand alone as a quotation — recommend the human reviewer either merge q_0641 through q_0647 into a single quote or reject them as fragments.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0642",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item two of the 'Seven Social Sins'. Same provenance as q_0641: printed by Gandhi in Young India in October 1925 as material received from a correspondent, with the underlying list attributed to Frederick Lewis Donaldson's Westminster Abbey sermon of March 1925. Gandhi endorsed and spread it; he did not write it. Also a bare fragment rather than a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0643",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item three of the 'Seven Social Sins'. Same provenance as q_0641 — Gandhi as publisher in Young India, Frederick Lewis Donaldson as the probable author of the original list. Gandhi is a well-known misattribution magnet and this list is one of the most frequently over-credited items in his name. Fragment, not a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0644",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item four of the 'Seven Social Sins'. Same provenance as q_0641. Note the canonical wording of this item is sometimes given as 'Commerce without morality' and sometimes 'Business without ethics' or 'Trade without morality' depending on the retelling, which is further evidence that these fragments have been transmitted loosely rather than from a fixed printed text. Fragment, not a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0645",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item five of the 'Seven Social Sins'. Same provenance as q_0641 — published by Gandhi, composed (on the best available account) by Frederick Lewis Donaldson for a Westminster Abbey sermon in March 1925. Fragment, not a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0646",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item six of the 'Seven Social Sins'. Same provenance as q_0641. Fragment, not a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0647",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": "Young India, 22 October 1925 (Gandhi printed the list, crediting an unnamed correspondent)",
+    "notes": "Item seven of the 'Seven Social Sins'. Same provenance as q_0641. Note the text here is pluralised — the canonical item is 'Politics without principle', singular — which suggests this set was transcribed from a secondary retelling rather than from the Young India text. Fragment, not a standalone quotation.",
+    "suggested_reattribution": "Frederick Lewis Donaldson"
+  },
+  {
+    "id": "q_0648",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This item is NOT part of the 1925 'Seven Social Sins' list at all — the seven end at 'Politics without principle'. 'Rights without responsibilities' is a later addition; my understanding is that Arun Gandhi, M. K. Gandhi's grandson, has described appending an eighth item in this wording to the list his grandfather gave him. So attributing it to Mahatma Gandhi is wrong on both counts: he neither authored the original list nor included this line. I am moderately but not fully confident of the Arun Gandhi attribution, hence the low confidence and the empty citation field.",
+    "suggested_reattribution": "Arun Gandhi (added as an eighth item to the list attributed to his grandfather)"
+  },
+  {
+    "id": "q_0649",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The vocabulary is distinctively Gary Zukav's — 'emotional currents', 'the quality of your light' are core terms of art in The Seat of the Soul (1989), and I believe that is where this passage comes from. Attribution to Zukav is not in doubt; I am withholding the book citation only because I cannot confirm the passage's placement well enough to enter it as a source. Held just below the promotion bar for that reason.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0650",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates credited to Gary Zukav but I cannot place it in The Seat of the Soul or any other book of his, and the register is wrong for him — the pleading second-person address ('Please… tell me who you are and what you want') reads as dialogue from a novel, film, or television script rather than as Zukav's expository prose. The 'who are you / what do you want' pairing is also a widely circulated dramatic device, which raises the possibility of a transfer from a fictional source. Not enough basis to name an alternative author, so no reattribution offered.",
+    "suggested_reattribution": null
+  }
+]
