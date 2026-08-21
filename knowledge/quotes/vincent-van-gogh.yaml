@@ -20,3 +20,35 @@ quotes:
       earliest_print_source: "Letter to Theo van Gogh, Arles, September 1888 (collected in The Complete Letters of Vincent van Gogh)"
       notes: "This is a genuine line from Van Gogh's correspondence with his brother Theo, from a letter written at Arles in September 1888. Translations vary between 'nothing more truly artistic' and 'nothing more genuinely artistic than to love people', which is the usual signature of a real translated letter rather than an invented aphorism. I am confident of the letter's existence and rough date but cannot recall the catalogue letter number from memory, so I have not asserted one."
       reviewed_by_human: false
+  - id: q_1409
+    slug: null
+    text: "There may be a great fire in our soul, yet no one ever comes to warm himself at it, and the passers-by see only a wisp of smoke."
+    category: creativity
+    keywords: [fire, great, soul, alone, smoke, people, artist, solitude]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Vincent_van_Gogh"
+      earliest_print_source: "Letter to Theo van Gogh, Cuesmes, summer 1880 (collected in The Letters of Vincent van Gogh)"
+      notes: "Genuine van Gogh, from the long Cuesmes letter to Theo written in the summer of 1880 during his turn toward art. The familiar rendering is close to the published translations: someone has a great fire in his soul and nobody ever comes to warm themselves at it, and passers-by see only a little smoke at the top of the chimney. Wording varies slightly between translations, but the passage itself is well documented in the letters corpus."
+      reviewed_by_human: false
+  - id: q_1410
+    slug: null
+    text: "Great things are not done by impulse, but by a series of small things brought together."
+    category: creativity
+    keywords: [great, impulse, small, art, artist, intention]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Vincent_van_Gogh"
+      earliest_print_source: "The Letters of Vincent van Gogh — letter to Theo, 1882"
+      notes: "Consistently and, as far as I can tell, correctly sourced to the letters to Theo from the Hague period (1882), and it appears in the sourced rather than the unsourced sections of reference collections. It also matches van Gogh's actual argument in those letters about patient accumulation over inspiration. I am confident in the attribution but have not pinned the exact letter number, so I stop short of 'verified'."
+      reviewed_by_human: false

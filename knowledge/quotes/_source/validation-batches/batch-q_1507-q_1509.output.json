@@ -1,0 +1,29 @@
+[
+  {
+    "id": "q_1507",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "As a generic 'Zen saying' this is untraceable — it is a three-word English phrase, not a rendering of a known koan, sutra line, or classical Chan formula I can place. The reason it circulates in English is Shunryu Suzuki: 'Not always so' is remembered by his San Francisco Zen Center students as one of his habitual correctives, and it supplies the title of the posthumous collection 'Not Always So: Practicing the True Spirit of Zen' (Suzuki, edited by Edward Espe Brown, HarperCollins, 2002), drawn from lectures given in the late 1960s and early 1970s. I am confident that book and title exist; I cannot pin the phrase to a specific dated lecture or to any pre-Suzuki print occurrence, so I am not recording an earliest print source. Suggesting Suzuki as the proximate English source rather than an anonymous tradition, but flagging that he was himself gesturing at a general Zen attitude, so 'Zen saying' is loose rather than flatly wrong.",
+    "suggested_reattribution": "Shunryu Suzuki"
+  },
+  {
+    "id": "q_1508",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not Zen. This is the signature doctrine of the Ming neo-Confucian Wang Yangming (1472-1529), the unity of knowing and acting (zhi xing he yi), stated in the Chuanxi lu / 'Instructions for Practical Living' roughly as: there have never been people who know and do not act; those who know but do not act simply do not yet know. The English wording here matches the paraphrase popularized in Western business and self-help writing — Stephen Covey used a near-identical line ('To know and not to do is really not to know') in The 7 Habits of Highly Effective People (1989), which is likely how it entered circulation with a vague Eastern-wisdom label that later hardened into 'Zen saying'. I am confident about the Wang Yangming doctrine and reasonably confident about the Covey transmission path; I am not confident enough about which translation produced this exact English sentence to name an earliest print source, so I am leaving that null rather than guessing at a Wing-tsit Chan page.",
+    "suggested_reattribution": "Wang Yangming (paraphrase; popularized in English via Stephen Covey)"
+  },
+  {
+    "id": "q_1509",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Zora_Neale_Hurston",
+    "earliest_print_source": "Dust Tracks on a Road, Zora Neale Hurston, 1942",
+    "notes": "Correctly attributed. 'Research is formalized curiosity. It is poking and prying with a purpose' is Hurston's, from her autobiography Dust Tracks on a Road (J. B. Lippincott, 1942), in the material on her anthropological fieldwork. The trailing sentence — 'It is a seeking that he who wishes may know the cosmic secrets of the world and they that dwell therein' — is also Hurston's voice and also from Dust Tracks, but I recall it sitting in the book's concluding passage rather than immediately adjoining the 'formalized curiosity' lines. So the author and the book are solid; the quote as presented may be a splice of two nearby-but-not-contiguous sentences. Holding confidence at 0.85 rather than higher for that reason. Recommend a human check against the 1942 text before treating this as a continuous quotation, and consider trimming to the first two sentences, which are the securely contiguous part.",
+    "suggested_reattribution": null
+  }
+]

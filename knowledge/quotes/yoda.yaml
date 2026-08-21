@@ -1,0 +1,22 @@
+author: Yoda
+author_normalized_key: yoda
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1483
+    slug: null
+    text: Do or do not do. There is no try.
+    category: business
+    keywords: [action, effort, work]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Star Wars: Episode V — The Empire Strikes Back, screenplay by Leigh Brackett and Lawrence Kasdan, 1980"
+      notes: "Provenance is certain: Yoda's line to Luke on Dagobah in The Empire Strikes Back (1980), voiced by Frank Oz. IMPORTANT — the text as stored is a corruption. The canonical line is 'Do. Or do not. There is no try.' The stored 'Do or do not do. There is no try.' should be corrected. Confidence 0.9 rather than higher only because the wording deviates; the source itself is unambiguous. Note that the words were written by the screenwriters, not spoken by a historical person."
+      reviewed_by_human: false

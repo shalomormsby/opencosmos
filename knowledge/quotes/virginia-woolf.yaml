@@ -1,0 +1,38 @@
+author: Virginia Woolf
+author_normalized_key: virginia-woolf
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1412
+    slug: null
+    text: Literature is strewn with the wreckage of those who have minded beyond reason the opinion of others.
+    category: creativity
+    keywords: [literature, destruction, opinion, criticism]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Virginia_Woolf"
+      earliest_print_source: "A Room of One's Own, Virginia Woolf, 1929"
+      notes: "Genuine Woolf, from A Room of One's Own (1929), in the passage on how writers are deformed by their sensitivity to criticism and reputation. The wording quoted here matches the published text."
+      reviewed_by_human: false
+  - id: q_1414
+    slug: null
+    text: Odd how the creative power at once brings the whole universe to order.
+    category: creativity
+    keywords: [universe, order, creative, power, art, artist]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Virginia_Woolf"
+      earliest_print_source: "The Diary of Virginia Woolf (also in A Writer's Diary, ed. Leonard Woolf, 1953) — mid-1920s entry"
+      notes: "This has the compressed, self-observing cadence of the diary rather than the published essays, and my recollection places it in a mid-1920s diary entry, later reprinted in A Writer's Diary. I am confident about author and genre; I have not pinned the exact date, so I stop short of 'verified'."
+      reviewed_by_human: false

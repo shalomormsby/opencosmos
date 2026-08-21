@@ -1,0 +1,38 @@
+author: William James
+author_normalized_key: william-james
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1457
+    slug: null
+    text: "Believe that your life is worth living, and your belief will create the fact."
+    category: insight
+    keywords: [belief, life]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_James"
+      earliest_print_source: "\"Is Life Worth Living?\" (address, 1895), collected in The Will to Believe and Other Essays in Popular Philosophy, William James, 1897"
+      notes: "Genuine James. The canonical wording is 'Believe that life is worth living, and your belief will help create the fact.' The corpus text drops 'help' and inserts 'your' before 'life' — a very common softening. Attribution is not in doubt; the wording should be corrected to the published form if the corpus cares about exactness."
+      reviewed_by_human: false
+  - id: q_1460
+    slug: null
+    text: The art of being wise is knowing what to overlook.
+    category: insight
+    keywords: [wisdom, perception, forgiveness]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_James"
+      earliest_print_source: "The Principles of Psychology, William James, 1890, Vol. II (chapter on Reasoning)"
+      notes: "Genuine. James's sentence is 'the art of being wise is the art of knowing what to overlook.' The corpus text drops the second 'the art of'. Attribution solid; wording is a light trim of the original."
+      reviewed_by_human: false

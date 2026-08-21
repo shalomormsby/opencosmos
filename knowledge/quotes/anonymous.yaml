@@ -22,3 +22,24 @@ quotes:
       earliest_print_source: "Dhammapada, verse 166"
       notes: null
       reviewed_by_human: false
+  - id: q_1375
+    slug: null
+    text: “Honesty is the first chapter in the book of wisdom.
+    author: Unknown
+    author_normalized_key: unknown
+    tradition: null
+    era: null
+    gender: null
+    category: insight
+    keywords: [honesty, book, wisdom]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Thomas Jefferson, letter to Nathaniel Macon, 12 January 1819"
+      notes: "This is a genuine Thomas Jefferson line, not anonymous. Jefferson wrote 'honesty is the 1st. chapter in the book of wisdom' in a letter to Nathaniel Macon dated 12 January 1819; the Jefferson editorial projects treat it as authentic rather than as one of the many spurious Jefferson quotations. The corpus text also carries a stray leading curly quotation mark that should be stripped. Author should be changed from Unknown to Thomas Jefferson. | Suggested reattribution: Thomas Jefferson"
+      reviewed_by_human: false

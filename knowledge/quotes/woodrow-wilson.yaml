@@ -1,0 +1,22 @@
+author: Woodrow Wilson
+author_normalized_key: woodrow-wilson
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1477
+    slug: null
+    text: "You are not here merely to make a living. You are here in order to enable the world to live more amply, with greater vision, with a finer spirit of hope and achievement. You are here to enrich the world, and you impoverish yourself if you forget the errand."
+    category: business
+    keywords: [purpose, money, work, world, life, vision, hope, wealth, action, achievement]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Woodrow_Wilson"
+      earliest_print_source: "Address, \"The Meaning of a Liberal Education,\" to the Federation of High School Teachers, New York, 9 January 1909"
+      notes: "Genuinely Wilson, and the standard citation given for it is the January 1909 address to the New York high school teachers, reproduced in The Papers of Woodrow Wilson. I am reporting that citation from training memory and have not confirmed it against the primary text, so treat the source line as strong-but-unchecked rather than as a verified page reference. Attribution itself is not seriously disputed."
+      reviewed_by_human: false

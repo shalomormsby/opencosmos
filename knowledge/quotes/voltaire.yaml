@@ -1,0 +1,38 @@
+author: Voltaire
+author_normalized_key: voltaire
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1415
+    slug: null
+    text: The perfect is the enemy of the good.
+    category: insight
+    keywords: [perfection]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Voltaire"
+      earliest_print_source: "La Bégueule, Voltaire, 1772 (also Dictionnaire philosophique, article 'Art dramatique')"
+      notes: "Voltaire genuinely wrote 'Le mieux est l'ennemi du bien' — in the verse tale La Bégueule (1772) and in the Dictionnaire philosophique. Two caveats worth carrying: the literal sense is 'the better is the enemy of the good', and Voltaire himself presents it as the saying of an Italian sage ('Il meglio è l'inimico del bene'), so he is transmitting a proverb, not coining it. The English form given here is the standard idiomatic rendering."
+      reviewed_by_human: false
+  - id: q_1416
+    slug: null
+    text: Paradise is where I am.
+    category: spirit
+    keywords: [paradise, self, presence]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Voltaire"
+      earliest_print_source: "Le Mondain, Voltaire, 1736"
+      notes: "Condensed from the closing line of Voltaire's poem Le Mondain (1736): 'Le paradis terrestre est où je suis' — the earthly paradise is where I am. The attribution is solid; note that the corpus text drops 'earthly', which slightly shifts the poem's worldly, anti-ascetic joke toward a spiritual reading."
+      reviewed_by_human: false

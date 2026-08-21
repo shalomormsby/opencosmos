@@ -1,0 +1,38 @@
+author: T. S. Eliot
+author_normalized_key: t-s-eliot
+tradition: literature
+era: null
+gender: M
+quotes:
+  - id: q_1316
+    slug: null
+    text: Genuine poetry can communicate before it is understood.
+    category: creativity
+    keywords: [poetry, communicate, understanding, genuine]
+    context: "Poet, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/T._S._Eliot"
+      earliest_print_source: "Dante, T. S. Eliot, 1929 (reprinted in Selected Essays, 1932)"
+      notes: "Genuine and well-sourced Eliot, from his 1929 monograph Dante, which was collected in Selected Essays. The sentence is quoted verbatim in the standard references and the wording in the record matches."
+      reviewed_by_human: false
+  - id: q_1317
+    slug: null
+    text: Immature poets imitate; mature poets steal.
+    category: creativity
+    keywords: [immature, mature, poets, copy]
+    context: "Poet, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/T._S._Eliot"
+      earliest_print_source: "The Sacred Wood: Essays on Poetry and Criticism, T. S. Eliot, 1920 ('Philip Massinger')"
+      notes: "Genuine Eliot, from the essay 'Philip Massinger' in The Sacred Wood (1920). The record quotes only the opening clause; the full sentence continues '...bad poets deface what they take, and good poets make it into something better, or at least something different.' Truncation is standard in quotation but worth noting, since the fuller line reverses the cynical reading the short version invites."
+      reviewed_by_human: false

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1357",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Extremely widely circulated under Teilhard de Chardin's name (also spelled correctly 'Teilhard'), but I cannot place it in any of his published works (The Divine Milieu, The Phenomenon of Man, Hymn of the Universe, letters). The same line, in French — 'La joie est le signe infaillible de la presence de Dieu' — is commonly credited to the French Catholic writer Leon Bloy, and that attribution appears at least as often in Catholic sources. I am not confident enough in the Bloy origin to reattribute outright, but the Teilhard attribution should not be treated as established.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1358",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leo_Tolstoy",
+    "earliest_print_source": "\"Three Methods of Reform\", in Pamphlets: Translated from the Russian, Leo Tolstoy, trans. Aylmer Maude, 1900",
+    "notes": "Genuine Tolstoy. The standard sourced citation is the essay 'Three Methods of Reform' in Aylmer Maude's 1900 translation Pamphlets: Translated from the Russian. Attribution is consistent across reference works and I recall the specific sourced entry rather than only the floating popular version. Author field should be normalized to 'Leo Tolstoy'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1359",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads unmistakably like Tom Robbins and is consistently attributed to him, most often to the novel Even Cowgirls Get the Blues (1976). I recall the line in that context but cannot confirm the novel or page with enough certainty to call it verified. No competing attribution exists, which is a point in its favor.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1360",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Toni Morrison and consistent with her recurring argument that racism imprisons the oppressor as well as the oppressed. It circulates as an interview or lecture remark rather than a passage from her fiction or essays; I cannot identify the specific interview, date, or outlet. No competing attribution. Holding below the promotion bar for lack of a locatable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1361",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Stylistically and substantively consistent with Tony Hillerman's Navajo Tribal Police novels — it reads as Joe Leaphorn (or Jim Chee) explaining the contrast between petitionary prayer and Navajo restorative ceremony, a theme Hillerman returns to repeatedly. I cannot identify which novel it comes from, and passages of dialogue lifted from novels are frequently reworded in circulation. Plausibly authentic, unverified as to source and exact wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1362",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Trish Whynot is a contemporary self-help author and holistic counselor; the line is consistent with her published work and I know of no competing attribution, which is typical for quotes from minor contemporary authors — they are rarely misattributed but also rarely sourced. I cannot point to a specific book or page. Low confidence reflects absence of evidence, not suspicion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1363",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Truman Capote with unusual consistency across quotation collections, and the aphoristic style fits him. However, it circulates only as a free-floating epigram — I cannot connect it to a specific book, essay, or interview, and Capote's published prose is well indexed, so the absence of a source is a mild concern. Attribution is plausible and uncontested but not evidenced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1364",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Ts'ai Ken T'an' is not an author — it is the Wade-Giles title of the Caigentan (Vegetable Root Discourse), a late-Ming aphorism collection by Hong Zicheng (Hong Yingming), c. 1590. The saying itself is considerably older than that collection: the Chinese proverb 'shui zhi qing ze wu yu, ren zhi cha ze wu tu' (water too clear has no fish; a person too exacting has no companions) is recorded in Han-dynasty sources, notably Dongfang Shuo's 'Answering a Guest's Objections' as preserved in the Book of Han, and in the Da Dai Liji. So the line is a classical Chinese proverb that the Caigentan may transmit rather than originate. The author field should at minimum be corrected to name Hong Zicheng or be marked as a Chinese proverb.",
+    "suggested_reattribution": "Classical Chinese proverb (Han-era; cf. Dongfang Shuo in the Book of Han) — not original to the Caigentan"
+  },
+  {
+    "id": "q_1365",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "An anonymous backronym long current in twelve-step recovery culture (Alcoholics Anonymous and related fellowships), where multiple expansions of FEAR circulate — 'False Evidence Appearing Real', 'Face Everything And Recover', 'Forget Everything And Run'. No identifiable originator; it is folk material and correctly listed as Unknown. Zig Ziglar and others popularized it but did not coin it as far as I know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1366",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Usually credited to 'Carl Bard', a figure for whom no biographical record is generally produced — a pattern that often signals an invented or garbled attribution. A near-identical line is credited to Maria Robinson ('Nobody can go back and start a new beginning, but anyone can start today and make a new ending'), equally without a source. 'Unknown' is the honest label; I would not reattribute to either name.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1367",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely credited to Kobi Yamada, the Compendium author, and it fits the aphoristic gift-book genre he works in; the attribution is common but I have seen no source citation for it. It also circulates freely as an anonymous saying. 'Unknown' is defensible; Yamada is the leading candidate but unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1368",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This exact wording ('change the way you think about it') is most often credited to the illustrator Mary Engelbreit, whose artwork popularized it. A closely related and better-sourced line is Maya Angelou's 'If you don't like something, change it. If you can't change it, change your attitude', which appears in her 1993 collection Wouldn't Take Nothing for My Journey Now. The two have cross-contaminated in circulation. Leaving as Unknown is safer than picking one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1369",
+    "status": "attributed_unverified",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I do not recognize this line or any attribution for it. It has the cadence of contemporary leadership or activist writing but I cannot place an author, book, or speech. Honest answer: unknown origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1370",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is an English paraphrase of a genuine and much older line by the French writer Alphonse Karr, from Voyage autour de mon jardin (A Tour Round My Garden, 1845): some people grumble that roses have thorns; he is grateful that thorns have roses. The 'I can complain / I can rejoice' rewording is a later inspirational reformulation of unknown authorship, and it is also spuriously attributed to Abraham Lincoln — a classic Lincoln magnet attribution with no basis in his writings. Correctly listed as Unknown for this wording; the underlying thought is Karr's.",
+    "suggested_reattribution": "Paraphrase of Alphonse Karr, Voyage autour de mon jardin (1845); NOT Lincoln"
+  },
+  {
+    "id": "q_1371",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost always credited to William Arthur Ward, the American inspirational writer, and the attribution is consistent enough to be the leading candidate; Ward's aphorisms are, however, poorly sourced in general and this one circulates without a book or date. A sailing-metaphor variant is also attributed to Ward's contemporaries. Listing as Unknown is acceptable; Ward is the probable author but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1372",
+    "status": "attributed_unverified",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this. The dandelion/flower argument about wonder dulled by familiarity is a commonplace found in Chesterton, Emerson, and Carl Sagan among others, but this specific wording does not match any passage I can identify. Unknown origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1373",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "In quotation anthologies this line is generally credited to 'W. B. Prescott', a name that appears attached to it and little else — the kind of thinly documented attribution that anthologies copy from one another. I cannot confirm the person or a print source, so I am not reattributing. Unknown is honest.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1374",
+    "status": "attributed_unverified",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Anonymous contemporary inspirational prose in the greeting-card / New Thought register (inner Light, Divine Source). No author, book, or tradition I can identify. Note also that the text carries a stray trailing double quotation mark and a corrupted character (a comma rendered as an encoding artifact after 'no one else'), suggesting it was scraped rather than transcribed from print.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1375",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Thomas Jefferson, letter to Nathaniel Macon, 12 January 1819",
+    "notes": "This is a genuine Thomas Jefferson line, not anonymous. Jefferson wrote 'honesty is the 1st. chapter in the book of wisdom' in a letter to Nathaniel Macon dated 12 January 1819; the Jefferson editorial projects treat it as authentic rather than as one of the many spurious Jefferson quotations. The corpus text also carries a stray leading curly quotation mark that should be stripped. Author should be changed from Unknown to Thomas Jefferson.",
+    "suggested_reattribution": "Thomas Jefferson"
+  },
+  {
+    "id": "q_1376",
+    "status": "attributed_unverified",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Unrecognized. The phrasing has the flavor of a translated Buddhist or Brahma Kumaris 'thought for the day', but I cannot identify a text, teacher, or tradition. Unknown origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1377",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is the widely circulated poem usually titled 'Risks'. It is most often credited to Leo Buscaglia, who quoted it in his lectures and books (Living, Loving and Learning), but he was a popularizer rather than the demonstrable author; the poem is also credited to Janet Rand and to William Arthur Ward, and frequently printed as anonymous. Because the competing claims cancel out and none carries a documented first printing that I can confirm, Unknown is the right label. Note the corpus version omits the poem's closing lines about the person who risks nothing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1378",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A comic inversion of the ancient memento mori maxim (compare Marcus Aurelius and Seneca on living each day as if it were the last). The joke form circulates in many phrasings — 'and one day you'll be right', 'and one of these days you will be' — attributed variously to Jerry Rubin, Benny Hill, and others, none of which I can substantiate. Almost certainly a folk witticism with no fixed author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1379",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Closely tracks a genuine Eric Hoffer aphorism — 'You can never get enough of what you don't really want' / 'what you don't need to make you happy' — which appears in his aphoristic writings and is consistently credited to him. The wording here ('what you don't really need') is a common variant that also circulates anonymously and in recovery and simple-living literature. Hoffer is the probable ultimate source, but the exact wording given is not his, so I am not reattributing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1380",
+    "status": "attributed_unverified",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Unrecognized. The sentiment 'there are no winners in war, only survivors' is a widespread commonplace with no single origin; the full sentence with the 'every twenty years' framing I cannot place to any author, speech, or novel. Unknown origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1381",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Unrecognized as a sourced quotation. It is the mirror image of a line associated with George F. Will — that the pleasant thing about being a pessimist is that you are constantly either proven right or pleasantly surprised — which is itself a widely circulated formulation of an older joke. This pessimist's-consolation gag has many anonymous variants; no identifiable author for this wording.",
+    "suggested_reattribution": null
+  }
+]

@@ -1,0 +1,22 @@
+author: Tertullian
+author_normalized_key: tertullian
+tradition: null
+era: null
+gender: null
+quotes:
+  - id: q_1323
+    slug: null
+    text: The entire fruit is already present in the seed.
+    category: insight
+    keywords: [seed, fruit]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Apologeticus (The Apology), Tertullian, c. 197 AD, ch. 9"
+      notes: "Genuine Tertullian, rendering 'etiam fructus omnis iam in semine est' from Apologeticus ch. 9. Important context: it is not a general aphorism about potential — Tertullian is arguing against abortion ('he is a man who is going to be one; the whole fruit is already present in the seed'). Anyone using the line as a standalone metaphor should know the argument it belongs to. Confidence held at 0.8 because I am recalling the chapter from memory of the Latin, not verifying an edition."
+      reviewed_by_human: false

@@ -1,0 +1,22 @@
+author: T. S. Lawrence
+author_normalized_key: t-s-lawrence
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1318
+    slug: null
+    text: "All men dream, but not equally. Those who dream by night in the dusty recesses of their minds, wake in the day to find that it was vanity: but the dreamers of the day are dangerous men, for they may act on their dreams with open eyes, to make them possible."
+    category: insight
+    keywords: [dream, creation, possibility]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/T._E._Lawrence"
+      earliest_print_source: "Seven Pillars of Wisdom, T. E. Lawrence, 1926 (introductory chapter)"
+      notes: "The author field is wrong by one initial: this is T. E. Lawrence (Lawrence of Arabia), not T. S. Lawrence — almost certainly contaminated by the neighbouring T. S. Eliot entries. The passage is from the introductory chapter of Seven Pillars of Wisdom (1926) and the wording in the record matches the standard text. | Suggested reattribution: T. E. Lawrence"
+      reviewed_by_human: false

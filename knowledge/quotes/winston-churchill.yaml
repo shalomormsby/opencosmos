@@ -1,0 +1,22 @@
+author: Winston Churchill
+author_normalized_key: winston-churchill
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1470
+    slug: null
+    text: We shape our buildings; thereafter they shape us.
+    category: design
+    keywords: [architecture, design]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.93
+      wikiquote_url: "https://en.wikiquote.org/wiki/Winston_Churchill"
+      earliest_print_source: "Speech in the House of Commons, 28 October 1943 (Hansard), on rebuilding the bombed Commons Chamber"
+      notes: "Genuine and well documented — one of the Churchill quotations that actually survives checking. The recorded wording is 'We shape our buildings, and afterwards our buildings shape us.' The corpus text is the common paraphrase; consider restoring the Hansard wording."
+      reviewed_by_human: false
