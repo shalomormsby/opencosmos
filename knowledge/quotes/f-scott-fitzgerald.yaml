@@ -1,0 +1,22 @@
+author: F. Scott Fitzgerald
+author_normalized_key: f-scott-fitzgerald
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0010
+    slug: null
+    text: The test of a first-rate intelligence is the ability to hold two opposed ideas in mind at the same time and still retain the ability to function.
+    category: null
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/F._Scott_Fitzgerald"
+      earliest_print_source: "\"The Crack-Up,\" F. Scott Fitzgerald, Esquire magazine, February 1936"
+      notes: "Confirmed by Quote Investigator (quoteinvestigator.com/2020/01/05/intelligence/), which identified the original text in Fitzgerald's autobiographical essay 'The Crack-Up,' first published in Esquire in February 1936 and later collected in the posthumous book of the same name (New Directions, 1945). QI concludes: 'F. Scott Fitzgerald should receive credit for the statement he wrote in 1936.' PBS's American Masters page and the essay text itself corroborate this. The quote as given is very close to the original; the original uses 'in the mind' rather than 'in mind,' a negligible variant. No misattribution concern."
+      reviewed_by_human: false

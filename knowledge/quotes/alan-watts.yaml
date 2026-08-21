@@ -4,6 +4,22 @@ tradition: buddhism
 era: null
 gender: M
 quotes:
+  - id: q_0012
+    slug: null
+    text: "The only way to make sense out of change is to plunge into it, move with it, and join the dance."
+    category: insight
+    keywords: [impermanence, improvisation]
+    context: "Buddhist, Zen"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Alan_Watts"
+      earliest_print_source: "The Wisdom of Insecurity: A Message for an Age of Anxiety, Alan Watts, Pantheon Books, 1951"
+      notes: "Multiple independent sources (libquotes.com, AZQuotes, buboquote, wist.info) consistently cite this quote to Alan Watts's 'The Wisdom of Insecurity: A Message for an Age of Anxiety' (Pantheon Books, 1951). One source (wist.info) references a specific chapter. The attribution is stable across all major quote databases and is never disputed. Cannot be elevated to 'verified' (1.0) without a page-confirmed primary text check, but the evidence is strong and consistent. No misattribution concern."
+      reviewed_by_human: false
   - id: q_0139
     slug: null
     text: Man suffers only becacuse he takes seriously what the gods made for fun.
