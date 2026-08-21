@@ -6,6 +6,7 @@ export const CATEGORY_LABELS: Record<string, string> = {
   collections: 'Collections',
   references: 'References',
   scriptures: 'Scriptures',
+  quotes: 'Quotes',
 }
 
 export const ROLE_LABELS: Record<string, string> = {

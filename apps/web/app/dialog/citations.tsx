@@ -11,6 +11,10 @@ import { cn } from '@opencosmos/ui'
  *   [quote: knowledge/quotes/{author}.yaml#{quote-id}]   an attributed passage
  *   [ref: knowledge/sources/{work}.md#{section-slug}]    a work or a section of one
  *
+ * Both resolve to library URLs. Cosmo is handed the exact token to use in the
+ * retrieved context and told not to construct one; anything that still fails to
+ * resolve here renders as no link rather than a broken one.
+ *
  * Both are pre-processed into markdown links so the `a` override below can turn
  * them into small superscript markers — the prose keeps flowing, and each claim
  * still carries its receipt.
@@ -22,6 +26,9 @@ import { cn } from '@opencosmos/ui'
 
 const QUOTE_TOKEN_RE = /\[quote:\s*([^\]]+?)\]/g
 const REF_TOKEN_RE   = /\[ref:\s*([^\]]+?)\]/g
+
+/** Repo-relative prefix every quote citation carries. */
+const QUOTE_PREFIX = 'knowledge/quotes/'
 
 /** Marks a pre-processed `[ref:]` link so the renderer can tell it from prose. */
 const REF_SCHEME = 'cosmo-ref:'
@@ -43,8 +50,6 @@ export function citationUrlTransform(url: string): string {
   if (url.startsWith(REF_SCHEME)) return url
   return defaultUrlTransform(url)
 }
-
-const GITHUB_BLOB = 'https://github.com/shalomormsby/opencosmos/blob/main'
 
 export function preprocessCitations(content: string): string {
   return content
@@ -76,6 +81,24 @@ export function extractCitationTargets(content: string): string[] {
     }
   }
   return out
+}
+
+/**
+ * `knowledge/quotes/mary-oliver.yaml#q_0003` → `/knowledge/quotes/mary-oliver#q_0003`.
+ *
+ * Returns null for anything that isn't a single clean bucket segment plus an
+ * id, so a malformed or invented target renders as no link at all rather than
+ * as a dead one.
+ */
+function quoteToHref(ref: string): string | null {
+  const hash = ref.indexOf('#')
+  const filePath = hash === -1 ? ref : ref.slice(0, hash)
+  const anchor = hash === -1 ? '' : ref.slice(hash + 1)
+  if (!filePath.startsWith(QUOTE_PREFIX) || filePath.includes('..')) return null
+  const bucket = filePath.slice(QUOTE_PREFIX.length).replace(/\.yaml$/, '')
+  if (!/^[a-z0-9-]+$/.test(bucket)) return null
+  if (anchor && !/^[A-Za-z0-9_-]+$/.test(anchor)) return null
+  return `/knowledge/quotes/${bucket}${anchor ? `#${anchor}` : ''}`
 }
 
 /** `knowledge/sources/x.md#slug` → `/knowledge/sources/x#slug`. */
@@ -116,15 +139,17 @@ function CitationMarker({
 }
 
 /**
- * The `a` renderer shared by both chat surfaces. Quote citations open the yaml
- * record on GitHub (quotes have no reader page); work/section citations link
- * into the library, landing on the passage itself when a section is named.
+ * The `a` renderer shared by both chat surfaces. Both citation kinds link into
+ * the library and land on the thing itself — the quote, or the passage when a
+ * section is named. A target that doesn't resolve is dropped rather than
+ * rendered as a dead link.
  */
 export const citationAnchor: NonNullable<Components['a']> = ({ href, children }) => {
-  if (href?.startsWith('knowledge/quotes/')) {
-    const filePath = href.split('#')[0]
+  if (href?.startsWith(QUOTE_PREFIX)) {
+    const internal = quoteToHref(href)
+    if (!internal) return null
     return (
-      <CitationMarker href={`${GITHUB_BLOB}/${filePath}`} title={href} external>
+      <CitationMarker href={internal} title={href} external={false}>
         {children}
       </CitationMarker>
     )

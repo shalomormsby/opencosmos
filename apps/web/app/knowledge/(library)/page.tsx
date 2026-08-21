@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
+import Link from 'next/link'
+import { Card } from '@opencosmos/ui'
 import { getAllDocs } from '@/lib/knowledge'
+import { getQuoteBuckets } from '@/lib/quotes'
 import KnowledgeBrowser from '../KnowledgeBrowser'
 
 export const metadata: Metadata = {
@@ -9,6 +12,8 @@ export const metadata: Metadata = {
 
 export default function KnowledgePage() {
   const docs = getAllDocs()
+  const quoteBuckets = getQuoteBuckets()
+  const quoteCount = quoteBuckets.reduce((n, b) => n + b.count, 0)
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-16 pb-24">
@@ -33,6 +38,25 @@ export default function KnowledgePage() {
           </p>
         </div>
       </div>
+
+      {quoteCount > 0 && (
+        <Link href="/knowledge/quotes" className="block group mb-12">
+          <Card className="p-5 transition-colors hover:bg-foreground/[0.02]">
+            <div className="flex items-baseline justify-between gap-4 flex-wrap">
+              <div>
+                <h2 className="text-sm font-medium text-foreground mb-1">Quotes</h2>
+                <p className="text-xs text-foreground/50 leading-relaxed">
+                  Attributed passages Cosmo can cite, each shown with what is actually known about
+                  where it came from.
+                </p>
+              </div>
+              <span className="text-xs text-foreground/30 shrink-0">
+                {quoteCount} from {quoteBuckets.length} sources →
+              </span>
+            </div>
+          </Card>
+        </Link>
+      )}
 
       <KnowledgeBrowser docs={docs} />
     </div>

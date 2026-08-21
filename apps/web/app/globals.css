@@ -36,3 +36,23 @@
   }
 }
 
+
+/* A quote arrived at by deeplink — Cosmo citing [quote: …] in chat, or a shared
+   URL — briefly marks itself so the reader can see which record they landed on.
+   CSS-only so it costs no client JS, and it respects reduced-motion. */
+.quote-record:target blockquote {
+  border-left-color: var(--color-primary);
+}
+
+.quote-record:target {
+  animation: quote-landed 2.4s ease-out;
+}
+
+@keyframes quote-landed {
+  0%, 55% { background-color: color-mix(in srgb, var(--color-primary) 9%, transparent); }
+  100%    { background-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .quote-record:target { animation: none; }
+}
