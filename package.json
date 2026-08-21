@@ -22,6 +22,8 @@
         "quotes:validate:pilot": "tsx --env-file=.env scripts/normalize-quotes/02-validate-provenance.ts --pilot",
         "quotes:validate:resume": "tsx --env-file=.env scripts/normalize-quotes/02-validate-provenance.ts --resume",
         "quotes:merge": "tsx --env-file=.env scripts/normalize-quotes/03-merge-validation.ts",
+        "quotes:review-export": "tsx scripts/normalize-quotes/04-export-review-csv.ts",
+        "quotes:review-apply": "tsx scripts/normalize-quotes/05-apply-review.ts",
         "quotes:export-csv": "tsx scripts/normalize-quotes/06-export-pending-csv.ts",
         "quotes:promote": "tsx scripts/normalize-quotes/07-promote-verified.ts"
     },

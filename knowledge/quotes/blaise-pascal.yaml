@@ -1,0 +1,22 @@
+author: Blaise Pascal
+author_normalized_key: blaise-pascal
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0373
+    slug: null
+    text: "All man's miseries derive from not being able to sit quietly in a room alone."
+    category: insight
+    keywords: [quiet]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Blaise_Pascal"
+      earliest_print_source: "Pensées, Blaise Pascal, 1670 (fragment 139 Brunschvicg / 136 Lafuma)"
+      notes: "Genuine Pascal. French original: 'tout le malheur des hommes vient d'une seule chose, qui est de ne savoir pas demeurer en repos dans une chambre.' The English wording here is one of several standard translations ('All of humanity's problems stem from man's inability to sit quietly in a room alone' is the other common rendering). Attribution is not in doubt; only the translation varies."
+      reviewed_by_human: false

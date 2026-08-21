@@ -182,8 +182,18 @@ function appendFile(path: string, pendingIds: Set<string>, done: Set<string>): b
     return false
   }
 
+  // Drop verdicts already on file BEFORE checking the pending pool. A quote
+  // that was checkpointed and then promoted has legitimately left the pool, so
+  // re-sweeping an old output file must be a no-op rather than an error.
+  const fresh = results.filter((r) => !r?.id || !done.has(r.id))
+  const dupes = results.length - fresh.length
+  if (fresh.length === 0) {
+    console.log(`  · ${label}: all ${results.length} already checkpointed, nothing to do`)
+    return true
+  }
+
   const problems: string[] = []
-  for (const r of results) {
+  for (const r of fresh) {
     const errs = validateResult(r)
     if (errs.length) problems.push(`${r?.id ?? '(no id)'}: ${errs.join(', ')}`)
     else if (!pendingIds.has(r.id)) problems.push(`${r.id}: not in the pending pool`)
@@ -193,13 +203,6 @@ function appendFile(path: string, pendingIds: Set<string>, done: Set<string>): b
     for (const p of problems.slice(0, 5)) console.error(`      ${p}`)
     if (problems.length > 5) console.error(`      … and ${problems.length - 5} more`)
     return false
-  }
-
-  const fresh = results.filter((r) => !done.has(r.id))
-  const dupes = results.length - fresh.length
-  if (fresh.length === 0) {
-    console.log(`  · ${label}: all ${results.length} already checkpointed, nothing to do`)
-    return true
   }
 
   const entry: CheckpointEntry = {

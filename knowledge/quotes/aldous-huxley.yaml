@@ -1,0 +1,54 @@
+author: Aldous Huxley
+author_normalized_key: aldous-huxley
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0165
+    slug: null
+    text: "After silence, that which comes nearest to expressing the inexpressible is music."
+    category: creativity
+    keywords: [music]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Aldous_Huxley"
+      earliest_print_source: "Music at Night and Other Essays, Aldous Huxley, 1931 (essay 'The Rest Is Silence')"
+      notes: "Genuine Huxley, from 'Music at Night and Other Essays' (1931), in the essay 'The Rest Is Silence.' The sentence circulates verbatim and matches the published text. One of the reliably sourced quotations in this batch."
+      reviewed_by_human: false
+  - id: q_0282
+    slug: null
+    text: Experience is not what happens to you. It is what you do with what happens to you.
+    category: insight
+    keywords: [experience, action, perception]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Aldous_Huxley"
+      earliest_print_source: "Texts and Pretexts: An Anthology with Commentaries, Aldous Huxley, 1932"
+      notes: "Genuine Huxley, from the opening pages of Texts and Pretexts. Original wording: 'Experience is not what happens to a man; it is what a man does with what happens to him.' The corpus version is a modernized second-person rendering of the same sentence. Frequently misattributed elsewhere to Carl Jung and to Anthony Robbins-style paraphrasers, but Huxley is the source."
+      reviewed_by_human: false
+  - id: q_0283
+    slug: null
+    text: That men do not learn very much from the lessons of history is the most important of all the lessons of history.
+    category: insight
+    keywords: [learning, history, ignorance]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Aldous_Huxley"
+      earliest_print_source: "\"A Case of Voluntary Ignorance\", Aldous Huxley, in Collected Essays (1959); essay first published 1956"
+      notes: "Authentic Huxley, from the essay 'A Case of Voluntary Ignorance', collected in Collected Essays (1959) after appearing in his mid-1950s essay work. The self-swallowing structure of the sentence is quoted accurately in the corpus. Confident in author and essay; mild uncertainty on first-publication venue and date."
+      reviewed_by_human: false

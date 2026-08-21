@@ -1,0 +1,38 @@
+author: Antoine de Saint-Exupery
+author_normalized_key: antoine-de-saint-exupery
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0337
+    slug: null
+    text: "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away."
+    category: design
+    keywords: []
+    context: "Author, French"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Antoine_de_Saint-Exup%C3%A9ry"
+      earliest_print_source: "Terre des Hommes (Wind, Sand and Stars), Antoine de Saint-Exupery, 1939"
+      notes: "Genuine and primary-sourced. Original French, from the chapter on the airplane: 'Il semble que la perfection soit atteinte non quand il n'y a plus rien a ajouter, mais quand il n'y a plus rien a retrancher.' The English here is a standard faithful rendering. Note the author name should carry the accent: Antoine de Saint-Exupery -> Saint-Exupery (Saint-Exupéry)."
+      reviewed_by_human: false
+  - id: q_0339
+    slug: null
+    text: It is only with the heart that one can see rightly; what is essential is invisible to the eye.
+    category: insight
+    keywords: [vision, eye, sight, heart, essence, invisible]
+    context: "Author, French"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/Antoine_de_Saint-Exup%C3%A9ry"
+      earliest_print_source: "Le Petit Prince (The Little Prince), Antoine de Saint-Exupery, 1943, ch. XXI"
+      notes: "Primary source confirmed: the fox's secret in chapter XXI of Le Petit Prince. Original French: 'On ne voit bien qu'avec le coeur. L'essentiel est invisible pour les yeux.' The English wording here matches the common Katherine Woods-lineage rendering. Author name should carry the accent (Saint-Exupéry)."
+      reviewed_by_human: false

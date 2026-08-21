@@ -1,0 +1,22 @@
+author: Alfred North Whitehead
+author_normalized_key: alfred-north-whitehead
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0293
+    slug: null
+    text: All truths are half-truths.
+    category: insight
+    keywords: [truth]
+    context: Philosopher
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Alfred_North_Whitehead"
+      earliest_print_source: "Dialogues of Alfred North Whitehead, as recorded by Lucien Price, 1954"
+      notes: "Genuine Whitehead, recorded by Lucien Price. The full remark is 'There are no whole truths; all truths are half-truths. It is trying to treat them as whole truths that plays the devil.' The corpus quotes only the middle clause, which is the form that circulates. Source is a recorded conversation rather than Whitehead's own pen, but Price's Dialogues is an accepted and dated primary record."
+      reviewed_by_human: false

@@ -25,6 +25,12 @@ export const PENDING_DIR = join(REPO_ROOT, 'data', 'quotes-pending')
 export const PENDING_JSONL_PATH = join(PENDING_DIR, 'pending.jsonl')
 export const PENDING_CSV_PATH = join(PENDING_DIR, 'pending.csv')
 
+/** Human review CSVs (Stage 4 in, Stage 4 out). */
+export const REVIEW_DIR = join(KNOWLEDGE_QUOTES_DIR, '_review')
+/** Tombstone for records dropped in review. Never embedded. */
+export const ARCHIVE_DIR = join(KNOWLEDGE_QUOTES_DIR, '_archive')
+export const REJECTED_YAML_PATH = join(ARCHIVE_DIR, 'rejected.yaml')
+
 /** Append-only ledger of validation results. The resume key for Stage 3. */
 export const VALIDATION_PROGRESS_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-progress.jsonl')
 /** Raw per-batch agent output, kept as an audit trail alongside the ledger. */
@@ -123,6 +129,8 @@ export const COLLECTIVE_DESCRIPTIONS: Record<string, string> = {
   proverbs: 'Traditional sayings (proverbs, sayings, aphorisms). Author preserved per-quote.',
   'attributed-collectives': 'Quotes attributed to a named collective source (Delphic maxim, Yoga Sutras, …). Author preserved per-quote.',
   anonymous: 'Quotes whose author is unknown. Partial info preserved per-quote where available.',
+  rejected:
+    'Records dropped in human review — misattributed, apocryphal, or otherwise not worth carrying. Kept as a tombstone so a dropped quote is never silently re-imported. Never embedded.',
 }
 
 export function routeAuthor(author: string, normalizedKey: string): { bucket: string; isCollective: boolean } {
@@ -131,6 +139,21 @@ export function routeAuthor(author: string, normalizedKey: string): { bucket: st
   if (/\b(proverbs?|sayings?|aphorisms?)\b/i.test(a)) return { bucket: 'proverbs', isCollective: true }
   if (/\b(maxims?|sutras?|edicts?|hadiths?|inscriptions?|adages?|vedas?|upanishads?|gita|dhammapada|gospels?|bible|psalms?|sermons?|qur.?an|torah|talmud|tao te|i ching)\b/i.test(a)) return { bucket: 'attributed-collectives', isCollective: true }
   return { bucket: normalizedKey, isCollective: false }
+}
+
+/**
+ * Author name → the key used for routing and filenames. Matches the Tier 1
+ * convention: strip diacritics, lowercase, collapse anything non-alphanumeric
+ * to single hyphens. Needed when review reattributes a quote to someone who has
+ * no file yet.
+ */
+export function normalizeAuthorKey(author: string): string {
+  return author
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
 }
 
 // ─── Tradition synthesis ────────────────────────────────────────────────────
@@ -368,6 +391,45 @@ export function emitCsvRow(record: JsonlRecord): string {
 
 export function emitCsv(records: JsonlRecord[]): string {
   return emitCsvHeader() + records.map(emitCsvRow).join('')
+}
+
+// ─── CSV read ───────────────────────────────────────────────────────────────
+
+/**
+ * Minimal RFC 4180 parser — enough for a review sheet round-tripped through
+ * Numbers or Excel: quoted fields, embedded commas and newlines, "" escapes.
+ * Returns row objects keyed by the header row.
+ */
+export function parseCsv(text: string): Record<string, string>[] {
+  const rows: string[][] = []
+  let row: string[] = []
+  let cell = ''
+  let quoted = false
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (quoted) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') { cell += '"'; i++ }
+        else quoted = false
+      } else cell += ch
+      continue
+    }
+    if (ch === '"') { quoted = true; continue }
+    if (ch === ',') { row.push(cell); cell = ''; continue }
+    if (ch === '\r') continue
+    if (ch === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; continue }
+    cell += ch
+  }
+  if (cell !== '' || row.length > 0) { row.push(cell); rows.push(row) }
+
+  const [header, ...body] = rows.filter((r) => r.some((c) => c.trim() !== ''))
+  if (!header) return []
+  return body.map((r) => {
+    const obj: Record<string, string> = {}
+    header.forEach((h, i) => { obj[h.trim()] = (r[i] ?? '').trim() })
+    return obj
+  })
 }
 
 // ─── Checkpoint IO ──────────────────────────────────────────────────────────

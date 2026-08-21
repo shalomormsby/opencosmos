@@ -1,0 +1,22 @@
+author: André Breton
+author_normalized_key: andré-breton
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0312
+    slug: null
+    text: "Beauty is convulsive, or not at all."
+    category: creativity
+    keywords: [beauty, art, feeling]
+    context: "Author, French"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Andr%C3%A9_Breton"
+      earliest_print_source: "Nadja, André Breton, 1928"
+      notes: "The closing line of Nadja (1928): 'La beauté sera CONVULSIVE ou ne sera pas.' Primary source is secure. The English here is a compressed rendering — the literal sense is 'Beauty will be CONVULSIVE or it will not be [at all]'; the corpus may want the standard translation wording."
+      reviewed_by_human: false

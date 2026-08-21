@@ -36,3 +36,19 @@ quotes:
       earliest_print_source: "\"No Man Is an Island\""
       notes: null
       reviewed_by_human: false
+  - id: q_0118
+    slug: null
+    text: "The beginning of love is to let those we love be perfectly themselves, and not to twist them to fit our own image. Otherwise we love only the reflection of ourselves we find in them."
+    category: relationships
+    keywords: [beginning, love, image, reflection, self, see]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Thomas_Merton"
+      earliest_print_source: "No Man Is an Island, Thomas Merton, 1955"
+      notes: "One of the best-documented Merton passages. The standard citation in scholarly and popular references alike is No Man Is an Island (Harcourt, Brace, 1955), from the opening material on love, and the quoted text matches Merton's published wording. I am confident in book and year from memory of the standard reference; I have not verified a page number and am not supplying one."
+      reviewed_by_human: false

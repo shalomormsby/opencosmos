@@ -4,6 +4,54 @@ tradition: stoicism
 era: null
 gender: M
 quotes:
+  - id: q_0087
+    slug: null
+    text: "Of all people only those are at leisure who make time for philosophy, only those are really alive. For they not only keep a good watch over their own lifetimes, but they annex every age to theirs. All the years that have passed before them are added to their own. Unless we are very ungrateful, all those distinguished founders of holy creeds were born for us and prepared for us a way of life. By the toil of others we are led into the presence of things which have been brought from darkness into light. We are excluded from no age, but we have access to them all; and if we are prepared in loftiness of mind to pass beyond the narrow confines of human weakness, there is a long period of time through which we can roam."
+    category: insight
+    keywords: [perspective, learning, life, lifelong learner]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Seneca_the_Younger"
+      earliest_print_source: "De Brevitate Vitae (On the Shortness of Life), Seneca, c. 49 CE, ch. 14; this English wording from C. D. N. Costa's translation (Penguin, 1997)"
+      notes: "Genuine and correctly transcribed. This is the opening of De Brevitate Vitae 14, Seneca's argument that the philosopher annexes all past ages to his own lifetime. The English is C. D. N. Costa's Penguin translation, whose distinctive phrasing ('they annex every age to theirs', 'in loftiness of mind to pass beyond the narrow confines of human weakness') matches this text closely. Note the corpus context field says 'Ancient Greek' — Seneca was Roman and wrote in Latin."
+      reviewed_by_human: false
+  - id: q_0094
+    slug: null
+    text: We suffer more in imagination than in reality.
+    category: insight
+    keywords: [perspective]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Seneca_the_Younger"
+      earliest_print_source: "Epistulae Morales ad Lucilium (Moral Letters to Lucilius), Seneca, Letter 13.4 (c. 65 CE)"
+      notes: "Genuine, from Letter 13, 'On Groundless Fears'. Gummere's Loeb translation reads: 'There are more things likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.' The quoted form drops 'often', which slightly strengthens the claim but does not distort it. Well documented and correctly attributed."
+      reviewed_by_human: false
+  - id: q_0099
+    slug: null
+    text: It is more fitting for a man to laugh at life than to lament over it.
+    category: insight
+    keywords: [perspective]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Seneca_the_Younger"
+      earliest_print_source: "De Tranquillitate Animi (On Tranquility of Mind), Seneca, c. 60 CE, §15"
+      notes: "Genuine Seneca, from the section of On Tranquility of Mind comparing Democritus, who laughed at human folly, with Heraclitus, who wept over it — Seneca sides with Democritus and says it better befits a man to laugh at life than to lament it. The English matches the Basore Loeb rendering closely. Section 15 is from memory; the work and the argument are certain."
+      reviewed_by_human: false
   - id: q_0100
     slug: null
     text: "[We] think too little of wasting time, the one thing about which we should all be the toughest misers."

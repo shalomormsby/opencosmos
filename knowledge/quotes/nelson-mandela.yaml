@@ -1,0 +1,22 @@
+author: Nelson Mandela
+author_normalized_key: nelson-mandela
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0140
+    slug: null
+    text: Education is the most powerful weapon which you can use to change the world.
+    category: insight
+    keywords: [transformation]
+    context: Political Leader
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Nelson_Mandela"
+      earliest_print_source: "Speech at the launch of Mindset Network, University of the Witwatersrand, Johannesburg, 16 July 2003"
+      notes: "Genuine Mandela. Delivered at the 2003 Mindset Network launch in Johannesburg; the Nelson Mandela Foundation has confirmed this speech as the source, and it is the standard citation on Wikiquote. Wording in circulation is stable and matches the delivered text."
+      reviewed_by_human: false

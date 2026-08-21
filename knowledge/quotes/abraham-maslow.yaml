@@ -1,0 +1,22 @@
+author: Abraham Maslow
+author_normalized_key: abraham-maslow
+tradition: psychology
+era: null
+gender: M
+quotes:
+  - id: q_0196
+    slug: null
+    text: One can choose to go back toward safety or forward toward growth. Growth must be chosen again and again; fear must be overcome again and again.
+    category: insight
+    keywords: [choice, growth, fear]
+    context: Psychology
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Toward a Psychology of Being, Abraham H. Maslow, 1962"
+      notes: "This is Maslow's core safety-versus-growth dialectic, which he develops explicitly in Toward a Psychology of Being (1962), especially the 'Defense and Growth' material where he frames each moment as a choice between the delights/anxieties of safety and those of growth. The line is consistently attributed to that book across psychology literature and I recall it as Maslow's own phrasing rather than a paraphrase. I cannot confirm a page number from memory, so this is strong secondary rather than page-verified."
+      reviewed_by_human: false

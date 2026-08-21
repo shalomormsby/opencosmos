@@ -1,0 +1,22 @@
+author: Wei Wu Wei
+author_normalized_key: wei-wu-wei
+tradition: taoism
+era: null
+gender: M
+quotes:
+  - id: q_0138
+    slug: null
+    text: "Why aren't you happy? It's because ninety-nine percent of everything you do, and think, and say, is for yourself - and there isn't one."
+    category: insight
+    keywords: [happiness, self]
+    context: Taoist
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Ask the Awakened: The Negative Way, Wei Wu Wei, 1963"
+      notes: "This is Wei Wu Wei's single most-quoted line and is routinely cited to 'Ask the Awakened: The Negative Way' (1963), where it appears in the opening/epigraph material. My recollection of that book association is firm but I cannot confirm the page, so a human should spot-check the citation before it is treated as primary-source verified. No competing attribution exists; the phrasing ('and there isn't one') is distinctively his."
+      reviewed_by_human: false

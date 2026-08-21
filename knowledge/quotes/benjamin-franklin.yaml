@@ -1,0 +1,22 @@
+author: Benjamin Franklin
+author_normalized_key: benjamin-franklin
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0363
+    slug: null
+    text: "Does thou love life? Then do not squander time; for that's the stuff life is made of."
+    category: business
+    keywords: [life, time, love, waste]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Benjamin_Franklin"
+      earliest_print_source: "Poor Richard's Almanack, Benjamin Franklin, 1746; reprinted in 'The Way to Wealth,' 1758"
+      notes: "Genuine Franklin. The correct wording is 'Dost thou love life? Then do not squander time, for that is the stuff life is made of' — the input's 'Does thou' is a transcription error and should be corrected to 'Dost thou' before the quote goes live. First published in Poor Richard's Almanack and later gathered into the preface essay 'The Way to Wealth' (1758)."
+      reviewed_by_human: false

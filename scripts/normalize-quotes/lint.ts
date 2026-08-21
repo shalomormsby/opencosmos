@@ -23,6 +23,7 @@ import {
   EMBEDDABLE_STATUSES,
   KNOWLEDGE_QUOTES_DIR,
   PENDING_JSONL_PATH,
+  REJECTED_YAML_PATH,
   SOURCE_JSONL_PATH,
   meetsPromotionBar,
   parseYamlFile,
@@ -141,21 +142,62 @@ function lintPendingPool(): { ids: Set<string>; total: number } {
   return { ids, total }
 }
 
+/**
+ * The tombstone for records dropped in review. Optional — it only exists once
+ * something has been dropped.
+ */
+function lintArchivePool(): { ids: Set<string>; total: number } {
+  const ids = new Set<string>()
+  if (!statSync(REJECTED_YAML_PATH, { throwIfNoEntry: false })) return { ids, total: 0 }
+
+  let parsed
+  try {
+    parsed = parseYamlFile(REJECTED_YAML_PATH, 'rejected')
+  } catch (e) {
+    err(`_archive/rejected.yaml: yaml parse failed: ${e}`)
+    return { ids, total: 0 }
+  }
+
+  for (const r of parsed.records) {
+    if (!r.id) { err(`_archive/rejected.yaml: record missing id`); continue }
+    if (ids.has(r.id)) err(`_archive/rejected.yaml: duplicate id ${r.id}`)
+    ids.add(r.id)
+    if (r.provenance?.status !== 'rejected') {
+      err(`_archive/rejected.yaml#${r.id}: status "${r.provenance?.status}" — archive holds only rejected`)
+    }
+  }
+
+  return { ids, total: parsed.records.length }
+}
+
 function main() {
   const embeddable = lintEmbeddablePool()
   const pending = lintPendingPool()
+  const archive = lintArchivePool()
 
-  // Cross-pool: no ID overlap
-  for (const id of embeddable.ids) {
-    if (pending.ids.has(id)) err(`cross-pool: id ${id} appears in both embeddable and pending`)
+  // Cross-pool: no ID appears in more than one pool
+  const pools: Array<[string, Set<string>]> = [
+    ['embeddable', embeddable.ids],
+    ['pending', pending.ids],
+    ['archive', archive.ids],
+  ]
+  for (let i = 0; i < pools.length; i++) {
+    for (let j = i + 1; j < pools.length; j++) {
+      for (const id of pools[i][1]) {
+        if (pools[j][1].has(id)) err(`cross-pool: id ${id} appears in both ${pools[i][0]} and ${pools[j][0]}`)
+      }
+    }
   }
 
   // Cross-pool: total = source count
-  const totalAcrossPools = embeddable.total + pending.total
+  const totalAcrossPools = embeddable.total + pending.total + archive.total
   if (statSync(SOURCE_JSONL_PATH, { throwIfNoEntry: false })) {
     const sourceCount = readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length
     if (totalAcrossPools !== sourceCount) {
-      err(`total mismatch: embeddable ${embeddable.total} + pending ${pending.total} = ${totalAcrossPools} ≠ source ${sourceCount}`)
+      err(
+        `total mismatch: embeddable ${embeddable.total} + pending ${pending.total} + archive ${archive.total}` +
+          ` = ${totalAcrossPools} ≠ source ${sourceCount}`,
+      )
     }
   } else {
     err(`source jsonl missing: ${SOURCE_JSONL_PATH}`)
@@ -163,6 +205,7 @@ function main() {
 
   console.log(`Embeddable pool: ${embeddable.total} quotes across ${COLLECTIVE_BUCKETS.size}+ files`)
   console.log(`Pending pool:    ${pending.total} records`)
+  if (archive.total > 0) console.log(`Archive:         ${archive.total} rejected`)
   console.log(`Total:           ${totalAcrossPools} (source: ${readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length})`)
 
   if (errors.length > 0) {

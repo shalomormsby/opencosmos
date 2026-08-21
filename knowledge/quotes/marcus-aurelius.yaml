@@ -36,6 +36,22 @@ quotes:
       earliest_print_source: "Meditations (Book 1, 17)"
       notes: null
       reviewed_by_human: false
+  - id: q_0083
+    slug: null
+    text: You could leave life right now. Let that determine what you do and say and think.
+    category: insight
+    keywords: [death-awareness, mortality, priorities, memento mori]
+    context: "Philosophy, Stoic, Ancient Greek, Wisdom"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marcus_Aurelius"
+      earliest_print_source: "Meditations, Marcus Aurelius, Book 2.11; this English wording from Gregory Hays's translation (Modern Library, 2002)"
+      notes: "Genuine, from Meditations 2.11. The crisp modern phrasing is specifically Gregory Hays's 2002 translation; older translations render it very differently (Long: 'Since it is possible that thou mayest depart from life this very moment, regulate every act and thought accordingly'). Worth crediting the translator if the corpus surfaces translation credits."
+      reviewed_by_human: false
   - id: q_0095
     slug: null
     text: "You always own the option of having no opinion. There is never any need to get worked up or to trouble your soul about things you can't control. These things are not asking to be judged by you. Leave them alone."
@@ -67,6 +83,22 @@ quotes:
       wikiquote_url: null
       earliest_print_source: Meditations
       notes: null
+      reviewed_by_human: false
+  - id: q_0097
+    slug: null
+    text: Gentleness is invincible.
+    category: null
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marcus_Aurelius"
+      earliest_print_source: "Meditations, Marcus Aurelius, Book 11.18 (c. 170–180 CE)"
+      notes: "Genuine, from the long passage in Meditations 11.18 on how to respond to people who wrong you, which closes on the claim that gentleness or kindness cannot be defeated when it is sincere — Hays renders it 'Kindness is invincible, provided it's sincere'. Translations split between 'gentleness' and 'kindness', so the three-word form here is a compression of a conditional sentence: Marcus qualifies it with 'if it be genuine'. Attribution is sound; the aphoristic trimming drops that qualifier."
       reviewed_by_human: false
   - id: q_0098
     slug: null
