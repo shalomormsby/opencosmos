@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0014",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "\"God in drag\" is a documented Ram Dass idiom — he used it repeatedly in lectures and it is consistently attributed to him across his own foundation's materials and secondary collections. The usual circulated phrasing is \"Treat everyone you meet like God in drag.\" I cannot place it in a specific book or dated talk from my own knowledge, so this is strong-secondary rather than primary. No fabricated citation offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0015",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Ram Dass's vocabulary (\"unfolding,\" \"opportunities to awaken\") and circulates attributed to him, but I know of no talk, book, or dated interview that fixes it. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0016",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as an excerpt lifted from a longer Ram Dass passage about loving from the soul plane rather than the ego plane — a theme he taught constantly — but as a standalone sentence it is not one of his widely circulated lines and I cannot locate a source. The fragmentary phrasing suggests it may be a transcription of spoken remarks, possibly out of context.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0017",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "Commencement Address, Stanford University, Steve Jobs, 12 June 2005",
+    "notes": "Genuine and primary-sourced. Delivered in the second story (\"love and loss\") of the Stanford commencement address, 12 June 2005; the full sentence continues \"...And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.\" Transcript and video are published by Stanford.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0018",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "Apple \"Think Different\" advertising campaign copy, TBWA\\Chiat\\Day, 1997",
+    "notes": "This is the closing line of the Apple \"Think Different\" ad copy (1997), not a Jobs original. The copy was written at TBWA\\Chiat\\Day; creative director Rob Siltanen has publicly claimed principal authorship (with Lee Clow and Craig Tanimoto involved), and Jobs's role was as client, editor, and narrator of the unaired version he recorded. Because Jobs voiced it, it is universally credited to him. The ad wording is \"the ones who are crazy enough to think they can change the world, are the ones who do\" — the quoted text inserts \"that.\" Attribution to Jobs as author is weak; my confidence in the ad-copy origin is high, but the individual copywriter credit is contested, so the reattribution below names the campaign rather than one person.",
+    "suggested_reattribution": "Apple \"Think Different\" campaign copy (TBWA\\Chiat\\Day — Rob Siltanen, Lee Clow, Craig Tanimoto), 1997"
+  },
+  {
+    "id": "q_0019",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "Commencement Address, Stanford University, Steve Jobs, 12 June 2005",
+    "notes": "Confirms the pre-flag: genuine, from the third story (\"death\") of the 2005 Stanford commencement address. Wording matches the published transcript with two small copy issues to fix before use: \"the noise of other's opinions\" should be \"others' opinions,\" and the dash in \"dogma - which is\" should be an em dash. Otherwise verbatim.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0020",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "\"Old Man's Advice to Youth: 'Never Lose a Holy Curiosity,'\" LIFE magazine, 2 May 1955, p. 64",
+    "notes": "A rare case where an Einstein quotation of this kind is genuine. It comes from remarks Einstein made to William Miller, published in LIFE shortly after Einstein's death in April 1955 under the headline that itself quotes the last line. This is one of the sourced entries on Einstein's Wikiquote page rather than one of the many unsourced accretions. Wording as given matches the published version.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0021",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Meditations, Marcus Aurelius, Book 12 (Gregory Hays translation, Modern Library, 2002)",
+    "notes": "Genuine Marcus Aurelius, but note this is specifically Gregory Hays's 2002 English rendering — the colloquial \"dance like a puppet\" is Hays's phrasing, not a literal or older translation, so the wording is translator-dependent and other translations read quite differently. I place it in Book 12, most likely section 19, though I am working from memory on the exact section number and have not confirmed it. Translator credit should be carried with the quote.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0022",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Chomsky in substance and voice; it is the opening of a longer passage that continues roughly \"If you assume that there is no hope, you guarantee that there will be no hope. If you assume that there is an instinct for freedom, that there are opportunities to change things, then there is a possibility that you can contribute to making a better world.\" That longer form circulates widely and consistently under his name from interviews. I cannot fix the specific interview, date, or volume, so I have left the source null rather than guess at one of the several collections it is often credited to.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0023",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Aristotle",
+    "earliest_print_source": "The Story of Philosophy, Will Durant, Simon & Schuster, 1926",
+    "notes": "The pre-flag is correct and this is one of the best-documented misattributions in circulation. The sentence is Will Durant's own summarizing gloss on the Nicomachean Ethics (roughly 1103a-b, on virtue as hexis acquired by habituation), written in The Story of Philosophy (1926). Aristotle never wrote it; Durant's line is set immediately after his paraphrase of Aristotle and the quotation marks migrated over time. Wikiquote lists it under Aristotle's misattributed section. Recommend crediting Durant and, if the Aristotelian idea is wanted, citing Nicomachean Ethics directly instead.",
+    "suggested_reattribution": "Will Durant, The Story of Philosophy (1926), paraphrasing Aristotle's Nicomachean Ethics"
+  },
+  {
+    "id": "q_0024",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Marshall_McLuhan",
+    "earliest_print_source": "John M. Culkin, \"A Schoolman's Guide to Marshall McLuhan,\" Saturday Review, 18 March 1967",
+    "notes": "The attribution as recorded in this record is already correct, which is unusual and worth preserving. Culkin wrote \"We shape our tools and thereafter they shape us\" while summarizing McLuhan's argument; McLuhan himself did not write the sentence in this form. Two cautions: (a) the corpus text \"thereafter our tools shape us\" is a later smoothing of Culkin's wording — consider restoring the original; (b) the line is often confused with Churchill's \"We shape our buildings; thereafter they shape us\" (House of Commons, 28 October 1943), which is a genuinely separate quotation and a likely source of the \"thereafter\" construction.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0026",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Psychological Types, C. G. Jung, 1921 (Collected Works vol. 6, para. 197)",
+    "notes": "Genuine Jung, from the discussion of Schiller in Psychological Types. The full sentence continues \"...but by the play instinct acting from inner necessity. The creative mind plays with the objects it loves.\" The corpus text truncates \"acting from inner necessity,\" which changes the emphasis somewhat — restoring the full sentence would be more faithful. Paragraph number 197 is from memory and should be spot-checked against a print copy of CW 6.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0027",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely and consistently attributed to Maslow, and entirely consistent with his writing on creativeness in Toward a Psychology of Being (1962) and The Farther Reaches of Human Nature (1971), where he discusses spontaneity and play in primary creativity. But I cannot place this exact eight-word sentence in either book or in any paper, and short aphoristic sentences of this shape are frequently condensations made by later writers rather than the author's own line. Honest verdict: probably Maslow-derived, source unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0028",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I associate this line with David Lynch's Inland Empire (2006), where it is spoken as dialogue and continues \"...But who is the dreamer?\" Lynch also used the formulation in talks about consciousness and Transcendental Meditation, and has framed it as echoing an Upanishadic idea rather than as his own invention — so \"Lynch\" is right as the popularizer but may not be right as the originator. I am confident enough in the Lynch connection to call this attributed, but not confident enough in the film citation to record it as a source, so the field is left null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0031",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Squarely in Tolle's idiom and theme — The Power of Now and A New Earth both argue for unconditional acceptance of the present moment (\"Always say yes to the present moment\"; \"Whatever the present moment contains, accept it as if you had chosen it\"). But I cannot match this specific four-sentence sequence to a passage in either book, and Tolle quotations circulating on social media are frequently paraphrases assembled from his talks. Plausibly genuine, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0032",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Buckminster_Fuller",
+    "earliest_print_source": null,
+    "notes": "One of the most-quoted lines in innovation and design circles, and consistent with Fuller's actual programme of \"comprehensive anticipatory design science\" and his stated preference for artifacts over reform. However, to my knowledge it sits in the unsourced/attributed section of Fuller's Wikiquote page rather than being traced to Critical Path, Operating Manual for Spaceship Earth, or any dated lecture, and the crisp two-sentence form has the shape of a later condensation. I am not willing to name a book I cannot confirm. Genuinely Fuller-ish; provenance open.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0033",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this line in Arthur Miller's plays, essays, or the autobiography Timebends (1987). It has the cadence of a line from After the Fall (1964), which is preoccupied with seeing oneself and others truthfully, but that is a guess and I will not record it as a source. Low confidence in the attribution; also worth checking whether the Arthur Miller intended is the playwright at all, since the name is common.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0034",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Nisargadatta Maharaj and almost certainly from I Am That (dialogues recorded 1970-73, translated by Maurice Frydman, first published 1973), which is the source of nearly all his circulating aphorisms. I have not confirmed the chapter or page, so the source field is left null rather than half-cited. Data fix required: the author name is misspelled in the record — \"Nisagardatta\" should be \"Nisargadatta Maharaj\" (commonly \"Sri Nisargadatta Maharaj\"). Also note the text uses an en dash where most printings have a comma or semicolon.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0036",
+    "status": "attributed",
+    "confidence": 0.68,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Lennon and strongly associated with the run of interviews he gave in September-December 1980 (the David Sheff Playboy interview, the Newsweek and RKO sessions) in which he repeatedly defended the sincerity of the 1960s peace message against the charge that it was naive or dated. The content and register fit those interviews well. I cannot confirm which interview, so no source is recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0037",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": "Finding Your Strength in Difficult Times: A Book of Meditations, David Viscott, Contemporary Books, 1993",
+    "notes": "No evidence Picasso ever said or wrote this, and it does not appear in his documented statements on art. The traceable origin is psychiatrist and broadcaster David Viscott, whose 1993 meditation book contains the line in the form \"The purpose of life is to discover your gift. The meaning of life is to give your gift away.\" Note that the popular Picasso version swaps \"meaning\" and \"purpose\" relative to Viscott's original — a signature of a quote that has been passed along orally rather than copied from a text. Attribution to Picasso should be treated as false.",
+    "suggested_reattribution": "David Viscott, Finding Your Strength in Difficult Times (1993)"
+  },
+  {
+    "id": "q_0038",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": null,
+    "earliest_print_source": "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Loving Your Enemies\")",
+    "notes": "Genuine King, from the \"Loving Your Enemies\" sermon, preached at Dexter Avenue Baptist Church in the late 1950s and published in Strength to Love (1963). Small wording fix: the published line reads \"transforming an enemy into a friend\" — the corpus text drops the article \"a.\" Recommend restoring it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0039",
+    "status": "attributed",
+    "confidence": 0.82,
+    "wikiquote_url": null,
+    "earliest_print_source": "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Our God Is Able\")",
+    "notes": "Genuine King and characteristic of his personalist theology — \"cosmic companionship\" is a phrase he used in several sermons and in the Nobel lecture context. I place this passage in \"Our God Is Able\" in Strength to Love, though I am identifying the specific sermon from memory rather than from a checked text, which is why this is attributed rather than verified. Wording note: King's published phrasing is \"Behind the harsh appearances of the world\" (plural), and the passage is normally one continuous sentence rather than the two the corpus text splits it into.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0042",
+    "status": "verified",
+    "confidence": 0.87,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"The Grand Miracle,\" C. S. Lewis, The Guardian, 27 April 1945; collected in God in the Dock (1970)",
+    "notes": "Genuine Lewis, from the essay \"The Grand Miracle,\" first published in the Anglican weekly The Guardian in 1945 and later collected in God in the Dock (ed. Walter Hooper, 1970). The idea also appears in his book Miracles (1947), which is why the quote is sometimes credited there instead; the essay is the earlier appearance. Wording as given matches my recollection of the published text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0044",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent in doctrine and translation register with the recorded sayings of Sri Anandamayi Ma (1896-1982) as published in the Matri Vani volumes and similar compilations issued by her ashram — the capitalized \"Beloved\" and the formal English are typical of those translations. I cannot identify which volume or which recorded conversation, and the compilations are themselves edited transcriptions of Bengali speech, so even a located citation would be a translation of a translation. Honest verdict: plausibly authentic, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0045",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same assessment as q_0044: the diction, the emphasis on constant remembrance and repetition of the Name, and the closing turn to realization of the Self all fit the published English renderings of Sri Anandamayi Ma's sayings (the Matri Vani / Sad Vani family of ashram compilations), but I cannot identify the volume. IMPORTANT DATA DEFECTS, likely OCR damage, that must be fixed before this text is used anywhere: \"for the man who has found film\" should read \"found Him\"; the word rendered \"Him-self\" contains an embedded soft hyphen (U+00AD) that should be stripped. The passage is also long enough that it may be a stitched-together excerpt rather than one continuous saying — worth checking against a print source before promotion.",
+    "suggested_reattribution": null
+  }
+]

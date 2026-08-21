@@ -4,6 +4,22 @@ tradition: stoicism
 era: null
 gender: M
 quotes:
+  - id: q_0021
+    slug: null
+    text: "It's time you realized that you have something in you more powerful and miraculous than the things that affect you and make you dance like a puppet."
+    category: insight
+    keywords: [resilience, self-awareness]
+    context: "Philosophy, Stoic, Greek, Wisdom, Ancient"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Meditations, Marcus Aurelius, Book 12 (Gregory Hays translation, Modern Library, 2002)"
+      notes: "Genuine Marcus Aurelius, but note this is specifically Gregory Hays's 2002 English rendering — the colloquial \"dance like a puppet\" is Hays's phrasing, not a literal or older translation, so the wording is translator-dependent and other translations read quite differently. I place it in Book 12, most likely section 19, though I am working from memory on the exact section number and have not confirmed it. Translator credit should be carried with the quote."
+      reviewed_by_human: false
   - id: q_0035
     slug: null
     text: Truly love the people with whom destiny has surrounded you.

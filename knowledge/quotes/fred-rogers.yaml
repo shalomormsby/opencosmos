@@ -1,0 +1,22 @@
+author: Fred Rogers
+author_normalized_key: fred-rogers
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0053
+    slug: null
+    text: "Love isn't a state of perfect caring. It is an active noun like struggle. To love someone is to strive to accept that person exactly the way he or she is, here and now."
+    category: relationships
+    keywords: []
+    context: "Entertainer, Educator"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Fred_Rogers"
+      earliest_print_source: "The World According to Mister Rogers: Important Things to Remember, Fred Rogers, 2003"
+      notes: "Genuine Fred Rogers. The 'active noun like struggle' formulation is distinctive and is consistently attributed to him; it appears in the authorized posthumous collection The World According to Mister Rogers (2003). Rogers used the line earlier in his own writings and talks, so 2003 is where it appears in print rather than necessarily its first utterance. Common variant ends 'right here and now' rather than 'here and now'."
+      reviewed_by_human: false

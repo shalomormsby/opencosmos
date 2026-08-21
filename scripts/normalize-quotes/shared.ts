@@ -3,12 +3,14 @@
  *
  * Used by:
  *   - 01-jsonl-to-yaml.ts (split source jsonl into yaml + pending.jsonl)
+ *   - 02b-checkpoint.ts (queue quotes for subagent validation, append verdicts)
+ *   - 03-merge-validation.ts (write checkpointed verdicts into pending.jsonl)
  *   - lint.ts (validate both pools + cross-pool integrity)
  *   - 06-export-pending-csv.ts (regenerate CSV from JSONL)
  *   - 07-promote-verified.ts (move eligible records pending → yaml)
  */
 
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import yaml from 'js-yaml'
@@ -22,6 +24,11 @@ export const SOURCE_JSONL_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'quotes_n
 export const PENDING_DIR = join(REPO_ROOT, 'data', 'quotes-pending')
 export const PENDING_JSONL_PATH = join(PENDING_DIR, 'pending.jsonl')
 export const PENDING_CSV_PATH = join(PENDING_DIR, 'pending.csv')
+
+/** Append-only ledger of validation results. The resume key for Stage 3. */
+export const VALIDATION_PROGRESS_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-progress.jsonl')
+/** Raw per-batch agent output, kept as an audit trail alongside the ledger. */
+export const VALIDATION_BATCHES_DIR = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-batches')
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -40,6 +47,26 @@ export type Provenance = {
   earliest_print_source: string | null
   notes: string | null
   reviewed_by_human?: boolean
+}
+
+/** One quote's verdict from a Stage 3 validator (API driver or subagent). */
+export type ValidationResult = {
+  id: string
+  status: Status
+  confidence: number
+  wikiquote_url: string | null
+  earliest_print_source: string | null
+  notes: string | null
+  suggested_reattribution?: string | null
+}
+
+/** One line of validation-progress.jsonl. */
+export type CheckpointEntry = {
+  batch_num: number
+  batch_size: number
+  record_ids: string[]
+  validated_at: string
+  results: ValidationResult[]
 }
 
 export type JsonlRecord = {
@@ -302,7 +329,7 @@ export const PENDING_CSV_COLUMNS = [
   'suspect_reason',
 ] as const
 
-function csvCell(v: unknown): string {
+export function csvCell(v: unknown): string {
   if (v === null || v === undefined) return ''
   if (typeof v === 'boolean') return v ? 'true' : 'false'
   if (typeof v === 'number') return String(v)
@@ -341,6 +368,52 @@ export function emitCsvRow(record: JsonlRecord): string {
 
 export function emitCsv(records: JsonlRecord[]): string {
   return emitCsvHeader() + records.map(emitCsvRow).join('')
+}
+
+// ─── Checkpoint IO ──────────────────────────────────────────────────────────
+
+/**
+ * Structural check on one validator verdict. Cheap and total — it catches the
+ * failure modes that actually occur (missing id, status outside the vocabulary,
+ * confidence that isn't a 0–1 number) before anything reaches pending.jsonl.
+ */
+export function validateResult(r: ValidationResult): string[] {
+  const errors: string[] = []
+  if (!r.id) errors.push('missing id')
+  if (!ALLOWED_STATUSES.has(r.status)) errors.push(`invalid status: ${r.status}`)
+  if (typeof r.confidence !== 'number' || Number.isNaN(r.confidence) || r.confidence < 0 || r.confidence > 1) {
+    errors.push(`invalid confidence: ${r.confidence}`)
+  }
+  return errors
+}
+
+/** Every checkpoint line, in file order. Unparseable lines are reported, not fatal. */
+export function loadCheckpointEntries(path: string = VALIDATION_PROGRESS_PATH): CheckpointEntry[] {
+  if (!existsSync(path)) return []
+  const entries: CheckpointEntry[] = []
+  const raw = readFileSync(path, 'utf-8')
+  raw.split('\n').forEach((line, idx) => {
+    if (!line.trim()) return
+    try {
+      entries.push(JSON.parse(line) as CheckpointEntry)
+    } catch (e) {
+      console.warn(`${path}: skipping unparseable line ${idx + 1}: ${(e as Error).message}`)
+    }
+  })
+  return entries
+}
+
+/** Flattened verdicts across all checkpoint entries. */
+export function loadCheckpointResults(path: string = VALIDATION_PROGRESS_PATH): ValidationResult[] {
+  return loadCheckpointEntries(path).flatMap((e) => e.results ?? [])
+}
+
+/**
+ * IDs that already have a verdict on disk. This — not batch_num — is the resume
+ * key, so tranches can be run in any order, at any batch size, across sessions.
+ */
+export function checkpointedIds(path: string = VALIDATION_PROGRESS_PATH): Set<string> {
+  return new Set(loadCheckpointResults(path).map((r) => r.id))
 }
 
 // ─── Source IO ──────────────────────────────────────────────────────────────

@@ -1,0 +1,22 @@
+author: "Marshall McLuhan's idea, paraphrased by Father John Culkin"
+author_normalized_key: marshall-mcluhans-idea-paraphrased-by-father-john-culkin
+tradition: null
+era: null
+gender: null
+quotes:
+  - id: q_0024
+    slug: null
+    text: "We shape our tools, thereafter our tools shape us."
+    category: design
+    keywords: []
+    context: "Creativity, Technology, Influence"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marshall_McLuhan"
+      earliest_print_source: "John M. Culkin, \"A Schoolman's Guide to Marshall McLuhan,\" Saturday Review, 18 March 1967"
+      notes: "The attribution as recorded in this record is already correct, which is unusual and worth preserving. Culkin wrote \"We shape our tools and thereafter they shape us\" while summarizing McLuhan's argument; McLuhan himself did not write the sentence in this form. Two cautions: (a) the corpus text \"thereafter our tools shape us\" is a later smoothing of Culkin's wording — consider restoring the original; (b) the line is often confused with Churchill's \"We shape our buildings; thereafter they shape us\" (House of Commons, 28 October 1943), which is a genuinely separate quotation and a likely source of the \"thereafter\" construction."
+      reviewed_by_human: false

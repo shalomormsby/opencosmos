@@ -1,0 +1,22 @@
+author: C. S. Lewis
+author_normalized_key: c-s-lewis
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0042
+    slug: null
+    text: Miracles are a retelling in small letters of the very same story which is written across the whole world in letters too large for some of us to see.
+    category: insight
+    keywords: [miracle, life, perception]
+    context: Author
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.87
+      wikiquote_url: null
+      earliest_print_source: "\"The Grand Miracle,\" C. S. Lewis, The Guardian, 27 April 1945; collected in God in the Dock (1970)"
+      notes: "Genuine Lewis, from the essay \"The Grand Miracle,\" first published in the Anglican weekly The Guardian in 1945 and later collected in God in the Dock (ed. Walter Hooper, 1970). The idea also appears in his book Miracles (1947), which is why the quote is sometimes credited there instead; the essay is the earlier appearance. Wording as given matches my recollection of the published text."
+      reviewed_by_human: false

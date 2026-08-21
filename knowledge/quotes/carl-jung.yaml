@@ -20,3 +20,19 @@ quotes:
       earliest_print_source: "Letters of C. G. Jung: Volume I, 1906-1950 (p. 237)"
       notes: null
       reviewed_by_human: false
+  - id: q_0026
+    slug: null
+    text: The creation of something new is not accomplished by the intellect but by the play instinct.
+    category: insight
+    keywords: [creativity, creation, produtivity, innovation]
+    context: Psychology
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Psychological Types, C. G. Jung, 1921 (Collected Works vol. 6, para. 197)"
+      notes: "Genuine Jung, from the discussion of Schiller in Psychological Types. The full sentence continues \"...but by the play instinct acting from inner necessity. The creative mind plays with the objects it loves.\" The corpus text truncates \"acting from inner necessity,\" which changes the emphasis somewhat — restoring the full sentence would be more faithful. Paragraph number 197 is from memory and should be spot-checked against a print copy of CW 6."
+      reviewed_by_human: false

@@ -1,0 +1,38 @@
+author: "Dr. Martin Luther King, Jr."
+author_normalized_key: dr-martin-luther-king-jr
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0038
+    slug: null
+    text: Love is the only force capable of transforming an enemy into friend.
+    category: relationships
+    keywords: [love, transformation, healing, reconciliation]
+    context: Christianity
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: null
+      earliest_print_source: "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Loving Your Enemies\")"
+      notes: "Genuine King, from the \"Loving Your Enemies\" sermon, preached at Dexter Avenue Baptist Church in the late 1950s and published in Strength to Love (1963). Small wording fix: the published line reads \"transforming an enemy into a friend\" — the corpus text drops the article \"a.\" Recommend restoring it."
+      reviewed_by_human: false
+  - id: q_0039
+    slug: null
+    text: I am convinced that the universe is under the control of a loving purpose. And that in the struggle for righteousness man has cosmic companionship. Behind the harsh appearance of the world there is a benign power.
+    category: insight
+    keywords: [love, universe, struggle, world, power]
+    context: Christianity
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.82
+      wikiquote_url: null
+      earliest_print_source: "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Our God Is Able\")"
+      notes: "Genuine King and characteristic of his personalist theology — \"cosmic companionship\" is a phrase he used in several sermons and in the Nobel lecture context. I place this passage in \"Our God Is Able\" in Strength to Love, though I am identifying the specific sermon from memory rather than from a checked text, which is why this is attributed rather than verified. Wording note: King's published phrasing is \"Behind the harsh appearances of the world\" (plural), and the passage is normally one continuous sentence rather than the two the corpus text splits it into."
+      reviewed_by_human: false

@@ -4,6 +4,38 @@ tradition: philosophy
 era: null
 gender: M
 quotes:
+  - id: q_0072
+    slug: null
+    text: There is no remedy for love but to love more.
+    category: relationships
+    keywords: [devotion]
+    context: "Philosopher, Naturalist"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_David_Thoreau"
+      earliest_print_source: "The Journal of Henry David Thoreau, entry of 25 July 1839"
+      notes: "Genuine Thoreau, from an early Journal entry of 1839 (the date is conventionally given as 25 July; I am confident of the Journal and the year, slightly less of the exact day). Quoted verbatim here, with no drift in the wording."
+      reviewed_by_human: false
+  - id: q_0073
+    slug: null
+    text: "You must live in the present, launch yourself on every wave, find your eternity in each moment. Fools stand on their island of opportunities and look toward another land. There is no other land; there is no other life but this."
+    category: insight
+    keywords: [presence, the present moment]
+    context: "Philosopher, Naturalist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_David_Thoreau"
+      earliest_print_source: "The Journal of Henry David Thoreau, entry of April 1841"
+      notes: "Genuine Thoreau, from a Journal entry of spring 1841 (usually dated 5 April 1841). The passage is quoted accurately, including the 'island of opportunities' image, which is the distinctive part and the reason I can place it with confidence. I am sure of the Journal and the year; the exact day is the conventional citation rather than something I can independently confirm."
+      reviewed_by_human: false
   - id: q_0077
     slug: null
     text: "Nature is full of genius, full of the divinity; so that not a snowflake escapes its fashioning hand."
