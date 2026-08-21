@@ -215,14 +215,22 @@ function chunkAtHeadings(body: string): Array<{ heading: string; parentHeading?:
 // context every turn already), so indexing it would only duplicate tokens.
 const SKIP_FILES = new Set(['index.md', 'log.md', 'README.md', 'LESSONS.md'])
 
+// Directories under knowledge/ that walkMd() must not descend into.
+//   quotes/   — a substrate with its own shape; handled by walkQuotes() below.
+//   iching/   — a keyed lookup table (64 hexagrams + 8 trigrams) compiled into
+//               apps/web/lib/iching-data.ts. Consulted by cast, not by
+//               similarity; its README states it is never embedded.
+//   incoming/ — the staging area. Content here is unreviewed by definition,
+//               so indexing it would let drafts be retrieved and cited as corpus.
+const SKIP_DIRS = new Set(['quotes', 'iching', 'incoming'])
+
 function walkMd(dir: string): string[] {
   const results: string[] = []
   for (const entry of readdirSync(dir)) {
     const full = join(dir, entry)
     const stat = statSync(full)
     if (stat.isDirectory()) {
-      // Skip the quotes substrate — handled by walkQuotes() with a different chunker
-      if (full === resolve(KNOWLEDGE_DIR, 'quotes')) continue
+      if (SKIP_DIRS.has(entry) && dir === resolve(KNOWLEDGE_DIR)) continue
       results.push(...walkMd(full))
     } else if (entry.endsWith('.md') && !SKIP_FILES.has(entry)) {
       results.push(full)
