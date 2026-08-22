@@ -102,7 +102,7 @@ Fill in what you can infer, and say what you inferred:
   folds them into the quote's embedding text (alongside author, tradition, and
   category) so Cosmo retrieves by theme rather than only by literal wording, and
   they render as tags on the quote's page and drive search on
-  `/knowledge/quotes`. Vague keywords make a quote hard to find for both.
+  `/library/quotes`. Vague keywords make a quote hard to find for both.
 - **`context`** — a short descriptor of who the author is (`Poet`, `Stoic
   philosopher`, `Zen teacher`). This is load-bearing: `synthesizeTradition()`
   derives the tradition from it, and the tradition drives the graph and the
@@ -199,7 +199,7 @@ Then tell him, concretely:
 - Where each quote landed — `knowledge/quotes/<bucket>.yaml`, or still pending
 - Its provenance status and confidence, **and the source you recorded** — or a
   plain statement that you couldn't place it, so he knows what's still open
-- For anything promoted, its page: `/knowledge/quotes/<bucket>#<id>`
+- For anything promoted, its page: `/library/quotes/<bucket>#<id>`
 - That it becomes citable by Cosmo on the next `pnpm embed` (or automatically
   via CI on push to main, per `.github/workflows/knowledge-sync.yml`)
 

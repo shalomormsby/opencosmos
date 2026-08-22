@@ -24,7 +24,7 @@ import { type Path } from '@/lib/inception/schema'
 
 const NAV_LINKS: HeaderNavLink[] = [
   { label: 'Dialog',    href: '/dialog' },
-  { label: 'Knowledge', href: '/knowledge' },
+  { label: 'Library', href: '/library' },
   { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
   { label: 'Inception', href: '/inception' },
   { label: 'Xensō',     href: '/xenso' },

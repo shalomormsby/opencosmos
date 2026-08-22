@@ -177,7 +177,7 @@ Shipped: `/split-collection` skill; Shakespeare → per-play files; Khayyám/Sal
   - Agents also surfaced corpus hygiene worth a later pass: several duplicate pairs (q_0715/q_0716, q_0821/q_0824, q_0852/q_0854, q_0917/q_0924) and text corruption (q_0542 mangles the Adams "whooshing" line; q_0654 turns Shaw's "the more I live" into "the more I love"; OCR typos in q_0549, q_0659).
   - ⚠ Not yet re-embedded — Upstash's 10k daily write cap was exhausted. The live index holds the 133-quote state; run `pnpm embed` when it resets to make all 349 citable.
 - 🟡 Stage 4 (human review) — tooling shipped 2026-08-21, **197 rows waiting on Shalom** at `knowledge/quotes/_review/review-2026-08-21.csv`. Scoped to records where the validator asserts the attribution is *wrong* rather than everything below the bar: 120 likely_misattributed, 49 apocryphal, 28 more carrying a suggested reattribution; 128 name a specific alternative author. Fill in the `decision` column with `keep | drop | reattribute`, then `pnpm quotes:review-apply -- <csv> --dry` before the real run. Drops land in `_archive/rejected.yaml`; reattributions clear the promotion bar and move to YAML on the next `quotes:promote`.
-- ✅ Quote deeplinks fixed 2026-08-21. Cosmo's citations had been broken because the retrieval prompt handed it a fill-in-the-blank token template, so it constructed paths to records that didn't exist. Quotes now carry a "Cite as" line like passages, and citations resolve to `/knowledge/quotes/{bucket}#{id}` instead of raw YAML on GitHub.
+- ✅ Quote deeplinks fixed 2026-08-21. Cosmo's citations had been broken because the retrieval prompt handed it a fill-in-the-blank token template, so it constructed paths to records that didn't exist. Quotes now carry a "Cite as" line like passages, and citations resolve to `/library/quotes/{bucket}#{id}` instead of raw YAML on GitHub.
 
 **Why not the obvious alternatives:**
 - *One big `quotes.yaml`?* Diffs become opaque and per-author edits collide.
@@ -915,7 +915,7 @@ All set up in `.env.local` / Vercel / GitHub Secrets:
 
 ### Phase 1c+ (Deprecated): Custom Knowledge Graph
 
-**Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/knowledge/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
+**Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/library/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
 
 #### What's been built (shipped)
 
@@ -1467,7 +1467,7 @@ export type { KnowledgeGraphData, KnowledgeNode, KnowledgeLink } from './compone
 
 *Layer 3: Route/consumer* (`apps/web/app/knowledge/graph/page.tsx` — this repo)
 
-New Next.js App Router page at `opencosmos.ai/knowledge/graph`.
+New Next.js App Router page at `opencosmos.ai/library/graph`.
 
 ```ts
 // Consume from the design system — not a local component

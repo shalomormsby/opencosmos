@@ -107,7 +107,7 @@ export default function XensoFrontDoor() {
           navAlignment="right"
           navLinks={[
             { label: 'Dialog', href: '/dialog' },
-            { label: 'Knowledge', href: '/knowledge' },
+            { label: 'Library', href: '/library' },
             { label: 'Studio', href: 'https://studio.opencosmos.ai/docs/getting-started' },
             { label: 'Inception', href: '/inception' },
             { label: 'Xensō', href: '/xenso' },
