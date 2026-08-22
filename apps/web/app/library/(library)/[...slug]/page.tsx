@@ -65,8 +65,8 @@ export default async function DocPage({ params }: Props) {
             <nav aria-label="Breadcrumb" className="mb-10">
               <ol className="flex items-center flex-nowrap list-none m-0 p-0 text-sm overflow-x-auto scrollbar-hide">
                 {[
-                  { label: 'The Library', href: '/knowledge' },
-                  { label: CATEGORY_LABELS[doc.category] ?? doc.category, href: '/knowledge' },
+                  { label: 'The Library', href: '/library' },
+                  { label: CATEGORY_LABELS[doc.category] ?? doc.category, href: '/library' },
                   { label: doc.title },
                 ].map((item, i, arr) => {
                   const isLast = i === arr.length - 1
@@ -159,7 +159,7 @@ export default async function DocPage({ params }: Props) {
                 <div className="flex flex-col gap-2">
                   {doc.related_docs.map((rel) => {
                     const parts = rel.replace('.md', '').split('/')
-                    const href = '/knowledge/' + parts.join('/')
+                    const href = '/library/' + parts.join('/')
                     const label = parts[parts.length - 1]?.replace(/-/g, ' ') ?? rel
                     return (
                       <Link

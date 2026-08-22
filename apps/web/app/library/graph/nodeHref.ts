@@ -14,18 +14,22 @@
  *
  * Traditions and domains are synthesized cluster centers — they have no page to
  * open, so they resolve to `{ kind: 'focus' }` and the graph frames the cluster
- * instead of navigating away. Quotes live in yaml with no reader page, so they
- * link to the record on GitHub, matching how CosmoChat renders `[quote: …]`.
+ * instead of navigating away. Synthesis (wiki) nodes do the same: `wiki/` is not
+ * in BROWSABLE_DIRS, so there is no reader page to send them to yet.
+ *
+ * Quotes DO have a reader page now (`/library/quotes/{bucket}#{id}`), and route
+ * there through the same `lib/corpus-href` translation CosmoChat uses for
+ * `[quote: …]` — so a quote reached from the graph and a quote reached from a
+ * citation land in exactly the same place.
  */
 
 import type { Tier } from '@opencosmos/constellation'
-
-const GITHUB_BLOB = 'https://github.com/shalomormsby/opencosmos/blob/main'
+import { docHref, quoteHref } from '@/lib/corpus-href'
 
 export type NodeDestination =
   /** Navigate within the app (next/navigation router.push). */
   | { kind: 'route'; href: string }
-  /** Open the raw source on GitHub — quotes have no page of their own. */
+  /** Open something off-site. */
   | { kind: 'external'; href: string }
   /** No destination; frame the node in the graph instead. */
   | { kind: 'focus' }
@@ -45,21 +49,24 @@ export function nodeHref(id: string, tier: Tier): NodeDestination {
   if (!isSafePath(path)) return { kind: 'focus' }
 
   if (tier === 'quote') {
-    if (!path.startsWith('knowledge/quotes/')) return { kind: 'focus' }
-    return { kind: 'external', href: `${GITHUB_BLOB}/${path}${anchor ? `#${anchor}` : ''}` }
+    const href = quoteHref(id)
+    return href ? { kind: 'route', href } : { kind: 'focus' }
   }
 
-  // Sections are the one tier carrying a full repo-relative path; reduce it to
-  // the same `sources/x` shape the other tiers already use.
-  const docPath = tier === 'section'
-    ? path.replace(/^knowledge\//, '').replace(/\.md$/, '')
-    : path
+  // Synthesis nodes are wiki pages, and `wiki/` isn't browsable — sending them
+  // to /library/wiki/... produced a 404. Frame the cluster instead, as the other
+  // page-less tiers do, until a wiki reader route exists.
+  if (tier === 'synthesis') return { kind: 'focus' }
 
-  if (docPath.split('/').filter(Boolean).length < 2) return { kind: 'focus' }
+  // Only the section tier carries a full repo-relative path; the other tiers
+  // already use the `sources/x` shape, so normalize to a corpus path first and
+  // let the shared translator handle the rest.
+  const corpusPath = tier === 'section' ? path : `knowledge/${path}`
+  const href = docHref(`${corpusPath}${anchor ? `#${anchor}` : ''}`)
 
   // The heading slug rides through as a fragment so the reader lands on the
   // passage rather than the top of a long work.
-  return { kind: 'route', href: `/knowledge/${docPath}${anchor ? `#${anchor}` : ''}` }
+  return href ? { kind: 'route', href } : { kind: 'focus' }
 }
 
 /**

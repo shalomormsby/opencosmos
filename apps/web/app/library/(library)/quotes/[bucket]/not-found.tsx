@@ -15,7 +15,7 @@ export default function QuoteNotFound() {
         <ol className="flex items-center list-none m-0 p-0 text-sm">
           <li className="flex items-center">
             <Link
-              href="/knowledge"
+              href="/library"
               className="text-[var(--color-primary)] hover:bg-[var(--color-text-primary)] hover:text-[var(--color-background)] font-medium px-1.5 py-1.5 -mx-1.5 -my-1.5 rounded transition-colors duration-150"
             >
               The Library
@@ -34,7 +34,7 @@ export default function QuoteNotFound() {
         provenance review, or the citation may be from an older conversation.
       </p>
       <Link
-        href="/knowledge/quotes"
+        href="/library/quotes"
         className="text-[var(--color-primary)] hover:underline text-sm"
       >
         Browse all quotes →

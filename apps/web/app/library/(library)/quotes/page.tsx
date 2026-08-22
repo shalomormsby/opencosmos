@@ -1,15 +1,19 @@
 import type { Metadata } from 'next'
-import { getQuoteBuckets } from '@/lib/quotes'
-import QuoteBrowser from './QuoteBrowser'
+import { getLibraryItems } from '@/lib/library'
+import LibraryBrowser from '../../LibraryBrowser'
 
 export const metadata: Metadata = {
   title: 'Quotes — OpenCosmos',
   description: 'Attributed passages Cosmo can cite, with their provenance shown.',
 }
 
-export default function QuotesIndexPage() {
-  const buckets = getQuoteBuckets()
-  const total = buckets.reduce((n, b) => n + b.count, 0)
+/**
+ * A filtered view of the library, not a separate collection — quotes also
+ * appear in the main index alongside documents. This page exists because
+ * provenance deserves its own framing, and because it is a useful deep link.
+ */
+export default function QuotesPage() {
+  const items = getLibraryItems()
 
   return (
     <div className="max-w-7xl mx-auto px-6 pt-16 pb-24">
@@ -27,12 +31,14 @@ export default function QuotesIndexPage() {
             exists, and honest uncertainty where it doesn&apos;t.
           </p>
           <p className="text-foreground/55 leading-relaxed">
-            When Cosmo cites a quote in conversation, it links here, to the record itself.
+            When Cosmo cites a quote in conversation, it links here, to the record itself. These
+            also appear in <a href="/library" className="text-[var(--color-primary)] hover:underline">the
+            full library</a> alongside the source texts.
           </p>
         </div>
       </div>
 
-      <QuoteBrowser buckets={buckets} total={total} />
+      <LibraryBrowser items={items} only="quote" unit={{ one: 'quote source', many: 'quote sources' }} />
     </div>
   )
 }

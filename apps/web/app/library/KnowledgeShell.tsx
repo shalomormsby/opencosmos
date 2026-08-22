@@ -28,7 +28,7 @@ import { SidebarFooterContent } from '../dialog/SidebarFooterContent'
 
 const NAV_LINKS: HeaderNavLink[] = [
   { label: 'Dialog',    href: '/dialog' },
-  { label: 'Knowledge', href: '/knowledge' },
+  { label: 'Library', href: '/library' },
   { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
   { label: 'Inception', href: '/inception' },
   { label: 'Xensō',     href: '/xenso' },
@@ -343,7 +343,7 @@ export function KnowledgeShell({ children }: { children: React.ReactNode }) {
   )
 
   // The shared @opencosmos/ui Header renders nav links as plain <a> tags.
-  // From a /knowledge/[...slug] doc, clicking the "Knowledge" nav link would
+  // From a /library/[...slug] doc, clicking the "Knowledge" nav link would
   // therefore trigger a full reload and remount the chat sidebar. We intercept
   // internal-href anchor clicks at the capture phase and route them via
   // router.push so navigation inside the segment stays soft. External links,

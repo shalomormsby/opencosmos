@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { quoteHrefFromParts } from './corpus-href'
 
 /**
  * Reader for the quote substrate — knowledge/quotes/*.yaml.
@@ -160,7 +161,7 @@ export function getQuoteBuckets(): QuoteBucket[] {
       isCollective,
       tradition: str(parsed.data.tradition) ?? records.find((r) => r.tradition)?.tradition ?? null,
       count: records.length,
-      href: `/knowledge/quotes/${bucket}`,
+      href: quoteHrefFromParts(bucket),
       keywords: Array.from(new Set(records.flatMap((r) => r.keywords))).sort(),
       categories: Array.from(new Set(records.map((r) => r.category).filter((c): c is string => !!c))).sort(),
     })
@@ -186,7 +187,7 @@ export function getQuoteBucket(bucket: string): QuoteBucketDetail | null {
     isCollective,
     tradition: str(parsed.data.tradition) ?? records.find((r) => r.tradition)?.tradition ?? null,
     count: records.length,
-    href: `/knowledge/quotes/${bucket}`,
+    href: quoteHrefFromParts(bucket),
     keywords: Array.from(new Set(records.flatMap((r) => r.keywords))).sort(),
     categories: Array.from(new Set(records.map((r) => r.category).filter((c): c is string => !!c))).sort(),
     quotes: records,

@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { Badge, Separator } from '@opencosmos/ui'
 import { getQuoteBucket, getQuoteBuckets, type QuoteRecord } from '@/lib/quotes'
+import QuoteContext from './QuoteContext'
 
 type Props = {
   params: Promise<{ bucket: string }>
@@ -52,14 +53,17 @@ export default async function QuoteBucketPage({ params }: Props) {
 
   return (
     <div className="max-w-3xl mx-auto px-6 pt-16 pb-24">
+      {/* Let the sidebar Cosmo know what's on screen. */}
+      <QuoteContext bucket={detail.bucket} label={detail.label} />
+
       {/* Breadcrumb — Link-based for the same reason as the doc pages: the
           shared Breadcrumbs component renders a plain <a> and would reload
           the page, remounting the chat sidebar. */}
       <nav aria-label="Breadcrumb" className="mb-10">
         <ol className="flex items-center flex-nowrap list-none m-0 p-0 text-sm overflow-x-auto scrollbar-hide">
           {[
-            { label: 'The Library', href: '/knowledge' },
-            { label: 'Quotes', href: '/knowledge/quotes' },
+            { label: 'The Library', href: '/library' },
+            { label: 'Quotes', href: '/library/quotes' },
             { label: detail.label },
           ].map((item, i, arr) => {
             const isLast = i === arr.length - 1

@@ -2,6 +2,7 @@
 
 import { defaultUrlTransform, type Components } from 'react-markdown'
 import { cn } from '@opencosmos/ui'
+import { docHref, quoteHref } from '@/lib/corpus-href'
 
 /**
  * Cosmo's structured citation tokens, and how they're rendered.
@@ -20,7 +21,7 @@ import { cn } from '@opencosmos/ui'
  * still carries its receipt.
  *
  * This module is shared: `/dialog` renders through `CosmoChat`, while
- * `/knowledge`, `/knowledge/graph`, and `/inception` render through `ChatPanel`.
+ * `/library`, `/library/graph`, and `/inception` render through `ChatPanel`.
  * They must render citations identically, so neither surface owns this.
  */
 
@@ -83,34 +84,8 @@ export function extractCitationTargets(content: string): string[] {
   return out
 }
 
-/**
- * `knowledge/quotes/mary-oliver.yaml#q_0003` → `/knowledge/quotes/mary-oliver#q_0003`.
- *
- * Returns null for anything that isn't a single clean bucket segment plus an
- * id, so a malformed or invented target renders as no link at all rather than
- * as a dead one.
- */
-function quoteToHref(ref: string): string | null {
-  const hash = ref.indexOf('#')
-  const filePath = hash === -1 ? ref : ref.slice(0, hash)
-  const anchor = hash === -1 ? '' : ref.slice(hash + 1)
-  if (!filePath.startsWith(QUOTE_PREFIX) || filePath.includes('..')) return null
-  const bucket = filePath.slice(QUOTE_PREFIX.length).replace(/\.yaml$/, '')
-  if (!/^[a-z0-9-]+$/.test(bucket)) return null
-  if (anchor && !/^[A-Za-z0-9_-]+$/.test(anchor)) return null
-  return `/knowledge/quotes/${bucket}${anchor ? `#${anchor}` : ''}`
-}
-
-/** `knowledge/sources/x.md#slug` → `/knowledge/sources/x#slug`. */
-function refToHref(ref: string): string | null {
-  const hash = ref.indexOf('#')
-  const path = hash === -1 ? ref : ref.slice(0, hash)
-  const anchor = hash === -1 ? '' : ref.slice(hash + 1)
-  if (!path.startsWith('knowledge/') || path.includes('..')) return null
-  const inner = path.replace(/^knowledge\//, '').replace(/\.md$/, '')
-  if (inner.split('/').filter(Boolean).length < 2) return null
-  return `/knowledge/${inner}${anchor ? `#${anchor}` : ''}`
-}
+// The corpus-path → library-URL translation lives in lib/corpus-href.ts, shared
+// with the constellation's nodeHref and the library index so all three agree.
 
 function CitationMarker({
   href,
@@ -146,7 +121,7 @@ function CitationMarker({
  */
 export const citationAnchor: NonNullable<Components['a']> = ({ href, children }) => {
   if (href?.startsWith(QUOTE_PREFIX)) {
-    const internal = quoteToHref(href)
+    const internal = quoteHref(href)
     if (!internal) return null
     return (
       <CitationMarker href={internal} title={href} external={false}>
@@ -157,7 +132,7 @@ export const citationAnchor: NonNullable<Components['a']> = ({ href, children })
 
   if (href?.startsWith(REF_SCHEME)) {
     const ref = href.slice(REF_SCHEME.length)
-    const internal = refToHref(ref)
+    const internal = docHref(ref)
     // An unresolvable ref (Cosmo naming a path that isn't in the corpus) is
     // dropped rather than rendered as a dead link.
     if (!internal) return null
