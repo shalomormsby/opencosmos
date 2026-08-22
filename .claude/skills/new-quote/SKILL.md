@@ -32,11 +32,16 @@ eventually mangle one.
 
 ### 1. Parse
 
-Pull out `text` and `author` for each quote. Strip surrounding quotation marks
-and the `—`/`--`/`~` before an attribution. If the author is genuinely absent,
-use `Unknown` — the pipeline routes that to `anonymous.yaml` on its own. If a
-print source came along with it ("*Thirst*, Beacon Press, 2006"), capture it as
-`source`.
+Pull out `text`, `author`, and — this one matters most — **any source that came
+along with the quote**. Strip surrounding quotation marks and the `—`/`--`/`~`
+before an attribution. If the author is genuinely absent, use `Unknown` — the
+pipeline routes that to `anonymous.yaml` on its own.
+
+**Never discard a source.** If the paste carries a book, essay, speech, letter,
+interview, chapter, or year — "*Thirst*, Beacon Press, 2006", "in a 1974 letter
+to his brother", "Meditations 4.7" — capture it as `source`. It is the single
+most valuable thing in the input and the easiest to drop while tidying up the
+text. Whatever is in `source` flows into `provenance.earliest_print_source`.
 
 Reflect back what you parsed before writing anything. A misparsed author is
 much cheaper to fix now than after promotion.
@@ -80,9 +85,36 @@ honestly:
   is. A beautiful line of unknown origin is a 0.15.
 - Watch the misattribution magnets: Einstein, Gandhi, Churchill, Twain, Lincoln.
 
-This is the payoff over a bare CLI: a well-attested quote gets its verdict at
-capture time and can go live in the same interaction, instead of waiting for
-the next validation tranche.
+**Naming the source is the job.** The whole substrate exists so a reader can see
+where a line actually came from, and the status vocabulary is really a statement
+about the source:
+
+| You can name… | Status | Confidence |
+|---|---|---|
+| a specific work, with date — book, essay, speech, letter, chapter | `verified` | 0.90–1.00 |
+| no specific work, but the attribution is consistently and credibly carried | `attributed` | 0.70–0.85 |
+| nothing; the attribution just circulates | `attributed_unverified` | 0.10–0.45 |
+| a *different* origin than the one claimed | `likely_misattributed` | set low, and fill `suggested_reattribution` |
+| no credible origin at all | `apocryphal` | 0.10–0.25 |
+
+So, in order:
+
+1. **Use the source Shalom gave you.** If the paste carried one, it goes in
+   `earliest_print_source` — don't re-derive or "improve" it.
+2. **Add one from your own knowledge if you genuinely have it.** If you know the
+   line opens *The Messenger* in *Thirst* (Beacon Press, 2006), say so, and the
+   quote earns `verified`. This is the payoff over a bare CLI: a well-attested
+   quote gets a real citation at capture time and can go live in the same
+   interaction, instead of waiting for the next validation tranche.
+3. **If you can't place it, say so and ask.** Leave `earliest_print_source` null,
+   explain the gap in `notes`, and *ask Shalom whether he knows where it's from* —
+   he often does, since he's the one who collected it. A source he supplies is
+   worth more than a confident guess, and if he confirms an attribution
+   personally, set `"reviewed_by_human": true`, which clears the promotion bar
+   regardless of confidence.
+
+Never quietly downgrade a quote to `attributed_unverified` when a single
+question would have gotten you the citation.
 
 Put the verdict in the record's `provenance` block:
 
@@ -120,7 +152,8 @@ pnpm quotes:lint
 Then tell him, concretely:
 
 - Where each quote landed — `knowledge/quotes/<bucket>.yaml`, or still pending
-- Its provenance status and confidence
+- Its provenance status and confidence, **and the source you recorded** — or a
+  plain statement that you couldn't place it, so he knows what's still open
 - For anything promoted, its page: `/knowledge/quotes/<bucket>#<id>`
 - That it becomes citable by Cosmo on the next `pnpm embed` (or automatically
   via CI on push to main, per `.github/workflows/knowledge-sync.yml`)
