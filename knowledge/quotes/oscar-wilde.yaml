@@ -1,0 +1,86 @@
+author: Oscar Wilde
+author_normalized_key: oscar-wilde
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1097
+    slug: null
+    text: "In this world there are only two tragedies. One is not getting what one wants, and the other is getting it."
+    category: insight
+    keywords: [life, tragedy, desire, humor]
+    context: "Author, British"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Oscar_Wilde"
+      earliest_print_source: "Lady Windermere's Fan, Oscar Wilde, 1892 - Act III"
+      notes: "Genuine Wilde, from the Act III club scene in Lady Windermere's Fan. The full exchange continues '...The last is much the worst; the last is a real tragedy!' Confident about play and act; slightly less certain which of the Act III dandies (Dumby) speaks the line, but that does not affect authorship. Wilde later reworked the same paradox elsewhere in his prose."
+      reviewed_by_human: false
+  - id: q_1098
+    slug: null
+    text: "It is only about things that do not interest one that one can give an unbiased opinion, which is no doubt the reason why an unbiased opinion is always useless."
+    category: insight
+    keywords: [humor, opinion]
+    context: "Author, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Oscar_Wilde"
+      earliest_print_source: "'The Critic as Artist', in Intentions, Oscar Wilde, 1891"
+      notes: "Genuine Wilde, from the Gilbert-Ernest dialogue in The Critic as Artist. Note the wording drift: Wilde's sentence ends 'an unbiased opinion is always absolutely valueless,' not 'always useless.' Recommend restoring 'absolutely valueless' if the corpus wants the authorial text. Source itself is not in doubt."
+      reviewed_by_human: false
+  - id: q_1099
+    slug: null
+    text: I can resist everything except temptation.
+    category: humor
+    keywords: [resistance, temptation, discipline]
+    context: "Author, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Oscar_Wilde"
+      earliest_print_source: "Lady Windermere's Fan, Oscar Wilde, 1892 - Act I"
+      notes: "One of the securest Wilde attributions there is: Lord Darlington's line in Act I of Lady Windermere's Fan, in reply to Lady Windermere's 'You have a great many ideals.' Quoted accurately and complete."
+      reviewed_by_human: false
+  - id: q_1103
+    slug: null
+    text: "There is nothing that will cure the senses but the soul, and nothing that will cure the soul but the senses."
+    category: spirit
+    keywords: [soul, senses, cure, nothing]
+    context: "Author, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Oscar_Wilde"
+      earliest_print_source: "The Picture of Dorian Gray, Oscar Wilde, 1890/1891"
+      notes: "Genuine Wilde, spoken by Lord Henry Wotton in Chapter 2. The canonical wording runs '...nothing can cure the soul but the senses, just as nothing can cure the senses but the soul.' The record here reverses the clauses and substitutes 'there is nothing that will cure' — same sentence, loosely requoted. Recommend restoring Wilde's wording."
+      reviewed_by_human: false
+  - id: q_1105
+    slug: null
+    text: The only way to get rid of temptation is to yield to it… I can resist everything buy temptation.
+    category: humor
+    keywords: []
+    context: "Author, British"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Oscar_Wilde"
+      earliest_print_source: "The Picture of Dorian Gray, Oscar Wilde, 1890/1891; Lady Windermere's Fan, Oscar Wilde, 1892"
+      notes: "Both halves are authentically Wilde but they are two separate quotations welded together. 'The only way to get rid of a temptation is to yield to it' is Lord Henry in Dorian Gray ch. 2; 'I can resist everything except temptation' is Lord Darlington in Lady Windermere's Fan, Act I. The record also corrupts the second line to 'buy temptation'. Recommend splitting into two records and fixing the typo."
+      reviewed_by_human: false

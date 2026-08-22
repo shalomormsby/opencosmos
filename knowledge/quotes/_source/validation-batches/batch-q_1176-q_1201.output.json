@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1176",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
+    "earliest_print_source": null,
+    "notes": "This is the well-documented 'Success' poem misattribution. Emerson never wrote it; it appears in the Misattributed section of his Wikiquote page and has been traced by Quote Investigator to a 1904 prize-winning contest entry by Bessie Anderson Stanley ('He has achieved success who has lived well, laughed often, and loved much...'). The 'To laugh often and much / to win the respect of intelligent people' wording is a much later 20th-century rewrite of Stanley's text, circulated anonymously before being pinned on Emerson. I am confident it is not Emerson; I am less confident about who produced this specific rewrite.",
+    "suggested_reattribution": "Bessie Anderson Stanley (1904), heavily reworded by an unknown later hand"
+  },
+  {
+    "id": "q_1177",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Emerson across anthologies and stylistically authentic to him (the cadence and the 'this hour's duties' construction are characteristic). I cannot place the specific essay, address, or journal entry from memory, so I am not asserting a print source. Attribution is plausible and stable but unverified at the primary-source level.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1178",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Extremely common in quote collections under Emerson's name, but I cannot recall it in any of his essays, addresses, or journals. Emerson is a moderate misattribution magnet for aphoristic one-liners of this shape. The epigram feels more like late-19th/early-20th-century American maxim writing than Emerson's own prose. No source found in training knowledge; treat the attribution as unsupported rather than disproven.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1180",
+    "status": "attributed",
+    "confidence": 0.78,
+    "wikiquote_url": null,
+    "earliest_print_source": "Letters and Social Aims, Ralph Waldo Emerson, 1876 (essay 'Progress of Culture')",
+    "notes": "I recall this line being cited to Emerson's 'Progress of Culture,' the Phi Beta Kappa address delivered at Harvard in July 1867 and collected in Letters and Social Aims (1876). The sentiment ('thoughts rule the world') is squarely Emerson's and I have reasonable confidence in the placement, but I am reporting a recollection, not a checked citation — the essay attribution should be confirmed against the text before the source line is trusted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1181",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
+    "earliest_print_source": "Essays: First Series ('Compensation'), Ralph Waldo Emerson, 1841",
+    "notes": "Genuine Emerson, from the essay 'Compensation' in Essays: First Series (1841). The wording here matches the essay text closely ('It is one of the most beautiful compensations of this life, that no man can sincerely try to help another without helping himself'). This is one of the few heavily circulated Emerson lines with a solid primary source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1182",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I am confident this is genuine Emerson prose — the fuller passage runs '...what deafness, what stone-blind custom, what overgrown error you behold is there only by sufferance — your sufferance. See it to be a lie, and you have already dealt it its mortal blow.' My recollection points to 'Compensation' (Essays: First Series, 1841), but I am not confident enough in the essay placement to record it as a citation. The ellipsis in the corpus text also elides an intervening clause.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1183",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ralph Waldo Trine is a real New Thought author (1866-1958) and the vocabulary here — 'the all-pervading wisdom and power,' oneness, higher laws — is his signature phrasing, strongly suggesting In Tune with the Infinite (1897). I cannot place the passage precisely enough to assert the book and page, so no print source is recorded. Note the author is distinct from Ralph Waldo Emerson; the corpus has them adjacent and they are frequently confused.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1184",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitously attributed to Ram Dass (born Richard Alpert) and consistent with his teaching, but I know of no primary source — no book passage, lecture transcript, or dated talk. It circulated widely as poster and software-splash-screen text before most quote sites indexed it, which is a typical pattern for floating attributions. Also note the corpus spells the author 'Ram Das'; the standard spelling is 'Ram Dass'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1185",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This does not read as Ram Dass; it reads as Advaita source material. I recall this wording — 'All spiritual practices are done with a view to still the mind. The perfectly still mind is universal spirit' — from Nisargadatta Maharaj's I Am That, the Maurice Frydman translation. My confidence in the reattribution is moderate (roughly 0.6), not high, and it could alternatively trace to Ramana Maharshi's recorded talks, which share this idiom. Either way the Ram Dass attribution looks incorrect.",
+    "suggested_reattribution": "Nisargadatta Maharaj (probable; I Am That)"
+  },
+  {
+    "id": "q_1186",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A genuinely Ram Dass-sounding line, usually quoted as 'The next message you need is always right where you are.' It is associated with his talks and with the Be Here Now era, and the attribution is stable across sources, but I cannot point to a book, transcript, or date. Attribution plausible, evidence thin. Author name should be 'Ram Dass'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1187",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This 'I honor the place in you...' gloss on Namaste is most often credited to Ram Dass and does match his idiom and his role in popularizing the greeting for Western audiences. However the same passage circulates attributed to Mahatma Gandhi and to anonymous yoga-studio tradition, which is a warning sign. No primary text or talk identified in my training knowledge. Author name should be 'Ram Dass'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1188",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Rama Choomarasawmy' is not a real person — it is a phonetic corruption of Ananda K. Coomaraswamy (1877-1947), the Ceylonese-British metaphysician and art historian. The passage is characteristic Coomaraswamy, from his writing on traditional art and the artist's identification with the form contemplated; my recollection points toward The Transformation of Nature in Art (1934) or Christian and Oriental Philosophy of Art (1943), but I cannot fix the book, so no print source is recorded. Confidence in the author correction is high (~0.85); confidence in the recorded name as given is near zero. Note also 'The artists is' in the corpus text is a typo for 'The artist is'.",
+    "suggested_reattribution": "Ananda K. Coomaraswamy"
+  },
+  {
+    "id": "q_1189",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The musk-deer parable — the deer roaming in search of a fragrance emanating from its own navel — is a genuine and very old motif in Indian devotional literature, used by Kabir, by Ramakrishna, and in later Vedanta teaching. Ramakrishna did employ it, so the attribution is not baseless, but this compressed English sentence is an anthologist's paraphrase rather than a line from The Gospel of Sri Ramakrishna as far as I can tell. The image is effectively traditional and predates any single speaker.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1190",
+    "status": "attributed",
+    "confidence": 0.68,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Ramana Maharshi's recorded teaching on silence as the highest and most potent form of instruction, and I associate this passage with Talks with Sri Ramana Maharshi (Munagala Venkataramiah's transcripts) or Maharshi's Gospel. The usual ordering in his teaching runs silence to ego to thought to speech, matching this text. I cannot cite a specific talk number, so no print source is recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1191",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ray_Bradbury",
+    "earliest_print_source": "'G.B.S. — Mark V' (short story), Ray Bradbury, 1976, collected in Long After Midnight",
+    "notes": "Genuinely Bradbury, and unmistakably his voice. I recall the passage as spoken by the George Bernard Shaw robot in the short story 'G.B.S. — Mark V,' collected in Long After Midnight (1976); Bradbury also reused the 'the Universe has shouted itself alive, we are one of the shouts' formulation in essays and interviews. Confidence in Bradbury as author is high; confidence in the specific story placement is somewhat lower and worth confirming against the text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1192",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Raymond Inmon' appears in my knowledge only as a name attached to this one sentence in motivational quote collections — no biography, no book, no other work, no dates. That pattern usually indicates either a private individual quoted once in a newsletter or a name that accreted to an orphan line. The quote itself is real and widely circulated; the attribution is untraceable. Honest answer here is that I do not know who said it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1193",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reggie Leach is a real person — NHL winger, 'the Riverton Rifle,' Philadelphia Flyers — and this line is attributed to him with near-total consistency across motivational anthologies, which is mild evidence. But I know of no interview, book, or speech where it originates, and no date. Sports one-liners of this kind are commonly attached to whichever athlete an anthologist had to hand. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1194",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Mary Manin Morrissey is a real New Thought/Unity minister and author (Building Your Field of Dreams, 1996) and the language here — 'Spirit has placed a dream in your heart' — matches her register exactly, so the attribution is plausible. But it reads like newsletter or spoken-message material rather than a passage from a specific book, and I cannot locate it. No source recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1195",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Cecil Williams of Glide Memorial in San Francisco may well have said this from the pulpit, but he did not originate it. The aphorism is centuries older and circulates in two mirrored forms: 'Pray as though everything depended on God, work as though everything depended on you,' commonly credited to Ignatius of Loyola and also to Augustine of Hippo. Scholarship on the Ignatian version (Joseph de Guibert and others) notes the two halves get swapped between retellings, which is itself evidence of a long oral history. Treat this as a traditional Christian saying quoted by Williams, not authored by him.",
+    "suggested_reattribution": "Traditional Christian aphorism, commonly attributed to Ignatius of Loyola"
+  },
+  {
+    "id": "q_1196",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely quoted under Richard Avedon's name in design and photography collections, and the sentiment fits a working photographer's outlook. I cannot place it in an Avedon interview, essay, or monograph, and I have some recollection of near-identical 'style is chains, ideas are freedom' formulations circulating under other designers' names, which weakens confidence. Attribution plausible but unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1197",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Richard_Bach",
+    "earliest_print_source": "Illusions: The Adventures of a Reluctant Messiah, Richard Bach, 1977",
+    "notes": "Genuine Bach, from Illusions: The Adventures of a Reluctant Messiah (1977), where it appears as one of the aphorisms in the Messiah's Handbook. Attribution is solid and the source is well established in the secondary literature. Occasionally seen paraphrased as 'What the caterpillar calls the end of the world, the master calls a butterfly' — same source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1198",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Richard Bach and consonant with the Messiah's Handbook aphorisms in Illusions (1977), which is my best guess for the source. I am noticeably less confident than for the caterpillar line — I cannot confirm the book, and the sentiment is generic enough that it could belong to the broader 'those who think they can' tradition running back to Virgil's 'possunt quia posse videntur.' No print source recorded.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1199",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Richard Carlson is a real author (Don't Sweat the Small Stuff, 1997, and its many sequels) and this sentence is consistent with his advice register, but it is generic enough that it could come from almost any business or self-help writer. I cannot place it in a specific title or chapter. Plausible attribution, no evidence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1200",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed with good consistency to Richard M. DeVos, Amway co-founder, and the 'Here comes number seventy-one' formulation is distinctive enough that it is unlikely to have drifted from another speaker. It matches the content of his motivational speaking and his book Believe! (1975), which is my best guess for the source, but I cannot confirm the book or a speech date, so no print source is recorded. Note the corpus name should probably be punctuated 'Richard M. DeVos'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1201",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Richard Nelson Bolles, author of What Color Is Your Parachute?, and it strongly matches his voice and his argument against 'realistic' career advice; my recollection is that it appears in the book, whose editions run annually from 1970, but I cannot pin an edition or page and will not guess a year. The closing image, 'gave them horses to ride,' echoes the old proverb 'if wishes were horses, beggars would ride,' which Bolles was plausibly inverting deliberately. Attribution stable, primary source unconfirmed.",
+    "suggested_reattribution": null
+  }
+]

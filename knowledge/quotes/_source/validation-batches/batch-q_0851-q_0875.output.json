@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0851",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": "The Hero with a Thousand Faces, Joseph Campbell, 1949",
+    "notes": "I can place this in The Hero with a Thousand Faces, in the discussion of 'Master of the Two Worlds' in the Return section. The fuller passage runs roughly: 'The two worlds, the divine and the human, can be pictured only as distinct from each other... Nevertheless -- and here is a great key to the understanding of myth and symbol -- the two kingdoms are actually one. The realm of the gods is a forgotten dimension of the world we know.' The quote as given is an accurate ellipsis of that passage. I cannot state a page number from memory.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0852",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": null,
+    "notes": "Consistently and near-universally attributed to Campbell, who used the line in late interviews and lectures; it is commonly cited from A Joseph Campbell Companion: Reflections on the Art of Living (ed. Diane K. Osbon, 1991), but I cannot confirm that locus from memory, so I leave the print source null. A common variant reads 'the privilege of a lifetime is being who you are' vs. 'is to be who you are' -- the shorter form here is the one Campbell is usually quoted as saying. Note: identical text to q_0854 in this batch (duplicate record).",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0853",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": null,
+    "notes": "Attribution to Campbell is consistent across quote collections and matches his recurring theme that the mythic 'call' includes assuming authority over one's own life; the sentiment appears in his Pathways to Bliss lectures. I cannot place this exact sentence in a specific published text, so I hold it below the promotion bar rather than assign a source I cannot confirm.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0854",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": null,
+    "notes": "Exact duplicate of q_0851's batch-mate q_0852 -- same text, same author, differing only in the empty category field. Same verdict: widely and consistently attributed to Campbell, commonly cited from A Joseph Campbell Companion (1991), but I cannot confirm that locus from training knowledge. Recommend deduplicating against q_0852 downstream.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0855",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Power of Your Subconscious Mind, Joseph Murphy, 1963",
+    "notes": "This is Joseph Murphy's opening move in The Power of Your Subconscious Mind, from the first chapter, titled 'The Treasure House Within You.' Both the 'infinite riches / mental eyes / treasure house of infinity' sentence and the 'gold mine within you' sentence are characteristic of that chapter and I recall them there. Confidence held at 0.85 rather than higher because I am recalling the chapter, not a verified page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0856",
+    "status": "attributed_unverified",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of a writer named Joy Houghton and cannot place this passage in any published work. It circulates in inspirational-quote compilations with no traceable origin. I cannot confirm the attribution, cannot refute it, and will not guess at an alternative author. Honest answer: unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0857",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely attributed to Judith Viorst, and the voice fits her humorous essays and light verse (Love and Guilt and the Meaning of Life, Etc.; her Redbook columns). Attribution is consistent across sources, which is mild evidence, but I cannot place it in a specific book, column, or year, so I cannot raise this above unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0858",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Julia Butterfly' is Julia Butterfly Hill, the activist who lived two years in the redwood 'Luna.' The ripple-and-love theme is consistent with her public speaking and with The Legacy of Luna (2000), but I cannot place this specific passage in that book or in a documented speech. The author name should likely be normalized to 'Julia Butterfly Hill.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0859",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This reads as Robert Bly's English version of Kabir rather than a literal translation -- the diction ('scrub your ethical skin until it shines', 'but there is no music') is Bly's, from his Kabir renderings (The Kabir Book, 1977), which were themselves reworkings of Tagore's translations. So the sentiment is Kabir's tradition but the wording is Bly's. I recall the line in that Bly collection but not with enough certainty to cite it as a verified source. Consider crediting 'Kabir, versions by Robert Bly.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0860",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
+    "earliest_print_source": null,
+    "notes": "The aphoristic single-sentence form is characteristic of Sand and Foam (1926), and I recall this line among Gibran's aphorisms there. Attribution to Gibran is consistent everywhere it appears. I stop short of naming the book as a verified source because I cannot confirm the locus, but I consider the authorship itself well supported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0861",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
+    "earliest_print_source": "The Prophet, Kahlil Gibran, 1923",
+    "notes": "From 'On Pain' in The Prophet. The published wording is 'Your pain is the breaking of the shell that encloses your understanding' -- the version here substitutes 'cracking' for 'breaking' and drops the opening 'Your'. Attribution is solid; the text should be corrected to the canonical wording before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0862",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
+    "earliest_print_source": "The Prophet, Kahlil Gibran, 1923",
+    "notes": "From 'On Giving' in The Prophet. The published line reads 'There are those who give with joy, and that joy is their reward' -- the version here omits 'that'. It sits in the passage contrasting those who give with joy, those who give with pain, and those who give without pain or joy. Minor wording correction recommended.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0863",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
+    "earliest_print_source": null,
+    "notes": "A well-known Gibran aphorism, in the paradoxical two-clause form typical of Sand and Foam (1926), where I believe it appears. Attribution to Gibran is consistent and I have no evidence pointing elsewhere; I withhold the print citation because I cannot confirm the volume.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0864",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Karen Sunde is a real American playwright, and this line circulates in quotation dictionaries under her name, but I cannot connect it to any of her plays, essays, or interviews. Short aphorisms of this kind in quote compilations frequently carry unsourced attributions. Attribution is plausible but effectively untraceable from what I know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0865",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Authentically Jaspersian in both content and translation register -- 'self-being' is the standard English rendering of Selbstsein in E. B. Ashton's translation of Jaspers, and the claim that refusing communication betrays both other and self is central to Jaspers's account of existential communication in Philosophie (1932), vol. 2 (Existenzerhellung). I believe that is the source but cannot confirm the volume or page, so I leave the citation field null rather than assert it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0866",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is the best-known line associated with the German Zen teacher and psychotherapist Karlfried Graf Durckheim (Graf Karlfried von Durckheim-Montmartin), and it matches his central theme of transformation through the 'exercise' of dying to the ego; it is usually cited from The Way of Transformation, though I cannot confirm that locus. The author field is garbled: 'Karlfried Gras Von Durkheim' should read 'Karlfried Graf Durckheim' ('Graf' is the German title Count, not a given name). Flagged as a name correction, not a change of author.",
+    "suggested_reattribution": "Karlfried Graf Durckheim"
+  },
+  {
+    "id": "q_0867",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Katharine_Hepburn",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Katharine Hepburn and entirely in character for her public persona, but I cannot trace it to her memoir Me: Stories of My Life (1991), to a documented interview, or to any dated source. Short, quotable lines attached to famous personalities are a standard misattribution pattern, so I keep this below the promotion bar despite the consistency of the attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0868",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Katherine Paterson is a real and much-quoted author (Bridge to Terabithia; two-time Newbery winner) who wrote and spoke often on peace, difference, and empathy, so the attribution is plausible and probably comes from a speech, acceptance address, or essay collection such as Gates of Excellence or A Sense of Wonder. I cannot identify the specific occasion or text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0869",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of Kathleen A. Sutton and cannot place her or this sentence. The sentiment is a commonplace that appears in many forms across proverb collections and self-help writing, which makes a single named originator unlikely to be verifiable. Honest answer: source unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0870",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ken Hakuta is the Wacky WallWalker marketer known as 'Dr. Fad,' and the line fits his self-presentation and his 1988 book on inventing fads; it is consistently attributed to him in business-quote collections. I cannot confirm a book, article, or interview as the origin, so the attribution stays unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0871",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ken_Kesey",
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Ken Kesey, and the phrasing and stance match his interview voice; it appears to come from a spoken interview rather than his published fiction. I cannot identify the interview, outlet, or year, and spoken-source quotes of this kind often drift in wording, so I hold this at unverified despite the consistency of the attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0872",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A signature Ken Keyes Jr. formulation; 'everyone you meet is your mirror' is one of the phrases most closely associated with him and with Handbook to Higher Consciousness (1972), where I believe the passage appears. Attribution to Keyes is consistent and I know of no competing claimant, but I cannot confirm the book or edition, so I leave the print source null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0873",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Ken Wilber's recurring argument that ego-fighting is itself an ego project, a point he makes in No Boundary and in the One Taste journals, and the paradoxical compression is his style. I cannot place this exact sentence in a specific book, and similar formulations circulate in Advaita and Zen teaching contexts, so the wording may be a paraphrase of Wilber rather than a direct quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0874",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed consistently to Keshavan Nair, and the content -- courage as the ground of integrity, joined to compassion and humility -- matches the argument of his A Higher Standard of Leadership: Lessons from the Life of Gandhi (1994), which is the likely source. I cannot confirm the passage in that book, so I do not assert the citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0875",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Kahlil_Gibran",
+    "earliest_print_source": null,
+    "notes": "A widely circulated Gibran line whose triadic structure and tone are genuinely his; it is often traced to his Arabic-period writings in English translation (collections such as A Tear and a Smile / The Broken Wings tradition) rather than to The Prophet. Because the translation source is unsettled and translated aphorisms are prone to drift, I keep this at attributed without a citation. Author spelling should be normalized to 'Kahlil Gibran' for consistency with q_0860 through q_0863 in this batch.",
+    "suggested_reattribution": null
+  }
+]

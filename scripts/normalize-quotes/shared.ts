@@ -3,12 +3,14 @@
  *
  * Used by:
  *   - 01-jsonl-to-yaml.ts (split source jsonl into yaml + pending.jsonl)
+ *   - 02b-checkpoint.ts (queue quotes for subagent validation, append verdicts)
+ *   - 03-merge-validation.ts (write checkpointed verdicts into pending.jsonl)
  *   - lint.ts (validate both pools + cross-pool integrity)
  *   - 06-export-pending-csv.ts (regenerate CSV from JSONL)
  *   - 07-promote-verified.ts (move eligible records pending → yaml)
  */
 
-import { readFileSync } from 'node:fs'
+import { existsSync, readFileSync } from 'node:fs'
 import { resolve, dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import yaml from 'js-yaml'
@@ -22,6 +24,17 @@ export const SOURCE_JSONL_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'quotes_n
 export const PENDING_DIR = join(REPO_ROOT, 'data', 'quotes-pending')
 export const PENDING_JSONL_PATH = join(PENDING_DIR, 'pending.jsonl')
 export const PENDING_CSV_PATH = join(PENDING_DIR, 'pending.csv')
+
+/** Human review CSVs (Stage 4 in, Stage 4 out). */
+export const REVIEW_DIR = join(KNOWLEDGE_QUOTES_DIR, '_review')
+/** Tombstone for records dropped in review. Never embedded. */
+export const ARCHIVE_DIR = join(KNOWLEDGE_QUOTES_DIR, '_archive')
+export const REJECTED_YAML_PATH = join(ARCHIVE_DIR, 'rejected.yaml')
+
+/** Append-only ledger of validation results. The resume key for Stage 3. */
+export const VALIDATION_PROGRESS_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-progress.jsonl')
+/** Raw per-batch agent output, kept as an audit trail alongside the ledger. */
+export const VALIDATION_BATCHES_DIR = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-batches')
 
 // ─── Types ──────────────────────────────────────────────────────────────────
 
@@ -40,6 +53,26 @@ export type Provenance = {
   earliest_print_source: string | null
   notes: string | null
   reviewed_by_human?: boolean
+}
+
+/** One quote's verdict from a Stage 3 validator (API driver or subagent). */
+export type ValidationResult = {
+  id: string
+  status: Status
+  confidence: number
+  wikiquote_url: string | null
+  earliest_print_source: string | null
+  notes: string | null
+  suggested_reattribution?: string | null
+}
+
+/** One line of validation-progress.jsonl. */
+export type CheckpointEntry = {
+  batch_num: number
+  batch_size: number
+  record_ids: string[]
+  validated_at: string
+  results: ValidationResult[]
 }
 
 export type JsonlRecord = {
@@ -96,6 +129,8 @@ export const COLLECTIVE_DESCRIPTIONS: Record<string, string> = {
   proverbs: 'Traditional sayings (proverbs, sayings, aphorisms). Author preserved per-quote.',
   'attributed-collectives': 'Quotes attributed to a named collective source (Delphic maxim, Yoga Sutras, …). Author preserved per-quote.',
   anonymous: 'Quotes whose author is unknown. Partial info preserved per-quote where available.',
+  rejected:
+    'Records dropped in human review — misattributed, apocryphal, or otherwise not worth carrying. Kept as a tombstone so a dropped quote is never silently re-imported. Never embedded.',
 }
 
 export function routeAuthor(author: string, normalizedKey: string): { bucket: string; isCollective: boolean } {
@@ -103,7 +138,25 @@ export function routeAuthor(author: string, normalizedKey: string): { bucket: st
   if (/^(anonymous|unknown)\b/i.test(a)) return { bucket: 'anonymous', isCollective: true }
   if (/\b(proverbs?|sayings?|aphorisms?)\b/i.test(a)) return { bucket: 'proverbs', isCollective: true }
   if (/\b(maxims?|sutras?|edicts?|hadiths?|inscriptions?|adages?|vedas?|upanishads?|gita|dhammapada|gospels?|bible|psalms?|sermons?|qur.?an|torah|talmud|tao te|i ching)\b/i.test(a)) return { bucket: 'attributed-collectives', isCollective: true }
-  return { bucket: normalizedKey, isCollective: false }
+  // The bucket becomes a filename and a URL segment, so it must be ASCII-safe.
+  // Tier 1 left diacritics in some keys (andré-breton, pema-chödrön), which
+  // produced quote pages that couldn't be linked to. Always re-derive.
+  return { bucket: normalizeAuthorKey(normalizedKey) || normalizeAuthorKey(a), isCollective: false }
+}
+
+/**
+ * Author name → the key used for routing and filenames. Matches the Tier 1
+ * convention: strip diacritics, lowercase, collapse anything non-alphanumeric
+ * to single hyphens. Needed when review reattributes a quote to someone who has
+ * no file yet.
+ */
+export function normalizeAuthorKey(author: string): string {
+  return author
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
 }
 
 // ─── Tradition synthesis ────────────────────────────────────────────────────
@@ -196,7 +249,7 @@ export function emitQuoteBlock(record: JsonlRecord, includeAuthor: boolean): str
   lines.push(`    text: ${yamlScalar(enriched.text)}`)
   if (includeAuthor) {
     lines.push(`    author: ${yamlScalar(enriched.author)}`)
-    lines.push(`    author_normalized_key: ${yamlScalar(enriched.author_normalized_key)}`)
+    lines.push(`    author_normalized_key: ${yamlScalar(normalizeAuthorKey(enriched.author_normalized_key || enriched.author))}`)
     lines.push(`    tradition: ${yamlScalar(synthesizeTradition(enriched.context))}`)
     lines.push(`    era: null`)
     lines.push(`    gender: ${yamlScalar(enriched.gender)}`)
@@ -205,8 +258,12 @@ export function emitQuoteBlock(record: JsonlRecord, includeAuthor: boolean): str
   lines.push(`    keywords: ${yamlArray(enriched.keywords ?? [])}`)
   lines.push(`    context: ${yamlScalar(enriched.context)}`)
   lines.push(`    favorite: ${yamlScalar(enriched.favorite)}`)
-  lines.push(`    source_work: null`)
-  lines.push(`    source_section: null`)
+  // Preserve rather than hardcode: 09-resolve-source-works.ts fills these in by
+  // matching a quote's print source against the corpus, and they must survive a
+  // re-promote. A null here severs the quote → work `cites` edge in the graph
+  // and drops the work from the quote's RAG context.
+  lines.push(`    source_work: ${yamlScalar(enriched.source_work ?? null)}`)
+  lines.push(`    source_section: ${yamlScalar(enriched.source_section ?? null)}`)
   lines.push(`    provenance:`)
   lines.push(`      status: ${yamlScalar(p.status)}`)
   lines.push(`      confidence: ${yamlScalar(p.confidence)}`)
@@ -222,7 +279,7 @@ export function emitPersonFile(records: JsonlRecord[]): string {
   const sample = sorted[0]
   const lines: string[] = []
   lines.push(`author: ${yamlScalar(sample.author)}`)
-  lines.push(`author_normalized_key: ${yamlScalar(sample.author_normalized_key)}`)
+  lines.push(`author_normalized_key: ${yamlScalar(normalizeAuthorKey(sample.author_normalized_key || sample.author))}`)
   lines.push(`tradition: ${yamlScalar(synthesizeTradition(sample.context))}`)
   lines.push(`era: null`)
   lines.push(`gender: ${yamlScalar(sample.gender)}`)
@@ -302,7 +359,7 @@ export const PENDING_CSV_COLUMNS = [
   'suspect_reason',
 ] as const
 
-function csvCell(v: unknown): string {
+export function csvCell(v: unknown): string {
   if (v === null || v === undefined) return ''
   if (typeof v === 'boolean') return v ? 'true' : 'false'
   if (typeof v === 'number') return String(v)
@@ -341,6 +398,91 @@ export function emitCsvRow(record: JsonlRecord): string {
 
 export function emitCsv(records: JsonlRecord[]): string {
   return emitCsvHeader() + records.map(emitCsvRow).join('')
+}
+
+// ─── CSV read ───────────────────────────────────────────────────────────────
+
+/**
+ * Minimal RFC 4180 parser — enough for a review sheet round-tripped through
+ * Numbers or Excel: quoted fields, embedded commas and newlines, "" escapes.
+ * Returns row objects keyed by the header row.
+ */
+export function parseCsv(text: string): Record<string, string>[] {
+  const rows: string[][] = []
+  let row: string[] = []
+  let cell = ''
+  let quoted = false
+
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i]
+    if (quoted) {
+      if (ch === '"') {
+        if (text[i + 1] === '"') { cell += '"'; i++ }
+        else quoted = false
+      } else cell += ch
+      continue
+    }
+    if (ch === '"') { quoted = true; continue }
+    if (ch === ',') { row.push(cell); cell = ''; continue }
+    if (ch === '\r') continue
+    if (ch === '\n') { row.push(cell); rows.push(row); row = []; cell = ''; continue }
+    cell += ch
+  }
+  if (cell !== '' || row.length > 0) { row.push(cell); rows.push(row) }
+
+  const [header, ...body] = rows.filter((r) => r.some((c) => c.trim() !== ''))
+  if (!header) return []
+  return body.map((r) => {
+    const obj: Record<string, string> = {}
+    header.forEach((h, i) => { obj[h.trim()] = (r[i] ?? '').trim() })
+    return obj
+  })
+}
+
+// ─── Checkpoint IO ──────────────────────────────────────────────────────────
+
+/**
+ * Structural check on one validator verdict. Cheap and total — it catches the
+ * failure modes that actually occur (missing id, status outside the vocabulary,
+ * confidence that isn't a 0–1 number) before anything reaches pending.jsonl.
+ */
+export function validateResult(r: ValidationResult): string[] {
+  const errors: string[] = []
+  if (!r.id) errors.push('missing id')
+  if (!ALLOWED_STATUSES.has(r.status)) errors.push(`invalid status: ${r.status}`)
+  if (typeof r.confidence !== 'number' || Number.isNaN(r.confidence) || r.confidence < 0 || r.confidence > 1) {
+    errors.push(`invalid confidence: ${r.confidence}`)
+  }
+  return errors
+}
+
+/** Every checkpoint line, in file order. Unparseable lines are reported, not fatal. */
+export function loadCheckpointEntries(path: string = VALIDATION_PROGRESS_PATH): CheckpointEntry[] {
+  if (!existsSync(path)) return []
+  const entries: CheckpointEntry[] = []
+  const raw = readFileSync(path, 'utf-8')
+  raw.split('\n').forEach((line, idx) => {
+    if (!line.trim()) return
+    try {
+      entries.push(JSON.parse(line) as CheckpointEntry)
+    } catch (e) {
+      console.warn(`${path}: skipping unparseable line ${idx + 1}: ${(e as Error).message}`)
+    }
+  })
+  return entries
+}
+
+/** Flattened verdicts across all checkpoint entries. */
+export function loadCheckpointResults(path: string = VALIDATION_PROGRESS_PATH): ValidationResult[] {
+  return loadCheckpointEntries(path).flatMap((e) => e.results ?? [])
+}
+
+/**
+ * IDs that already have a verdict on disk. This — not batch_num — is the resume
+ * key, so tranches can be run in any order, at any batch size, across sessions.
+ */
+export function checkpointedIds(path: string = VALIDATION_PROGRESS_PATH): Set<string> {
+  return new Set(loadCheckpointResults(path).map((r) => r.id))
 }
 
 // ─── Source IO ──────────────────────────────────────────────────────────────

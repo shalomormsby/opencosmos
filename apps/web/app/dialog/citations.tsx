@@ -2,6 +2,7 @@
 
 import { defaultUrlTransform, type Components } from 'react-markdown'
 import { cn } from '@opencosmos/ui'
+import { docHref, quoteHref } from '@/lib/corpus-href'
 
 /**
  * Cosmo's structured citation tokens, and how they're rendered.
@@ -11,17 +12,24 @@ import { cn } from '@opencosmos/ui'
  *   [quote: knowledge/quotes/{author}.yaml#{quote-id}]   an attributed passage
  *   [ref: knowledge/sources/{work}.md#{section-slug}]    a work or a section of one
  *
+ * Both resolve to library URLs. Cosmo is handed the exact token to use in the
+ * retrieved context and told not to construct one; anything that still fails to
+ * resolve here renders as no link rather than a broken one.
+ *
  * Both are pre-processed into markdown links so the `a` override below can turn
  * them into small superscript markers — the prose keeps flowing, and each claim
  * still carries its receipt.
  *
  * This module is shared: `/dialog` renders through `CosmoChat`, while
- * `/knowledge`, `/knowledge/graph`, and `/inception` render through `ChatPanel`.
+ * `/library`, `/library/graph`, and `/inception` render through `ChatPanel`.
  * They must render citations identically, so neither surface owns this.
  */
 
 const QUOTE_TOKEN_RE = /\[quote:\s*([^\]]+?)\]/g
 const REF_TOKEN_RE   = /\[ref:\s*([^\]]+?)\]/g
+
+/** Repo-relative prefix every quote citation carries. */
+const QUOTE_PREFIX = 'knowledge/quotes/'
 
 /** Marks a pre-processed `[ref:]` link so the renderer can tell it from prose. */
 const REF_SCHEME = 'cosmo-ref:'
@@ -43,8 +51,6 @@ export function citationUrlTransform(url: string): string {
   if (url.startsWith(REF_SCHEME)) return url
   return defaultUrlTransform(url)
 }
-
-const GITHUB_BLOB = 'https://github.com/shalomormsby/opencosmos/blob/main'
 
 export function preprocessCitations(content: string): string {
   return content
@@ -78,16 +84,8 @@ export function extractCitationTargets(content: string): string[] {
   return out
 }
 
-/** `knowledge/sources/x.md#slug` → `/knowledge/sources/x#slug`. */
-function refToHref(ref: string): string | null {
-  const hash = ref.indexOf('#')
-  const path = hash === -1 ? ref : ref.slice(0, hash)
-  const anchor = hash === -1 ? '' : ref.slice(hash + 1)
-  if (!path.startsWith('knowledge/') || path.includes('..')) return null
-  const inner = path.replace(/^knowledge\//, '').replace(/\.md$/, '')
-  if (inner.split('/').filter(Boolean).length < 2) return null
-  return `/knowledge/${inner}${anchor ? `#${anchor}` : ''}`
-}
+// The corpus-path → library-URL translation lives in lib/corpus-href.ts, shared
+// with the constellation's nodeHref and the library index so all three agree.
 
 function CitationMarker({
   href,
@@ -116,15 +114,17 @@ function CitationMarker({
 }
 
 /**
- * The `a` renderer shared by both chat surfaces. Quote citations open the yaml
- * record on GitHub (quotes have no reader page); work/section citations link
- * into the library, landing on the passage itself when a section is named.
+ * The `a` renderer shared by both chat surfaces. Both citation kinds link into
+ * the library and land on the thing itself — the quote, or the passage when a
+ * section is named. A target that doesn't resolve is dropped rather than
+ * rendered as a dead link.
  */
 export const citationAnchor: NonNullable<Components['a']> = ({ href, children }) => {
-  if (href?.startsWith('knowledge/quotes/')) {
-    const filePath = href.split('#')[0]
+  if (href?.startsWith(QUOTE_PREFIX)) {
+    const internal = quoteHref(href)
+    if (!internal) return null
     return (
-      <CitationMarker href={`${GITHUB_BLOB}/${filePath}`} title={href} external>
+      <CitationMarker href={internal} title={href} external={false}>
         {children}
       </CitationMarker>
     )
@@ -132,7 +132,7 @@ export const citationAnchor: NonNullable<Components['a']> = ({ href, children })
 
   if (href?.startsWith(REF_SCHEME)) {
     const ref = href.slice(REF_SCHEME.length)
-    const internal = refToHref(ref)
+    const internal = docHref(ref)
     // An unresolvable ref (Cosmo naming a path that isn't in the corpus) is
     // dropped rather than rendered as a dead link.
     if (!internal) return null

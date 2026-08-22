@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1432",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wayne_Dyer",
+    "earliest_print_source": null,
+    "notes": "This motivation/inspiration contrast is a signature Wayne Dyer formulation and matches the central argument of his book Inspiration: Your Ultimate Calling (2006), where he distinguishes 'in-spirit' inspiration from grasping an idea by will. I am confident the idea and phrasing are his, but I cannot confirm the exact wording against a page in that book from memory, so I have not filled in a print source. Wording circulates in several near-variants ('...carries you where you are intended to go').",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1433",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wayne_Gretzky",
+    "earliest_print_source": null,
+    "notes": "Genuinely Gretzky's; he used the line in press interviews in the early 1980s and it spread from there. I do not have a reliable memory of the exact first newspaper column and date, so I have left the print source blank rather than guess. NOTE: the author field is misspelled 'Wayne Gretsky' — it should be 'Wayne Gretzky'.",
+    "suggested_reattribution": "Wayne Gretzky (spelling correction only)"
+  },
+  {
+    "id": "q_1434",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wayne_Gretzky",
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Gretzky from the 1980s onward, and he did say it. Important caveat: Gretzky himself repeatedly credited the advice to his father, Walter Gretzky, who coached it into him as a boy ('go to where the puck is going, not where it's been'). So Wayne is the popularizer and speaker; Walter is arguably the originator. Exact wording varies between retellings.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1435",
+    "status": "likely_misattributed",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I recall this line as Tom Robbins's, appearing in his novel Still Life with Woodpecker (1980), and it also circulates as a recovery-movement slogan from roughly the same era. The Wayne Dyer attribution appears to be a later quote-site accretion — Dyer used the sentiment in talks, but he is not the source. I am confident enough about the Robbins origin to flag the Dyer attribution as doubtful, but not confident enough to call the reattribution settled.",
+    "suggested_reattribution": "Tom Robbins (probable; Still Life with Woodpecker, 1980 — unconfirmed)"
+  },
+  {
+    "id": "q_1436",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Wei Wu Wei (pen name of Terence Gray) wrote exactly this kind of self-cancelling Advaita aphorism across Ask the Awakened, All Else Is Bondage, Open Secret, and Posthumous Pieces, so the attribution is stylistically very plausible. But I cannot place this sentence in a specific book or page, and Wei Wu Wei's phrasings are often paraphrased and compressed when quoted online. Honest verdict: plausible, unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1437",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wendell_Berry",
+    "earliest_print_source": null,
+    "notes": "The diction, cadence, and argument are unmistakably Wendell Berry's, and the passage reads as authentic to his late-1960s/1970s essay work (the sensibility of The Long-Legged House, 1969, and The Unsettling of America, 1977). I cannot confirm which essay it comes from with the confidence needed to print a citation, so the source field is left null rather than guessed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1438",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates in est/Landmark-adjacent material and quote compilations credited to Werner Erhard, and the imperative framing fits his idiom. I have no primary source — no transcript, book, or dated talk — and Erhard's aphorisms are heavily paraphrased in secondhand collections. Also note the corpus category is 'humor', which looks like a mis-tag; the line is not comic.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1439",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Will_Rogers",
+    "earliest_print_source": null,
+    "notes": "Very widely printed as Will Rogers, but Rogers is a documented misattribution magnet: his enormous body of dated newspaper columns means genuine lines are usually traceable, and this one is not, in my knowledge. No column, broadcast, or contemporaneous printing I can point to. Plausible but unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1440",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This saying floats between several claimants — Will Rogers, Mark Twain, Frank Scully, and later Shirley MacLaine — which is the classic signature of an orphan aphorism that gets adopted by famous names. The Twain version is certainly spurious. I know of no Rogers source, and the multiplicity of claimants argues against him specifically.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1441",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Will_Rogers",
+    "earliest_print_source": null,
+    "notes": "Among the more consistently Rogers-attributed lines in this cluster — the small-town parrot-and-gossip image fits his voice and era, and it appears across Rogers collections without competing claimants. Still, I cannot name a column or dated source, so it stays below the verification bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1442",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is the proverbial 'first law of holes', which was in circulation as an anonymous saying well before it began being credited to Will Rogers, and it was later popularized in British politics by Denis Healey. Rogers attributions to it appear to be retrofitted. Probable true origin is anonymous proverb rather than a named author, so I have left suggested_reattribution null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1443",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Willa_Cather",
+    "earliest_print_source": "Death Comes for the Archbishop, Willa Cather, 1927",
+    "notes": "A genuine line from Cather's novel Death Comes for the Archbishop (1927), spoken in the context of the book's discussion of miracles and perception. Original reads without the comma: 'Where there is great love there are always miracles.' The corpus wording is otherwise faithful.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1444",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "William Arthur Ward (1921-1994) was a prolific devotional aphorist — Fountains of Faith and widely syndicated maxims — and the 86,400-seconds gratitude line is attributed to him with unusual consistency across sources. But Ward's aphorisms circulate mostly through greeting-card and compilation channels without page citations, and I cannot place this one in a specific published collection. Note the author field gives 'William A. Ward'; the standard form is 'William Arthur Ward'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1445",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Barclay, the Scottish theologian and commentator, is the most plausible claimant and this fits his homiletic register. Important context: the better-known variant ('The two most important days in your life are the day you are born and the day you find out why') is routinely credited to Mark Twain, and that Twain attribution is unsupported — no Twain source exists. So the Barclay line is the sounder of the two, but I still cannot point to a commentary or book where he wrote it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1446",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_Blake",
+    "earliest_print_source": "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 ('Proverbs of Hell')",
+    "notes": "A genuine Proverb of Hell from The Marriage of Heaven and Hell. Original: 'No bird soars too high, if he soars with his own wings.' Quoted here exactly.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1447",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_Blake",
+    "earliest_print_source": "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 (plate 14)",
+    "notes": "Genuine Blake, from the 'printing house in Hell' passage on plate 14 of The Marriage of Heaven and Hell — the source Huxley took The Doors of Perception from. Wording here is accurate, including the archaic 'thro''. Blake's line continues '...of his cavern.' as given.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1448",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_Blake",
+    "earliest_print_source": "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 ('Proverbs of Hell')",
+    "notes": "The attribution to Blake is correct, but the wording here is a modernized paraphrase. Blake's actual Proverb of Hell reads: 'If the fool would persist in his folly he would become wise.' The conditional subjunctive is doing real work in the original and is lost in the corpus version. Recommend correcting the text to Blake's wording, after which this would be a clean 'verified'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1449",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently credited to William Booth, founder of the Salvation Army, in Christian devotional compilations, and the paradox of power-through-surrender is squarely his theology. I have no primary source — no sermon, War Cry issue, or biography page — and Booth quotations in circulation are frequently secondhand recollections rather than documented text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1450",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "William Feather (1889-1981) was a Cleveland publisher who wrote aphorisms for his own periodical, The William Feather Magazine, and later collections — so unlike orphan proverbs, Feather attributions usually do trace back to a real author who published his own maxims. This line is attributed to him without competing claimants. I cannot cite the specific issue or collection, which keeps it under the bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1451",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to the antebellum Southern novelist and critic William Gilmore Simms in nineteenth-century quotation dictionaries and later compilations, and the sentiment and diction are period-appropriate for his critical prose. I cannot name the essay or volume it comes from, so no print source is given.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1452",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost certainly not William Gilmore Simms, who died in 1870. This passage is unmistakably modern therapeutic self-help prose — 'authentic experience of love', 'activates this inner being', 'the lover within', plus the anachronistic 'drive a certain car'. An automobile reference alone rules out a nineteenth-century author. The style closely matches contemporary daily-inspiration writing of the DailyOM sort, but I will not name an author I cannot confirm. Recommend rejecting the Simms attribution outright; this looks like a quote-site database collision, possibly compounded by the adjacent genuine Simms entry (q_1451).",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1453",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "William H. Danforth, founder of Ralston Purina, wrote the motivational classic I Dare You! (1931), and this line's goal-setting rhetoric fits that book's idiom, so it is a plausible source. I cannot confirm the sentence appears there, and business-motivation quotes of this vintage are frequently paraphrased or reassigned between authors in compilations.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1454",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is the well-known prose poem 'My Symphony', attributed to the Unitarian minister William Henry Channing (1810-1884) in anthologies since the late nineteenth century — a long-standing and dominant attribution. Two cautions: it is regularly confused with his more famous uncle, William Ellery Channing, and some reference works treat the authorship as traditional rather than documented. The corpus text also reads 'to listen to stars and birds'; the familiar wording is 'to listen to stars and birds, to babes and sages, with open heart'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1455",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_James",
+    "earliest_print_source": null,
+    "notes": "Widely credited to William James and popularized further by its use in modern devotional writing. It circulates in several wordings ('The greatest use of a life is to spend it for something that will outlast it'), which is a warning sign, and I cannot locate it in James's published works, essays, or letters from memory. Plausible but unverified; the variant-wording spread suggests secondhand transmission rather than a quoted text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1456",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_James",
+    "earliest_print_source": null,
+    "notes": "Strongly doubtful as William James. 'Stress' in the psychological sense used here is a mid-twentieth-century coinage — Hans Selye's work from the 1930s onward — and would have been anachronistic for James, who died in 1910; he wrote about strain, worry, and habit, not 'stress'. The sentence also has the compressed, modern self-help cadence of a wellness-poster line rather than James's prose. I know of no source in his writings. Recommend dropping the James attribution; true origin unknown.",
+    "suggested_reattribution": null
+  }
+]

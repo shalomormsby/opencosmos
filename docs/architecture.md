@@ -64,7 +64,7 @@ knowledge/ (git, source of truth — this repo)
        │                            ↑
        │                 RAG API (apps/web/app/api/knowledge/)
        │
-       ├──→ Vercel build ──→ opencosmos.ai/knowledge (apps/web)
+       ├──→ Vercel build ──→ opencosmos.ai/library (apps/web)
        │
        └──→ pnpm knowledge:sync-dell (on-demand) ──→ Open WebUI on Dell
 ```
@@ -238,7 +238,7 @@ For each .md file in knowledge/**:
 
 ### Knowledge Graph (`/knowledge/graph`)
 
-A WebGL knowledge graph that visualises the wiki as a living constellation of ideas and connections. Route: `opencosmos.ai/knowledge/graph`.
+A WebGL knowledge graph that visualises the wiki as a living constellation of ideas and connections. Route: `opencosmos.ai/library/graph`.
 
 **Data flow:**
 
@@ -255,7 +255,7 @@ pnpm graph (generate-wiki-graph.ts)
 GitHub Action (knowledge-sync.yml) triggers pnpm graph on push to main when knowledge/** changes
   └─ POSTs to /api/revalidate → Next.js on-demand ISR revalidation → all users see update within seconds
 
-Page load (opencosmos.ai/knowledge/graph):
+Page load (opencosmos.ai/library/graph):
   ├─ SSR fetches `knowledge:graph:preview` → renders SVG skeleton (milliseconds)
   ├─ Web Worker fetches + parses full graph JSON off main thread (no jank)
   └─ Crossfade: skeleton → live sigma.js WebGL renderer

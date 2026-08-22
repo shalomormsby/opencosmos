@@ -69,8 +69,12 @@ knowledge/quotes/{author-key}.yaml     ← embeddable; pnpm embed picks them up
 
 Records below that bar stay in pending until Stage 3 enriches them or Stage 4 review confirms.
 
-## Resetting
+## There is no reset
 
-`pnpm quotes:normalize` is idempotent — it wipes both pools and rebuilds from `_source/quotes_normalized.jsonl`. Any Stage 3 enrichment held only in pending.jsonl is lost on reset, so commit Stage 3 outputs before re-running normalize. (After Stage 3 lands, normalize will gain a `--preserve-validation` flag.)
+`pending.jsonl` and `knowledge/quotes/*.yaml` are the source of truth. This file holds provenance verdicts, human review decisions, and promotion state that exist nowhere else — `_source/quotes_normalized.jsonl` is the historical import that seeded the pools in May 2026 and has none of it.
+
+The old advice here described `pnpm quotes:normalize` as idempotent and promised it a `--preserve-validation` flag. That flag was never built and is no longer the plan: the script is retired, renamed to `pnpm quotes:migrate-from-source`, and refuses to run without `--i-know-this-wipes`. Re-running it would discard the validation of all 1,509 quotes.
+
+**To add quotes**, use the `/new-quote` skill, or `pnpm quotes:add -- --json <file>` directly. New records land here with null confidence and are picked up automatically by the next validation tranche.
 
 See [docs/pm.md § Phase 1.3](../../docs/pm.md) for the full plan.

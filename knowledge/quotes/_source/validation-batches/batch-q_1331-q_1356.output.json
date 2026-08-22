@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1331",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates widely in motivational compilations as Theodore Roosevelt, but I cannot place it in any of his speeches, letters, or books that I know. The colloquial 'tell 'em' phrasing is the kind of line that gets retrofitted onto TR as a can-do figurehead. No primary source known to me; honest answer is that the attribution is unsupported rather than disproven.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1332",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and specifically attributed to Theodore Isaac Rubin, the American psychiatrist and author (1923-2019), across self-help and psychology anthologies. The construction and content match his popular writing on emotional life. I cannot identify which of his books it comes from, so no print citation. Note the corpus author field reads 'Theodore Rubin' — the full form 'Theodore Isaac Rubin' is the standard one and would reduce confusion with other Rubins.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1334",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a composite paraphrase, not a verbatim Thich Nhat Hanh passage. Two authentic teachings of his are welded together here: the walking-on-water line from The Miracle of Mindfulness (1975), which runs roughly 'People usually consider walking on water or in thin air a miracle. But I think the real miracle is not to walk either on water or in thin air, but to walk on earth'; and the 'walk as if you are kissing the Earth with your feet' instruction associated with Peace Is Every Step (1991). The closing sentences about 'our presence alone is a miracle' and saying 'Yes' to the miracles of life I cannot place in his work at all. The corpus author field 'Inspired by Thich Nhat Hanh's teachings' is accurate framing, and the text should not be presented as a direct quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1335",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in Thich Nhat Hanh's writing, and the vocabulary is off for him — 'closer to your spirit or further away from it' is Western self-development diction, not the mindfulness/interbeing register he actually uses (he would speak of mindfulness, breath, the present moment, not 'your spirit'). Reads like a social-media caption that acquired a monk's name. No traceable source; no candidate true author identifiable, so no reattribution offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1336",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Short, generic sentence widely circulated under Thich Nhat Hanh's name. The thought — that each moment holds more possibility than we notice — is consonant with his teaching, but the line is brief and unmarked enough that I cannot distinguish an authentic sentence from a paraphrase of one. No book, talk, or page reference known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1337",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The teaching is unmistakably Thich Nhat Hanh's — seeing clouds, sunshine, minerals, and time inside a single object is his signature illustration of interbeing, developed at length in The Heart of Understanding (1988), his commentary on the Heart Sutra, where the same move is made with a sheet of paper ('If you are a poet, you will see clearly that there is a cloud floating in this sheet of paper'). The flower variant appears across his talks. What I cannot confirm is that this exact wording is his rather than a paraphrase by an editor or reader, so I am holding below the promotion bar. Also note a transcription error in the corpus text: 'Without clouds that could be no rain' should read 'there could be no rain'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1338",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Thich Nhat Hanh's recurring teaching that personal peace propagates outward to family and society — a theme carried through Being Peace (1987) and Peace Is Every Step (1991). I cannot confirm this specific sentence as his wording versus a summary of the teaching. No page-level source known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1339",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Thomas Carlyle in nineteenth- and twentieth-century quotation dictionaries, usually in the form 'Let him who would move and convince others, be first moved and convinced himself.' The sentiment and the periodic sentence structure fit Carlyle's essayistic prose. I cannot identify the specific essay or volume, so no print citation; the attribution itself is old and stable, which is why this sits at 'attributed' rather than lower.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1340",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Thomas D. Willhite (1940-1983) founded PSI Seminars, and this passage circulates within that human-potential lineage and its derivative literature, always under his name. The pendulum metaphor and the 'sit still in neutral' line match the seminar idiom of that world. Attribution is consistent but narrow — I know of no independent published source, and material from seminar transcripts is hard to verify. No citation offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1341",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Edison",
+    "earliest_print_source": null,
+    "notes": "One of the most-repeated Edison lines and one of the least documented. It does not appear in his notebooks or documented interviews as far as I know, and my recollection of the quotation-research literature is that attributions to Edison cluster well after his death in 1931, with earlier anonymous 'opportunity in overalls' sayings in circulation before his name attached to any of them. I do not have a confident earliest instance or a true author, so I am not calling it misattributed outright — but treat the Edison attribution as unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1342",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Edison",
+    "earliest_print_source": null,
+    "notes": "Widely repeated as Edison, commonly in the variant 'If we did all the things we are capable of, we would literally astound ourselves.' I cannot place it in any of his writings, interviews, or authorized biographies. Edison is a strong misattribution magnet for terse work-ethic aphorisms. No source, no alternative author known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1343",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Thomas Fuller, and the form is exactly that of the numbered maxims in Gnomologia: Adagies and Proverbs (1732), compiled by Thomas Fuller, M.D. (1654-1734) — as distinct from the earlier churchman Thomas Fuller (1608-1661), with whom he is routinely confused in quote collections. I could not confirm this specific maxim in Gnomologia from memory, so I am not asserting that citation. Also worth flagging: Gnomologia is a compilation of existing proverbs, so even a confirmed entry would make Fuller the collector rather than the author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1344",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This 'breaks the bridge over which he must pass himself' saying has a genuinely contested attribution: it appears in quotation dictionaries under Thomas Fuller and also under Edward Herbert, Lord Herbert of Cherbury (1583-1648), and I have seen it credited to George Herbert as well. I do not know which is earliest and cannot resolve the tangle from memory, so no reattribution is offered — but the Fuller attribution here should not be treated as settled.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1345",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Thomas J. Watson Sr., the IBM founder, in business and leadership anthologies. Watson Sr. did speak and write extensively on conduct and courtesy as company doctrine, so the sentiment is in character, but I cannot tie this wording to a speech, a THINK-era publication, or any IBM document. Note also that Watson Sr. and his son Watson Jr. are frequently conflated in quote collections (see q_1354 in this same batch).",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1346",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Jefferson",
+    "earliest_print_source": null,
+    "notes": "The Jefferson attribution is almost certainly wrong. To my knowledge this line appears on the Jefferson Monticello foundation's list of spurious quotations — it is not found anywhere in his correspondence or published writings, and the idiom is twentieth-century American rather than eighteenth-century. It is also commonly credited to Franklin D. Roosevelt, which is itself unverified. Best current understanding is an anonymous early-twentieth-century saying that later collected famous names; because I cannot name the real originator with confidence, I am leaving the reattribution field null rather than guessing FDR.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1347",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Jefferson",
+    "earliest_print_source": null,
+    "notes": "Not Jefferson. This is a documented spurious Jefferson quotation — it does not appear in his writings, and the Monticello foundation lists it among quotes wrongly ascribed to him. My recollection of Quote Investigator's research is that the earliest located version belongs to Coleman Cox, an American aphorist writing in the early 1920s, in the form 'I am a great believer in Luck. The harder I work, the more of it I seem to have'; the saying was later also pinned on Stephen Leacock and Samuel Goldwyn. I am naming Cox as the probable originator on the strength of that research but deliberately leaving earliest_print_source null, since I cannot confirm the exact volume and year without looking it up.",
+    "suggested_reattribution": "Coleman Cox"
+  },
+  {
+    "id": "q_1348",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A well-known formulation from Fr. Thomas Keating (1923-2018), the Trappist monk who developed Centering Prayer. The distinction between effort and consent is load-bearing in his method — consent to God's presence and action is the definitional move of Centering Prayer — and this sentence is quoted consistently under his name throughout contemplative literature. I cannot pin it to Open Mind, Open Heart, Invitation to Love, or a specific conference talk, so no print citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1349",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed consistently to Thomas J. Leonard (1955-2003), the founder of Coach U and a principal architect of the professional coaching field. The motivation/inspiration contrast is a standard piece of his teaching and the wording is stable across coaching sources. I cannot connect it to The Portable Coach, his newsletters, or any dated publication, so the attribution stays unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1350",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Strongly characteristic of Thomas Moore, the Jungian-influenced former monk who wrote Care of the Soul (1992). The argument — that heroic productivity is a real good but a different good from what the soul needs, and that soul wants reverie, beauty, relatedness, and rhythm — is the central thesis of that book and recurs in The Re-Enchantment of Everyday Life (1996). I believe this is authentic Moore prose rather than a paraphrase, but I cannot identify which book or page, so no citation and no promotion above the bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1351",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as spoken rather than written — the hedged opening ('I think we would be able to') suggests an interview or lecture transcript, and it is attributed to Thomas Moore in that form. The content matches his argument for a spirituality of the immediate and ordinary over an abstract or transcendent one. Without a named interview or program I cannot verify it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1352",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Thomas Moore's writing on friendship and intimacy, the territory of Soul Mates: Honoring the Mysteries of Love and Relationship (1994), and attributed to him wherever I have encountered it. The concessive move ('may seem like such a simple, obvious suggestion, but') is his rhetorical habit. No specific source identifiable, so unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1353",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Long and stably attributed to Thomas Paine, and the compressed antithesis is genuinely in his rhetorical style. It is usually cited to The American Crisis series (1776-1783), which I believe is correct, but I cannot confirm which number in the series and will not guess at one. Holding at 'attributed' on the strength of the consistent historical attribution rather than a located passage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1354",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a genuine and well-documented Watson Jr. formulation, not a floating aphorism. As IBM CEO he made design a corporate program — bringing in Eliot Noyes, and through him Paul Rand and Charles Eames — and 'good design is good business' was his standing argument for it, delivered as the title of a lecture he gave at the Wharton School in the early 1970s and repeated throughout IBM's design literature. The attribution is treated as settled in design history. I am confident of the phrase and the speaker; I am not certain enough of the exact lecture date or published venue to state a formal citation, so earliest_print_source is left null. Author field is correct as Thomas Watson Jr. (distinct from his father, q_1345).",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1355",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Henry_David_Thoreau",
+    "earliest_print_source": "Walden; or, Life in the Woods, Henry David Thoreau, 1854 (chapter 1, 'Economy')",
+    "notes": "Authentic Thoreau, from the 'Economy' chapter of Walden. The canonical wording is 'In the long run men hit only what they aim at. Therefore, though they should fail immediately, they had better aim at something high.' The corpus text has been silently modernized to 'we only hit what we aim at' — it preserves the meaning but is not what Thoreau wrote, and the second sentence, which carries the point, has been dropped. Recommend restoring the original wording before publication; the verdict is high-confidence on the source, with the caveat that the quoted text is a paraphrase of it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1356",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Thornton Wilder, and among his most-quoted lines. My recollection places it in the novel The Woman of Andros (1930), spoken in the reflective register of that book rather than in Our Town, to which it is sometimes loosely assigned. Because I am working from memory and cannot confirm the passage, I have left earliest_print_source null rather than state a citation I cannot check — but the Wilder attribution itself is solid and the novel is the likely home.",
+    "suggested_reattribution": null
+  }
+]

@@ -1,0 +1,22 @@
+author: Henri Bergson
+author_normalized_key: henri-bergson
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0703
+    slug: null
+    text: "To exist is to change, to change is to mature, to mature is to go on creating oneself endlessly."
+    category: insight
+    keywords: [existence, change, mature, creation]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henri_Bergson"
+      earliest_print_source: "Creative Evolution (L'Evolution creatrice), Henri Bergson, 1907"
+      notes: "From Creative Evolution, ch. 1. The original opens with a qualifier the corpus text drops: 'For a conscious being, to exist is to change, to change is to mature, to mature is to go on creating oneself endlessly.' Primary source confirmed; only the truncation is at issue, and it does not alter the sense."
+      reviewed_by_human: false

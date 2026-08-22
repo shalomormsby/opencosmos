@@ -45,7 +45,7 @@
 |------|--------------|--------|----------|-----------|
 | **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–3 (lessons · recall · exemplars) | ✅ Done | P1 | Loop complete end-to-end; nice-to-have follow-up: exemplar diversity (a practical + a challenging exemplar) |
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
-| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Mostly done | P1 | Stages 1+2 ✅; Stage 3 ⏸ paused (verification-first deferred until graph ships) |
+| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Awaiting review | P1 | Stages 1–3 ✅ — all 1,509 validated, 349 embeddable and live. Library unified + renamed to `/library`. Next: 197-row review CSV (Shalom) |
 | Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |
 | Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | ✅ Done | P1 | `@opencosmos/constellation@0.1.0` published to npm; Studio demo live at `/constellation` |
 | Cosmo | [Phase 1.6 + 1.8 + 1.9: Consume, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | 🟢 Active | P1 | Swapping `/knowledge/graph` off sigma.js onto the published package, then wiring Cosmo's citations to pulse nodes |
@@ -169,7 +169,15 @@ Shipped: `/split-collection` skill; Shakespeare → per-play files; Khayyám/Sal
 - ✅ Tier 1 normalization — text cleaned, authors canonicalized, 14 misattributions flagged, 16 duplicate groups identified. Source-of-truth now versioned at `knowledge/quotes/_source/quotes_normalized.jsonl` (1,509 records).
 - ✅ Stage 1 (split source jsonl into embeddable + pending pools) shipped 2026-05-07. See [Two-pool architecture](#two-pool-architecture-decided-2026-05-07) below.
 - ✅ Stage 2 (embed pipeline + Cosmo `[quote: …]` wiring) shipped 2026-05-07 in PR #139. 46 verified quotes embedded; CosmoChat renders `[quote: …]` tokens as superscript citations linking to the source yaml on GitHub.
-- ⏸ Stage 3 (automated provenance validation) — **paused**. Pipeline built (`02-validate-provenance.ts` + `03-merge-validation.ts`), but initial pilot run burned ~$20 on 10 quotes due to web search + high effort compounding costs. Web search removed; next attempt will use model training knowledge only with `effort: medium`. **Resumes after the constellation visualizer is rendering** — verification ramps up against a working graph rather than ahead of one.
+- ✅ Stage 3 **unpaused 2026-08-20** and now runs through Claude Code subagents rather than the API. The pause was a cost problem: the pilot spent ~$20 on 10 quotes with web search and high effort, extrapolating to roughly $2,900 for the backlog. Subagents do the same work under the subscription. `02b-checkpoint.ts` queues batches and takes verdicts back in the same checkpoint format, so `03-merge-validation.ts` is unchanged and `02-validate-provenance.ts` remains available as the API path.
+  - The pilot's own 10 verdicts had never been merged — three months of ~$20 output sitting on disk. Merged first, as a free end-to-end test of the merge → promote → lint → embed path.
+  - ✅ **Complete 2026-08-21 — all 1,509 validated**, in six tranches of subagent fan-out. Final distribution: 250 verified (17.1%), 446 attributed (30.5%), 598 attributed_unverified (40.9%), 120 likely_misattributed (8.2%), 49 apocryphal (3.3%). Embeddable pool 46 → 349.
+  - The 1,160 still pending are not a backlog. Most are untraceable material now correctly *described* as untraceable — which is the outcome the substrate exists to produce. They stay out of the index and out of Cosmo's mouth.
+  - Quality is good. Correct catches include Hafiz→Ladinsky, "We are what we repeatedly do"→Will Durant, the eight "Gandhi" seven-social-sins fragments→Frederick Lewis Donaldson's 1925 sermon, "not the strongest of the species"→Leon C. Megginson (1963), "I have loved the stars too fondly"→Sarah Williams (1868), "Not everything that is faced can be changed"→James Baldwin (not Lucille Ball), the C. S. Lewis "prayer changes me" line→Nicholson's *Shadowlands*, and two "Sagan" lines→*Contact* screenplay dialogue.
+  - Agents also surfaced corpus hygiene worth a later pass: several duplicate pairs (q_0715/q_0716, q_0821/q_0824, q_0852/q_0854, q_0917/q_0924) and text corruption (q_0542 mangles the Adams "whooshing" line; q_0654 turns Shaw's "the more I live" into "the more I love"; OCR typos in q_0549, q_0659).
+  - ⚠ Not yet re-embedded — Upstash's 10k daily write cap was exhausted. The live index holds the 133-quote state; run `pnpm embed` when it resets to make all 349 citable.
+- 🟡 Stage 4 (human review) — tooling shipped 2026-08-21, **197 rows waiting on Shalom** at `knowledge/quotes/_review/review-2026-08-21.csv`. Scoped to records where the validator asserts the attribution is *wrong* rather than everything below the bar: 120 likely_misattributed, 49 apocryphal, 28 more carrying a suggested reattribution; 128 name a specific alternative author. Fill in the `decision` column with `keep | drop | reattribute`, then `pnpm quotes:review-apply -- <csv> --dry` before the real run. Drops land in `_archive/rejected.yaml`; reattributions clear the promotion bar and move to YAML on the next `quotes:promote`.
+- ✅ Quote deeplinks fixed 2026-08-21. Cosmo's citations had been broken because the retrieval prompt handed it a fill-in-the-blank token template, so it constructed paths to records that didn't exist. Quotes now carry a "Cite as" line like passages, and citations resolve to `/library/quotes/{bucket}#{id}` instead of raw YAML on GitHub.
 
 **Why not the obvious alternatives:**
 - *One big `quotes.yaml`?* Diffs become opaque and per-author edits collide.
@@ -224,7 +232,7 @@ quotes:
 
 **Stage 1 — split source jsonl into two pools (½ day, no API calls) ✅ Done 2026-05-07**
 
-Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (versioned; future re-imports diff against this). The split happens via `pnpm quotes:normalize`:
+Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (the historical import; the pools are canonical now). The original split happened via `pnpm quotes:migrate-from-source`, since retired behind a `--i-know-this-wipes` guard:
 
 - Records with status ∈ {`verified`, `attributed`} → `knowledge/quotes/{bucket}.yaml` (embeddable pool).
 - Records with status ∈ {`attributed_unverified`, `likely_misattributed`, `apocryphal`} → `data/quotes-pending/pending.jsonl` (pending pool).
@@ -242,7 +250,7 @@ Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (versio
 - `scripts/normalize-quotes/lint.ts` — validates both pools + cross-pool integrity (ID uniqueness, total count, status vocabulary, embeddable/pending status partition).
 - `scripts/normalize-quotes/06-export-pending-csv.ts` — regenerate `pending.csv` from `pending.jsonl` on demand.
 - `scripts/normalize-quotes/07-promote-verified.ts` — migrate eligible pending records into embeddable yaml. `--dry` previews.
-- pnpm wrappers: `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote`.
+- pnpm wrappers: `quotes:add`, `quotes:checkpoint`, `quotes:merge`, `quotes:review-export`, `quotes:review-apply`, `quotes:lint`, `quotes:export-csv`, `quotes:promote`, `quotes:migrate-from-source` (retired).
 
 ##### Two-pool architecture (decided 2026-05-07)
 
@@ -339,7 +347,7 @@ New (planned):
 - `scripts/normalize-quotes/05-apply-review.ts`
 
 Modified (✅ shipped 2026-05-07):
-- [package.json](../package.json) — `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote` scripts; `js-yaml` + `@types/js-yaml` devDependencies
+- [package.json](../package.json) — the `quotes:*` script wrappers; `js-yaml` + `@types/js-yaml` devDependencies
 
 Modified (planned, Stage 2):
 - [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — YAML branch for `knowledge/quotes/*.yaml` (reuse `parseYamlFile` from scripts/normalize-quotes/shared.ts)
@@ -907,7 +915,7 @@ All set up in `.env.local` / Vercel / GitHub Secrets:
 
 ### Phase 1c+ (Deprecated): Custom Knowledge Graph
 
-**Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/knowledge/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
+**Status as of 2026-04-12:** Blocked. The data pipeline, API route, Web Worker, and SVG skeleton all work correctly. The graph page loads at `opencosmos.ai/library/graph`. The `KnowledgeGraph` component in `@opencosmos/ui` mounts without crashing. But **no nodes or edges render** — the canvas is black, with sigma's canvas2d labels (node titles and cluster domain names) visible at correct positions, but no WebGL geometry.
 
 #### What's been built (shipped)
 
@@ -1459,7 +1467,7 @@ export type { KnowledgeGraphData, KnowledgeNode, KnowledgeLink } from './compone
 
 *Layer 3: Route/consumer* (`apps/web/app/knowledge/graph/page.tsx` — this repo)
 
-New Next.js App Router page at `opencosmos.ai/knowledge/graph`.
+New Next.js App Router page at `opencosmos.ai/library/graph`.
 
 ```ts
 // Consume from the design system — not a local component

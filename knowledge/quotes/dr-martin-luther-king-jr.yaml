@@ -1,0 +1,150 @@
+author: "Dr. Martin Luther King, Jr."
+author_normalized_key: dr-martin-luther-king-jr
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0038
+    slug: null
+    text: Love is the only force capable of transforming an enemy into friend.
+    category: relationships
+    keywords: [love, transformation, healing, reconciliation]
+    context: Christianity
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: null
+      earliest_print_source: "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Loving Your Enemies\")"
+      notes: "Genuine King, from the \"Loving Your Enemies\" sermon, preached at Dexter Avenue Baptist Church in the late 1950s and published in Strength to Love (1963). Small wording fix: the published line reads \"transforming an enemy into a friend\" — the corpus text drops the article \"a.\" Recommend restoring it."
+      reviewed_by_human: false
+  - id: q_0039
+    slug: null
+    text: I am convinced that the universe is under the control of a loving purpose. And that in the struggle for righteousness man has cosmic companionship. Behind the harsh appearance of the world there is a benign power.
+    category: insight
+    keywords: [love, universe, struggle, world, power]
+    context: Christianity
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.82
+      wikiquote_url: null
+      earliest_print_source: "Strength to Love, Martin Luther King Jr., Harper & Row, 1963 (sermon \"Our God Is Able\")"
+      notes: "Genuine King and characteristic of his personalist theology — \"cosmic companionship\" is a phrase he used in several sermons and in the Nobel lecture context. I place this passage in \"Our God Is Able\" in Strength to Love, though I am identifying the specific sermon from memory rather than from a checked text, which is why this is attributed rather than verified. Wording note: King's published phrasing is \"Behind the harsh appearances of the world\" (plural), and the passage is normally one continuous sentence rather than the two the corpus text splits it into."
+      reviewed_by_human: false
+  - id: q_0151
+    slug: null
+    text: I have decided to stick with love. Hate is too great a burden to bear.
+    category: insight
+    keywords: [love, hate, decide, compassion]
+    context: Christian
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr."
+      earliest_print_source: "'Where Do We Go from Here?', SCLC Presidential Address, Atlanta, 16 August 1967"
+      notes: "Authentic King. He used the formulation more than once - it appears in the 1967 SCLC presidential address 'Where Do We Go from Here?' and in adjacent sermons on love and nonviolence ('Loving Your Enemies'; the 1967 Christmas sermon on peace). Attribution is not in question; the specific occasion cited is the one I am most confident of."
+      reviewed_by_human: false
+  - id: q_0152
+    slug: null
+    text: "I am cognizant of the interrelatedness of all communities and states. I cannot sit idly by in Atlanta and not be concerned about what happens in Birmingham. Injustice anywhere is a threat to justice everywhere. We are caught in an inescapable network of mutuality, tied in a single garment of destiny. Whatever affects one directly, affects all indirectly."
+    category: insight
+    keywords: [interconnectedness]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/Letter_from_Birmingham_Jail"
+      earliest_print_source: "Letter from Birmingham Jail, Martin Luther King, Jr., 16 April 1963"
+      notes: "Verbatim from the 'Letter from Birmingham Jail' (16 April 1963), early in the letter where King answers the clergymen's charge that he is an outside agitator. The full run - 'cognizant of the interrelatedness... inescapable network of mutuality, tied in a single garment of destiny' - matches the published text. As solid a provenance as this corpus will contain."
+      reviewed_by_human: false
+  - id: q_0154
+    slug: null
+    text: Our lives begin to end the day we become silent about things that matter.
+    category: insight
+    keywords: [end, silence]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr."
+      earliest_print_source: "Speech in Selma, Alabama, 8 March 1965"
+      notes: "Authentic King, generally sourced to his remarks in Selma on 8 March 1965 (the day after Bloody Sunday), which is the citation carried on Wikiquote and in King anthologies. My confidence in the King attribution is high; my confidence in that exact date and occasion is good but not certain, which is why I stop short of verified."
+      reviewed_by_human: false
+  - id: q_0155
+    slug: null
+    text: "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that. Hate multiplies hate, violence multiplies violence, and toughness multiplies toughness in a descending spiral of destruction... The chain reaction of evil – hate begetting hate, wars producing more wars – must be broken, or we shall be plunged into the darkness of annihilation."
+    category: insight
+    keywords: [darkness, light, hate, love, violence, destruction, evil, war]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr."
+      earliest_print_source: "Strength to Love, Martin Luther King, Jr., 1963 (sermon 'Loving Your Enemies')"
+      notes: "Authentic King, from the 'Loving Your Enemies' sermon collected in 'Strength to Love' (1963). One wording caution: King's published sentence ends 'plunged into the dark abyss of annihilation,' not 'the darkness of annihilation,' and the passage here is a condensation joining sentences separated in the original by the ellipsis. Recommend restoring the published wording. Attribution itself is beyond doubt."
+      reviewed_by_human: false
+  - id: q_0156
+    slug: null
+    text: "… only when it is dark enough, can you see the stars."
+    category: insight
+    keywords: [darkness, stars, light, vision]
+    context: Christian
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr."
+      earliest_print_source: "'I've Been to the Mountaintop', Mason Temple, Memphis, 3 April 1968"
+      notes: "King said this in his final speech, 'I've Been to the Mountaintop,' the night before his assassination: 'Only when it is dark enough can you see the stars.' Worth noting for the corpus that King was invoking an older aphorism, commonly credited to the historian Charles A. Beard and sometimes loosely to Emerson; King is the popularizer rather than the originator of the thought, but the utterance attributed to him is genuine."
+      reviewed_by_human: false
+  - id: q_0177
+    slug: null
+    text: "Love is the most durable power in the world. This creative force, so beautifully exemplified in the life of our Christ, is the most potent instrument available in mankind’s quest for peace and security."
+    category: insight
+    keywords: [conflict resolution]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr."
+      earliest_print_source: "'The Most Durable Power,' Martin Luther King Jr., The Christian Century, 1957 (from a sermon delivered at Dexter Avenue Baptist Church, Montgomery, November 1956)"
+      notes: "This is King's own language from the sermon/essay 'The Most Durable Power,' delivered at Dexter Avenue Baptist Church during the closing weeks of the Montgomery bus boycott and excerpted in The Christian Century in 1957; it is indexed in The Papers of Martin Luther King, Jr. and reprinted in A Testament of Hope. The wording here (durable power / creative force / exemplified in the life of our Christ / quest for peace and security) matches the published text. I am confident in the sermon and the Christian Century publication; I am not certain of the exact issue date, so treat the year rather than a day as the firm part of the citation."
+      reviewed_by_human: false
+  - id: q_0552
+    slug: null
+    text: "Cowardice asks the question: is it safe? Expediency asks the question: is it politic? Vanity asks the question: is it popular? But conscience asks the question: is it right? And there comes a time when one must take a position that is neither safe, nor politic, nor popular - but one must take it simply because it is right."
+    category: insight
+    keywords: [right, conscience, popular, question]
+    context: "Christian, Civil Rights Leader"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "A Proper Sense of Priorities (address, Washington, D.C., February 6, 1968), Martin Luther King Jr."
+      notes: "Authentically King. He used this 'cowardice / expediency / vanity / conscience' construction more than once; the citation most commonly given is the February 1968 'A Proper Sense of Priorities' address, and closely related wording appears in his sermon material of the same period. Because King reworked the passage across sermons and speeches, I am confident in the author but not in which occurrence is earliest, so I stop short of 'verified'."
+      reviewed_by_human: false

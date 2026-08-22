@@ -1,0 +1,22 @@
+author: Napoleon Hill
+author_normalized_key: napoleon-hill
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1062
+    slug: null
+    text: Every adversity or failure carries with it the seed of an equivalent or a greater benefit.
+    category: business
+    keywords: [adversity, failure, seed, growth, success, opportunity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Think and Grow Rich, Napoleon Hill, 1937"
+      notes: "Genuinely Hill's, and one of the load-bearing lines of Think and Grow Rich (1937), where the canonical wording is 'Every adversity, every failure, every heartache carries with it the seed of an equal or greater benefit.' Hill repeated variants across his later work and lectures. The corpus text is a compressed variant ('Every adversity or failure... an equivalent or a greater benefit'), so the attribution is solid while the exact phrasing is non-canonical — consider normalizing to the 1937 wording."
+      reviewed_by_human: false

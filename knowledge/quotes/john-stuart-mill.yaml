@@ -1,0 +1,22 @@
+author: John Stuart Mill
+author_normalized_key: john-stuart-mill
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0834
+    slug: null
+    text: One person with a belief is equal to the force of ninety-nine who have only interests.
+    category: insight
+    keywords: [belief, power]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/John_Stuart_Mill"
+      earliest_print_source: "Considerations on Representative Government, John Stuart Mill, 1861, ch. 1"
+      notes: "Authentically Mill, from the opening chapter of Considerations on Representative Government (1861). The original reads 'one person with a belief is a social power equal to ninety-nine who have only interests.' The corpus text has drifted to 'equal to the force of ninety-nine' and dropped 'a social power', which is the phrase carrying Mill's actual point. Recommend restoring the original wording."
+      reviewed_by_human: false

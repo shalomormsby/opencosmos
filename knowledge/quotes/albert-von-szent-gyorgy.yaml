@@ -1,0 +1,22 @@
+author: Albert von Szent-Gyorgy
+author_normalized_key: albert-von-szent-gyorgy
+tradition: science
+era: null
+gender: M
+quotes:
+  - id: q_0279
+    slug: null
+    text: Discovery consists of seeing what everybody has seen and thinking what nobody has thought.
+    category: creativity
+    keywords: [discover, see, thought, nobody]
+    context: "Scientist, Biochemist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "A signature Szent-Gyorgyi line, consistently attributed to him across scientific and popular literature and entirely in his idiom. It is usually sourced to his contribution to I. J. Good's anthology The Scientist Speculates (1962), but I cannot confirm that placement precisely enough to record it as a citation. NOTE: the author's name is garbled in the corpus - the correct form is Albert Szent-Gyorgyi (Hungarian Nobel laureate in Physiology or Medicine, 1937; full name Albert von Szent-Gyorgyi Nagyrapolt), not 'Albert von Szent-Gyorgy'. | Suggested reattribution: Albert Szent-Gyorgyi (spelling correction)"
+      reviewed_by_human: false

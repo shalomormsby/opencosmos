@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0373",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Blaise_Pascal",
+    "earliest_print_source": "Pensées, Blaise Pascal, 1670 (fragment 139 Brunschvicg / 136 Lafuma)",
+    "notes": "Genuine Pascal. French original: 'tout le malheur des hommes vient d'une seule chose, qui est de ne savoir pas demeurer en repos dans une chambre.' The English wording here is one of several standard translations ('All of humanity's problems stem from man's inability to sit quietly in a room alone' is the other common rendering). Attribution is not in doubt; only the translation varies.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0374",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Brian Greene's voice and subject matter, and I recall it circulating from 'The Elegant Universe' (1999), in the discussion of how relativity forces us to give up intuitions about space and time. I cannot place the chapter or page with enough certainty to cite it, so the print source is left null rather than guessed. No competing attribution exists, which supports the author even without a located source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0375",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Brian Tracy is a real motivational author whose seminars and books (e.g. 'Maximum Achievement', 'Goals!') repeat this theme, and the attribution is consistent across quote aggregators. But the passage reads like transcribed seminar speech and I cannot place it in a specific book, article, or recorded talk. Plausible but unsourced; no competing attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0376",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Brian Tracy across quote collections and his own promotional material, with no rival claimant I know of. However the maxim belongs to a large family of older success-literature sayings about 'going the extra mile' (Napoleon Hill and Elbert Hubbard both worked this ground), so an earlier ancestor is possible. No specific book or talk locatable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0377",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Elizabeth_Bibesco",
+    "earliest_print_source": null,
+    "notes": "The line is much older than Brian Tracy. The known original is Elizabeth Bibesco (1897-1945, daughter of H. H. Asquith): 'Blessed are those who can give without remembering and take without forgetting.' It appears in her posthumous collection 'Haven' (1951) and is standardly attributed to her. Tracy and other motivational speakers quote it, which is how his name became attached. I am confident about Bibesco as the source of the saying but am not citing a page, so the print field is null.",
+    "suggested_reattribution": "Elizabeth Bibesco"
+  },
+  {
+    "id": "q_0378",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in any authenticated Bruce Lee material ('Tao of Jeet Kune Do', 'Striking Thoughts', 'Artist of Life', or the interview record). It reads as a reworded version of the well-known aphorism 'Change is inevitable; growth is optional,' which is generally attributed to John C. Maxwell. Because the wording here differs materially and I cannot confirm the derivation chain, I am not asserting a reattribution. Bruce Lee is a moderate misattribution magnet: his notebooks copied maxims from mid-century self-help writers, and quote sites then credit him for them.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0379",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Bruce_Lee",
+    "earliest_print_source": null,
+    "notes": "Genuinely Bruce Lee in substance. The 'be like water' teaching is documented on film in two 1971 sources: the Pierre Berton Show interview (December 1971) and the Longstreet episode 'The Way of the Intercepting Fist,' which carries the famous 'Be water, my friend.' The exact sentence quoted here appears to be a compressed/merged rendering of that spoken material rather than a verbatim line from a single source, so I am withholding a specific citation. Author attribution is safe; wording is approximate.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0380",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wendell_Phillips",
+    "earliest_print_source": null,
+    "notes": "This is Wendell Phillips, the American abolitionist orator: 'What is defeat? Nothing but education, nothing but the first step to something better.' It is a well-established Phillips line from his mid-19th-century speeches and appears in standard quotation dictionaries under his name. Bruce Lee transcribed passages from other writers into his personal notebooks, and posthumous compilations plus quote sites have credited several such borrowings to him. Confident in Phillips as the originator.",
+    "suggested_reattribution": "Wendell Phillips"
+  },
+  {
+    "id": "q_0381",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates under Bruce Lee's name but I cannot place it in his authenticated writings, and the phrasing is pure mid-century American positive-thinking literature (Napoleon Hill / Norman Vincent Peale register). Lee read and copied from those authors, so this may be another borrowed maxim recorded in his notebooks. I do not have a specific prior source, so no reattribution is asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0382",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Bruce_Lee",
+    "earliest_print_source": null,
+    "notes": "Among the better-supported Bruce Lee lines. I recall it from his own written notes as collected in the John Little-edited volumes, most likely 'Striking Thoughts: Bruce Lee's Wisdom for Daily Living' (2000). I am confident enough in Lee's authorship to call it attributed, but not confident enough about the exact volume and page to enter a print citation, so that field is null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0383",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The widely circulated form is 'The successful warrior is the average man, with laser-like focus'; this entry is a de-gendered variant of that. I cannot locate either form in Bruce Lee's authenticated writings or interviews, and 'laser-like focus' is a late-20th-century business-motivation idiom rather than Lee's vocabulary. Probably a modern coinage that acquired his name. No alternative originator known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0384",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Bruno Gröning (1906-1959) was a German faith healer, and this sentiment matches the teaching material published by the Bruno Gröning Circle of Friends, which is essentially the only body that transmits his sayings. That transmission is devotional and post-hoc rather than documentary, and I know of no contemporaneous published text or recording I could point to for this line. The attribution is plausible within that tradition but unverifiable from what I know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0385",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Buckminster_Fuller",
+    "earliest_print_source": null,
+    "notes": "Authentic Fuller vocabulary and syntax; in his own usage the subject is 'the comprehensive designer,' described as an emerging synthesis of artist, inventor, mechanic, objective economist and evolutionary strategist. My recall places it in 'Ideas and Integrities: A Spontaneous Autobiographical Disclosure' (1963), where the comprehensive designer is his central figure, but I am not certain enough to enter that as the citation. Author attribution is solid; the quoted version has been trimmed from 'comprehensive designer' to 'designer.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0386",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Buckminster_Fuller",
+    "earliest_print_source": "Operating Manual for Spaceship Earth, R. Buckminster Fuller, 1969",
+    "notes": "Core Fuller, and the 'Spaceship Earth' framing plus the closing 'It has to be everybody or nobody' are both signature formulations of his from this period. I place the passage in 'Operating Manual for Spaceship Earth' (1969); Fuller also repeated the 'everybody or nobody' line in later lectures and in 'Critical Path' (1981), so the exact wording here may reflect one of those restatements rather than the 1969 text verbatim.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0387",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Buckminster_Fuller",
+    "earliest_print_source": "I Seem To Be A Verb, R. Buckminster Fuller, 1970",
+    "notes": "This is Fuller's best-known self-description and it gave the 1970 book its title. The passage is reproduced widely from that source and is not contested. Confidence held at 0.85 rather than higher only because Fuller recycled the formulation across talks and books and I cannot confirm which appearance is earliest.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0388",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not canonical Buddhism. This is a member of the 'watch your thoughts, they become words' family of sayings, which has been variously credited to the Buddha, Lao Tzu, Gandhi, and Margaret Thatcher, and whose traceable modern ancestors are the 'sow a thought, reap an act; sow an act, reap a habit; sow a habit, reap a character; sow a character, reap a destiny' formula (attributed in the 19th century to Charles Reade and to Samuel Smiles) and a 1977 newspaper version credited to Frank Outlaw. None of these is Buddhist. I cannot identify which specific link in that chain produced this wording, so no reattribution is asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0389",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dhammapada",
+    "earliest_print_source": "The Dhammapada: The Sayings of the Buddha, trans. Thomas Byrom, 1976 (verses 1-2)",
+    "notes": "This is Dhammapada 1-2 (Yamakavagga) in Thomas Byrom's 1976 rendering, which is the source of the familiar 'We are what we think' opening. Byrom is a free poetic translator: more literal versions render the opening as 'Mind precedes all mental states; mind is their chief.' So the underlying text is canonical and the ox-cart and shadow similes are genuine, but the English is Byrom's interpretation rather than a close translation. Attribution to 'Buddha' is correct in the traditional sense.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0390",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not canonical. My recall places this in Jack Kornfield's 'Buddha's Little Instruction Book' (1994), a collection of Kornfield's own modern distillations written in the Buddha's voice, which is the documented origin of a whole cluster of pseudo-Buddha quotes now in circulation. The generic label 'Buddhist saying' is not false in spirit, but the line is a contemporary Western teacher's composition rather than a traditional saying. Reattribution offered with moderate rather than high confidence.",
+    "suggested_reattribution": "Jack Kornfield"
+  },
+  {
+    "id": "q_0391",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The input's own label is the honest one: this is a paraphrase, not a translation. The Kalama Sutta (Anguttara Nikaya 3.65) is genuine canon and does urge the Kalamas not to accept teachings merely on the grounds of report, tradition, hearsay, scripture, logic, or a teacher's authority. But this English wording is a loose 19th/20th-century Western rendering of unknown authorship, and its final clause ('believe only what you yourself judge to be true') distorts the sutta, which asks the listener to test claims against whether they lead to harm or benefit and to weigh the judgment of the wise, not to make private judgment the sole criterion. Canonical basis real; this specific text unsourced and tendentious.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0394",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I can find no canonical or traditional Buddhist basis for this in what I know, and the aphorism's shape - an epigram about exploration and rarity - belongs to modern inspirational writing rather than to Pali or Mahayana sources. Origin unknown; the 'Buddhist saying' label appears to be decorative.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0395",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "There is a genuine Buddhist antecedent for the candle image: the Sutra of Forty-Two Chapters uses the simile of a torch from which many torches are lit without the original's light being diminished, applied to rejoicing in another's giving. So the first sentence has real textual ancestry. The second sentence, 'Happiness never decreases by being shared,' is a modern English addition, and the combined form circulating under the Buddha's name is not a translation of any single canonical passage. Genuine root, modern composite wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0396",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Doctrinally unobjectionable - samadhi as the proximate cause of panna is standard Theravada teaching, and Dhammapada 282 says meditation gives rise to wisdom - but I cannot match this seven-word sentence to any canonical verse or standard translation. It reads as a modern summary of the threefold training rather than a quotation. Sentiment traditional, wording unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0397",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a recognisable paraphrase of Udana 8.3 (the Nibbana Sutta): 'There is, monks, an unborn, unbecome, unmade, unconditioned. If there were not, there would be no escape from the born, become, made, conditioned.' The canonical source is secure, so the Buddhist attribution is sound, but the sentence as quoted matches no standard translation I know - it converts the sutta's existence claim into a claim about seeing and being liberated. Cited as a paraphrase, not a translation; no print citation entered because I cannot identify which populariser produced this wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0398",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The threefold structure is canonical - Anguttara Nikaya teaches that the giver's mind is gladdened before giving, during giving, and on recollecting the gift afterwards. But this English passage is modern expository prose, not a translation, and its register suggests a contemporary Western vipassana teacher (Sharon Salzberg's 'Lovingkindness' and Joseph Goldstein's writing both cover this ground). I cannot confirm which, so I am naming no author. Doctrine authentic, wording modern and unattributed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0399",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The phrase long predates Byron Katie in its plural form: June Jordan's 'Poem for South African Women' (1978) gives 'we are the ones we have been waiting for,' later popularised via the Hopi elders' prophecy and Alice Walker's 2006 book title. The singular form used here is also the title of Richard Schwartz's Internal Family Systems book 'You Are the One You've Been Waiting For' (2008). Byron Katie may well say it in her workshops - it fits The Work - but I cannot confirm she originated it or place it in her books, and the earlier uses make an exclusive attribution to her unsafe. No reattribution asserted because I cannot establish who coined the singular form.",
+    "suggested_reattribution": null
+  }
+]

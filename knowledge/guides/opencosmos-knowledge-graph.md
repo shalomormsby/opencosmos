@@ -23,7 +23,7 @@ related_docs:
 
 # Knowledge Graph
 
-The knowledge graph is a live, interactive visualization of the OpenCosmos wiki — every entity, concept, and connection rendered as a glowing constellation on a dark canvas. It lives at `opencosmos.ai/knowledge/graph` and updates automatically when wiki articles are merged to `main`.
+The knowledge graph is a live, interactive visualization of the OpenCosmos wiki — every entity, concept, and connection rendered as a glowing constellation on a dark canvas. It lives at `opencosmos.ai/library/graph` and updates automatically when wiki articles are merged to `main`.
 
 This guide explains what it is, how it works, and how to maintain it.
 
@@ -117,7 +117,7 @@ Once the generator finishes, start the web app:
 
 ```bash
 pnpm dev --filter web
-# → http://localhost:3000/knowledge/graph
+# → http://localhost:3000/library/graph
 ```
 
 The graph page will load the SVG skeleton (from Redis preview) immediately, then fetch the full graph in a Web Worker and crossfade to the live sigma renderer.
@@ -136,7 +136,7 @@ The graph page will load the SVG skeleton (from Redis preview) immediately, then
    ```
    Any two articles that share a source will be connected in the graph.
 
-3. **Run `pnpm graph`** locally to regenerate and push to Redis, then verify at `localhost:3000/knowledge/graph`.
+3. **Run `pnpm graph`** locally to regenerate and push to Redis, then verify at `localhost:3000/library/graph`.
 
 4. **Merge to `main`** — the GitHub Action (`.github/workflows/knowledge-sync.yml`) detects changes under `knowledge/**`, runs `pnpm graph` automatically, and calls `POST /api/revalidate` to trigger ISR. The live graph at `opencosmos.ai` updates within seconds.
 
@@ -258,7 +258,7 @@ The workflow at `.github/workflows/knowledge-sync.yml` triggers on any push to `
 
 The `concurrency.cancel-in-progress: true` setting means rapid wiki edits don't queue up — only the latest push runs.
 
-After the workflow completes, `opencosmos.ai/knowledge/graph` serves the updated graph within the ISR revalidation window (1 hour max, usually seconds via the explicit revalidation call).
+After the workflow completes, `opencosmos.ai/library/graph` serves the updated graph within the ISR revalidation window (1 hour max, usually seconds via the explicit revalidation call).
 
 ---
 
@@ -271,7 +271,7 @@ The graph is fully implemented. Before it works in production, complete these st
 - [ ] **Add environment variables to Vercel** — `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `REVALIDATE_SECRET` on the opencosmos.ai deployment
 - [ ] **Add GitHub Actions secrets** — `UPSTASH_REDIS_REST_URL`, `UPSTASH_REDIS_REST_TOKEN`, `REVALIDATE_SECRET`, `NEXT_PUBLIC_APP_URL=https://opencosmos.ai`
 - [ ] **Run `pnpm graph` once** to seed the initial Redis data before deploying
-- [ ] **Deploy and verify** — navigate to `opencosmos.ai/knowledge/graph`, check the skeleton appears immediately, check the sigma graph crossfades in after ~1s
+- [ ] **Deploy and verify** — navigate to `opencosmos.ai/library/graph`, check the skeleton appears immediately, check the sigma graph crossfades in after ~1s
 
 ---
 

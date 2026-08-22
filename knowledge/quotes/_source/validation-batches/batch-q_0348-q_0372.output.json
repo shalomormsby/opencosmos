@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0348",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Conan_Doyle",
+    "earliest_print_source": "The Hound of the Baskervilles, Arthur Conan Doyle, 1902 (serialized in The Strand Magazine, 1901-1902)",
+    "notes": "Spoken by Sherlock Holmes early in The Hound of the Baskervilles (ch. 3, 'The Problem'), during the discussion of Dr. Mortimer's account. Standard caveat that the line is a character's, not the author speaking in his own voice, but Doyle is the correct author credit.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0349",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Schopenhauer",
+    "earliest_print_source": "Parerga und Paralipomena, Vol. II, Arthur Schopenhauer, 1851; English in 'Further Psychological Observations,' Studies in Pessimism, trans. T. Bailey Saunders, 1890",
+    "notes": "Genuine Schopenhauer, from the psychological observations in Parerga and Paralipomena vol. II. The familiar English wording is T. Bailey Saunders' translation, widely reprinted in the Studies in Pessimism selection. I am confident of the work but not of a page number.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0350",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Schopenhauer",
+    "earliest_print_source": null,
+    "notes": "A well-documented misattribution. No such passage exists in Schopenhauer's works; Wikiquote carries it in the misattributed/disputed section. What Schopenhauer actually wrote (preface to the second edition of The World as Will and Representation, 1844) is the different and less tidy observation that truth is allowed only a brief celebration of victory between the long period in which it is condemned as paradoxical and the long period in which it is disparaged as trivial. The 'three stages' formula circulated in the 20th century with no source; a structurally similar three-stage remark about scientific truth is attributed to Louis Agassiz in the 19th century. I cannot identify the actual originator, so I am not proposing a reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0351",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Asha Tyson is an American motivational author (best known for 'How I Retired at 26!'). This passage circulates very widely on inspirational sites with her name attached and I have no reason to doubt it, but I cannot place it in any specific book, article, or talk from training knowledge, and the attribution appears to rest entirely on quote-aggregator repetition. Honest verdict: plausible author, no traceable source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0352",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Audrey_Hepburn",
+    "earliest_print_source": "In One Era and Out the Other, Sam Levenson, 1973 ('Time Tested Beauty Tips')",
+    "notes": "Not written by Audrey Hepburn. The first portion ('For attractive lips... helping hand at the end of each of your arms') is Sam Levenson's poem 'Time Tested Beauty Tips,' written for his newborn grandchild and published in his 1973 book. Hepburn reportedly read it aloud to her sons at Christmas near the end of her life, which is how her name became attached; her son Sean Hepburn Ferrer has publicly credited Levenson. The later sentences here ('The beauty of a woman is not in the clothes she wears...') are a separate accretion from anonymous chain-letter circulation and are not Levenson's either. This text is a composite, and the Hepburn credit is wrong.",
+    "suggested_reattribution": "Sam Levenson (first portion); remainder anonymous"
+  },
+  {
+    "id": "q_0353",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ayya Khema (1923-1997), the German-born Theravada nun who wrote 'Being Nobody, Going Nowhere,' is a plausible author: the vocabulary (wholesome/unwholesome, mindfulness as a state rather than a discourse) matches her teaching idiom closely. But I cannot place this passage in a specific book or dhamma talk, and much of her published material is transcribed talks, which makes exact sourcing hard. Attribution is credible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0354",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Babe_Ruth",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Babe Ruth across sports-quote collections, but I know of no primary source: no interview, autobiography passage, or contemporary newspaper citation I can name. Ruth is a moderate misattribution magnet for aphorisms about teamwork and perseverance. Plausible but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0355",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Banksy",
+    "earliest_print_source": null,
+    "notes": "The formula long predates Banksy. Its ancestor is Finley Peter Dunne's 1902 Mr. Dooley line about the newspaper that 'comforts th' afflicted, and afflicts th' comfortable,' which was subsequently applied to journalism generally and then adapted to art. The art-specific phrasing is most often credited to the artist and educator Cesar A. Cruz. Banksy is a magnet for unsourced art aphorisms and I know of no place in 'Wall and Piece' or in his documented statements where he claims this line. Reattribution offered with the caveat that the Cruz credit is itself weakly sourced.",
+    "suggested_reattribution": "Cesar A. Cruz (art phrasing); formula ultimately from Finley Peter Dunne, 1902"
+  },
+  {
+    "id": "q_0356",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Barbara Rose is a contemporary self-help/spirituality author ('Individual Power,' 'If God Was Like Man'). The passage matches her register, and the attribution is consistent across the inspirational-quote ecosystem, but I cannot locate it in a specific title from training knowledge. Note also the name collision with Barbara Rose the art historian, which makes aggregator attributions less reliable than they look.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0357",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same situation as the other Barbara Rose entry in this batch: register and attribution are consistent with her published self-help writing, and the exercise-style prompts suggest a book or newsletter with a workbook element, but I cannot name the source. No independent evidence beyond quote-site repetition.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0358",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Barbara Sher is very likely the real author; this is one of her signature ideas and the phrasing matches her voice. My recollection points to 'Wishcraft: How to Get What You Really Want' (1979, with Annie Gottlieb) as the probable source, but I cannot confirm that with enough certainty to record it as a citation, so I am leaving the print-source field null rather than guessing. Attribution credible, source unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0359",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Barry Brailsford is a New Zealand author and storyteller associated with Waitaha and Maori traditions ('Song of Waitaha,' 'Wisdom of the Four Winds'). The content is consistent with his body of work, but I cannot place the passage in a specific book. Worth flagging separately that Brailsford's Waitaha material is itself contested by some Maori scholars regarding its provenance as traditional knowledge, which is a sourcing concern beyond the quote attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0360",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Two problems. First, the author name is misspelled: the person usually credited is Barry LePatner, a New York construction attorney. Second, and more important, the aphorism substantially predates him. Versions of 'good judgment comes from experience, and experience comes from bad judgment' circulated in the late 19th and early 20th centuries and have been variously attributed to Will Rogers, Mark Twain, Rita Mae Brown, Jim Horning, and an anonymous cowboy or Persian proverb. It is a floating saying with no established originator; the LePatner credit appears to be a modern quote-book convention. I cannot name the true source, so no reattribution is offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0361",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot identify this Ben Irwin or place this line in any published work. The name is common enough (a contemporary author writing on faith, among others) that the attribution cannot be pinned to a specific person with confidence. The line reads like an anonymous aphorism that acquired a name in circulation. Honest answer: unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0362",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Benjamin_Franklin",
+    "earliest_print_source": null,
+    "notes": "No source in Franklin's writings, letters, or almanacs. The internal evidence argues against him outright: the right to pursue happiness appears in the Declaration of Independence, not the Constitution, and Franklin, a signer of both, would be an unlikely person to confuse them. The line reads as a 20th-century American aphorism retrofitted onto Franklin, who is one of the heaviest misattribution magnets in the corpus alongside Twain and Lincoln. I cannot identify an actual originator, hence apocryphal rather than a reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0363",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Benjamin_Franklin",
+    "earliest_print_source": "Poor Richard's Almanack, Benjamin Franklin, 1746; reprinted in 'The Way to Wealth,' 1758",
+    "notes": "Genuine Franklin. The correct wording is 'Dost thou love life? Then do not squander time, for that is the stuff life is made of' — the input's 'Does thou' is a transcription error and should be corrected to 'Dost thou' before the quote goes live. First published in Poor Richard's Almanack and later gathered into the preface essay 'The Way to Wealth' (1758).",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0364",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Bennett W. Goodspeed was an investment writer best known for 'The Tao Jones Averages: A Guide to Whole-Brained Investing' (1983), a book built around exactly this kind of right-brain/left-brain aphorism, and my recollection associates the line with him. I cannot confirm the book or page with enough certainty to record a citation, so the print-source field stays null. Attribution plausible, source unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0365",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Bernie Siegel, the surgeon and author of 'Love, Medicine and Miracles' (1986) and 'Peace, Love and Healing,' is a plausible author and the sentiment is squarely within his body of work. I cannot place the passage in a specific book, and Siegel's material is heavily excerpted in devotional anthologies without citation, which is how unsourced attributions to him propagate. Credible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0366",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Bertrand_Russell",
+    "earliest_print_source": null,
+    "notes": "The idea is genuinely Russell's but this exact wording is not sourced. The documented original is from his 1933 essay 'The Triumph of Stupidity': 'The fundamental cause of the trouble is that in the modern world the stupid are cocksure while the intelligent are full of doubt.' Several loose paraphrases circulate, including the popular 'the whole problem with the world is that fools and fanatics are always so certain of themselves, and wiser people so full of doubts,' which Wikiquote carries as unsourced. The text here ('the biggest cause of trouble... stupid people... intelligent folks') is another such variant, with an American register that does not sound like Russell. Recommend replacing with the sourced 1933 wording if this quote is wanted in the corpus.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0367",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Betty Eadie is the author of 'Embraced by the Light' (1992) and 'The Awakening Heart.' The passage's shift into second-person reflective prompts mid-paragraph suggests a devotional or workbook context rather than her narrative memoir, and it may be a compiler's stitching of separate lines. I cannot place it in a specific title. Also note the stray closing double-quote at the end of the text, which should be cleaned before publication.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0368",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The Betty Reese credit is the conventional one in quote books from roughly the 1980s onward, where she is usually identified only as an American public relations executive — an unusually thin biographical trail for an attribution. The mosquito image belongs to a larger family of sayings, including the widely circulated 'if you think you are too small to make a difference, try sleeping with a mosquito,' which is variously credited to the Dalai Lama and to an African proverb, none of them with a solid primary source. Attribution exists but is weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0369",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Bill_Cosby",
+    "earliest_print_source": null,
+    "notes": "Consistently and long attributed to Bill Cosby, who is generally reported to have said it in interviews; the attribution is stable and I am not aware of any competing claimant or earlier appearance, which is why this sits above the pure-unverified tier. But I cannot name the interview, book, or date, so it falls short of the 0.80 promotion bar. Separate from provenance, the corpus owner may want to consider whether Cosby attributions belong in an inspirational collection at all.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0370",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Bill_Gates",
+    "earliest_print_source": null,
+    "notes": "Ubiquitous in leadership training material and consistently credited to Gates, usually with a vague pointer to a late-1990s speech, but I cannot name the occasion or a printed text. The 'next century' framing places the origin plausibly in the 1990s, which is consistent with the attribution without confirming it. Widely repeated is not the same as sourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0371",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Billie_Holiday",
+    "earliest_print_source": "Lady Sings the Blues, Billie Holiday with William Dufty, 1956 (as commonly cited; I cannot confirm the page)",
+    "notes": "My recollection places this line in Holiday's autobiography 'Lady Sings the Blues,' and the imagery — white satin, gardenias, the plantation — is characteristic of that book's account of touring as a Black singer with white bands. Two caveats keep it below the promotion bar: I cannot confirm the page or chapter, and the book was ghostwritten by William Dufty, with scholars (notably Farah Jasmine Griffin and John Szwed) documenting that substantial parts of it are unreliable or not in Holiday's own words. The sentiment is authentically hers; the exact authorship of the sentence is shared with Dufty.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0372",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Black_Elk",
+    "earliest_print_source": null,
+    "notes": "The circle teaching is authentically Black Elk's, but this terse six-word phrasing does not match the known texts. The famous passage in 'Black Elk Speaks' (John G. Neihardt, 1932) runs 'Everything the Power of the World does is done in a circle,' continuing through the round sky, the round sun and moon, and the whirling wind; 'The Sacred Pipe' (Joseph Epes Brown, 1953) develops the same idea. 'Everything sacred moves in a Circle' appears to be a condensation that circulates without a source. Additional caveat: both books are non-Lakota interlocutors' renderings of Black Elk's words, so even the canonical wordings are mediated. Recommend replacing with the sourced Neihardt line if this idea is wanted.",
+    "suggested_reattribution": null
+  }
+]

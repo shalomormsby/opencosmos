@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0601",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
+    "earliest_print_source": "Essays: First Series (\"Friendship\"), Ralph Waldo Emerson, 1841",
+    "notes": "Genuine Emerson. The line appears in the essay 'Friendship' in Essays: First Series (1841): 'A friend may well be reckoned the masterpiece of nature.' The bare author field 'Emerson' should be expanded to 'Ralph Waldo Emerson' — the other candidate Emersons do not write like this and the essay attribution is well established.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0602",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Emile Henry Gauvreau was a real tabloid editor (New York Evening Graphic, New York Daily Mirror) and this passage is consistently credited to his 1941 memoir 'My Last Million Readers'. I am confident the book exists and that it is the standard citation, but I cannot confirm the page or the exact wording from primary knowledge, so I have left the print-source field null rather than assert an unverified locus. Note that a family of related epigrams ('people spend money they don't have on things they don't need to impress people they don't like') circulates under many names (Will Rogers, Dave Ramsey, Fight Club); the Gauvreau version is the earliest of that family that I can place, and it is first-person memoir rather than aphorism, which supports authenticity.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0603",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Emily_Dickinson",
+    "earliest_print_source": "Poem 'Unable are the Loved to die' (Johnson 809 / Franklin 951), Emily Dickinson, written c. 1864",
+    "notes": "Genuine Dickinson. The poem opens 'Unable are the Loved to die / For Love is Immortality, / Nay, it is Deity —'. The quoted form flattens the line break and capitalization but is faithful to the text. Catalogued as J809 in Thomas H. Johnson's edition and Fr951 in R. W. Franklin's.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0604",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Emily Kimbrough (1899-1989) was a real American author and humorist, best known for 'Our Hearts Were Young and Gay' (1942, with Cornelia Otis Skinner). This line is attributed to her with unusual consistency across quotation collections — I know of no competing attribution — but I cannot place it in any specific book, essay, or interview from training knowledge. Plausible and undisputed, but undocumented.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0605",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This formula does not appear in the surviving fragments of Empedocles. Its documented origin is the anonymous 12th-century Latin 'Liber XXIV philosophorum' (Book of the Twenty-Four Philosophers), Proposition II, traditionally ascribed to Hermes Trismegistus: 'Deus est sphaera infinita cuius centrum est ubique, circumferentia nusquam.' It was transmitted through Alain de Lille, the Roman de la Rose, Nicholas of Cusa, Rabelais, Bruno, and Pascal — Borges traces exactly this chain in his essay 'The Fearful Sphere of Pascal', where the ancestral idea of the divine sphere is credited to Xenophanes and Parmenides rather than to Empedocles. The Empedocles label appears to be a later quote-collection accretion, likely by association with the Presocratic sphere imagery.",
+    "suggested_reattribution": "Anonymous, Liber XXIV philosophorum (12th c.), traditionally ascribed to Hermes Trismegistus"
+  },
+  {
+    "id": "q_0606",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Eric Allenbaugh is a real management author; the passage is generally credited to his book 'Wake-Up Calls: You Don't Have to Sleepwalk Through Your Life, Love, or Career' (1992). I recall the book and the association but cannot confirm the passage's presence or wording from primary knowledge, so I have not entered it as a print source. No competing attribution known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0607",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Eric_Hoffer",
+    "earliest_print_source": "Reflections on the Human Condition, Eric Hoffer, 1973 (aphorism 32)",
+    "notes": "Genuine Hoffer, but the corpus text is a loose variant. The published aphorism reads: 'In times of change, learners inherit the earth; while the learned find themselves beautifully equipped to deal with a world that no longer exists.' The submitted version substitutes 'In a world of change' and 'will find themselves beautifully equipped for a world'. Recommend replacing the text with the canonical wording; attribution itself is solid.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0608",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "General Eric Shinseki, US Army Chief of Staff (1999-2003), is the consistent and essentially uncontested source; the line comes from his Army Transformation-era remarks in the early 2000s and was widely quoted in press coverage of his tenure. I cannot pin a specific speech, date, or transcript from training knowledge, which keeps this below the promotion bar. No competing attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0609",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Erica Jong wrote extensively on sexuality, censorship, and creative freedom, so the sentiment is strongly in character and the attribution is uncontested in quotation collections. However, I cannot locate it in any specific book, essay, or interview from training knowledge. Plausible but undocumented.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0610",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot identify 'Erick Golnik' as a documented author, and I know of no source that establishes him as the originator. The far more common circulation of this line is under Ralph Waldo Emerson's name, and that attribution is itself unsupported — the sentence does not appear in Emerson's essays, journals, or letters as far as I know, and its epigrammatic sports-page register is unlike his prose. So neither attribution is documented. I am deliberately not suggesting a reattribution because I do not know who wrote it; flagging as low-confidence rather than misattributed only because I cannot rule the named author out.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0611",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Well-known Erma Bombeck line, consistently attributed to her and circulated widely after her death in 1996, including in the posthumous column collection 'Forever, Erma' (1996). The sentiment and cadence match her late columns on illness and mortality. I cannot pin the originating column or date, so I have not entered a print source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0612",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ursula_K._Le_Guin",
+    "earliest_print_source": "The Left Hand of Darkness, Ursula K. Le Guin, 1969",
+    "notes": "This is Ursula K. Le Guin, not Hemingway. The sentence appears in 'The Left Hand of Darkness' (1969), spoken by Estraven during the crossing of the Gobrin Ice: 'It is good to have an end to journey toward; but it is the journey that matters, in the end.' Hemingway is a well-documented misattribution magnet and the line appears nowhere in his work; the phrasing is also plainly not his. Confident reattribution.",
+    "suggested_reattribution": "Ursula K. Le Guin"
+  },
+  {
+    "id": "q_0613",
+    "status": "likely_misattributed",
+    "confidence": 0.12,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ernest_Hemingway",
+    "earliest_print_source": null,
+    "notes": "Not Hemingway. The saying does not appear in his novels, stories, letters, or nonfiction, and it is listed among the misattributed quotations on his Wikiquote page. Versions of the maxim predate Hemingway's writing career; my recollection is that the earliest located instances are late-19th-century and were printed as a Hindu or Indian proverb rather than credited to an individual. I am confident enough in the negative finding (it is not Hemingway) to mark this misattributed, but not confident enough in the positive origin to name a source, so the reattribution field is left null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0614",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ernst Bloch's philosophy of anticipatory consciousness and the daydream ('Tagtraum') in 'Das Prinzip Hoffnung' / 'The Principle of Hope' makes the sentiment thematically apt, but I cannot locate this sentence in Bloch's work or identify a translator whose rendering it matches. The aphoristic, English-native cadence reads more like a quote-collection paraphrase of Bloch's ideas than a translated passage. Note also that the submitted text contains a typo: 'in contingent' should read 'is contingent' — a corruption that usually signals transmission through low-quality quote aggregators.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0615",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently labelled an Ethiopian proverb across quotation collections, and it is a genuinely traditional-sounding saying rather than a modern invention. But 'Ethiopian proverb' is an unfalsifiable attribution in the absence of a folklore collection citation, and I cannot point to a specific Amharic source or scholarly proverb compendium. Honest status for an anonymous traditional saying: the attribution is a category, not an author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0616",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Euripides",
+    "earliest_print_source": null,
+    "notes": "Standard attribution to Euripides via a fragment of the lost play 'Aeolus'; it is carried in Bartlett's Familiar Quotations in that form. Because the play survives only in fragments, the 'source' is a quotation preserved in a later ancient author rather than a continuous text, and the familiar English wording is a translator's compression. Attribution is traditional and stable but not primary-source verifiable, and translation variance means the exact English is not canonical.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0617",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Evan Esar (1899-1995) was an American humorist and compiler of 'Esar's Comic Dictionary' (1943) and '20,000 Quips and Quotes' (1968). The construction — a proverb twisted on a pun ('no time like the pleasant' for 'no time like the present') — is precisely his signature form, and the attribution is uncontested. I cannot say which of his volumes it comes from, so no print source is entered. Caveat worth noting: Esar compiled other people's humor as well as writing his own, so 'Esar' on a pun sometimes means 'appears in Esar'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0618",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely attributed to Flannery O'Connor and thematically consistent with her remarks on writing in 'Mystery and Manners' and the letters collected in 'The Habit of Being', but I cannot locate the sentence in either. Important antecedent: E. M. Forster's 'Aspects of the Novel' (1927) quotes an old lady asking 'How can I tell what I think till I see what I say?', and that formula spawned many variants attached to many writers. O'Connor may well have made her own version of it, but the family resemblance means the attribution needs a real citation before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0619",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Flavius' is not a usable attribution — it is a Roman nomen shared by dozens of figures (Josephus, Vegetius, Cassiodorus, Arrian, and the Flavian emperors among them), and its bare appearance here is a sign of a truncated database record. My recollection is that this line circulates credited to Cassiodorus (Flavius Magnus Aurelius Cassiodorus, c. 485-585), the Roman statesman and monastic writer, though I cannot confirm it against the Variae or the Institutiones. Recommend either resolving the name to Cassiodorus with a real citation or dropping the quote; as it stands the author field identifies no one.",
+    "suggested_reattribution": "Possibly Cassiodorus (Flavius Magnus Aurelius Cassiodorus) — needs verification before use"
+  },
+  {
+    "id": "q_0620",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently and, as far as I know, uncontestedly attributed to Florence Nightingale, drawn from her correspondence rather than a published work; it is quoted in the Nightingale biographical literature (Cecil Woodham-Smith's 1950 life among others). The 'You ask me why I do not write something' opening is characteristic of her letter style and of her documented impatience with words over measurable results. I cannot name the recipient or date, so no print source is entered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0621",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Florence Scovel Shinn (1871-1940), New Thought writer; the passage is generally cited to 'The Game of Life and How to Play It' (1925). The vocabulary — 'brought into manifestation', 'holding to the vision' — is distinctively hers and distinctively New Thought, which makes the attribution to Shinn safe even where the specific volume is not. I have not entered the book as a print source because I cannot confirm whether it comes from 'The Game of Life' or one of her later titles ('Your Word Is Your Wand', 'The Secret Door to Success').",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0622",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Francis_Bacon",
+    "earliest_print_source": "The Advancement of Learning, Francis Bacon, 1605 (Book I)",
+    "notes": "Genuine Bacon, from 'The Advancement of Learning' (1605): 'If a man will begin with certainties, he shall end in doubts; but if he will be content to begin with doubts, he shall end in certainties.' The submitted text is the widely circulated modernized form — first-person plural, with 'and are patient in them' added. Attribution is unimpeachable; consider restoring Bacon's actual wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0623",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to François Mauriac (1885-1970, Nobel laureate 1952) with reasonable consistency, and compatible with the Catholic-novelist sensibility of his work, but I cannot locate it in his novels, journals, or 'Bloc-notes'. As an aphorism circulating in English translation with no named translator or title, it carries the usual risk that a line was compressed out of a longer passage or invented for a collection.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0624",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Frank A. Clark was an American newspaper columnist whose syndicated aphorisms ('The Country Parson') were picked up heavily by Reader's Digest and quotation anthologies from the 1950s-70s; a large share of the epigrams credited to him entered circulation that way, and this is one of them. The attribution is uncontested and the form is characteristic, but the original column and date are not recoverable from what I know, so no print source is entered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0625",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Frank G. Goble wrote 'The Third Force: The Psychology of Abraham Maslow' (1970), and this passage on creative people is generally credited to it; the content is a summary of Maslow's account of self-actualizing creativeness, which fits that book exactly. I have not entered the title as a print source because I cannot confirm the wording or chapter from primary knowledge. Two handling notes: the bracket-free parenthetical '(creative people)' is an editor's insertion, showing the passage was lifted from a longer context, and at ~90 words this is an excerpt rather than a quotation — it may not suit a quote corpus regardless of provenance.",
+    "suggested_reattribution": null
+  }
+]

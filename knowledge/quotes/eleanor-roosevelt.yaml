@@ -1,0 +1,22 @@
+author: Eleanor Roosevelt
+author_normalized_key: eleanor-roosevelt
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0589
+    slug: null
+    text: You must do the thing you think you cannot do.
+    category: insight
+    keywords: [action, impossible, possible, think]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Eleanor_Roosevelt"
+      earliest_print_source: "You Learn by Living, Eleanor Roosevelt, 1960"
+      notes: "Genuine and sourced. From the chapter on fear in \"You Learn by Living\" (1960): \"You gain strength, courage, and confidence by every experience in which you really stop to look fear in the face... You must do the thing you think you cannot do.\" This is the rare ER quotation with a real primary source in her own book."
+      reviewed_by_human: false

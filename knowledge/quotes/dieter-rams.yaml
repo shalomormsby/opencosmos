@@ -1,0 +1,38 @@
+author: Dieter Rams
+author_normalized_key: dieter-rams
+tradition: engineering
+era: null
+gender: M
+quotes:
+  - id: q_0141
+    slug: null
+    text: "Good design is as little design as possible. Less, but better – because it concentrates on the essential aspects, and the products are not burdened with non-essentials. Back to purity, back to simplicity."
+    category: design
+    keywords: [simplicity, minimalism]
+    context: Product Design
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Dieter_Rams"
+      earliest_print_source: "Ten Principles for Good Design (principle 10), Dieter Rams, formulated late 1970s-1980s"
+      notes: "This is verbatim the tenth of Rams's 'Ten Principles for Good Design' ('Good design is as little design as possible'), including the gloss 'Less, but better - because it concentrates on the essential aspects... Back to purity, back to simplicity.' The principles are documented by Vitsoe and reproduced in the Rams literature (e.g. 'Weniger, aber besser / Less but Better', 1995). Attribution is not in doubt."
+      reviewed_by_human: false
+  - id: q_0142
+    slug: null
+    text: Indifference towards people and the reality in which they live is actually the one and only cardinal sin in design.
+    category: design
+    keywords: [empathy]
+    context: Product Design
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Dieter_Rams"
+      earliest_print_source: "'Design by Vitsoe' (speech, New York, 1976), Dieter Rams"
+      notes: "Well-known Rams line, consistently attributed to his 1976 'Design by Vitsoe' address given at Jack Lenor Larsen's New York showroom, which is the usual source given in the Rams literature. My recollection of that specific speech is good but not certain enough to call primary-source verified; the author attribution itself is not in doubt."
+      reviewed_by_human: false

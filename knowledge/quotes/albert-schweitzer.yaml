@@ -1,0 +1,22 @@
+author: Albert Schweitzer
+author_normalized_key: albert-schweitzer
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0276
+    slug: null
+    text: "A man is ethical only when life, as such, is sacred to him, that of plants and animals as well as that of his fellow man, and when he devotes himself helpfully to all life that is in need of help."
+    category: insight
+    keywords: [ethics, sacred, nature, devotion, life, help]
+    context: Philosopher
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Schweitzer"
+      earliest_print_source: "Civilization and Ethics (Kultur und Ethik), Albert Schweitzer, 1923 - The Philosophy of Civilization, Part II"
+      notes: "This is Schweitzer's core statement of Ehrfurcht vor dem Leben (reverence for life) and is a genuine passage from his ethics volume, where he defines the ethical man as one for whom all life is sacred and who helps all life in need. Schweitzer restates it in Out of My Life and Thought (1931). Confident in the author and the work; slight residual uncertainty only on chapter/page and translation wording."
+      reviewed_by_human: false

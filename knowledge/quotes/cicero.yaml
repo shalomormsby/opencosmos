@@ -1,0 +1,22 @@
+author: Cicero
+author_normalized_key: cicero
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0088
+    slug: null
+    text: "Gratitude is not only the greatest of virtues, but the parent of all others."
+    category: insight
+    keywords: [gratitude]
+    context: "Philosophy, Ancient Greek"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Cicero"
+      earliest_print_source: "Pro Plancio, Cicero, 54 BCE, §80"
+      notes: "Genuine Cicero, from the defense speech Pro Plancio: 'haec enim est una virtus non solum maxima, sed etiam mater virtutum omnium reliquarum' — this is the one virtue that is not only greatest but the parent of all the rest, said of gratitude. The English is the standard rendering found in quotation dictionaries. Section number 80 is from memory. Note the corpus context field says 'Ancient Greek'; Cicero was Roman."
+      reviewed_by_human: false

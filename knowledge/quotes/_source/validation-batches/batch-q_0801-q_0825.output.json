@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0801",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Johann_Wolfgang_von_Goethe",
+    "earliest_print_source": null,
+    "notes": "A German original circulates alongside the English ('Denken ist leicht, handeln schwer, handeln nach Gedanken das Unbequemste auf der Welt'), which is a good sign the line is genuinely Goethe's rather than an English-language invention. My recollection places it in the Wilhelm Meister material / Maximen und Reflexionen, but I cannot confirm the exact work or locus, so I am not naming one. Attribution consistent and long-standing; the specific citation is what is missing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0802",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates widely in gratitude and creativity anthologies attributed to Goethe, and a German rendering also circulates, but I cannot place it in any Goethe work, letter, or conversation I know. The imagery ('with fire or sword') is plausible for Goethe but equally plausible as a loose translation or an anthology-era paraphrase. No source named; honest uncertainty.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0803",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Johann_Wolfgang_von_Goethe",
+    "earliest_print_source": null,
+    "notes": "I recognize the German line 'Sobald du dir vertraust, sobald weisst du zu leben' and associate it with Faust, Part One (1808), spoken by Mephistopheles. I am confident enough in the German original to call the Goethe attribution sound, but not confident enough in the exact scene or line number to print a citation, so earliest_print_source is left null rather than guessed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0804",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Worldly Virtues: A Catalogue of Reflections, Johannes A. Gaertner, 1990",
+    "notes": "Gaertner (Lafayette College art historian) is the consistent and essentially exclusive attribution for this line, and my recollection ties it to his aphorism collection Worldly Virtues. The book and author are real and the pairing is stable across sources; I am slightly hedged on whether 1990 is the first edition year, hence 0.7 rather than higher. Attribution itself is not in doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0805",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "John Balguy (1686-1748), English divine, is the standard attribution, and the line appears in nineteenth-century compilations such as Tryon Edwards' A Dictionary of Thoughts. But dictionary-of-quotations attributions of that era are frequently unsourced or laundered, and I cannot place this sentence in any of Balguy's own writings (Divine Rectitude, the Foundation of Moral Goodness, etc.). Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0806",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to the American novelist John Berry, and my recollection associates it with his novel Flight of White Crows (1961) - but I am not confident enough in that title-to-quote link to print it as a citation. The attribution to Berry is stable across sources; the source work is the uncertain part.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0807",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The voice, vocabulary ('discharge', 'the healing feeling', 'therapeutic slogan') and subject matter are strongly characteristic of John Bradshaw's recovery writing, most likely Homecoming: Reclaiming and Championing Your Inner Child (1990) or Healing the Shame That Binds You (1988). I cannot determine which book or page, and long prose passages like this are often stitched together from non-adjacent sentences (note the internal ellipsis), so the exact wording may not match any single printed passage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0808",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Cage",
+    "earliest_print_source": null,
+    "notes": "Well established as Cage's, from his interviews and conversations rather than a formal essay - I associate it with the interview literature (Kostelanetz's Conversing with Cage, or the For the Birds conversations with Daniel Charles). The sentiment is central and repeatedly expressed by Cage. I will not name a specific volume or page without being able to confirm it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0809",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "AUTHOR NAME ERROR: there is no 'John Christian Bovee'. The aphorist is Christian Nestell Bovee (1820-1904), American author, whose Intuitions and Summaries of Thought (1862) is the usual home for lines of this kind. The 'John' appears to be a corpus-level corruption. I am confident about the name correction; less so about the source volume, so I have not printed one. Recommend fixing the author field regardless of promotion.",
+    "suggested_reattribution": "Christian Nestell Bovee"
+  },
+  {
+    "id": "q_0810",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed with fair consistency to John D. Rockefeller Jr. in philanthropy and fundraising literature, and the sentiment matches his public statements on giving. But I cannot connect it to a specific speech, letter, or his often-quoted 'I Believe' credo, and short uplift lines in fundraising materials are a common site of drift. Attribution plausible, source unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0811",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Always credited to 'John E. Southard' and effectively never to anyone else, but I know nothing about who Southard was and can find no work, publication, or date associated with him in my training knowledge. This has the signature of a magazine filler item (Reader's Digest-style quotable) that acquired a fixed name and then propagated unchanged. Attribution exists but rests on nothing I can inspect.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0812",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_F._Kennedy",
+    "earliest_print_source": null,
+    "notes": "Authentic Kennedy in substance and phrasing; he returned repeatedly to the George Bernard Shaw line 'I dream things that never were and say why not' (Back to Methuselah), most famously in his address to the Irish Parliament, 28 June 1963. I believe this passage comes from a 1962-63 speech but cannot determine which, so no citation is printed. WORDING NOTE: Kennedy said 'We need men who can dream of things that never were'; the corpus text has been silently modernized to 'people'. If promoted, either restore the original or mark it as adapted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0813",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_F._Kennedy",
+    "earliest_print_source": null,
+    "notes": "Authentic Kennedy from his set of remarks on the arts and national culture. My recollection points to either the Amherst College address honoring Robert Frost (26 October 1963) or his remarks for the National Cultural Center (1962); both are real speeches with closely related language, and I cannot tell which contains this sentence. Attribution to JFK is solid; the specific occasion is not, so no source is printed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0814",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Dulles with fair consistency in management and leadership literature, but I cannot tie it to any speech, dispatch, or writing of his. The formulation reads more like postwar business-book aphorism than diplomatic prose, which raises the possibility that a management author coined or reshaped it and the Dulles name attached later. No evidence of a specific alternate author, so no reattribution suggested.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0815",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Cannot place this passage. 'John Gray' is ambiguous: the self-help author of Men Are from Mars, Women Are from Venus and What You Feel, You Can Heal; the political philosopher (Straw Dogs); and others. The therapeutic register suggests the self-help John Gray, but the specific argument (that removing another's pain removes their growth) is a commonplace of pastoral-care and codependency writing and could belong to several authors. Unverified on both source and which John Gray.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0816",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Two problems. (1) The core sentence, 'Failure is, in a sense, the highway to success...', appears in nineteenth-century quotation dictionaries credited to Keats, but I cannot locate it in his letters or poems, and the reasoning about 'discovery of what is false' is uncharacteristically didactic-empiricist for Keats. (2) The opening two sentences ('Don't be discouraged by a failure. It can be a positive experience.') read as a modern motivational preamble grafted onto the older sentence - flat, contemporary diction unlike the rest. Recommend not promoting; at minimum strip the prepended sentences.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0817",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_F._Kennedy",
+    "earliest_print_source": null,
+    "notes": "The attribution is broadly sound - Kennedy did use this line in campaign-era speeches (I associate it with his 1959-60 addresses, including a United Negro College Fund speech in Indianapolis, April 1959) - but two things should block promotion. (1) FACTUALLY FALSE: the etymology is wrong. Sinologist Victor Mair has repeatedly debunked it; the second character in weiji is ji, meaning incipient moment or crux, not 'opportunity'. (2) NOT ORIGINAL: the trope predates Kennedy in English-language missionary writing on China (Quote Investigator traces it to the late 1930s), so he popularized rather than coined it. Also note the author field reads 'John Kennedy'; should be 'John F. Kennedy'. Recommend rejection on accuracy grounds even though the speaker is real.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0818",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no reliable knowledge of John MacEnulty as a published author and cannot locate this passage in anything I know. The content is a restatement of the Heraclitean river commonplace ('You cannot step in the same stream twice') wrapped in contemporary mindfulness language, which makes independent verification harder rather than easier. No source, no date, no corroborating attribution. Honest answer is that I do not know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0819",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Maeda - the design/art distinction is one of his recurring formulations, expressed in his talks, interviews, and writing (including his TED remarks on art, technology and design). Contemporary and well documented as his, but I cannot pin the first appearance to a specific book, post, or talk transcript, so no citation is printed. Attribution itself is not in question.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0820",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "You're Born an Original, Don't Die a Copy!, John L. Mason, 1993",
+    "notes": "This is essentially the title of John L. Mason's book, which is unusually strong evidence for the attribution - the line and the author are bound together by the book's own cover. I am confident the book and title exist; slightly less certain about the exact first-publication year, and the corpus wording ('You were born an original') is a minor variant of the title's 'You're born an original'. Strong attribution, minor wording drift.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0821",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": "John of the Mountains: The Unpublished Journals of John Muir, ed. Linnie Marsh Wolfe, 1938",
+    "notes": "Authentic Muir from his journals, published posthumously in Wolfe's John of the Mountains (1938); the entry is from around July 1890. Well documented and consistently cited with this source. NOTE: q_0824 is the same quote with 'Universe' capitalized - the corpus contains a duplicate and one of the two should be dropped.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0822",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": "My First Summer in the Sierra, John Muir, 1911",
+    "notes": "One of Muir's best-documented lines, from the journal entry dated 27 July 1869 as published in My First Summer in the Sierra (1911). Primary source confirmed and the wording here matches the standard text. This is the canonical form of the thought that q_0825 garbles.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0823",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": null,
+    "notes": "Genuine Muir, from his correspondence rather than a published book; it is reproduced in the standard Muir biographical literature (Bade's The Life and Letters of John Muir, 1924, and Wolfe's John of the Mountains, 1938). I am confident it is his but cannot confirm which volume carries it or the letter's recipient and date, so no citation is printed. Attribution strong, locus unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0824",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": "John of the Mountains: The Unpublished Journals of John Muir, ed. Linnie Marsh Wolfe, 1938",
+    "notes": "Authentic Muir journal line (c. July 1890), published in Wolfe's John of the Mountains (1938). DUPLICATE: identical to q_0821 apart from the capitalization of 'Universe'. Keep one entry only - the lowercase form in q_0821 matches the more commonly printed text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0825",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": null,
+    "notes": "The thought is Muir's but this is not his wording. It is a loose modern paraphrase of the authentic sentence in My First Summer in the Sierra (1911): 'When we try to pick out anything by itself, we find it hitched to everything else in the universe' - which the corpus already holds correctly as q_0822. The 'pull a single thread' rewording has no basis in Muir's text and also breaks grammatical agreement ('If one pulls... you'll find'). Recommend dropping this in favor of q_0822 rather than promoting a corrupted variant.",
+    "suggested_reattribution": null
+  }
+]

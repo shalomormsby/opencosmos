@@ -41,3 +41,7 @@ knowledge/incoming/
 # Misc
 *.tsbuildinfo
 .cache/
+
+# Quote validation batch inputs are regenerable from pending.jsonl; only the
+# agent outputs (the audit trail) are worth versioning.
+knowledge/quotes/_source/validation-batches/*.input.json

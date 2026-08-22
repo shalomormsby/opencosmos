@@ -1,0 +1,86 @@
+author: Rainer Maria Rilke
+author_normalized_key: rainer-maria-rilke
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1157
+    slug: null
+    text: "There are no classes in life for beginners: right away you are always asked to deal with what is most difficult."
+    category: insight
+    keywords: [life, learning, difficulties]
+    context: "Author, German"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "The Notebooks of Malte Laurids Brigge, Rainer Maria Rilke, 1910"
+      notes: "From Rilke's novel 'Die Aufzeichnungen des Malte Laurids Brigge' (1910); Malte's observation that life offers no beginners' classes and demands the hardest thing immediately. Wording here matches the common English translations (Mitchell/Norton lineage). Confident in the work, so verified, though I cannot give a page."
+      reviewed_by_human: false
+  - id: q_1158
+    slug: null
+    text: I do only want to advise you to keep growing quietly and seriously throughout your whole development; you cannot disturb it more rudely than by looking outward and expecting from outside replies to questions that only your inmost feeling in your most hushed hour can perhaps answer.
+    category: insight
+    keywords: [growth, transformation, feeling, question, answer]
+    context: "Author, German"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Letters to a Young Poet (Briefe an einen jungen Dichter), Rainer Maria Rilke, letter of 23 April 1903; published 1929, M. D. Herter Norton translation 1934"
+      notes: "From Letters to a Young Poet — the letter containing the 'ripening like a tree' passage, in which Rilke advises Kappus to grow quietly and seriously and warns against looking outward for answers. The English here is the Norton translation, whose slightly archaic syntax ('I do only want to advise you') matches. Confident in the work and the correspondence; letter number given from memory as the third."
+      reviewed_by_human: false
+  - id: q_1159
+    slug: null
+    text: "If your everyday life seems poor, don't blame it; blame yourself; admit to yourself that you are not enough of a poet to call forth its riches; because for the creator there is no poverty and no indifferent place."
+    category: insight
+    keywords: [wealth]
+    context: "Author, German"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Letters to a Young Poet (Briefe an einen jungen Dichter), Rainer Maria Rilke, first letter, Paris, 17 February 1903; published 1929"
+      notes: "From the opening letter to Franz Xaver Kappus, immediately following the 'go into yourself' advice: if everyday life seems poor, the fault lies with the poet's insufficiency, not the life. One of the most securely sourced passages in the Rilke corpus."
+      reviewed_by_human: false
+  - id: q_1161
+    slug: null
+    text: "I beg you... to have patience with every thing unresolved in your heart and try to love the questions themselves as if they were locked rooms or books written in a very foreign language. Don't search for the answers, which could not be given to you now, because you would not be able to live them. And the point is, to live everything. Live the questions now. Perhaps then, someday far in the future, you will gradually, without ever noticing it, live your way into the answer..."
+    category: insight
+    keywords: [questions, answers, life, future, time]
+    context: "Author, German"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: null
+      earliest_print_source: "Letters to a Young Poet (Briefe an einen jungen Dichter), Rainer Maria Rilke, letter of 16 July 1903, Worpswede; published 1929"
+      notes: "The 'live the questions now' passage — the single best-known paragraph in Letters to a Young Poet, from the fourth letter. The wording here is a modern English rendering (locked rooms / books in a foreign language / live your way into the answer) and the ellipses are the compiler's, but the passage is unambiguously Rilke's."
+      reviewed_by_human: false
+  - id: q_1162
+    slug: null
+    text: "Let everything happen to you, beauty and terror, just keep going. No feeling is final."
+    category: insight
+    keywords: [feeling, beauty, terror]
+    context: "Author, German"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Das Stunden-Buch (The Book of Hours), Rainer Maria Rilke, 1905; English in Rilke's Book of Hours: Love Poems to God, trans. Anita Barrows and Joanna Macy, 1996"
+      notes: "Closing lines of the poem beginning 'Gott spricht zu jedem nur, eh er ihn macht' ('God speaks to each of us as he makes us') from the Book of Hours. German: 'Lass dir Alles geschehn: Schönheit und Schrecken. / Man muss nur gehn: Kein Gefühl ist das fernste.' The familiar English wording, including 'No feeling is final', is the Barrows/Macy translation — worth noting since the line is often quoted as if bare Rilke."
+      reviewed_by_human: false

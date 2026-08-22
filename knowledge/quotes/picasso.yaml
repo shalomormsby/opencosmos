@@ -1,0 +1,22 @@
+author: Picasso
+author_normalized_key: picasso
+tradition: art
+era: null
+gender: M
+quotes:
+  - id: q_1142
+    slug: null
+    text: Art is a lie that makes us realize the truth.
+    category: creativity
+    keywords: [art, lie, realization, truth, artist]
+    context: Artist
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Pablo_Picasso"
+      earliest_print_source: "\"Picasso Speaks,\" The Arts (New York), May 1923 — statement to Marius de Zayas"
+      notes: "Genuine Picasso, from his 1923 statement published as 'Picasso Speaks' in The Arts, given to Marius de Zayas. The original runs: 'We all know that Art is not truth. Art is a lie that makes us realize truth, at least the truth that is given us to understand.' The version here is the standard compressed paraphrase ('makes us realize the truth'), so the attribution is verified even though the wording is abridged. Author field should read 'Pablo Picasso' rather than the bare surname."
+      reviewed_by_human: false

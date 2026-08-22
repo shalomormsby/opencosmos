@@ -20,3 +20,99 @@ quotes:
       earliest_print_source: "Letters of C. G. Jung: Volume I, 1906-1950 (p. 237)"
       notes: null
       reviewed_by_human: false
+  - id: q_0026
+    slug: null
+    text: The creation of something new is not accomplished by the intellect but by the play instinct.
+    category: insight
+    keywords: [creativity, creation, produtivity, innovation]
+    context: Psychology
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Psychological Types, C. G. Jung, 1921 (Collected Works vol. 6, para. 197)"
+      notes: "Genuine Jung, from the discussion of Schiller in Psychological Types. The full sentence continues \"...but by the play instinct acting from inner necessity. The creative mind plays with the objects it loves.\" The corpus text truncates \"acting from inner necessity,\" which changes the emphasis somewhat — restoring the full sentence would be more faithful. Paragraph number 197 is from memory and should be spot-checked against a print copy of CW 6."
+      reviewed_by_human: false
+  - id: q_0410
+    slug: null
+    text: "We cannot live the afternoon of life according to the program of life's morning; for what in the morning was true will in evening become a lie."
+    category: insight
+    keywords: [change]
+    context: Psychology
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Jung"
+      earliest_print_source: "\"The Stages of Life\" (1930-31), in Modern Man in Search of a Soul, Carl Jung, 1933; Collected Works vol. 8, para. 784"
+      notes: "Genuine Jung from the essay 'The Stages of Life,' delivered as a lecture around 1930 and collected in 'Modern Man in Search of a Soul' (English translation 1933); it also appears in CW 8, 'The Structure and Dynamics of the Psyche.' Standard translation reads '...for what was great in the morning will be little at evening, and what in the morning was true will at evening have become a lie.' The version here is a slightly trimmed rendering of that passage but faithful to it."
+      reviewed_by_human: false
+  - id: q_0411
+    slug: null
+    text: "All the greatest and most important problems of life are fundamentally insolvable... they can never be solved, but only outgrown. This 'outgrowth' proved on further investigation to require a new level of consciousness. Some higher or wider interest appeared on the person's horizon, and through this broadening of his or her outlook the unsolvable problem lost its urgency. It was not solved logically in its own terms but faded when confronted with a new and stronger life urge."
+    category: insight
+    keywords: [growth, life, consciousness]
+    context: Psychology
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Jung"
+      earliest_print_source: "Commentary on \"The Secret of the Golden Flower\" (1929), Carl Jung; Collected Works vol. 13, para. 18"
+      notes: "Genuine Jung, from his commentary on Richard Wilhelm's translation of 'The Secret of the Golden Flower' (1929), reprinted in CW 13, 'Alchemical Studies.' The quoted text is a lightly modernized rendering — Hull's translation has 'outgrowing' rather than 'outgrowth,' 'arose on the person's horizon' rather than 'appeared,' 'life-tendency' rather than 'life urge,' and does not contain 'his or her.' Source and substance are solid; the exact wording has drifted, so a copy-editor may want to restore the Hull text."
+      reviewed_by_human: false
+  - id: q_0412
+    slug: null
+    text: "One does not become enlightened by imagining figures of light, but by making the darkness conscious."
+    category: insight
+    keywords: [light, enlightenment, darkness, consciousness]
+    context: Psychology
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Jung"
+      earliest_print_source: "\"The Philosophical Tree\" (1945, revised 1954), Carl Jung; Collected Works vol. 13, para. 335"
+      notes: "Genuine and correctly worded. From Jung's essay 'The Philosophical Tree,' collected in CW 13, 'Alchemical Studies.' One of the few widely circulated Jung shadow-work quotes that survives checking against the primary text intact."
+      reviewed_by_human: false
+  - id: q_0413
+    slug: null
+    text: "As far as we can discern, the sole purpose of human existence is to kindle a light in the darkness of mere being."
+    category: insight
+    keywords: [purpose, light, darkness]
+    context: Psychology
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Jung"
+      earliest_print_source: "Memories, Dreams, Reflections, Carl Jung (recorded and edited by Aniela Jaffé), 1961/1963"
+      notes: "Genuine, from the late chapter on life after death in 'Memories, Dreams, Reflections' (German 1962, English translation 1963). Wording as quoted matches the Winston translation. Worth noting for the corpus that MDR is a collaboratively edited memoir rather than a work Jung wrote start to finish, but this passage is attributed to him directly."
+      reviewed_by_human: false
+  - id: q_0414
+    slug: null
+    text: "Your vision will become clear only when you can look into your own heart. Who looks outside, dreams; who looks inside, awakes."
+    category: insight
+    keywords: [vision, look, dream, heart, sleep, awaken, outside, within, clear]
+    context: Psychology
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Jung"
+      earliest_print_source: "Letter to Fanny Bowditch, 22 October 1916, in C. G. Jung Letters, Vol. 1: 1906-1950 (Princeton/Bollingen, 1973)"
+      notes: "Genuine, from a letter Jung wrote to his former analysand Fanny Bowditch in October 1916, published in the first volume of the Bollingen 'Letters.' Both sentences belong together in the original, which is unusual — most viral Jung couplets are stitched from two places. The line is sometimes challenged online, but the letter source is real and citable."
+      reviewed_by_human: false

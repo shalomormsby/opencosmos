@@ -1,10 +1,22 @@
 #!/usr/bin/env tsx
 /**
- * Stage 1 — split source jsonl into two pools:
+ * Stage 1 — the original one-time import, split source jsonl into two pools:
  *   • Embeddable records (status ∈ {verified, attributed}) → knowledge/quotes/*.yaml
  *   • Pending records (everything else) → data/quotes-pending/{pending.jsonl, pending.csv}
  *
- * Idempotent: wipes stale outputs at start so re-runs produce a clean state.
+ * ⚠ THIS SCRIPT IS RETIRED. It ran once, in May 2026, and must not run again.
+ *
+ * It rebuilds both pools from _source/quotes_normalized.jsonl, wiping whatever
+ * is there. That was harmless when the source *was* the truth. It no longer is:
+ * every quote now carries a provenance verdict, human review decisions, and
+ * promotion state that exist only in the pools — none of it in the source file.
+ * Re-running this would silently discard all of it.
+ *
+ * The pools are canonical now. New quotes enter through `pnpm quotes:add`.
+ *
+ * Kept rather than deleted because it documents how the corpus was built, and
+ * because a genuine re-import from a corrected source is imaginable. It refuses
+ * to run without --i-know-this-wipes.
  */
 
 import { mkdirSync, readdirSync, statSync, unlinkSync, writeFileSync } from 'node:fs'
@@ -77,7 +89,35 @@ function emitPendingPool(records: JsonlRecord[]) {
   writeFileSync(PENDING_CSV_PATH, emitCsv(sorted), 'utf-8')
 }
 
+function refuseUnlessForced() {
+  if (process.argv.slice(2).includes('--i-know-this-wipes')) return
+
+  console.error(`
+Refusing to run: this would destroy the current quote pools.
+
+  knowledge/quotes/*.yaml          ${statSync(KNOWLEDGE_QUOTES_DIR, { throwIfNoEntry: false })
+    ? readdirSync(KNOWLEDGE_QUOTES_DIR).filter((f) => f.endsWith('.yaml')).length + ' files'
+    : '(missing)'}
+  data/quotes-pending/pending.jsonl
+
+This script rebuilds both pools from _source/quotes_normalized.jsonl, which
+holds none of the provenance verdicts, human review decisions, or promotion
+state accumulated since the original import. All of that would be lost.
+
+The pools are the source of truth now. To add a quote:
+
+  pnpm quotes:add -- --text "..." --author "..."
+  pnpm quotes:add -- --json path/to/quotes.json
+
+If you genuinely mean to re-import from a corrected source file, commit first,
+then pass --i-know-this-wipes.
+`)
+  process.exit(1)
+}
+
 function main() {
+  refuseUnlessForced()
+
   if (!statSync(SOURCE_JSONL_PATH, { throwIfNoEntry: false })) {
     console.error(`Source not found: ${SOURCE_JSONL_PATH}`)
     process.exit(1)

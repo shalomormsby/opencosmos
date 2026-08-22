@@ -1,0 +1,38 @@
+author: Edith Wharton
+author_normalized_key: edith-wharton
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0569
+    slug: null
+    text: "There are two ways of spreading light: to be the candle or the mirror that reflects it."
+    category: insight
+    keywords: [light, mirror, reflection]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Edith_Wharton"
+      earliest_print_source: "\"Vesalius in Zurich\" (poem), Edith Wharton, 1902"
+      notes: "Authentically Wharton; the standard citation is her dramatic monologue 'Vesalius in Zurich' (1902), which I recall as the source of the candle-and-mirror lines. Confidence is high on Wharton, good but not certain on the poem and date, so this stays at 'attributed'. The line is sometimes trimmed or reworded in circulation."
+      reviewed_by_human: false
+  - id: q_0570
+    slug: null
+    text: "One can remain alive long past the usual date of disintegration if one is unafraid of change, insatiable in intellectual curiosity, interested in big things, and happy in small ways."
+    category: insight
+    keywords: [health, aging, change, fear, curiosity, happiness]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Edith_Wharton"
+      earliest_print_source: "A Backward Glance, Edith Wharton, 1934"
+      notes: "From Wharton's memoir A Backward Glance (1934), in her reflections on aging — this is the citation consistently given and it matches my recollection of the book. Confident in the source; no page verified."
+      reviewed_by_human: false

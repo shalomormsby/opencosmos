@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1407",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Vince_Lombardi",
+    "earliest_print_source": null,
+    "notes": "A pun-shaped motivational quip ('fired with enthusiasm' / 'fired with enthusiasm') that circulates almost entirely in sales and management literature. I know of no Lombardi speech, book, or contemporaneous report containing it, and Lombardi died in 1970 while the line appears to spread in business contexts later. Lombardi is a magnet for coach-flavored aphorisms he did not originate. I cannot name the true source, so no reattribution is offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1408",
+    "status": "apocryphal",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not van Gogh. The vocabulary is anachronistic and un-translatable back into his idiom: 'weekly paycheck' and 'spiritual in calling' belong to modern American self-help prose, not to the 1870s-80s Dutch/French letters to Theo. I cannot recall this passage anywhere in the collected letters, which are exhaustively indexed. It reads like a 20th-century vocation-and-calling passage that acquired a van Gogh byline. I cannot identify the real author, so no reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1409",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Vincent_van_Gogh",
+    "earliest_print_source": "Letter to Theo van Gogh, Cuesmes, summer 1880 (collected in The Letters of Vincent van Gogh)",
+    "notes": "Genuine van Gogh, from the long Cuesmes letter to Theo written in the summer of 1880 during his turn toward art. The familiar rendering is close to the published translations: someone has a great fire in his soul and nobody ever comes to warm themselves at it, and passers-by see only a little smoke at the top of the chimney. Wording varies slightly between translations, but the passage itself is well documented in the letters corpus.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1410",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Vincent_van_Gogh",
+    "earliest_print_source": "The Letters of Vincent van Gogh — letter to Theo, 1882",
+    "notes": "Consistently and, as far as I can tell, correctly sourced to the letters to Theo from the Hague period (1882), and it appears in the sourced rather than the unsourced sections of reference collections. It also matches van Gogh's actual argument in those letters about patient accumulation over inspiration. I am confident in the attribution but have not pinned the exact letter number, so I stop short of 'verified'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1411",
+    "status": "attributed_unverified",
+    "confidence": 0.18,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Vincent_van_Gogh",
+    "earliest_print_source": null,
+    "notes": "One of the most-reproduced van Gogh lines and one of the least supported. I cannot place it in the letters, and my recollection is that reference collections file it as unsourced or disputed rather than citing a letter. Its epigrammatic symmetry is unlike his actual prose, which is discursive. Popular but evidentially empty; treat as unsourced unless a letter citation surfaces.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1412",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Virginia_Woolf",
+    "earliest_print_source": "A Room of One's Own, Virginia Woolf, 1929",
+    "notes": "Genuine Woolf, from A Room of One's Own (1929), in the passage on how writers are deformed by their sensitivity to criticism and reputation. The wording quoted here matches the published text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1413",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Virginia_Woolf",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Woolf and entirely consonant with her essays on autobiography and biography, but I cannot place the exact essay, diary entry, or letter. Plausible sources include the posthumous essay collections or the autobiographical writings, and I will not name one I cannot confirm. Attribution is likely correct; the citation is missing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1414",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Virginia_Woolf",
+    "earliest_print_source": "The Diary of Virginia Woolf (also in A Writer's Diary, ed. Leonard Woolf, 1953) — mid-1920s entry",
+    "notes": "This has the compressed, self-observing cadence of the diary rather than the published essays, and my recollection places it in a mid-1920s diary entry, later reprinted in A Writer's Diary. I am confident about author and genre; I have not pinned the exact date, so I stop short of 'verified'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1415",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Voltaire",
+    "earliest_print_source": "La Bégueule, Voltaire, 1772 (also Dictionnaire philosophique, article 'Art dramatique')",
+    "notes": "Voltaire genuinely wrote 'Le mieux est l'ennemi du bien' — in the verse tale La Bégueule (1772) and in the Dictionnaire philosophique. Two caveats worth carrying: the literal sense is 'the better is the enemy of the good', and Voltaire himself presents it as the saying of an Italian sage ('Il meglio è l'inimico del bene'), so he is transmitting a proverb, not coining it. The English form given here is the standard idiomatic rendering.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1416",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Voltaire",
+    "earliest_print_source": "Le Mondain, Voltaire, 1736",
+    "notes": "Condensed from the closing line of Voltaire's poem Le Mondain (1736): 'Le paradis terrestre est où je suis' — the earthly paradise is where I am. The attribution is solid; note that the corpus text drops 'earthly', which slightly shifts the poem's worldly, anti-ascetic joke toward a spiritual reading.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1417",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Stone did use and promote this maxim — it is central to Success Through a Positive Mental Attitude (1960, with Napoleon Hill) and to his later books — but the core formula descends from Napoleon Hill's 'every adversity, every failure, every heartache carries with it the seed of an equal or greater benefit' (Think and Grow Rich, 1937). The framing sentence here reads like Stone quoting the maxim rather than coining it. Attribution to Stone is defensible; the underlying idea is Hill's, so I have not pinned a print source for this exact sentence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1418",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/W._Somerset_Maugham",
+    "earliest_print_source": "The Summing Up, W. Somerset Maugham, 1938",
+    "notes": "Genuine Maugham, from The Summing Up (1938), in his reflections on literary fame and the people it visits. The sentence structure and the contrarian observation are characteristic and I recall it in that book specifically.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1419",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/W._Somerset_Maugham",
+    "earliest_print_source": null,
+    "notes": "Circulates with competing attributions. The closely parallel 'only the mediocre are always at their best' is widely attributed to Jean Giraudoux, and variants appear under Maugham and other early-20th-century wits. I cannot locate the line in Maugham's own texts. Genuine attribution uncertainty rather than a clear misattribution, so no reattribution is offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1420",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Whitman",
+    "earliest_print_source": "'Miracles', Leaves of Grass, Walt Whitman (poem first published 1856)",
+    "notes": "Genuine Whitman, from the poem 'Miracles' in Leaves of Grass: 'To me every hour of the light and dark is a miracle, / Every cubic inch of space is a miracle.' The quoted text matches the poem apart from line breaks rendered as sentences.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1421",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Whitman",
+    "earliest_print_source": "Preface to Leaves of Grass, Walt Whitman, 1855",
+    "notes": "From the 1855 Preface to Leaves of Grass, in the celebrated series of imperatives ('re-examine all you have been told at school or church or in any book, dismiss whatever insults your own soul'). Note the original reads 'your own soul'; the corpus text drops 'own', a small but real deviation from the printed line.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1422",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Whitman",
+    "earliest_print_source": "'Song of Myself', section 31, Leaves of Grass, Walt Whitman",
+    "notes": "Genuine Whitman, opening line of section 31 of 'Song of Myself': 'I believe a leaf of grass is no less than the journey-work of the stars.' The corpus text inserts 'that' after 'believe', which is a common quotation variant but not the printed wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1423",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Whitman",
+    "earliest_print_source": "'Song of the Open Road', Leaves of Grass, Walt Whitman (first published 1856)",
+    "notes": "Genuine Whitman, from the late sections of 'Song of the Open Road'. One transcription error to fix: the poem reads 'All parts away for the progress of souls', not 'All parts way'. Line breaks in the corpus text also do not match the poem's lineation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1424",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Whitman",
+    "earliest_print_source": "'Song of Myself', section 1, Leaves of Grass, Walt Whitman",
+    "notes": "The idea and the author are certainly Whitman, but the wording is corrupted. The printed line, in section 1 of 'Song of Myself', is 'For every atom belonging to me as good belongs to you' — spoken by the poet to the reader. The corpus version reverses the direction and flattens 'as good belongs' into 'equally belongs'. Recommend replacing with the canonical wording before promotion; confidence is held below the bar because what is in the corpus is not what Whitman wrote.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1425",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Walter Anderson, the Parade magazine editor and author of self-development books in the 1990s. My best guess is that it comes from The Confidence Course (1997) or a related Parade column, but I cannot confirm which, so I leave the print source null rather than guess a title into the record. Author attribution is probably right; sourcing is thin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1426",
+    "status": "attributed_unverified",
+    "confidence": 0.12,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this quote or identify which Walter Cooper is meant — the name is shared by several people (a chemist, a broadcaster, others) and none is a figure I associate with devotional or inspirational writing. The prose is generic contemporary spiritual-motivational writing of the kind that circulates in anthologies and newsletters without provenance. Honest answer: unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1427",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Walter Starcke was a real New Thought author (The Ultimate Revolution, The Third Appearance, It's All God), and this aphorism is consistent with his subject matter, so the attribution is at least plausible. But I cannot locate the line in any of his books and know it only as a free-floating quotation. Note the sentiment is a commonplace with older analogues (Tillich's 'ultimate concern', among others), which makes independent origination easy and attribution weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1428",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": null,
+    "earliest_print_source": "On Becoming a Leader, Warren Bennis, 1989",
+    "notes": "I recall this passage distinctly as Bennis, including the parenthetical etymological aside about 'authentic' and 'author' that usually accompanies it, and I place it in On Becoming a Leader (1989), his central statement on self-invention as the ground of leadership. I have not pinned the chapter and cannot rule out one of his later books or an essay reprint, so confidence sits below the verified band.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1429",
+    "status": "attributed",
+    "confidence": 0.68,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Washington_Irving",
+    "earliest_print_source": null,
+    "notes": "The diction — 'spreading itself like oil over the troubled sea of thought' — is unmistakably early-19th-century and entirely characteristic of Irving's sketch essays, and the attribution is consistent wherever the line appears. But I cannot pin which collection it comes from (The Sketch Book, Bracebridge Hall, and Wolfert's Roost are all plausible), so I leave the print source null rather than guess a title.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1430",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wayne_Dyer",
+    "earliest_print_source": null,
+    "notes": "Idiomatically Dyer — the ego-versus-acceptance framing is his standard vocabulary across decades of books and talks — but I cannot locate the sentence in a specific book, and much of what circulates under his name comes from unrecorded lectures or from paraphrase. Plausible author, no source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1431",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Wayne_Dyer",
+    "earliest_print_source": null,
+    "notes": "The closing phrase 'the journey toward real magic' points strongly to Dyer's Real Magic: Creating Miracles in Everyday Life (1992), and the passage's sequence — hold the miracle in mind, get the vision, suspend disbelief — matches that book's method. That is inference from the title phrase rather than recall of the specific page, so I leave the print source null and hold confidence below the promotion bar.",
+    "suggested_reattribution": null
+  }
+]

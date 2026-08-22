@@ -1,0 +1,22 @@
+author: Edward Everett Hale
+author_normalized_key: edward-everett-hale
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0572
+    slug: null
+    text: "I am only one, but still I am one; I cannot do everything; but still I can do something; and because I cannot do everything, I will not refuse to do the something that I can do."
+    category: insight
+    keywords: [action]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Edward_Everett_Hale"
+      earliest_print_source: null
+      notes: Genuinely Hale and long associated with him as the credo of his Lend a Hand movement; it is standard in reference collections with consistent attribution and appears in nineteenth-century printings. I cannot pin the earliest appearance — candidates include his Lend a Hand writings and the Ten Times One Is Ten circle material — so no print source is asserted. Sometimes rendered in a slightly compressed form.
+      reviewed_by_human: false

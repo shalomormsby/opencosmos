@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0076",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Henry_David_Thoreau",
+    "earliest_print_source": "Journal of Henry David Thoreau, entry of 25 July 1839 (first published in The Writings of Henry David Thoreau: Journal, 1906)",
+    "notes": "Genuine Thoreau. The line appears in his Journal in an 1839 entry on love and friendship, and is carried in the standard Journal edition and on Thoreau's Wikiquote page as a sourced quotation. I am recalling the July 1839 date from memory and have not re-checked it against the printed Journal, so the date carries slightly more uncertainty than the attribution itself.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0078",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walden",
+    "earliest_print_source": "Walden; or, Life in the Woods, Henry David Thoreau, 1854, ch. 2 (\"Where I Lived, and What I Lived For\")",
+    "notes": "Both fragments are genuine and come from the same famous passage in Walden ch. 2, but the ellipsis compresses several sentences. Thoreau's text runs: 'Our life is frittered away by detail... Simplicity, simplicity, simplicity! I say, let your affairs be as two or three... Simplify, simplify.' The condensation is faithful in sense but is not a contiguous quotation; if the corpus wants an exact citation, either restore the full passage or quote 'Simplify, simplify' on its own.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0079",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ralph_Waldo_Emerson",
+    "earliest_print_source": "Meditations in Wall Street, Henry Stanley Haskins, 1940",
+    "notes": "The first sentence is a well-documented misattribution. Quote Investigator traced 'What lies behind us and what lies before us are tiny matters compared to what lies within us' to Henry Stanley Haskins's anonymously published Meditations in Wall Street (1940); it is usually pinned on Emerson, sometimes on Thoreau or Oliver Wendell Holmes, and appears in the Misattributed section of Emerson's Wikiquote page. The second sentence ('And when you bring what is within out into the world, miracles happen') is a later accretion with no source at all — it is not in Haskins and not in Thoreau. The author field's hedge, 'Transcendentalist insight inspired by Henry David Thoreau,' is an invented byline; nothing here is Thoreau's. Recommend rejecting rather than reattributing, since the composite sentence as quoted matches no single source.",
+    "suggested_reattribution": "Henry Stanley Haskins (first sentence only; second sentence has no known source)"
+  },
+  {
+    "id": "q_0080",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Socrates",
+    "earliest_print_source": "Plato, Apology 38a (c. 399–390 BCE)",
+    "notes": "Socrates' words as reported by Plato at his trial, Apology 38a: 'ho de anexetastos bios ou biotos anthropoi' — the unexamined life is not worth living for a human being. Standard, uncontested, and the single best-sourced Socrates quotation. Strictly speaking it is Plato's rendering of Socrates, who left no writings, but the attribution convention is universal.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0081",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This exact English sentence is a modern aphorism, not a translation of anything in Plato or Xenophon. The underlying idea is genuinely Socratic — the paradox 'no one errs willingly' (oudeis hekon hamartanei), argued in Protagoras 345d-e and developed in Meno and Gorgias, that wrongdoing is a form of ignorance rather than deliberate choice. But the compressed one-liner phrasing is contemporary and I cannot place who first put it this way. Defensible as a paraphrase clearly labeled as such; not defensible as a Socrates quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0083",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Marcus_Aurelius",
+    "earliest_print_source": "Meditations, Marcus Aurelius, Book 2.11; this English wording from Gregory Hays's translation (Modern Library, 2002)",
+    "notes": "Genuine, from Meditations 2.11. The crisp modern phrasing is specifically Gregory Hays's 2002 translation; older translations render it very differently (Long: 'Since it is possible that thou mayest depart from life this very moment, regulate every act and thought accordingly'). Worth crediting the translator if the corpus surfaces translation credits.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0084",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Shunryu_Suzuki",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Shunryu Suzuki and, to my recollection, drawn from Zen Mind, Beginner's Mind (Weatherhill, 1970), where the theme that practice is not preparation for a later attainment is central. I cannot confirm the chapter or page from memory, and the two sentences may be a condensation of a longer passage rather than a contiguous quotation, so I am leaving the print source null rather than asserting a locus I cannot check. The attribution itself is unlikely to be wrong; the citation is what is missing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0085",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "One of the most persistent Churchill misattributions. The International Churchill Society lists it among quotes falsely attributed to him: it appears nowhere in his speeches, books, or recorded remarks, and Churchill's own Wikiquote page files it under Misattributed. Variants of the underlying saying ('success is never final and failure never fatal') circulated in American motivational, business, and sportswriting from roughly the late 1930s onward, with no consistent author; the 'courage to continue' clause appears to be a later addition. I cannot identify a genuine originator, so I am not proposing a reattribution. Should not go live under Churchill's name.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0086",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely circulated as Picasso, almost always without any citation, and I know of no primary source — no interview, letter, or recorded remark. Picasso is a moderate misattribution magnet for epigrams about art and time. The line's idiom feels like late-20th-century American self-help/productivity writing rather than a translation from Picasso's French or Spanish, which further weakens the attribution. Honest answer: origin unknown, Picasso unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0087",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+    "earliest_print_source": "De Brevitate Vitae (On the Shortness of Life), Seneca, c. 49 CE, ch. 14; this English wording from C. D. N. Costa's translation (Penguin, 1997)",
+    "notes": "Genuine and correctly transcribed. This is the opening of De Brevitate Vitae 14, Seneca's argument that the philosopher annexes all past ages to his own lifetime. The English is C. D. N. Costa's Penguin translation, whose distinctive phrasing ('they annex every age to theirs', 'in loftiness of mind to pass beyond the narrow confines of human weakness') matches this text closely. Note the corpus context field says 'Ancient Greek' — Seneca was Roman and wrote in Latin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0088",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Cicero",
+    "earliest_print_source": "Pro Plancio, Cicero, 54 BCE, §80",
+    "notes": "Genuine Cicero, from the defense speech Pro Plancio: 'haec enim est una virtus non solum maxima, sed etiam mater virtutum omnium reliquarum' — this is the one virtue that is not only greatest but the parent of all the rest, said of gratitude. The English is the standard rendering found in quotation dictionaries. Section number 80 is from memory. Note the corpus context field says 'Ancient Greek'; Cicero was Roman.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0089",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The sentiment is squarely Ciceronian and matches the central argument of De Officiis Book III — that nothing dishonorable can genuinely be expedient, and that apparent utility gained through wrongdoing is not utility at all. But I cannot pin this English sentence to a specific passage, and I am not confident it renders a single Latin line rather than summarizing the argument. Plausible but uncited; do not promote without a checked locus in De Officiis. Corpus context field again wrongly lists Cicero as Greek.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0091",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Plato",
+    "earliest_print_source": null,
+    "notes": "I know of no such sentence anywhere in the Platonic corpus, and the 'an hour of X versus a year of Y' construction is a modern rhetorical shape, not a Greek one. It is sometimes defended as a gloss on Republic 536e-537a, where Socrates says children should be taught through play rather than compulsion — but that passage is about pedagogy, not about reading character, so the gloss does not hold. Plato is a heavy misattribution magnet for aphorisms of this kind. No genuine originator identifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0092",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": null,
+    "notes": "A modern condensation rather than a translation. The idea is authentically Epictetan and comes from Encheiridion 46, where he says not to call yourself a philosopher or talk about your principles among laymen, but to act on them — with the image of sheep that do not bring up grass to show the shepherd how much they ate, but produce wool and milk instead. No standard translation (Long, Higginson, Oldfather, Hard) contains this two-sentence English form; it reads like the loose contemporary paraphrase tradition around Epictetus. Safe to use if labeled a paraphrase of Encheiridion 46; not safe as a direct quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0093",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": "Encheiridion (The Manual), Epictetus, c. 125 CE, §5",
+    "notes": "The locus is certain: Encheiridion 5, the most quoted line in the whole handbook. Standard translations run 'Men are disturbed not by the things which happen, but by the opinions about the things' (Long) or 'It is not events that disturb people, it is their judgements concerning them' (Hard). The wording here is a loose modern rendering rather than any established translation, so the attribution is solid while the exact phrasing is editorial. Consider aligning the text with a named translation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0094",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+    "earliest_print_source": "Epistulae Morales ad Lucilium (Moral Letters to Lucilius), Seneca, Letter 13.4 (c. 65 CE)",
+    "notes": "Genuine, from Letter 13, 'On Groundless Fears'. Gummere's Loeb translation reads: 'There are more things likely to frighten us than there are to crush us; we suffer more often in imagination than in reality.' The quoted form drops 'often', which slightly strengthens the claim but does not distort it. Well documented and correctly attributed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0097",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Marcus_Aurelius",
+    "earliest_print_source": "Meditations, Marcus Aurelius, Book 11.18 (c. 170–180 CE)",
+    "notes": "Genuine, from the long passage in Meditations 11.18 on how to respond to people who wrong you, which closes on the claim that gentleness or kindness cannot be defeated when it is sincere — Hays renders it 'Kindness is invincible, provided it's sincere'. Translations split between 'gentleness' and 'kindness', so the three-word form here is a compression of a conditional sentence: Marcus qualifies it with 'if it be genuine'. Attribution is sound; the aphoristic trimming drops that qualifier.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0099",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+    "earliest_print_source": "De Tranquillitate Animi (On Tranquility of Mind), Seneca, c. 60 CE, §15",
+    "notes": "Genuine Seneca, from the section of On Tranquility of Mind comparing Democritus, who laughed at human folly, with Heraclitus, who wept over it — Seneca sides with Democritus and says it better befits a man to laugh at life than to lament it. The English matches the Basore Loeb rendering closely. Section 15 is from memory; the work and the argument are certain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0103",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": null,
+    "notes": "Two separate issues. First, the author name is misspelled — 'Epectitus' should be 'Epictetus'. Second, this is a modern paraphrase, not a translation. The thought corresponds to Encheiridion 20: it is not the man who reviles you who insults you but your own judgement that the thing is insulting, so when someone provokes you it is your own opinion that has provoked you. The word 'complicit' and the whole register belong to the contemporary loose-paraphrase tradition around Epictetus (Sharon Lebell's The Art of Living, 1995, popularized renderings of exactly this kind), not to Long, Oldfather, or Hard. Usable if labeled a paraphrase of Encheiridion 20.",
+    "suggested_reattribution": "Epictetus (spelling correction only, not a change of author)"
+  },
+  {
+    "id": "q_0104",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": null,
+    "notes": "Attributed to Epictetus consistently in English quotation dictionaries going back to the nineteenth century, and the theme is the backbone of Discourses Book IV.1 ('On Freedom'), where he argues that the free man is the one who lives as he wishes and is enslaved by his own desires if by nothing else. But I cannot match this sentence to a specific passage, and the aphorism is close enough to Seneca's 'nemo liber est qui corpori servit' (Letter 92) that the two may have cross-contaminated in the quotation tradition. Plausible and old, but uncited; do not promote without a checked locus.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0105",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": "Encheiridion (The Manual), Epictetus, c. 125 CE, §8",
+    "notes": "Genuine, from Encheiridion 8, one of the best-known lines in the handbook: do not seek to have events happen as you wish, but wish them to happen as they do, and your life will go well. The phrasing here is a variant translation rather than the standard Long or Hard wording, but it renders the same sentence and the locus is not in doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0107",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot match this to any chreia in Diogenes Laertius Book VI, which is the main source for sayings of Diogenes of Sinope, nor to any other ancient collection I know. The sentiment — that an insult disgraces the person who delivers it rather than its target — is a commonplace across ancient moral philosophy (compare Seneca's De Constantia Sapientis and Epictetus, Encheiridion 20), which makes a confident attribution to any one figure unsafe. Two further problems: 'infers' is almost certainly a corruption of 'offers' or 'utters', and the corpus context field labels Diogenes a Stoic when he was the founding Cynic. No true originator identifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0108",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epicurus",
+    "earliest_print_source": "Vatican Sayings (Sententiae Vaticanae) 52, Epicurus (collection preserved in a Vatican Greek manuscript, first published 1888)",
+    "notes": "Genuine Epicurus, Vatican Sayings 52 — commonly translated 'Friendship dances around the world, announcing to each of us that we must awaken to happiness' or 'bidding us all to awaken to the recognition of blessedness'. The wording here is a standard variant translation. One correction needed: the author is spelled 'Epicurius' in the input; it should be 'Epicurus'. The context field labels him Epicurean and Greek, which is right.",
+    "suggested_reattribution": "Epicurus (spelling correction only, not a change of author)"
+  },
+  {
+    "id": "q_0109",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Schopenhauer",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Schopenhauer and, to my recollection, drawn from the Aphorisms on the Wisdom of Life in Parerga und Paralipomena (1851), whose argument that what a man is in himself contributes far more to his happiness than what he has or how he is regarded matches this line exactly. I cannot confirm the chapter or the translator from memory, and the crisp English balance of 'difficult... impossible' may be a translator's or anthologist's polish rather than a literal rendering, so I am leaving the print source null. Attribution likely correct, citation unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0110",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Schopenhauer",
+    "earliest_print_source": null,
+    "notes": "Attributed to Schopenhauer with unusual consistency, largely because Erwin Schrodinger quoted it in his own work and gave it wide currency in scientific writing. I believe the attribution is genuine, but I cannot place the primary work — it is usually said to come from Schopenhauer's manuscript remains (Nachlass) rather than from a published book, which is exactly the kind of claim that gets repeated without checking. Also frequently seen in a shorter form ('The task is not to see what no one has yet seen, but to think what nobody has yet thought about what everybody sees'). Sound enough to keep, not sound enough to present as sourced.",
+    "suggested_reattribution": null
+  }
+]

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0525",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently circulated as Doc Childre, founder of HeartMath, and the vocabulary (creating the next moment from what you feel and think, 'reprogram our cells') matches HeartMath's house language. I cannot place it in a specific title from memory — plausibly The HeartMath Solution (1999) or one of the Transforming... series, but I will not name a book I cannot confirm. Attribution to Childre is plausible; the source is unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0526",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The Childre & Martin co-byline points to The HeartMath Solution (HarperSanFrancisco, 1999), effectively their only widely read joint book, and the content (heart-managed emotions producing 'new intelligence') is that book's central thesis. I can recall the thesis but not this sentence verbatim in place, so I am leaving the print source null rather than assigning a page-level citation I cannot support.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0527",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same posture as q_0526. 'Appreciation' as a named HeartMath 'power tool' with the financial-appreciation wordplay is characteristic of The HeartMath Solution (1999), which devotes a chapter to appreciation. Consistent with the attributed authors but not verified against the text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0528",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates as Childre & Martin and reads like the appreciation material in The HeartMath Solution (1999). 'Discord' vs. 'coherence' is HeartMath vocabulary. No specific passage I can confirm; treated as plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0529",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This line does not read like any Dogen translation I know; it reads like Richard B. Clarke's English rendering of the Hsin Hsin Ming (Xinxin Ming, 'Verses on the Faith Mind') ascribed to Sengcan, the Third Chan Patriarch, which contains a closely parallel line about being in harmony with the Way and therefore without anxiety about imperfection. The Dogen ascription appears to be an internet-era drift. I am confident the Dogen attribution is weak; moderately (not fully) confident about the Sengcan source, so treat the reattribution as a lead to check rather than a settled fact.",
+    "suggested_reattribution": "Sengcan (Seng-ts'an), Hsin Hsin Ming, as rendered by Richard B. Clarke — needs confirmation"
+  },
+  {
+    "id": "q_0530",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dogen",
+    "earliest_print_source": "Shobogenzo, 'Genjokoan' (1233), Dogen; English as in Kazuaki Tanahashi (ed.), Moon in a Dewdrop, 1985",
+    "notes": "This is the most famous passage in Dogen — the opening of Genjokoan in the Shobogenzo, composed 1233. The English here tracks the Tanahashi/Aitken rendering nearly word for word ('actualized by the myriad things', 'no trace of realization remains and this no-trace continues endlessly'); some editions read 'enlightenment' for 'realization'. Attribution is secure; only the translator credit is unstated in the record.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0531",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in the Shobogenzo or any Dogen text I know, and the diction is wrong for him: 'nothing inherently exists' is Madhyamaka/Yogacara textbook phrasing from modern Buddhist-studies English, not thirteenth-century Soto Zen as it comes into English. The trailing ellipsis suggests it was clipped from a secondary source — possibly a modern teacher's commentary that was later collapsed onto Dogen's name. No credible attribution available.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0532",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Zen saying' is a non-attribution — it names a genre, not a source. I do not recognize this as a classical Chan/Zen line from any koan collection, the Zenrin Kushu, or a standard anthology; the phrasing is modern English aphorism. Honest answer: origin unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0533",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The vocabulary is unmistakably don Miguel Ruiz — self-abuse, self-rejection, the internalized image of perfection are the load-bearing terms of his Toltec framework — and the attribution circulates consistently. I believe it is from either The Four Agreements (1997) or The Mastery of Love (1999) and cannot resolve which from memory, so the print source stays null. Author attribution strong; source unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0534",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Ruiz's idiom ('you are the force that is life', heart in communion with soul, head-versus-heart resistance) and consistently attributed to him; the content is closest to The Mastery of Love (1999). I cannot confirm the book or passage, so the citation is left null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0535",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Emotional Design: Why We Love (or Hate) Everyday Things, Donald A. Norman, 2004",
+    "notes": "This is Norman's own summary of the turn he made from The Design of Everyday Things to Emotional Design, and I recall it from the front matter of Emotional Design (2004); closely related phrasing appears in his 2002 Interactions essay 'Emotion and Design: Attractive Things Work Better'. Confident in author and book; page not verified, and it is possible the earliest print instance is the 2002 essay rather than the book.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0536",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Riso and Hudson co-wrote only Enneagram books, and this is a signature Riso/Hudson warning about spiritual bypassing and the ego's self-flattery about its own level of development. Most likely The Wisdom of the Enneagram (1999); I cannot confirm the volume or page, so the citation is left null. Author-pair attribution is solid.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0537",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dorothea_Lange",
+    "earliest_print_source": null,
+    "notes": "A well-established Lange line, quoted consistently in photography literature and exhibition material about her; it matches her documented views on seeing as a discipline prior to the shutter. I cannot name the first print appearance — it is usually cited to interviews and to posthumous collections such as Dorothea Lange: Photographs of a Lifetime (1982) — so the source stays null.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0539",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Fyodor_Dostoyevsky",
+    "earliest_print_source": "The Brothers Karamazov (1880), Book V, ch. 5 'The Grand Inquisitor'; Constance Garnett translation",
+    "notes": "The Grand Inquisitor speaks these lines to the silent Christ. The English is Garnett's. Note for the record that this is a character's argument, and a deliberately corrosive one — the Inquisitor is making the case that people will trade freedom for bread and certainty — not Dostoevsky in his own voice. Attribution to the novel is certain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0540",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Fyodor_Dostoyevsky",
+    "earliest_print_source": "The Brothers Karamazov (1880), Book XI, ch. 9 'The Devil. Ivan Fyodorovich's Nightmare'; Constance Garnett translation",
+    "notes": "Spoken by the devil in Ivan's hallucination, defending suffering as what keeps existence from becoming 'an endless church service... holy, but tedious.' I am confident of the novel and the chapter; wording varies slightly across translations ('what would be the pleasure of it'). Important context: the speaker is the devil, so quoting it as Dostoevsky's sincere view misreads the scene.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0541",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates widely on quotation sites credited to 'Doug King' with no identifying detail — no dates, no work, no discipline. I cannot identify the person or any publication. This is the profile of an aphorism whose attribution is an artifact of quote-site copying. Honest answer: unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0542",
+    "status": "attributed",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Douglas_Adams",
+    "earliest_print_source": "The Salmon of Doubt: Hitchhiking the Galaxy One Last Time, Douglas Adams, 2002 (posthumous)",
+    "notes": "Genuinely Adams — he used the line repeatedly in life and it appears in the posthumous Salmon of Doubt. The canonical wording is 'I love deadlines. I love the whooshing noise they make as they go by.' The version here ('I like the whooshing sound... as they fly by') is the common corrupted variant. Recommend restoring the canonical wording before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0543",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Douglas_Adams",
+    "earliest_print_source": "The Hitchhiker's Guide to the Galaxy, Douglas Adams, 1979, ch. 23",
+    "notes": "The dolphin passage from the Hitchhiker's Guide novel (1979), also present in the radio series material. Text matches the published wording closely. Attribution certain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0544",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Schweitzer",
+    "earliest_print_source": null,
+    "notes": "This is a genuine expression of Schweitzer's Reverence for Life (Ehrfurcht vor dem Leben) ethic and is attributed to him consistently in the ethics and animal-welfare literature, unlike the motivational lines attached to his name. I recall it in connection with The Philosophy of Civilization / Civilization and Ethics (1923) but cannot confirm the volume or the German original, so the citation is left null. Author attribution strong; exact source unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0545",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Schweitzer",
+    "earliest_print_source": null,
+    "notes": "This is a known Schweitzer magnet-quote and I do not believe it is his. It has no counterpart in his theological, medical, or ethical writing, its register is late-twentieth-century American motivational literature, and the Schweitzer ascription appears only in that literature — Wikiquote carries it in the misattributed/unsourced section and Quote Investigator has examined the saying without finding support in Schweitzer. I do not reliably know who originated it (it spread through business and self-help speaking in the 1980s-90s), so I am leaving the reattribution null rather than guessing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0546",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Magic of Thinking Big, David J. Schwartz, 1959",
+    "notes": "This is Schwartz's thesis statement from the opening chapter of The Magic of Thinking Big (1959) — 'Believe it can be done' is the book's framing formula and the 'believing a solution paves the way to solution' line is quoted from it routinely. Confident in book and date; page not verified. Note the byline should be David J. Schwartz, not 'Dr. David Schwartz'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0547",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Denis Waitley with reasonable consistency and it fits his material in The Psychology of Winning (1979) and Seeds of Greatness (1983). I cannot pin the book, and this genre of two-choices aphorism circulates loosely enough that I would not rule out an earlier source. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0548",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I know this paragraph as William Arthur Ward, whose widely reprinted aphorisms include 'Failure should be our teacher, not our undertaker' and 'Failure is delay, not defeat. It is a temporary detour, not a dead end.' The Waitley ascription likely arises because Waitley used a similar detour/dead-end line in his own speaking, letting the two authors' material blend on quote sites. Confident the Ward version predates and matches more exactly; not certain enough to name a specific Ward collection, so no citation given.",
+    "suggested_reattribution": "William Arthur Ward"
+  },
+  {
+    "id": "q_0549",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The closing sentence — success as 'the certain knowledge that you have become yourself, the person you were meant to be from all time' — is a signature George Sheehan line, and the doctor's-eye details (esteem of colleagues, appreciation of patients) fit him as a cardiologist-writer. Most likely from Running & Being (1978) or Personal Best (1989); I cannot confirm which, so the source is null. Also note a transcription error in the stored text: 'worn on a watch of hung on the wall' should read 'or hung on the wall'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0550",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Koichi Kawana (1930-1990), the Japanese-American architect and designer of several major American Japanese gardens, is credited with this definition in Japanese-garden and design literature, and the attribution is consistent. Caution on one detail: the parenthetical '(kanso)' looks like a later editorial gloss added by design writers popularizing the seven principles of Zen aesthetics — Garr Reynolds' Presentation Zen material is the likely vector — rather than Kawana's own wording. I cannot name the original publication or lecture, so no citation is given.",
+    "suggested_reattribution": null
+  }
+]

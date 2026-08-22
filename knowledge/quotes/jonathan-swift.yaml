@@ -1,0 +1,22 @@
+author: Jonathan Swift
+author_normalized_key: jonathan-swift
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0837
+    slug: null
+    text: Vision is the art of seeing things invisible.
+    category: insight
+    keywords: [vision, invisible]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Jonathan_Swift"
+      earliest_print_source: "Thoughts on Various Subjects, Moral and Diverting, Jonathan Swift, in Miscellanies (1711)"
+      notes: "A genuine Swift aphorism from Thoughts on Various Subjects, the collection of maxims first printed in the 1711 Miscellanies. The wording is stable across editions and matches the corpus text exactly. Confident on the work; slightly less so on which printing counts as earliest, since Swift's Thoughts appeared in more than one gathering."
+      reviewed_by_human: false

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0111",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Schopenhauer",
+    "earliest_print_source": "The World as Will and Representation, Vol. II, Ch. 31 ('On Genius'), Arthur Schopenhauer, 1844",
+    "notes": "Genuine Schopenhauer. The German original runs roughly 'Das Talent gleicht dem Schuetzen, der ein Ziel trifft, welches die Uebrigen nicht erreichen koennen; das Genie dem, der eines trifft, bis zu welchem sie nicht einmal zu sehen vermoegen' — from the supplementary volume of Die Welt als Wille und Vorstellung (1844), chapter on genius. The English wording here is the standard condensed rendering rather than a literal translation of Payne or Haldane/Kemp, so the sense is Schopenhauer's but the phrasing is a popular paraphrase. Attribution itself is not in doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0112",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Lennon is the weakest of the three candidate attributions. The saying is far more commonly credited to Yoko Ono, and it drifted onto Lennon posthumously the way many Ono lines did. A closely parallel and earlier documented line belongs to Dom Helder Camara — 'When we are dreaming alone it is only a dream. When we are dreaming with others, it is the beginning of reality' — from The Desert Is Fertile (1974). I cannot confirm from memory whether Ono's version predates or derives from Camara's, so I am not asserting a print source. What I am confident about is that the John Lennon attribution has no support I know of.",
+    "suggested_reattribution": "Yoko Ono"
+  },
+  {
+    "id": "q_0113",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ram_Dass",
+    "earliest_print_source": null,
+    "notes": "Consistently and exclusively attributed to Ram Dass, with no competing claimant I am aware of, and entirely idiomatic of his teaching voice. Like much of his circulating material it appears to come from recorded talks and satsang transcripts rather than a book I can name, so I cannot give a print citation. Attribution plausible-to-likely; source unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0114",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Margaret_Mead",
+    "earliest_print_source": null,
+    "notes": "The famous case of an unlocatable attribution. The Institute for Intercultural Studies, which Mead herself founded, stated that it could not locate the quotation in her published writing, while noting the sentiment is consistent with her views and may come from an interview or informal remark. No primary source has ever been produced despite decades of searching. Author is plausible; documentation is absent.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0115",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates as Merton, usually in the form 'A man who fails well is greater than one who succeeds badly.' The thought is congruent with Merton's writing on failure and false success, and I know of no rival attribution, but I cannot place it in a specific book — I would be guessing between No Man Is an Island, The Sign of Jonas, and the essay collections, so I am naming none of them.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0116",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Merton",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Merton and characteristic of his writing on dialogue and mutual truth. I do not have a reliable memory of which volume it comes from — Conjectures of a Guilty Bystander is my hunch but not a knowledge claim, so I am leaving the print source null rather than risk laundering a guess into a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0117",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Merton",
+    "earliest_print_source": null,
+    "notes": "Genuine Merton in substance and phrasing; the interdependence-as-ground-of-compassion theme runs through his late Buddhist-facing work, and the wording matches his prose closely enough that I doubt it is a paraphrase. Commonly cited to Conjectures of a Guilty Bystander (1966), and sometimes to the Asian journal material, but I cannot resolve between them from memory, so no print source asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0118",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thomas_Merton",
+    "earliest_print_source": "No Man Is an Island, Thomas Merton, 1955",
+    "notes": "One of the best-documented Merton passages. The standard citation in scholarly and popular references alike is No Man Is an Island (Harcourt, Brace, 1955), from the opening material on love, and the quoted text matches Merton's published wording. I am confident in book and year from memory of the standard reference; I have not verified a page number and am not supplying one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0119",
+    "status": "verified",
+    "confidence": 0.97,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_Blake",
+    "earliest_print_source": "Auguries of Innocence, William Blake, written c. 1803, first published 1863 in Gilchrist's Life of William Blake",
+    "notes": "The opening quatrain of Auguries of Innocence, from the Pickering Manuscript. Attribution is beyond dispute. Two transcription defects in the corpus text should be fixed before publication: 'infintiy' is a typo for 'infinity', and Blake's text reads 'a Wild Flower' (two words) not 'a wildflower'. Blake's line breaks are four lines, not two; the canonical text is 'To see a World in a Grain of Sand / And a Heaven in a Wild Flower, / Hold Infinity in the palm of your hand / And Eternity in an hour.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0120",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "The author is right but the wording is a modern compression. Churchill's documented line, from a wartime minute, runs: 'The maxim Nothing avails but perfection may be spelt shorter — Paralysis.' That is the genuine article; 'Perfectionism spells paralysis' is a paraphrase that circulates in business and productivity writing. I recall the minute being reproduced in the appendices of The Second World War but cannot pin the volume, so no print source asserted. Also note the author field misspells the name — it should be 'Winston Churchill', not 'Churchil'. Churchill is a known misattribution magnet, but here the underlying attribution is sound; only the phrasing is secondhand.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0121",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Epictetus",
+    "earliest_print_source": "Discourses, Book I, Ch. 2, Epictetus (recorded by Arrian, c. 108 CE)",
+    "notes": "This tracks a real passage in Discourses I.2, where Epictetus argues from the athlete's example that we do not abandon a discipline out of despair of ever being the best at it. Translations vary considerably and the corpus wording matches no standard translation I know (Long, Oldfather, Hard), so treat it as a loose modern rendering rather than a quotation. Confidence is in the attribution to Epictetus, which I hold as strong; the exact English is not his translator's. Also note the author field misspells the name — it should be 'Epictetus', not 'Epectitus'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0122",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Andy_Warhol",
+    "earliest_print_source": null,
+    "notes": "Very widely circulated as Warhol, almost always without a citation. I cannot place it in The Philosophy of Andy Warhol (1975), POPism (1980), or the published diaries, which is where a line this quotable would be expected to sit. The register also reads more like contemporary creative-advice writing than Warhol's clipped, deadpan speech. I do not have evidence identifying a true author, so I am not proposing a reattribution — but the attribution should be treated as unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0123",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "'The Guts of a New Machine', Rob Walker, The New York Times Magazine, 30 November 2003",
+    "notes": "Jobs said this to Rob Walker in the New York Times Magazine piece on the iPod. The fuller passage runs 'Most people make the mistake of thinking design is what it looks like... That's not what we think design is. It's not just what it looks like and feels like. Design is how it works.' The condensed form quoted here is faithful to the sense and is the version that entered general circulation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0124",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Jobs and consistent with his stated posture on killing products quickly. My recollection places it in an interview rather than a speech — a Fortune profile from the late 2000s is my impression — but I cannot fix the outlet or date with enough confidence to name one, so the print source stays null. No competing attribution known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0125",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "Apple Worldwide Developers Conference closing Q&A, Steve Jobs, May 1997",
+    "notes": "From the well-known WWDC 1997 fireside/Q&A session Jobs held shortly after returning to Apple — the same session that produced the 'start with the customer experience and work backwards to the technology' answer. The passage is widely reproduced from the recording and is also quoted in Isaacson's biography. I am confident in the venue and year; the exact date within the conference I have not verified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0126",
+    "status": "verified",
+    "confidence": 0.97,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Steve_Jobs",
+    "earliest_print_source": "Stanford University Commencement Address, Steve Jobs, 12 June 2005",
+    "notes": "Verbatim from the third story ('about death' — actually this passage closes the second story, on love and loss) of the Stanford commencement address. Full text is published by Stanford and the video is a matter of record. Attribution and wording both solid.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0127",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Walt_Disney",
+    "earliest_print_source": null,
+    "notes": "Ubiquitous as a Disney quotation, including in Disney-affiliated merchandise and park signage, but I know of no primary source — no interview, memo, speech, or contemporaneous account. Late-appearing attributions of this kind to Disney are common. The sentiment is unobjectionable and no rival author is known to me, so I am not calling it apocryphal, but it should not clear a verification bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0128",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Alexander_Graham_Bell",
+    "earliest_print_source": null,
+    "notes": "Long and consistently attributed to Bell, and it appears in older quotation compendia rather than only in modern internet collections, which is a point in its favour — many bogus attributions have no pre-web trail at all. I cannot name the speech, letter, or article it came from, so no print source is asserted. Attribution likely; documentation unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0129",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Marysarah Quinn is a real person — a book designer and creative director in trade publishing — and the obscurity of the name is mildly reassuring, since invented attributions gravitate toward famous names rather than away from them. But I cannot place this line in anything she wrote or is recorded as saying. My impression is that it entered circulation via an anthology or an essay quoting her in conversation, which I cannot confirm. Honest answer: I don't know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0130",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Ian Wallace' here is not an author but a fictional character — the line is spoken by Ian Wallace (played by Oliver James) in the 2003 film What a Girl Wants, and the credit therefore belongs to the screenwriters, Jenny Bicks and Elizabeth Chandler, working from the play The Reluctant Debutante. The quote is also frequently and wrongly attributed to Dr. Seuss, which is a separate and clearly false attribution. Recommend either recrediting to the film or dropping the item, since attributing dialogue to a character as if he were a person is misleading.",
+    "suggested_reattribution": "Jenny Bicks and Elizabeth Chandler, screenwriters — spoken by the character Ian Wallace in the film What a Girl Wants (2003)"
+  },
+  {
+    "id": "q_0131",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ella_Baker",
+    "earliest_print_source": null,
+    "notes": "Firmly associated with Ella Baker and adopted as the motto of the Ella Baker Center for Human Rights, which is meaningful secondary support. One caveat worth recording: Baker is understood to have used the line as an existing adage rather than coined it, so 'Ella Baker said this' is well supported while 'Ella Baker originated this' may not be. I cannot name the speech or interview in which she used it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0132",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mary_Oliver",
+    "earliest_print_source": "Upstream: Selected Essays, Mary Oliver, 2016",
+    "notes": "From Oliver's essay collection Upstream, where it appears in her discussion of attention as the ground of a devoted life. The line is quoted from that book widely and correctly. I am confident in book and year; page unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0133",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Thich_Nhat_Hanh",
+    "earliest_print_source": null,
+    "notes": "Genuine Thich Nhat Hanh in substance — this is his well-known verse on no-birth and no-death, which he wrote for use at funerals and which the Plum Village community recites. It is commonly cited to No Death, No Fear (2002), and I believe it appears there, but the wording here differs from the version I recall ('This body is not me. I am not caught in this body. I am life without boundaries. I have never been born and I have never died...'), so this looks like a variant translation or an abridgement. Attribution to Thich Nhat Hanh is strong; the specific text and its source edition are not confirmed, hence no print citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0134",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Idiomatic of Mooji and consonant with his 'be nothing, know nothing, have nothing' teaching, and I know of no competing attribution. But his material circulates almost entirely as satsang transcripts and social-media cards, and I cannot place this aphorism in a specific book or recorded talk. Plausible but undocumented in my knowledge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0135",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same situation as the companion Mooji item. The line reads as authentic Mooji and no rival author is known to me; my impression is that it belongs to the aphorism collections such as White Fire (2014), but that is an impression rather than a recollection I can stand behind, so no print source is given. Living teachers' quotations are hard to verify without a recording or a page reference, and I have neither.",
+    "suggested_reattribution": null
+  }
+]

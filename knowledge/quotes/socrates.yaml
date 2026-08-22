@@ -2,8 +2,24 @@ author: Socrates
 author_normalized_key: socrates
 tradition: philosophy
 era: null
-gender: M
+gender: null
 quotes:
+  - id: q_0080
+    slug: null
+    text: The unexamined life is not worth living.
+    category: insight
+    keywords: [self-inquiry]
+    context: "Ancient, Wisdom, Greek, Philosophy"
+    favorite: false
+    source_work: sources/philosophy-apology
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Socrates"
+      earliest_print_source: "Plato, Apology 38a (c. 399–390 BCE)"
+      notes: "Socrates' words as reported by Plato at his trial, Apology 38a: 'ho de anexetastos bios ou biotos anthropoi' — the unexamined life is not worth living for a human being. Standard, uncontested, and the single best-sourced Socrates quotation. Strictly speaking it is Plato's rendering of Socrates, who left no writings, but the attribution convention is universal."
+      reviewed_by_human: false
   - id: q_0082
     slug: null
     text: "I am the wisest man alive, for I know one thing, and that is that I know nothing."

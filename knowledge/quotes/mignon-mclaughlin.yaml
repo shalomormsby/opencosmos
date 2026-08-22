@@ -1,0 +1,38 @@
+author: Mignon McLaughlin
+author_normalized_key: mignon-mclaughlin
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1037
+    slug: null
+    text: Every society honors its live conformists and its dead troublemakers.
+    category: humor
+    keywords: [society, dead, live, conformity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mignon_McLaughlin"
+      earliest_print_source: "The Neurotic's Notebook, Mignon McLaughlin, 1963"
+      notes: "A characteristic McLaughlin epigram and well documented as hers; her Wikiquote page is built largely from the two Notebook volumes. The one residual uncertainty is which volume — The Neurotic's Notebook (1963) or The Second Neurotic's Notebook (1966) — so the year should be checked against a print copy before the citation is treated as final."
+      reviewed_by_human: false
+  - id: q_1038
+    slug: null
+    text: "A successful marriage requires falling in love many times, always with the same person."
+    category: relationships
+    keywords: [marriage, romance, love]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mignon_McLaughlin"
+      earliest_print_source: "The Neurotic's Notebook, Mignon McLaughlin, 1963"
+      notes: "McLaughlin's single most-quoted aphorism, securely hers and reliably sourced to The Neurotic's Notebook (1963) in Wikiquote and in aphorism anthologies. Occasionally seen floating without attribution or wrongly credited to Germaine Greer, but the McLaughlin attribution is the well-evidenced one."
+      reviewed_by_human: false

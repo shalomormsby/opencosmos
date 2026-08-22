@@ -1,0 +1,22 @@
+author: Steven Covey
+author_normalized_key: steven-covey
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1304
+    slug: null
+    text: "For many of us there is a gap between the compass and the clock - between what's deeply important to us and the way we spend our time."
+    category: insight
+    keywords: [time, direction]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "First Things First, Stephen R. Covey with A. Roger Merrill and Rebecca R. Merrill, 1994"
+      notes: "The clock/compass framing is the organizing metaphor of the opening of First Things First (1994): the clock stands for commitments, schedules and how we spend time; the compass for vision, values and what matters most; and Covey names the gap between them. This wording is a condensed rendering of that passage rather than a verbatim sentence I can pin to a page, so I withhold the top of the scale. The author name in the record is misspelled: it is Stephen R. Covey, not Steven Covey. | Suggested reattribution: Stephen R. Covey"
+      reviewed_by_human: false

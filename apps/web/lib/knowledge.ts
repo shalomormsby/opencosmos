@@ -1,6 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
+import { docHrefFromSlug } from './corpus-href'
 
 const KNOWLEDGE_DIR = path.join(process.cwd(), '../../knowledge')
 
@@ -37,7 +38,7 @@ export type KnowledgeDoc = KnowledgeDocMeta & {
 function parseMeta(data: Record<string, unknown>, slug: string[]): KnowledgeDocMeta {
   return {
     slug,
-    href: '/knowledge/' + slug.join('/'),
+    href: docHrefFromSlug(slug),
     category: slug[0] ?? '',
     title: data.title ? String(data.title) : slug[slug.length - 1]!,
     role: data.role ? String(data.role) : '',

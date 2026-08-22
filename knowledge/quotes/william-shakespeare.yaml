@@ -1,0 +1,54 @@
+author: William Shakespeare
+author_normalized_key: william-shakespeare
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1463
+    slug: null
+    text: "The fool doth think he is wise, but the wise man knows himself to be a fool."
+    category: insight
+    keywords: []
+    context: null
+    favorite: false
+    source_work: sources/literature-shakespeare-as-you-like-it
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/As_You_Like_It"
+      earliest_print_source: "As You Like It, William Shakespeare, c. 1599 (First Folio, 1623) — Act V, scene i, Touchstone"
+      notes: "Genuine Shakespeare, spoken by Touchstone to William. Text matches the received reading."
+      reviewed_by_human: false
+  - id: q_1464
+    slug: null
+    text: "That that is, is."
+    category: insight
+    keywords: [acceptance, perception]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.94
+      wikiquote_url: "https://en.wikiquote.org/wiki/Twelfth_Night"
+      earliest_print_source: "Twelfth Night, William Shakespeare, c. 1601 (First Folio, 1623) — Act IV, scene ii, Feste"
+      notes: "Genuine, but excerpted to the point of distortion: Feste's line is 'That that is, is; so I, being Master Parson, am Master Parson' — comic scholastic parody, not an aphorism about being. Attribution correct; the standalone fragment misrepresents the sense."
+      reviewed_by_human: false
+  - id: q_1465
+    slug: null
+    text: Nothing in this world is good or bad but thinking makes it so.
+    category: insight
+    keywords: [thinking, good, bad, world]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.93
+      wikiquote_url: "https://en.wikiquote.org/wiki/Hamlet"
+      earliest_print_source: "Hamlet, William Shakespeare, c. 1600 — Act II, scene ii, Hamlet to Rosencrantz"
+      notes: "Genuine, but misquoted. The text reads 'there is nothing either good or bad, but thinking makes it so.' The corpus version inserts 'in this world' and changes the construction. Recommend restoring the received wording."
+      reviewed_by_human: false

@@ -8,6 +8,8 @@ import { getSubscription, incrementUsage, isWithinBudget, markByok } from '@/lib
 import { TIERS } from '@/lib/stripe'
 import { fetchRagContext, formatRagChunks, type RagResult } from '@/lib/rag'
 import { getDoc, slugFromDocPath, extractSection } from '@/lib/knowledge'
+import { getQuoteBucket } from '@/lib/quotes'
+import { quoteBucketFromDocPath } from '@/lib/corpus-href'
 import { MODEL_GENERAL, MODEL_ADMIN } from '@/lib/ai-models'
 
 const SYSTEM_PROMPT = process.env.COSMO_SYSTEM_PROMPT!
@@ -778,14 +780,34 @@ export async function POST(req: NextRequest) {
     if (current_section) {
       const slug = slugFromDocPath(current_section.doc_path)
       const doc = slug ? getDoc(slug) : null
-      const sectionText = doc ? extractSection(doc.content, current_section.heading) : null
+
+      // Quote pages are the other thing a reader can have open. Their corpus
+      // path is a yaml bucket, which slugFromDocPath/getDoc can't resolve — so
+      // synthesize the "section text" from the records themselves. Uses the
+      // single-bucket reader deliberately: this runs inside the chat request
+      // path, and getQuoteBuckets() would read all 178 files to answer it.
+      const quoteBucket = quoteBucketFromDocPath(current_section.doc_path)
+      const bucketDetail = quoteBucket ? getQuoteBucket(quoteBucket) : null
+
+      const sectionText = doc
+        ? extractSection(doc.content, current_section.heading)
+        : bucketDetail
+          ? bucketDetail.quotes
+              .map((q) => {
+                const src = q.provenance.earliest_print_source
+                return `- "${q.text}"${src ? ` — ${src}` : ''} [${q.provenance.status}] [quote: knowledge/quotes/${bucketDetail.bucket}.yaml#${q.id}]`
+              })
+              .join('\n')
+          : null
 
       const lines: string[] = [
         '## Current Reading Context',
         '',
-        'The user is currently reading the following document in the OpenCosmos knowledge library:',
+        bucketDetail
+          ? 'The user is currently looking at the following quote record in the OpenCosmos library:'
+          : 'The user is currently reading the following document in the OpenCosmos knowledge library:',
         '',
-        `**Document:** ${current_section.doc_title}`,
+        `**${bucketDetail ? 'Source' : 'Document'}:** ${current_section.doc_title}`,
         `**Section:** "${current_section.heading}"`,
         `**Path:** ${current_section.doc_path}`,
       ]
@@ -797,13 +819,17 @@ export async function POST(req: NextRequest) {
           '',
           '---',
           '',
-          `**Full text of section "${current_section.heading}" (verbatim from source):**`,
+          bucketDetail
+            ? `**Every quote on this page (verbatim), with provenance and its citation token:**`
+            : `**Full text of section "${current_section.heading}" (verbatim from source):**`,
           '',
           sectionText,
           '',
           '---',
           '',
-          'Quote from the verbatim section text above when discussing this section. The vector retrieval below may include additional passages from elsewhere in the corpus.',
+          bucketDetail
+            ? 'These are the quotes on screen. Cite one by appending its token exactly as given above. Respect each provenance status — soften attribution for anything not `verified`.'
+            : 'Quote from the verbatim section text above when discussing this section. The vector retrieval below may include additional passages from elsewhere in the corpus.',
         )
       } else {
         lines.push('', 'Ground your response in the context of this section. The vector retrieval below may also include passages from this document.')

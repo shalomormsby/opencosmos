@@ -53,5 +53,5 @@ jobs:
           curl -X POST "${{ secrets.NEXT_PUBLIC_APP_URL }}/api/revalidate" \
             -H "Content-Type: application/json" \
             -H "x-revalidate-secret: ${{ secrets.REVALIDATE_SECRET }}" \
-            -d '{"path": "/knowledge/graph"}' \
+            -d '{"path": "/library/graph"}' \
             --fail-with-body

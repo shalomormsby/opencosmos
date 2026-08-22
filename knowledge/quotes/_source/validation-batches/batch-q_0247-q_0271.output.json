@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0247",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Relativity: The Special and the General Theory, Albert Einstein, 1916 (German); English translation 1920, Chapter VII",
+    "notes": "This is the opening sentence of Chapter VII ('The Apparent Incompatibility of the Law of Propagation of Light with the Principle of Relativity') of Einstein's own popular exposition Relativity: The Special and the General Theory. Einstein wrote the book himself, so this is a primary source in his own words rather than a reported remark. Wording matches the standard Robert W. Lawson English translation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0248",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Einstein and entirely consonant with his documented pacifist writings of the late 1920s and 1930s, where the force-versus-understanding contrast recurs. I cannot place the specific document from memory — candidates I associate with it (a c. 1930 pacifist statement, the material collected in Mein Weltbild / The World As I See It, or the Einstein on Peace compilation) are recollections I am not confident enough to print as a citation, so I have left the source field null rather than guess. Kept below the promotion bar for that reason.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0249",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "'Geometrie und Erfahrung' ('Geometry and Experience'), address to the Prussian Academy of Sciences, Berlin, 27 January 1921",
+    "notes": "One of the best-documented Einstein lines. Delivered in his 1921 Prussian Academy address on geometry and experience and reprinted in Ideas and Opinions (1954). The corpus text drops the semicolon-and joining the two clauses but is otherwise the standard translation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0250",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "No source in Einstein's writings, letters, or recorded conversations. This is a stock item in the unsourced/misattributed section of the Einstein Wikiquote page. It surfaces in motivational compilations decades after his death and reads as a modern aphorism rather than a translation from German. It is likely a compressed echo of his genuine 'Imagination is more important than knowledge' (Viereck interview, 1929), but the 'A to B' phrasing is not his. I cannot identify who actually coined it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0251",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "Heavily circulated in vegetarian advocacy literature but not found in Einstein's collected writings or correspondence; it appears in the misattributed material on the Einstein Wikiquote page. Einstein's authentic statements on the subject are different and much more qualified — the 1930 letter to Hermann Huth ('Although I have been prevented by outward circumstances from observing a strictly vegetarian diet, I have long been an adherent to the cause in principle') and a 1954 letter to Hans Muehsam written after he adopted the diet on medical advice. The sweeping 'survival of life on Earth' framing is not his idiom. True coiner unknown to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0252",
+    "status": "attributed_unverified",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely attributed, including in education scholarship, and a German original circulates ('Es ist die wichtigste Kunst des Lehrers, die Freude am Schaffen und Erkennen zu wecken'), which is mild evidence of genuine provenance rather than a back-translated invention. But I cannot place a primary document. It is plausibly connected to his writings and addresses on education (e.g. the 1936 Albany address 'On Education'), yet I do not actually recall it in that text, and some Einstein quote scholarship files lines of this kind as unsourced. Honest verdict: probably his, not demonstrable from what I know.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0253",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "The joke is authentically Einstein's — it was his stock popular gloss on relativity, given to reporters (his secretary Helen Dukas handed out a version of it) and recorded in multiple accounts from the late 1920s onward. Two cautions. First, this specific wording ('courting a nice girl', 'red-hot cinder') is one of several circulating variants; the more commonly documented form is 'When you sit with a nice girl for two hours it seems like a minute; when you sit on a hot stove for a minute it seems like two hours.' Second, the citation often attached to it online — 'Journal of Exothermic Science and Technology (JEST), Vol. 1, No. 9, 1938' — is a spoof, not a real journal, so I have deliberately not printed it. Substance solid, exact wording and source not verifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0254",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "'The Common Language of Science', radio address recorded for the British Association for the Advancement of Science, 28 September 1941; reprinted in Out of My Later Years (1950) and Ideas and Opinions (1954)",
+    "notes": "This is the closing sentence of Einstein's short 1941 broadcast on the common language of science. Written by Einstein for delivery, so a primary source. Corpus text matches the standard printed version including the parenthetical dashes.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0255",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Letter to Morris Raphael Cohen, 19 March 1940, written in support of Bertrand Russell's appointment at the College of the City of New York",
+    "notes": "Genuine and well documented. Einstein wrote it to philosopher Morris Raphael Cohen during the public campaign against Russell's teaching appointment. Despite being a heavily meme-ified line, this one survives scrutiny — the letter is real and the context is specific.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0256",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Small Is Beautiful: A Study of Economics as if People Mattered, E. F. Schumacher, 1973",
+    "notes": "I do not believe this is Einstein's. I recall it from E. F. Schumacher's Small Is Beautiful (1973), where the wording runs 'Any intelligent fool can make things bigger, more complex, and more violent. It takes a touch of genius — and a lot of courage — to move in the opposite direction.' Note that the corpus version has dropped 'intelligent', which is the tell of a quote that has passed through attribution drift. Caveat on my own certainty: I am confident the line is Schumacher's in print and not Einstein's, but less certain whether Schumacher coined it or was himself echoing an earlier source, so treat the reattribution as probable rather than settled.",
+    "suggested_reattribution": "E. F. Schumacher"
+  },
+  {
+    "id": "q_0257",
+    "status": "attributed",
+    "confidence": 0.68,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Esther Salaman, 'A Talk With Einstein', The Listener, vol. 54 (1955)",
+    "notes": "This is a compression of a longer remark Einstein made to the physicist Esther Salaman around 1925, which she published from memory in 1955: 'I want to know how God created this world. I am not interested in this or that phenomenon, in the spectrum of this or that element. I want to know His thoughts; the rest are details.' So the source is a recollection recorded roughly thirty years after the conversation, and the popular one-sentence form here is an editor's condensation rather than Einstein's own sentence. Genuine in substance; the exact wording is not.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0258",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "George Sylvester Viereck, 'What Life Means to Einstein', The Saturday Evening Post, 26 October 1929 (republished in Glimpses of the Great, 1930)",
+    "notes": "I recall this from the 1929 Viereck interview, the same conversation that produced 'Imagination is more important than knowledge.' The 'gift of fantasy' phrasing is characteristic of that interview's translation. Hedge: I am confident about the interview but not about the exact page, and I cannot rule out that the line comes from a neighbouring Viereck piece rather than the Saturday Evening Post printing itself — hence attributed rather than verified, and held below the promotion bar pending a human check against the printed interview.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0259",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely quoted and thoroughly consistent with Einstein's documented statements about intuition preceding reasoning (the Viereck interview, the Wertheimer conversations, the Hadamard survey on mathematical invention). But I cannot place a primary source for this exact sentence, and lines of this shape are exactly the kind that get retrofitted onto Einstein by inspirational compilers. I have a faint association with a mid-century popular biography, but it is too faint to print as a citation. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0260",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Letter to Robert S. Marcus, 12 February 1950 (Albert Einstein Archives 60-424); widely reprinted, including in the New York Post, 28 November 1972",
+    "notes": "The genuine article. Einstein wrote this in a condolence letter to Robert S. Marcus, political director of the World Jewish Congress, after the death of Marcus's son. The archival letter exists, which is why this passage survives scrutiny where its New Age paraphrases do not. Two small textual notes: the original reads 'a part of the whole' rather than 'a part of a whole' and 'widening our circles of compassion'; the ellipsis in the corpus text elides 'as something separated from the rest' into the following clause. Worth normalising against the archive text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0261",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "I am fairly confident this is genuine Einstein on death and the individual life. I associate it with his spoken credo of autumn 1932 ('Mein Glaubensbekenntnis', recorded for the German League of Human Rights) and with the material collected in Dukas and Hoffmann's Albert Einstein: The Human Side. The variant wording I recall is closer to 'so much a part of everything living ... the concrete existence of any one person in this eternal flow', which suggests the corpus text is a different translation of the same German. Because I cannot settle which of those two sources carries it, I have left the print source null rather than guess between them.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0262",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "This is a degraded paraphrase of the authentic 1950 letter to Robert S. Marcus, which the corpus already holds correctly as q_0260. The giveaways are 'self-imposed prison' and 'to find the reality of oneness' — neither phrase is in Einstein's letter; the original says the delusion 'is a kind of prison for us' and that our task is 'widening our circles of compassion to embrace all living creatures and the whole of nature in its beauty.' The oneness formulation entered circulation through later spiritual literature. Recommendation for the human reviewer: this is a duplicate of q_0260 in corrupted form and should be dropped in favour of the archival wording, not promoted alongside it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0263",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "A loose popular restatement of the same Salaman-reported remark behind q_0257 ('I want to know how God created this world ... I want to know His thoughts; the rest are details', The Listener, 1955). The 'All I want to do is learn to think like God thinks' wording is not attested in Einstein's own words or in Salaman's account; it reads as a paraphrase of a paraphrase. Duplicative of q_0257, which is the better-supported form of the same line.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0264",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "Long-standing and consistent attribution, and the vocabulary ('illimitable superior spirit', 'frail and feeble mind') matches Einstein's cosmic-religion register closely enough that I think it is genuine — compare the verified 1936 Phyllis Wright letter at q_0265, which says something very similar. I cannot place the primary document, however. It circulates in the standard Einstein compilations with varying and sometimes absent citations, and I do not want to pick one from memory. Probably genuine, source unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0265",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Letter to Phyllis Wright, 24 January 1936 (Albert Einstein Archives 42-601); reprinted in Albert Einstein: The Human Side, ed. Helen Dukas and Banesh Hoffmann",
+    "notes": "Written to Phyllis Wright, a sixth-grade student at the Riverside Church in New York who had asked Einstein whether scientists pray. The archival letter is well documented and this passage is quoted from it accurately. Corpus text splits 'Every one' where the letter reads 'everyone', a trivial variant.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0266",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "'Religion and Science', The New York Times Magazine, 9 November 1930; reprinted in Ideas and Opinions (1954)",
+    "notes": "From Einstein's own signed essay 'Religion and Science', where he sets out the third stage of religious feeling — the cosmic religious sense of the scientist. A primary source in his own words. The corpus text matches the standard English printing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0267",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "The Metaphoric Mind: A Celebration of Creative Consciousness, Bob Samples, 1976",
+    "notes": "A well-known misattribution and one I am confident about. Bob Samples wrote a loose gloss on Einstein — approximately 'Albert Einstein called the intuitive or metaphoric mind a sacred gift. He added that the rational mind was a faithful servant. It is paradoxical that in the context of modern life we have begun to worship the servant and defile the divine' — and that commentary was subsequently quoted back as if it were Einstein's own sentence. The 'sacred gift / faithful servant / honors the servant and has forgotten the gift' formulation is Samples' prose, not Einstein's, and no such passage exists in Einstein's writings. Recommend reattribution or removal.",
+    "suggested_reattribution": "Bob Samples (paraphrasing Einstein)"
+  },
+  {
+    "id": "q_0268",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "No source in Einstein's writings, letters, or reported conversations that I know of. It appears in late-twentieth-century quotation compilations attached to his name, which is the standard signature of an Einstein-magnet aphorism. I cannot identify a true origin either, so I am not offering a reattribution. Honest answer: unknown, and almost certainly not his.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0269",
+    "status": "attributed",
+    "confidence": 0.78,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "George Sylvester Viereck interview with Einstein, 1929–1930 (published as 'What Life Means to Einstein', The Saturday Evening Post, 26 October 1929, and in Glimpses of the Great, 1930)",
+    "notes": "The child-in-the-library metaphor is genuinely Einstein's and is documented from his conversations with Viereck; the version I recall runs 'We are in the position of a little child entering a huge library whose walls are covered to the ceiling with books in many different tongues ... The child notes a definite plan in the arrangement of the books, a mysterious order which it does not comprehend, but only dimly suspects. That, it seems to me, is the attitude of the human mind, even the greatest and most cultured, toward God.' Caveats: the corpus text is a reported conversation, not something Einstein wrote, and its opening sentence ('The human mind is not capable of grasping the Universe') plus the truncated ending differ from the rendering I know. Attributed rather than verified because I cannot confirm which printing carries this exact wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0270",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Albert Einstein: The Human Side, ed. Helen Dukas and Banesh Hoffmann (1979)",
+    "notes": "I recall this from the Dukas and Hoffmann collection of Einstein's personal correspondence, drawn from a letter or reply written in his last years (mid-1950s), and continuing past the ellipsis to say that this feeling has nothing to do with mysticism. Dukas was his secretary and the collection works from the archive, so the chain is good. Hedge: I am confident about the collection but not about the exact letter, recipient, or date, so I have named only the book and left the specifics out rather than invent them. Held below the promotion bar pending a page-level check.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0271",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely attributed to Einstein in quotation collections and compatible with his 'true religiosity' language, but I cannot place a primary source. The phrasing is noticeably plainer than his usual translated register, which makes me slightly wary that it is a paraphrase of a longer passage rather than a sentence he wrote. Not enough for me to call it misattributed, not nearly enough to promote. Uncertain.",
+    "suggested_reattribution": null
+  }
+]

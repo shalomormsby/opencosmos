@@ -1,0 +1,70 @@
+author: George Bernard Shaw
+author_normalized_key: george-bernard-shaw
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0653
+    slug: null
+    text: Life is no brief candle for me. It is a sort of splendid torch which I have got to hold up for the moment and I want to make it burn as brightly as possible before handing it on to future generations.
+    category: insight
+    keywords: [life, fire, torch, burn, bright, future, time]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/George_Bernard_Shaw"
+      earliest_print_source: "Man and Superman, George Bernard Shaw, 1903 (Epistle Dedicatory to Arthur Bingham Walkley)"
+      notes: "Genuine Shaw, from the Epistle Dedicatory prefacing 'Man and Superman' (1903). The surrounding passage runs: 'This is the true joy in life, the being used for a purpose recognized by yourself as a mighty one... I want to be thoroughly used up when I die, for the harder I work, the more I live. I rejoice in life for its own sake. Life is no brief candle to me. It is a sort of splendid torch which I have got hold of for the moment, and I want to make it burn as brightly as possible before handing it on to future generations.' Wording note for the corpus: the original reads 'which I have got hold of for the moment', not 'which I have got to hold up for the moment'. Recommend correcting the text to match the source."
+      reviewed_by_human: false
+  - id: q_0654
+    slug: null
+    text: "I want to be thoroughly used up when I die, for the harder I work, the more I love. I rejoice in life for its own sake."
+    category: insight
+    keywords: [rejoice, life, death, work, love]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/George_Bernard_Shaw"
+      earliest_print_source: "Man and Superman, George Bernard Shaw, 1903 (Epistle Dedicatory to Arthur Bingham Walkley)"
+      notes: "Same passage as q_0653 — the two records are adjacent sentences from the Epistle Dedicatory to 'Man and Superman' (1903). Important wording note: Shaw wrote 'for the harder I work, the more I LIVE', not 'the more I love'. The corpus text carries a corrupted variant that inverts the sense of the line (Shaw's point is vitality, not affection). Attribution verified; text should be corrected. Consider also whether q_0653 and q_0654 should be merged into the single passage they came from."
+      reviewed_by_human: false
+  - id: q_0656
+    slug: null
+    text: "\"You see things; and you say, 'Why?' But I dream things that never were; and I say, 'Why not?'\""
+    category: creativity
+    keywords: [perception, dream, see]
+    context: Author
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/George_Bernard_Shaw"
+      earliest_print_source: "Back to Methuselah, George Bernard Shaw, 1921 (Part I, Act I)"
+      notes: "Genuine Shaw. Spoken by the Serpent to Eve in Part I ('In the Beginning') of 'Back to Methuselah' (1921). Widely known in Robert F. Kennedy's paraphrase — 'Some men see things as they are and say why; I dream things that never were and say why not' — which RFK used in his 1968 campaign and which is sometimes mistaken for the original; Kennedy credited Shaw. The text as recorded here matches Shaw's wording. Note the corpus text carries stray wrapping double quotes around the whole line that should probably be stripped."
+      reviewed_by_human: false
+  - id: q_0659
+    slug: null
+    text: Al great truths begin as blasphemies.
+    category: insight
+    keywords: [truth, begin]
+    context: Author
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/George_Bernard_Shaw"
+      earliest_print_source: "Annajanska, the Bolshevik Empress, George Bernard Shaw, 1918"
+      notes: "Genuine Shaw, from the one-act 'Annajanska, the Bolshevik Empress' (first performed 1918, published shortly after). Correct wording is 'All great truths begin as blasphemies' — the corpus text reads 'Al great truths', a clear typo that should be fixed. Attribution itself is solid and consistently sourced to this play."
+      reviewed_by_human: false

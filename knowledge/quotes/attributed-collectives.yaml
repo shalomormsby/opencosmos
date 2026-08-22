@@ -22,3 +22,87 @@ quotes:
       earliest_print_source: Inscribed at the Temple of Apollo at Delphi
       notes: null
       reviewed_by_human: false
+  - id: q_1324
+    slug: null
+    text: "Speak to the earth, and it shall teach thee."
+    author: "The Bible, Job 12:8"
+    author_normalized_key: the-bible-job-128
+    tradition: null
+    era: null
+    gender: null
+    category: spirit
+    keywords: [nature]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: null
+      earliest_print_source: "The Book of Job 12:8, King James Version, 1611"
+      notes: "Accurate KJV text. The full verse reads 'Or speak to the earth, and it shall teach thee: and the fishes of the sea shall declare unto thee.' Citation in the record (Job 12:8) is correct; the quoted fragment is the first clause."
+      reviewed_by_human: false
+  - id: q_1327
+    slug: null
+    text: "If you bring forth what is within you, what you bring forth will save you. If you do not bring forth what is within you, what you do not bring forth will destroy you."
+    author: The Gospel of Thomas
+    author_normalized_key: the-gospel-of-thomas
+    tradition: null
+    era: null
+    gender: M
+    category: insight
+    keywords: [destroy, share, within, self]
+    context: Christian
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Gospel of Thomas, saying 70 (Nag Hammadi Codex II, c. 2nd century CE); English in The Nag Hammadi Library in English, ed. James M. Robinson, 1977"
+      notes: "Saying 70 of the Coptic Gospel of Thomas, recovered at Nag Hammadi in 1945. The Coptic is damaged and translations vary considerably — several render it 'That which you have will save you if you bring it forth from yourselves; that which you do not have within you will kill you if you do not have it within you.' The elegant parallel wording in the record is one translation tradition (popularized via Elaine Pagels and Joseph Campbell), not the only one. The attribution to the text is solid; the exact English is translator-dependent."
+      reviewed_by_human: false
+  - id: q_1328
+    slug: null
+    text: "Of a certainty the man who can see all creatures in himself, himself in all creatures, knows no sorrow."
+    author: Upanishads
+    author_normalized_key: upanishads
+    tradition: vedic
+    era: null
+    gender: null
+    category: insight
+    keywords: [self, other, animals, sorrow]
+    context: Hindu
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Isha Upanishad 6-7; this English rendering from The Ten Principal Upanishads, trans. Shree Purohit Swami and W. B. Yeats, 1937"
+      notes: "The source text is certain: Isha Upanishad verses 6-7, on seeing all beings in the Self and the Self in all beings, therefore knowing no hatred or sorrow. The distinctive English phrasing ('Of a certainty...') I believe is the Purohit Swami/Yeats translation rather than Mascaro or Radhakrishnan; I am confident enough to name it but flag it as a translation identification, not a verified collation. The author field would be more precise as 'Isha Upanishad' than the general 'Upanishads'."
+      reviewed_by_human: false
+  - id: q_1394
+    slug: null
+    text: "He moves and he moves not; He is far, yet is near. He is within all that is, yet is also outside. The man who sees all beings in the self, and the self in all beings, is free from all fear."
+    author: Upanishads
+    author_normalized_key: upanishads
+    tradition: vedic
+    era: null
+    gender: null
+    category: spirit
+    keywords: [unity, oneness, movement, within, self, fear, freedom, see, perception]
+    context: Hindu
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: null
+      earliest_print_source: "Isha Upanishad, verses 5-6 (Sanskrit, c. 6th-4th century BCE)"
+      notes: "This is a genuine Upanishadic passage, not a modern pastiche. 'It moves and it moves not; it is far and it is near; it is within all this and it is outside all this' is Isha Upanishad 5 (tad ejati tan naijati / tad dure tad v antike / tad antar asya sarvasya / tad u sarvasyasya bahyatah), and 'sees all beings in the Self and the Self in all beings' is Isha Upanishad 6. The English wording here is a modern translation; I cannot identify which translator with confidence, so no translator is claimed. Confidence is high for the source text, and the corpus attribution 'Upanishads' is correct."
+      reviewed_by_human: false

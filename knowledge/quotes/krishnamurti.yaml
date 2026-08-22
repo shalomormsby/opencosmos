@@ -1,0 +1,38 @@
+author: Krishnamurti
+author_normalized_key: krishnamurti
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0878
+    slug: null
+    text: The thinker is the thought.
+    category: spirit
+    keywords: [thinker, thought, self, awareness]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "This is a genuine and central Krishnamurti formulation, not a paraphrase. 'The thinker is the thought' belongs to his signature family of identity statements alongside 'the observer is the observed' and 'the experiencer is the experience,' and it recurs across his 1950s-era writing and talks (it is discussed at length in works of that period such as 'The First and Last Freedom' and the 'Commentaries on Living' series). I am confident in the attribution but am not able to confirm a specific page or dated talk from memory, so I leave the print field null rather than guess a citation."
+      reviewed_by_human: false
+  - id: q_0879
+    slug: null
+    text: "The moment you have in your heart this extraordinary thing called love and feel the depth, the delight, the ecstasy of it, you will discover that for you the world is transformed."
+    category: relationships
+    keywords: [love, depth, ecstasy, discover, transformation, change, self, world]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "Genuine Krishnamurti prose in both cadence and vocabulary ('this extraordinary thing called love'; 'the world is transformed'), and my recollection places it in his discussion of love in 'Freedom from the Known' (1969). I am confident enough in the attribution to Krishnamurti to sit at 0.80, but not confident enough in the exact book and chapter to record a print citation, so that field stays null. Circulating versions vary slightly in punctuation."
+      reviewed_by_human: false

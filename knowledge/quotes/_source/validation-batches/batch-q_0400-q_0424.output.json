@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0400",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Byron Katie's idiom and with themes in 'Loving What Is' (2002) and 'A Thousand Names for Joy' (2007), but I cannot place this exact sentence in any of her books, transcripts, or interviews I know. Her published lines on this theme run closer to 'I am the only one who can love me' and 'When the mind is loved, there is nothing left to seek.' Treat the wording as unsourced paraphrase until someone checks a primary text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0401",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Byron Katie does speak of heaven and hell as functions of believed thoughts ('When I believe my thoughts, I suffer; when I don't, I don't'), so the sentiment is squarely hers. But I cannot locate this precise formulation in a specific book or recorded event. Most likely a transcribed remark from an event or an approximate rendering. No primary citation available from my knowledge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0402",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is one of Byron Katie's genuine signature phrases — she uses it repeatedly in The Work events and in her writing to point at the absence of separation between self and other. Attribution to her is consistent and I have no competing claimant. Held below the promotion bar only because I cannot name a specific book and page; 'A Thousand Names for Joy' (2007) is the likeliest home but I am not confirming it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0403",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Katie's documented formulations run 'The world is nothing but my perception of it' and 'I am the world I perceive.' This variant reads like a compressed retelling of that idea rather than a sentence I can match to a source. Attribution to Katie is plausible; the wording is unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0404",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Generic enough that it could come from many contemplative teachers. I cannot place it in Byron Katie's published work, and nothing in the phrasing is distinctively hers. No traceable source in my knowledge; honest answer is 'I don't know.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0405",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/C._S._Lewis",
+    "earliest_print_source": null,
+    "notes": "Two problems. First, the popular phrasing traces to the Lewis CHARACTER in William Nicholson's 'Shadowlands' (stage play 1989, film 1993), where Anthony Hopkins as Lewis says roughly 'I pray because I can't help myself... It doesn't change God, it changes me.' That is Nicholson's dialogue, not Lewis's prose. Second, the underlying aphorism is much older and is solidly Kierkegaard's: 'Prayer does not change God, but it changes him who prays.' Lewis wrote at length on petitionary prayer in 'Letters to Malcolm: Chiefly on Prayer' (1964) but I know of no passage there matching this sentence. Confidence value reflects the weak attribution to Lewis; I hold the misattribution verdict itself with reasonable certainty.",
+    "suggested_reattribution": "William Nicholson (Shadowlands screenplay, 1993) for this phrasing; Søren Kierkegaard for the underlying aphorism"
+  },
+  {
+    "id": "q_0406",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "C. West Churchman, the systems scientist, made questioning of foundational assumptions the core of his method, and this line circulates in systems-thinking and operations-research literature attributed to him. 'The Systems Approach' (1968) and 'Challenge to Reason' (1968) are the plausible homes, but I cannot confirm which book or page, so I am not asserting a print source. Attribution is plausible and uncontested; the citation is missing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0407",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Camus",
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Albert Camus, and a French original circulates ('On ne vous pardonne votre bonheur et vos succès que si vous consentez généreusement à les partager'), which is a good sign of genuine provenance rather than an English-only invention. I cannot confirm the work — candidates include the Carnets and the essays of 'L'Été' — so no print source is asserted. Note also that the corpus record's author field is the bare surname 'Camus' and the context field reads 'Philosopher, Architect,' which looks like a data error worth fixing regardless of the provenance verdict.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0408",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Camus",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Camus with a circulating French original ('Il n'y a que le malheur à n'être pas aimé: il y a la misère à ne point aimer'), and the malheur/misère distinction is characteristically his. I believe it comes from the Carnets or an early essay, but I cannot confirm the work, so no print source is claimed. Same data note as q_0407: author is recorded as bare 'Camus' with a 'Philosopher, Architect' context string.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0409",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": null,
+    "notes": "This is the internet's favourite Jung line and it is a paraphrase, not his sentence. The documented original is from 'Aion' (1951), CW 9ii, para. 126: 'When an inner situation is not made conscious, it appears outside as fate.' The 'until you make the unconscious conscious... and you will call it fate' rendering has no located primary text and is generally listed among Jung's unsourced or paraphrased attributions. The idea is genuinely his; the wording is not. Consider replacing with the Aion sentence, which is citable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0410",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": "\"The Stages of Life\" (1930-31), in Modern Man in Search of a Soul, Carl Jung, 1933; Collected Works vol. 8, para. 784",
+    "notes": "Genuine Jung from the essay 'The Stages of Life,' delivered as a lecture around 1930 and collected in 'Modern Man in Search of a Soul' (English translation 1933); it also appears in CW 8, 'The Structure and Dynamics of the Psyche.' Standard translation reads '...for what was great in the morning will be little at evening, and what in the morning was true will at evening have become a lie.' The version here is a slightly trimmed rendering of that passage but faithful to it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0411",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": "Commentary on \"The Secret of the Golden Flower\" (1929), Carl Jung; Collected Works vol. 13, para. 18",
+    "notes": "Genuine Jung, from his commentary on Richard Wilhelm's translation of 'The Secret of the Golden Flower' (1929), reprinted in CW 13, 'Alchemical Studies.' The quoted text is a lightly modernized rendering — Hull's translation has 'outgrowing' rather than 'outgrowth,' 'arose on the person's horizon' rather than 'appeared,' 'life-tendency' rather than 'life urge,' and does not contain 'his or her.' Source and substance are solid; the exact wording has drifted, so a copy-editor may want to restore the Hull text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0412",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": "\"The Philosophical Tree\" (1945, revised 1954), Carl Jung; Collected Works vol. 13, para. 335",
+    "notes": "Genuine and correctly worded. From Jung's essay 'The Philosophical Tree,' collected in CW 13, 'Alchemical Studies.' One of the few widely circulated Jung shadow-work quotes that survives checking against the primary text intact.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0413",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": "Memories, Dreams, Reflections, Carl Jung (recorded and edited by Aniela Jaffé), 1961/1963",
+    "notes": "Genuine, from the late chapter on life after death in 'Memories, Dreams, Reflections' (German 1962, English translation 1963). Wording as quoted matches the Winston translation. Worth noting for the corpus that MDR is a collaboratively edited memoir rather than a work Jung wrote start to finish, but this passage is attributed to him directly.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0414",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": "Letter to Fanny Bowditch, 22 October 1916, in C. G. Jung Letters, Vol. 1: 1906-1950 (Princeton/Bollingen, 1973)",
+    "notes": "Genuine, from a letter Jung wrote to his former analysand Fanny Bowditch in October 1916, published in the first volume of the Bollingen 'Letters.' Both sentences belong together in the original, which is unusual — most viral Jung couplets are stitched from two places. The line is sometimes challenged online, but the letter source is real and citable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0415",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": null,
+    "notes": "The sentiment is consistent with Jung's late thinking on the psyche's continuity with the world (the unus mundus and synchronicity material), so attribution is plausible. But I cannot place this sentence in the Collected Works, the letters, or the seminars, and I am not going to guess a volume. Unverified wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0416",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "One of the most-repeated Sagan lines and one of the least sourced. It does not appear in Cosmos, The Demon-Haunted World, Pale Blue Dot, or Broca's Brain as far as I know, and it is generally listed among Sagan's unsourced or disputed attributions rather than in the sourced sections. Sagan may well have said something like it in an interview, but no primary citation exists in my knowledge. Do not promote. Note also that this quote is duplicated in this batch as q_0418.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0417",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995",
+    "notes": "Genuine Sagan from 'The Demon-Haunted World' (1995), in the opening material where he sets out why he prefers reality to consolation. Wording matches the published text. This is one of his best-attested lines.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0418",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "Exact duplicate of q_0416 (same text, same author; only the category field differs — q_0416 has a null category). Same verdict: widely circulated, no located primary source in any Sagan book or documented broadcast, generally treated as unsourced. Recommend deduplicating these two records regardless of the provenance decision.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0419",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos: A Personal Voyage, episode 9, \"The Lives of the Stars\" (PBS, 1980); also Cosmos, Carl Sagan, Random House, 1980",
+    "notes": "Genuine and precisely worded. Sagan says it in episode 9 of the 1980 television series while making an apple pie, and the line appears in the companion book. About as well-documented as a Sagan quote gets.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0420",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "Sagan definitely wrote and said a passage of this kind — the well-documented version is from Cosmos, 'The Persistence of Memory' (episode 11 and the corresponding book chapter): 'What an astonishing thing a book is... One glance at it and you're inside the mind of another person, maybe somebody dead for thousands of years.' The compressed phrasing here, ending 'To read is to voyage through time,' is close to but not identical with that text, and it may instead come from his later writing on literacy in 'The Demon-Haunted World.' Author attribution is safe; the exact wording and source are not pinned, so I am not asserting a print citation. Someone should check the Cosmos chapter and align the wording before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0421",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "The Frederick Douglass and literacy material is genuinely Sagan's territory — 'The Demon-Haunted World' (1995) devotes a chapter to Douglass teaching himself to read and to literacy as liberation, which is the near-certain home of this passage. I cannot confirm the exact sentence or page, so no print source is asserted. Separately, the corpus text misspells the name: it should be Frederick Douglass with two s's. Fix that before any promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0422",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos: A Personal Voyage, episode 1, \"The Shores of the Cosmic Ocean\" (PBS, 1980); also Cosmos, Carl Sagan, Random House, 1980",
+    "notes": "Genuine and accurately quoted, including the 'star stuff' coinage that became Sagan's signature. Delivered in the first episode of the 1980 series and printed in the companion book. Strongest possible attribution short of a manuscript.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0423",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Cosmic Connection: An Extraterrestrial Perspective, Carl Sagan, Anchor Press/Doubleday, 1973",
+    "notes": "Genuine Sagan from 'The Cosmic Connection' (1973), in the material on interspecies and interstellar communication, where the dolphin example serves his point about human parochialism in imagining contact. Wording and dry cadence match the published text. Slightly below 0.9 only because I am recalling the book rather than a specific page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0424",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Pale Blue Dot: A Vision of the Human Future in Space, Carl Sagan, Random House, 1994, chapter 1",
+    "notes": "Genuine — the central portion of the 'Pale Blue Dot' reflection on the 1990 Voyager 1 photograph, from the opening chapter of the 1994 book, and later widely circulated as a recorded reading. This excerpt begins mid-passage; the full text opens 'Look again at that dot. That's here. That's home. That's us.' Two mechanical notes for the corpus: the double hyphens should be em dashes, and given the length this is arguably a passage rather than a quote — consider whether it wants an excerpt marker.",
+    "suggested_reattribution": null
+  }
+]

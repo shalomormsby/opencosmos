@@ -1,0 +1,22 @@
+author: E. E. Cummings
+author_normalized_key: e-e-cummings
+tradition: literature
+era: null
+gender: M
+quotes:
+  - id: q_0562
+    slug: null
+    text: I’d rather learn from one bird how to sing / than teach ten thousand stars not to dance.
+    category: creativity
+    keywords: [bird, sing, dance, stars, learn]
+    context: Poet
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/E._E._Cummings"
+      earliest_print_source: "\"voices to voices, lip to lip\", in is 5, E. E. Cummings, 1926"
+      notes: "Authentic Cummings; the lines close the poem 'voices to voices, lip to lip', which I recall from the 1926 collection is 5. Note a wording variant: the poem reads 'than teach ten thousand stars how not to dance' — this copy drops 'how'. Confidence is high on the poet and the poem, moderate on the volume/year, hence 'attributed' rather than 'verified'."
+      reviewed_by_human: false

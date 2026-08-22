@@ -1,0 +1,22 @@
+author: Ursula LeGuin
+author_normalized_key: ursula-leguin
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1401
+    slug: null
+    text: "We are volcanoes. When we women offer our experience as our truth, as human truth, all the maps change. There are new mountains."
+    category: creativity
+    keywords: [volcanoes, mountains, truth, experience, human, map, new, creation, artist]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "Bryn Mawr Commencement Address (1986), collected in Dancing at the Edge of the World: Thoughts on Words, Women, Places, Ursula K. Le Guin, 1989"
+      notes: "Genuine and well-sourced: this is the closing movement of Le Guin's 1986 Bryn Mawr College commencement address, one of her best-known pieces, reprinted in Dancing at the Edge of the World (1989). The 'we are volcanoes / new mountains' passage is quoted from that address routinely and correctly. Surname in the corpus should be corrected to Le Guin."
+      reviewed_by_human: false

@@ -96,7 +96,7 @@ export function CosmoChat() {
 
   // Xensō mode, synced from the URL on every navigation rather than once at
   // session hydration. The provider is mounted globally and hydrates on its
-  // first consumer, which may be /knowledge or /inception — so reading the
+  // first consumer, which may be /library or /inception — so reading the
   // param only there missed it entirely for anyone who arrived by a soft
   // navigation, with no visible sign that it had. `?xenso=0` turns it off.
   useEffect(() => {
@@ -176,7 +176,7 @@ export function CosmoChat() {
         logo={<InfinityAnim size="xs" technique="dashes" duration={12} />}
         bottomItems={[
           { icon: <MessageSquare className="w-4 h-4" />, label: 'Dialog',    href: '/dialog',                                           active: true },
-          { icon: <BookOpen     className="w-4 h-4" />, label: 'Knowledge', href: '/knowledge' },
+          { icon: <BookOpen     className="w-4 h-4" />, label: 'Library', href: '/library' },
           { icon: <ExternalLink className="w-4 h-4" />, label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started', external: true },
           { icon: <Sparkles     className="w-4 h-4" />, label: 'Inception', href: '/inception' },
           { icon: <CircleDashed className="w-4 h-4" />, label: 'Xensō',     href: '/xenso' },
@@ -199,7 +199,7 @@ export function CosmoChat() {
           navAlignment="right"
           navLinks={[
             { label: 'Dialog',    href: '/dialog' },
-            { label: 'Knowledge', href: '/knowledge' },
+            { label: 'Library', href: '/library' },
             { label: 'Studio',    href: 'https://studio.opencosmos.ai/docs/getting-started' },
             { label: 'Inception', href: '/inception' },
             { label: 'Xensō',     href: '/xenso' },

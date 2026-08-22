@@ -1,0 +1,22 @@
+author: Zora Neale Hurston
+author_normalized_key: zora-neale-hurston
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1509
+    slug: null
+    text: Research is formalized curiosity. It is poking and prying with a purpose. It is a seeking that he who wishes may know the cosmic secrets of the world and they that dwell therein.
+    category: design
+    keywords: [testing]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Zora_Neale_Hurston"
+      earliest_print_source: "Dust Tracks on a Road, Zora Neale Hurston, 1942"
+      notes: "Correctly attributed. 'Research is formalized curiosity. It is poking and prying with a purpose' is Hurston's, from her autobiography Dust Tracks on a Road (J. B. Lippincott, 1942), in the material on her anthropological fieldwork. The trailing sentence — 'It is a seeking that he who wishes may know the cosmic secrets of the world and they that dwell therein' — is also Hurston's voice and also from Dust Tracks, but I recall it sitting in the book's concluding passage rather than immediately adjoining the 'formalized curiosity' lines. So the author and the book are solid; the quote as presented may be a splice of two nearby-but-not-contiguous sentences. Holding confidence at 0.85 rather than higher for that reason. Recommend a human check against the 1942 text before treating this as a continuous quotation, and consider trimming to the first two sentences, which are the securely contiguous part."
+      reviewed_by_human: false

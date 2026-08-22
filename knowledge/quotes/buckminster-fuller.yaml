@@ -1,0 +1,38 @@
+author: Buckminster Fuller
+author_normalized_key: buckminster-fuller
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0386
+    slug: null
+    text: We are not going to be able to operate our Spaceship Earth successfully nor for much longer unless we see it as a whole spaceship and our fate as common. It has to be everybody or nobody.
+    category: relationships
+    keywords: [earth, survival, perception, see, connection, interdependence, united, community]
+    context: "Philosopher, Architect"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Buckminster_Fuller"
+      earliest_print_source: "Operating Manual for Spaceship Earth, R. Buckminster Fuller, 1969"
+      notes: "Core Fuller, and the 'Spaceship Earth' framing plus the closing 'It has to be everybody or nobody' are both signature formulations of his from this period. I place the passage in 'Operating Manual for Spaceship Earth' (1969); Fuller also repeated the 'everybody or nobody' line in later lectures and in 'Critical Path' (1981), so the exact wording here may reflect one of those restatements rather than the 1969 text verbatim."
+      reviewed_by_human: false
+  - id: q_0387
+    slug: null
+    text: "I live on Earth at present, and I don't know what I am. I know that I am not a category. I am not a thing — a noun. I seem to be a verb, an evolutionary process — an integral function of the universe."
+    category: spirit
+    keywords: [mystery]
+    context: "Philosopher, Architect"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Buckminster_Fuller"
+      earliest_print_source: "I Seem To Be A Verb, R. Buckminster Fuller, 1970"
+      notes: "This is Fuller's best-known self-description and it gave the 1970 book its title. The passage is reproduced widely from that source and is not contested. Confidence held at 0.85 rather than higher only because Fuller recycled the formulation across talks and books and I cannot confirm which appearance is earliest."
+      reviewed_by_human: false

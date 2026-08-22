@@ -1,0 +1,70 @@
+author: Walt Whitman
+author_normalized_key: walt-whitman
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1420
+    slug: null
+    text: To me every hour of the light and dark is a miracle. Every cubic inch of space is a miracle.
+    category: insight
+    keywords: [light, darkness, miracle]
+    context: null
+    favorite: false
+    source_work: sources/literature-leaves-of-grass
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Walt_Whitman"
+      earliest_print_source: "'Miracles', Leaves of Grass, Walt Whitman (poem first published 1856)"
+      notes: "Genuine Whitman, from the poem 'Miracles' in Leaves of Grass: 'To me every hour of the light and dark is a miracle, / Every cubic inch of space is a miracle.' The quoted text matches the poem apart from line breaks rendered as sentences."
+      reviewed_by_human: false
+  - id: q_1421
+    slug: null
+    text: Dismiss whatever insults your soul.
+    category: insight
+    keywords: [soul, insult]
+    context: null
+    favorite: false
+    source_work: sources/literature-leaves-of-grass
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Walt_Whitman"
+      earliest_print_source: "Preface to Leaves of Grass, Walt Whitman, 1855"
+      notes: "From the 1855 Preface to Leaves of Grass, in the celebrated series of imperatives ('re-examine all you have been told at school or church or in any book, dismiss whatever insults your own soul'). Note the original reads 'your own soul'; the corpus text drops 'own', a small but real deviation from the printed line."
+      reviewed_by_human: false
+  - id: q_1422
+    slug: null
+    text: I believe that a leaf of grass is no less than the journey-work of the stars.
+    category: spirit
+    keywords: [grass, journey, stars, universe, mystical]
+    context: null
+    favorite: false
+    source_work: sources/literature-leaves-of-grass
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Walt_Whitman"
+      earliest_print_source: "'Song of Myself', section 31, Leaves of Grass, Walt Whitman"
+      notes: "Genuine Whitman, opening line of section 31 of 'Song of Myself': 'I believe a leaf of grass is no less than the journey-work of the stars.' The corpus text inserts 'that' after 'believe', which is a common quotation variant but not the printed wording."
+      reviewed_by_human: false
+  - id: q_1423
+    slug: null
+    text: "All parts way for the progress of souls, / All religion, all solid things, arts, governments - all that / was or is apparent upon this globe or any globe, / falls into niches and corners before the procession /of souls along the grand roads of the universe."
+    category: spirit
+    keywords: [soul, evolution, universe, religion, art, governments, world, road, path]
+    context: null
+    favorite: false
+    source_work: sources/literature-leaves-of-grass
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Walt_Whitman"
+      earliest_print_source: "'Song of the Open Road', Leaves of Grass, Walt Whitman (first published 1856)"
+      notes: "Genuine Whitman, from the late sections of 'Song of the Open Road'. One transcription error to fix: the poem reads 'All parts away for the progress of souls', not 'All parts way'. Line breaks in the corpus text also do not match the poem's lineation."
+      reviewed_by_human: false

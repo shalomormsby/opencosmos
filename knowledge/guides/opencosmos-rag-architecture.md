@@ -24,7 +24,7 @@ related_docs:
 
 # Knowledge Base Architecture: RAG, Vector Index, and Section-Aware Context
 
-The OpenCosmos knowledge base serves two audiences simultaneously: human readers browsing `opencosmos.ai/knowledge`, and Cosmo retrieving grounding passages to cite in conversation. The same markdown files serve both — but the structure of those files matters enormously for retrieval quality.
+The OpenCosmos knowledge base serves two audiences simultaneously: human readers browsing `opencosmos.ai/library`, and Cosmo retrieving grounding passages to cite in conversation. The same markdown files serve both — but the structure of those files matters enormously for retrieval quality.
 
 This guide explains how the system works, why it is designed the way it is, and how to author documents that give Cosmo the most useful, citable context.
 
@@ -42,7 +42,7 @@ knowledge/**/*.md  (source of truth — git)
         │                            /api/chat ────┘
         │                            (injected as system context for Cosmo)
         │
-        └─ Vercel build ────────────→ opencosmos.ai/knowledge
+        └─ Vercel build ────────────→ opencosmos.ai/library
                                       (doc browser + TOC panel)
 ```
 

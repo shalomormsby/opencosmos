@@ -6,6 +6,16 @@
             "source": "/studio/:path*",
             "destination": "https://studio.opencosmos.ai/:path*",
             "permanent": false
+        },
+        {
+            "source": "/knowledge",
+            "destination": "/library",
+            "permanent": true
+        },
+        {
+            "source": "/knowledge/:path*",
+            "destination": "/library/:path*",
+            "permanent": true
         }
     ]
 }

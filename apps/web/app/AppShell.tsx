@@ -38,9 +38,9 @@ export function AppShell({
           },
           {
             icon: <BookOpen className="w-4 h-4" />,
-            label: 'Knowledge',
-            href: '/knowledge',
-            active: activePath === '/knowledge',
+            label: 'Library',
+            href: '/library',
+            active: activePath === '/library',
           },
           {
             icon: <ExternalLink className="w-4 h-4" />,

@@ -1,0 +1,22 @@
+author: Eero Saarinen
+author_normalized_key: eero-saarinen
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0576
+    slug: null
+    text: "Always design a thing by considering it in its next larger context - a chair in a room, a room in a house, a house in a environment, an environment in a city plan."
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "Time magazine, \"The Maturing Modern\" (cover story on Eero Saarinen), July 2, 1956"
+      notes: "This is one of the best-documented Saarinen lines and is consistently traced to the July 2, 1956 Time cover story on him; the wording circulates with only trivial variation (\"a house in an environment, an environment in a city plan\"). I recall the Time 1956 attribution clearly but cannot confirm page number or exact in-article phrasing from memory, so I am not claiming primary verification. The input text has a typo, \"a environment\", which is not in the standard wording."
+      reviewed_by_human: false

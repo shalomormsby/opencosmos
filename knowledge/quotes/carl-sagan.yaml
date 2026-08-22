@@ -1,0 +1,358 @@
+author: Carl Sagan
+author_normalized_key: carl-sagan
+tradition: science
+era: null
+gender: M
+quotes:
+  - id: q_0417
+    slug: null
+    text: "For me, it is far better to grasp the Universe as it really is than to persist in delusion, however satisfying and reassuring."
+    category: insight
+    keywords: [universe, delusion, satisfaction, perception, reassurance]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995"
+      notes: "Genuine Sagan from 'The Demon-Haunted World' (1995), in the opening material where he sets out why he prefers reality to consolation. Wording matches the published text. This is one of his best-attested lines."
+      reviewed_by_human: false
+  - id: q_0419
+    slug: null
+    text: "If you wish to make an apple pie from scratch, you must first invent the universe."
+    category: insight
+    keywords: [universe, invent]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos: A Personal Voyage, episode 9, \"The Lives of the Stars\" (PBS, 1980); also Cosmos, Carl Sagan, Random House, 1980"
+      notes: "Genuine and precisely worded. Sagan says it in episode 9 of the 1980 television series while making an apple pie, and the line appears in the companion book. About as well-documented as a Sagan quote gets."
+      reviewed_by_human: false
+  - id: q_0422
+    slug: null
+    text: "The nitrogen in our DNA, the calcium in our teeth, the iron in our blood, the carbon in our apple pies were made in the interiors of collapsing stars. We are made of star stuff."
+    category: insight
+    keywords: [blood, fruit, stars, collapse, science, astronomy, universe]
+    context: Scientist
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos: A Personal Voyage, episode 1, \"The Shores of the Cosmic Ocean\" (PBS, 1980); also Cosmos, Carl Sagan, Random House, 1980"
+      notes: "Genuine and accurately quoted, including the 'star stuff' coinage that became Sagan's signature. Delivered in the first episode of the 1980 series and printed in the companion book. Strongest possible attribution short of a manuscript."
+      reviewed_by_human: false
+  - id: q_0423
+    slug: null
+    text: It is of interest to note that while some dolphins are reported to have learned English - up to fifty words used in correct context - no human being has been reported to have learned dolphinese.
+    category: insight
+    keywords: [dolphin, learning, human]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Cosmic Connection: An Extraterrestrial Perspective, Carl Sagan, Anchor Press/Doubleday, 1973"
+      notes: "Genuine Sagan from 'The Cosmic Connection' (1973), in the material on interspecies and interstellar communication, where the dolphin example serves his point about human parochialism in imagining contact. Wording and dry cadence match the published text. Slightly below 0.9 only because I am recalling the book rather than a specific page."
+      reviewed_by_human: false
+  - id: q_0424
+    slug: null
+    text: "The earth is a very small stage in a vast cosmic arena. Think of the rivers of blood spilled by all those generals and emperors so that in glory and in triumph they could become the momentary masters of a fraction of a dot. Think of the endless cruelties visited by the inhabitants of one corner of the dot on scarcely distinguishable inhabitants of some other corner of the dot. How frequent their misunderstandings, how eager they are to kill one another, how fervent their hatreds. Our posturings, our imagined self-importance, the delusion that we have some privileged position in the universe, are challenged by this point of pale light. Our planet is a lonely speck in the great enveloping cosmic dark. In our obscurity -- in all this vastness -- there is no hint that help will come from elsewhere to save us from ourselves. It is up to us. It's been said that astronomy is a humbling, and I might add, a character-building experience. To my mind, there is perhaps no better demonstration of the folly of human conceits than this distant image of our tiny world. To me, it underscores our responsibility to deal more kindly and compassionately with one another and to preserve and cherish that pale blue dot, the only home we've ever known."
+    category: insight
+    keywords: [astronomy, science, humanity, war, violence, cosmic, blood, misunderstanding, kill, death, hatred, universe, darkness, conceit, human, world, small, responsibility, kindness, compassion, relationship, home]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Pale Blue Dot: A Vision of the Human Future in Space, Carl Sagan, Random House, 1994, chapter 1"
+      notes: "Genuine — the central portion of the 'Pale Blue Dot' reflection on the 1990 Voyager 1 photograph, from the opening chapter of the 1994 book, and later widely circulated as a recorded reading. This excerpt begins mid-passage; the full text opens 'Look again at that dot. That's here. That's home. That's us.' Two mechanical notes for the corpus: the double hyphens should be em dashes, and given the length this is arguably a passage rather than a quote — consider whether it wants an excerpt marker."
+      reviewed_by_human: false
+  - id: q_0425
+    slug: null
+    text: For small creatures such as we the vastness is bearable only through love.
+    category: insight
+    keywords: [small, animals, love, vast, relationship]
+    context: Scientist
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Contact, Carl Sagan, 1985 (dedication to Ann Druyan)"
+      notes: "This is the dedication line of Sagan's novel Contact (Simon & Schuster, 1985), addressed to Ann Druyan. I recall it as printed dedication text rather than narrative prose, and the wording circulates unchanged. Strong, stable attribution."
+      reviewed_by_human: false
+  - id: q_0427
+    slug: null
+    text: "Every one of us is, in the cosmic perspective, precious. If a human disagrees with you, let him live. In a hundred billion galaxies, you will not find another."
+    category: insight
+    keywords: [cosmic, perspective, precious, human, disagreement, tolerance, live, universe]
+    context: Scientist
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 12 ('Encyclopaedia Galactica')"
+      notes: "I recall this passage from the Cosmos book, in the discussion of what a cosmic perspective implies for how we treat one another. The three-sentence structure and the 'hundred billion galaxies' figure are Sagan's own and match the book's text as I know it."
+      reviewed_by_human: false
+  - id: q_0428
+    slug: null
+    text: "Science is not only compatible with spirituality; it is a profound source of spirituality. When we recognize our place in an immensity of light-years and in the passage of ages, when we grasp the intricacy, beauty, and subtlety of life, then that soaring feeling, that sense of elation and humility combined, is surely spiritual. So are our emotions in the presence of great art or music or literature, or acts of exemplary selfless courage such as those of Mohandas Gandhi or Martin Luther King, Jr. The notion that science and spirituality are somehow mutually exclusive does a disservice to both."
+    category: spirit
+    keywords: [science, spirituality, recognize, universe, time, humility, emotions, art, music, literature, courage, gandhi, martin luther king, jr.]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995, ch. 2 ('Science and Hope')"
+      notes: "A well-documented passage from The Demon-Haunted World. The full paragraph — including the Gandhi and King examples and the closing 'does a disservice to both' — matches the book text as I know it. This is one of the most reliably sourced Sagan quotations on science and spirituality."
+      reviewed_by_human: false
+  - id: q_0429
+    slug: null
+    text: "A book is made from a tree. It is an assemblage of flat, flexible parts (still called \"leaves\") imprinted with dark pigmented squiggles. One glance at it and you hear the voice of another person, perhaps someone dead for thousands of years. Across the millennia, the author is speaking, clearly and silently, inside your head, directly to you. Writing is perhaps the greatest of human inventions, binding together people, citizens of distant epochs, who never knew one another. Books break the shackles of time, proof that humans can work magic.\""
+    category: insight
+    keywords: [books, reading, tree, leaves, voice, time, person, dead, author, head, human, invention, people, magic]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 11 ('The Persistence of Memory')"
+      notes: "The 'a book is made from a tree' passage is from the Cosmos chapter on memory, writing, and libraries. Wording matches what I know of the book. Note a stray trailing double-quote character at the end of the stored text that should be cleaned before publication."
+      reviewed_by_human: false
+  - id: q_0431
+    slug: null
+    text: "The library connects us with the insight and knowledge, painfully extracted from Nature, of the greatest minds that ever were, with the best teachers, drawn from the entire planet and from all our history, to instruct us without tiring, and to inspire us to make our own contribution to the collective knowledge of the human species. I think the health of our civilization, the depth of our awareness about the underpinnings of our culture and our concern for the future can all be tested by how well we support our libraries."
+    category: creativity
+    keywords: [library, books, learning, knowledge, nature, mind, teachers, planet, science, civilization, health, depth, awareness, culture, support]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 11 ('The Persistence of Memory')"
+      notes: "The library passage comes from the same Cosmos chapter as the 'a book is made from a tree' text (q_0429). The two are near neighbors in the book. Wording matches my recollection of the printed text."
+      reviewed_by_human: false
+  - id: q_0432
+    slug: null
+    text: "We can judge our progress by the courage of our questions and the depth of our answers, our willingness to embrace what is true rather than what feels good."
+    category: insight
+    keywords: [feeling, good, questions, depth, courage, answers, embrace, willingness, truth]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980 (Introduction)"
+      notes: "I recall this sentence from the front matter of Cosmos, where Sagan sets out the book's stance toward evidence. The 'willingness to embrace what is true rather than what feels good' clause is distinctive and I am confident it is Sagan's own text rather than a paraphrase. Chapter placement (Introduction) is my recollection and slightly less certain than the authorship."
+      reviewed_by_human: false
+  - id: q_0433
+    slug: null
+    text: "We live on a hunk of rock and metal that circles a humdrum star that is one of 400 billion other stars that make up the Milky Way Galaxy which is one of billions of other galaxies which make up a universe which may be one of a very large number, perhaps an infinite number, of other universes. That is a perspective on human life and our culture that is well worth pondering."
+    category: insight
+    keywords: [universe, planet, earth, culture, rock, metal, stars, infinite, perspective, life, scale, vast, contemplate]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "'Wonder and Skepticism', Carl Sagan, Skeptical Inquirer 19(1), January/February 1995"
+      notes: "I recall this passage from Sagan's 'Wonder and Skepticism' — the keynote he gave to CSICOP, published in Skeptical Inquirer in early 1995. The '400 billion other stars' figure and the closing 'well worth pondering' are characteristic of that piece. Confident in Sagan's authorship; moderately confident in this specific venue as the earliest print appearance."
+      reviewed_by_human: false
+  - id: q_0434
+    slug: null
+    text: "The size and age of the Cosmos are beyond ordinary human understanding. Lost somewhere between immensity and eternity is our tiny planetary home. In a cosmic perspective, most human concerns seem insignificant, even petty. And yet our species is young and curious and brave and shows much promise. In the last few millennia we have made the most astonishing and unexpected discoveries about the Cosmos and our place within it, explorations that are exhilarating to consider. They remind us that humans have evolved to wonder, that understanding is a joy, that knowledge is prerequisite to survival. I believe our future depends on how well we know this Cosmos in which we float like a mote of dust in the morning sky."
+    category: insight
+    keywords: [universe, scale, vast, human, understanding, eternity, small, home, planet, earth, cosmic, concerns, evolution, wonder, knowledge, survival, future, sky, science, time]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980 (Introduction)"
+      notes: "This is the opening of the Introduction to Cosmos — 'Lost somewhere between immensity and eternity is our tiny planetary home' through 'a mote of dust in the morning sky.' Long, distinctive, and stably reproduced; I am confident in both the author and the placement."
+      reviewed_by_human: false
+  - id: q_0436
+    slug: null
+    text: "One of the reasons for its success is that science has a built-in, error-correcting machinery at its very heart. Some may consider this an overbroad characterization, but to me every time we exercise self-criticism, every time we test our ideas against the outside world, we are doing science. When we are self-indulgent and uncritical, when we confuse hopes and facts, we slide into pseudoscience and superstition."
+    category: insight
+    keywords: [science, error, correction, machinery, criticism, test, world, facts, superstition]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 12 ('Encyclopaedia Galactica')"
+      notes: "The 'built-in, error-correcting machinery' passage is from Cosmos, in the chapter dealing with science, civilizations, and the survival of intelligence. The self-deprecating aside ('Some may consider this an overbroad characterization') is a Sagan hallmark and matches the printed text as I know it."
+      reviewed_by_human: false
+  - id: q_0437
+    slug: null
+    text: We are a way for the cosmos to know itself.
+    category: insight
+    keywords: [universe, self, knowledge]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 13 ('Who Speaks for Earth?')"
+      notes: "From the closing chapter of Cosmos, in the passage beginning 'We are the local embodiment of a Cosmos grown to self-awareness.' Also spoken in the Cosmos television series (1980). One of the best-documented Sagan lines."
+      reviewed_by_human: false
+  - id: q_0439
+    slug: null
+    text: "But nature is always more subtle, more intricate, more elegant than what we are able to imagine."
+    category: insight
+    keywords: [nature, imagine, elegant, science]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995, ch. 2 ('Science and Hope')"
+      notes: "I recall this sentence from The Demon-Haunted World, in the discussion of why nature repeatedly outruns human intuition. The leading 'But' indicates it has been lifted mid-paragraph; the corpus may want to drop it. Confident in author and book, slightly less so in the exact chapter."
+      reviewed_by_human: false
+  - id: q_0441
+    slug: null
+    text: Atoms are mainly empty space. Matter is composed chiefly of nothing.
+    category: insight
+    keywords: [science, atoms, empty, space, nothing]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 9 ('The Lives of the Stars')"
+      notes: "From the Cosmos chapter on stellar nucleosynthesis and atomic structure, in the passage on cutting an apple pie down to its atoms. The two-sentence form matches the printed text as I know it. Confident in the book; chapter attribution is my recollection."
+      reviewed_by_human: false
+  - id: q_0442
+    slug: null
+    text: "Skeptical scrutiny is the means, in both science and religion, by which deep thoughts can be winnowed from deep nonsense."
+    category: insight
+    keywords: [skepticism, analysis, science, religion, deep, thinking, nonsense]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995"
+      notes: "The 'winnowed from deep nonsense' formulation is from The Demon-Haunted World, in Sagan's argument that skepticism serves religion as well as science. I am confident in the book and the wording; I cannot pin the chapter, and a variant of the thought also appears in his 1987 CSICOP talk 'The Burden of Skepticism.'"
+      reviewed_by_human: false
+  - id: q_0443
+    slug: null
+    text: "Widespread intellectual and moral docility may be convenient for leaders in the short term, but it is suicidal for nations in the long term. One of the criteria for national leadership should therefore be a talent for understanding, encouraging, and making constructive use of vigorous criticism."
+    category: insight
+    keywords: [nations, politics, intellect, morality, leaders, death, leadership, talent, understanding, criticism]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995 (chapter on patriotism and dissent, 'Real Patriots Ask Questions')"
+      notes: "I recall this passage from the late chapters of The Demon-Haunted World, where Sagan argues that a democracy needs citizens trained in skeptical inquiry and that dissent is a national asset. Confident in the book; the chapter title is my best recollection and is offered with that caveat."
+      reviewed_by_human: false
+  - id: q_0446
+    slug: null
+    text: "The Cosmos is all that is or was or ever will be. Our feeblest contemplations of the Cosmos stir us -- there is a tingling in the spine, a catch in the voice, a faint sensation, as if a distant memory, of falling from a height. We know we are approaching the greatest of mysteries."
+    category: insight
+    keywords: [science, universe, memory, height, mystery, great]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 1 ('The Shores of the Cosmic Ocean')"
+      notes: "The opening lines of Cosmos, also the opening narration of the television series. 'The Cosmos is all that is or ever was or ever will be' is among the most securely documented sentences Sagan wrote. Minor note: the canonical wording is 'all that is or ever was or ever will be' — the stored text drops the first 'ever.'"
+      reviewed_by_human: false
+  - id: q_0448
+    slug: null
+    text: "Present global culture is a kind of arrogant newcomer. It arrives on the planetary stage following four and a half billion years of other acts, and after looking about for a few thousand years declares itself in possession of eternal truths. But in a world that is changing as fast as ours, this is a prescription for disaster. No nation, no religion, no economic system, no body of knowledge, is likely to have all the answers for our survival. There must be many social systems that would work far better than any now in existence. In the scientific tradition, our task is to find them."
+    category: insight
+    keywords: [culture, society, history, time, truth, world, change, nation, religion, knowledge, answers, survival, science, discover, work]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "Cosmos, Carl Sagan, 1980, ch. 13 ('Who Speaks for Earth?')"
+      notes: "I recall the 'arrogant newcomer' passage from the closing chapter of Cosmos, in Sagan's argument that no existing institution has a monopoly on answers for human survival. The 'four and a half billion years of other acts' image and the closing 'our task is to find them' match my recollection of the printed text."
+      reviewed_by_human: false
+  - id: q_0450
+    slug: null
+    text: Science is not only compatible with spirituality; it is a profound source of spirituality.
+    category: spirit
+    keywords: [science, spirituality, source]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.93
+      wikiquote_url: "https://en.wikiquote.org/wiki/Carl_Sagan"
+      earliest_print_source: "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995"
+      notes: "Genuine Sagan, from Chapter 2 ('Science and Hope') of The Demon-Haunted World (1995). The line continues '...When we recognize our place in an immensity of light-years and in the passage of ages...' Wording in the corpus matches the published sentence exactly."
+      reviewed_by_human: false

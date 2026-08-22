@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1482",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates in English-language collections of Yiddish proverbs, but I cannot place it in any specific anthology (Ayalti, Kumove, Rosten, etc.) from my training knowledge. Generic proverb attributions of this kind rarely have a traceable first appearance. No evidence it is NOT a Yiddish proverb either — just no confirmation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1483",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": null,
+    "earliest_print_source": "Star Wars: Episode V — The Empire Strikes Back, screenplay by Leigh Brackett and Lawrence Kasdan, 1980",
+    "notes": "Provenance is certain: Yoda's line to Luke on Dagobah in The Empire Strikes Back (1980), voiced by Frank Oz. IMPORTANT — the text as stored is a corruption. The canonical line is 'Do. Or do not. There is no try.' The stored 'Do or do not do. There is no try.' should be corrected. Confidence 0.9 rather than higher only because the wording deviates; the source itself is unambiguous. Note that the words were written by the screenwriters, not spoken by a historical person.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1484",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not a recognized translation of any sutra I can pin down. The sense plausibly corresponds to Yoga Sutra I.16 (para-vairagya: dispassion arising from discernment of purusha, the true self, leaving one untroubled by the gunas), but the English is a loose modern paraphrase rather than a standard rendering. The feminine pronouns suggest a deliberately gender-inclusive modern translation or a paraphrase collection; I cannot identify which, and will not guess. Attribution to the Yoga Sutras is plausible but the specific wording is unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1485",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This maps closely and specifically to Yoga Sutra IV.2 — 'jatyantara-parinamah prakrty-apurat' — the transformation into another state of being comes about through the filling-in/overflowing of prakriti (nature). 'Change into a new state of being' = jatyantara-parinama; 'fullness of nature' = prakrty-apura. The underlying source text is therefore identifiable with reasonable confidence, but the English is an unidentified modern translation and I will not name a translator or edition I cannot confirm. Held below 0.8 for that reason.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1486",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Yogi Amrit Desai (founder of Kripalu Center) is a real teacher and this is consistent with his idiom, but I cannot place the line in any of his books, talks, or in a Kripalu publication from training knowledge. It circulates mainly on quote sites and yoga-studio ephemera, which is weak evidence. Plausible but unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1487",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Yogi_Berra",
+    "earliest_print_source": null,
+    "notes": "Berra used the line and claimed it in 'The Yogi Book: I Really Didn't Say Everything I Said!' (1998), so the attribution is not baseless — but the saying substantially predates him. It is commonly traced to Paul Valery, who wrote in the 1930s that the future 'is no longer what it used to be' (Regards sur le monde actuel), and English instances appear well before Berra's career-quote fame. Berra is the popularizer, not the originator. Confidence here reflects confidence in the attribution AS GIVEN, which is weak; my confidence in the earlier-origin finding is considerably higher. I have not confirmed a page/edition for the Valery line and so leave the print source null.",
+    "suggested_reattribution": "Paul Valery (earlier form, 1930s); popularized in English by Yogi Berra"
+  },
+  {
+    "id": "q_1488",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Gateless Gate (Wumenguan / Mumonkan), Wumen Huikai, 1228 — case 19, closing verse",
+    "notes": "This is the second half of Wumen Huikai's verse to Case 19 of the Wumenguan ('Ordinary Mind is the Way'): 'Hundreds of flowers in spring, the moon in autumn, a cool breeze in summer, snow in winter. If your mind isn't clouded by unnecessary things, this is the best season of your life.' (若無閑事挂心頭，便是人間好時節). Not Yunmen Wenyan — the confusion likely arises because Yunmen is the source of the similar-sounding 'Every day is a good day' (Blue Cliff Record, case 6). I am confident in this reattribution.",
+    "suggested_reattribution": "Wumen Huikai (Mumon Ekai), The Gateless Gate, case 19 verse"
+  },
+  {
+    "id": "q_1489",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not an anonymous proverb — this is Matsuo Basho, from the short prose piece commonly translated as 'Words by a Brushwood Gate' (Saimon no ji): 'Do not seek to follow in the footsteps of the men of old; seek what they sought.' The rendering in wide English circulation comes largely through Robert Aitken's 'A Zen Wave: Basho's Haiku and Zen' (1978); I recall the attribution firmly but not the exact page, so I leave the print source field null rather than guess an edition.",
+    "suggested_reattribution": "Matsuo Basho (1644-1694)"
+  },
+  {
+    "id": "q_1490",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a line from the Xinxin Ming (Hsin Hsin Ming, 'Verses on the Faith Mind') traditionally attributed to Jianzhi Sengcan, the Third Chan Patriarch (d. 606): 不用求真，唯須息見 — 'Do not seek the truth; only cease to cherish opinions.' Genuinely Zen, so the category label is not wrong, but a specific text and author are identifiable and should replace 'Zen proverb'. Traditional authorship of the Xinxin Ming is itself disputed by scholars (the text is likely later than Sengcan), which is why I do not go higher.",
+    "suggested_reattribution": "Jianzhi Sengcan (traditional), Xinxin Ming"
+  },
+  {
+    "id": "q_1491",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A widely circulated Zen saying whose textual origin I cannot establish. It is often reproduced in English-language Zen anthologies and in Alan Watts-influenced literature, and it may derive from a Zenrin Kushu couplet, but I cannot confirm a Chinese or Japanese original or a first English printing. Honest unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1492",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A fragment of a longer saying that circulates in several forms ('When you seek it, you cannot find it... when you no longer seek it, it is always with you'). I cannot place it in any Chan or Zen text I know, and the short form given here has no traceable source. Treat as unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1493",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The diction ('ten thousand questions... cut through the one question') strongly resembles the teaching idiom of Korean Son master Seung Sahn, whose talks and letters ('Dropping Ashes on the Buddha', 'The Compass of Zen') repeatedly reduce all questions to one 'don't know' question. I am not confident enough to name him as the source, so I leave the reattribution null per the rules. Not an anonymous traditional proverb, in any case — it reads as a 20th-century teacher's phrasing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1494",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuinely traditional: half of the well-known Chan couplet 竹密不妨流水過，山高豈礙白雲飛 — 'However dense the bamboo, it does not stop the water flowing through; however high the mountain, it does not hinder the white clouds from drifting past.' The couplet is collected in the Zenrin Kushu (the Japanese anthology of Chan sayings) and appears in Chan recorded-sayings literature. 'Zen proverb' is an accurate attribution. I do not cite a specific edition/date for the Zenrin Kushu because I am not sure enough of its compilation and printing dates to state them.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1495",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "No basis in any Chan or Zen text I know. The five-step 'look to / follow / walk with / see through / become the master' progression is a modern Western self-development formulation of the kind that gets a 'Zen proverb' label attached to it on quote sites. Zen literature tends in the opposite direction on this theme (see Basho's 'seek what they sought', or Linji's 'if you meet the Buddha, kill him'). Recommend treating as unsourced modern coinage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1496",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": "If You Meet the Buddha on the Road, Kill Him!, Sheldon B. Kopp, 1972",
+    "notes": "This is an item from Sheldon Kopp's 'An Eschatological Laundry List: A Partial Register of the 927 (or was it 928?) Eternal Truths', the closing list of his 1972 book. The book's Zen-flavored title (from the Linji koan) is very likely why items from that list drifted into circulation as 'Zen proverbs'. I recall this specific item with reasonable confidence; I do not recall a page number and so do not give one.",
+    "suggested_reattribution": "Sheldon B. Kopp"
+  },
+  {
+    "id": "q_1497",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not traceable to any Zen text I know. It has the aphoristic register of Sheldon Kopp's 'Eschatological Laundry List' (1972), which is the demonstrable source of at least one neighboring 'Zen proverb' in this batch, but I cannot confirm this line is on that list and will not assert it. Unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1498",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I cannot place this in Chan or Zen literature. The formulation reads more like Western philosophical idealism (the Hegelian claim that the infinite is not something set apart from the finite) than a translated Buddhist source, though the sentiment is compatible with Mahayana non-duality. Origin unknown; the 'Zen proverb' label is unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1499",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A genuine traditional Chan/Zen maxim: 大疑大悟，小疑小悟，不疑不悟. It is strongly associated with Hakuin Ekaku (1686-1769), who quoted and expanded on it constantly ('beneath great doubt lies great awakening'), but it predates him in Chinese Chan — versions are attributed to Song-era masters such as Mengshan Deyi and appear in Boshan's exhortations on rousing doubt. So 'Zen proverb' is defensible as an attribution; if a person is wanted, Hakuin is the popularizer rather than the originator. Held below 0.8 because I cannot cite a specific text and edition.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1500",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Way of Zen, Alan W. Watts, 1957",
+    "notes": "A real Zenrin Kushu couplet — 兀然無事坐，春來草自青 — made famous in English by Alan Watts, who renders it in 'The Way of Zen' (1957) as 'Sitting quietly, doing nothing, / Spring comes, and the grass grows by itself.' The stored text ('Sitting peacefully') is a variant of Watts' wording; consider normalizing to the standard rendering. 'Zen proverb' is an accurate attribution for the underlying couplet; Watts is the English source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1501",
+    "status": "attributed",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Corresponds to the common Chan phrase 好事不如無 — literally 'a good thing is not as good as nothing', i.e. better no affairs at all. It is a stock phrase in Chan recorded sayings and koan-collection commentary and appears in Zen phrase anthologies, so the 'Zen proverb' label is accurate in substance. I cannot identify the earliest text, so I stay well below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1502",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The idea is authentically Huayan/Chan (一即一切，一切即一 — 'one is all, all is one', which appears in the Xinxin Ming and pervades Huayan thought), but this specific English sentence is not a recognized translation of any line I can identify. Likely a modern paraphrase of that doctrine rather than a quotation. Attribution to a Zen text is unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1503",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": "Transformations of Consciousness, Ken Wilber, Jack Engler & Daniel P. Brown, 1986",
+    "notes": "This is Jack Engler's well-known formulation from his work on the interface of psychoanalytic developmental theory and Buddhist meditation: 'You have to be somebody before you can be nobody.' It first appeared in his 1984 Journal of Transpersonal Psychology essay on therapeutic aims in psychotherapy and meditation, reprinted in 'Transformations of Consciousness' (1986). Its Buddhist subject matter is why it gets relabeled a Zen proverb; it is a 20th-century academic coinage, not a traditional saying. I am confident about Engler and the essay, less so about exact bibliographic details.",
+    "suggested_reattribution": "Jack Engler"
+  },
+  {
+    "id": "q_1504",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely reproduced as a 'Zen proverb' on quote sites, and occasionally attached to Emerson or to unnamed 'Chinese proverb' labels, which is itself a sign of a floating attribution. I cannot place it in any Zen text or trace a first printing. The aphorism's shape (a neat English epigram with a single ironic turn) suggests a Western origin. Unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1505",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The doctrine is authentic — the Vimalakirti Sutra's 心淨則佛土淨 ('when the mind is pure, the buddha-land is pure') is the classic statement, echoed in the Platform Sutra — but this English sentence is not a translation of any passage I can identify, and 'heart' for mind/citta suggests a loose modern rendering. Genuinely Buddhist in sense, unverified as a quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1506",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This line circulates very widely and is most often credited to the Lankavatara Sutra; it is also quoted freely in Zen contexts and in Western Buddhist writing. I recall the Lankavatara association clearly but cannot confirm the passage or a translation (Suzuki's 1932 English version is the usual candidate), so I do not assert the reattribution. The tetralemma structure ('not as they seem, nor otherwise') is characteristic of Madhyamaka/Yogacara phrasing, which makes a sutra origin plausible rather than certain.",
+    "suggested_reattribution": null
+  }
+]

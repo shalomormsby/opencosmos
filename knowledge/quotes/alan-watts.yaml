@@ -4,6 +4,22 @@ tradition: buddhism
 era: null
 gender: M
 quotes:
+  - id: q_0012
+    slug: null
+    text: "The only way to make sense out of change is to plunge into it, move with it, and join the dance."
+    category: insight
+    keywords: [impermanence, improvisation]
+    context: "Buddhist, Zen"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Alan_Watts"
+      earliest_print_source: "The Wisdom of Insecurity: A Message for an Age of Anxiety, Alan Watts, Pantheon Books, 1951"
+      notes: "Multiple independent sources (libquotes.com, AZQuotes, buboquote, wist.info) consistently cite this quote to Alan Watts's 'The Wisdom of Insecurity: A Message for an Age of Anxiety' (Pantheon Books, 1951). One source (wist.info) references a specific chapter. The attribution is stable across all major quote databases and is never disputed. Cannot be elevated to 'verified' (1.0) without a page-confirmed primary text check, but the evidence is strong and consistent. No misattribution concern."
+      reviewed_by_human: false
   - id: q_0139
     slug: null
     text: Man suffers only becacuse he takes seriously what the gods made for fun.
@@ -19,4 +35,20 @@ quotes:
       wikiquote_url: null
       earliest_print_source: "https://www.goodreads.com/quotes/321794-man-suffers-only-because-he-takes-seriously-what-the-gods"
       notes: null
+      reviewed_by_human: false
+  - id: q_0209
+    slug: null
+    text: "Paradoxical as it may seem, the purposeful life has no content, no point. It hurries on and on, and misses everything. Not hurrying, the purposeless life misses nothing, for it is only when there is no goal and no rush that the human senses are fully open to receive the world."
+    category: insight
+    keywords: []
+    context: "Buddhist, Zen"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Alan_Watts"
+      earliest_print_source: "Nature, Man and Woman, Alan Watts, 1958"
+      notes: "Genuine Alan Watts, and unusually well sourced for him: this passage is consistently cited to Nature, Man and Woman (1958), and I recall it appearing in the sourced (not the 'attributed') portion of his Wikiquote entry. The argument — that purposiveness makes the senses miss the world, and that purposelessness is receptive — is a central thesis of that book, and the extended paragraph form is authentic Watts prose rather than a lecture-transcript fragment. Marked attributed rather than verified only because I cannot confirm the page from memory."
       reviewed_by_human: false

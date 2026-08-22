@@ -1,0 +1,70 @@
+author: William Blake
+author_normalized_key: william-blake
+tradition: literature
+era: null
+gender: M
+quotes:
+  - id: q_0119
+    slug: null
+    text: To see a world in a grain of sand and a heaven in a wildflower / Hold infintiy in the palm of your hand and eternity in an hour.
+    category: null
+    keywords: [time]
+    context: Poet
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_Blake"
+      earliest_print_source: "Auguries of Innocence, William Blake, written c. 1803, first published 1863 in Gilchrist's Life of William Blake"
+      notes: "The opening quatrain of Auguries of Innocence, from the Pickering Manuscript. Attribution is beyond dispute. Two transcription defects in the corpus text should be fixed before publication: 'infintiy' is a typo for 'infinity', and Blake's text reads 'a Wild Flower' (two words) not 'a wildflower'. Blake's line breaks are four lines, not two; the canonical text is 'To see a World in a Grain of Sand / And a Heaven in a Wild Flower, / Hold Infinity in the palm of your hand / And Eternity in an hour.'"
+      reviewed_by_human: false
+  - id: q_1446
+    slug: null
+    text: "No bird soars too high, if he soars with his own wings."
+    category: insight
+    keywords: [bird, fly, wings]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_Blake"
+      earliest_print_source: "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 ('Proverbs of Hell')"
+      notes: "A genuine Proverb of Hell from The Marriage of Heaven and Hell. Original: 'No bird soars too high, if he soars with his own wings.' Quoted here exactly."
+      reviewed_by_human: false
+  - id: q_1447
+    slug: null
+    text: "If the doors of perception were cleansed everything would appear to man as it is: infinite. For man has closed himself up, till he sees all things thro’ narrow chinks of his cavern."
+    category: spirit
+    keywords: [perception, door, infinite, human, cleanse]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_Blake"
+      earliest_print_source: "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 (plate 14)"
+      notes: "Genuine Blake, from the 'printing house in Hell' passage on plate 14 of The Marriage of Heaven and Hell — the source Huxley took The Doors of Perception from. Wording here is accurate, including the archaic 'thro''. Blake's line continues '...of his cavern.' as given."
+      reviewed_by_human: false
+  - id: q_1448
+    slug: null
+    text: A fool who persists in his folly will become wise.
+    category: insight
+    keywords: [wisdom, fool, folly]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/William_Blake"
+      earliest_print_source: "The Marriage of Heaven and Hell, William Blake, c. 1790-1793 ('Proverbs of Hell')"
+      notes: "The attribution to Blake is correct, but the wording here is a modernized paraphrase. Blake's actual Proverb of Hell reads: 'If the fool would persist in his folly he would become wise.' The conditional subjunctive is doing real work in the original and is lost in the corpus version. Recommend correcting the text to Blake's wording, after which this would be a clean 'verified'."
+      reviewed_by_human: false

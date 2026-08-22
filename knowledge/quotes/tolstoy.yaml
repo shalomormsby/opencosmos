@@ -1,0 +1,22 @@
+author: Tolstoy
+author_normalized_key: tolstoy
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1358
+    slug: null
+    text: "Everyone thinks of changing the world, but no one thinks of changing himself."
+    category: insight
+    keywords: [thought, change, self, world]
+    context: "Author, Russian"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Leo_Tolstoy"
+      earliest_print_source: "\"Three Methods of Reform\", in Pamphlets: Translated from the Russian, Leo Tolstoy, trans. Aylmer Maude, 1900"
+      notes: "Genuine Tolstoy. The standard sourced citation is the essay 'Three Methods of Reform' in Aylmer Maude's 1900 translation Pamphlets: Translated from the Russian. Attribution is consistent across reference works and I recall the specific sourced entry rather than only the floating popular version. Author field should be normalized to 'Leo Tolstoy'."
+      reviewed_by_human: false

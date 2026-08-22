@@ -20,3 +20,19 @@ quotes:
       earliest_print_source: "Workbook for Students, Lesson 153"
       notes: null
       reviewed_by_human: false
+  - id: q_0190
+    slug: null
+    text: "Seek not to change the world, but choose to change your mind about the world. What you see reflects your thinking. And your thinking but reflects your choice of what you want to see."
+    category: insight
+    keywords: [vision, world, change, thinking, choice, reflection]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: null
+      earliest_print_source: "A Course in Miracles, Text, Chapter 21, Introduction (T-21.in.1), Foundation for Inner Peace, 1976"
+      notes: "Genuine and locatable. This is the opening of Chapter 21 of the ACIM Text ('Reason and Perception'), which begins 'Projection makes perception' and continues through 'Therefore, seek not to change the world, but choose to change your mind about the world.' The second sentence quoted here ('What you see reflects your thinking...') is from the same introductory passage. Wording matches the Foundation for Inner Peace edition. Note the source is a work, not a person — the corpus should credit A Course in Miracles rather than Helen Schucman personally, which matches the input."
+      reviewed_by_human: false

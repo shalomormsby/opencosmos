@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0450",
+    "status": "verified",
+    "confidence": 0.93,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995",
+    "notes": "Genuine Sagan, from Chapter 2 ('Science and Hope') of The Demon-Haunted World (1995). The line continues '...When we recognize our place in an immensity of light-years and in the passage of ages...' Wording in the corpus matches the published sentence exactly.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0451",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Carl Sandburg across quotation collections and never, to my knowledge, to anyone else, which is mild evidence for authenticity. I cannot place it in a specific poem, essay, or interview, and I have no recollection of a primary citation. Attribution is stable but unverified at the source level.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0452",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Carlo Carretto (1910-1988), Little Brother of Jesus, is the consistent attribution and the passage matches his devotional style and his repeated 'Love, and...' constructions. Most likely from Letters from the Desert (Lettere dal deserto, 1964) or The God Who Comes, but I cannot confirm which book or verify the English translation wording, so no print source is asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0453",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as a don Juan teaching from the Castaneda corpus and the vocabulary ('warrior', 'ordinary man', 'challenge') is characteristic of Tales of Power (1974) and the aphorism compilation The Wheel of Time (1998). I cannot pin the volume or page. Separate caveat for the corpus: Castaneda's don Juan material is widely held by scholars to be fiction, so 'Castaneda wrote it' is a different claim from 'a Yaqui teacher said it'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0454",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The Fuentes attribution circulates in quotation aggregators but I cannot locate it in any of his novels, essays, or interviews from memory. The underlying idea ('cruelty is a failure of imagination') is a commonplace that has been voiced by several writers, which makes single-author attribution weak. Honest answer: unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0455",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Catherine Ponder, New Thought minister, is the uniform attribution and the phrasing ('bound to that person by an emotional link stronger than steel') matches her prosperity-and-forgiveness teaching. Probably from The Dynamic Laws of Prosperity (1962) or a companion Dynamic Laws title, but I cannot confirm the book or edition, so no citation is asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0456",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Catherine the Great in English quotation dictionaries, but I know of no primary Russian or French source in her correspondence or memoirs. The sentiment closely tracks the older French maxim 'tout comprendre, c'est tout pardonner' (associated with Mme de Stael, Corinne, 1807), and the line is also floated under Confucius, which is a classic sign of a free-floating aphorism. Attribution is plausible but unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0457",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Cavett Robert (1907-1997), founder of the National Speakers Association, is the consistent attribution and the passage is idiomatic of mid-century American motivational speaking, so authorship is plausible. His material circulated largely through recorded talks rather than books, and I cannot cite a published source or a datable first appearance.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0458",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Charles_Darwin",
+    "earliest_print_source": "'Lessons from Europe for American Business', Leon C. Megginson, Southwestern Social Science Quarterly, vol. 44, 1963",
+    "notes": "Not Darwin. This is one of the best-documented misattributions in the corpus: it originates as Leon C. Megginson's 1963 paraphrase of ideas in On the Origin of Species ('...it is not the most intellectual of the species that survives; it is not the strongest that survives; but the species that survives is the one that is able best to adapt and adjust to the changing environment...'). Later compression into a terse epigram, plus quotation marks, converted the paraphrase into a fake Darwin quote. Wikiquote lists it under Darwin's misattributed section. Darwin himself never wrote it; 'survival of the fittest' was Herbert Spencer's phrase, adopted by Darwin only in later editions.",
+    "suggested_reattribution": "Leon C. Megginson (1963), paraphrasing Darwin"
+  },
+  {
+    "id": "q_0459",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Charles_Darwin",
+    "earliest_print_source": null,
+    "notes": "Unlike q_0458 this one is generally treated as genuine Darwin and is usually said to come from his correspondence, plausibly by way of The Life and Letters of Charles Darwin (ed. Francis Darwin, 1887). I cannot identify the specific letter, recipient, or date from memory, so I will not assert a citation. Given that Darwin is a misattribution magnet, moderate rather than high confidence is the honest reading.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0460",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Uniformly attributed to the French critic Charles du Bos (1882-1939), most likely from his Approximations essays or his Journal, and the aphoristic register fits him. I cannot confirm the French original or a volume, and the English wording varies ('at a moment's notice' / 'at any moment'), which suggests translation drift. No citation asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0461",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Well established as Charles Eames and quoted throughout design literature and Eames Office material; it is one of the lines the Eames Office itself repeats. Circulates in two variants ('They make the design' and '...they make the product'), which indicates it comes from spoken remarks or interviews rather than a fixed printed text. Strong attribution, no single primary source I can cite.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0462",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Charles John Quarto is a real songwriter and poet, but I have no independent knowledge of this line in his published work. It appears to circulate only through quotation aggregators. No traceable source; 'I don't know' is the accurate verdict.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0463",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Swindoll in substance: this is from his much-anthologized 'Attitude' material, the same body of writing as the far more famous 'The longer I live, the more I realize the impact of attitude on life' passage. My recollection places it in Strengthening Your Grip (1982), in the chapter on attitudes, but I am not confident enough in the book or year to assert it as a citation. Note that Swindoll's attitude texts are heavily paraphrased online, so the exact wording here may not be his published wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0464",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to 'Charles Schwab' without disambiguation. Period and diction point to Charles M. Schwab (1862-1939) of Bethlehem Steel, not Charles R. Schwab the modern broker; if genuine it most likely comes from his popular business writing of the 1910s-20s, possibly Succeeding With What You Have (1917). I cannot confirm the source, and the ambiguity of the bare name is itself a provenance defect worth fixing in the corpus.",
+    "suggested_reattribution": "Charles M. Schwab (Bethlehem Steel, 1862-1939) - disambiguation, not reattribution"
+  },
+  {
+    "id": "q_0465",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost certainly not Tecumseh. Tecumseh died in 1813 and his authenticated speeches survive only through interpreters and hostile or secondhand transcription; this polished English passage is not among them and has no contemporaneous record. Its wide circulation is modern - it spread through 20th-century 'Native American wisdom' anthologies and then explosively through the 2012 film Act of Valor, which used it as a closing text. The style (aphoristic, individualist, self-help cadence) reads as 20th-century composition. I cannot identify the actual author, so apocryphal rather than likely_misattributed. Recommend not promoting it under a named historical figure.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0466",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a genuine Chinese proverb rather than a floating Western invention: it renders the common saying bu pa man, jiu pa zhan (不怕慢，就怕站), 'do not fear going slow, fear only standing still'. The corpus text says 'changing slowly' where the standard English rendering is 'growing slowly' - a variant, not a different proverb. Confidence reflects that the genre label 'Chinese proverb' is accurate; a proverb by nature has no single author or first printing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0467",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Corresponds to the widely used Chinese saying ren yi shi zhi qi, mian bai ri zhi you (忍一时之气，免百日之忧), 'endure a moment's anger, avoid a hundred days of sorrow'. The label 'Chinese proverb' is therefore accurate as a genre attribution. As with all proverbs there is no author and no first-print source to verify.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0468",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The 'Chinese proverb' label is doubtful. The thought is Chan/Zen rather than proverbial - closest classical antecedent is Layman Pang's 'my miraculous power and spiritual activity: drawing water and carrying firewood'. The specific modern English phrasing most resembles Thich Nhat Hanh's line 'The miracle is not to walk on water; the miracle is to walk on the green earth', which is Vietnamese Zen, not a Chinese proverb. I am not confident enough to name a true source, so no reattribution is suggested, but the current label should be treated as unreliable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0469",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A much-laundered saying: variously credited to Confucius, Xunzi, Benjamin Franklin, Native American sources, and 'Chinese proverb', which is the signature of an aphorism with no real home. There is a genuine classical antecedent in the Xunzi (ch. 8): hearing is not as good as seeing, seeing is not as good as knowing, knowing is not as good as putting into practice - but the modern tell/show/involve triad appears to be a 20th-century Western educational formulation rather than a translation. Label is unreliable; true origin unidentified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0470",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates as both a Chinese proverb and as a line by Hada Bejar, and neither attribution has support I can verify. I know of no Chinese original for it, which weakens the proverb label. Untraceable from training knowledge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0471",
+    "status": "attributed",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Christina Baldwin is the consistent attribution and the passage matches her journal-writing and spiritual-practice books, most likely Life's Companion: Journal Writing as a Spiritual Quest (1990). I cannot confirm the book or page. Note also that the corpus text is elided with an ellipsis, so it splices two non-adjacent sentences - worth flagging independent of authorship.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0472",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of Christopher LaBrec as a published author or public figure, and no recollection of this line outside quotation aggregators. It has the shape of a motivational-poster attribution of unknown origin. Honest verdict: unverifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0473",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Clarence Francis, chairman of General Foods (1935-1954), is the standard and stable attribution in management literature, typically credited to a speech or company address in the 1940s-50s. I cannot name the speech or date. The corpus text is gender-neutralized ('a person's time... their physical presence'); the circulating original reads 'a man's time... his physical presence', which should be noted if the quote is promoted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0474",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Genuine Clarissa Pinkola Estes. This passage is from her widely circulated essay known as 'We Were Made for These Times' / 'Letter to a Young Activist During Troubled Times', which spread online in the early 2000s and was later collected in her published work. I am confident about the essay but not about its first print appearance or exact date, so no citation is asserted. Caveat: the online versions of this essay vary in wording and are sometimes reordered, so the exact text here may be a circulated variant.",
+    "suggested_reattribution": null
+  }
+]

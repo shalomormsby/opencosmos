@@ -1,0 +1,22 @@
+author: Alexander Solzhenitsyn
+author_normalized_key: alexander-solzhenitsyn
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0292
+    slug: null
+    text: "If only there were evil people somewhere insidiously committing evil deeds and it were necessary only to separate them from the rest of us and destroy them. But the line dividing good and evil cuts through the heart of every human being. And who is willing to destroy a piece of his own heart?"
+    category: insight
+    keywords: [evil, heart, destroy, death, good]
+    context: "Author, Russian"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Aleksandr_Solzhenitsyn"
+      earliest_print_source: "The Gulag Archipelago 1918-1956, Aleksandr Solzhenitsyn, 1973 (Volume 1, Part I, Chapter 4, \"The Bluecaps\")"
+      notes: "Authentic and correctly quoted, from the celebrated passage in 'The Bluecaps'. The full passage continues past what is quoted here ('During the life of any heart this line keeps changing place...'). Text matches the Whitney/Willetts English translation closely. NOTE: the corpus uses the anglicized 'Alexander'; the standard transliteration is Aleksandr Solzhenitsyn."
+      reviewed_by_human: false

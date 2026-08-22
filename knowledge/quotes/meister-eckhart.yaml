@@ -1,0 +1,22 @@
+author: Meister Eckhart
+author_normalized_key: meister-eckhart
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1028
+    slug: null
+    text: Being is God.
+    category: spirit
+    keywords: [being, god, self]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "Prologus generalis in Opus tripartitum (Opus Propositionum), Meister Eckhart, c. 1305-1311"
+      notes: "'Esse est Deus' is the first proposition of the general prologue to Eckhart's unfinished Opus tripartitum, one of the best-documented lines in his Latin corpus and a standard reference point in Eckhart scholarship (McGinn and others discuss it at length). Confidence is 0.85 rather than higher only because the English three-word form is a translation of the Latin proposition, not an independently attested sentence."
+      reviewed_by_human: false

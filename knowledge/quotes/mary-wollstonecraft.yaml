@@ -1,0 +1,22 @@
+author: Mary Wollstonecraft
+author_normalized_key: mary-wollstonecraft
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_1013
+    slug: null
+    text: No one chooses evil because it is evil; we only mistake it for happiness.
+    category: insight
+    keywords: [evil, happiness, mistake, perception]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mary_Wollstonecraft"
+      earliest_print_source: "A Vindication of the Rights of Men, Mary Wollstonecraft, 1790"
+      notes: "Genuine Wollstonecraft, from 'A Vindication of the Rights of Men' (1790), her reply to Burke. Important caveat: the corpus text has been silently modernized and de-gendered. The original reads, in substance, 'No man chooses evil because it is evil; he only mistakes it for happiness, the good he seeks' — the corpus version rewrites 'no man/he' as 'no one/we' and drops the closing clause 'the good he seeks.' The underlying attribution is verified; the wording as stored is an edited paraphrase and should ideally be restored to the original or marked as adapted."
+      reviewed_by_human: false

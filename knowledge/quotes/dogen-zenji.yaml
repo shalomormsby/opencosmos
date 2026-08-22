@@ -1,0 +1,22 @@
+author: Dogen Zenji
+author_normalized_key: dogen-zenji
+tradition: buddhism
+era: null
+gender: M
+quotes:
+  - id: q_0530
+    slug: null
+    text: "To study the Buddha Way is to study the self. / To study the self is to forget the self. / To forget the self is to be actualized by the myriad things. / When actualized by the myriad things, your body and mind / as well as the bodies and minds of others drop away. / No trace of realization remains and this no trace continues endlessly."
+    category: spirit
+    keywords: [koan, self, buddha, way, body, mind, emptiness, oneness, nothing, realization, eternal]
+    context: "Buddhism, Zen"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Dogen"
+      earliest_print_source: "Shobogenzo, 'Genjokoan' (1233), Dogen; English as in Kazuaki Tanahashi (ed.), Moon in a Dewdrop, 1985"
+      notes: "This is the most famous passage in Dogen — the opening of Genjokoan in the Shobogenzo, composed 1233. The English here tracks the Tanahashi/Aitken rendering nearly word for word ('actualized by the myriad things', 'no trace of realization remains and this no-trace continues endlessly'); some editions read 'enlightenment' for 'realization'. Attribution is secure; only the translator credit is unstated in the record."
+      reviewed_by_human: false

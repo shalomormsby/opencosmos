@@ -12,72 +12,30 @@
  *   --dry    Print what would change, don't write files
  */
 
-import { readFileSync, writeFileSync, existsSync } from 'node:fs'
-import { join } from 'node:path'
+import { writeFileSync, existsSync } from 'node:fs'
 import {
-  KNOWLEDGE_QUOTES_DIR,
   PENDING_JSONL_PATH,
   PENDING_CSV_PATH,
+  VALIDATION_PROGRESS_PATH,
+  loadCheckpointResults,
   readJsonlFile,
   emitCsv,
+  validateResult,
   type JsonlRecord,
   type Provenance,
-  type Status,
-  ALLOWED_STATUSES,
+  type ValidationResult,
 } from './shared.js'
-
-// ─── Constants ──────────────────────────────────────────────────────────────
-
-const VALIDATION_PROGRESS_PATH = join(KNOWLEDGE_QUOTES_DIR, '_source', 'validation-progress.jsonl')
-
-// ─── Types ──────────────────────────────────────────────────────────────────
-
-type ValidationResult = {
-  id: string
-  status: Status
-  confidence: number
-  wikiquote_url: string | null
-  earliest_print_source: string | null
-  notes: string | null
-  suggested_reattribution?: string | null
-}
-
-type CheckpointEntry = {
-  batch_num: number
-  batch_size: number
-  record_ids: string[]
-  validated_at: string
-  results: ValidationResult[]
-}
 
 // ─── Helpers ─────────────────────────────────────────────────────────────────
 
 function loadCheckpoint(): ValidationResult[] {
   if (!existsSync(VALIDATION_PROGRESS_PATH)) {
-    throw new Error(`Checkpoint file not found: ${VALIDATION_PROGRESS_PATH}\nRun 02-validate-provenance.ts first.`)
+    throw new Error(
+      `Checkpoint file not found: ${VALIDATION_PROGRESS_PATH}\n` +
+        `Run quotes:checkpoint to queue quotes for validation first.`,
+    )
   }
-  const results: ValidationResult[] = []
-  const raw = readFileSync(VALIDATION_PROGRESS_PATH, 'utf-8')
-  for (const line of raw.split('\n')) {
-    if (!line.trim()) continue
-    try {
-      const entry = JSON.parse(line) as CheckpointEntry
-      results.push(...entry.results)
-    } catch (e) {
-      console.warn(`Skipping unparseable checkpoint line: ${(e as Error).message}`)
-    }
-  }
-  return results
-}
-
-function validateResult(r: ValidationResult): string[] {
-  const errors: string[] = []
-  if (!r.id) errors.push('missing id')
-  if (!ALLOWED_STATUSES.has(r.status)) errors.push(`invalid status: ${r.status}`)
-  if (typeof r.confidence !== 'number' || r.confidence < 0 || r.confidence > 1) {
-    errors.push(`invalid confidence: ${r.confidence}`)
-  }
-  return errors
+  return loadCheckpointResults()
 }
 
 function applyValidation(record: JsonlRecord, result: ValidationResult): JsonlRecord {

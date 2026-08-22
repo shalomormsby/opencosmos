@@ -1,0 +1,22 @@
+author: "Thomas Watson Jr., IBM CEO"
+author_normalized_key: thomas-watson-jr-ibm-ceo
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1354
+    slug: null
+    text: Good design is good business.
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: null
+      notes: "This is a genuine and well-documented Watson Jr. formulation, not a floating aphorism. As IBM CEO he made design a corporate program — bringing in Eliot Noyes, and through him Paul Rand and Charles Eames — and 'good design is good business' was his standing argument for it, delivered as the title of a lecture he gave at the Wharton School in the early 1970s and repeated throughout IBM's design literature. The attribution is treated as settled in design history. I am confident of the phrase and the speaker; I am not certain enough of the exact lecture date or published venue to state a formal citation, so earliest_print_source is left null. Author field is correct as Thomas Watson Jr. (distinct from his father, q_1345)."
+      reviewed_by_human: false

@@ -1,0 +1,86 @@
+author: Steve Jobs
+author_normalized_key: steve-jobs
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0017
+    slug: null
+    text: The only way to do great work is to love what you do.
+    category: creativity
+    keywords: [motivation, purpose]
+    context: "Tech, Entrepreneur, Business"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Steve_Jobs"
+      earliest_print_source: "Commencement Address, Stanford University, Steve Jobs, 12 June 2005"
+      notes: "Genuine and primary-sourced. Delivered in the second story (\"love and loss\") of the Stanford commencement address, 12 June 2005; the full sentence continues \"...And the only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle.\" Transcript and video are published by Stanford."
+      reviewed_by_human: false
+  - id: q_0019
+    slug: null
+    text: "Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of other's opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary."
+    category: creativity
+    keywords: [motivation, purpose]
+    context: "Tech, Entrepreneur, Business"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Steve_Jobs"
+      earliest_print_source: "Commencement Address, Stanford University, Steve Jobs, 12 June 2005"
+      notes: "Confirms the pre-flag: genuine, from the third story (\"death\") of the 2005 Stanford commencement address. Wording matches the published transcript with two small copy issues to fix before use: \"the noise of other's opinions\" should be \"others' opinions,\" and the dash in \"dogma - which is\" should be an em dash. Otherwise verbatim."
+      reviewed_by_human: false
+  - id: q_0123
+    slug: null
+    text: Design is not just what it looks like and feels like. Design is how it works.
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Steve_Jobs"
+      earliest_print_source: "'The Guts of a New Machine', Rob Walker, The New York Times Magazine, 30 November 2003"
+      notes: "Jobs said this to Rob Walker in the New York Times Magazine piece on the iPod. The fuller passage runs 'Most people make the mistake of thinking design is what it looks like... That's not what we think design is. It's not just what it looks like and feels like. Design is how it works.' The condensed form quoted here is faithful to the sense and is the version that entered general circulation."
+      reviewed_by_human: false
+  - id: q_0125
+    slug: null
+    text: People think focus means saying yes to the thing you’ve got to focus on. But that’s not what it means at all. It means saying no to the hundred other good ideas that there are. You have to pick carefully.
+    category: business
+    keywords: [focus, planning, "yes", "no", work, action, good, ideas, choice]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Steve_Jobs"
+      earliest_print_source: "Apple Worldwide Developers Conference closing Q&A, Steve Jobs, May 1997"
+      notes: "From the well-known WWDC 1997 fireside/Q&A session Jobs held shortly after returning to Apple — the same session that produced the 'start with the customer experience and work backwards to the technology' answer. The passage is widely reproduced from the recording and is also quoted in Isaacson's biography. I am confident in the venue and year; the exact date within the conference I have not verified."
+      reviewed_by_human: false
+  - id: q_0126
+    slug: null
+    text: "Your work is going to fill a large part of your life, and the only way to be truly satisfied is to do what you believe is great work. And the only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle. As with all matters of the heart, you’ll know when you find it. And, like any great relationship, it just gets better and better as the years roll on. So keep looking until you find it. Don’t settle."
+    category: business
+    keywords: [work, love, passion, search]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/Steve_Jobs"
+      earliest_print_source: "Stanford University Commencement Address, Steve Jobs, 12 June 2005"
+      notes: "Verbatim from the third story ('about death' — actually this passage closes the second story, on love and loss) of the Stanford commencement address. Full text is published by Stanford and the video is a matter of record. Attribution and wording both solid."
+      reviewed_by_human: false

@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0136",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Wei Wu Wei (pen name of Terence Gray, 1895-1986), the Irish writer on Advaita, Ch'an and Taoism. The line is stylistically and doctrinally characteristic of his aphoristic books of the 1960s, and I know of no competing attribution. I cannot place the exact volume or page from training knowledge - candidates are 'Ask the Awakened: The Negative Way' (1963) and 'All Else Is Bondage: Non-Volitional Living' (1964) - so I leave the print source null rather than guess. Author attribution strong; citation unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0138",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Ask the Awakened: The Negative Way, Wei Wu Wei, 1963",
+    "notes": "This is Wei Wu Wei's single most-quoted line and is routinely cited to 'Ask the Awakened: The Negative Way' (1963), where it appears in the opening/epigraph material. My recollection of that book association is firm but I cannot confirm the page, so a human should spot-check the citation before it is treated as primary-source verified. No competing attribution exists; the phrasing ('and there isn't one') is distinctively his.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0140",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Nelson_Mandela",
+    "earliest_print_source": "Speech at the launch of Mindset Network, University of the Witwatersrand, Johannesburg, 16 July 2003",
+    "notes": "Genuine Mandela. Delivered at the 2003 Mindset Network launch in Johannesburg; the Nelson Mandela Foundation has confirmed this speech as the source, and it is the standard citation on Wikiquote. Wording in circulation is stable and matches the delivered text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0141",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dieter_Rams",
+    "earliest_print_source": "Ten Principles for Good Design (principle 10), Dieter Rams, formulated late 1970s-1980s",
+    "notes": "This is verbatim the tenth of Rams's 'Ten Principles for Good Design' ('Good design is as little design as possible'), including the gloss 'Less, but better - because it concentrates on the essential aspects... Back to purity, back to simplicity.' The principles are documented by Vitsoe and reproduced in the Rams literature (e.g. 'Weniger, aber besser / Less but Better', 1995). Attribution is not in doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0142",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dieter_Rams",
+    "earliest_print_source": "'Design by Vitsoe' (speech, New York, 1976), Dieter Rams",
+    "notes": "Well-known Rams line, consistently attributed to his 1976 'Design by Vitsoe' address given at Jack Lenor Larsen's New York showroom, which is the usual source given in the Rams literature. My recollection of that specific speech is good but not certain enough to call primary-source verified; the author attribution itself is not in doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0143",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Dieter_Rams",
+    "earliest_print_source": "'Design by Vitsoe' (speech, New York, 1976), Dieter Rams",
+    "notes": "Attributed to Rams and, in my recollection, drawn from the same 1976 'Design by Vitsoe' address as q_0142 - the two passages are frequently quoted together. Wording in circulation varies slightly (translations from the German differ), which is why I stop short of verified. No competing attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0144",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Arthur_Conan_Doyle",
+    "earliest_print_source": "A Study in Scarlet, Arthur Conan Doyle, 1887",
+    "notes": "Spoken by Sherlock Holmes in 'A Study in Scarlet' (1887); the credit line in the corpus ('Sherlock Holmes, via Conan Doyle') correctly separates character from author. I am confident of the novel; I cannot pin the chapter from memory. Note that it is a fictional character's line, not Doyle speaking in his own voice.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0145",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mahatma_Gandhi",
+    "earliest_print_source": null,
+    "notes": "Very widely and consistently attributed to Gandhi, and consonant with his writing on ahimsa, but I cannot place it in a specific issue of Young India, Harijan, or the Collected Works from training knowledge. Gandhi is a major misattribution magnet, so I hold this below the promotion bar until someone can point to a dated original. Attribution plausible and uncontested; citation unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0146",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mother_Teresa",
+    "earliest_print_source": null,
+    "notes": "Genuinely Mother Teresa's sentiment, expressed many times in slightly different words; the most commonly documented form is 'We can do no great things, only small things with great love.' The wording here is a widespread variant that appears in the posthumous compilations (e.g. 'A Simple Path', 1995; 'The Joy in Loving'). Because she repeated the thought in varying phrasings and I cannot fix this exact sentence to a dated text, I keep it just below the bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0147",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The book is real - Chris Anderson (head of TED), 'Infectious Generosity: The Ultimate Idea Worth Spreading' (2024) - and the passage's framework (emotion, creativity, courage, collaboration, amplification as multipliers of generosity) matches the book's actual argument. But it is recent and I cannot confirm this exact wording or locate the page from training knowledge, so the citation stands on the corpus's own claim rather than on independent evidence. Verifiable by anyone with the book; treat as unconfirmed until then.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0148",
+    "status": "attributed",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Fred_Rogers",
+    "earliest_print_source": "The World According to Mister Rogers: Important Things to Remember, Fred Rogers, 2003",
+    "notes": "Authentic Fred Rogers. He told the 'look for the helpers' story repeatedly - on Mister Rogers' Neighborhood, in interviews, and in print - and the Fred Rogers Center has affirmed it as genuinely his. It appears in the 2003 collection 'The World According to Mister Rogers,' which is the citation I recall, though the story predates that book in his broadcast work. Wording in circulation is stable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0149",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Jung",
+    "earliest_print_source": null,
+    "notes": "This exact sentence has never been located in Jung's Collected Works, letters, or seminars despite very heavy circulation. The genuine Jungian source it paraphrases is 'Aion' (1951), CW 9ii, para. 126: 'When an inner situation is not made conscious, it appears outside as fate.' So the idea is authentically Jung's while the popular wording is a modern compression by an unknown hand. Recommend either replacing with the sourced Aion sentence or labeling this as a paraphrase. Not a misattribution to a different author, so no reattribution offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0150",
+    "status": "attributed_unverified",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The book is real - Rick Rubin with Neil Strauss, 'The Creative Act: A Way of Being' (Penguin Press, 2023) - and this passage is entirely consistent with its content and voice; the book contains material on nature as teacher and on the artist's non-separateness. I cannot confirm the exact wording or locate the chapter from training knowledge, so the citation rests on the corpus's own claim. Easy for a human to verify against the book; until then, unconfirmed rather than doubted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0151",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr.",
+    "earliest_print_source": "'Where Do We Go from Here?', SCLC Presidential Address, Atlanta, 16 August 1967",
+    "notes": "Authentic King. He used the formulation more than once - it appears in the 1967 SCLC presidential address 'Where Do We Go from Here?' and in adjacent sermons on love and nonviolence ('Loving Your Enemies'; the 1967 Christmas sermon on peace). Attribution is not in question; the specific occasion cited is the one I am most confident of.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0152",
+    "status": "verified",
+    "confidence": 0.97,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Letter_from_Birmingham_Jail",
+    "earliest_print_source": "Letter from Birmingham Jail, Martin Luther King, Jr., 16 April 1963",
+    "notes": "Verbatim from the 'Letter from Birmingham Jail' (16 April 1963), early in the letter where King answers the clergymen's charge that he is an outside agitator. The full run - 'cognizant of the interrelatedness... inescapable network of mutuality, tied in a single garment of destiny' - matches the published text. As solid a provenance as this corpus will contain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0153",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Voltaire",
+    "earliest_print_source": null,
+    "notes": "No French original in Voltaire's works corresponds to this line as far as I know, and it circulates almost exclusively in English aphorism collections and on quote sites without a citation. Voltaire is one of the strongest misattribution magnets in the corpus of freethought quotations (the fabricated 'I disapprove of what you say...' line being the classic case). The related genuine sentiment usually cited is Goethe's 'None are more hopelessly enslaved than those who falsely believe they are free,' which is a different quote. I have no defensible true origin, so no reattribution. Recommend rejection or a clear 'attributed to' hedge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0154",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr.",
+    "earliest_print_source": "Speech in Selma, Alabama, 8 March 1965",
+    "notes": "Authentic King, generally sourced to his remarks in Selma on 8 March 1965 (the day after Bloody Sunday), which is the citation carried on Wikiquote and in King anthologies. My confidence in the King attribution is high; my confidence in that exact date and occasion is good but not certain, which is why I stop short of verified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0155",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr.",
+    "earliest_print_source": "Strength to Love, Martin Luther King, Jr., 1963 (sermon 'Loving Your Enemies')",
+    "notes": "Authentic King, from the 'Loving Your Enemies' sermon collected in 'Strength to Love' (1963). One wording caution: King's published sentence ends 'plunged into the dark abyss of annihilation,' not 'the darkness of annihilation,' and the passage here is a condensation joining sentences separated in the original by the ellipsis. Recommend restoring the published wording. Attribution itself is beyond doubt.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0156",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martin_Luther_King,_Jr.",
+    "earliest_print_source": "'I've Been to the Mountaintop', Mason Temple, Memphis, 3 April 1968",
+    "notes": "King said this in his final speech, 'I've Been to the Mountaintop,' the night before his assassination: 'Only when it is dark enough can you see the stars.' Worth noting for the corpus that King was invoking an older aphorism, commonly credited to the historian Charles A. Beard and sometimes loosely to Emerson; King is the popularizer rather than the originator of the thought, but the utterance attributed to him is genuine.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0158",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Oscar_Wilde",
+    "earliest_print_source": null,
+    "notes": "I cannot locate this sentence in Wilde's plays, essays, letters, or the 'Phrases and Philosophies for the Use of the Young.' It reads like a compression of two documented Wilde lines: 'Life is far too important a thing ever to talk seriously about it' (Lady Windermere's Fan, 1892; also in Vera) and 'We should treat all the trivial things of life seriously, and all the serious things of life with sincere and studied triviality.' Wilde attracts unsourced epigrams the way Twain attracts folksy ones. Also frequently confused with Niels Bohr's 'There are some things so serious you have to laugh at them.' No confident true origin, so no reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0159",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": null,
+    "notes": "The pre-flag is correct. This appears in no Einstein primary source and is absent from Alice Calaprice's 'The Ultimate Quotable Einstein,' the standard scholarly filter; documented instances begin decades after Einstein's 1955 death, in late-twentieth-century business, advertising, and creativity literature. Quote investigators have pointed at a modern advertising/creativity author (I recall Joey Reiman being named) as an early user rather than Einstein, but my recollection of that trail is not firm enough to assert a reattribution, so I leave the field null. Recommend rejection or relabeling as anonymous.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0160",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Albert_Einstein",
+    "earliest_print_source": "Letter of condolence to the family of Michele Besso, 21 March 1955 (published in the Einstein-Besso correspondence; quoted in 'Einstein: The Human Side')",
+    "notes": "Unlike most 'Einstein' aphorisms this one has a real root: writing to Michele Besso's family weeks before his own death, Einstein wrote that for believing physicists 'the distinction between past, present and future is only a stubborn persistent illusion.' The version in the corpus is a loose paraphrase - it pluralizes 'illusions' and drops the crucial framing 'for us believing physicists,' which changes the claim from a remark about physics to a metaphysical assertion. Attribution to Einstein is genuine; this wording is not his. Strongly recommend replacing with the accurate translation, after which it would merit verified status.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0163",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": null,
+    "earliest_print_source": "Martha: The Life and Work of Martha Graham, Agnes de Mille, 1991",
+    "notes": "Authentically Agnes de Mille and consistently attributed to her; the passage is the well-known one whose elided middle reads 'The moment you know how, you begin to die a little.' It is usually cited to her Graham biography 'Martha: The Life and Work of Martha Graham' (1991), the same book that carries the famous Graham 'divine dissatisfaction' passage, and I believe that citation is right but cannot confirm the page. No competing attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0164",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The idea is genuinely Rogers's, but this four-word form is not his wording. In 'On Becoming a Person' (1961), in the chapter 'This Is Me,' he writes 'what is most personal is most general.' The variant 'what is most personal is most universal' circulates widely and is sometimes attributed to Rogers directly, sometimes to later writers restating him. 'The personal is the universal' is a further compression by an unknown hand and may also be blending with the second-wave feminist slogan 'the personal is political' (Carol Hanisch, 1969). Recommend replacing with the sourced 1961 sentence.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0165",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Aldous_Huxley",
+    "earliest_print_source": "Music at Night and Other Essays, Aldous Huxley, 1931 (essay 'The Rest Is Silence')",
+    "notes": "Genuine Huxley, from 'Music at Night and Other Essays' (1931), in the essay 'The Rest Is Silence.' The sentence circulates verbatim and matches the published text. One of the reliably sourced quotations in this batch.",
+    "suggested_reattribution": null
+  }
+]

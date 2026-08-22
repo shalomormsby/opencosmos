@@ -1,0 +1,22 @@
+author: Henry Wadsworth Longfellow
+author_normalized_key: henry-wadsworth-longfellow
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0723
+    slug: null
+    text: "Would you learn the secret of the sea? / Only those who brave its dangers, / comprehend its mystery!"
+    category: insight
+    keywords: [sea, ocean, mystery, secret, understanding]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Henry_Wadsworth_Longfellow"
+      earliest_print_source: "'The Secret of the Sea,' Henry Wadsworth Longfellow, in The Seaside and the Fireside, 1850"
+      notes: "Genuine Longfellow, from the poem 'The Secret of the Sea.' The stanza is spoken in dialogue and the original is archaic: 'Wouldst thou' — so the helmsman answered — 'learn the secret of the sea? / Only those who brave its dangers / Comprehend its mystery!' The corpus text modernizes the opening and drops the helmsman frame. Poem attribution is certain; I am slightly less sure of the collecting volume, though The Seaside and the Fireside (1850) is my recollection."
+      reviewed_by_human: false

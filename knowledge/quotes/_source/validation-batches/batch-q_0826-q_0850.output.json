@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0826",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Muir",
+    "earliest_print_source": "John of the Mountains: The Unpublished Journals of John Muir, ed. Linnie Marsh Wolfe, 1938",
+    "notes": "Consistently attributed to Muir in the Sierra Club's John Muir quotation collection, which cites his unpublished journals as gathered in John of the Mountains (1938). I recall that pairing but cannot confirm the page or the journal date from memory, so this rests on strong secondary evidence rather than a primary check. No rival claimant known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0827",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Credited to 'Anon.', and I can place no source at all. The line reads as a modern aphorism working a very old trope — the forest-as-cathedral figure runs from Bryant's 'The groves were God's first temples' (1825) through Muir and countless nature writers — but this specific sentence has no traceable origin I know of. Honest answer: unknown, probably an internet-era composition.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0828",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed with unusual consistency to Jean-Antoine (John) Petit-Senn (1792-1870), the Swiss-French aphorist whose 'Bluettes et Boutades' was Englished in the 19th century and mined heavily by Victorian quotation dictionaries. The style matches his epigrams and no competing author is ever named. I cannot place the specific collection or year from memory, so I am leaving the print source null rather than guessing at a title.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0829",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitously attributed to John Quincy Adams in quotation compilations, and the sentiment and register are period-plausible, but I cannot locate it in his diaries, letters, or public papers from memory. Wide repetition in secondary collections is not evidence of origin. No contrary attribution known either, so this is honest uncertainty rather than suspicion of a specific misattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0830",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A known misattribution magnet. This is modern leadership-seminar prose — 'dream more, learn more, do more, become more' — and its diction is late-20th-century American management writing, not early-19th-century political English. Quote Investigator examined it and found no support in John Quincy Adams's writings, with the earliest sightings in the 1990s motivational literature. I do not know who actually wrote it, so I am not proposing a replacement author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0831",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Exact duplicate of q_0829 (same text, same author, different category tag) — flagging for dedupe. Same verdict: consistently attributed to John Quincy Adams across quotation compilations, but I cannot locate it in his diaries, letters, or public papers from training knowledge, and repetition in secondary collections is not provenance.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0832",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The vocabulary is distinctively John Randolph Price's — 'the Master Self within', 'the world of form', 'your birthright', 'demonstrate the truth' — all core New Thought terms he used throughout The Superbeings (1981) and The Abundance Book (1987), and the subject (money as a spiritual demonstration) is squarely his. Attribution is plausible on internal evidence, but I cannot say which book or page this passage comes from, so I will not name one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0833",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": "Legitimacy in the Modern State, John H. Schaar, 1981",
+    "notes": "Genuinely Schaar, the political theorist at UC Santa Cruz, and usually cited to Legitimacy in the Modern State (1981). The canonical wording is longer and slightly different: 'The future is not a result of choices among alternative paths offered by the present, but a place that is created — created first in the mind and will, created next in activity. The future is not some place we are going to, but one we are creating. The paths are not to be found, but made, and the activity of making them changes both the maker and the destination.' The corpus text is an accurate condensation, but 'their destination' is a drift from 'the destination'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0834",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Stuart_Mill",
+    "earliest_print_source": "Considerations on Representative Government, John Stuart Mill, 1861, ch. 1",
+    "notes": "Authentically Mill, from the opening chapter of Considerations on Representative Government (1861). The original reads 'one person with a belief is a social power equal to ninety-nine who have only interests.' The corpus text has drifted to 'equal to the force of ninety-nine' and dropped 'a social power', which is the phrase carrying Mill's actual point. Recommend restoring the original wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0835",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Wesley",
+    "earliest_print_source": null,
+    "notes": "Known as 'Wesley's Rule' and printed on a great deal of Methodist material, but Wesley scholars — including the editors of the Wesley Works project and the denomination's own historians — have searched his sermons, journals, and letters and cannot find it. The consensus is that it does not appear anywhere in his authenticated writings; sightings begin well after his death. The attribution is traditional rather than evidenced. I do not know who composed it, so no reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0836",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/John_Wooden",
+    "earliest_print_source": null,
+    "notes": "Wooden used this line constantly in his talks and books and it is one of his signature maxims, so the attribution is not wrong in spirit. But Wooden was a habitual quoter — he credited many of his sayings to his father Joshua and to older sources — and near-identical folk formulations of 'make the best of the way things turn out' circulated in American newspapers before his coaching fame. Safest reading: Wooden is the popularizer, possibly not the originator. Cannot place a first printing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0837",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Jonathan_Swift",
+    "earliest_print_source": "Thoughts on Various Subjects, Moral and Diverting, Jonathan Swift, in Miscellanies (1711)",
+    "notes": "A genuine Swift aphorism from Thoughts on Various Subjects, the collection of maxims first printed in the 1711 Miscellanies. The wording is stable across editions and matches the corpus text exactly. Confident on the work; slightly less so on which printing counts as earliest, since Swift's Thoughts appeared in more than one gathering.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0838",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Jorge_Luis_Borges",
+    "earliest_print_source": "\"The Writing of the God\" (\"La escritura del dios\"), in El Aleph, Jorge Luis Borges, 1949",
+    "notes": "From the imprisoned magician Tzinacan's meditation in 'The Writing of the God', collected in El Aleph (1949). The tiger-implies-the-universe passage is one of the story's best-known moments and the English wording here matches the standard translation closely. Note it is spoken by a character within the fiction, which is worth keeping in mind for how it is framed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0839",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"The Flower of Coleridge\" (\"La flor de Coleridge\"), in Other Inquisitions, Jorge Luis Borges, 1952",
+    "notes": "Borges did not say this — he quoted it. 'The Flower of Coleridge' opens by citing Paul Valery: around 1938 Valery wrote that the history of literature should not be the history of the authors and the accidents of their careers or of their works, but rather the history of the Spirit as producer or consumer of literature. The internal quotation marks in the corpus text are the tell that something is being relayed. Credit belongs to Valery, with Borges as the conduit.",
+    "suggested_reattribution": "Paul Valery (quoted by Jorge Luis Borges in \"The Flower of Coleridge\", Other Inquisitions, 1952)"
+  },
+  {
+    "id": "q_0840",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Jorge_Luis_Borges",
+    "earliest_print_source": null,
+    "notes": "Reads as Borges's own prose from Other Inquisitions (1952), most likely 'On the Cult of Books', where he traces the idea of the world-as-book through Mallarme and Leon Bloy and summarizes Bloy's conception in almost exactly these terms. Caution: as with q_0839, Borges's essays are dense with relayed voices, and this sentence may be his restatement of Bloy rather than a standalone claim of his own. I am confident it is Borges's sentence; less confident which essay, so no print source named.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0841",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A composite, and the dual credit line is actually the right call. The two quoted fragments are Giordano Bruno's — from De la causa, principio e uno (1584) and the companion work on the infinite universe — while the connective framing is Borges's, in the essay 'Pascal's Sphere' (Other Inquisitions, 1952), where he narrates Bruno's exhilaration at the infinite before turning to Pascal's dread. So the words are Bruno via Borges's translation and paraphrase. Confident about the shape of this; not confident enough about which Bruno treatise supplies which fragment to print a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0842",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": "The Power of Myth, Joseph Campbell with Bill Moyers, 1988",
+    "notes": "From the Moyers conversations, in the exchange on eternity as a dimension of here-and-now rather than an afterlife destination. The wording matches the book transcript as I know it. This is one of the Campbell lines that is genuinely his and genuinely sourceable, unlike several others in this batch.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0843",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Campbell's idiom and one of his recurring themes — aligning individual nature with Nature, the heartbeat/cosmic-rhythm figure he used in both lectures and interviews. Most often cited to A Joseph Campbell Companion: Reflections on the Art of Living (ed. Diane K. Osbon, 1991), which is itself a compilation of remarks from workshops rather than a primary text. Plausibly authentic, but I cannot confirm the source, so no citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0844",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a compressed, aphorized version of the longer remark recorded at q_0849 ('If you see your path laid out in front of you...'). Campbell said something in this vein, but I know of no text where he said it this tersely — the one-liner looks like an internet-era tightening of the Osbon-compiled passage. Sentiment authentic, wording probably not his. Recommend preferring the longer form and dropping this as a derivative duplicate.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0845",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": null,
+    "notes": "One of the most heavily misattributed lines in the Campbell corpus. The Joseph Campbell Foundation has publicly addressed it and points to E. M. Forster as the source; Campbell appears to have quoted or adapted it rather than coined it. A variant closer to Campbell's own phrasing ('We must let go of the life we have planned, so as to accept the one that is waiting for us') circulates from A Joseph Campbell Companion. I cannot name the Forster work from memory, so the reattribution below is offered as the documented candidate, not as a verified citation.",
+    "suggested_reattribution": "E. M. Forster (per the Joseph Campbell Foundation's own correction; specific work unconfirmed)"
+  },
+  {
+    "id": "q_0846",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": "The Hero with a Thousand Faces, Joseph Campbell, 1949 (Prologue, \"Myth and Dream\")",
+    "notes": "A genuine and famous passage from The Hero with a Thousand Faces, closing the 'Myth and Dream' discussion in the Prologue. The wording — thread of the hero-path, abomination/God, slay ourselves, come to the center of our own existence, be with all the world — matches the text as I know it. High confidence on book and year; the section attribution is from memory and should be spot-checked against a copy before it is treated as a page-level citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0847",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": null,
+    "notes": "Authentically Campbell's voice and theme — the refusal or acceptance of the call to adventure — and I associate it with the Moyers conversations in The Power of Myth (1988), though it also circulates from the Osbon Companion. I cannot pin which, so no citation. Data note: the text begins with a stray opening curly quote and has no closing one, an ingestion artifact that should be stripped.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0848",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Joseph_Campbell",
+    "earliest_print_source": "The Power of Myth, Joseph Campbell with Bill Moyers, 1988",
+    "notes": "From the 'follow your bliss' exchange with Moyers in The Power of Myth, where Campbell distinguishes outer-value achievement from the inner rapture of being alive. The spoken-transcript register fits, and the wording matches the book as I know it. Slightly below the top confidence band only because minor transcript variants of this line circulate.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0849",
+    "status": "attributed",
+    "confidence": 0.62,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The longer, primary form of the saying compressed at q_0844, and the one I would keep. Usually cited to A Joseph Campbell Companion: Reflections on the Art of Living (ed. Diane K. Osbon, 1991), a compilation of Campbell's workshop remarks rather than something he wrote for print. Consistent with his idiom and I have no reason to doubt it, but a compiled-from-talks source is weaker provenance than a book he authored, so I am staying below the promotion bar and naming no citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0850",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Unmistakably Campbell speaking rather than writing — the asides ('I mean it's a very interesting shift of perspective') mark it as a lecture or interview transcript — and it closes on 'joyful participation in the sorrows', his signature rendering of the Buddhist formula and a phrase he used repeatedly. The 'free fall into future' passage circulates from his late talks and interviews. Authentic in voice and vocabulary; I cannot identify the specific recording or transcript, so no source named.",
+    "suggested_reattribution": null
+  }
+]

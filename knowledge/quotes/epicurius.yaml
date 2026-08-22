@@ -1,0 +1,22 @@
+author: Epicurius
+author_normalized_key: epicurius
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0108
+    slug: null
+    text: "Friendship dances around the world, bidding us all to awaken to the recognition of happiness."
+    category: relationships
+    keywords: [friends]
+    context: "Philosophy, Epicurian, Ancient Greek, Wisdom"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Epicurus"
+      earliest_print_source: "Vatican Sayings (Sententiae Vaticanae) 52, Epicurus (collection preserved in a Vatican Greek manuscript, first published 1888)"
+      notes: "Genuine Epicurus, Vatican Sayings 52 — commonly translated 'Friendship dances around the world, announcing to each of us that we must awaken to happiness' or 'bidding us all to awaken to the recognition of blessedness'. The wording here is a standard variant translation. One correction needed: the author is spelled 'Epicurius' in the input; it should be 'Epicurus'. The context field labels him Epicurean and Greek, which is right. | Suggested reattribution: Epicurus (spelling correction only, not a change of author)"
+      reviewed_by_human: false

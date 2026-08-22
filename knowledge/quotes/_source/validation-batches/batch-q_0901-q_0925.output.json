@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0901",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leo_Tolstoy",
+    "earliest_print_source": null,
+    "notes": "Tolstoy was a committed vegetarian from 1885 and argued exactly this in his 1892 essay 'The First Step' (Pervaya stupen), written as a preface to the Russian edition of Howard Williams's 'The Ethics of Diet'. The usual circulating wording is 'A man can live and be healthy without killing animals for food; therefore, if he eats meat, he participates in taking animal life merely for the sake of his appetite' — the corpus text is a gender-neutralized paraphrase of that. I cannot place the sentence at a specific page or confirm it is a direct translation rather than a summary of his argument, so I am not asserting a primary source. Attribution to Tolstoy is consistent across sources and entirely in character; the exact provenance is not.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0902",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leonard_Nimoy",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Leonard Nimoy across quote collections and often cited alongside his poetry (he published several volumes, e.g. 'You & I', 1973, and 'Warmed by Love'). The sentiment and the aphoristic style fit his published verse. I cannot place it in a specific book, poem, interview, or speech from my training knowledge, and it may be a line lifted from a longer poem. No competing attribution that I know of, so the author is plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0903",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leonardo_da_Vinci",
+    "earliest_print_source": null,
+    "notes": "This is a well-known false attribution. The line does not appear anywhere in Leonardo's notebooks or the Trattato della Pittura, and the Italian version circulating online ('La semplicita e l'ultima sofisticazione') is a back-translation from English, which is itself strong evidence of modern origin. Wikiquote lists it under Leonardo's disputed/misattributed section. Its popularity comes largely from twentieth-century advertising use, notably the 1977 Apple II brochure, where it appeared as a tagline. I do not reliably know the true earliest coiner, so I am not naming one rather than guessing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0904",
+    "status": "likely_misattributed",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leonardo_da_Vinci",
+    "earliest_print_source": "The Romance of Leonardo da Vinci, Dmitry Merezhkovsky, 1900 (Russian; English translation 1902)",
+    "notes": "A documented case of fiction laundered into a quotation. The 'time will come when men will look upon the murder of animals as they now look upon the murder of men' line comes from Dmitry Merezhkovsky's historical novel 'The Romance of Leonardo da Vinci' (1900), where it is dialogue invented for the character of Leonardo. It appears in no surviving Leonardo manuscript. Leonardo's actual vegetarianism is separately evidenced — chiefly Andrea Corsali's 1515 letter to Giuliano de' Medici describing him as eating no meat — but that is not this sentence. Wikiquote files it as misattributed.",
+    "suggested_reattribution": "Dmitry Merezhkovsky (fictional dialogue in 'The Romance of Leonardo da Vinci', 1900)"
+  },
+  {
+    "id": "q_0905",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Leonardo_da_Vinci",
+    "earliest_print_source": "The Notebooks of Leonardo da Vinci / Trattato della Pittura; English ed. Jean Paul Richter, 1883",
+    "notes": "This is genuine Leonardo, from the painting precepts collected in the Trattato della Pittura and reproduced in the standard notebook editions (Richter 1883; MacCurdy 1938). It appears among his instructions to painters on stepping back from work to judge it — the passage advising the painter to withdraw, since distance shrinks the work and makes disharmony of proportion visible at a glance. Translations vary in wording, and 'a lack of harmony or portion' in the corpus text looks like a corruption of 'proportion'. I am confident in the attribution but not in the precise translation lineage of this rendering, so I am holding just at the promotion bar rather than claiming primary verification.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0906",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Standard Les Brown motivational material, attributed to him consistently and without competing claimants. Most plausibly from his book 'Live Your Dreams' (1992) or his speaking material, but I cannot confirm a page or a specific talk, so I am leaving the print source null. Living-speaker quotes of this kind are rarely sourced in the aggregators that carry them; the attribution is likely right, the citation is unestablished.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0907",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Leslie Fieger is a New Thought / self-development author known for the DELFIN Knowledge System trilogy. Quotes attributed to him circulate almost exclusively through quotation aggregators and mailing-list signatures rather than through cited books. I have no independent knowledge of this line in any of his published texts and cannot confirm or refute it. Low-profile author means low misattribution risk but also no verification path from training knowledge.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0908",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same situation as the other Fieger line. The vocabulary — conscious mind directing subconscious mind into harmony with universal mind — is squarely the New Thought idiom of Fieger's DELFIN material, so the attribution is stylistically plausible. I cannot place it in a specific book or lesson and will not invent one. No competing attribution known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0909",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lily_Tomlin",
+    "earliest_print_source": null,
+    "notes": "A signature Tomlin one-liner, attributed to her with great consistency. Important caveat: the great majority of Lily Tomlin's stage and television material was written by Jane Wagner, her longtime collaborator and later spouse, so 'Lily Tomlin said it' often means 'Jane Wagner wrote it and Lily Tomlin performed it'. I cannot determine which show or special this line came from, so I cannot say whether Wagner authored this specific joke. Attribution to Tomlin as speaker is safe; attribution as author is not.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0910",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lily_Tomlin",
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Lily Tomlin, and I believe it belongs to the Trudy the bag lady material from 'The Search for Signs of Intelligent Life in the Universe' (Broadway, 1985) — the same show that produced 'Reality is nothing but a collective hunch'. If that placement is right, the written author is Jane Wagner, who wrote the entire show; Tomlin performed it. I am not confident enough in the placement to state the show as a source or to file a formal reattribution, but the Wagner authorship question should be flagged before this is promoted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0911",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Logan_Pearsall_Smith",
+    "earliest_print_source": "Afterthoughts, Logan Pearsall Smith, 1931",
+    "notes": "Genuine and well sourced. From Smith's aphorism collection 'Afterthoughts' (1931), in the 'Life and Human Nature' section. The original reads 'There are two things to aim at in life: first, to get what you want; and, after that, to enjoy it. Only the wisest of mankind achieve the second.' Two alterations in the corpus text: 'mankind' has been changed to 'humankind', and 'achieve' to 'has achieved'. Recommend restoring the original wording, since a modernized quotation that is still presented as a quotation is a small falsification.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0912",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lord_Byron",
+    "earliest_print_source": "Don Juan, Canto III, stanza 3, Lord Byron, 1821",
+    "notes": "Genuine Byron, from Don Juan, Canto III, stanza 3. The verse line is 'In her first passion woman loves her lover, / In all the others all she loves is love'. The corpus text flattens the second line to 'she loves love', losing both the meter and the point of the antithesis. Recommend restoring the original couplet.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0913",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lord_Chesterfield",
+    "earliest_print_source": "Letters to His Son, Philip Dormer Stanhope, 4th Earl of Chesterfield, letter of 26 December 1749 (published 1774)",
+    "notes": "Genuine Chesterfield, from the celebrated letter to his son on the use of time, dated 26 December 1749 Old Style and published in the 1774 collection 'Letters to His Son'. The original opens 'Know the true value of time' — the corpus text has dropped 'true'. Original punctuation is 'no procrastination: never put off till to-morrow what you can do to-day.' The 'never put off till tomorrow' proverb long predates Chesterfield and is not his coinage; he is quoting a commonplace inside a sentence that is his own.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0914",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "I have no knowledge of Loren Fincher as an author, speaker, or public figure, and no knowledge of this line from any published source. It has the cadence of inspirational-newsletter or greeting-card writing and circulates, as far as I can tell, only through quote aggregators. Cannot confirm the person exists as attributed, cannot identify a real author, and will not guess. This is an honest 'I don't know'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0915",
+    "status": "attributed",
+    "confidence": 0.78,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Louis_Kahn",
+    "earliest_print_source": null,
+    "notes": "Genuine Kahn in substance, but two corrections are needed. First, the author's name is misspelled in the corpus: it is Louis I. Kahn (1901-1974), not 'Louis Khan'. Second, Kahn's formulation is plural — 'Architecture is the thoughtful making of spaces' — and it opens his contribution to Perspecta 4 (Yale architectural journal, 1957), continuing 'It is the creating of spaces that evoke a feeling of appropriate use.' I am confident of the sentence and of Kahn as its author; I am less certain of the exact issue and year, so I have left the print source null rather than risk a wrong citation. Fix the surname regardless of promotion outcome.",
+    "suggested_reattribution": "Louis I. Kahn (spelling correction, not a change of author)"
+  },
+  {
+    "id": "q_0916",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Louis_L%27Amour",
+    "earliest_print_source": null,
+    "notes": "Attributed to Louis L'Amour consistently and with no competing claimant. The most likely home is his memoir 'Education of a Wandering Man' (1989), which contains extended reflection on reading, writing, and how the mind works on problems below awareness — but I cannot confirm the sentence is in that book, so I am not citing it as a source. The observation is characteristic of his prose about the writing craft. Plausible author, unestablished citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0917",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "Attributed to Lucille Ball consistently, apparently originating in a magazine interview in which she described her 'everyday religion'. Note for the corpus editor: this is a truncated duplicate of q_0924, which carries the fuller and more likely original form beginning 'I have an everyday religion that works for me.' One of the two should be dropped, and the fuller version is the better record. Attribution plausible; no primary citation available to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0918",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Lucille Ball, usually in the context of interviewers asking how she developed her physical comedy. The sentiment matches her documented account of learning comedy as craft rather than possessing it as a gift. I cannot place it in a specific interview, and it may derive from her posthumously published autobiography 'Love, Lucy' (1996), but I will not cite that without confirmation. No competing attribution known.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0919",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/James_Baldwin",
+    "earliest_print_source": "'As Much Truth As One Can Bear', James Baldwin, New York Times Book Review, 14 January 1962",
+    "notes": "This is James Baldwin, not Lucille Ball, and the misattribution is not close. The line comes from Baldwin's 1962 New York Times Book Review essay 'As Much Truth As One Can Bear', on the responsibilities of American writers; it is one of his most frequently quoted sentences and is well documented in Baldwin scholarship and collections. It has nothing to do with Ball, and the corpus has additionally filed it under 'humor', which compounds the error. Strong recommendation: reattribute to Baldwin or drop.",
+    "suggested_reattribution": "James Baldwin"
+  },
+  {
+    "id": "q_0920",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A vaudeville-era stock gag about guessing a woman's age, of the kind that circulates freely and attaches itself to whichever comedian is being quoted. It is attributed to Lucille Ball in aggregators but I have no evidence she originated it, and jokes of this shape predate her career. Weak attribution; I cannot name a true originator, which is typical for anonymous stage material.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0921",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "Reads as genuine first-person interview material rather than a manufactured aphorism, and the content matches the documented arc of Ball's early years as a contract player in Hollywood before her success. That specificity is mild evidence of authenticity — invented quotes rarely include this kind of ordinary biographical detail. Still, I cannot identify the interview or publication, so the citation is unestablished.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0922",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A free-floating domestic quip attributed to Lucille Ball in quote collections. I have no source for it and no strong reason to think it originated with her; observations of this form are common in mid-century newspaper humor columns and get reassigned to famous names. Weak attribution, no identifiable origin.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0923",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Lucille Ball and structured like genuine transcribed interview speech — the self-interrupting 'Luck? I don't know anything about luck' opening, the correction mid-thought, the dash. Manufactured quotations tend to be smoother than this. The sentiment also matches her well-documented insistence that her career came from work rather than fortune. I cannot identify the interview, so no citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0924",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "The fuller and probably original form of the line duplicated at q_0917; the 'I have an everyday religion that works for me' opening is the part that usually gets trimmed off in circulation, and its presence here suggests this version is closer to the source. Attributed to Ball consistently, apparently from a magazine interview. I cannot identify the publication. Recommend keeping this version and dropping q_0917. Also note it is filed under 'humor' but is not a joke — the category looks wrong.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0925",
+    "status": "attributed",
+    "confidence": 0.5,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Lucille_Ball",
+    "earliest_print_source": null,
+    "notes": "Attributed to Lucille Ball consistently across collections, with the reflective interview cadence of her later-career remarks about resilience in show business. No competing attribution known to me and nothing suspicious about it, but also no traceable source — I cannot name an interview, article, or book. Plausible but uncited. Like several others in this run it is filed under 'humor' despite being straightforwardly earnest.",
+    "suggested_reattribution": null
+  }
+]

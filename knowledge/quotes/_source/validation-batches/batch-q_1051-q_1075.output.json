@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1051",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates most often as 'God has not called me to be successful; He has called me to be faithful,' consistently ascribed to Mother Teresa in devotional literature and quote collections. I cannot place it in any of her published writings, letters, or recorded addresses, and the wording varies noticeably between sources, which is a common signature of an oral/secondhand attribution. Plausible but unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1052",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Agrees with the input flag. Extremely widely attributed to Mother Teresa and consistent with her recorded themes, but I know of no primary source — no speech, interview, or book of hers that I can place it in. It spread heavily through greeting-card and internet quote compilations. Honest answer: attribution is plausible and uncontested, evidence is absent.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1053",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A genuine and consistently attributed Mother Teresa saying, though this is one of several circulating wordings. Better-known variants: 'I know that the work is only a drop in the ocean, but if the drop were not there, the ocean would be missing something,' and 'We ourselves feel that what we are doing is just a drop in the ocean. But the ocean would be less because of that missing drop.' Attribution is strong and uniform across sources; the specific phrasing here I cannot tie to a primary text, so I am holding below the 0.80 promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1054",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "One of the most durable and consistently attributed Mother Teresa lines; standard wording is 'We can do no great things, only small things with great love.' Attribution is uniform across decades of sources and she is recorded using the formulation in talks. The corpus entry has two hygiene problems: the author is misspelled 'Mother Theresa,' and the text is a garbled variant ('We can not do great things, just small things...') with inconsistent capitalization of 'Love.' I could not place the exact primary utterance, so this stays at strong-secondary rather than verified.",
+    "suggested_reattribution": "Mother Teresa (author-name spelling correction only)"
+  },
+  {
+    "id": "q_1055",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Mu Mon-kwan' is not a person — it is a garbling of Mumonkan (無門關), the Japanese title of The Gateless Gate, the 1228 koan collection compiled by the Chinese Chan master Wumen Huikai (Japanese: Mumon Ekai). The underlying saying is Wumen's verse commentary, familiar in English from Paul Reps' Zen Flesh, Zen Bones as roughly: 'It is too clear and so it is hard to see. A dunce once searched for fire with a lighted lantern. Had he known what fire was, he could have cooked his rice much sooner.' The text here is a loose modern paraphrase, not any translation I recognize, so I am not citing the Mumonkan as the print source for this wording. The idea is authentically Wumen's; the sentence is not.",
+    "suggested_reattribution": "Wumen Huikai (Mumon Ekai), The Gateless Gate / Mumonkan, c. 1228 — as a paraphrase, not a quotation"
+  },
+  {
+    "id": "q_1056",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Muhammad Ali and stylistically plausible for him, but I cannot place it in a specific interview, press conference, or in The Greatest: My Own Story (1975). Ali is a moderate misattribution magnet — motivational copy written for and about him is routinely recirculated as his own words (see q_1057). Attribution here is uncontested but unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1057",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is advertising copy, not Ali. The passage is the manifesto text of the adidas 'Impossible Is Nothing' campaign launched in 2004, developed by the agency 180/TBWA, whose flagship spots featured Muhammad Ali (and archival footage of him alongside his daughter Laila). The final line 'Impossible is nothing' is the campaign tagline, which is the strongest tell. Ali's name and image were licensed to the campaign; the words were written for it. Widely recirculated as an Ali quotation ever since, including in books and on quote sites. I am confident the campaign is the origin and correspondingly low-confidence in the Ali attribution.",
+    "suggested_reattribution": "adidas 'Impossible Is Nothing' campaign copy (agency 180/TBWA), 2004"
+  },
+  {
+    "id": "q_1058",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Everyday Blessings: The Inner Work of Mindful Parenting, Myla and Jon Kabat-Zinn, 1997",
+    "notes": "The joint byline points to Everyday Blessings (Hyperion, 1997), which is Myla and Jon Kabat-Zinn's only co-authored book, so the source attribution is near-certain even though I cannot confirm the sentences verbatim against the text. The definition also closely tracks Jon Kabat-Zinn's standard formulation ('paying attention in a particular way: on purpose, in the present moment, and non-judgmentally,' Full Catastrophe Living, 1990 / Wherever You Go, There You Are, 1994), which is consistent with a co-authored restatement rather than a fabrication. Holding below 0.80 because the wording is unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1059",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Myla Kabat-Zinn, most likely drawn from Everyday Blessings (1997), the book she co-wrote with Jon Kabat-Zinn, where she writes in her own voice in places. I cannot confirm the line appears there or anywhere else I can name. Myla Kabat-Zinn has a thin independent publication record, which makes the quote hard to source and easy to misassign between the two authors. Honest verdict: unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1060",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The canonical form of this saying is Buddhist scripture, not Nagarjuna: Dhammapada 204, 'santuṭṭhī paramaṃ dhanaṃ' — 'contentment is the greatest wealth.' Nagarjuna does echo it in the Suhṛllekha (Letter to a Friend), where he cites the Buddha to the effect that contentment is the supreme form of wealth, so the ascription is not baseless — but it makes Nagarjuna a transmitter rather than the author, and this four-word English form matches the Dhammapada rendering, not a specific Suhṛllekha translation I can name. Attribution as it stands is weak.",
+    "suggested_reattribution": "Dhammapada 204 (attributed to the Buddha); Nagarjuna restates it in the Suhṛllekha, quoting the Buddha"
+  },
+  {
+    "id": "q_1061",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Naoto Fukasawa is a real and well-documented Japanese industrial designer (MUJI, ±0, Naoto Fukasawa Design), and the sentiment matches his stated 'without thought' philosophy of design as embedded in everyday behavior and environment. The line circulates in design-quote collections, most plausibly extracted from an interview or from his Phaidon monograph (2007). I cannot place it in a specific text or interview, and designer quotes of this kind are frequently paraphrased in circulation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1062",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Think and Grow Rich, Napoleon Hill, 1937",
+    "notes": "Genuinely Hill's, and one of the load-bearing lines of Think and Grow Rich (1937), where the canonical wording is 'Every adversity, every failure, every heartache carries with it the seed of an equal or greater benefit.' Hill repeated variants across his later work and lectures. The corpus text is a compressed variant ('Every adversity or failure... an equivalent or a greater benefit'), so the attribution is solid while the exact phrasing is non-canonical — consider normalizing to the 1937 wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1063",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The joint byline points to Success Through a Positive Mental Attitude (1960), the only book Napoleon Hill and W. Clement Stone wrote together, and the passage's content — quiet reflection, warning against confusing motion with effectiveness — fits that book's register. I cannot confirm the wording appears there, and I have no independent recollection of this passage, so I am not asserting the citation. Attribution to the pair is plausible on structural grounds only.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1064",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Natalie Goldberg is the author of Writing Down the Bones (1986) and Wild Mind (1990), and this is entirely consistent with her teaching on slowness, composting, and present-moment creativity. The conversational register ('For me, slowing down has been...') reads like an interview or magazine Q&A rather than her published prose. I cannot place the specific interview or book, so the attribution stands as plausible-but-unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1065",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Nathaniel Alexander Owings (1903-1984) was a real architect, co-founder of Skidmore, Owings & Merrill, and author of The American Aesthetic (1969) and the memoir The Spaces in Between: An Architect's Journey (1973); the environmental-humanist tone fits The American Aesthetic in particular. But I have no recollection of this passage in either book or in any secondary citation, and a quote this obscure with no accompanying source is hard to distinguish from a misattribution. Low confidence, no citation offered.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1066",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Nathaniel Branden's body of work on self-esteem and self-honoring — most likely from Honoring the Self (1983) or The Six Pillars of Self-Esteem (1994) — but 'nurture the soul' is a slightly atypical register for Branden, who generally wrote in secular psychological language. I cannot place the passage in a specific book, and cannot rule out that it comes from a self-help anthology quoting him loosely.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1067",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is a recognizable Branden formulation and is attributed to him with unusual consistency; 'the practice of self-acceptance' is one of the six pillars in The Six Pillars of Self-Esteem (1994), and the refusal-to-be-adversarial framing is how he defines it there. I believe the book is the source but cannot confirm the sentence verbatim, so I am naming it in these notes rather than asserting it as a citation, and holding below the 0.80 promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1068",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Two problems. First, data hygiene: the stored text includes its own framing ('Nathaniel Hawthorne once famously said, ...') plus curly quotes — the quotation itself should be extracted and the frame dropped. Second, provenance: the documented Hawthorne passage on this theme is from his American Note-Books and runs, in substance, 'Happiness in this world, when it comes, comes incidentally. Make it the object of pursuit, and it leads us a wild-goose chase... Follow some other object, and very possibly we may find that we have caught happiness without dreaming of it.' The butterfly simile is the popular, much-later circulating form, and I cannot confirm Hawthorne wrote the butterfly wording himself. It may be a paraphrase that hardened into a quotation. Attribution to Hawthorne for the idea is sound; for these words, unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1069",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "No credible traditional source. 'Navajo saying' is a generic ascription of exactly the kind that inspirational literature invents, and the language here is modern therapeutic English — 'challenge us to grow,' 'move beyond the knowable,' 'elemental and essential nature' — not translated Diné oral tradition. 'Big medicine teachers' reads as a settler-inflected pastiche of Native idiom. Pseudo-Native-American attributions are a well-documented category of fabrication (cf. the Chief Seattle speech). I know of no Navajo prayer, ceremonial text, or ethnographic record containing this. Recommend rejecting or relabeling as anonymous modern.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1070",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Neale Donald Walsch with strong consistency across sources, and he has used and endorsed it himself, which distinguishes it from the usual orphan aphorism. The sentiment appears in the Conversations with God material ('Life begins at the end of your comfort zone' is often traced to that body of work), but I cannot pin it to a specific book or page. Note this is one of the most heavily recirculated single-sentence quotes on the internet, which tends to detach lines from their sources.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1071",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Conversations with God: An Uncommon Dialogue, Book 1, Neale Donald Walsch, 1995",
+    "notes": "'What would love do now?' is a signature question of the Conversations with God material and is closely identified with Book 1 (1995); the surrounding cadence here — 'Yea, let all those who have ears to hear' — matches the book's deliberately scriptural voice. I am confident about the work; I cannot confirm this exact passage or its page, so the citation is at book level and the score stays below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1072",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "Under Whose Shade: A Story of a Pioneer in the Swan River Valley of Manitoba, Wes Henderson, 1986",
+    "notes": "This one has a real and unusually well-traced provenance for a folk-sounding aphorism: it is reported as the advice of Nelson Henderson, a Manitoba farmer, recorded by his son Wes Henderson in the family memoir Under Whose Shade (1986) — the book's title comes from the saying. The frequently seen preface is 'The true meaning of life is to plant trees under whose shade you do not expect to sit.' I am confident in the Henderson origin and reasonably confident in the book; note the broader tree-planting sentiment is ancient (cf. the Greek proverb about old men planting trees) and Nelson Henderson is the reporter of this phrasing, not the inventor of the idea.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1073",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitously attributed to Nelson Mandela and quoted as his during his lifetime without evident objection, which is meaningful evidence — but I cannot place it in any speech, letter, or book of his, and the attribution appears to become common only around the 2000s. It also circulated widely through advertising and campaign copy, a route that manufactures false attributions. Mandela is a moderate misattribution magnet. Plausible, unsourced; treat as attributed-unverified until a primary text is found. NOTE: this quote is duplicated in this batch as q_1075 — deduplicate.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1074",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is Mandela's well-documented 'lead from the front / lead from the back' teaching, which reached wide circulation through Richard Stengel — his TIME cover story 'Mandela: His 8 Lessons of Leadership' (July 2008) and his book Mandela's Way (2010), both drawing on years of recorded conversations while ghostwriting Long Walk to Freedom. Stengel is a credible firsthand channel, so this sits well above the usual orphan-quote baseline. I cannot confirm the exact wording against either text, so I am naming the likely channel here rather than asserting a citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1075",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Exact duplicate of q_1073 within this batch — same text, same author. Verdict is identical: ubiquitously attributed to Nelson Mandela and quoted as his during his lifetime, but I cannot place it in any speech, letter, or book, and it spread heavily through advertising and campaign copy. Plausible, unsourced. Recommend merging with q_1073 at the dedupe stage.",
+    "suggested_reattribution": null
+  }
+]

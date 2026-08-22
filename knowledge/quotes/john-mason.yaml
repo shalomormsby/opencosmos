@@ -1,0 +1,22 @@
+author: John Mason
+author_normalized_key: john-mason
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0820
+    slug: null
+    text: "You were born an original. Don't die a copy."
+    category: insight
+    keywords: [originality, death]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "You're Born an Original, Don't Die a Copy!, John L. Mason, 1993"
+      notes: "This is essentially the title of John L. Mason's book, which is unusually strong evidence for the attribution - the line and the author are bound together by the book's own cover. I am confident the book and title exist; slightly less certain about the exact first-publication year, and the corpus wording ('You were born an original') is a minor variant of the title's 'You're born an original'. Strong attribution, minor wording drift."
+      reviewed_by_human: false

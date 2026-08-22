@@ -1,0 +1,22 @@
+author: Daijan Hui-neng
+author_normalized_key: daijan-hui-neng
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0482
+    slug: null
+    text: "The wisdom of Enlightenment is inherent in every one of us. It is because of the delusion under which our mind works that we fail to realize it ourselves, and we seek the advice and the guidance of enlightened ones."
+    category: spirit
+    keywords: [wisdom, enlightenment, delusion, confusion, mind, realization, seek, teachers, advice, guidance]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "The Sutra of Hui Neng (Platform Sutra of the Sixth Patriarch), trans. Wong Mou-lam, 1930 — Chapter 2, 'On Prajna'"
+      notes: "Genuine passage from the Platform Sutra in the Wong Mou-lam English translation, which is the source of nearly all quote-site Huineng. Two caveats: (1) authorship by Huineng himself is traditional rather than documentary — the text was compiled by disciples and grew across recensions; (2) the corpus line is slightly compressed against Wong's fuller sentence, which continues '...before we can know our own Essence of Mind.' The author name should be normalized: 'Daijan' is the posthumous title Dajian, so 'Dajian Huineng' or simply 'Huineng'."
+      reviewed_by_human: false

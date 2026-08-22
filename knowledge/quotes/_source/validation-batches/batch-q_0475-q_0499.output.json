@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0475",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A staple of Native American oratory anthologies, consistently attributed to Cochise and plausibly drawn from accounts of his 1871-72 negotiations with U.S. officers (the Howard/Jeffords parleys). I cannot confirm an original transcript or the anthology that first printed it. All surviving Cochise speech is mediated through interpreters and later journalistic reconstruction, so even a genuine source would be a secondhand rendering. Honest answer: plausible, unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0476",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Does not appear in the Analects or any Confucian classic that I know of. This is a modern English-language aphorism that spread through 20th-century quotation books and later quote sites; the tidy 'noblest / easiest / bitterest' rhetorical triad is characteristic of Western epigram construction, not of the Analects' terse recorded exchanges. I do not know who actually composed it, so I offer no reattribution. Confucius is a magnet for invented maxims of exactly this shape.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0477",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": "A Course in Miracles, Foundation for Inner Peace, 1976 (Text)",
+    "notes": "The antithesis 'host to God or hostage to the ego' is genuine ACIM language and recurs in the Text; I am confident of the source work but not of the exact chapter/section, so I have not cited one. The line as given here is phrased as a question and reads as a rewording of the canonical declarative sentence rather than a verbatim quotation, which is why this is 'attributed' rather than 'verified'. Anyone promoting this should check the wording against the FIP Text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0478",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Cyrus H. K. Curtis, the Curtis Publishing / Saturday Evening Post publisher, in mid-20th-century business-epigram collections of the B. C. Forbes type. I cannot place a primary source — no speech, letter, or interview I can name — and business aphorisms of this vintage migrate freely between Curtis, Carnegie, and other publisher-industrialist figures. Plausible but unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0479",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"Nottingham and the Mining Countryside\", D. H. Lawrence, Architectural Review, 1930 (collected in Phoenix: The Posthumous Papers of D. H. Lawrence, 1936)",
+    "notes": "Genuine Lawrence, from his late essay on the ugliness of the English mining towns. Note the wording: Lawrence wrote 'The human soul needs actual beauty even more than bread.' The corpus text drops 'even'. Recommend restoring the original word before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0480",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The content and idiom are consistent with D. T. Suzuki's expository writing on Zen (An Introduction to Zen Buddhism, Essays in Zen Buddhism, and the Barrett-edited Selected Writings), and the closing chain 'Nature is Mind, Mind is Buddha, Buddha is the Way, the Way is Zen' echoes the Chan formulations he liked to render in English. But I cannot place the volume or page, and the ellipsis suggests the line has been stitched from a longer passage. Note also that quote sites routinely confuse D. T. Suzuki with Shunryu Suzuki, so the attribution deserves a source check.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0481",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970",
+    "notes": "This is Shunryu Suzuki, not D. T. Suzuki. The passage is from Zen Mind, Beginner's Mind — the plainspoken lecture voice ('it won't help you through and through', 'without a bow and arrow you cannot do anything') is Shunryu Suzuki's transcribed dharma-talk register, not D. T. Suzuki's scholarly prose. My confidence in the reattribution to Shunryu Suzuki is high (~0.85); the 0.2 above reflects confidence in the stated author, D. T. Suzuki, which is low. I am confident of the book but not of the chapter, so none is cited. This is the single most common Suzuki/Suzuki mix-up in quote corpora.",
+    "suggested_reattribution": "Shunryu Suzuki"
+  },
+  {
+    "id": "q_0482",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "The Sutra of Hui Neng (Platform Sutra of the Sixth Patriarch), trans. Wong Mou-lam, 1930 — Chapter 2, 'On Prajna'",
+    "notes": "Genuine passage from the Platform Sutra in the Wong Mou-lam English translation, which is the source of nearly all quote-site Huineng. Two caveats: (1) authorship by Huineng himself is traditional rather than documentary — the text was compiled by disciples and grew across recensions; (2) the corpus line is slightly compressed against Wong's fuller sentence, which continues '...before we can know our own Essence of Mind.' The author name should be normalized: 'Daijan' is the posthumous title Dajian, so 'Dajian Huineng' or simply 'Huineng'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0483",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Ikeda's enormous published output of guidance essays, editorials, and daily-encouragement columns circulated through SGI publications, and I have no reason to doubt it. But that same output is the problem: his aphorisms circulate detached from the essay or speech they came from, and I cannot name the source. Plausible, unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0484",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitous on quote sites under the Dalai Lama's name, but I can identify no book, talk, or interview behind it. The generic phrasing is typical of lines that accrete to him rather than originate with him. The 14th Dalai Lama is a strong misattribution magnet — the volume of translated, transcribed, and paraphrased teaching makes him easy to attach anything to.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0485",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is Pema Chodron, not the Dalai Lama. The harden/soften antithesis closing on 'We always have the choice' is one of her signature passages, from her late-1990s/early-2000s books (When Things Fall Apart, 1997, and The Places That Scare You, 2001 are the two candidates I would check first) — I am confident of the author but not of which book, so I cite neither rather than guess. Confidence in the reattribution to Chodron is roughly 0.75; the 0.2 above reflects the stated attribution to the Dalai Lama.",
+    "suggested_reattribution": "Pema Chodron"
+  },
+  {
+    "id": "q_0486",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "One of the better-supported Dalai Lama attributions: it appears in edited collections of his teachings from around 1990 onward and is quoted with unusually stable wording, which usually indicates a real printed origin rather than internet drift. It also matches his repeated public formulation 'my religion is kindness.' I cannot name the specific volume or talk, so I leave the source null rather than guess at one. Strong secondary evidence, no primary source in hand.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0487",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The length, the qualified argument, and the human/animal contrast are characteristic of the Dalai Lama's book-length ethical writing of the late 1990s (Ethics for the New Millennium, The Art of Happiness with Howard Cutler) rather than of a fabricated aphorism — invented quotes are rarely this long or this hedged. That raises my confidence that it is genuine, but I cannot place the book or article, and passages of this kind are often lightly edited by whoever excerpts them.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0488",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely circulated under the Dalai Lama's name, often via daily-wisdom compilations of the Path to Tranquility type edited by Renuka Singh. The content matches his standard teaching against self-disparagement, which he treats as a distinctively Western affliction. No primary source I can name, and compilation books rarely cite their own origins, so the chain of custody is weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0489",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Reads as a composite: three separate Dalai Lama themes welded into one paragraph. 'Kindness is my true religion' is a real and characteristic formulation of his; the sentences on either side circulate independently elsewhere. Composite quotes are common on aggregator sites and are individually genuine but collectively unsourceable. I would not promote this as a single utterance without finding a source that carries all three sentences together.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0490",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Extremely famous and almost universally attributed to the Dalai Lama, but to my knowledge it sits in the unsourced/attributed section on Wikiquote rather than the sourced section — no book, speech, or interview has been pinned to it. Fame is not evidence: this is a case where near-universal attribution coexists with zero documented provenance. Honest verdict is low confidence despite how well known the line is.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0491",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A near-ubiquitous Dalai Lama attribution with very stable wording, and it faithfully renders a real and repeated theme in his teaching on compassion as self-interested as well as altruistic. But I cannot locate a primary source, and like several of his most-shared lines it may be a compressed paraphrase of a longer spoken passage rather than a verbatim quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0492",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Length and the first-person 'I am convinced' make a genuine spoken or written origin likely — this reads like transcript, not aggregator invention. Consistent with his talks and writings on compassion practice (The Compassionate Life and similar collections would be where I would look). No source I can name, so the attribution stays unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0493",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Warm heart' and 'warm-heartedness' are genuine signature terms of the Dalai Lama's public teaching, which supports the attribution at a thematic level. But the intelligence-plus-heart construction is also a widely shared moral commonplace — compare King's 'intelligence plus character' — and I cannot place this specific sentence in any of his talks or books. Thematically plausible, textually unplaced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0494",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Contested and probably not Carnegie. This chiasmus circulates under several names — Dale Carnegie, Ingrid Bergman, and others — which is the classic signature of a floating aphorism that predates all of its claimed authors. I do not recall encountering it in How to Win Friends and Influence People or How to Stop Worrying and Start Living. Because I cannot identify a probable true origin, I am recording this as unverified rather than as a misattribution, but the Carnegie credit should be treated as weak.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0495",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Dale E. Turner, the Seattle-area minister and long-running Seattle Times columnist, and the sentiment and cadence fit his inspirational column work. His columns are the likely origin, but individual columns are rarely cited by the quote collections that reprint him, and I cannot name a date or title. Plausible, unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0496",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Dan Millman's vocabulary — 'conscious evolution', 'obstructions' — and with his post-Peaceful Warrior instructional books (No Ordinary Moments, The Life You Were Born to Live, The Laws of Spirit). Millman is a living author who circulates his own lines, so the attribution itself is low-risk, but I cannot name the book or page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0497",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A recognizable Millman line with a distinctive image (backing up to get a running start) that argues against generic invention, and consistent with his 1990s books. Attribution to Millman is low-risk; the specific source is unplaced in my knowledge, so it stays unverified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0498",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "'Energy follows thought' is a New Thought commonplace that long predates Millman, but the surrounding sentences ('we move toward, but not beyond, what we can imagine') are his phrasing and consistent with his instructional writing. So the passage as a whole is plausibly his composition even though its opening maxim is inherited. No source located.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0499",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Way of the Peaceful Warrior: A Book That Changes Lives, Dan Millman, 1980",
+    "notes": "The signature line of Millman's Way of the Peaceful Warrior, spoken by the Socrates character, and the book's central teaching. It later titled his 1992 follow-up No Ordinary Moments and served as the tagline for the 2006 film adaptation, Peaceful Warrior. Attribution and source work are both solid; I have not verified a page number.",
+    "suggested_reattribution": null
+  }
+]

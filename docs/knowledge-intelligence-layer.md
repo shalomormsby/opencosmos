@@ -425,7 +425,7 @@ Phases 5, 6, and 7 can proceed in parallel with each other.
 
 ## Verification
 
-**Graph:** `opencosmos.ai/knowledge/graph` → glowing nodes on dark background within 2 seconds of load.
+**Graph:** `opencosmos.ai/library/graph` → glowing nodes on dark background within 2 seconds of load.
 
 **RAG retrieval:** Open Dialog → ask about impermanence → Cosmo cites a specific source document by name and author, not just wiki synthesis. The citation is accurate.
 

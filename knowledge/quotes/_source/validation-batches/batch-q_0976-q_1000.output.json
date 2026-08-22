@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0976",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935",
+    "notes": "Genuine Twain, from a notebook entry (c. 1904) first published posthumously in Mark Twain's Notebook (1935). Usual wording is 'Whenever you find yourself on the side of the majority...'. Not from a work published in his lifetime, so the chain runs through Paine's edited notebooks rather than a primary printed text — hence attributed rather than verified.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0977",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "\"What Paul Bourget Thinks of Us\", North American Review, 1895; collected in How to Tell a Story and Other Essays, 1897",
+    "notes": "Genuine Twain essay line. The original reads closer to 'Humor is the great thing, the saving thing after all. The minute it crops up, all our hardnesses yield, all our irritations and resentments flit away, and a sunny spirit takes their place.' The corpus text is a slightly condensed variant, and it carries a stray trailing double-quote character that should be stripped in normalization.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0978",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "The Mysterious Stranger, Mark Twain, 1916 (posthumous)",
+    "notes": "The idea is genuinely Twain's, from the Satan monologue in the Mysterious Stranger manuscripts: the human race 'has unquestionably one really effective weapon - laughter.' The exact sentence as quoted here is a smoothed condensation rather than Twain's printed wording, and the 1916 text itself was editorially assembled by Paine and Duneka from Twain's drafts. Correct author, imprecise wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0979",
+    "status": "likely_misattributed",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "Not found in Twain's works or letters; Twain attributions for this line are late and unsupported. The 'if you don't mind, it doesn't matter' pun on mind/matter circulated as a stock joke well before it was pinned to any famous name. It is most commonly credited to Satchel Paige ('Age is a question of mind over matter...'), but Paige popularized rather than originated it, so I am not asserting a replacement author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0980",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935 (entry dated 1894)",
+    "notes": "Genuine Twain notebook entry, consistently cited to the 1894 notebooks published in 1935. Attributed rather than verified because the source is Paine's posthumous edited compilation rather than a text Twain saw into print.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0981",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "I cannot place this in any Twain text - not in the novels, essays, letters, or notebooks I know. It reads like a newspaper-filler aphorism that later collected a Twain byline, the standard pattern for spurious Twain. I do not have a confident true origin, so I am recording honest uncertainty rather than a reattribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0982",
+    "status": "apocryphal",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "A classic spurious Twain. It appears in no Twain work; documented appearances postdate his 1910 death, and it is biographically impossible as autobiography - John Marshall Clemens died when Samuel Clemens was eleven, so there was no father to rediscover at twenty-one. Origin unknown; the joke circulated anonymously in periodicals before acquiring Twain's name.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0983",
+    "status": "attributed",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935",
+    "notes": "Same Twain notebook entry as q_0976, in the more common 'find yourself / it's time' wording - these two records are duplicates of one quote and one of them should be dropped in dedup. Genuine Twain, sourced to the posthumously published notebooks rather than a lifetime imprint.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0984",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "The Mysterious Stranger, Mark Twain, 1916, ch. 10",
+    "notes": "Genuine, from Satan's closing speech on laughter as the human race's one effective weapon. Caveat: the 1916 published Mysterious Stranger was stitched together and partly rewritten by Paine and Duneka from Twain's unfinished manuscripts, but this sentence is present in Twain's own drafting of that passage.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0985",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "Letter from Mark Twain to Mrs. Foote, 2 December 1887",
+    "notes": "Genuine Twain, from an 1887 letter; the original phrasing is 'all you need in this life is ignorance and confidence, and then success is sure.' The corpus drops 'this' from 'in this life' - minor variance, correct author and traceable primary document.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0986",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "No Twain source known to me. The vocation/vacation pun circulates in several forms ('Make your vocation your vacation') attached to various names, and I cannot trace any of them to a document. Twain's name here looks like the usual gravitational pull of a famous humorist on an unowned wordplay.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0987",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Twain across quote collections and stylistically plausible for him; I have a weak recollection of it sitting in one of the late novels but cannot place the work or chapter with enough confidence to name it, so I am leaving the print source null rather than guessing. Author plausible, citation unconfirmed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0988",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "Widely printed over Twain's name but absent from his writings so far as I know; the Twain attribution surfaces decades after his death, and quote-tracing work on this line has failed to find any contemporaneous support. Related sentiments about kindness as a universal language predate the Twain version. True origin unknown to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0989",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": "Following the Equator, Mark Twain, 1897 (epigraph from Pudd'nhead Wilson's New Calendar)",
+    "notes": "Genuine Twain, one of the Pudd'nhead Wilson's New Calendar chapter epigraphs in Following the Equator. Twain's wording is 'the full value of a joy'; the corpus reads 'of joy'. Correct author, published in his lifetime.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0990",
+    "status": "attributed",
+    "confidence": 0.55,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Mark_Twain",
+    "earliest_print_source": null,
+    "notes": "Very consistently attributed to Twain and usually pointed at his notebooks, but I cannot confirm which entry or letter, and I have not seen it quoted with a page citation. Plausible but unconfirmed - keeping it below the promotion bar until someone checks the notebooks.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0991",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": null,
+    "earliest_print_source": "\"The Computer for the 21st Century\", Mark Weiser, Scientific American, September 1991",
+    "notes": "These are the opening two sentences of Weiser's ubiquitous-computing paper, quoted verbatim and correctly. One of the best-documented attributions in computing; the text matches the published article word for word.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0992",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": null,
+    "earliest_print_source": "Reflexions et maximes, Luc de Clapiers, marquis de Vauvenargues, 1746",
+    "notes": "The maxim is Vauvenargues': 'Il n'est rien que la peur ne fasse croire,' from his Reflexions et maximes (published 1746 with the Introduction a la connaissance de l'esprit humain). The author field is misspelled and mistitled - it should read 'Luc de Clapiers, marquis de Vauvenargues', not 'Marquis de Vauvengras'. I am confident of the author, less so of the exact maxim number, so I have not cited one.",
+    "suggested_reattribution": "Luc de Clapiers, marquis de Vauvenargues (author name is misspelled in the record)"
+  },
+  {
+    "id": "q_0993",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently credited to the playwright Marsha Norman with no competing claimants, and it circulated widely after appearing in magazine quote features in the 1990s. I cannot name the interview, play, or essay it came from, so the citation stays null. Author likely right, source unlocated.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0994",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Marsha Sinetar, whose subject matter (right livelihood, mind-body integration, contemplative practice) fits the content well - most likely from one of her books such as Do What You Love, the Money Will Follow (1987) or Ordinary People as Monks and Mystics (1986), but I cannot confirm which and will not guess a title.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0995",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Marsha Sinetar in quote collections; the water-and-obstacle imagery reads like her commentary on an I Ching hexagram, which is consistent with her writing, but I cannot place the book or page. The ellipsis in the text indicates it is already an excerpt from a longer passage, which makes verification harder rather than easier.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0996",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Nonviolent Communication: A Language of Life, Marshall B. Rosenberg, PuddleDancer Press, 1999 (2nd ed. 2003)",
+    "notes": "Genuine Rosenberg, from the opening chapter of Nonviolent Communication, where he introduces observation/feeling/need as the alternative to diagnosis and judgment. Wording and vocabulary match the book directly. Confident in book and author; I have not pinned an exact page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0997",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently credited to McLuhan, but I know of no primary citation - no book, lecture, or interview I can point to. Complicating it: 'Spaceship Earth' is Buckminster Fuller's frame (Operating Manual for Spaceship Earth, 1969), and the line is sometimes handed to Fuller instead. McLuhan is the more common attribution and is plausible, but the evidence I have is secondary repetition, not a source.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0998",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martha_Graham",
+    "earliest_print_source": null,
+    "notes": "Genuine-sounding Graham and consistently attributed to her, from her writing on modern dance in the 1930s-50s. Note a probable transcription corruption: the standard wording is 'We look FOR the dance to impart the sensation of living in an affirmation of life,' not 'look at the dance.' I cannot name the essay or collection with confidence, so no citation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0999",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martha_Graham",
+    "earliest_print_source": "Martha: The Life and Work of Martha Graham, Agnes de Mille, Random House, 1991",
+    "notes": "The famous 'keep the channel open' passage, spoken by Graham to Agnes de Mille and recorded by de Mille in her Graham biography. Important caveat for the corpus: this is de Mille's written recollection of Graham's spoken words, not text Graham published, and the widely circulated version has drifted slightly from de Mille's page. Also note the typo carried in this record: 'this expression in unique' should read 'is unique'.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1000",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Martha_Graham",
+    "earliest_print_source": null,
+    "notes": "A variant rendering of the same de Mille conversation behind q_0999 ('because there is only one of you in all time'). It circulates as a standalone Graham line, but I cannot match it word for word to de Mille's text, so it may be a paraphrase in transmission rather than a distinct utterance. Author right, exact wording unverified.",
+    "suggested_reattribution": null
+  }
+]

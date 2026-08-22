@@ -1,0 +1,38 @@
+author: Plato
+author_normalized_key: plato
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_1147
+    slug: null
+    text: To do injustice is more disgraceful than to suffer it.
+    category: insight
+    keywords: [injustice, suffer]
+    context: "Ancient Greek, Philosophy, Socratic"
+    favorite: true
+    source_work: sources/philosophy-gorgias
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Plato"
+      earliest_print_source: "Gorgias, Plato, ~380 BCE (474b–475e)"
+      notes: "Genuine and central Plato. In the Gorgias, Socrates argues against Polus that doing injustice is worse and more shameful than suffering it (the thesis is set out around 474b and argued through 475e, and echoed at 469b–c). The English here matches the standard translation family closely. Verified on the strength of the primary text."
+      reviewed_by_human: false
+  - id: q_1148
+    slug: null
+    text: The unexamined life is not worth living.
+    category: insight
+    keywords: [self, awareness]
+    context: "Ancient Greek, Philosophy, Socratic"
+    favorite: false
+    source_work: sources/philosophy-apology
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Plato"
+      earliest_print_source: "Apology, Plato, ~399–390 BCE (38a)"
+      notes: "Plato's Apology 38a, spoken by Socrates at his trial — the standard English rendering of ho de anexetastos bios ou biotos anthropoi. Strictly the words are Socrates' as reported by Plato, so either attribution is defensible; crediting Plato (as author of the Apology) is conventional and correct, and I am not treating that as a misattribution."
+      reviewed_by_human: false

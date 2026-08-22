@@ -1,0 +1,38 @@
+author: Robert Frost
+author_normalized_key: robert-frost
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1209
+    slug: null
+    text: Happiness makes up in height for what it lacks in length.
+    category: insight
+    keywords: [happiness]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Robert_Frost"
+      earliest_print_source: "A Witness Tree, Robert Frost, 1942"
+      notes: "This is not merely a line by Frost — it is the title of his poem 'Happiness Makes Up in Height for What It Lacks in Length,' collected in A Witness Tree (1942), the volume that won him his fourth Pulitzer. Attribution is secure and the source is a published primary text."
+      reviewed_by_human: false
+  - id: q_1210
+    slug: null
+    text: The best way out is always through.
+    category: insight
+    keywords: [transformation]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Robert_Frost"
+      earliest_print_source: "North of Boston, Robert Frost, 1914 (poem: 'A Servant to Servants')"
+      notes: "From the dramatic monologue 'A Servant to Servants' in North of Boston (1914), where the speaker reports her husband's saying: 'He says the best way out is always through.' Worth noting for corpus honesty that in context the line is a character quoting another character, not Frost speaking in his own voice — but the wording and the source are secure."
+      reviewed_by_human: false

@@ -1,0 +1,150 @@
+author: Mark Twain
+author_normalized_key: mark-twain
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0969
+    slug: null
+    text: "travel is fatal to prejudice, bigotry, and narrow-mindedness"
+    category: insight
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "The Innocents Abroad, Mark Twain, 1869 (Conclusion)"
+      notes: "Genuine Twain, from the closing chapter of The Innocents Abroad: 'Travel is fatal to prejudice, bigotry, and narrow-mindedness, and many of our people need it sorely on these accounts. Broad, wholesome, charitable views of men and things cannot be acquired by vegetating in one little corner of the earth all one's lifetime.' The recorded entry is lowercased and truncated mid-sentence; it should be capitalized and either closed with a period or extended to the full clause."
+      reviewed_by_human: false
+  - id: q_0972
+    slug: null
+    text: "Courage is resistance to fear, mastery of fear, not absence of fear."
+    category: insight
+    keywords: [courage, fear]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.93
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Pudd'nhead Wilson, Mark Twain, 1894 - epigraph to ch. 12, from 'Pudd'nhead Wilson's Calendar'"
+      notes: "Genuine Twain, unlike the three neighbouring entries in this batch. It appears as a Pudd'nhead Wilson's Calendar epigraph and continues '...except a creature that has no fear, in which case courage would be meaningless.' The original punctuates with a dash: 'Courage is resistance to fear, mastery of fear - not absence of fear.' The recorded comma is a minor deviation."
+      reviewed_by_human: false
+  - id: q_0976
+    slug: null
+    text: "Whenever you find you are on the side of the majority, it is time to pause and reflect."
+    category: insight
+    keywords: [reflect, majority, pause]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935"
+      notes: "Genuine Twain, from a notebook entry (c. 1904) first published posthumously in Mark Twain's Notebook (1935). Usual wording is 'Whenever you find yourself on the side of the majority...'. Not from a work published in his lifetime, so the chain runs through Paine's edited notebooks rather than a primary printed text — hence attributed rather than verified."
+      reviewed_by_human: false
+  - id: q_0977
+    slug: null
+    text: "Humor is the great thing, the saving thing. The minute it crops up, all our irritations and resentments slip away and a sunny spirit takes their place.\""
+    category: insight
+    keywords: [humor, attitude, spirit, irritation]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "\"What Paul Bourget Thinks of Us\", North American Review, 1895; collected in How to Tell a Story and Other Essays, 1897"
+      notes: "Genuine Twain essay line. The original reads closer to 'Humor is the great thing, the saving thing after all. The minute it crops up, all our hardnesses yield, all our irritations and resentments flit away, and a sunny spirit takes their place.' The corpus text is a slightly condensed variant, and it carries a stray trailing double-quote character that should be stripped in normalization."
+      reviewed_by_human: false
+  - id: q_0980
+    slug: null
+    text: "If you tell the truth, you don't have to remember anything."
+    category: humor
+    keywords: [truth, remember, honesty]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935 (entry dated 1894)"
+      notes: "Genuine Twain notebook entry, consistently cited to the 1894 notebooks published in 1935. Attributed rather than verified because the source is Paine's posthumous edited compilation rather than a text Twain saw into print."
+      reviewed_by_human: false
+  - id: q_0983
+    slug: null
+    text: "Whenever you find yourself on the side of the majority, it's time to pause and reflect."
+    category: humor
+    keywords: [people, majority, reflect]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Mark Twain's Notebook, ed. Albert Bigelow Paine, 1935"
+      notes: "Same Twain notebook entry as q_0976, in the more common 'find yourself / it's time' wording - these two records are duplicates of one quote and one of them should be dropped in dedup. Genuine Twain, sourced to the posthumously published notebooks rather than a lifetime imprint."
+      reviewed_by_human: false
+  - id: q_0984
+    slug: null
+    text: "Against the assault of laughter, nothing can stand."
+    category: humor
+    keywords: [laughter, war, nothing]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "The Mysterious Stranger, Mark Twain, 1916, ch. 10"
+      notes: "Genuine, from Satan's closing speech on laughter as the human race's one effective weapon. Caveat: the 1916 published Mysterious Stranger was stitched together and partly rewritten by Paine and Duneka from Twain's unfinished manuscripts, but this sentence is present in Twain's own drafting of that passage."
+      reviewed_by_human: false
+  - id: q_0985
+    slug: null
+    text: "All you need in life is ignorance and confidence, and then success is sure."
+    category: humor
+    keywords: [life, ignorance, success, confidence]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.82
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Letter from Mark Twain to Mrs. Foote, 2 December 1887"
+      notes: "Genuine Twain, from an 1887 letter; the original phrasing is 'all you need in this life is ignorance and confidence, and then success is sure.' The corpus drops 'this' from 'in this life' - minor variance, correct author and traceable primary document."
+      reviewed_by_human: false
+  - id: q_0989
+    slug: null
+    text: "Grief can take care of itself, but to get the full value of joy you must have somebody to divide it with."
+    category: relationships
+    keywords: [grief, joy, share, give]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mark_Twain"
+      earliest_print_source: "Following the Equator, Mark Twain, 1897 (epigraph from Pudd'nhead Wilson's New Calendar)"
+      notes: "Genuine Twain, one of the Pudd'nhead Wilson's New Calendar chapter epigraphs in Following the Equator. Twain's wording is 'the full value of a joy'; the corpus reads 'of joy'. Correct author, published in his lifetime."
+      reviewed_by_human: false

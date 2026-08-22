@@ -9,7 +9,10 @@
  *   - per-pool: IDs unique, required fields present, status ∈ allowed vocab
  *   - cross-pool: no ID overlap, total count matches source jsonl
  *   - embeddable: every record has status ∈ {verified, attributed}
- *   - pending: every record has status ∈ {attributed_unverified, likely_misattributed, apocryphal}
+ *   - pending: nothing rejected (that belongs in _archive/), and nothing that
+ *     already clears the promotion bar (that belongs in the embeddable pool).
+ *     Validated verified/attributed records below the bar are legitimate here —
+ *     they carry a real status and are waiting on stronger evidence.
  */
 
 import { readdirSync, readFileSync, statSync } from 'node:fs'
@@ -20,18 +23,13 @@ import {
   EMBEDDABLE_STATUSES,
   KNOWLEDGE_QUOTES_DIR,
   PENDING_JSONL_PATH,
+  REJECTED_YAML_PATH,
   SOURCE_JSONL_PATH,
+  meetsPromotionBar,
   parseYamlFile,
   readJsonlFile,
   type JsonlRecord,
-  type Status,
 } from './shared.js'
-
-const PENDING_STATUSES = new Set<Status>([
-  'attributed_unverified',
-  'likely_misattributed',
-  'apocryphal',
-])
 
 const errors: string[] = []
 const err = (msg: string) => errors.push(msg)
@@ -130,37 +128,107 @@ function lintPendingPool(): { ids: Set<string>; total: number } {
     const status = r.provenance.status
     if (!ALLOWED_STATUSES.has(status)) {
       err(`pending.jsonl#${r.id}: invalid status "${status}"`)
-    } else if (!PENDING_STATUSES.has(status)) {
-      err(`pending.jsonl#${r.id}: status "${status}" should be in embeddable pool`)
+    } else if (status === 'rejected') {
+      err(`pending.jsonl#${r.id}: status "rejected" belongs in _archive/rejected.yaml`)
+    } else if (meetsPromotionBar(r)) {
+      const c = r.provenance.confidence
+      err(
+        `pending.jsonl#${r.id}: meets promotion bar (${status}, confidence ${c ?? 'n/a'}` +
+          `${r.provenance.reviewed_by_human ? ', human-reviewed' : ''}) — run pnpm quotes:promote`,
+      )
     }
   }
 
   return { ids, total }
 }
 
+/**
+ * The tombstone for records dropped in review. Optional — it only exists once
+ * something has been dropped.
+ */
+function lintArchivePool(): { ids: Set<string>; total: number } {
+  const ids = new Set<string>()
+  if (!statSync(REJECTED_YAML_PATH, { throwIfNoEntry: false })) return { ids, total: 0 }
+
+  let parsed
+  try {
+    parsed = parseYamlFile(REJECTED_YAML_PATH, 'rejected')
+  } catch (e) {
+    err(`_archive/rejected.yaml: yaml parse failed: ${e}`)
+    return { ids, total: 0 }
+  }
+
+  for (const r of parsed.records) {
+    if (!r.id) { err(`_archive/rejected.yaml: record missing id`); continue }
+    if (ids.has(r.id)) err(`_archive/rejected.yaml: duplicate id ${r.id}`)
+    ids.add(r.id)
+    if (r.provenance?.status !== 'rejected') {
+      err(`_archive/rejected.yaml#${r.id}: status "${r.provenance?.status}" — archive holds only rejected`)
+    }
+  }
+
+  return { ids, total: parsed.records.length }
+}
+
 function main() {
   const embeddable = lintEmbeddablePool()
   const pending = lintPendingPool()
+  const archive = lintArchivePool()
 
-  // Cross-pool: no ID overlap
-  for (const id of embeddable.ids) {
-    if (pending.ids.has(id)) err(`cross-pool: id ${id} appears in both embeddable and pending`)
+  // Cross-pool: no ID appears in more than one pool
+  const pools: Array<[string, Set<string>]> = [
+    ['embeddable', embeddable.ids],
+    ['pending', pending.ids],
+    ['archive', archive.ids],
+  ]
+  for (let i = 0; i < pools.length; i++) {
+    for (let j = i + 1; j < pools.length; j++) {
+      for (const id of pools[i][1]) {
+        if (pools[j][1].has(id)) err(`cross-pool: id ${id} appears in both ${pools[i][0]} and ${pools[j][0]}`)
+      }
+    }
   }
 
-  // Cross-pool: total = source count
-  const totalAcrossPools = embeddable.total + pending.total
+  const totalAcrossPools = embeddable.total + pending.total + archive.total
+  let sourceTotal = 0
+  let addedSinceImport = 0
   if (statSync(SOURCE_JSONL_PATH, { throwIfNoEntry: false })) {
-    const sourceCount = readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length
-    if (totalAcrossPools !== sourceCount) {
-      err(`total mismatch: embeddable ${embeddable.total} + pending ${pending.total} = ${totalAcrossPools} ≠ source ${sourceCount}`)
+    // Source coverage, not an exact count. _source/ is the historical import,
+    // no longer the truth: every record it holds must still live in exactly one
+    // pool, but quotes added since (via quotes:add) legitimately exceed it.
+    const sourceIds = readFileSync(SOURCE_JSONL_PATH, 'utf-8')
+      .split('\n')
+      .filter(Boolean)
+      .map((line, i) => {
+        try {
+          return (JSON.parse(line) as JsonlRecord).id
+        } catch {
+          err(`_source/quotes_normalized.jsonl: unparseable line ${i + 1}`)
+          return null
+        }
+      })
+      .filter((id): id is string => Boolean(id))
+
+    const everywhere = new Set([...embeddable.ids, ...pending.ids, ...archive.ids])
+    const missing = sourceIds.filter((id) => !everywhere.has(id))
+    if (missing.length > 0) {
+      err(
+        `${missing.length} source record(s) in no pool — first few: ${missing.slice(0, 5).join(', ')}`,
+      )
     }
+    addedSinceImport = totalAcrossPools - sourceIds.length
+    sourceTotal = sourceIds.length
   } else {
     err(`source jsonl missing: ${SOURCE_JSONL_PATH}`)
   }
 
   console.log(`Embeddable pool: ${embeddable.total} quotes across ${COLLECTIVE_BUCKETS.size}+ files`)
   console.log(`Pending pool:    ${pending.total} records`)
-  console.log(`Total:           ${totalAcrossPools} (source: ${readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length})`)
+  if (archive.total > 0) console.log(`Archive:         ${archive.total} rejected`)
+  console.log(
+    `Total:           ${totalAcrossPools} (${sourceTotal} from the original import` +
+      `${addedSinceImport > 0 ? `, ${addedSinceImport} added since` : ''})`,
+  )
 
   if (errors.length > 0) {
     console.error()

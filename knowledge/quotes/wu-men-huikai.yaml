@@ -1,0 +1,22 @@
+author: Wu-men Huikai
+author_normalized_key: wu-men-huikai
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1479
+    slug: null
+    text: "Ten thousand flowers in spring, the moon in autumn, a cool breeze in summer, snow in winter. If your mind isn't clouded by unnecessary things, this is the best season of your life."
+    category: spirit
+    keywords: [zen, flower, spring, moon, autumn, winder, breeze, snow, mind, season, life, perception, clarity]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: null
+      earliest_print_source: "Wumenguan (無門關, The Gateless Barrier), Wumen Huikai, 1228 — verse to Case 19, 'Ordinary Mind Is the Way'"
+      notes: "Genuine Wumen. The Chinese verse is 春有百花秋有月，夏有涼風冬有雪，若無閒事挂心頭，便是人間好時節 — Wumen's capping verse to the Nanquan koan in Case 19 of the Wumenguan. The English here is a loose modern rendering rather than a literal translation (this phrasing is generally Stephen Mitchell's), so the translator should be credited if the corpus tracks that. Attribution to Wumen is solid."
+      reviewed_by_human: false

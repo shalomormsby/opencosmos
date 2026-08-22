@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1457",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_James",
+    "earliest_print_source": "\"Is Life Worth Living?\" (address, 1895), collected in The Will to Believe and Other Essays in Popular Philosophy, William James, 1897",
+    "notes": "Genuine James. The canonical wording is 'Believe that life is worth living, and your belief will help create the fact.' The corpus text drops 'help' and inserts 'your' before 'life' — a very common softening. Attribution is not in doubt; the wording should be corrected to the published form if the corpus cares about exactness.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1458",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_James",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to James across quote dictionaries for many decades, and the register matches his prose on fatigue and effort (cf. 'The Energies of Men'). I cannot place it in a specific James text from memory, so no print citation is offered. Attribution plausible and stable, but unverified — deliberately below the promotion bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1459",
+    "status": "attributed_unverified",
+    "confidence": 0.2,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "James genuinely wrote about the 'second wind' and habitual fatigue barriers in 'The Energies of Men' (1907), which is almost certainly the seed. But the second sentence — 'Give your dreams all you've got and you'll be amazed at the energy that comes out of you' — is mid-20th-century American motivational register, not James's 1907 prose. This reads as a self-help paraphrase grown onto a real James theme. Treat as unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1460",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/William_James",
+    "earliest_print_source": "The Principles of Psychology, William James, 1890, Vol. II (chapter on Reasoning)",
+    "notes": "Genuine. James's sentence is 'the art of being wise is the art of knowing what to overlook.' The corpus text drops the second 'the art of'. Attribution solid; wording is a light trim of the original.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1461",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Long-standing and consistent attribution to Bryan in quote collections, and the cadence matches his oratory. I have a weak recollection that it comes from a turn-of-the-century Bryan address, but I cannot name the speech with confidence, so no citation is given. Frequently reproduced without source, which is the usual warning sign; still, no competing claimant is known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1462",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Penn very widely, but I cannot place it in Some Fruits of Solitude or any other Penn text I know. The same line circulates under Augustine and under Charles Spurgeon, which is the classic signature of a floating aphorism that later acquired a famous name. Uncertain enough that I will not name a true author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1463",
+    "status": "verified",
+    "confidence": 0.97,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/As_You_Like_It",
+    "earliest_print_source": "As You Like It, William Shakespeare, c. 1599 (First Folio, 1623) — Act V, scene i, Touchstone",
+    "notes": "Genuine Shakespeare, spoken by Touchstone to William. Text matches the received reading.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1464",
+    "status": "verified",
+    "confidence": 0.94,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Twelfth_Night",
+    "earliest_print_source": "Twelfth Night, William Shakespeare, c. 1601 (First Folio, 1623) — Act IV, scene ii, Feste",
+    "notes": "Genuine, but excerpted to the point of distortion: Feste's line is 'That that is, is; so I, being Master Parson, am Master Parson' — comic scholastic parody, not an aphorism about being. Attribution correct; the standalone fragment misrepresents the sense.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1465",
+    "status": "verified",
+    "confidence": 0.93,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Hamlet",
+    "earliest_print_source": "Hamlet, William Shakespeare, c. 1600 — Act II, scene ii, Hamlet to Rosencrantz",
+    "notes": "Genuine, but misquoted. The text reads 'there is nothing either good or bad, but thinking makes it so.' The corpus version inserts 'in this world' and changes the construction. Recommend restoring the received wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1466",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Not Shakespeare — nothing in this diction, doctrine, or vocabulary belongs to him. This is classical Epicurean physics: nothing comes from nothing, things arise from 'seeds', and nothing perishes into nothing but dissolves back into its elements. That is the argument of Lucretius, De Rerum Natura, Book I, and 'seed' renders the Lucretian semina. Pliny the Elder states a close version in the Natural History, so I cannot be certain which classical author this English translation comes from, and I do not know the translator. Confident it is not Shakespeare; only probable that it is Lucretius.",
+    "suggested_reattribution": "Lucretius, De Rerum Natura (probable; classical Epicurean source — not Shakespeare)"
+  },
+  {
+    "id": "q_1467",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to William Temple, Archbishop of Canterbury, and consistent with his devotional writing of the 1930s (Christian Faith and Life, 1931, is the citation usually given, though I cannot confirm the page or that it is correct). Worth noting the neighbouring case: the popular 'Humility is not thinking less of yourself, but thinking of yourself less' is routinely misattributed to C. S. Lewis, who did not write it; this Temple passage is the older and better-grounded member of the family.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1468",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "A well-known Churchill fake. It does not appear in the Churchill canon, and the International Churchill Society lists it among quotations he never said. Quote Investigator traced early forms to 1930s American motivational and advertising copy ('Success is never final and failure never fatal; it's courage that counts'), well before it was pinned to Churchill. I recall that provenance but will not present it as a citation. No true author identifiable.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1469",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "Ubiquitously attributed to Churchill but never sourced. Langworth's Churchill by Himself does not locate it in any speech, letter, or book, and similar optimist/pessimist antitheses circulated before Churchill was attached to them. Plausible he said something like it in conversation; no evidence he did. Note this is a near-duplicate of q_1471 — the corpus should keep one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1470",
+    "status": "verified",
+    "confidence": 0.93,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": "Speech in the House of Commons, 28 October 1943 (Hansard), on rebuilding the bombed Commons Chamber",
+    "notes": "Genuine and well documented — one of the Churchill quotations that actually survives checking. The recorded wording is 'We shape our buildings, and afterwards our buildings shape us.' The corpus text is the common paraphrase; consider restoring the Hansard wording.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1471",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "Same unsourced Churchill attribution as q_1469, in the more idiomatic wording. No primary source exists in the Churchill canon. Duplicate of q_1469 — deduplicate before promotion.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1472",
+    "status": "attributed_unverified",
+    "confidence": 0.15,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "A corrupted derivative. The line attributed to Churchill is about truth, not opportunity: 'Men occasionally stumble over the truth, but most of them pick themselves up and hurry off as if nothing ever happened.' Even that version is attributed rather than sourced to a document. This 'opportunity' rewrite has no standing at all; it is a motivational-poster mutation of the truth version.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1473",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "A smoothed paraphrase. Churchill's documented sentiment is blunter: 'It is no use saying, \"We are doing our best.\" You have got to succeed in doing what is necessary' — from his wartime remarks of the early 1940s. The polished 'It's not enough that we do our best; sometimes we have to do what's required' circulates without a source and appears to be a later rewrite. The idea is Churchill's; this wording is not established as his.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1474",
+    "status": "likely_misattributed",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "Not Churchill. Absent from the Churchill canon and listed by the International Churchill Society among quotations wrongly credited to him. The saying circulated in the early twentieth century before being attached to his name; it is also attributed to Norman MacEwan, though I cannot confirm that claim, so I am not naming a replacement author.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1475",
+    "status": "apocryphal",
+    "confidence": 0.1,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Winston_Churchill",
+    "earliest_print_source": null,
+    "notes": "One of the most confidently repeated Churchill quotations he demonstrably never said. It appears in no speech, book, letter, or contemporary record; the International Churchill Society lists it as misattributed, and researchers have found no instance before the late twentieth century, decades after his death. Origin unknown.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1476",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Ludwig_Wittgenstein",
+    "earliest_print_source": "Tractatus Logico-Philosophicus, Ludwig Wittgenstein, 1921 (German) / 1922 (English), proposition 6.4311",
+    "notes": "Genuine, but truncated in a way that changes its force. The full proposition is conditional: 'If we take eternity to mean not infinite temporal duration but timelessness, then eternal life belongs to those who live in the present.' Stripped of the antecedent it reads as devotional advice rather than a claim about timelessness. Author field should be expanded to Ludwig Wittgenstein.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1477",
+    "status": "attributed",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Woodrow_Wilson",
+    "earliest_print_source": "Address, \"The Meaning of a Liberal Education,\" to the Federation of High School Teachers, New York, 9 January 1909",
+    "notes": "Genuinely Wilson, and the standard citation given for it is the January 1909 address to the New York high school teachers, reproduced in The Papers of Woodrow Wilson. I am reporting that citation from training memory and have not confirmed it against the primary text, so treat the source line as strong-but-unchecked rather than as a verified page reference. Attribution itself is not seriously disputed.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1478",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Woodrow_Wilson",
+    "earliest_print_source": null,
+    "notes": "Long attributed to Wilson and included in mainstream quotation dictionaries under his name, which is decent secondary evidence. I cannot name the speech or letter it comes from, so no citation is given. No competing claimant known to me.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1479",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": null,
+    "earliest_print_source": "Wumenguan (無門關, The Gateless Barrier), Wumen Huikai, 1228 — verse to Case 19, 'Ordinary Mind Is the Way'",
+    "notes": "Genuine Wumen. The Chinese verse is 春有百花秋有月，夏有涼風冬有雪，若無閒事挂心頭，便是人間好時節 — Wumen's capping verse to the Nanquan koan in Case 19 of the Wumenguan. The English here is a loose modern rendering rather than a literal translation (this phrasing is generally Stephen Mitchell's), so the translator should be credited if the corpus tracks that. Attribution to Wumen is solid.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1480",
+    "status": "attributed",
+    "confidence": 0.65,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed to Wumen and almost certainly one of his capping verses in the Wumenguan — the image is the standard one rendered elsewhere as 'It is too clear and so it is hard to see; a dunce once searched for fire with a lighted lantern — had he known what fire was, he could have cooked his rice sooner.' I cannot reliably name the case number, and the English is a modern paraphrase, so I am not supplying a citation. Attribution to Wumen is consistent across renderings; the specific source line is not established here.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1481",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Hakuun Yasutani (Yasutani Roshi) in Zen literature in English, where it circulates as a remark from his teaching rather than from a book he wrote — plausible, since his teaching reached print mainly through students. I associate it with the Kapleau/Three Pillars of Zen lineage of texts and with its use as an epigraph in later nature and Zen writing, but I cannot pin a first printing, so no citation is given. Attribution stable; sourcing unresolved.",
+    "suggested_reattribution": null
+  }
+]

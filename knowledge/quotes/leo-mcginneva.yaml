@@ -1,0 +1,22 @@
+author: Leo McGinneva
+author_normalized_key: leo-mcginneva
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0899
+    slug: null
+    text: They don’t want quarter-inch bits. They want quarter-inch holes.
+    category: design
+    keywords: []
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: null
+      earliest_print_source: "The Marketing Imagination, Theodore Levitt, 1983 (quoting Leo McGinneva)"
+      notes: "The attribution is correct and unusually well documented for a line of this kind. Theodore Levitt credited Leo McGinneva by name for this formulation in 'The Marketing Imagination' (1983), where it appears in his discussion of what customers actually buy; Levitt's own better-known paraphrase is 'people don't want a quarter-inch drill, they want a quarter-inch hole.' So McGinneva is the originator and Levitt the transmitter — this corpus entry has it right, which is worth noting since the line is far more often credited to Levitt. Note the text uses a typographic apostrophe in 'don't'."
+      reviewed_by_human: false

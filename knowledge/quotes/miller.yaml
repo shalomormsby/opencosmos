@@ -1,0 +1,22 @@
+author: Miller
+author_normalized_key: miller
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1040
+    slug: null
+    text: "Art is only a means to life, to the life more abundant. It is not in itself the life more abundant. It merely points the way, something which is overlooked not only by the public, but very often by the artist himself. In becoming an end it defeats itself."
+    category: creativity
+    keywords: [art, abundance, life, means, point, direction, people, artist, end, defeat]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: null
+      earliest_print_source: "The Wisdom of the Heart ('Reflections on Writing'), Henry Miller, 1941"
+      notes: "The bare author field 'Miller' should be expanded to Henry Miller. I recognize this passage from his essay 'Reflections on Writing,' collected in The Wisdom of the Heart (New Directions, 1941), and the argument — art as a means to the life more abundant, defeating itself when made an end — is a recurring Miller theme in that essay. Confident on authorship; the essay/volume citation is from recall rather than a checked page. | Suggested reattribution: Henry Miller"
+      reviewed_by_human: false

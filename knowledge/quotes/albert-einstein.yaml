@@ -1,0 +1,182 @@
+author: Albert Einstein
+author_normalized_key: albert-einstein
+tradition: science
+era: null
+gender: M
+quotes:
+  - id: q_0020
+    slug: null
+    text: "The important thing is not to stop questioning. Curiosity has its own reason for existing. One cannot help but be in awe when he contemplates the mysteries of eternity, of life, of the marvelous structure of reality. It is enough if one tries merely to comprehend a little of this mystery every day. Never lose a holy curiosity."
+    category: spirit
+    keywords: [question, curiosity, awe, mystery, eternity, life, reality, holy, mind]
+    context: "Scientist, Theoretical Physicist"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "\"Old Man's Advice to Youth: 'Never Lose a Holy Curiosity,'\" LIFE magazine, 2 May 1955, p. 64"
+      notes: "A rare case where an Einstein quotation of this kind is genuine. It comes from remarks Einstein made to William Miller, published in LIFE shortly after Einstein's death in April 1955 under the headline that itself quotes the last line. This is one of the sourced entries on Einstein's Wikiquote page rather than one of the many unsourced accretions. Wording as given matches the published version."
+      reviewed_by_human: false
+  - id: q_0178
+    slug: null
+    text: "The most beautiful thing we can experience is the mysterious. It is the source of all true art and science. He to whom the emotion is a stranger, who can no longer pause to wonder and stand wrapped in awe, is as good as dead; his eyes are closed. The insight into the mystery of life, coupled though it be with fear, has also given rise to religion. To know what is impenetrable to us really exists, manifesting itself as the highest wisdom and the most radiant beauty, which our dull faculties can comprehend only in their most primitive forms — this knowledge, this feeling is at the center of true religiousness."
+    category: creativity
+    keywords: [mysterious, mystery, art, science, beauty, experience, "true"]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "'What I Believe,' Albert Einstein, Forum and Century, vol. 84, 1930; collected in The World As I See It, 1931 (Mein Weltbild, 1934)"
+      notes: "Genuine Einstein, and unusually well documented for him. This is the closing passage of his credo essay 'What I Believe,' published in Forum and Century in 1930 and collected in The World As I See It. The long form quoted here matches the standard English translation, including 'as good as dead; his eyes are closed' and the concluding 'this knowledge, this feeling is at the center of true religiousness.' Truncated one-line versions circulate widely, but the full passage given here is faithful."
+      reviewed_by_human: false
+  - id: q_0235
+    slug: null
+    text: "There is no logical way to the discovery of elemental laws. There is only the way of intuition, which is helped by a feeling for the order lying behind the appearance."
+    category: spirit
+    keywords: [intuition, discovery, laws, feeling, order, appearances, logic, elemental]
+    context: Scientist
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "'Principles of Research', address at Max Planck's 60th birthday celebration, Physical Society, Berlin, 1918; reprinted in Ideas and Opinions (1954)"
+      notes: "Authentic Einstein from the 1918 Planck birthday address, one of his best-documented statements about how physical theory is actually arrived at. Original reads 'no logical way to the discovery of these elemental laws'; the corpus text drops 'these'. Source and occasion are secure."
+      reviewed_by_human: false
+  - id: q_0247
+    slug: null
+    text: There is hardly a simpler law in physics than that according to which light is propagated in empty space.
+    category: insight
+    keywords: [light, physics, law]
+    context: "Scientist, Theoretical Physicist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "Relativity: The Special and the General Theory, Albert Einstein, 1916 (German); English translation 1920, Chapter VII"
+      notes: "This is the opening sentence of Chapter VII ('The Apparent Incompatibility of the Law of Propagation of Light with the Principle of Relativity') of Einstein's own popular exposition Relativity: The Special and the General Theory. Einstein wrote the book himself, so this is a primary source in his own words rather than a reported remark. Wording matches the standard Robert W. Lawson English translation."
+      reviewed_by_human: false
+  - id: q_0249
+    slug: null
+    text: "As far as the laws of mathematics refer to reality, they are not certain. As far as they are certain, they do not refer to reality."
+    category: insight
+    keywords: [laws, mathematics, reality, certainty]
+    context: "Scientist, Theoretical Physicist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "'Geometrie und Erfahrung' ('Geometry and Experience'), address to the Prussian Academy of Sciences, Berlin, 27 January 1921"
+      notes: One of the best-documented Einstein lines. Delivered in his 1921 Prussian Academy address on geometry and experience and reprinted in Ideas and Opinions (1954). The corpus text drops the semicolon-and joining the two clauses but is otherwise the standard translation.
+      reviewed_by_human: false
+  - id: q_0254
+    slug: null
+    text: Perfection of means and confusion of goals seem - in my opinion - to characterize our age.
+    category: insight
+    keywords: [perfection, means, goals, confusion, era]
+    context: "Scientist, Theoretical Physicist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "'The Common Language of Science', radio address recorded for the British Association for the Advancement of Science, 28 September 1941; reprinted in Out of My Later Years (1950) and Ideas and Opinions (1954)"
+      notes: "This is the closing sentence of Einstein's short 1941 broadcast on the common language of science. Written by Einstein for delivery, so a primary source. Corpus text matches the standard printed version including the parenthetical dashes."
+      reviewed_by_human: false
+  - id: q_0255
+    slug: null
+    text: Great spirits have always encountered violent opposition from mediocre minds.
+    category: insight
+    keywords: [spirit, mind, opposition, violence]
+    context: "Scientist, Theoretical Physicist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "Letter to Morris Raphael Cohen, 19 March 1940, written in support of Bertrand Russell's appointment at the College of the City of New York"
+      notes: "Genuine and well documented. Einstein wrote it to philosopher Morris Raphael Cohen during the public campaign against Russell's teaching appointment. Despite being a heavily meme-ified line, this one survives scrutiny — the letter is real and the context is specific."
+      reviewed_by_human: false
+  - id: q_0260
+    slug: null
+    text: "A human being is a part of a whole, called by us universe, a part limited in time and space. He experiences himself, his thoughts and feelings as something separated from the rest... a kind of optical delusion of his consciousness. This delusion is a kind of prison for us, restricting us to our personal desires and to affection for a few persons nearest to us. Our task must be to free ourselves from this prison by widening our circle of compassion to embrace all living creatures and the whole of nature in its beauty."
+    category: spirit
+    keywords: [human, whole, universe, time, space, experience, self, thought, feeling, separate, illusion, consciousness, delusion, prison, desire, affection, people, near, task, freedom, circle, compassion, embrace, life, animals, nature, beauty, perception]
+    context: "Scientist, Theoretical Physicist"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "Letter to Robert S. Marcus, 12 February 1950 (Albert Einstein Archives 60-424); widely reprinted, including in the New York Post, 28 November 1972"
+      notes: "The genuine article. Einstein wrote this in a condolence letter to Robert S. Marcus, political director of the World Jewish Congress, after the death of Marcus's son. The archival letter exists, which is why this passage survives scrutiny where its New Age paraphrases do not. Two small textual notes: the original reads 'a part of the whole' rather than 'a part of a whole' and 'widening our circles of compassion'; the ellipsis in the corpus text elides 'as something separated from the rest' into the following clause. Worth normalising against the archive text."
+      reviewed_by_human: false
+  - id: q_0265
+    slug: null
+    text: "Every one who is seriously involved in the pursuit of science becomes convinced that a spirit is manifest in the laws of the Universe - a spirit vastly superior to that of man, and one in the face of which we with our modest powers must feel humble."
+    category: spirit
+    keywords: [science, laws, universe, vast, power, humble, divine]
+    context: "Scientist, Theoretical Physicist"
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "Letter to Phyllis Wright, 24 January 1936 (Albert Einstein Archives 42-601); reprinted in Albert Einstein: The Human Side, ed. Helen Dukas and Banesh Hoffmann"
+      notes: "Written to Phyllis Wright, a sixth-grade student at the Riverside Church in New York who had asked Einstein whether scientists pray. The archival letter is well documented and this passage is quoted from it accurately. Corpus text splits 'Every one' where the letter reads 'everyone', a trivial variant."
+      reviewed_by_human: false
+  - id: q_0266
+    slug: null
+    text: "The scientists’ religious feeling takes the form of a rapturous amazement at the harmony of natural law, which reveals an intelligence of such superiority that, compared with it, all the systematic thinking and acting of human beings is an utterly insignificant reflection."
+    category: spirit
+    keywords: [science, scientist, religion, feeling, law, intelligence, divine, human, vast, thinking, thought, reflection]
+    context: "Scientist, Theoretical Physicist"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "'Religion and Science', The New York Times Magazine, 9 November 1930; reprinted in Ideas and Opinions (1954)"
+      notes: "From Einstein's own signed essay 'Religion and Science', where he sets out the third stage of religious feeling — the cosmic religious sense of the scientist. A primary source in his own words. The corpus text matches the standard English printing."
+      reviewed_by_human: false
+  - id: q_0272
+    slug: null
+    text: "The finest emotion of which we are capable is the mystic emotion. Herein lies the germ of all art and all true science. Anyone to whom this feeling is alien, who is no longer capable of wonderment and lives in a state of fear is a dead man. To know that what is impenetrable for us really exists and manifests itself as the highest wisdom and the most radiant beauty, whose gross forms alone are intelligible to our poor faculties - this knowledge, this feeling ... that is the core of the true religious sentiment. In this sense, and in this sense alone, I rank myself among profoundly religious men."
+    category: spirit
+    keywords: [mystic, emotion, feeling, art, science, wonder, fear, dead, manifest, wisdom, beauty, radiant, knowledge, religious]
+    context: "Scientist, Theoretical Physicist"
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Einstein"
+      earliest_print_source: "\"What I Believe\", Albert Einstein, Forum and Century vol. 84 (1930); reprinted in The World As I See It / Mein Weltbild (1934-35)"
+      notes: "Genuine Einstein passage from his 1930 credo essay 'What I Believe'. The canonical translation reads 'The most beautiful experience we can have is the mysterious. It is the fundamental emotion which stands at the cradle of true art and true science...' The wording here ('the finest emotion of which we are capable is the mystic emotion... the germ of all art and all true science') is a different, older English rendering that circulates widely, notably via Lincoln Barnett's The Universe and Dr. Einstein (1948). Content, structure, and closing sentence ('in this sense, and in this sense alone, I rank myself among profoundly religious men') all match the authentic essay. Verified as Einstein; the exact English wording is translation-dependent."
+      reviewed_by_human: false

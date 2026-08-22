@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_1252",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Sarah Ban Breathnach and entirely consistent with her vocabulary in the Simple Abundance books ('authentic', noticing ordinary days). I believe it comes from Simple Abundance: A Daybook of Comfort and Joy (1995) or a companion volume, but I cannot place the specific entry or page from memory, so I am not asserting that citation. Attribution to Breathnach is plausible and uncontested; the sourcing is not established.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1253",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Very widely and consistently attributed to Sarah Bernhardt in twentieth-century quotation anthologies, but in my recollection it circulates without a source citation — it is the kind of line that appears in quote dictionaries with only a name attached. Bernhardt did publish a memoir (Ma Double Vie / Memories of My Life, 1907), and the line would not be out of character, but I cannot confirm it appears there. Honest verdict: plausible, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1254",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Circulates widely in Sathya Sai Baba devotional literature and is stylistically characteristic of his discourses. His discourses were transcribed at length in the Sathya Sai Speaks series, so a genuine origin is plausible, but I cannot identify the specific discourse, date, or volume, and Sai Baba material is heavily paraphrased and re-edited in secondary circulation. No citation asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1255",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Ubiquitous on design quote lists under Saul Bass, but I know of no documented primary source — no interview, lecture, or published essay of his that I can point to containing this sentence. Design aphorisms attach themselves to famous designers (Bass, Rand, Eames) the way general aphorisms attach to Einstein, so the popularity of the pairing is not evidence. Cannot confirm or reattribute.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1256",
+    "status": "attributed_unverified",
+    "confidence": 0.35,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Saul Gorn was a real computer scientist at the University of Pennsylvania, known in hacker folklore for 'Saul Gorn's Compendium of Rarely Used Clichés.' This line reaches modern circulation almost entirely through the Unix fortune-cookie database, which is a weak provenance chain — fortune files carry many attributions that were never checked. I cannot place the line in anything Gorn actually published. Plausible but essentially unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1257",
+    "status": "attributed_unverified",
+    "confidence": 0.25,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Same fortune-file provenance problem as q_1256, and weaker: this is a generic optimism line with nothing distinctive tying it to Saul Gorn. I have no independent knowledge of Gorn saying or writing it, and I have a vague sense the sentence also circulates under other names, though I cannot confirm which and will not guess. Attribution should be treated as unsupported.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1258",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Seneca_the_Younger",
+    "earliest_print_source": "Epistulae Morales ad Lucilium (Moral Letters to Lucilius), Letter 6, Seneca the Younger, c. 65 CE",
+    "notes": "Genuine Seneca. Letter 6 ('On Sharing Knowledge') contains 'nullius boni sine socio iucunda possessio est' — rendered by Gummere as 'no good thing is pleasant to possess, without friends to share it,' and by Robin Campbell (Penguin) along the lines of 'there is no enjoying the possession of anything valuable unless one has someone to share it with.' The English here is a compressed paraphrase rather than a standard translation, so the wording is loose even though the source is solid. Note also that the record's context field says 'Ancient Greek' — Seneca was Roman, writing in Latin; that field should be corrected.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1259",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation",
+    "notes": "Both halves are from the Hsin Hsin Ming, and the phrasing matches the Richard B. Clarke translation, which is the version that dominates English circulation. The traditional ascription to Sengcan, the Third Chan/Zen Patriarch, is standard but scholarly consensus doubts he actually wrote it — the text is generally dated after his lifetime. So: the document is real and the quote is genuinely in it; the named author is traditional rather than established. The two sentences are also non-adjacent in the poem and have been stitched with an ellipsis.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1260",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": null,
+    "earliest_print_source": "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation",
+    "notes": "From the opening passage of the Hsin Hsin Ming, following 'The Great Way is not difficult for those who have no preferences' and 'If you wish to see the truth then hold no opinions for or against anything.' The line renders the Chinese 違順相爭 是為心病. Same caveat as q_1259: authorship by Sengcan is the traditional ascription, not a scholarly one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1261",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century; English wording from the Richard B. Clarke translation",
+    "notes": "The closing lines of the Hsin Hsin Ming in Clarke's translation run 'Words! The Way is beyond language, for in it there is no yesterday, no tomorrow, no today.' The quote is that ending stripped of its frame, which makes it read as a standalone aphorism rather than the conclusion of an argument about the limits of language. Source is solid; the isolation changes the sense somewhat. Traditional-ascription caveat applies as in q_1259.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1262",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": null,
+    "earliest_print_source": "Hsin Hsin Ming (Verses on the Faith Mind), traditionally ascribed to Jianzhi Sengcan, c. 6th-7th century",
+    "notes": "A well-known line of the Hsin Hsin Ming. Clarke renders it 'Do not search for the truth; only cease to cherish opinions'; the 'Don't seek reality, just put an end to opinions' wording comes from a different English translation of the same passage, which I cannot pin to a specific translator from memory. The underlying text and the ascription are the same as for q_1259 through q_1261.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1263",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Almost certainly a translation of the Hsin Hsin Ming line more commonly rendered 'Stop talking and thinking, and there is nothing you will not be able to know' (Suzuki/Conze) — the sense and position in the poem match. But I cannot identify which translation produces this exact English, and 'step aside from all thinking' is loose enough that it may be a popular paraphrase rather than a published rendering. Source text is confident; this specific wording is not, so I am holding below the verified bar.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1264",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Sequichie Comingdeer was a real Cherokee teacher and author, and this line circulates consistently under his name in inspirational collections. I cannot place it in any book, lecture, or documented interview, and quotations attributed to Native American teachers are unusually prone to unsourced circulation and invented attribution. Attribution is uncontested but unsupported by anything I can point to.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1265",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Consistent with Shakti Gawain's published voice and themes, and attributed to her without competition. Most likely from Living in the Light (1986) or an interview, but I cannot place it, and this is generic enough New Age phrasing that I would not bet on the specific book. No citation asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1266",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Distinctively Gawain in content — the doubting-and-contradicting-intuition observation is a central argument of Living in the Light (1986), and I believe the line comes from that book, but I cannot confirm the chapter or exact page from memory and so am not asserting the citation. Attribution to Gawain is strong on internal evidence; the print source is unestablished.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1267",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Attributed consistently to Shakti Gawain and consistent with her work on light, shadow, and non-resistance. The shadow-and-light image itself is ancient and appears in many traditions, so the metaphor is not evidence of authorship — only this particular formulation would be. I cannot place the formulation in a specific Gawain title. Note the text carries a bracketed editorial fix ('stomp[ing]'), suggesting it was transcribed from a secondary source rather than a book.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1268",
+    "status": "attributed_unverified",
+    "confidence": 0.45,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Subject matter points to Creating True Prosperity (1997), Gawain's book specifically about money and abundance, and the framing of money as a mirror of internal process is that book's core thesis. I cannot confirm the sentence appears there verbatim, so I am not asserting the citation. Attribution to Gawain is plausible and uncontested.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1269",
+    "status": "attributed_unverified",
+    "confidence": 0.5,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "The relationships-as-mirror teaching is a signature Gawain theme, developed at length in Living in the Light (1986), and the passage reads like continuous prose from a book rather than a manufactured aphorism — the internal ellipsis suggests it was excerpted from a longer paragraph. Attribution is credible on internal evidence; I cannot verify the source, so no citation is asserted.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1270",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "This is attributed to Shalom Ormsby, the owner and maintainer of this corpus, and appears to be an original line rather than a quotation from any published source. I have no training knowledge of it, which is the expected result for an unpublished original and is not evidence against it. My tooling cannot validate first-party authorship, so the low confidence here reflects the limits of my method, not doubt about the claim. This one should be settled by human confirmation at review time rather than by provenance research; if the author confirms it, it can be promoted directly.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1271",
+    "status": "attributed_unverified",
+    "confidence": 0.3,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Sherrill Sellman is a real author in the natural-health field (Hormone Heresy and related titles), and the body-as-barometer framing fits that domain. I cannot place the quote in any of her books or articles, and it circulates mainly through wellness quote collections, which are a low-reliability chain. Plausible, unsourced.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1272",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Shirley Hufstedler — federal appellate judge and the first U.S. Secretary of Education — is consistently named as the source, and the line appears in compilations of quotations by American women, likely originating in an interview or speech. That kind of origin is real but hard to verify, and I cannot identify the occasion or publication. Attribution is stable across sources but rests on repetition rather than documentation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1273",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Shunryu_Suzuki",
+    "earliest_print_source": "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970 (Prologue)",
+    "notes": "The single most famous line in the book, from the Prologue titled 'Beginner's Mind.' One wording note: the original reads 'but in the expert's there are few' — the corpus text adds a second 'mind' ('in the expert's mind there are few'). It is a common and harmless variant, but if the corpus aims at exact quotation the shorter form is the published one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1274",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Shunryu_Suzuki",
+    "earliest_print_source": "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970",
+    "notes": "Genuine Suzuki from Zen Mind, Beginner's Mind; I recall it from the 'Right Practice / Right Attitude' material but cannot pin the exact chapter. The published wording is 'Zen is not some kind of excitement, but concentration on our usual everyday routine' — the corpus text inserts 'merely' before 'concentration.' Minor variant worth normalizing.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1275",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Shunryu_Suzuki",
+    "earliest_print_source": "Zen Mind, Beginner's Mind, Shunryu Suzuki, Weatherhill, 1970",
+    "notes": "I recall this as the closing sentence of Zen Mind, Beginner's Mind, in the final section on Zen mind, and the wording is short and exact enough that it is unlikely to be a paraphrase. Confidence is held at 0.80 rather than higher because I am relying on recall of placement within the book rather than a checked page.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_1276",
+    "status": "attributed",
+    "confidence": 0.6,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Shunryu_Suzuki",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Shunryu Suzuki and characteristic of his teaching, likely from Zen Mind, Beginner's Mind or the later collection Not Always So. I cannot place it in either with enough confidence to name the book, so the print source is left null. Below the promotion bar on sourcing, not on plausibility.",
+    "suggested_reattribution": null
+  }
+]

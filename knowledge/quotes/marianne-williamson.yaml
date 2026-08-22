@@ -1,0 +1,22 @@
+author: Marianne Williamson
+author_normalized_key: marianne-williamson
+tradition: null
+era: null
+gender: F
+quotes:
+  - id: q_0962
+    slug: null
+    text: "Our deepest fear is not that we are inadequate, our deepest fear is that we are powerful beyond measure. It is our light, not our darkness that most frightens us. We ask ourselves, “Who am I to be brilliant, gorgeous, talented and fabulous?” Actually, who are you not to be? We were born to manifest the glory that is within us. As we let our light shine, we unconsciously give other people permission to do the same. As we are liberated from our own fear, our presence automatically liberates others."
+    category: insight
+    keywords: [fear, power, light, darkness, question, brilliant, talent, glory, within, self, shine, people, action, freedom, liberation]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.93
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marianne_Williamson"
+      earliest_print_source: "A Return to Love: Reflections on the Principles of A Course in Miracles, Marianne Williamson, 1992 (ch. 7)"
+      notes: "Correctly attributed here, and worth protecting: this passage is one of the most-misattributed texts in circulation, routinely credited to Nelson Mandela's 1994 inaugural address, which does not contain it. Williamson has confirmed authorship. Two wording notes on the recorded text: the original punctuates 'inadequate.' as a full stop before 'Our deepest fear is that we are powerful beyond measure,' and the recorded version omits the sentence 'You are a child of God' that follows 'who are you not to be?' - a common secular truncation."
+      reviewed_by_human: false

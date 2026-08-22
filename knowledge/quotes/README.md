@@ -2,12 +2,16 @@
 
 This folder holds **only verified + attributed quotes** — the subset of the corpus that gets embedded and is citable by Cosmo. Records pending verification live in [`data/quotes-pending/`](../../data/quotes-pending/) and migrate here as they pass validation.
 
+> **These files and `pending.jsonl` are the source of truth.** `_source/quotes_normalized.jsonl` is the historical import that seeded them in May 2026; it holds none of the provenance verdicts, review decisions, or promotion state accumulated since. Add new quotes with **`/new-quote`** (or `pnpm quotes:add`), never by editing YAML by hand and never by re-running the import.
+
 ## Layout
 
 ```
 knowledge/quotes/
 ├── _source/                              # versioned source — do not hand-edit
-│   └── quotes_normalized.jsonl           # 1,509 records, output of Tier 1 normalization
+│   ├── quotes_normalized.jsonl           # 1,509 records, output of Tier 1 normalization
+│   ├── validation-progress.jsonl         # append-only ledger of Stage 3 verdicts
+│   └── validation-batches/               # per-batch agent IO (.input.json gitignored)
 ├── _review/                              # CSVs exported for human review (Stage 4)
 ├── _archive/
 │   └── rejected.yaml                     # records dropped in Stage 4 (audit trail)
@@ -86,17 +90,48 @@ quotes:
 
 ## Pipeline
 
-| Stage | Script | Purpose |
-|-------|--------|---------|
-| 1 | `pnpm quotes:normalize` (`scripts/normalize-quotes/01-jsonl-to-yaml.ts`) | Read source jsonl, split into embeddable yaml here + pending pool. Idempotent. |
-| 1 | `pnpm quotes:lint` (`scripts/normalize-quotes/lint.ts`) | Validate both pools + cross-pool integrity. |
-| 2 | `pnpm embed` (`scripts/knowledge/embed-knowledge.ts`) | Embed `knowledge/quotes/*.yaml` into Upstash with `chunk_type: 'quote'`. |
-| 3 | `02-validate-provenance.ts` (planned) | Claude + web search validation of pending pool. |
-| 3 | `03-merge-validation.ts` (planned) | Merge Stage 3 results back into pending.jsonl. |
-| 4 | `04-export-review-csv.ts` (planned) | Export low-confidence rows for human review. |
-| 4 | `05-apply-review.ts` (planned) | Apply human keep/drop/reattribute decisions. |
+| Stage | Command | Purpose |
+|-------|---------|---------|
+| — | **`/new-quote`** | **The way in.** Parses free-form input, dedupes, infers category/keywords/tradition, validates provenance, then drives `quotes:add`. |
+| — | `pnpm quotes:add -- --json <file>` | The mechanism the skill drives. Also `--text`/`--author` for a quick one-off, `--check-dupes` to look before adding, `--dry` to preview. |
+| 1 | `pnpm quotes:migrate-from-source` | **Retired.** The original import. Rebuilds both pools from the source jsonl, discarding all validation and review state. Refuses to run without `--i-know-this-wipes`. |
+| 1 | `pnpm quotes:lint` | Validate all three pools + cross-pool integrity. Run after every mutation. |
+| 2 | `pnpm embed` | Embed `knowledge/quotes/*.yaml` into Upstash with `chunk_type: 'quote'`. |
+| 3 | `pnpm quotes:checkpoint remaining --write-batches` | Queue unvalidated quotes as batch input files for a subagent fan-out. |
+| 3 | `pnpm quotes:checkpoint append --all` | Take agent verdicts back into the checkpoint. Validated, idempotent. |
+| 3 | `pnpm quotes:checkpoint status` | What's validated, checkpointed, outstanding. |
+| 3 | `pnpm quotes:merge` | Write checkpointed verdicts into `pending.jsonl`. `--dry` previews. |
+| 4 | `pnpm quotes:review-export` | Export the records that need a human decision. `--all` widens the net. |
+| 4 | `pnpm quotes:review-apply -- <csv>` | Apply keep/drop/reattribute. `--dry` previews. |
 | any | `pnpm quotes:export-csv` | Regenerate `pending.csv` from `pending.jsonl`. |
-| any | `pnpm quotes:promote` | Migrate eligible pending records into `knowledge/quotes/`. `--dry` flag previews. |
+| any | `pnpm quotes:promote` | Migrate eligible pending records into `knowledge/quotes/`. `--dry` previews. |
+
+`scripts/normalize-quotes/02-validate-provenance.ts` (`pnpm quotes:validate`) is the
+original API-driven Stage 3 driver. It still works, but it spends real money —
+the pilot cost ~$20 for 10 quotes — so validation is run through Claude Code
+subagents via `02b-checkpoint.ts` instead. Both write the same checkpoint
+format, so `quotes:merge` doesn't care which produced a verdict.
+
+### Running a validation tranche
+
+```bash
+pnpm quotes:checkpoint remaining --write-batches --limit 300   # writes N .input.json files
+# fan out one subagent per batch: it reads <stem>.input.json, follows
+# VALIDATION_PROMPT.md, and writes <stem>.output.json
+pnpm quotes:checkpoint append --all
+pnpm quotes:merge && pnpm quotes:promote && pnpm quotes:lint
+pnpm embed                                                     # make them citable
+```
+
+Resume state is derived from which quote IDs already have a verdict, so a
+tranche can be resized, re-run, or abandoned midway with no bookkeeping. A
+batch whose output is malformed is rejected whole and stays queued.
+
+## Where people read these
+
+Quotes are browsable at `/knowledge/quotes`, one page per author or collective,
+each quote anchored by its id. Cosmo's `[quote: …]` citations resolve to those
+anchors, so a citation in chat opens the record itself.
 
 ## Provenance vocabulary
 

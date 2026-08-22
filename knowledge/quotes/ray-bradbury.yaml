@@ -1,0 +1,22 @@
+author: Ray Bradbury
+author_normalized_key: ray-bradbury
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_1191
+    slug: null
+    text: We are the miracle of force and matter making itself over into imagination and will. Incredible. The Life Force experimenting with forms. You for one. Me for another. The Universe has shouted itself alive. We are one of the shouts.
+    category: insight
+    keywords: [universe, miracle, life]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: attributed
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Ray_Bradbury"
+      earliest_print_source: "'G.B.S. — Mark V' (short story), Ray Bradbury, 1976, collected in Long After Midnight"
+      notes: "Genuinely Bradbury, and unmistakably his voice. I recall the passage as spoken by the George Bernard Shaw robot in the short story 'G.B.S. — Mark V,' collected in Long After Midnight (1976); Bradbury also reused the 'the Universe has shouted itself alive, we are one of the shouts' formulation in essays and interviews. Confidence in Bradbury as author is high; confidence in the specific story placement is somewhat lower and worth confirming against the text."
+      reviewed_by_human: false

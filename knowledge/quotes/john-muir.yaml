@@ -1,0 +1,54 @@
+author: John Muir
+author_normalized_key: john-muir
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0821
+    slug: null
+    text: The clearest way into the universe is through a forest wilderness.
+    category: spirit
+    keywords: [nature]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/John_Muir"
+      earliest_print_source: "John of the Mountains: The Unpublished Journals of John Muir, ed. Linnie Marsh Wolfe, 1938"
+      notes: "Authentic Muir from his journals, published posthumously in Wolfe's John of the Mountains (1938); the entry is from around July 1890. Well documented and consistently cited with this source. NOTE: q_0824 is the same quote with 'Universe' capitalized - the corpus contains a duplicate and one of the two should be dropped."
+      reviewed_by_human: false
+  - id: q_0822
+    slug: null
+    text: "When we try to pick out anything by itself, we find it hitched to everything else in the universe."
+    category: insight
+    keywords: [interconnection]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/John_Muir"
+      earliest_print_source: "My First Summer in the Sierra, John Muir, 1911"
+      notes: "One of Muir's best-documented lines, from the journal entry dated 27 July 1869 as published in My First Summer in the Sierra (1911). Primary source confirmed and the wording here matches the standard text. This is the canonical form of the thought that q_0825 garbles."
+      reviewed_by_human: false
+  - id: q_0824
+    slug: null
+    text: The clearest way into the Universe is through a forest wilderness.
+    category: nature
+    keywords: []
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/John_Muir"
+      earliest_print_source: "John of the Mountains: The Unpublished Journals of John Muir, ed. Linnie Marsh Wolfe, 1938"
+      notes: "Authentic Muir journal line (c. July 1890), published in Wolfe's John of the Mountains (1938). DUPLICATE: identical to q_0821 apart from the capitalization of 'Universe'. Keep one entry only - the lowercase form in q_0821 matches the more commonly printed text."
+      reviewed_by_human: false

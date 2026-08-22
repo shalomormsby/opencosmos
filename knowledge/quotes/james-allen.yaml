@@ -1,0 +1,38 @@
+author: James Allen
+author_normalized_key: james-allen
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0766
+    slug: null
+    text: "Dream lofty dreams, and as you dream, so shall you become. Your vision is the promise of what you shall one day be; your ideal is the prophecy of what you shall at last unveil."
+    category: insight
+    keywords: [dream, vision, time]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/James_Allen"
+      earliest_print_source: "As a Man Thinketh, James Allen, 1903"
+      notes: "Authentic James Allen, from the chapter 'Visions and Ideals' in 'As a Man Thinketh' (1903). The passage continues 'Cherish your visions; cherish your ideals...' The wording quoted here matches the standard text."
+      reviewed_by_human: false
+  - id: q_0767
+    slug: null
+    text: Man is made or unmade by himself. In the armory of thought he forges the weapons by which he destroys himself. He also fashions the tools with which he builds for himself heavenly mansions of joy and strength and peace.
+    category: insight
+    keywords: [thought, joy, strength, peace]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.88
+      wikiquote_url: "https://en.wikiquote.org/wiki/James_Allen"
+      earliest_print_source: "As a Man Thinketh, James Allen, 1903"
+      notes: "Authentic James Allen, from the opening chapter of 'As a Man Thinketh' (1903) on thought and character. The original uses the British spelling 'armoury'; the quoted text has Americanized it to 'armory', which is a spelling variant rather than a change of substance."
+      reviewed_by_human: false

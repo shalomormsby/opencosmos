@@ -1,0 +1,38 @@
+author: Albert Camus
+author_normalized_key: albert-camus
+tradition: philosophy
+era: null
+gender: M
+quotes:
+  - id: q_0211
+    slug: null
+    text: "In the midst of winter, I found there was within me, an invincible summer."
+    category: insight
+    keywords: [discover, winter, summer, self]
+    context: Philosopher
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.92
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Camus"
+      earliest_print_source: "\"Retour à Tipasa\", in L'Été, Albert Camus, 1954 (essay first published 1952)"
+      notes: "Genuine Camus, from the essay 'Retour à Tipasa' ('Return to Tipasa'), collected in L'Été (Summer, 1954). Original French: 'Au milieu de l'hiver, j'apprenais enfin qu'il y avait en moi un été invincible.' Note the English here is the loose popular rendering; a closer translation is 'In the midst of winter, I finally learned that there was in me an invincible summer.' The substitution of 'I found' for 'I learned at last' and the stray comma before 'an invincible summer' are artifacts of quote-site transmission, so the attribution is verified but the wording is a paraphrase of the standard translation."
+      reviewed_by_human: false
+  - id: q_0212
+    slug: null
+    text: "I enjoyed my own nature to the fullest, and we all know that there lies happiness although, to sooth one another mutually, we occasionally pretend to condemn such joys as selfishness."
+    category: insight
+    keywords: [enjoyment, self, selfish, happiness]
+    context: Philosopher
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Albert_Camus"
+      earliest_print_source: "The Fall (La Chute), Albert Camus, 1956, trans. Justin O'Brien"
+      notes: "From The Fall (La Chute, 1956), spoken by the narrator Jean-Baptiste Clamence in his monologue about the pleasures of his earlier life. The diction ('to sooth one another mutually', 'condemn such joys as selfishness') is the Justin O'Brien English translation. Important context for corpus use: this is a fictional character's self-justifying confession, not Camus speaking in his own voice — Clamence is an unreliable narrator and the novel is an indictment of exactly this posture. Attribution to Camus as author is sound; presenting it as Camus's personal counsel would misread it."
+      reviewed_by_human: false

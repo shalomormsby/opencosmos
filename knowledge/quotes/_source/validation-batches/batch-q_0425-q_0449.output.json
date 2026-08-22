@@ -1,0 +1,227 @@
+[
+  {
+    "id": "q_0425",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Contact, Carl Sagan, 1985 (dedication to Ann Druyan)",
+    "notes": "This is the dedication line of Sagan's novel Contact (Simon & Schuster, 1985), addressed to Ann Druyan. I recall it as printed dedication text rather than narrative prose, and the wording circulates unchanged. Strong, stable attribution.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0426",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "Consistently attributed to Sagan, usually to Cosmos (1980), and consistent with his voice. My hesitation: it is suspiciously close to the better-documented line 'We can judge our progress by the courage of our questions and the depth of our answers...' (see q_0432), and one may be a circulated compression of the other. I cannot place this exact sentence at a specific page or chapter from memory, so I am leaving the print source null rather than guessing at Cosmos.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0427",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 12 ('Encyclopaedia Galactica')",
+    "notes": "I recall this passage from the Cosmos book, in the discussion of what a cosmic perspective implies for how we treat one another. The three-sentence structure and the 'hundred billion galaxies' figure are Sagan's own and match the book's text as I know it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0428",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995, ch. 2 ('Science and Hope')",
+    "notes": "A well-documented passage from The Demon-Haunted World. The full paragraph — including the Gandhi and King examples and the closing 'does a disservice to both' — matches the book text as I know it. This is one of the most reliably sourced Sagan quotations on science and spirituality.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0429",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 11 ('The Persistence of Memory')",
+    "notes": "The 'a book is made from a tree' passage is from the Cosmos chapter on memory, writing, and libraries. Wording matches what I know of the book. Note a stray trailing double-quote character at the end of the stored text that should be cleaned before publication.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0430",
+    "status": "attributed_unverified",
+    "confidence": 0.4,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "The idea is genuinely Sagan's, but this exact wording appears to be a popular condensation. The documented Cosmos (1980, ch. 13) phrasings I know are 'starstuff pondering the stars' and 'We are star stuff which has taken its destiny into its own hands'; Cosmos also has 'We are star stuff harvesting starlight.' 'Star-stuff contemplating the stars' reads like a paraphrase that hardened into a quotation. Not a misattribution to another author — a wording problem. Recommend replacing with a documented variant if the corpus wants an exact quotation.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0431",
+    "status": "verified",
+    "confidence": 0.88,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 11 ('The Persistence of Memory')",
+    "notes": "The library passage comes from the same Cosmos chapter as the 'a book is made from a tree' text (q_0429). The two are near neighbors in the book. Wording matches my recollection of the printed text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0432",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980 (Introduction)",
+    "notes": "I recall this sentence from the front matter of Cosmos, where Sagan sets out the book's stance toward evidence. The 'willingness to embrace what is true rather than what feels good' clause is distinctive and I am confident it is Sagan's own text rather than a paraphrase. Chapter placement (Introduction) is my recollection and slightly less certain than the authorship.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0433",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "'Wonder and Skepticism', Carl Sagan, Skeptical Inquirer 19(1), January/February 1995",
+    "notes": "I recall this passage from Sagan's 'Wonder and Skepticism' — the keynote he gave to CSICOP, published in Skeptical Inquirer in early 1995. The '400 billion other stars' figure and the closing 'well worth pondering' are characteristic of that piece. Confident in Sagan's authorship; moderately confident in this specific venue as the earliest print appearance.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0434",
+    "status": "verified",
+    "confidence": 0.9,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980 (Introduction)",
+    "notes": "This is the opening of the Introduction to Cosmos — 'Lost somewhere between immensity and eternity is our tiny planetary home' through 'a mote of dust in the morning sky.' Long, distinctive, and stably reproduced; I am confident in both the author and the placement.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0435",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980 (chapter unconfirmed)",
+    "notes": "Confident this is authentic Sagan prose — the cadence, the framing of superstition as avoidance, and 'the weave and structure of the Cosmos' are all his. Less confident about the locus: it is generally cited to Cosmos (1980), but I cannot rule out Broca's Brain (1979), which covers similar ground. Recording the book with an explicit caveat rather than inventing a chapter.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0436",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 12 ('Encyclopaedia Galactica')",
+    "notes": "The 'built-in, error-correcting machinery' passage is from Cosmos, in the chapter dealing with science, civilizations, and the survival of intelligence. The self-deprecating aside ('Some may consider this an overbroad characterization') is a Sagan hallmark and matches the printed text as I know it.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0437",
+    "status": "verified",
+    "confidence": 0.92,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 13 ('Who Speaks for Earth?')",
+    "notes": "From the closing chapter of Cosmos, in the passage beginning 'We are the local embodiment of a Cosmos grown to self-awareness.' Also spoken in the Cosmos television series (1980). One of the best-documented Sagan lines.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0438",
+    "status": "likely_misattributed",
+    "confidence": 0.25,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "This is film dialogue, not Sagan's writing. It is spoken by the extraterrestrial (appearing as Ellie's father) in the 1997 Warner Bros. film Contact, whose screenplay was written by James V. Hart and Michael Goldenberg. Sagan and Ann Druyan wrote the original story on which the film was based, and Sagan died in December 1996 before its release, but I do not believe this speech appears in Sagan's 1985 novel. Attributing it to Sagan as an author is not supportable; it belongs to the screenwriters.",
+    "suggested_reattribution": "Contact (1997 film), screenplay by James V. Hart and Michael Goldenberg"
+  },
+  {
+    "id": "q_0439",
+    "status": "verified",
+    "confidence": 0.85,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995, ch. 2 ('Science and Hope')",
+    "notes": "I recall this sentence from The Demon-Haunted World, in the discussion of why nature repeatedly outruns human intuition. The leading 'But' indicates it has been lifted mid-paragraph; the corpus may want to drop it. Confident in author and book, slightly less so in the exact chapter.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0440",
+    "status": "attributed",
+    "confidence": 0.7,
+    "wikiquote_url": null,
+    "earliest_print_source": null,
+    "notes": "Widely and consistently attributed to Sagan, commonly to Cosmos (1980) and to the television series. It is short and aphoristic, which is exactly the shape of quotation that drifts, and I cannot place it at a specific page from memory. Nothing suggests another author — this is uncertainty about sourcing, not about attribution. Below the promotion bar on locus alone.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0441",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 9 ('The Lives of the Stars')",
+    "notes": "From the Cosmos chapter on stellar nucleosynthesis and atomic structure, in the passage on cutting an apple pie down to its atoms. The two-sentence form matches the printed text as I know it. Confident in the book; chapter attribution is my recollection.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0442",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995",
+    "notes": "The 'winnowed from deep nonsense' formulation is from The Demon-Haunted World, in Sagan's argument that skepticism serves religion as well as science. I am confident in the book and the wording; I cannot pin the chapter, and a variant of the thought also appears in his 1987 CSICOP talk 'The Burden of Skepticism.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0443",
+    "status": "verified",
+    "confidence": 0.8,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "The Demon-Haunted World: Science as a Candle in the Dark, Carl Sagan, 1995 (chapter on patriotism and dissent, 'Real Patriots Ask Questions')",
+    "notes": "I recall this passage from the late chapters of The Demon-Haunted World, where Sagan argues that a democracy needs citizens trained in skeptical inquiry and that dissent is a national asset. Confident in the book; the chapter title is my best recollection and is offered with that caveat.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0444",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Broca's Brain: Reflections on the Romance of Science, Carl Sagan, 1979 (chapter unconfirmed)",
+    "notes": "Unmistakably Sagan's prose — the catalogue structure ('quasars and quarks, snowflakes and fireflies') and the closing turn on 'the pretensions of superstition and pseudoscience' are his. My recollection places it in Broca's Brain, most likely the pseudoscience essay 'Night Walkers and Mystery Mongers,' but I hold that loosely; it could belong to Cosmos or The Demon-Haunted World, which cover the same terrain. Author confident, locus uncertain.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0445",
+    "status": "attributed",
+    "confidence": 0.72,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "The creativity/skepticism tension is one of Sagan's signature arguments — most fully developed in 'The Burden of Skepticism' (Skeptical Inquirer, 1987) and in the introduction to Broca's Brain (1979), where he writes of an 'exquisite balance' between the two. This particular sentence is consistently attributed to him and fits, but I cannot confidently assign it to either source, so I am leaving the print citation null rather than picking one.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0446",
+    "status": "verified",
+    "confidence": 0.95,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 1 ('The Shores of the Cosmic Ocean')",
+    "notes": "The opening lines of Cosmos, also the opening narration of the television series. 'The Cosmos is all that is or ever was or ever will be' is among the most securely documented sentences Sagan wrote. Minor note: the canonical wording is 'all that is or ever was or ever will be' — the stored text drops the first 'ever.'",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0447",
+    "status": "likely_misattributed",
+    "confidence": 0.3,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": null,
+    "notes": "To my knowledge this is dialogue from the 1997 film Contact — spoken by Ted Arroway to young Ellie and echoed by her later — and not text Sagan wrote. I recall it being listed among misattributions on Sagan's Wikiquote page for exactly this reason. Sagan wrote the novel and co-wrote the story, so the association is understandable, but the screenplay is by James V. Hart and Michael Goldenberg. I am not certain the line is absent from the 1985 novel, which is why this is 'likely' rather than settled; a text search of the novel would resolve it.",
+    "suggested_reattribution": "Contact (1997 film), screenplay by James V. Hart and Michael Goldenberg"
+  },
+  {
+    "id": "q_0448",
+    "status": "verified",
+    "confidence": 0.82,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Cosmos, Carl Sagan, 1980, ch. 13 ('Who Speaks for Earth?')",
+    "notes": "I recall the 'arrogant newcomer' passage from the closing chapter of Cosmos, in Sagan's argument that no existing institution has a monopoly on answers for human survival. The 'four and a half billion years of other acts' image and the closing 'our task is to find them' match my recollection of the printed text.",
+    "suggested_reattribution": null
+  },
+  {
+    "id": "q_0449",
+    "status": "attributed",
+    "confidence": 0.75,
+    "wikiquote_url": "https://en.wikiquote.org/wiki/Carl_Sagan",
+    "earliest_print_source": "Pale Blue Dot: A Vision of the Human Future in Space, Carl Sagan, 1994 (chapter unconfirmed)",
+    "notes": "This is the opening of a longer Sagan passage that continues 'It matters what those visions are. Often they become self-fulfilling prophecies. Dreams are maps.' My recollection places it in Pale Blue Dot, but I cannot confirm the chapter and cannot rule out one of his Parade essays from the same period. Author attribution is solid; the citation is offered with an explicit caveat. Note also that the single-sentence excerpt is weaker than the full passage.",
+    "suggested_reattribution": null
+  }
+]

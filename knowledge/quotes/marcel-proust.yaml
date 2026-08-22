@@ -1,0 +1,38 @@
+author: Marcel Proust
+author_normalized_key: marcel-proust
+tradition: null
+era: null
+gender: M
+quotes:
+  - id: q_0953
+    slug: null
+    text: "The real voyage of discovery consists not in seeing new landscapes, but in having new eyes."
+    category: spirit
+    keywords: [voyage, perception, eyes, discovery, landscapes, new, fresh]
+    context: null
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.85
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marcel_Proust"
+      earliest_print_source: "La Prisonniere (The Captive), vol. 5 of A la recherche du temps perdu, Marcel Proust, 1923"
+      notes: "Genuinely Proust in substance, but this popular English form is a compression, not a translation. The original runs closer to: 'The only true voyage of discovery, the only fountain of Eternal Youth, would be not to visit strange lands but to possess other eyes, to behold the universe through the eyes of another, of a hundred others...' ('Le seul veritable voyage... ce ne serait pas d'aller vers de nouveaux paysages, mais d'avoir d'autres yeux'). Source is real and datable; the recorded wording should be understood as a paraphrase."
+      reviewed_by_human: false
+  - id: q_0954
+    slug: null
+    text: We are healed of a suffering only by experiencing it to the full.
+    category: null
+    keywords: [healing, suffering]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.8
+      wikiquote_url: "https://en.wikiquote.org/wiki/Marcel_Proust"
+      earliest_print_source: "Albertine disparue / The Fugitive (also published as The Sweet Cheat Gone), vol. 6 of A la recherche du temps perdu, Marcel Proust, 1925"
+      notes: "Renders Proust's 'On ne guerit d'une souffrance qu'a condition de l'eprouver pleinement,' from the late volumes of the Recherche dealing with the aftermath of Albertine. I am confident of the author and the work; I am less certain of the exact volume boundary, since the passage is sometimes cited from The Fugitive and sometimes from The Captive. Wording is a standard translation rather than a folk paraphrase."
+      reviewed_by_human: false

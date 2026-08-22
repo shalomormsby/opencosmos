@@ -1,0 +1,54 @@
+author: Mary Oliver
+author_normalized_key: mary-oliver
+tradition: literature
+era: null
+gender: F
+quotes:
+  - id: q_0003
+    slug: null
+    text: My work is loving the world.
+    category: spirit
+    keywords: [life, purpose, love, kindness]
+    context: Poet
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.97
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mary_Oliver"
+      earliest_print_source: "\"The Messenger\" (poem), in Thirst, Mary Oliver, Beacon Press, 2006"
+      notes: "This is the opening line of Mary Oliver's poem 'The Messenger,' the first poem in her collection 'Thirst' (Beacon Press, 2006). Multiple independent literary sources confirm the text and source, including references on Awakin.org, poetry blogs quoting the full poem, and the Beacon Press publication record. The attribution and source are unambiguous. No misattribution concern detected."
+      reviewed_by_human: false
+  - id: q_0132
+    slug: null
+    text: Attention is the beginning of devotion.
+    category: insight
+    keywords: [presence]
+    context: Poet
+    favorite: true
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.9
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mary_Oliver"
+      earliest_print_source: "Upstream: Selected Essays, Mary Oliver, 2016"
+      notes: "From Oliver's essay collection Upstream, where it appears in her discussion of attention as the ground of a devoted life. The line is quoted from that book widely and correctly. I am confident in book and year; page unverified."
+      reviewed_by_human: false
+  - id: q_1011
+    slug: null
+    text: "When it's over, I want to say: all my life I was a bride married to amazement. I was the bridegroom, taking the world into my arms. When it's over, I don't want to wonder if I have made of my life something particular, and real. I don't want to find myself sighing and frightened, or full of argument. I don't want to end up simply having visited this world."
+    category: insight
+    keywords: [life, amazement, world]
+    context: null
+    favorite: false
+    source_work: null
+    source_section: null
+    provenance:
+      status: verified
+      confidence: 0.95
+      wikiquote_url: "https://en.wikiquote.org/wiki/Mary_Oliver"
+      earliest_print_source: "\"When Death Comes,\" in New and Selected Poems, Mary Oliver, Beacon Press, 1992"
+      notes: "This is the closing passage of Mary Oliver's poem 'When Death Comes,' collected in New and Selected Poems (Beacon Press, 1992), which won the National Book Award. The corpus text is accurate but has been flattened from verse into prose — the original is lineated, and the stanza breaks fall after 'into my arms' and after 'full of argument.' Content and attribution are certain; the presentation is a prose rendering of a poem."
+      reviewed_by_human: false

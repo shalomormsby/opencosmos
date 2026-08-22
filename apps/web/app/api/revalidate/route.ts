@@ -8,7 +8,7 @@ import { revalidatePath } from 'next/cache'
  * Request format:
  *   POST /api/revalidate
  *   Header: x-revalidate-secret: <REVALIDATE_SECRET>
- *   Body: { "path": "/knowledge/graph" }
+ *   Body: { "path": "/library/graph" }
  */
 export async function POST(req: NextRequest) {
   const secret = req.headers.get('x-revalidate-secret')
@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
-  let path = '/knowledge/graph'
+  let path = '/library/graph'
   try {
     const body = await req.json() as { path?: string }
     if (body.path) path = body.path
