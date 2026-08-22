@@ -189,16 +189,35 @@ function main() {
     }
   }
 
-  // Cross-pool: total = source count
   const totalAcrossPools = embeddable.total + pending.total + archive.total
+  let sourceTotal = 0
+  let addedSinceImport = 0
   if (statSync(SOURCE_JSONL_PATH, { throwIfNoEntry: false })) {
-    const sourceCount = readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length
-    if (totalAcrossPools !== sourceCount) {
+    // Source coverage, not an exact count. _source/ is the historical import,
+    // no longer the truth: every record it holds must still live in exactly one
+    // pool, but quotes added since (via quotes:add) legitimately exceed it.
+    const sourceIds = readFileSync(SOURCE_JSONL_PATH, 'utf-8')
+      .split('\n')
+      .filter(Boolean)
+      .map((line, i) => {
+        try {
+          return (JSON.parse(line) as JsonlRecord).id
+        } catch {
+          err(`_source/quotes_normalized.jsonl: unparseable line ${i + 1}`)
+          return null
+        }
+      })
+      .filter((id): id is string => Boolean(id))
+
+    const everywhere = new Set([...embeddable.ids, ...pending.ids, ...archive.ids])
+    const missing = sourceIds.filter((id) => !everywhere.has(id))
+    if (missing.length > 0) {
       err(
-        `total mismatch: embeddable ${embeddable.total} + pending ${pending.total} + archive ${archive.total}` +
-          ` = ${totalAcrossPools} ≠ source ${sourceCount}`,
+        `${missing.length} source record(s) in no pool — first few: ${missing.slice(0, 5).join(', ')}`,
       )
     }
+    addedSinceImport = totalAcrossPools - sourceIds.length
+    sourceTotal = sourceIds.length
   } else {
     err(`source jsonl missing: ${SOURCE_JSONL_PATH}`)
   }
@@ -206,7 +225,10 @@ function main() {
   console.log(`Embeddable pool: ${embeddable.total} quotes across ${COLLECTIVE_BUCKETS.size}+ files`)
   console.log(`Pending pool:    ${pending.total} records`)
   if (archive.total > 0) console.log(`Archive:         ${archive.total} rejected`)
-  console.log(`Total:           ${totalAcrossPools} (source: ${readFileSync(SOURCE_JSONL_PATH, 'utf-8').split('\n').filter(Boolean).length})`)
+  console.log(
+    `Total:           ${totalAcrossPools} (${sourceTotal} from the original import` +
+      `${addedSinceImport > 0 ? `, ${addedSinceImport} added since` : ''})`,
+  )
 
   if (errors.length > 0) {
     console.error()

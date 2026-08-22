@@ -232,7 +232,7 @@ quotes:
 
 **Stage 1 — split source jsonl into two pools (½ day, no API calls) ✅ Done 2026-05-07**
 
-Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (versioned; future re-imports diff against this). The split happens via `pnpm quotes:normalize`:
+Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (the historical import; the pools are canonical now). The original split happened via `pnpm quotes:migrate-from-source`, since retired behind a `--i-know-this-wipes` guard:
 
 - Records with status ∈ {`verified`, `attributed`} → `knowledge/quotes/{bucket}.yaml` (embeddable pool).
 - Records with status ∈ {`attributed_unverified`, `likely_misattributed`, `apocryphal`} → `data/quotes-pending/pending.jsonl` (pending pool).
@@ -250,7 +250,7 @@ Source jsonl lives at `knowledge/quotes/_source/quotes_normalized.jsonl` (versio
 - `scripts/normalize-quotes/lint.ts` — validates both pools + cross-pool integrity (ID uniqueness, total count, status vocabulary, embeddable/pending status partition).
 - `scripts/normalize-quotes/06-export-pending-csv.ts` — regenerate `pending.csv` from `pending.jsonl` on demand.
 - `scripts/normalize-quotes/07-promote-verified.ts` — migrate eligible pending records into embeddable yaml. `--dry` previews.
-- pnpm wrappers: `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote`.
+- pnpm wrappers: `quotes:add`, `quotes:checkpoint`, `quotes:merge`, `quotes:review-export`, `quotes:review-apply`, `quotes:lint`, `quotes:export-csv`, `quotes:promote`, `quotes:migrate-from-source` (retired).
 
 ##### Two-pool architecture (decided 2026-05-07)
 
@@ -347,7 +347,7 @@ New (planned):
 - `scripts/normalize-quotes/05-apply-review.ts`
 
 Modified (✅ shipped 2026-05-07):
-- [package.json](../package.json) — `quotes:normalize`, `quotes:lint`, `quotes:export-csv`, `quotes:promote` scripts; `js-yaml` + `@types/js-yaml` devDependencies
+- [package.json](../package.json) — the `quotes:*` script wrappers; `js-yaml` + `@types/js-yaml` devDependencies
 
 Modified (planned, Stage 2):
 - [scripts/knowledge/embed-knowledge.ts](../scripts/knowledge/embed-knowledge.ts) — YAML branch for `knowledge/quotes/*.yaml` (reuse `parseYamlFile` from scripts/normalize-quotes/shared.ts)

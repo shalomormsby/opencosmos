@@ -2,6 +2,8 @@
 
 This folder holds **only verified + attributed quotes** — the subset of the corpus that gets embedded and is citable by Cosmo. Records pending verification live in [`data/quotes-pending/`](../../data/quotes-pending/) and migrate here as they pass validation.
 
+> **These files and `pending.jsonl` are the source of truth.** `_source/quotes_normalized.jsonl` is the historical import that seeded them in May 2026; it holds none of the provenance verdicts, review decisions, or promotion state accumulated since. Add new quotes with **`/new-quote`** (or `pnpm quotes:add`), never by editing YAML by hand and never by re-running the import.
+
 ## Layout
 
 ```
@@ -90,7 +92,9 @@ quotes:
 
 | Stage | Command | Purpose |
 |-------|---------|---------|
-| 1 | `pnpm quotes:normalize` | **One-time migration, already run.** Rebuilds both pools from the source jsonl — which *wipes* validation work. Don't run it. |
+| — | **`/new-quote`** | **The way in.** Parses free-form input, dedupes, infers category/keywords/tradition, validates provenance, then drives `quotes:add`. |
+| — | `pnpm quotes:add -- --json <file>` | The mechanism the skill drives. Also `--text`/`--author` for a quick one-off, `--check-dupes` to look before adding, `--dry` to preview. |
+| 1 | `pnpm quotes:migrate-from-source` | **Retired.** The original import. Rebuilds both pools from the source jsonl, discarding all validation and review state. Refuses to run without `--i-know-this-wipes`. |
 | 1 | `pnpm quotes:lint` | Validate all three pools + cross-pool integrity. Run after every mutation. |
 | 2 | `pnpm embed` | Embed `knowledge/quotes/*.yaml` into Upstash with `chunk_type: 'quote'`. |
 | 3 | `pnpm quotes:checkpoint remaining --write-batches` | Queue unvalidated quotes as batch input files for a subagent fan-out. |
