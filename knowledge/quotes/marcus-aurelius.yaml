@@ -11,7 +11,7 @@ quotes:
     keywords: [resilience, self-awareness]
     context: "Philosophy, Stoic, Greek, Wisdom, Ancient"
     favorite: true
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: verified
@@ -27,7 +27,7 @@ quotes:
     keywords: [friendship]
     context: "Philosophy, Stoic, Greek, Wisdom, Ancient"
     favorite: true
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: attributed
@@ -43,7 +43,7 @@ quotes:
     keywords: [death-awareness, mortality, priorities, memento mori]
     context: "Philosophy, Stoic, Ancient Greek, Wisdom"
     favorite: true
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: verified
@@ -59,7 +59,7 @@ quotes:
     keywords: []
     context: "Philosophy, Stoic, Ancient Greek, Wisdom"
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: attributed
@@ -75,7 +75,7 @@ quotes:
     keywords: []
     context: "Philosophy, Stoic, Ancient Greek, Wisdom"
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: attributed
@@ -91,7 +91,7 @@ quotes:
     keywords: []
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: verified
@@ -107,7 +107,7 @@ quotes:
     keywords: []
     context: "Philosophy, Stoic, Ancient Greek, Wisdom"
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: attributed
@@ -123,7 +123,7 @@ quotes:
     keywords: []
     context: "Philosophy, Stoic, Ancient Greek, Wisdom"
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: attributed
@@ -139,7 +139,7 @@ quotes:
     keywords: [pain, power, judgment]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: verified
@@ -155,7 +155,7 @@ quotes:
     keywords: [action, death, success, focus]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/stoicism-meditations
     source_section: null
     provenance:
       status: verified

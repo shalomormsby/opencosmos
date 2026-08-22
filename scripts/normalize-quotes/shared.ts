@@ -258,8 +258,12 @@ export function emitQuoteBlock(record: JsonlRecord, includeAuthor: boolean): str
   lines.push(`    keywords: ${yamlArray(enriched.keywords ?? [])}`)
   lines.push(`    context: ${yamlScalar(enriched.context)}`)
   lines.push(`    favorite: ${yamlScalar(enriched.favorite)}`)
-  lines.push(`    source_work: null`)
-  lines.push(`    source_section: null`)
+  // Preserve rather than hardcode: 09-resolve-source-works.ts fills these in by
+  // matching a quote's print source against the corpus, and they must survive a
+  // re-promote. A null here severs the quote → work `cites` edge in the graph
+  // and drops the work from the quote's RAG context.
+  lines.push(`    source_work: ${yamlScalar(enriched.source_work ?? null)}`)
+  lines.push(`    source_section: ${yamlScalar(enriched.source_section ?? null)}`)
   lines.push(`    provenance:`)
   lines.push(`      status: ${yamlScalar(p.status)}`)
   lines.push(`      confidence: ${yamlScalar(p.confidence)}`)

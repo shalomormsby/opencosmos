@@ -11,7 +11,7 @@ quotes:
     keywords: [wisdom, time, taoism]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/taoism-tao-te-ching
     source_section: null
     provenance:
       status: attributed
@@ -27,7 +27,7 @@ quotes:
     keywords: [journey, path, step, taoism]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/taoism-tao-te-ching
     source_section: null
     provenance:
       status: verified

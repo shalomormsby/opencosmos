@@ -11,7 +11,7 @@ quotes:
     keywords: [self-inquiry]
     context: "Ancient, Wisdom, Greek, Philosophy"
     favorite: false
-    source_work: null
+    source_work: sources/philosophy-apology
     source_section: null
     provenance:
       status: verified

@@ -11,7 +11,7 @@ quotes:
     keywords: [wisdom, miracle, ordinary]
     context: "Author, Poet, Philosopher, Transcendentalist"
     favorite: false
-    source_work: null
+    source_work: sources/philosophy-nature
     source_section: null
     provenance:
       status: verified

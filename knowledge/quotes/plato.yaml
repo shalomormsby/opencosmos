@@ -11,7 +11,7 @@ quotes:
     keywords: [injustice, suffer]
     context: "Ancient Greek, Philosophy, Socratic"
     favorite: true
-    source_work: null
+    source_work: sources/philosophy-gorgias
     source_section: null
     provenance:
       status: verified
@@ -27,7 +27,7 @@ quotes:
     keywords: [self, awareness]
     context: "Ancient Greek, Philosophy, Socratic"
     favorite: false
-    source_work: null
+    source_work: sources/philosophy-apology
     source_section: null
     provenance:
       status: verified

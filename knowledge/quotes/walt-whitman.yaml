@@ -11,7 +11,7 @@ quotes:
     keywords: [light, darkness, miracle]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/literature-leaves-of-grass
     source_section: null
     provenance:
       status: verified
@@ -27,7 +27,7 @@ quotes:
     keywords: [soul, insult]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/literature-leaves-of-grass
     source_section: null
     provenance:
       status: verified
@@ -43,7 +43,7 @@ quotes:
     keywords: [grass, journey, stars, universe, mystical]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/literature-leaves-of-grass
     source_section: null
     provenance:
       status: verified
@@ -59,7 +59,7 @@ quotes:
     keywords: [soul, evolution, universe, religion, art, governments, world, road, path]
     context: null
     favorite: false
-    source_work: null
+    source_work: sources/literature-leaves-of-grass
     source_section: null
     provenance:
       status: verified
