@@ -109,6 +109,17 @@ export default async function QuoteBucketPage({ params }: Props) {
               {q.category && (
                 <span className="text-xs text-foreground/35">{q.category}</span>
               )}
+              {/* The same keywords the embedding pipeline folds into this
+                  quote's vector — shown so a reader can see why Cosmo
+                  surfaced it, and search the index by the same handles. */}
+              {q.keywords.map((k) => (
+                <span
+                  key={k}
+                  className="text-xs text-foreground/40 px-2 py-0.5 rounded-full border border-foreground/10"
+                >
+                  {k}
+                </span>
+              ))}
             </div>
 
             {q.provenance.earliest_print_source && (

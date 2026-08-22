@@ -8,7 +8,40 @@ user-invocable: true
 
 # /new-quote — Add a quote to the corpus
 
-**Full pipeline:** `/new-quote` → `pnpm quotes:add` → `pnpm quotes:promote` → `pnpm embed`
+**Full pipeline:** `/new-quote` → `pnpm quotes:add` → `pnpm quotes:promote` → `pnpm embed` → `pnpm graph:constellation`
+
+## The flow at a glance
+
+```
+Shalom pastes a quote (any format, one or many)
+  │
+  ├─ 1. Parse            text · author · SOURCE if present
+  │                      → reflect back what you parsed
+  │
+  ├─ 2. Dupe check       pnpm quotes:add -- --check-dupes --json <file>
+  │                      → on a match, AskUserQuestion: skip or add anyway?
+  │
+  ├─ 3. Enrich           category · keywords · context (→ tradition)
+  │
+  ├─ 4. Provenance       apply VALIDATION_PROMPT.md
+  │                      → if you cannot name a source, ONE AskUserQuestion
+  │                        call bundling: "do you know the source?" +
+  │                        confirm the inferred category/keywords
+  │
+  ├─ 5. Write            quotes:add --dry → quotes:add → quotes:promote → lint
+  │
+  └─ 6. Report           where it landed · status · source · page URL
+                         → offer to run embed + graph:constellation
+```
+
+**Use `AskUserQuestion`, not prose questions**, and **batch them into a single
+call** — one interruption, not four. The only moments that genuinely warrant
+asking are the duplicate decision and the source/enrichment confirmation; ask
+both at once when both apply. Everything else you infer and report.
+
+Do not ask when there is nothing to decide: a quote that parses cleanly, isn't
+a duplicate, and whose source you can name outright should be added and
+reported without stopping.
 
 `$ARGUMENTS` is whatever Shalom pasted. It might be a bare line, a line with
 `— Author` on the end, something copied out of a book with the citation
@@ -65,6 +98,11 @@ Fill in what you can infer, and say what you inferred:
   `creativity`, `business`, `relationships`, `humor`, `design`. Pick the closest;
   don't invent a new one.
 - **`keywords`** — three to five, lowercase, the concepts a person would search.
+  These are load-bearing in both directions: [`embed-knowledge.ts`](../../../scripts/knowledge/embed-knowledge.ts)
+  folds them into the quote's embedding text (alongside author, tradition, and
+  category) so Cosmo retrieves by theme rather than only by literal wording, and
+  they render as tags on the quote's page and drive search on
+  `/knowledge/quotes`. Vague keywords make a quote hard to find for both.
 - **`context`** — a short descriptor of who the author is (`Poet`, `Stoic
   philosopher`, `Zen teacher`). This is load-bearing: `synthesizeTradition()`
   derives the tradition from it, and the tradition drives the graph and the
@@ -106,12 +144,19 @@ So, in order:
    quote earns `verified`. This is the payoff over a bare CLI: a well-attested
    quote gets a real citation at capture time and can go live in the same
    interaction, instead of waiting for the next validation tranche.
-3. **If you can't place it, say so and ask.** Leave `earliest_print_source` null,
-   explain the gap in `notes`, and *ask Shalom whether he knows where it's from* —
-   he often does, since he's the one who collected it. A source he supplies is
-   worth more than a confident guess, and if he confirms an attribution
-   personally, set `"reviewed_by_human": true`, which clears the promotion bar
-   regardless of confidence.
+3. **If you can't place it, ask — via `AskUserQuestion`.** He often knows; he's
+   the one who collected it. Offer real options rather than an open prompt, e.g.
+   *"I can't place this one — do you know the source?"* with choices like
+   *"I have the source"* (he types it), *"Add it unverified"*, and *"Skip it."*
+   Bundle this into the **same** `AskUserQuestion` call as any duplicate decision
+   or category confirmation so he's interrupted once.
+
+   A source he supplies beats a confident guess. If he confirms an attribution
+   personally, set `"reviewed_by_human": true` — that clears the promotion bar
+   regardless of confidence. If he doesn't know either, leave
+   `earliest_print_source` null and explain the gap honestly in `notes`; the
+   quote sits in pending as `attributed_unverified`, which is the correct
+   outcome, not a failure.
 
 Never quietly downgrade a quote to `attributed_unverified` when a single
 question would have gotten you the citation.
@@ -158,7 +203,11 @@ Then tell him, concretely:
 - That it becomes citable by Cosmo on the next `pnpm embed` (or automatically
   via CI on push to main, per `.github/workflows/knowledge-sync.yml`)
 
-Offer to run `pnpm embed` if he wants it live immediately.
+Offer to run `pnpm embed` if he wants it live immediately — and
+`pnpm graph:constellation` alongside it, since every embeddable quote is also a
+node in the constellation (its own tier, with a `cites` edge to a work when
+`source_work` resolves and a `member_of` edge to its tradition otherwise). A
+promoted quote that hasn't been re-graphed is missing from the visualization.
 
 ## Notes
 

@@ -22,8 +22,17 @@ export default function QuoteBrowser({ buckets, total }: Props) {
   const filtered = useMemo(() => {
     return buckets.filter((b) => {
       if (activeTradition && b.tradition !== activeTradition) return false
-      if (search) return b.label.toLowerCase().includes(search.toLowerCase())
-      return true
+      if (!search) return true
+      // Match the way Cosmo retrieves — by theme as well as by name. Keywords
+      // and categories are already folded into each quote's embedding; this
+      // gives a person the same handle.
+      const q = search.toLowerCase()
+      return (
+        b.label.toLowerCase().includes(q) ||
+        b.tradition?.toLowerCase().includes(q) ||
+        b.keywords.some((k) => k.toLowerCase().includes(q)) ||
+        b.categories.some((c) => c.toLowerCase().includes(q))
+      )
     })
   }, [buckets, activeTradition, search])
 
@@ -35,7 +44,7 @@ export default function QuoteBrowser({ buckets, total }: Props) {
       <div className="mb-6">
         <Input
           type="search"
-          placeholder="Search by author…"
+          placeholder="Search by author, theme, or keyword…"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           className="max-w-sm"

@@ -65,6 +65,15 @@ export type QuoteBucket = {
   tradition: string | null
   count: number
   href: string
+  /**
+   * Union of the keywords across this author's quotes. The embedding pipeline
+   * already folds keywords into each quote's vector so Cosmo can retrieve by
+   * theme; carrying them here lets a person search the same way instead of
+   * only by author name.
+   */
+  keywords: string[]
+  /** Categories present, for the same reason. */
+  categories: string[]
 }
 
 export type QuoteBucketDetail = QuoteBucket & {
@@ -152,6 +161,8 @@ export function getQuoteBuckets(): QuoteBucket[] {
       tradition: str(parsed.data.tradition) ?? records.find((r) => r.tradition)?.tradition ?? null,
       count: records.length,
       href: `/knowledge/quotes/${bucket}`,
+      keywords: Array.from(new Set(records.flatMap((r) => r.keywords))).sort(),
+      categories: Array.from(new Set(records.map((r) => r.category).filter((c): c is string => !!c))).sort(),
     })
   }
 
@@ -176,6 +187,8 @@ export function getQuoteBucket(bucket: string): QuoteBucketDetail | null {
     tradition: str(parsed.data.tradition) ?? records.find((r) => r.tradition)?.tradition ?? null,
     count: records.length,
     href: `/knowledge/quotes/${bucket}`,
+    keywords: Array.from(new Set(records.flatMap((r) => r.keywords))).sort(),
+    categories: Array.from(new Set(records.map((r) => r.category).filter((c): c is string => !!c))).sort(),
     quotes: records,
   }
 }
