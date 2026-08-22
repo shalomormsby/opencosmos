@@ -45,7 +45,7 @@
 |------|--------------|--------|----------|-----------|
 | **Cosmo** (`apps/web` + `packages/ai`) | [Cosmo Learning Loop](cosmo-learning-loop.md) — Phases 1–3 (lessons · recall · exemplars) | ✅ Done | P1 | Loop complete end-to-end; nice-to-have follow-up: exemplar diversity (a practical + a challenging exemplar) |
 | **Cosmo** (`apps/web`) | [Phase 2: CP Member Token Access & Top-up](#phase-2-cp-member-token-access--top-up) | 🔵 Blocked | P0 | Needs Shalom decisions Q1–Q4 |
-| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Awaiting review | P1 | Stages 1–3 ✅ — all 1,509 validated, 349 embeddable. Next: 197-row review CSV (Shalom), then `pnpm embed` |
+| Cosmo | [Phase 1.3: Quote substrate + provenance pipeline](#phase-13--quote-substrate--provenance-pipeline-57-days-wall-mostly-background-api-active) | 🟡 Awaiting review | P1 | Stages 1–3 ✅ — all 1,509 validated, 349 embeddable and live. Library unified + renamed to `/library`. Next: 197-row review CSV (Shalom) |
 | Cosmo | [Phase 1.4: Re-embed + initial graph](#phase-14--re-embed-and-generate-initial-graph-30-min-planned) | ⚪ Planned | P1 | Picks up when Stage 3 resumes |
 | Cosmo | [Phase 1.5: Build `@opencosmos/constellation`](#phase-15--build-opencosmosconstellation-35-days-in-opencosmos-ui-repo-planned) | ✅ Done | P1 | `@opencosmos/constellation@0.1.0` published to npm; Studio demo live at `/constellation` |
 | Cosmo | [Phase 1.6 + 1.8 + 1.9: Consume, citations, sidebar](#phase-16--opencosmos-consumes-opencosmosconstellation-12-days-planned) | 🟢 Active | P1 | Swapping `/knowledge/graph` off sigma.js onto the published package, then wiring Cosmo's citations to pulse nodes |
